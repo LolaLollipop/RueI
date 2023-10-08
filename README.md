@@ -3,7 +3,7 @@ a ui library (ish) for scp sl
 ## example usage
 ```csharp
 PlayerDisplay display = new(ev.Player);
-SetElement element = new(-500, zIndex: 10, "example text");
+SetElement element = new(300, zIndex: 10, "example text");
 display.Update();
 ```
 ## limitations
