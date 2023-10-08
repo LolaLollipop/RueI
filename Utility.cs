@@ -1,6 +1,5 @@
 ﻿namespace RueI
 {
-    
     public static class Ruetility
     {
         /// <summary>

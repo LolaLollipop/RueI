@@ -17,9 +17,10 @@
         /// </summary>
         /// <param name="player">The <see cref="Player"/> to assign the display to.</param>
         /// <param name="defaultScreen">The default <see cref="{T}"/> to use as a screen.</param>
-        public ScreenPlayerDisplay(Player player, T defaultScreen) : base(player)
+        public ScreenPlayerDisplay(Player player, T defaultScreen)
+            : base(player)
         {
-            CurrentScreen  = defaultScreen;
+            CurrentScreen = defaultScreen;
         }
 
         /// <summary>
@@ -34,7 +35,10 @@
         /// <param name="screen">The screen.</param>
         public void Update(T screen)
         {
-            if (CurrentScreen.Equals(screen)) Update();
+            if (CurrentScreen.Equals(screen))
+            {
+                Update();
+            }
         }
 
         internal override string ParseElements()
@@ -55,12 +59,19 @@
             for (int i = 0; i < elements.Count; i++)
             {
                 Element curElement = elements[i];
-                if (!curElement.Enabled) continue;
+                if (!curElement.Enabled)
+                {
+                    continue;
+                }
 
                 if (curElement is IScreenElement<T> asScreen)
                 {
-                    if (!asScreen.Screens.HasFlag(CurrentScreen)) continue;
+                    if (!asScreen.Screens.HasFlag(CurrentScreen))
+                    {
+                        continue;
+                    }
                 }
+
                 ParsedData parsedData = curElement.ParsedData;
                 parsedData.Offset += curElement.AdditionalLineBreaks;
 
@@ -77,7 +88,7 @@
                 }
 
                 sb.Append(parsedData.Content);
-                sb.Append(TAG_CLOSER);
+                sb.Append(TAGCLOSER);
 
                 totalOffset += parsedData.Offset;
                 lastPosition = curElement.Position;
@@ -97,26 +108,26 @@
         /// <summary>
         /// Gets the default height if a line-height is not provided.
         /// </summary>
-        public const float DEFAULT_HEIGHT = 41; // in pixels;
+        public const float DEFAULTHEIGHT = 41; // in pixels;
 
         /// <summary>
         /// Gets an approximation of how many pixels are an in an em. 
         /// </summary>
-        public const float EMS_TO_PIXELS = 35;
+        public const float EMSTOPIXELS = 35;
 
         /// <summary>
         /// Gets a string used to close all tags.
         /// </summary>
-        public const string TAG_CLOSER = "</noparse></align></color></b></i></cspace></line-height></line-indent></link></lowercase></uppercase></smallcaps></margin></mark></mspace></pos></size></s></u></voffset></width>";
+        public const string TAGCLOSER = "</noparse></align></color></b></i></cspace></line-height></line-indent></link></lowercase></uppercase></smallcaps></margin></mark></mspace></pos></size></s></u></voffset></width>";
 
         /// <summary>
         /// Gets the ratelimit used for displaying hints.
         /// </summary>
-        public const float HINT_RATE_LIMIT = 0.55f;
+        public const float HINTRATELIMIT = 0.55f;
 
-        protected CoroutineHandle? rateLimitTask;
-        protected bool rateLimitActive = false;
-        protected bool shouldUpdate = false;
+        private CoroutineHandle? rateLimitTask;
+        private bool rateLimitActive = false;
+        private bool shouldUpdate = false;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="PlayerDisplay"/> class.
@@ -138,14 +149,14 @@
             }
         }
 
-        protected static Comparison<Element> Comparer { get; } = (Element first, Element other) => other.ZIndex - first.ZIndex;
-
-        protected List<Element> elements { get; } = new();
-
         /// <summary>
         /// Gets the player that this display is assigned to.
         /// </summary>
         public Player Player { get; }
+
+        protected static Comparison<Element> Comparer { get; } = (Element first, Element other) => other.ZIndex - first.ZIndex;
+
+        protected List<Element> elements { get; } = new();
 
         /// <summary>
         /// Adds an element to the player's display.
@@ -179,7 +190,7 @@
             if (!rateLimitActive)
             {
                 rateLimitActive = true;
-                Timing.CallDelayed(HINT_RATE_LIMIT, OnRateLimitFinished);
+                Timing.CallDelayed(HINTRATELIMIT, OnRateLimitFinished);
 
                 Hint hint = new(ParseElements(), 99999999, true);
                 Player.ShowHint(hint);
@@ -209,7 +220,11 @@
             for (int i = 0; i < elements.Count; i++)
             {
                 Element curElement = elements[i];
-                if (!curElement.Enabled) continue;
+                if (!curElement.Enabled)
+                {
+                    continue;
+                }
+
                 ParsedData parsedData = curElement.ParsedData;
                 parsedData.Offset += curElement.AdditionalLineBreaks;
 
@@ -225,7 +240,7 @@
                 }
 
                 sb.Append(parsedData.Content);
-                sb.Append(TAG_CLOSER);
+                sb.Append(TAGCLOSER);
 
                 totalOffset += parsedData.Offset;
                 lastPosition = curElement.Position;
