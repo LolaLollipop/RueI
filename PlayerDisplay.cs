@@ -210,6 +210,7 @@
                 Element curElement = elements[i];
                 if (!curElement.Enabled) continue;
                 ParsedData parsedData = curElement.ParsedData;
+                parsedData.Offset += curElement.AdditionalLineBreaks;
 
                 if (i != 0)
                 {

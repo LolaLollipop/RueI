@@ -3,10 +3,10 @@
     using System.Text.RegularExpressions;
 
     /// <summary>
-    /// Defines a record that contains information used for displaying multiple elements
+    /// Defines a record that contains information used for displaying multiple elements.
     /// </summary>
-    /// <param name="Content">The hint's content.</param>
-    /// <param name="Offset">The offset that should be applied.</param>
+    /// <param name="Content">The element's content.</param>
+    /// <param name="Offset">The offset that should be applied. Equivalent to the total linebreaks within the element.</param>
     public record struct ParsedData(string Content, float Offset);
 
     /// <summary>
@@ -202,6 +202,12 @@
         /// Gets or sets the priority of the hint (determining if it shows above another hint).
         /// </summary>
         public virtual int ZIndex { get; set; } = 0;
+
+        /// <summary>
+        /// Gets or sets a value that is added to the total linebreaks when calculating the offset.
+        /// </summary>
+        /// <remarks>Use this for if you know that there will be additional linebreaks caused by overflows.</remarks>
+        public virtual int AdditionalLineBreaks { get; set; } = 0;
 
         /// <summary>
         /// Calculates the offset for two hints.
