@@ -62,6 +62,7 @@
                     if (!asScreen.Screens.HasFlag(CurrentScreen)) continue;
                 }
                 ParsedData parsedData = curElement.ParsedData;
+                parsedData.Offset += curElement.AdditionalLineBreaks;
 
                 if (i != 0)
                 {
