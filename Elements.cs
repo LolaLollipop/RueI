@@ -12,9 +12,9 @@
     /// <summary>
     /// Represents an element that is shown when certain screens are active.
     /// </summary>
-    /// <typeparam name="T">The enum to be used as the screen identifier</typeparam>
+    /// <typeparam name="T">The enum to be used as the screen identifier.</typeparam>
     public interface IScreenElement<T>
-        where T: Enum
+        where T : Enum
     {
         /// <summary>
         /// Gets or sets the screens that this element is shown on.
@@ -148,7 +148,8 @@
         /// <param name="position">The position of the element, where 0 is the hint baseline (roughly middle-bottom of the screen).</param>
         /// <param name="zIndex">A value determing the priority of the hint, where higher numbers means that it will render above hints with a lower number.</param>
         /// <param name="content">The content to set the element to.</param>
-        public SetElement(float position, int zIndex = 0, string content = "") : base(position, zIndex)
+        public SetElement(float position, int zIndex = 0, string content = "")
+            : base(position, zIndex)
         {
             Position = position;
             Content = content;
@@ -182,7 +183,8 @@
         // match line heights, line height closers, noparse tags, noparse closing tags, br, and newlines
         protected static readonly Regex ParserRegex = new(@"<(?:line-height=(-?[0-9]\d*(?:\.\d+?)?)(px|em|ems|%)>|/line-height>|noparse>|/noparse>|br>)|\n");
 
-        public Element(float position, int zIndex) {
+        public Element(float position, int zIndex)
+        {
             Position = position;
             ZIndex = zIndex;
         }

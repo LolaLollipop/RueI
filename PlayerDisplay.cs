@@ -111,7 +111,7 @@
         public const float DEFAULTHEIGHT = 41; // in pixels;
 
         /// <summary>
-        /// Gets an approximation of how many pixels are an in an em. 
+        /// Gets an approximation of how many pixels are an in an em.
         /// </summary>
         public const float EMSTOPIXELS = 35;
 
@@ -183,7 +183,7 @@
         public void Remove(Element element) => elements.Remove(element);
 
         /// <summary>
-        /// Updates this display and shows the player the new hint, if the rate limit is not active
+        /// Updates this display and shows the player the new hint, if the rate limit is not active.
         /// </summary>
         public void Update()
         {
@@ -234,7 +234,8 @@
                     Log.Debug(calcedOffset);
                     sb.Append($"<line-height={calcedOffset}px>\n</line-height>");
                     totalOffset += calcedOffset;
-                } else
+                }
+                else
                 {
                     totalOffset += curElement.Position;
                 }
