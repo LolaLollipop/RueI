@@ -4,6 +4,7 @@ a ui library (ish) for scp sl
 ```csharp
 PlayerDisplay display = new(ev.Player);
 SetElement element = new(300, zIndex: 10, "example text");
+display.Add(element);
 display.Update();
 ```
 ## limitations
