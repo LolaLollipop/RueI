@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RueI.RueI.Interfaces
+﻿namespace RueI.Interfaces
 {
-    internal class ISettable
+    /// <summary>
+    /// Defines an element that can be set.
+    /// </summary>
+    public interface ISettable
     {
+        /// <summary>
+        /// Sets the content of this element.
+        /// </summary>
+        /// <param name="text">The new element.</param>
+        public void Set(string text);
     }
 }

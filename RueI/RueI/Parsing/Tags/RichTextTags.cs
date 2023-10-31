@@ -15,5 +15,23 @@
         /// </summary>
         /// <returns>A new param processor, or null if the tag has no params.</returns>
         public abstract ParamProcessor? GetProcessor();
+
+        /// <summary>
+        /// Tries to get a new param processor, if the tag has params.
+        /// </summary>
+        /// <param name="processor">The returned param processor.</param>
+        /// <returns><see cref="true"/> if the tag has a param processor, otherwise false.q</returns>
+        public bool TryGetNewProcessor(out ParamProcessor? processor)
+        {
+            ParamProcessor? maybeProcessor = GetProcessor();
+            if (maybeProcessor != null)
+            {
+                processor = maybeProcessor;
+            } else
+            {
+                processor = null;
+                return false;
+            }
+        }
     }
 }

@@ -8,6 +8,7 @@
 
     using RueI.Enums;
     using RueI.Parsing;
+    using RueI.Parsing.Tags;
     using RueI.Records;
 
     /// <summary>
@@ -38,7 +39,6 @@
         /// </summary>
         /// <param name="text">The string to parse.</param>
         /// <returns>A <see cref="ParsedData"/> containing information about the string.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public ParsedData Parse(string text)
         {
             ReadOnlyDictionary<char, float> charSizes = Constants.CharacterLengths;
@@ -50,6 +50,7 @@
             ParamProcessor? paramProcessor = null;
 
             StringBuilder sb = StringBuilderPool.Shared.Rent();
+            HashSet<string> tagsToEnd = new();
 
             bool shouldParse = false;
             float currentHeight = Constants.DEFAULTHEIGHT; // in pixels
@@ -68,7 +69,6 @@
 
             CaseStyle currentCase = CaseStyle.Smallcaps;
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             void AddCharacter(char ch)
             {
                 char functionalCase = currentCase switch
@@ -100,9 +100,22 @@
                     }
 
                     sb.Append(ch);
+
+                    if (currentLineWidth + widthSinceSpace > Constants.DISPLAYAREAWIDTH)
+                    {
+                        CreateLineBreak();
+                    }
+                    else if (ch == ' ')
+                    {
+                        if (!noBreak)
+                        {
+                            widthSinceSpace = 0;
+                        }
+                    }
                 }
                 else
                 {
+                    // TODO: handle warnings
                 }
             }
 
@@ -112,17 +125,35 @@
                 foreach (char ch in tagBuffer.ToString())
                 {
                     AddCharacter(ch);
-                }
+                }   
 
-                foreach (char ch in paramBuffer.ToString())
+                tagBuffer.Clear();
+
+                currentState = ParserState.CollectingTags;
+                paramProcessor = null;
+            }
+
+            void FailTagMatchParams(string paramBuffer)
+            {
+                FailTagMatch();
+
+                foreach (char ch in paramBuffer)
                 {
                     AddCharacter(ch);
                 }
+            }
 
-                tagBuffer.Clear();
-                paramBuffer.Clear();
-
-                currentState = ParserState.CollectingTags;
+            void CreateLineBreak()
+            {
+                if (widthSinceSpace < Constants.DISPLAYAREAWIDTH)
+                {
+                    currentLineWidth = widthSinceSpace;
+                    newOffset += currentHeight;
+                }
+                else
+                {
+                    currentLineWidth = 0;
+                }
             }
 
             ParserContext GenerateContext()
@@ -141,7 +172,7 @@
                 {
                     currentState = ParserState.DescendingTag;
                     currentNode = baseNodes;
-                    continue;
+                    continue; // do NOT add as a character
                 }
                 else if (ch == '\n')
                 {
@@ -150,6 +181,8 @@
                     {
                         FailTagMatch();
                     }
+
+                    continue; // do NOT add as a character
                 }
                 else if (currentState == ParserState.DescendingTag)
                 {
@@ -159,84 +192,23 @@
                         {
                             currentNode = node;
                             tagBuffer.Append(ch);
-                            continue;
+                            continue; // do NOT add as a character
                         }
                         else
                         {
                             FailTagMatch();
                         }
                     }
-                    else if (ch == '=' || ch == '>')
+                    else if (ch == '=')
                     {
                         if (currentNode?.Tag != null)
                         {
-                            ParamProcessor? maybeProcess = currentNode.Tag.GetProcessor();
-                            if (maybeProcess == null && ch == '>')
+                            if (ch == '=' && currentNode.Tag.TryGetNewProcessor(out ParamProcessor? processor))
                             {
-                                ParserContext context = GenerateContext();
-                                noParamsTag.Parse(sb, context);
-                                LoadContext(context);
-
-                                tagBuffer.Clear();
-                                continue;
-                            }
-                            else if (currentNode.Tag.Style != TagStyle.NoParams && ch == '=')
-                            {
-                                if (currentNode.Tag.Style == TagStyle.Measurement)
-                                {
-                                    currentState = ParserState.CollectingMeasureParams;
-                                }
-                                else
-                                {
-                                    currentState = ParserState.CollectingColorParams;
-                                }
+                                paramProcessor = processor;
 
                                 tagBuffer.Append('=');
-                                continue;
-                            }
-                            else if (ch == '>' && currentState == ParserState.CollectingColorParams) {
-                                if (currentState == ParserState.CollectingColorParams)
-                                {
-                                    StringBuilder functionalParamBuffer = StringBuilderPool.Shared.Rent();
-                                    if ()
-                                }
-                                else
-                                {
-                                    StringBuilder functionalParamBuffer = StringBuilderPool.Shared.Rent();
-                                    MeasurementStyle style = MeasurementStyle.Pixels;
-
-                                    foreach (char paramChar in paramBuffer.ToString())
-                                    {
-                                        if (paramChar == 'e')
-                                        {
-                                            style = MeasurementStyle.Ems;
-                                            break;
-                                        } else if (paramChar == '%')
-                                        {
-                                            style = MeasurementStyle.Percentage;
-                                            break;
-                                        }
-
-                                        functionalParamBuffer.Append(paramChar);
-                                    }
-
-                                    if (float.TryParse(StringBuilderPool.Shared.ToStringReturn(functionalParamBuffer), out float result))
-                                    {
-                                        MeasurementTag? mesTag = currentNode.Tag as MeasurementTag;
-                                        ParserContext context = GenerateContext();
-
-                                        mesTag?.Parse(sb, context, result, style);
-                                        LoadContext(context);
-
-                                        tagBuffer.Clear();
-
-                                        continue;
-                                    } 
-                                    else
-                                    {
-                                        FailTagMatch();
-                                    }
-                                }
+                                continue; // do NOT add as a character
                             }
                             else
                             {
@@ -248,18 +220,48 @@
                             FailTagMatch();
                         }
                     }
+                    else if (ch == '>')
+                    {
+                        if (currentNode?.Tag != null)
+                        {
+                            if (currentNode.Tag is NoParamsTagBase noParams)
+                            {
+                                ParserContext context = GenerateContext();
+                                noParams.HandleTag(context);
+                                LoadContext(context);
+
+                                tagBuffer.Clear();
+                                continue; // do NOT add as a character
+                            }
+                            else if (currentState == ParserState.CollectingColorParams && paramProcessor != null)
+                            {
+                                bool wasSuccessful = paramProcessor.GetFinishResult(GenerateContext, LoadContext, out string? unloaded);
+                                if (!wasSuccessful)
+                                {
+                                    FailTagMatchParams(unloaded!);
+                                }
+                            }
+                            else
+                            {
+                                FailTagMatch();
+                            }
+                        }
+                    }
+                    else
+                    {
+                        FailTagMatch();
+                    }
                 }
                 else if (currentState == ParserState.CollectingMeasureParams)
                 {
                     paramProcessor?.Add(ch);
-                    continue;
+                    continue; // do NOT add as a character
                 }
 
                 AddCharacter(ch);
             }
 
             StringBuilderPool.Shared.Return(tagBuffer);
-            StringBuilderPool.Shared.Return(paramBuffer);
 
             return new ParsedData(StringBuilderPool.Shared.ToStringReturn(sb), newOffset);
         }

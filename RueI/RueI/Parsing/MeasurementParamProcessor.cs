@@ -32,7 +32,7 @@
         }
 
         /// <inheritdoc/>
-        public override bool Finish(Func<ParserContext> lazyContext, Action<ParserContext> lazyUnload, out string? unloaded)
+        protected override bool Finish(Func<ParserContext> lazyContext, Action<ParserContext> lazyUnload)
         {
             StringBuilder paramBuffer = StringBuilderPool.Shared.Rent();
             string text = StringBuilderPool.Shared.ToStringReturn(buffer);
@@ -74,12 +74,10 @@
             {
                 ParserContext newContext = tagHandler(lazyContext(), result, style);
                 lazyUnload(newContext);
-                unloaded = null;
                 return true;
             }
             else
             {
-                unloaded = text;
                 return false;
             }
         }

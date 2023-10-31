@@ -4,6 +4,7 @@
     using RueI.Delegates;
 
     using System.Text.RegularExpressions;
+    using RueI.Interfaces;
 
     /// <summary>
     /// Represents an element that is shown when certain screens are active.
@@ -128,7 +129,7 @@
     /// <summary>
     /// Represents a simple cached element with settable content.
     /// </summary>
-    public class SetElement : Element
+    public class SetElement : Element, ISettable
     {
         private ParsedData cachedParsedData;
 
@@ -142,7 +143,7 @@
             : base(position, zIndex)
         {
             Position = position;
-            Content = content;
+            // Content = content;
             cachedParsedData = Parse(content);
         }
 
@@ -152,7 +153,7 @@
         /// <summary>
         /// Gets the raw content of the element.
         /// </summary>
-        public virtual string Content { get; protected set; }
+        // public virtual string Content { get; protected set; }
 
         /// <summary>
         /// Sets the content of this element.
@@ -160,7 +161,7 @@
         /// <param name="content">The text to set the content to (will be parsed)</param>
         public virtual void Set(string content)
         {
-            Content = content;
+            // Content = content;
             cachedParsedData = Parse(content);
         }
     }
