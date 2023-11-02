@@ -16,13 +16,8 @@
         DescendingTag,
 
         /// <summary>
-        /// Indicates that the parser is currently collecting characters for a color param tag.
+        /// Indicates that the parser is currently collecting characters for a param.
         /// </summary>
-        CollectingColorParams,
-
-        /// <summary>
-        /// Indicates that the parser is currently collecting characters for a measurement param tag.
-        /// </summary>
-        CollectingMeasureParams,
+        CollectingParams
     }
 }

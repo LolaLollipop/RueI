@@ -14,7 +14,7 @@
         public override string[] Names { get; } = { "size" };
 
         /// <inheritdoc/>
-        protected override ParserContext HandleTag(ParserContext oldContext, float measurement, MeasurementStyle style)
+        protected override void HandleTag(ParserContext oldContext, float measurement, MeasurementStyle style)
         {
             oldContext.SizeTags.Push(oldContext.Size);
             float value = style switch
@@ -25,7 +25,6 @@
             };
 
             oldContext.ResultBuilder.AppendFormat(TAGFORMAT, value);
-            return oldContext with { Size = value };
         }
     }
 }

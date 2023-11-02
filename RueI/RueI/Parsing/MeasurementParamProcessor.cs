@@ -18,7 +18,7 @@
         /// <param name="context">The context of the parser.</param>
         /// <param name="value">The measurement value.</param>
         /// <param name="style">The measurement style.</param>
-        public delegate ParserContext MeasurementTagHandler(ParserContext context, float value, MeasurementStyle style);
+        public delegate void MeasurementTagHandler(ParserContext context, float value, MeasurementStyle style);
 
         private MeasurementTagHandler tagHandler;
 
@@ -32,7 +32,7 @@
         }
 
         /// <inheritdoc/>
-        protected override bool Finish(Func<ParserContext> lazyContext, Action<ParserContext> lazyUnload)
+        protected override bool Finish(ParserContext context)
         {
             StringBuilder paramBuffer = StringBuilderPool.Shared.Rent();
             string text = StringBuilderPool.Shared.ToStringReturn(buffer);
@@ -72,8 +72,7 @@
             string bufferString = StringBuilderPool.Shared.ToStringReturn(paramBuffer);
             if (float.TryParse(bufferString, out float result))
             {
-                ParserContext newContext = tagHandler(lazyContext(), result, style);
-                lazyUnload(newContext);
+                tagHandler(context, result, style);
                 return true;
             }
             else

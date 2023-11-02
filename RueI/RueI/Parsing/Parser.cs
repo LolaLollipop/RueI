@@ -1,7 +1,10 @@
 ﻿namespace RueI
 {
     using System.Collections.ObjectModel;
+    using System.Drawing;
+    using System.Reflection;
     using System.Runtime.CompilerServices;
+    using System.Runtime.Remoting.Contexts;
     using System.Text;
 
     using NorthwoodLib.Pools;
@@ -49,88 +52,18 @@
 
             ParamProcessor? paramProcessor = null;
 
-            StringBuilder sb = StringBuilderPool.Shared.Rent();
-            HashSet<string> tagsToEnd = new();
-
-            bool shouldParse = false;
-            float currentHeight = Constants.DEFAULTHEIGHT; // in pixels
-            float size = Constants.DEFAULTSIZE;
-            float newOffset = 0;
-            float currentLineWidth = 0;
-            float widthSinceSpace = 0;
-
-            float currentCSpace = 0;
-            bool isMonospace = false;
-            bool isBold = false;
-            bool noBreak = false;
-
-            Stack<float> sizeStack = new();
-            int colorTags = 0;
-
-            CaseStyle currentCase = CaseStyle.Smallcaps;
-
-            void AddCharacter(char ch)
-            {
-                char functionalCase = currentCase switch
-                {
-                    CaseStyle.Smallcaps or CaseStyle.Uppercase => char.ToUpper(ch),
-                    CaseStyle.Lowercase => char.ToLower(ch),
-                    _ => ch
-                };
-
-                if (charSizes.TryGetValue(functionalCase, out float chSize))
-                {
-                    float multiplier = size / 35;
-                    if (currentCase == CaseStyle.Smallcaps && char.IsLower(ch))
-                    {
-                        multiplier *= 0.8f;
-                    }
-
-                    if (isMonospace && currentLineWidth != 0)
-                    {
-                        widthSinceSpace += currentCSpace;
-                    }
-                    else
-                    {
-                        widthSinceSpace += (chSize * multiplier) + currentCSpace;
-                        if (isBold)
-                        {
-                            widthSinceSpace += Constants.BOLDINCREASE * multiplier;
-                        }
-                    }
-
-                    sb.Append(ch);
-
-                    if (currentLineWidth + widthSinceSpace > Constants.DISPLAYAREAWIDTH)
-                    {
-                        CreateLineBreak();
-                    }
-                    else if (ch == ' ')
-                    {
-                        if (!noBreak)
-                        {
-                            widthSinceSpace = 0;
-                        }
-                    }
-                }
-                else
-                {
-                    // TODO: handle warnings
-                }
-            }
-
+            using ParserContext context = new();
             void FailTagMatch() // not a tag, unload buffer
             {
-                sb.Append("<​"); // zero width space guarantees that the tag isnt matched
+                context.ResultBuilder.Append("<​"); // zero width space guarantees that the tag isnt matched
                 foreach (char ch in tagBuffer.ToString())
                 {
-                    AddCharacter(ch);
-                }   
+                    AddCharacter(context, ch);
+                }
 
                 tagBuffer.Clear();
 
                 currentState = ParserState.CollectingTags;
-                paramProcessor = null;
             }
 
             void FailTagMatchParams(string paramBuffer)
@@ -139,31 +72,8 @@
 
                 foreach (char ch in paramBuffer)
                 {
-                    AddCharacter(ch);
+                    AddCharacter(context, ch);
                 }
-            }
-
-            void CreateLineBreak()
-            {
-                if (widthSinceSpace < Constants.DISPLAYAREAWIDTH)
-                {
-                    currentLineWidth = widthSinceSpace;
-                    newOffset += currentHeight;
-                }
-                else
-                {
-                    currentLineWidth = 0;
-                }
-            }
-
-            ParserContext GenerateContext()
-            {
-                return new(sb, currentHeight, currentLineWidth, size, newOffset, currentCSpace, shouldParse, isMonospace, isBold, currentCase, sizeStack, colorTags);
-            }
-
-            void LoadContext(ParserContext context)
-            {
-                (_, currentHeight, currentLineWidth, size, newOffset, currentCSpace, shouldParse, isMonospace, isBold, currentCase, _, colorTags) = context;
             }
 
             foreach (char ch in text)
@@ -176,7 +86,8 @@
                 }
                 else if (ch == '\n')
                 {
-                    sb.Append('\n');
+                    context.ResultBuilder.Append('\n');
+                    CreateLineBreak(context);
                     if (currentState != ParserState.CollectingTags)
                     {
                         FailTagMatch();
@@ -226,25 +137,36 @@
                         {
                             if (currentNode.Tag is NoParamsTagBase noParams)
                             {
-                                ParserContext context = GenerateContext();
                                 noParams.HandleTag(context);
-                                LoadContext(context);
 
                                 tagBuffer.Clear();
+
+                                paramProcessor?.Dispose();
+                                paramProcessor = null;
                                 continue; // do NOT add as a character
                             }
-                            else if (currentState == ParserState.CollectingColorParams && paramProcessor != null)
+                            else if (currentState == ParserState.CollectingParams && paramProcessor != null)
                             {
-                                bool wasSuccessful = paramProcessor.GetFinishResult(GenerateContext, LoadContext, out string? unloaded);
+                                bool wasSuccessful = paramProcessor.GetFinishResult(context, out string? unloaded);
                                 if (!wasSuccessful)
                                 {
                                     FailTagMatchParams(unloaded!);
+                                } else
+                                {
+                                    paramProcessor?.Dispose();
+                                    paramProcessor = null;
+                                    tagBuffer.Clear();
+
+                                    continue;
                                 }
                             }
                             else
                             {
                                 FailTagMatch();
                             }
+
+                            paramProcessor?.Dispose();
+                            paramProcessor = null;
                         }
                     }
                     else
@@ -252,44 +174,90 @@
                         FailTagMatch();
                     }
                 }
-                else if (currentState == ParserState.CollectingMeasureParams)
+                else if (currentState == ParserState.CollectingParams)
                 {
                     paramProcessor?.Add(ch);
                     continue; // do NOT add as a character
                 }
 
-                AddCharacter(ch);
+                AddCharacter(context, ch);
+            } // foreach
+
+            paramProcessor?.Dispose();
+            return new ParsedData(context.ResultBuilder.ToString(), context.NewOffset);
+        }
+
+        public void AddCharacter(ParserContext context, char ch)
+        {
+            float size = CalculateCharacterLength(context, ch);
+
+            context.ResultBuilder.Append(ch);
+
+            if (context.CurrentLineWidth + context.WidthSinceSpace > Constants.DISPLAYAREAWIDTH)
+            {
+                CreateLineBreak(context);
             }
-
-            StringBuilderPool.Shared.Return(tagBuffer);
-
-            return new ParsedData(StringBuilderPool.Shared.ToStringReturn(sb), newOffset);
+            else if (ch == ' ')
+            {
+                if (!context.NoBreak)
+                {
+                    context.WidthSinceSpace = 0;
+                }
+            }
         }
 
         /// <summary>
-        /// Calculates the length of an <see cref="IEnumerable{T}"/> containing characters.
+        /// Calculates the length of an <see cref="char"/> with a context.
         /// </summary>
-        /// <param name="chars">The characters to calculate the length for.</param>
+        /// <param name="ch">The char to calculate the length for.</param>
         /// <param name="context">The context to parse the string under.</param>
-        /// <returns>A float indicating the total length of the characters.</returns>
-        public float CalculateCharacterLength(IEnumerable<char> chars, ParserContext context)
+        /// <returns>A float indicating the total length of the char.</returns>
+        public float CalculateCharacterLength(ParserContext context, char ch)
         {
-            float buffer = 0;
-            foreach (char ch in chars)
+            char functionalCase = context.CurrentCase switch
             {
-                if (Constants.CharacterLengths.TryGetValue(ch, out float value))
-                {
+                CaseStyle.Smallcaps or CaseStyle.Uppercase => char.ToUpper(ch),
+                CaseStyle.Lowercase => char.ToLower(ch),
+                _ => ch
+            };
 
-                }
+            if (context.IsMonospace)
+            {
+                return context.CurrentCSpace;
             }
 
-            return buffer;
+            if (Constants.CharacterLengths.TryGetValue(functionalCase, out float chSize))
+            {
+                float multiplier = context.Size / 35;
+                if (context.CurrentCase == CaseStyle.Smallcaps && char.IsLower(ch))
+                {
+                    multiplier *= 0.8f;
+                }
+
+                return (chSize * multiplier) + chSize;
+            }
+            else
+            {
+                // TODO: handle warnings
+                return default;
+            }
+        }
+
+        public void CreateLineBreak(ParserContext context)
+        {
+            if (context.CurrentLineWidth < Constants.DISPLAYAREAWIDTH)
+            {
+                context.CurrentLineWidth = context.WidthSinceSpace;
+                context.NewOffset += context.CurrentLineHeight;
+            }
+            else
+            {
+                context.CurrentLineWidth = 0;
+            }
         }
 
         private void Reassemble()
         {
-            //  baseNodes.Branches.Clear();
-
             foreach (RichTextTag tag in tags)
             {
                 foreach (string name in tag.Names)
@@ -309,18 +277,6 @@
 
                     currentNode.Tag = tag;
                 }
-            }
-        }
-
-        internal float CalculateCharacterLength(char ch, ParserContext context)
-        {
-            float multiplier = context.Size;
-            if (Constants.CharacterLengths.TryGetValue(ch, out float value))
-            {
-                return 1;
-            } else
-            {
-                return 0;
             }
         }
     }

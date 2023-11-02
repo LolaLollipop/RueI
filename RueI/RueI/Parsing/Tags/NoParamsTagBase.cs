@@ -20,6 +20,6 @@ namespace RueI.Parsing.Tags
         /// </summary>
         /// <param name="oldContext">The old context of the parser.</param>
         /// <returns>The modified context.</returns>
-        public abstract ParserContext HandleTag(ParserContext oldContext);
+        public abstract void HandleTag(ParserContext oldContext);
     }
 }

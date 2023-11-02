@@ -27,6 +27,7 @@
             if (maybeProcessor != null)
             {
                 processor = maybeProcessor;
+                return true;
             } else
             {
                 processor = null;

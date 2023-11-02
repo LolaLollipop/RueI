@@ -14,6 +14,6 @@
         /// <returns>The new measurement tag processor.</returns>
         public override ParamProcessor? GetProcessor() => new MeasurementParamProcessor(HandleTag);
 
-        protected abstract ParserContext HandleTag(ParserContext oldContext, float measurement, MeasurementStyle style);
+        protected abstract void HandleTag(ParserContext oldContext, float measurement, MeasurementStyle style);
     }
 }
