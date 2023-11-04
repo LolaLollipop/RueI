@@ -4,6 +4,9 @@ using System.Text;
 
 namespace RueI.Records
 {
+    /// <summary>
+    /// Describes the state of a parser at a time.
+    /// </summary>
     public class ParserContext : IDisposable
     {
         /// <summary>

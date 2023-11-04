@@ -32,19 +32,7 @@
         /// <remarks>Updating this does not automatically update the display.</remarks>
         public T CurrentScreen { get; set; }
 
-        /// <summary>
-        /// Updates the display if the current screen is a certain screen.
-        /// </summary>
-        /// <param name="screen">The screen.</param>
-        public void Update(T screen)
-        {
-            if (CurrentScreen.Equals(screen))
-            {
-                Update();
-            }
-        }
-
-        protected override bool ShouldParse(Element element)
+        internal override bool ShouldParse(Element element)
         {
             if (!element.Enabled)
             {
@@ -96,6 +84,8 @@
         public Display(ReferenceHub hub)
         {
             ReferenceHub = hub;
+
+            DisplayCoordinator.Get(ReferenceHub).AddDisplay(this);
         }
 
         /// <summary>
@@ -119,92 +109,10 @@
         /// </summary>
         public List<Element> Elements { get; } = new();
 
+        public void Update() => DisplayCoordinator.Get(ReferenceHub).Update();
+
         protected static Comparison<Element> Comparer { get; } = (Element first, Element other) => other.ZIndex - first.ZIndex;
 
-        /// <summary>
-        /// Updates this display and shows the player the new hint, if the rate limit is not active.
-        /// </summary>
-        public void Update()
-        {
-            if (!rateLimitActive)
-            {
-                rateLimitActive = true;
-                Timing.CallDelayed(HINTRATELIMIT, OnRateLimitFinished);
-
-                string text = ParseElements();
-                ReferenceHub.hints.Show(new TextHint(text, new HintParameter[] { new StringHintParameter(text) }, null, float.MaxValue));
-
-            }
-            else
-            {
-                shouldUpdate = true;
-                return;
-            }
-        }
-
-        internal virtual string ParseElements()
-        {
-            if (!elements.Any())
-            {
-                return string.Empty;
-            }
-
-            StringBuilder sb = StringBuilderPool.Shared.Rent();
-            float totalOffset = 0;
-
-            float lastPosition = 0;
-            float lastOffset = 0;
-
-            elements.Sort();
-
-            for (int i = 0; i < elements.Count; i++)
-            {
-                Element curElement = elements[i];
-                if (!ShouldParse(curElement))
-                {
-                    continue;
-                }
-
-                ParsedData parsedData = curElement.ParsedData;
-                parsedData.Offset += curElement.AdditionalLineBreaks;
-
-                if (i != 0)
-                {
-                    float calcedOffset = Element.CalculateOffset(lastPosition, lastOffset, curElement.FunctionalPosition);
-                    Log.Debug(calcedOffset);
-                    sb.Append($"<line-height={calcedOffset}px>\n</line-height>");
-                    totalOffset += calcedOffset;
-                }
-                else
-                {
-                    totalOffset += curElement.FunctionalPosition;
-                }
-
-                sb.Append(parsedData.Content);
-                sb.Append(TAGCLOSER);
-
-                totalOffset += parsedData.Offset;
-                lastPosition = curElement.FunctionalPosition;
-                lastOffset = parsedData.Offset;
-            }
-
-            sb.Insert(0, $"<line-height={totalOffset}px>\n");
-            return StringBuilderPool.Shared.ToStringReturn(sb);
-        }
-
         internal virtual bool ShouldParse(Element element) => element.Enabled;
-
-        private void OnRateLimitFinished()
-        {
-            rateLimitActive = false;
-            if (shouldUpdate)
-            {
-                shouldUpdate = false;
-                Update();
-            }
-
-            RateLimitFinishedEventArgs args = new(this.ReferenceHub);
-            Events.Events.OnRateLimitFinished(args);
-        }
     }
 }

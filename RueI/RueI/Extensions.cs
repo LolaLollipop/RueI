@@ -1,6 +1,6 @@
 ﻿namespace RueI
 {
-    /// <summary>
+/*    /// <summary>
     /// Coordinates multiple PlayerDisplays.
     /// </summary>
     public static class Extensions
@@ -17,7 +17,8 @@
             where T: class
         {
             value = default;
+            return true;
         }
 #nullable enable
-    }
+    } */
 }

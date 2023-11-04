@@ -33,7 +33,7 @@
             {
                 unloaded = null;
                 return true;
-            } 
+            }
             else
             {
                 unloaded = buffer.ToString();

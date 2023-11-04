@@ -5,6 +5,10 @@
 
     using System.Text.RegularExpressions;
     using RueI.Interfaces;
+    using RueI.Parsing;
+    using RueI.Parsing.Tags.ConcreteTags;
+    using NorthwoodLib.Pools;
+    using PluginAPI.Roles;
 
     /// <summary>
     /// Represents an element that is shown when certain screens are active.
@@ -123,7 +127,7 @@
         public GetContent ContentGetter { get; set; }
 
         /// <inheritdoc/>
-        public override ParsedData ParsedData => Parse(ContentGetter());
+        public override ParsedData ParsedData => Parser.Parse(ContentGetter());
     }
 
     /// <summary>
@@ -144,7 +148,7 @@
         {
             Position = position;
             // Content = content;
-            cachedParsedData = Parse(content);
+            cachedParsedData = Parser.Parse(content);
         }
 
         /// <inheritdoc/>
@@ -162,7 +166,7 @@
         public virtual void Set(string content)
         {
             // Content = content;
-            cachedParsedData = Parse(content);
+            cachedParsedData = Parser.Parse(content);
         }
     }
 
@@ -171,9 +175,6 @@
     /// </summary>
     public abstract class Element : IComparable<Element>
     {
-        // match line heights, line height closers, noparse tags, noparse closing tags, br, and newlines
-        [Obsolete]
-        protected static readonly Regex ParserRegex = new(@"<(?:line-height=(-?[0-9]\d*(?:\.\d+?)?)(px|em|ems|%)>|/line-height>|noparse>|/noparse>|br>)|\n");
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Element"/> class.
@@ -185,6 +186,15 @@
             Position = position;
             ZIndex = zIndex;
         }
+
+        /// <summary>
+        /// Gets the parser used by all elements.
+        /// </summary>
+        protected static Parser Parser { get; } = new(
+            new RichTextTag[]
+            {
+                new SizeTag(),
+            });
 
         /// <summary>
         /// Gets or sets a value indicating whether or not this element is enabled and will show.
@@ -235,127 +245,6 @@
         /// </summary>
         /// <param name="other">The other element.</param>
         /// <returns>An <see cref="int"/> indicating whether not this element precedes this element. </returns>
-        /// 4 - 5
         public int CompareTo(Element other) => this.ZIndex - other.ZIndex;
-
-        /// <summary>
-        /// Parses an element's content, providing the offset to maintain a constant position.
-        /// </summary>
-        /// <param name="content">The content to parse.</param>
-        /// <returns>A <see cref="ParsedData"/> containing the new content and position.</returns>
-        protected static ParsedData Parse(string content)
-        {
-            bool shouldParse = true;
-            float currentHeight = Display.DEFAULTHEIGHT; // in pixels
-            float newOffset = 0;
-
-            content = $"<line-height={Display.DEFAULTHEIGHT}px>" + content;
-            string newString = ParserRegex.Replace(content, (match) =>
-            {
-                string small = match.Value.Substring(0, Math.Min(5, match.Value.Length));
-
-                switch (small)
-                {
-                    case "<line" when shouldParse:
-
-                        if (!float.TryParse(match.Groups[1].ToString(), out float value))
-                        {
-                            currentHeight = Display.DEFAULTHEIGHT;
-                            return $"<line-height={currentHeight}px>";
-                        }
-
-                        switch (match.Groups[2].ToString())
-                        {
-                            case "%":
-                                currentHeight = (value / 100) * Display.DEFAULTHEIGHT;
-                                break;
-                            case "em" or "ems":
-                                currentHeight = value * Display.EMSTOPIXELS;
-                                break;
-                        }
-
-                        return $"<line-height={currentHeight}px>";
-                    case "</lin" when shouldParse:
-                        currentHeight = Display.DEFAULTHEIGHT;
-                        return $"<line-height={currentHeight}px>";
-                    case "</nop":
-                        shouldParse = true;
-                        break;
-                    case "<nopa":
-                        shouldParse = false;
-                        break;
-                    case "<br>" when shouldParse:
-                        newOffset += currentHeight;
-                        break;
-                    case "\n":
-                        newOffset += currentHeight;
-                        break;
-                }
-
-                return match.ToString();
-            });
-            return new ParsedData(newString, newOffset);
-        }
-
-        /// <summary>
-        /// Parses an element's content, providing the offset to maintain a constant position.
-        /// </summary>
-        /// <param name="content">The content to parse.</param>
-        /// <returns>A <see cref="ParsedData"/> containing the new content and position.</returns>
-        protected static ParsedData ParseVersionTwo(string content)
-        {
-            bool shouldParse = true;
-            float currentHeight = Display.DEFAULTHEIGHT; // in pixels
-            float newOffset = 0;
-
-            float currentCSpace = 0;
-            bool isMonospace = false;
-
-            content = $"<line-height={Display.DEFAULTHEIGHT}px>" + content;
-            string newString = ParserRegex.Replace(content, (match) =>
-            {
-                string small = match.Value.Substring(0, Math.Min(5, match.Value.Length));
-
-                switch (small)
-                {   
-                    case "<line" when shouldParse:
-
-                        if (!float.TryParse(match.Groups[1].ToString(), out float value))
-                        {
-                            currentHeight = Display.DEFAULTHEIGHT;
-                            return $"<line-height={currentHeight}px>";
-                        }
-
-                        switch (match.Groups[2].ToString())
-                        {
-                            case "%":
-                                currentHeight = (value / 100) * Display.DEFAULTHEIGHT;
-                                break;
-                            case "em" or "ems":
-                                currentHeight = value * Display.EMSTOPIXELS;
-                                break;
-                        }
-                        return $"<line-height={currentHeight}px>";
-                    case "</lin" when shouldParse:
-                        currentHeight = Display.DEFAULTHEIGHT;
-                        return $"<line-height={currentHeight}px>";
-                    case "</nop":
-                        shouldParse = true;
-                        break;
-                    case "<nopa":
-                        shouldParse = false;
-                        break;
-                    case "<br>" when shouldParse:
-                        newOffset += currentHeight;
-                        break;
-                    case "\n":
-                        newOffset += currentHeight;
-                        break;
-                }
-
-                return match.ToString();
-            });
-            return new ParsedData(newString, newOffset);
-        }
     }
 }

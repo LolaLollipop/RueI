@@ -1,4 +1,10 @@
-﻿namespace RueI
+﻿using Hints;
+using NorthwoodLib.Pools;
+using RueI.Records;
+using System.Text;
+using System.Xml.Linq;
+
+namespace RueI
 {
     /// <summary>
     /// Coordinates multiple PlayerDisplays.
@@ -36,12 +42,20 @@
             if (DisplayCoordinators.TryGetValue(hub, out DisplayCoordinator value))
             {
                 return value;
-            } 
+            }
             else
             {
                 return new DisplayCoordinator(hub);
             }
         }
+
+        public void Update()
+        {
+            string text = ParseElements();
+            Hub.hints.Show(new TextHint(text, new HintParameter[] { new StringHintParameter(text) }, null, float.MaxValue));
+        }
+
+        internal void AddDisplay(Display display) => displays.Add(display);
 
         private IEnumerable<Element> GetAllElements()
         {
@@ -55,6 +69,55 @@
                     }
                 }
             }
+        }
+
+        private string ParseElements()
+        {
+            List<Element> elements = displays.SelectMany((display) =>
+            {
+                return display.Elements;
+            }).ToList();
+
+            if (!elements.Any())
+            {
+                return string.Empty;
+            }
+
+            StringBuilder sb = StringBuilderPool.Shared.Rent();
+            float totalOffset = 0;
+
+            float lastPosition = 0;
+            float lastOffset = 0;
+
+            elements.Sort();
+
+            for (int i = 0; i < elements.Count; i++)
+            {
+                Element curElement = elements[i];
+
+                ParsedData parsedData = curElement.ParsedData;
+                parsedData.Offset += curElement.AdditionalLineBreaks;
+
+                if (i != 0)
+                {
+                    float calcedOffset = Element.CalculateOffset(lastPosition, lastOffset, curElement.FunctionalPosition);
+                    sb.Append($"<line-height={calcedOffset}px>\n</line-height>");
+                    totalOffset += calcedOffset;
+                }
+                else
+                {
+                    totalOffset += curElement.FunctionalPosition;
+                }
+
+                sb.Append(parsedData.Content);
+                sb.Append(Constants.TAGCLOSER);
+
+                totalOffset += parsedData.Offset;
+                lastPosition = curElement.FunctionalPosition;
+                lastOffset = parsedData.Offset;
+            }
+
+            return $"<line-height={totalOffset}px>\n" + StringBuilderPool.Shared.ToStringReturn(sb);
         }
     }
 }

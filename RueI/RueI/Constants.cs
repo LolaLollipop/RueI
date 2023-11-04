@@ -8,6 +8,8 @@ namespace RueI
     /// </summary>
     public static class Constants
     {
+        public static Parser Parser { get; } = new();
+
         /// <summary>
         /// Gets the default height if a line-height is not provided.
         /// </summary>
@@ -39,6 +41,11 @@ namespace RueI
         /// Gets an approximation of how many pixels are an in an em.
         /// </summary>
         public const float EMSTOPIXELS = 35;
+
+        /// <summary>
+        /// Gets the maximum name size allowed for a tag.
+        /// </summary>
+        public const int MAXTAGNAMESIZE = 13;
 
         /// <summary>
         /// Gets a string used to close all tags.

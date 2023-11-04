@@ -28,7 +28,8 @@
             {
                 processor = maybeProcessor;
                 return true;
-            } else
+            }
+            else
             {
                 processor = null;
                 return false;

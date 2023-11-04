@@ -18,6 +18,6 @@
         /// <summary>
         /// Indicates that the parser is currently collecting characters for a param.
         /// </summary>
-        CollectingParams
+        CollectingParams,
     }
 }

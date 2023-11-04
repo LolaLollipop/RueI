@@ -1,10 +1,6 @@
 ﻿namespace RueI
 {
     using System.Collections.ObjectModel;
-    using System.Drawing;
-    using System.Reflection;
-    using System.Runtime.CompilerServices;
-    using System.Runtime.Remoting.Contexts;
     using System.Text;
 
     using NorthwoodLib.Pools;
@@ -19,23 +15,28 @@
     /// </summary>
     public class Parser
     {
-        private readonly ParserNode baseNodes = new();
-        private readonly List<RichTextTag> tags = new();
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Parser"/> class.
+        /// </summary>
+        /// <param name="tags">The list of tags to initialize with.</param>
+        public Parser(IEnumerable<RichTextTag> tags)
+        {
+            Tags = new(ExtractTagsToPairs(tags));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Parser"/> class.
+        /// </summary>
+        /// <param name="tags">The list of tags to initialize with.</param>
+        public Parser(params RichTextTag[] tags)
+        {
+            Tags = new(ExtractTagsToPairs(tags));
+        }
 
         /// <summary>
         /// Gets the current tags of the parser.
         /// </summary>
-        public ReadOnlyCollection<RichTextTag> CurrentTags => tags.AsReadOnly();
-
-        /// <summary>
-        /// Adds a tag to the parser.
-        /// </summary>
-        /// <param name="tag">The tag to add.</param>
-        public void AddTag(RichTextTag tag)
-        {
-            tags.Add(tag);
-            Reassemble();
-        }
+        public ReadOnlyDictionary<string, RichTextTag> Tags { get; }
 
         /// <summary>
         /// Parses a rich text string.
@@ -44,11 +45,10 @@
         /// <returns>A <see cref="ParsedData"/> containing information about the string.</returns>
         public ParsedData Parse(string text)
         {
-            ReadOnlyDictionary<char, float> charSizes = Constants.CharacterLengths;
-
             ParserState currentState = ParserState.CollectingTags;
-            ParserNode? currentNode = null;
+
             StringBuilder tagBuffer = StringBuilderPool.Shared.Rent();
+            int tagBufferSize = 0;
 
             ParamProcessor? paramProcessor = null;
 
@@ -64,6 +64,7 @@
                 tagBuffer.Clear();
 
                 currentState = ParserState.CollectingTags;
+                tagBufferSize = 0;
             }
 
             void FailTagMatchParams(string paramBuffer)
@@ -81,7 +82,6 @@
                 if (ch == '<')
                 {
                     currentState = ParserState.DescendingTag;
-                    currentNode = baseNodes;
                     continue; // do NOT add as a character
                 }
                 else if (ch == '\n')
@@ -99,32 +99,22 @@
                 {
                     if ((ch > '\u0060' && ch < '\u007B') || ch == '-') // descend deeper into node
                     {
-                        if (currentNode?.Branches?.TryGetValue(ch, out ParserNode node) == true)
-                        {
-                            currentNode = node;
-                            tagBuffer.Append(ch);
-                            continue; // do NOT add as a character
-                        }
-                        else
+                        if (tagBufferSize > Constants.MAXTAGNAMESIZE)
                         {
                             FailTagMatch();
                         }
+
+                        tagBuffer.Append(ch);
+                        continue;
                     }
                     else if (ch == '=')
                     {
-                        if (currentNode?.Tag != null)
+                        if (Tags.TryGetValue(tagBuffer.ToString(), out RichTextTag tag) && tag.TryGetNewProcessor(out ParamProcessor? processor))
                         {
-                            if (ch == '=' && currentNode.Tag.TryGetNewProcessor(out ParamProcessor? processor))
-                            {
-                                paramProcessor = processor;
+                            paramProcessor = processor;
 
-                                tagBuffer.Append('=');
-                                continue; // do NOT add as a character
-                            }
-                            else
-                            {
-                                FailTagMatch();
-                            }
+                            tagBuffer.Append('=');
+                            continue; // do NOT add as a character
                         }
                         else
                         {
@@ -133,9 +123,9 @@
                     }
                     else if (ch == '>')
                     {
-                        if (currentNode?.Tag != null)
+                        if (Tags.TryGetValue(tagBuffer.ToString(), out RichTextTag tag))
                         {
-                            if (currentNode.Tag is NoParamsTagBase noParams)
+                            if (tag is NoParamsTagBase noParams)
                             {
                                 noParams.HandleTag(context);
 
@@ -151,7 +141,8 @@
                                 if (!wasSuccessful)
                                 {
                                     FailTagMatchParams(unloaded!);
-                                } else
+                                }
+                                else
                                 {
                                     paramProcessor?.Dispose();
                                     paramProcessor = null;
@@ -167,6 +158,10 @@
 
                             paramProcessor?.Dispose();
                             paramProcessor = null;
+                        }
+                        else
+                        {
+                            FailTagMatch();
                         }
                     }
                     else
@@ -187,9 +182,16 @@
             return new ParsedData(context.ResultBuilder.ToString(), context.NewOffset);
         }
 
+        /// <summary>
+        /// Adds a character to a parser context.
+        /// </summary>
+        /// <param name="context">The context of the parser.</param>
+        /// <param name="ch">The character to add.</param>
         public void AddCharacter(ParserContext context, char ch)
         {
             float size = CalculateCharacterLength(context, ch);
+
+            context.WidthSinceSpace += size;
 
             context.ResultBuilder.Append(ch);
 
@@ -209,8 +211,8 @@
         /// <summary>
         /// Calculates the length of an <see cref="char"/> with a context.
         /// </summary>
+        /// <param name="context">The context to parse the char under.</param>
         /// <param name="ch">The char to calculate the length for.</param>
-        /// <param name="context">The context to parse the string under.</param>
         /// <returns>A float indicating the total length of the char.</returns>
         public float CalculateCharacterLength(ParserContext context, char ch)
         {
@@ -253,31 +255,27 @@
             else
             {
                 context.CurrentLineWidth = 0;
+                context.NewOffset += context.WidthSinceSpace;
             }
         }
 
-        private void Reassemble()
+        /// <summary>
+        /// Extracts the tags of an <see cref="IEnumerable{T}"/> containing <see cref="RichTextTag"/>s.
+        /// </summary>
+        /// <param name="tags">The <see cref="IEnumerable{T}"/> containing <see cref="RichTextTag"/>s.</param>
+        /// <returns>A new dictionary containing the modified values.</returns>
+        private Dictionary<string, RichTextTag> ExtractTagsToPairs(IEnumerable<RichTextTag> tags)
         {
-            foreach (RichTextTag tag in tags)
+            Dictionary<string, RichTextTag> dict = new();
+            foreach (var tag in tags)
             {
                 foreach (string name in tag.Names)
                 {
-                    ParserNode currentNode = baseNodes;
-
-                    foreach (char ch in name)
-                    {
-                        if (!currentNode.Branches.TryGetValue(ch, out ParserNode node))
-                        {
-                            node = new ParserNode();
-                            currentNode.Branches.Add(ch, node);
-                        }
-
-                        currentNode = node;
-                    }
-
-                    currentNode.Tag = tag;
+                    dict.Add(name, tag);
                 }
             }
+
+            return dict;
         }
     }
 }

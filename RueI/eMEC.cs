@@ -1,10 +1,12 @@
-﻿using System.Collections.ObjectModel;
-using System.Diagnostics;
-using System.Diagnostics.CodeAnalysis;
-using MEC;
-
+﻿#pragma warning disable SA1300 // Element should begin with upper-case letter
 namespace eMEC
+#pragma warning restore SA1300 // Element should begin with upper-case letter
 {
+    using System.Collections.ObjectModel;
+    using System.Diagnostics;
+    using System.Diagnostics.CodeAnalysis;
+    using MEC;
+
     /// <summary>
     /// Provides extensions for working with MEC. The primary purpose is to provide better nullable functionality.
     /// </summary>
@@ -191,6 +193,9 @@ namespace eMEC
         }
     }
 
+    /// <summary>
+    /// Provides the base class for all tasks.
+    /// </summary>
     public abstract class TaskBase : ITaskable
     {
         protected CoroutineHandle? ch;
@@ -249,6 +254,9 @@ namespace eMEC
         }
     }
 
+    /// <summary>
+    /// Manages a number of ITaskables and tasks.
+    /// </summary>
     public class TaskPool : Collection<ITaskable>, ITaskable
     {
         /// <summary>
@@ -314,9 +322,12 @@ namespace eMEC
             stopwatch.Stop();
         }
 
+        /// <summary>
+        /// Resume the cooldown if it is paused.
+        /// </summary>
         public void Resume()
         {
-
+            stopwatch.Start();
         }
     }
 }

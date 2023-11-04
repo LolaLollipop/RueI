@@ -19,7 +19,6 @@ namespace RueI.Parsing.Tags
         /// Handles an instance of the tag.
         /// </summary>
         /// <param name="oldContext">The old context of the parser.</param>
-        /// <returns>The modified context.</returns>
         public abstract void HandleTag(ParserContext oldContext);
     }
 }
