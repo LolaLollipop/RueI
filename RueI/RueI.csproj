@@ -6,7 +6,6 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 	<Platforms>AnyCPU;x64</Platforms>
-	<ApplicationIcon>131313.ico</ApplicationIcon>
 	<Title>RueI</Title>
 	<Copyright>CC0 1.0</Copyright>
 	<Version>2.0.0</Version>

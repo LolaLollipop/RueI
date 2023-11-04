@@ -1,11 +1,11 @@
-﻿using Hints;
-using NorthwoodLib.Pools;
-using RueI.Records;
-using System.Text;
-using System.Xml.Linq;
-
-namespace RueI
+﻿namespace RueI
 {
+    using System.Text;
+    using System.Xml.Linq;
+    using Hints;
+    using NorthwoodLib.Pools;
+    using RueI.Records;
+
     /// <summary>
     /// Coordinates multiple PlayerDisplays.
     /// </summary>
@@ -78,11 +78,13 @@ namespace RueI
                 return display.Elements;
             }).ToList();
 
+            ServerConsole.AddLog("Running RueI :)");
             if (!elements.Any())
             {
                 return string.Empty;
             }
 
+            ServerConsole.AddLog(elements.Count.ToString());
             StringBuilder sb = StringBuilderPool.Shared.Rent();
             float totalOffset = 0;
 
