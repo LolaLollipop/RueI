@@ -106,6 +106,7 @@
                 {
                     BatchJob finishedBatch = new(currentBatch, CalculateWeighted(currentBatch));
                     currentBatches.Add(finishedBatch);
+                    currentBatch = ListPool<ScheduledJob>.Shared.Rent(10);
                 }
             }
 
@@ -130,6 +131,7 @@
             }
 
             coordinator.IgnoreUpdate = false;
+            ListPool<ScheduledJob>.Shared.Return(batchJob.jobs);
 
             currentBatches.RemoveAt(0);
             rateLimiter.Start(Constants.HintRateLimit);
