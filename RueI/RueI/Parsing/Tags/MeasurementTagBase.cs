@@ -1,7 +1,6 @@
 ﻿namespace RueI.Parsing.Tags
 {
     using RueI.Enums;
-    using RueI.Records;
 
     /// <summary>
     /// Defines the base class for all tags that take in a measurement.
@@ -14,6 +13,12 @@
         /// <returns>The new measurement tag processor.</returns>
         public override ParamProcessor? GetProcessor() => new MeasurementParamProcessor(HandleTag);
 
-        protected abstract void HandleTag(ParserContext oldContext, float measurement, MeasurementStyle style);
+        /// <summary>
+        /// Handles an instance of the measurement tag.
+        /// </summary>
+        /// <param name="context">The context of the parser.</param>
+        /// <param name="measurement">The value of the measurement.</param>
+        /// <param name="style">The style of the measurement.</param>
+        protected abstract void HandleTag(ParserContext context, float measurement, MeasurementStyle style);
     }
 }

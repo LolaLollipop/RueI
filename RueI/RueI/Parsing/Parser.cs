@@ -47,12 +47,16 @@
         {
             ParserState currentState = ParserState.CollectingTags;
 
-            StringBuilder tagBuffer = StringBuilderPool.Shared.Rent();
+            StringBuilder tagBuffer = StringBuilderPool.Shared.Rent(Constants.MAXTAGNAMESIZE);
             int tagBufferSize = 0;
 
             ParamProcessor? paramProcessor = null;
 
             using ParserContext context = new();
+            context.ResultBuilder.Append("<line-height=")
+                                 .Append(Constants.DEFAULTHEIGHT)
+                                 .Append('>');
+
             void FailTagMatch() // not a tag, unload buffer
             {
                 context.ResultBuilder.Append("<​"); // zero width space guarantees that the tag isnt matched
@@ -245,6 +249,10 @@
             }
         }
 
+        /// <summary>
+        /// Generates the effects of a linebreak for a parser.
+        /// </summary>
+        /// <param name="context">The context of the parser.</param>
         public void CreateLineBreak(ParserContext context)
         {
             if (context.CurrentLineWidth < Constants.DISPLAYAREAWIDTH)

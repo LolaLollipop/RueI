@@ -1,9 +1,9 @@
 ﻿namespace RueI
 {
     using System.Text;
-    using System.Xml.Linq;
     using Hints;
     using NorthwoodLib.Pools;
+    using RueI.Extensions;
     using RueI.Records;
 
     /// <summary>
@@ -11,7 +11,7 @@
     /// </summary>
     public class DisplayCoordinator
     {
-        private List<Display> displays = new();
+        private List<DisplayBase> displays = new();
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DisplayCoordinator"/> class.
@@ -38,7 +38,8 @@
         /// </summary>
         /// <param name="hub">The hub to get the display for.</param>
         /// <returns>The DisplayCoordinator.</returns>
-        public static DisplayCoordinator Get(ReferenceHub hub) {
+        public static DisplayCoordinator Get(ReferenceHub hub)
+        {
             if (DisplayCoordinators.TryGetValue(hub, out DisplayCoordinator value))
             {
                 return value;
@@ -49,42 +50,38 @@
             }
         }
 
+        /// <summary>
+        /// Updates this display.
+        /// </summary>
         public void Update()
         {
             string text = ParseElements();
-            Hub.hints.Show(new TextHint(text, new HintParameter[] { new StringHintParameter(text) }, null, float.MaxValue));
+            ServerConsole.AddLog(text);
+            Hub.hints.Show(new TextHint(text, new HintParameter[] { new StringHintParameter(text) }, null, 99999));
         }
 
-        internal void AddDisplay(Display display) => displays.Add(display);
+        /// <summary>
+        /// Adds a display to this <see cref="DisplayCoordinator"/>.
+        /// </summary>
+        /// <param name="display">The display to add.</param>
+        internal void AddDisplay(DisplayBase display) => displays.Add(display);
 
-        private IEnumerable<Element> GetAllElements()
+        private IEnumerable<IElement> GetAllElements()
         {
-            foreach (Display display in displays)
-            {
-                foreach (Element element in display.Elements)
-                {
-                    if (display.ShouldParse(element))
-                    {
-                        yield return element;
-                    }
-                }
-            }
+            return displays.SelectMany(x => x.GetAllElements());
         }
 
         private string ParseElements()
         {
-            List<Element> elements = displays.SelectMany((display) =>
-            {
-                return display.Elements;
-            }).ToList();
+            List<IElement> elements = GetAllElements().ToList();
 
-            ServerConsole.AddLog("Running RueI :)");
+            PluginAPI.Core.Log.Info("Trying");
             if (!elements.Any())
             {
                 return string.Empty;
             }
 
-            ServerConsole.AddLog(elements.Count.ToString());
+            PluginAPI.Core.Log.Info(elements.Count.ToString());
             StringBuilder sb = StringBuilderPool.Shared.Rent();
             float totalOffset = 0;
 
@@ -95,27 +92,28 @@
 
             for (int i = 0; i < elements.Count; i++)
             {
-                Element curElement = elements[i];
+                IElement curElement = elements[i];
 
                 ParsedData parsedData = curElement.ParsedData;
-                parsedData.Offset += curElement.AdditionalLineBreaks;
+
+                float funcPos = curElement.GetFunctionalPosition();
 
                 if (i != 0)
                 {
-                    float calcedOffset = Element.CalculateOffset(lastPosition, lastOffset, curElement.FunctionalPosition);
-                    sb.Append($"<line-height={calcedOffset}px>\n</line-height>");
+                    float calcedOffset = ElementHelpers.CalculateOffset(lastPosition, lastOffset, funcPos);
+                    sb.Append($"<line-height={calcedOffset}px>\n");
                     totalOffset += calcedOffset;
                 }
                 else
                 {
-                    totalOffset += curElement.FunctionalPosition;
+                    totalOffset += funcPos;
                 }
 
                 sb.Append(parsedData.Content);
                 sb.Append(Constants.TAGCLOSER);
 
                 totalOffset += parsedData.Offset;
-                lastPosition = curElement.FunctionalPosition;
+                lastPosition = funcPos;
                 lastOffset = parsedData.Offset;
             }
 

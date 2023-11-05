@@ -1,7 +1,6 @@
 ﻿namespace RueI.Parsing.Tags.ConcreteTags
 {
     using RueI.Enums;
-    using RueI.Records;
 
     /// <summary>
     /// Provides a way to handle size tags.
@@ -14,9 +13,9 @@
         public override string[] Names { get; } = { "size" };
 
         /// <inheritdoc/>
-        protected override void HandleTag(ParserContext oldContext, float measurement, MeasurementStyle style)
+        protected override void HandleTag(ParserContext context, float measurement, MeasurementStyle style)
         {
-            oldContext.SizeTags.Push(oldContext.Size);
+            context.SizeTags.Push(context.Size);
             float value = style switch
             {
                 MeasurementStyle.Percentage => measurement / 100 * Constants.DEFAULTSIZE,
@@ -24,7 +23,7 @@
                 _ => measurement
             };
 
-            oldContext.ResultBuilder.AppendFormat(TAGFORMAT, value);
+            context.ResultBuilder.AppendFormat(TAGFORMAT, value);
         }
     }
 }

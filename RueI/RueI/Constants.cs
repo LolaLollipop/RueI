@@ -1,14 +1,14 @@
-﻿using System.Collections.ObjectModel;
-using System.Drawing;
-
-namespace RueI
+﻿namespace RueI
 {
+    using RueI.Parsing.Tags.ConcreteTags;
+    using RueI.Parsing;
+    using System.Collections.ObjectModel;
+
     /// <summary>
     /// Provides a variety of constant values.
     /// </summary>
     public static class Constants
     {
-        public static Parser Parser { get; } = new();
 
         /// <summary>
         /// Gets the default height if a line-height is not provided.
@@ -40,7 +40,7 @@ namespace RueI
         /// <summary>
         /// Gets an approximation of how many pixels are an in an em.
         /// </summary>
-        public const float EMSTOPIXELS = 35;
+        public const float EMSTOPIXELS = 34.7f;
 
         /// <summary>
         /// Gets the maximum name size allowed for a tag.
@@ -59,10 +59,23 @@ namespace RueI
 
         internal const float BETTER = 0.47945214761f;
 
+        /// <summary>
+        /// Gets the default color for hints.
+        /// </summary>
         public const string DEFAULTCOLOR = "#FFF";
 
         /// <summary>
-        /// Gets a list o allowed sizes of color param tags, ignoring the hashtag.
+        /// Gets the parser used by all elements.
+        /// </summary>
+        public static Parser Parser { get; } = new(
+            new RichTextTag[]
+            {
+                new SizeTag(),
+            });
+
+
+        /// <summary>
+        /// Gets a list of allowed sizes of color param tags, ignoring the hashtag.
         /// </summary>
         public static ReadOnlyCollection<int> ValidColorSizes { get; } = new(new int[]
         {

@@ -1,24 +1,20 @@
-﻿using RueI.Enums;
-using RueI.Records;
-using System.Text;
-
-namespace RueI.Parsing.Tags
+﻿namespace RueI.Parsing.Tags
 {
     /// <summary>
-    /// Defines the base class for all tags that take in a measurement.
+    /// Defines the base class for all tags that do not have params.
     /// </summary>
     public abstract class NoParamsTagBase : RichTextTag
     {
         /// <summary>
-        /// Gets a new measurement tag processor for this tag.
+        /// Does not return anything.
         /// </summary>
-        /// <returns>The new measurement tag processor.</returns>
+        /// <returns><see cref="null"/>.</returns>
         public sealed override ParamProcessor? GetProcessor() => null;
 
         /// <summary>
-        /// Handles an instance of the tag.
+        /// Handles an instance of a tag without params.
         /// </summary>
-        /// <param name="oldContext">The old context of the parser.</param>
-        public abstract void HandleTag(ParserContext oldContext);
+        /// <param name="context">The context of the parser.</param>
+        public abstract void HandleTag(ParserContext context);
     }
 }

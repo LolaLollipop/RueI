@@ -1,30 +1,30 @@
 ﻿namespace RueI
 {
-    using System.Text;
-    using Hints;
-    //  using Exiled.API.Features;
     using MEC;
-    using NorthwoodLib.Pools;
-    using RueI.Events;
-    using RueI.Records;
+    using RueI.Extensions;
 
     /// <summary>
     /// Represents a <see cref="Display"/> that hides elements based on an active screen.
     /// </summary>
     /// <typeparam name="T">The enum to be used as the screen identifier.</typeparam>
-    public class ScreenPlayerDisplay<T> : Display
+    public class ScreenDisplay<T> : DisplayBase
         where T : Enum
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ScreenPlayerDisplay{T}"/> class.
+        /// Initializes a new instance of the <see cref="ScreenDisplay{T}"/> class.
         /// </summary>
         /// <param name="hub">The <see cref="ReferenceHub"/> to assign the display to.</param>
         /// <param name="defaultScreen">The default <see cref="T"/> to use as a screen.</param>
-        public ScreenPlayerDisplay(ReferenceHub hub, T defaultScreen)
+        public ScreenDisplay(ReferenceHub hub, T defaultScreen)
             : base(hub)
         {
             CurrentScreen = defaultScreen;
         }
+
+        /// <summary>
+        /// Gets a list of all <see cref="IScreenElement{T}"/>s of the display.
+        /// </summary>
+        public List<IScreenElement<T>> Elements { get; } = new();
 
         /// <summary>
         /// Gets or sets the current screen that the display is on.
@@ -32,42 +32,15 @@
         /// <remarks>Updating this does not automatically update the display.</remarks>
         public T CurrentScreen { get; set; }
 
-        internal override bool ShouldParse(Element element)
-        {
-            if (!element.Enabled)
-            {
-                return false;
-            }
-
-            if (element is IScreenElement<T> screenElement)
-            {
-                return screenElement.Screens.HasFlag(CurrentScreen);
-            }
-
-            return true;
-        }
+        /// <inheritdoc/>
+        public override IEnumerable<IElement> GetAllElements() => Elements;
     }
 
     /// <summary>
     /// Represents a display attached to a <see cref="DisplayCoordinator"/>.
     /// </summary>
-    public class Display
+    public class Display : DisplayBase
     {
-        /// <summary>
-        /// Gets the default height if a line-height is not provided.
-        /// </summary>
-        public const float DEFAULTHEIGHT = 41; // in pixels;
-
-        /// <summary>
-        /// Gets an approximation of how many pixels are an in an em.
-        /// </summary>
-        public const float EMSTOPIXELS = 35;
-
-        /// <summary>
-        /// Gets a string used to close all tags.
-        /// </summary>
-        public const string TAGCLOSER = "</noparse></align></color></b></i></cspace></line-height></line-indent></link></lowercase></uppercase></smallcaps></margin></mark></mspace></pos></size></s></u></voffset></width>";
-
         /// <summary>
         /// Gets the ratelimit used for displaying hints.
         /// </summary>
@@ -82,10 +55,17 @@
         /// </summary>
         /// <param name="hub">The <see cref="ReferenceHub"/> to assign the display to.</param>
         public Display(ReferenceHub hub)
+            : base(hub)
         {
-            ReferenceHub = hub;
+        }
 
-            DisplayCoordinator.Get(ReferenceHub).AddDisplay(this);
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Display"/> class.
+        /// </summary>
+        /// <param name="coordinator">The <see cref="DisplayCoordinator"/> to assign the display to.</param>
+        public Display(DisplayCoordinator coordinator)
+            : base(coordinator)
+        {
         }
 
         /// <summary>
@@ -100,19 +80,55 @@
         }
 
         /// <summary>
-        /// Gets the ReferenceHub that this display is assigned to.
+        /// Gets the elements of this display.
+        /// </summary>
+        public List<IElement> Elements { get; } = new();
+
+        public void Update() => DisplayCoordinator.Get(ReferenceHub).Update();
+
+        /// <inheritdoc/>
+        public override IEnumerable<IElement> GetAllElements() => Elements.Where(x => x.Enabled);
+    }
+
+    /// <summary>
+    /// Defines the base class for all displays.
+    /// </summary>
+    public abstract class DisplayBase
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DisplayBase"/> class.
+        /// </summary>
+        /// <param name="hub">The <see cref="ReferenceHub"/> to assign the display to.</param>
+        public DisplayBase(ReferenceHub hub)
+        {
+            ReferenceHub = hub;
+            Coordinator = DisplayCoordinator.Get(hub);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DisplayBase"/> class.
+        /// </summary>
+        /// <param name="coordinator">The <see cref="DisplayCoordinator"/> to assign the display to.</param>
+        public DisplayBase(DisplayCoordinator coordinator)
+        {
+            Coordinator = coordinator;
+            ReferenceHub = coordinator.Hub;
+        }
+
+        /// <summary>
+        /// Gets the <see cref="ReferenceHub"/> that this display is assigned to.
         /// </summary>
         public ReferenceHub ReferenceHub { get; }
 
         /// <summary>
-        /// Gets the elements of this display.
+        /// Gets the <see cref="DisplayCoordinator"/> that this display is attached to.
         /// </summary>
-        public List<Element> Elements { get; } = new();
+        public DisplayCoordinator Coordinator { get; }
 
-        public void Update() => DisplayCoordinator.Get(ReferenceHub).Update();
-
-        protected static Comparison<Element> Comparer { get; } = (Element first, Element other) => other.ZIndex - first.ZIndex;
-
-        internal virtual bool ShouldParse(Element element) => element.Enabled;
+        /// <summary>
+        /// Gets all of the elements of this display.
+        /// </summary>
+        /// <returns>The <see cref="IEnumerator{IElement}"/> of elements.</returns>
+        public abstract IEnumerable<IElement> GetAllElements();
     }
 }

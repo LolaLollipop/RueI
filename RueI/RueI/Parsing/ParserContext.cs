@@ -1,9 +1,9 @@
-﻿using NorthwoodLib.Pools;
-using RueI.Enums;
-using System.Text;
-
-namespace RueI.Records
+﻿namespace RueI.Parsing
 {
+    using System.Text;
+    using NorthwoodLib.Pools;
+    using RueI.Enums;
+
     /// <summary>
     /// Describes the state of a parser at a time.
     /// </summary>
@@ -17,12 +17,12 @@ namespace RueI.Records
         /// <summary>
         /// Gets the current tag buffer.
         /// </summary>
-        public StringBuilder TagBuffer { get; } = StringBuilderPool.Shared.Rent();
+        public StringBuilder TagBuffer { get; } = StringBuilderPool.Shared.Rent(128);
 
         /// <summary>
         /// Gets or sets the final offset for the element as a whole.
         /// </summary>
-        public float NewOffset { get; set; }
+        public float NewOffset { get; set; } = 0;
 
         /// <summary>
         /// Gets a stack containing all of the nested sizes.
@@ -32,57 +32,57 @@ namespace RueI.Records
         /// <summary>
         /// Gets or sets the current line height of the parser.
         /// </summary>
-        public float CurrentLineHeight { get; set; }
+        public float CurrentLineHeight { get; set; } = Constants.DEFAULTHEIGHT;
 
         /// <summary>
         /// Gets or sets the current line width of the parser.
         /// </summary>
-        public float CurrentLineWidth { get; set; }
+        public float CurrentLineWidth { get; set; } = 0;
 
         /// <summary>
         /// Gets or sets the total width since a space.
         /// </summary>
-        public float WidthSinceSpace { get; set; }
+        public float WidthSinceSpace { get; set; } = 0;
 
         /// <summary>
         /// Gets or sets the current character of the parser.
         /// </summary>
-        public float Size { get; set; }
+        public float Size { get; set; } = Constants.DEFAULTSIZE;
 
         /// <summary>
         /// Gets or sets the current additional character spacing of the parser.
         /// </summary>
-        public float CurrentCSpace { get; set; }
+        public float CurrentCSpace { get; set; } = 0;
 
         /// <summary>
         /// Gets or sets a value indicating whether the parser should parse tags other than noparse.
         /// </summary>
-        public bool ShouldParse { get; set; }
+        public bool ShouldParse { get; set; } = true;
 
         /// <summary>
         /// Gets or sets a value indicating whether the characters are currently in monospace.
         /// </summary>
-        public bool IsMonospace { get; set; }
+        public bool IsMonospace { get; set; } = false;
 
         /// <summary>
         /// Gets or sets a value indicating whether or not words are currently in no break.
         /// </summary>
-        public bool NoBreak { get; set; }
+        public bool NoBreak { get; set; } = false;
 
         /// <summary>
         /// Gets or sets a value indicating whether or not the characters are currently bold.
         /// </summary>
-        public bool IsBold { get; set; }
+        public bool IsBold { get; set; } = false;
 
         /// <summary>
         /// Gets or sets the current case of the parser.
         /// </summary>
-        public CaseStyle CurrentCase { get; set; }
+        public CaseStyle CurrentCase { get; set; } = CaseStyle.Smallcaps;
 
         /// <summary>
         /// Gets or sets the number of color tags that are nested.
         /// </summary>
-        public int ColorTags { get; set; }
+        public int ColorTags { get; set; } = 0;
 
         /// <summary>
         /// Disposes this ParserContext, returning the string builder to the pool.

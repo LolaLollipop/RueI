@@ -4,8 +4,6 @@
     using NorthwoodLib.Pools;
     using RueI.Enums;
 
-    using RueI.Records;
-
     /// <summary>
     /// Processes measurement params for a tag.
     /// </summary>
@@ -14,7 +12,6 @@
         /// <summary>
         /// Represents an action to execute when processed.
         /// </summary>
-        /// <param name="sb">The parser's buffer.</param>
         /// <param name="context">The context of the parser.</param>
         /// <param name="value">The measurement value.</param>
         /// <param name="style">The measurement style.</param>
@@ -34,12 +31,12 @@
         /// <inheritdoc/>
         protected override bool Finish(ParserContext context)
         {
-            StringBuilder paramBuffer = StringBuilderPool.Shared.Rent();
-            string text = StringBuilderPool.Shared.ToStringReturn(buffer);
+            StringBuilder paramBuffer = StringBuilderPool.Shared.Rent(25);
             MeasurementStyle style = MeasurementStyle.Pixels;
+
             bool hasPeriod = false;
 
-            foreach (char ch in text)
+            foreach (char ch in StringBuilderPool.Shared.ToStringReturn(this.buffer))
             {
                 if (ch == 'e')
                 {

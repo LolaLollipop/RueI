@@ -17,12 +17,10 @@ namespace RueI
 
             RoundRestarting.RoundRestart.OnRestartTriggered += EventHandler.OnRestart;
             PlayerRoles.PlayerRoleManager.OnServerRoleSet += EventHandler.OnServerRoleSet;
-            ServerConsole.AddLog("Running RueI :)");
-            string path = Assembly.GetExecutingAssembly().Location;
-            if (Path.GetDirectoryName(path) != "dependencies")
-            {
-                ServerConsole.AddLog("RueI is NOT in dependencies, this may cause plugin compatibility issues", ConsoleColor.DarkRed);
-            }
+
+            ServerConsole.AddLog("[Info] [RueI] Thank you for using RueI!", ConsoleColor.Yellow);
+            ServerConsole.AddLog("[Info] [RueI] RueI is completely open-source and licensed under CC0", ConsoleColor.Yellow);
+            ServerConsole.AddLog("[Info] [RueI] https://github.com/Ruemena/RueI", ConsoleColor.Yellow);
         }
 
         public static void EnsureInit()
