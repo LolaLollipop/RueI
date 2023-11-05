@@ -58,6 +58,36 @@
             UpdateBatches();
         }
 
+        /// <summary>
+        /// Schedules a job.
+        /// </summary>
+        /// <param name="time">How long into the future to run the action at.</param>
+        /// <param name="action">The <see cref="Action"/> to run.</param>
+        /// <param name="priority">The priority of the job, giving it additional weight when calculating.</param>
+        public void Schedule(TimeSpan time, Action action, int priority)
+        {
+            Schedule(new ScheduledJob(DateTimeOffset.UtcNow + time, action, priority));
+        }
+
+        /// <summary>
+        /// Schedules a job.
+        /// </summary>
+        /// <param name="action">The <see cref="Action"/> to run.</param>
+        /// <param name="time">How long into the future to run the action at.</param>
+        /// <param name="priority">The priority of the job, giving it additional weight when calculating.</param>
+        public void Schedule(Action action, TimeSpan time, int priority)
+        {
+            Schedule(new ScheduledJob(DateTimeOffset.UtcNow + time, action, priority));
+        }
+
+        /// <summary>
+        /// Schedules a job with a priority of 1.
+        /// </summary>
+        public void Schedule(TimeSpan time, Action action)
+        {
+            Schedule(time, action, 1);
+        }
+
         private void UpdateBatches()
         {
             jobs.Sort();
@@ -103,6 +133,8 @@
 
             currentBatches.RemoveAt(0);
             rateLimiter.Start(Constants.HintRateLimit);
+
+            coordinator.InternalUpdate();
         }
     }
 }

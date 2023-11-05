@@ -8,13 +8,13 @@
         /// <summary>
         /// Initializes a new instance of the <see cref="ScheduledJob"/> class.
         /// </summary>
-        /// <param name="action">The action to perform when done.</param>
         /// <param name="finishAt">When the job should be performed.</param>
+        /// <param name="action">The action to perform when done.</param>
         /// <param name="priority">The priority of the element.</param>
-        internal ScheduledJob(Action action, DateTimeOffset finishAt, int priority)
+        internal ScheduledJob(DateTimeOffset finishAt, Action action, int priority)
         {
-            Action = action;
             FinishAt = finishAt;
+            Action = action;
             Priority = priority;
         }
 

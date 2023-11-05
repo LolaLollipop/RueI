@@ -4,6 +4,7 @@
     using System.Text;
     using Hints;
     using NorthwoodLib.Pools;
+    using RueI.Displays;
     using RueI.Extensions;
     using RueI.Records;
 
@@ -27,7 +28,13 @@
             this.Hub = hub;
 
             DisplayCoordinators.Add(hub, this);
+            Scheduler = new(this);
         }
+
+        /// <summary>
+        /// Gets the <see cref="RueI.Displays.Scheduler"/> for this <see cref="DisplayCoordinator"/>.
+        /// </summary>
+        public Scheduler Scheduler { get; }
 
         /// <summary>
         /// Gets a dictionary containing the DisplayCoordinators for each ReferenceHub.
@@ -64,13 +71,22 @@
         /// <summary>
         /// Updates this display.
         /// </summary>
-        public void Update()
+        /// <param name="priority">The priority of the update - defaults to 100.</param>
+        public void Update(int priority = 100)
         {
             if (IgnoreUpdate)
             {
                 return;
             }
 
+            Scheduler.Schedule(TimeSpan.Zero, () => { }, priority);
+        }
+
+        /// <summary>
+        /// Updates this display, skipping all checks.
+        /// </summary>
+        internal void InternalUpdate()
+        {
             string text = ParseElements();
             ServerConsole.AddLog(text);
             Hub.hints.Show(new TextHint(text, new HintParameter[] { new StringHintParameter(text) }, null, 99999));
