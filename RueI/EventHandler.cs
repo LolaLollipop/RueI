@@ -13,7 +13,10 @@
         /// </summary>
         public static void OnRestart()
         {
+        }
 
+        public static void OnPlayerRemoved(ReferenceHub hub)
+        {
         }
 
         public static void OnServerRoleSet(ReferenceHub hub, RoleTypeId type, RoleChangeReason reason)
@@ -21,7 +24,8 @@
             if (reason == RoleChangeReason.Died)
             {
 
-            } else if (reason == RoleChangeReason.Destroyed)
+            } 
+            else if (reason == RoleChangeReason.Destroyed)
             {
 
             }

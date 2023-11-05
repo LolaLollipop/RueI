@@ -116,6 +116,11 @@
         }
 
         /// <summary>
+        /// Gets a value indicating whether or not this display is active.
+        /// </summary>
+        public bool IsActive { get; private set; } = true;
+
+        /// <summary>
         /// Gets the <see cref="ReferenceHub"/> that this display is assigned to.
         /// </summary>
         public ReferenceHub ReferenceHub { get; }
@@ -130,5 +135,14 @@
         /// </summary>
         /// <returns>The <see cref="IEnumerator{IElement}"/> of elements.</returns>
         public abstract IEnumerable<IElement> GetAllElements();
+
+        /// <summary>
+        /// Deletes this display, removing it from the player's coordinator.
+        /// </summary>
+        public void Delete()
+        {
+            Coordinator.RemoveDisplay(this);
+            IsActive = false;
+        }
     }
 }

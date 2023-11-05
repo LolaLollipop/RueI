@@ -55,7 +55,7 @@
         /// <summary>
         /// Gets the ratelimit used for displaying hints.
         /// </summary>
-        public const float HINTRATELIMIT = 0.55f;
+        public static TimeSpan HintRateLimit { get; } = TimeSpan.FromMilliseconds(0.525);
 
         internal const float BETTER = 0.47945214761f;
 

@@ -6,6 +6,8 @@ namespace eMEC
     using System.Diagnostics;
     using System.Diagnostics.CodeAnalysis;
     using MEC;
+    using RueI.Extensions;
+    using UnityEngine;
 
     /// <summary>
     /// Provides extensions for working with MEC. The primary purpose is to provide better nullable functionality.
@@ -77,6 +79,11 @@ namespace eMEC
         /// </summary>
         public TimeSpan? ElapsedTime => stopwatch.Elapsed;
 
+        /// <summary>
+        /// Gets how long the task has been running for.
+        /// </summary>
+        public DateTimeOffset? FinishesAt => DateTimeOffset.UtcNow + TimeLeft;
+
         /// <inheritdoc/>
         [MemberNotNullWhen(returnValue: true, nameof(TimeLeft))]
         [MemberNotNullWhen(returnValue: true, nameof(ElapsedTime))]
@@ -95,7 +102,7 @@ namespace eMEC
             Action = action;
             Length = length;
             stopwatch.Start();
-            ch = Timing.CallDelayed((float)length.TotalSeconds, () =>
+            ch = Timing.CallDelayed(((float)length.TotalSeconds).Max(0), () =>
             {
                 Action();
                 ResetState();
@@ -292,6 +299,11 @@ namespace eMEC
         /// Gets or sets the current length of the cooldown.
         /// </summary>
         public TimeSpan Length { get; set; } = TimeSpan.Zero;
+
+        /// <summary>
+        /// Gets the amount of time left for the cooldown.
+        /// </summary>
+        public TimeSpan TimeLeft => Length - stopwatch.Elapsed;
 
         /// <summary>
         /// Gets a value indicating whether or not the cooldown is active.

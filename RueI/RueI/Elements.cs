@@ -2,8 +2,6 @@
 {
     using RueI.Delegates;
     using RueI.Interfaces;
-    using RueI.Parsing;
-    using RueI.Parsing.Tags.ConcreteTags;
     using RueI.Records;
 
     /// <summary>
@@ -45,7 +43,7 @@
         public TWrapper Inner { get; }
 
         /// <summary>
-        /// Gets the screens that this should display on.
+        /// Gets or sets the screens that this should display on.
         /// </summary>
         public TEnum Screens { get; set; }
 

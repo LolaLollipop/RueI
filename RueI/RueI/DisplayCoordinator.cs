@@ -1,5 +1,6 @@
 ﻿namespace RueI
 {
+    using System.Runtime.Remoting.Contexts;
     using System.Text;
     using Hints;
     using NorthwoodLib.Pools;
@@ -12,6 +13,11 @@
     public class DisplayCoordinator
     {
         private List<DisplayBase> displays = new();
+
+        static DisplayCoordinator()
+        {
+            RoundRestarting.RoundRestart.OnRestartTriggered += OnRestart;
+        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DisplayCoordinator"/> class.
@@ -32,6 +38,11 @@
         /// Gets the <see cref="ReferenceHub"/> that this display is for.
         /// </summary>
         internal ReferenceHub Hub { get; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether or not updates will currently be ignored.
+        /// </summary>
+        internal bool IgnoreUpdate { get; set; } = false;
 
         /// <summary>
         /// Gets a DisplayCoordinator from a <see cref="ReferenceHub"/>, or creates it if it doesn't exist.
@@ -55,6 +66,11 @@
         /// </summary>
         public void Update()
         {
+            if (IgnoreUpdate)
+            {
+                return;
+            }
+
             string text = ParseElements();
             ServerConsole.AddLog(text);
             Hub.hints.Show(new TextHint(text, new HintParameter[] { new StringHintParameter(text) }, null, 99999));
@@ -66,16 +82,26 @@
         /// <param name="display">The display to add.</param>
         internal void AddDisplay(DisplayBase display) => displays.Add(display);
 
-        private IEnumerable<IElement> GetAllElements()
+        /// <summary>
+        /// Removes a display from this <see cref="DisplayCoordinator"/>.
+        /// </summary>
+        /// <param name="display">The display to remove.</param>
+        internal void RemoveDisplay(DisplayBase display) => displays.Remove(display);
+
+        /// <summary>
+        /// Cleans up the dictionary after the server restarts.
+        /// </summary>
+        private static void OnRestart()
         {
-            return displays.SelectMany(x => x.GetAllElements());
+            DisplayCoordinators.Clear();
         }
+
+        private IEnumerable<IElement> GetAllElements() => displays.SelectMany(x => x.GetAllElements());
 
         private string ParseElements()
         {
-            List<IElement> elements = GetAllElements().ToList();
+            List<IElement> elements = GetAllElements().ToPooledList();
 
-            PluginAPI.Core.Log.Info("Trying");
             if (!elements.Any())
             {
                 return string.Empty;
@@ -117,6 +143,7 @@
                 lastOffset = parsedData.Offset;
             }
 
+            ListPool<IElement>.Shared.Return(elements);
             return $"<line-height={totalOffset}px>\n" + StringBuilderPool.Shared.ToStringReturn(sb);
         }
     }
