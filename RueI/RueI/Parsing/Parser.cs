@@ -54,9 +54,6 @@
             StringBuilder paramBuffer = StringBuilderPool.Shared.Rent(30);
 
             using ParserContext context = new();
-           // context.ResultBuilder.Append("<line-height=")
-           //                      .Append(Constants.DEFAULTHEIGHT)
-           //                      .Append('>');
 
             void FailTagMatch() // not a tag, unload buffer
             {
