@@ -1,8 +1,8 @@
 ﻿namespace RueI
 {
-    using RueI.Parsing.Tags.ConcreteTags;
-    using RueI.Parsing;
     using System.Collections.ObjectModel;
+    using RueI.Parsing;
+    using RueI.Parsing.Tags.ConcreteTags;
 
     /// <summary>
     /// Provides a variety of constant values.
@@ -14,7 +14,7 @@
         /// Gets the default height if a line-height is not provided.
         /// </summary>
         /// <remarks>Approximate.</remarks>
-        public const float DEFAULTHEIGHT = 41.02f; // in pixels. this is barely approximate
+        public const float DEFAULTHEIGHT = 40.665f; // in pixels. this is barely approximate
 
         /// <summary>
         /// Gets the default size (in pixels) if a size is not provided.
@@ -33,7 +33,7 @@
         public const float BOLDINCREASE = 2.45f * BETTER;
 
         /// <summary>
-        /// Gets the width of the display area (in pixwels).
+        /// Gets the width of the display area (in pixels).
         /// </summary>
         public const float DISPLAYAREAWIDTH = 1200; // technically 1200, decreased slightly
 

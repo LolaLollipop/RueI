@@ -6,7 +6,7 @@
     public enum CaseStyle
     {
         /// <summary>
-        /// Indicates that all text will be in uppercase, but lowercase characters will be slightly smalelr.
+        /// Indicates that all text will be in uppercase, but lowercase characters will be slightly smaller.
         /// </summary>
         Smallcaps,
 

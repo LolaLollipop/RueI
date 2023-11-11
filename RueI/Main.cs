@@ -1,7 +1,5 @@
 ﻿using eMEC;
-using System.Reflection;
 using System.Runtime.CompilerServices;
-using UnityEngine;
 
 namespace RueI
 {
@@ -21,6 +19,15 @@ namespace RueI
             ServerConsole.AddLog("[Info] [RueI] Thank you for using RueI!", ConsoleColor.Yellow);
             ServerConsole.AddLog("[Info] [RueI] RueI is completely open-source and licensed under CC0", ConsoleColor.Yellow);
             ServerConsole.AddLog("[Info] [RueI] https://github.com/Ruemena/RueI", ConsoleColor.Yellow);
+
+            try
+            {
+                var harmony = new HarmonyLib.Harmony("com.example.patch");
+            }
+            catch(Exception)
+            {
+                ServerConsole.AddLog("[Warn] [RueI] Could not load Harmony patches.", ConsoleColor.Yellow);
+            }
         }
 
         public static void EnsureInit()

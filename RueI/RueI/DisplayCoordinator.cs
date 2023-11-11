@@ -32,7 +32,7 @@
         }
 
         /// <summary>
-        /// Gets the <see cref="RueI.Displays.Scheduler"/> for this <see cref="DisplayCoordinator"/>.
+        /// Gets the <see cref="Displays.Scheduler"/> for this <see cref="DisplayCoordinator"/>.
         /// </summary>
         public Scheduler Scheduler { get; }
 
@@ -89,7 +89,7 @@
         {
             string text = ParseElements();
             ServerConsole.AddLog(text);
-            Hub.hints.Show(new TextHint(text, new HintParameter[] { new StringHintParameter(text) }, null, 99999));
+            Hub.connectionToClient.Send(new HintMessage(new TextHint(text, new HintParameter[] { new StringHintParameter(text) }, null, 99999)));
         }
 
         /// <summary>

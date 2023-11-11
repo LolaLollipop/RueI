@@ -1,5 +1,6 @@
 ﻿namespace RueI.Displays
 {
+    using System.Diagnostics;
     using eMEC;
     using NorthwoodLib.Pools;
     using RueI.Extensions;
@@ -10,6 +11,44 @@
     /// </summary>
     public class Scheduler
     {
+        public class RateLimiter
+        {
+
+            private Stopwatch consumer = new();
+
+            /// <summary>
+            /// Initializes a new instance of the <see cref="RateLimiter"/> class.
+            /// </summary>
+            /// <param name="tokenLimit">The maximum number of tokens and the default number of tokens.</param>
+            /// <param name="regenRate">How quickly tokens are regenerated after they have been consumed.</param>
+            public RateLimiter(int tokenLimit, TimeSpan regenRate)
+            {
+                Tokens = tokenLimit;
+                RegenRate = regenRate;
+            }
+
+            public TimeSpan RegenRate { get; set; }
+
+            public int Tokens { get; private set; }
+
+            public bool HasTokens => Tokens > 0;
+
+            public void Consume()
+            {
+                if (Tokens > 0)
+                {
+                    Tokens--;
+                    consumer.Stop();
+                }
+            }
+
+            public void CalculateNewTokens()
+            {
+                Tokens = (int)((consumer.ElapsedMilliseconds / RegenRate.Ticks) - 0.5);
+                consumer.Stop();
+            }
+        }
+
         private static TimeSpan minimumBatch = TimeSpan.FromMilliseconds(0.625);
 
         private readonly Cooldown rateLimiter = new();
@@ -28,6 +67,11 @@
         {
             this.coordinator = coordinator;
         }
+
+        /// <summary>
+        /// Gets a value indicating whether or not the rate limit is currently active.
+        /// </summary>
+        internal bool RateLimitActive => rateLimiter.Active;
 
         /// <summary>
         /// Calculates the weighted time for a list of jobs to be performed.
@@ -83,9 +127,20 @@
         /// <summary>
         /// Schedules a job with a priority of 1.
         /// </summary>
+        /// <param name="time">How long into the future to run the action at.</param>
+        /// <param name="action">The <see cref="Action"/> to run.</param>
         public void Schedule(TimeSpan time, Action action)
         {
             Schedule(time, action, 1);
+        }
+
+        /// <summary>
+        /// Delays any updates from occuring for a certain period of time.
+        /// </summary>
+        /// <param name="time">The amount of time to delay for.</param>
+        internal void Delay(TimeSpan time)
+        {
+            rateLimiter.Start(time.Max(minimumBatch));
         }
 
         private void UpdateBatches()
