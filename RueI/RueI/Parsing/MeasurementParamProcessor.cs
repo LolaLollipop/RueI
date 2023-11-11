@@ -29,14 +29,14 @@
         }
 
         /// <inheritdoc/>
-        protected override bool Finish(ParserContext context)
+        public override bool Finish(ParserContext context, string parserContent)
         {
             StringBuilder paramBuffer = StringBuilderPool.Shared.Rent(25);
             MeasurementStyle style = MeasurementStyle.Pixels;
 
             bool hasPeriod = false;
 
-            foreach (char ch in StringBuilderPool.Shared.ToStringReturn(this.buffer))
+            foreach (char ch in parserContent)
             {
                 if (ch == 'e')
                 {

@@ -51,11 +51,12 @@
             int tagBufferSize = 0;
 
             ParamProcessor? paramProcessor = null;
+            StringBuilder paramBuffer = StringBuilderPool.Shared.Rent(30);
 
             using ParserContext context = new();
-            context.ResultBuilder.Append("<line-height=")
-                                 .Append(Constants.DEFAULTHEIGHT)
-                                 .Append('>');
+           // context.ResultBuilder.Append("<line-height=")
+           //                      .Append(Constants.DEFAULTHEIGHT)
+           //                      .Append('>');
 
             void FailTagMatch() // not a tag, unload buffer
             {
@@ -65,20 +66,16 @@
                     AddCharacter(context, ch);
                 }
 
-                tagBuffer.Clear();
-
-                currentState = ParserState.CollectingTags;
-                tagBufferSize = 0;
-            }
-
-            void FailTagMatchParams(string paramBuffer)
-            {
-                FailTagMatch();
-
-                foreach (char ch in paramBuffer)
+                foreach (char ch in paramBuffer.ToString())
                 {
                     AddCharacter(context, ch);
                 }
+
+                tagBuffer.Clear();
+                paramBuffer.Clear();
+
+                currentState = ParserState.CollectingTags;
+                tagBufferSize = 0;
             }
 
             foreach (char ch in text)
@@ -135,20 +132,19 @@
 
                                 tagBuffer.Clear();
 
-                                paramProcessor?.Dispose();
                                 paramProcessor = null;
                                 continue; // do NOT add as a character
                             }
                             else if (currentState == ParserState.CollectingParams && paramProcessor != null)
                             {
-                                bool wasSuccessful = paramProcessor.GetFinishResult(context, out string? unloaded);
+                                string paramContent = paramBuffer.ToString();
+                                bool wasSuccessful = paramProcessor.Finish(context, paramContent);
                                 if (!wasSuccessful)
                                 {
-                                    FailTagMatchParams(unloaded!);
+                                    FailTagMatch();
                                 }
                                 else
                                 {
-                                    paramProcessor?.Dispose();
                                     paramProcessor = null;
                                     tagBuffer.Clear();
 
@@ -160,7 +156,6 @@
                                 FailTagMatch();
                             }
 
-                            paramProcessor?.Dispose();
                             paramProcessor = null;
                         }
                         else
@@ -175,14 +170,15 @@
                 }
                 else if (currentState == ParserState.CollectingParams)
                 {
-                    paramProcessor?.Add(ch);
+                    paramBuffer.Append(ch);
                     continue; // do NOT add as a character
                 }
 
                 AddCharacter(context, ch);
             } // foreach
 
-            paramProcessor?.Dispose();
+            StringBuilderPool.Shared.Return(tagBuffer);
+            StringBuilderPool.Shared.Return(paramBuffer);
             return new ParsedData(context.ResultBuilder.ToString(), context.NewOffset);
         }
 

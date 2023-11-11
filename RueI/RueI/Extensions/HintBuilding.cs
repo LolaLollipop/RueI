@@ -112,6 +112,47 @@
         }
 
         /// <summary>
+        /// Adds a mark tag to a <see cref="StringBuilder"/>.
+        /// </summary>
+        /// <param name="sb">The <see cref="StringBuilder"/> to use.</param>
+        /// <param name="color">The color to use.</param>
+        /// <returns>A reference to the original <see cref="StringBuilder"/>.</returns>
+        public static StringBuilder SetMark(this StringBuilder sb, Color color)
+        {
+            return sb.Append($"<mark={ConvertToHex(color)}>");
+        }
+
+        /// <summary>
+        /// Adds a mark tag to a <see cref="StringBuilder"/> from RGBA values.
+        /// </summary>
+        /// <param name="sb">The <see cref="StringBuilder"/> to use.</param>
+        /// <param name="r">The red (0-255) in the color.</param>
+        /// <param name="g">The green (0-255) in the color.</param>
+        /// <param name="b">The blue (0-255) in the color.</param>
+        /// <param name="alpha">The optional alpha (0-255) of the color.</param>
+        /// <returns>A reference to the original <see cref="StringBuilder"/>.</returns>
+        public static StringBuilder SetMark(this StringBuilder sb, int r, int g, int b, int alpha)
+        {
+            Color color = Color.FromArgb(r, g, b, alpha);
+            return sb.SetMark(color);
+        }
+
+        /// <summary>
+        /// Adds a mark tag to a <see cref="StringBuilder"/> from RGBA values.
+        /// </summary>
+        /// <param name="sb">The <see cref="StringBuilder"/> to use.</param>
+        /// <param name="r">The red (0-255) in the color.</param>
+        /// <param name="g">The green (0-255) in the color.</param>
+        /// <param name="b">The blue (0-255) in the color.</param>
+        /// <param name="alpha">The optional alpha (0-255) of the color.</param>
+        /// <returns>A reference to the original <see cref="StringBuilder"/>.</returns>
+        public static StringBuilder SetMark(this StringBuilder sb, byte r, byte g, byte b, byte alpha)
+        {
+            Color color = Color.FromArgb(r, g, b, alpha);
+            return sb.SetMark(color);
+        }
+
+        /// <summary>
         /// Adds an alpha tag to a <see cref="StringBuilder"/>.
         /// </summary>
         /// <param name="sb">The <see cref="StringBuilder"/> to use.</param>
@@ -175,6 +216,25 @@
         }
 
         /// <summary>
+        /// Adds a monospace tag to a <see cref="StringBuilder"/>.
+        /// </summary>
+        /// <param name="sb">The <see cref="StringBuilder"/> to use.</param>
+        /// <param name="spacing">The size of the spacing.</param>
+        /// <param name="style">The measurement style of the monospacing tag.</param>
+        /// <returns>A reference to the original <see cref="StringBuilder"/>.</returns>
+        public static StringBuilder SetMonospace(this StringBuilder sb, float spacing, MeasurementStyle style = MeasurementStyle.Pixels)
+        {
+            string format = style switch
+            {
+                MeasurementStyle.Percentage => "%",
+                MeasurementStyle.Ems => "ems",
+                _ => string.Empty
+            };
+
+            return sb.Append($"<mspace={spacing}{format}>");
+        }
+
+        /// <summary>
         /// Adds a case tag to a <see cref="StringBuilder"/>.
         /// </summary>
         /// <param name="sb">The <see cref="StringBuilder"/> to use.</param>
@@ -191,6 +251,154 @@
 
             return sb.Append($"<{format}>");
         }
+
+        /// <summary>
+        /// Adds an margins tag to a <see cref="StringBuilder"/>.
+        /// </summary>
+        /// <param name="sb">The <see cref="StringBuilder"/> to use.</param>
+        /// <param name="margins">The size of the margins.</param>
+        /// <param name="style">The measurement style of the margins tag.</param>
+        /// <returns>A reference to the original <see cref="StringBuilder"/>.</returns>
+        public static StringBuilder SetMargins(this StringBuilder sb, float margins, MeasurementStyle style = MeasurementStyle.Pixels)
+        {
+            string format = style switch
+            {
+                MeasurementStyle.Percentage => "%",
+                MeasurementStyle.Ems => "ems",
+                _ => string.Empty
+            };
+
+            return sb.Append($"<margin={margins}{format}>");
+        }
+
+        /// <summary>
+        /// Adds a nobreak tag to a <see cref="StringBuilder"/>.
+        /// </summary>
+        /// <param name="sb">The <see cref="StringBuilder"/> to use.</param>
+        /// <returns>A reference to the original <see cref="StringBuilder"/>.</returns>
+        public static StringBuilder SetNobreak(this StringBuilder sb) => sb.Append("<nobr>");
+
+        /// <summary>
+        /// Adds a noparse tag to a <see cref="StringBuilder"/>.
+        /// </summary>
+        /// <param name="sb">The <see cref="StringBuilder"/> to use.</param>
+        /// <returns>A reference to the original <see cref="StringBuilder"/>.</returns>
+        public static StringBuilder SetNoparse(this StringBuilder sb) => sb.Append("<noparse>");
+
+        /// <summary>
+        /// Adds a rotation tag to a <see cref="StringBuilder"/>.
+        /// </summary>
+        /// <param name="sb">The <see cref="StringBuilder"/> to use.</param>
+        /// <param name="rotation">The rotation (-180 to 180) of the tag..</param>
+        /// <returns>A reference to the original <see cref="StringBuilder"/>.</returns>
+        public static StringBuilder SetRotation(this StringBuilder sb, int rotation) => sb.Append($"<rotate=\"{rotation}\">");
+
+        /// <summary>
+        /// Adds a subscript tag to a <see cref="StringBuilder"/>.
+        /// </summary>
+        /// <param name="sb">The <see cref="StringBuilder"/> to use.</param>
+        /// <returns>A reference to the original <see cref="StringBuilder"/>.</returns>
+        public static StringBuilder SetSubscript(this StringBuilder sb) => sb.Append("<sub>");
+
+        /// <summary>
+        /// Adds a superscript tag to a <see cref="StringBuilder"/>.
+        /// </summary>
+        /// <param name="sb">The <see cref="StringBuilder"/> to use.</param>
+        /// <returns>A reference to the original <see cref="StringBuilder"/>.</returns>
+        public static StringBuilder SetSuperscript(this StringBuilder sb) => sb.Append("<sup>");
+
+        /// <summary>
+        /// Adds a width tag to a <see cref="StringBuilder"/>.
+        /// </summary>
+        /// <param name="sb">The <see cref="StringBuilder"/> to use.</param>
+        /// <param name="offset">The size of the new width.</param>
+        /// <param name="style">The measurement style of the width tag.</param>
+        /// <returns>A reference to the original <see cref="StringBuilder"/>.</returns>
+        public static StringBuilder SetWidth(this StringBuilder sb, float offset, MeasurementStyle style = MeasurementStyle.Pixels)
+        {
+            string format = style switch
+            {
+                MeasurementStyle.Percentage => "%",
+                MeasurementStyle.Ems => "ems",
+                _ => string.Empty
+            };
+
+            return sb.Append($"<width={offset}{format}>");
+        }
+
+        /// <summary>
+        /// Adds a pos tag to a <see cref="StringBuilder"/>.
+        /// </summary>
+        /// <param name="sb">The <see cref="StringBuilder"/> to use.</param>
+        /// <param name="margins">The size of the pos tag.</param>
+        /// <param name="style">The measurement style of the pos tag.</param>
+        /// <returns>A reference to the original <see cref="StringBuilder"/>.</returns>
+        public static StringBuilder AddHorizontalPos(this StringBuilder sb, float margins, MeasurementStyle style = MeasurementStyle.Pixels)
+        {
+            string format = style switch
+            {
+                MeasurementStyle.Percentage => "%",
+                MeasurementStyle.Ems => "ems",
+                _ => string.Empty
+            };
+
+            return sb.Append($"<pos={margins}{format}>");
+        }
+
+        /// <summary>
+        /// Adds a space tag to a <see cref="StringBuilder"/>.
+        /// </summary>
+        /// <param name="sb">The <see cref="StringBuilder"/> to use.</param>
+        /// <param name="margins">The size of the pos tag.</param>
+        /// <param name="style">The measurement style of the pos tag.</param>
+        /// <returns>A reference to the original <see cref="StringBuilder"/>.</returns>
+        public static StringBuilder AddSpace(this StringBuilder sb, float margins, MeasurementStyle style = MeasurementStyle.Pixels)
+        {
+            string format = style switch
+            {
+                MeasurementStyle.Percentage => "%",
+                MeasurementStyle.Ems => "ems",
+                _ => string.Empty
+            };
+
+            return sb.Append($"<space={margins}{format}>");
+        }
+
+        /// <summary>
+        /// Adds a voffset tag to a <see cref="StringBuilder"/>.
+        /// </summary>
+        /// <param name="sb">The <see cref="StringBuilder"/> to use.</param>
+        /// <param name="offset">The size of the voffset tag.</param>
+        /// <param name="style">The measurement style of the voffset tag.</param>
+        /// <returns>A reference to the original <see cref="StringBuilder"/>.</returns>
+        public static StringBuilder AddVOffset(this StringBuilder sb, float offset, MeasurementStyle style = MeasurementStyle.Pixels)
+        {
+            string format = style switch
+            {
+                MeasurementStyle.Percentage => "%",
+                MeasurementStyle.Ems => "ems",
+                _ => string.Empty
+            };
+
+            return sb.Append($"<voffset={offset}{format}>");
+        }
+
+        /// <summary>
+        /// Adds a sprite tag to a <see cref="StringBuilder"/>.
+        /// </summary>
+        /// <param name="sb">The <see cref="StringBuilder"/> to use.</param>
+        /// <param name="index">The index (0-20) of the sprite tag.</param>
+        /// <returns>A reference to the original <see cref="StringBuilder"/>.</returns>
+        public static StringBuilder AddSprite(this StringBuilder sb, int index) => sb.Append($"<sprite={index}>");
+
+        /// <summary>
+        /// Adds a sprite tag to a <see cref="StringBuilder"/>.
+        /// </summary>
+        /// <param name="sb">The <see cref="StringBuilder"/> to use.</param>
+        /// <param name="index">The index (0-20) of the sprite tag.</param>
+        /// <param name="color">The color of the sprite tag.</param>
+        /// <returns>A reference to the original <see cref="StringBuilder"/>.</returns>
+        public static StringBuilder AddSprite(this StringBuilder sb, int index, Color color) => sb.Append($"<sprite index={index} color={ConvertToHex(color)}>");
 
         /// <summary>
         /// Adds a closing color tag to a <see cref="StringBuilder"/>.
@@ -254,5 +462,75 @@
         /// <param name="sb">The <see cref="StringBuilder"/> to use.</param>
         /// <returns>A reference to the original <see cref="StringBuilder"/>.</returns>
         public static StringBuilder CloseIndent(this StringBuilder sb) => sb.Append("</indent>");
+
+        /// <summary>
+        /// Adds a closing monospace tag to a <see cref="StringBuilder"/>.
+        /// </summary>
+        /// <param name="sb">The <see cref="StringBuilder"/> to use.</param>
+        /// <returns>A reference to the original <see cref="StringBuilder"/>.</returns>
+        public static StringBuilder CloseMonospace(this StringBuilder sb) => sb.Append("</mspace>");
+
+        /// <summary>
+        /// Adds a closing subscript tag to a <see cref="StringBuilder"/>.
+        /// </summary>
+        /// <param name="sb">The <see cref="StringBuilder"/> to use.</param>
+        /// <returns>A reference to the original <see cref="StringBuilder"/>.</returns>
+        public static StringBuilder CloseSubscript(this StringBuilder sb) => sb.Append("</subscript>");
+
+        /// <summary>
+        /// Adds a closing superscript tag to a <see cref="StringBuilder"/>.
+        /// </summary>
+        /// <param name="sb">The <see cref="StringBuilder"/> to use.</param>
+        /// <returns>A reference to the original <see cref="StringBuilder"/>.</returns>
+        public static StringBuilder CloseSuperscript(this StringBuilder sb) => sb.Append("</superscript>");
+
+        /// <summary>
+        /// Adds a closing rotation tag to a <see cref="StringBuilder"/>.
+        /// </summary>
+        /// <param name="sb">The <see cref="StringBuilder"/> to use.</param>
+        /// <returns>A reference to the original <see cref="StringBuilder"/>.</returns>
+        public static StringBuilder CloseRotation(this StringBuilder sb) => sb.Append("</rotate>");
+
+        /// <summary>
+        /// Adds a closing margins tag to a <see cref="StringBuilder"/>.
+        /// </summary>
+        /// <param name="sb">The <see cref="StringBuilder"/> to use.</param>
+        /// <returns>A reference to the original <see cref="StringBuilder"/>.</returns>
+        public static StringBuilder CloseMargins(this StringBuilder sb) => sb.Append("</margins>");
+
+        /// <summary>
+        /// Adds a closing mark tag to a <see cref="StringBuilder"/>.
+        /// </summary>
+        /// <param name="sb">The <see cref="StringBuilder"/> to use.</param>
+        /// <returns>A reference to the original <see cref="StringBuilder"/>.</returns>
+        public static StringBuilder CloseMark(this StringBuilder sb) => sb.Append("</mark>");
+
+        /// <summary>
+        /// Adds a closing nobreak tag to a <see cref="StringBuilder"/>.
+        /// </summary>
+        /// <param name="sb">The <see cref="StringBuilder"/> to use.</param>
+        /// <returns>A reference to the original <see cref="StringBuilder"/>.</returns>
+        public static StringBuilder CloseNobreak(this StringBuilder sb) => sb.Append("</nobr>");
+
+        /// <summary>
+        /// Adds a closing noparse tag to a <see cref="StringBuilder"/>.
+        /// </summary>
+        /// <param name="sb">The <see cref="StringBuilder"/> to use.</param>
+        /// <returns>A reference to the original <see cref="StringBuilder"/>.</returns>
+        public static StringBuilder CloseNoparse(this StringBuilder sb) => sb.Append("</noparse>");
+
+        /// <summary>
+        /// Adds a closing voffset tag to a <see cref="StringBuilder"/>.
+        /// </summary>
+        /// <param name="sb">The <see cref="StringBuilder"/> to use.</param>
+        /// <returns>A reference to the original <see cref="StringBuilder"/>.</returns>
+        public static StringBuilder CloseVOffset(this StringBuilder sb) => sb.Append("</voffset>");
+
+        /// <summary>
+        /// Adds a closing width tag to a <see cref="StringBuilder"/>.
+        /// </summary>
+        /// <param name="sb">The <see cref="StringBuilder"/> to use.</param>
+        /// <returns>A reference to the original <see cref="StringBuilder"/>.</returns>
+        public static StringBuilder CloseWidth(this StringBuilder sb) => sb.Append("</width>");
     }
 }
