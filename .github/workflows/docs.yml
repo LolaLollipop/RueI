@@ -11,6 +11,7 @@ jobs:
   docs:
     permissions:
       contents: 'read'
+      pages: 'write'
       id-token: 'write'
 
     environment:
@@ -20,14 +21,18 @@ jobs:
     runs-on: ubuntu-latest
     name: Generate and publish the docs
     steps:
-    - uses: actions/checkout@v1
-      name: Checkout code
-    - uses: nunit/docfx-action@v3
-      name: Build Documentation
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: Dotnet Setup
+      uses: actions/setup-dotnet@v3
       with:
-        args: docfx.json
-    - name: Deploy GitHub Pages site           
-      uses: actions/deploy-pages@v3
+        dotnet-version: 7.x
+
+    - run: dotnet tool update -g docfx
+    - run: docfx docfx.json
+
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
       with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: docs/_site
