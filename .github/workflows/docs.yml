@@ -22,12 +22,12 @@ jobs:
     steps:
     - uses: actions/checkout@v1
       name: Checkout code
-    - uses: nunit/docfx-action@v2.4.0
+    - uses: nunit/docfx-action@v3
       name: Build Documentation
       with:
         args: docfx.json
     - name: Deploy GitHub Pages site           
-      uses: actions/deploy-pages@v2.0.4  
+      uses: actions/deploy-pages@v3
       with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
