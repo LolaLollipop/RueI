@@ -23,29 +23,21 @@ concurrency:
 
 jobs:
   # Build job
-  build:
+  publish-docs:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-      - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
-        with:
-          source: ./
-          destination: ./_site
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: Dotnet Setup
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 7.x
 
-  # Deployment job
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
+    - run: dotnet tool update -g docfx
+    - run: docfx docfx_project/docfx.json
+
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: docs/_site
