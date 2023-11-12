@@ -15,11 +15,6 @@
         public StringBuilder ResultBuilder { get; } = StringBuilderPool.Shared.Rent();
 
         /// <summary>
-        /// Gets the current tag buffer.
-        /// </summary>
-        public StringBuilder TagBuffer { get; } = StringBuilderPool.Shared.Rent(128);
-
-        /// <summary>
         /// Gets or sets the final offset for the element as a whole.
         /// </summary>
         public float NewOffset { get; set; } = 0;
@@ -90,7 +85,6 @@
         public void Dispose()
         {
             StringBuilderPool.Shared.Return(ResultBuilder);
-            StringBuilderPool.Shared.Return(TagBuffer);
         }
     }
 }

@@ -3,7 +3,7 @@
     /// <summary>
     /// Defines an element that can be set.
     /// </summary>
-    public interface ISettable
+    public interface ISettable : IElement
     {
         /// <summary>
         /// Sets the content of this element.

@@ -50,14 +50,16 @@
             StringBuilder tagBuffer = StringBuilderPool.Shared.Rent(Constants.MAXTAGNAMESIZE);
             int tagBufferSize = 0;
 
-            ParamProcessor? paramProcessor = null;
+            ParamsTagBase? currentTag = null;
+            char? delimiter = null;
+
             StringBuilder paramBuffer = StringBuilderPool.Shared.Rent(30);
 
             using ParserContext context = new();
 
             void FailTagMatch() // not a tag, unload buffer
             {
-                context.ResultBuilder.Append("<​"); // zero width space guarantees that the tag isnt matched
+                this.AvoidMatch(context);
                 foreach (char ch in tagBuffer.ToString())
                 {
                     AddCharacter(context, ch);
@@ -68,9 +70,16 @@
                     AddCharacter(context, ch);
                 }
 
+                if (delimiter != null)
+                {
+                    AddCharacter(context, delimiter.Value);
+                    delimiter = null;
+                }
+
                 tagBuffer.Clear();
                 paramBuffer.Clear();
 
+                currentTag = null;
                 currentState = ParserState.CollectingTags;
                 tagBufferSize = 0;
             }
@@ -105,55 +114,27 @@
                         tagBuffer.Append(ch);
                         continue;
                     }
-                    else if (ch == '=')
+                    else if (ch == '>')
                     {
-                        if (Tags.TryGetValue(tagBuffer.ToString(), out RichTextTag tag) && tag.TryGetNewProcessor(out ParamProcessor? processor))
+                        if (Tags.TryGetValue(tagBuffer.ToString(), out RichTextTag tag) && tag is NoParamsTagBase noParams)
                         {
-                            paramProcessor = processor;
-
-                            tagBuffer.Append('=');
-                            continue; // do NOT add as a character
+                            noParams.HandleTag(context);
+                            continue;
                         }
                         else
                         {
                             FailTagMatch();
                         }
                     }
-                    else if (ch == '>')
+                    else if (ch == ' ' || ch == '=')
                     {
-                        if (Tags.TryGetValue(tagBuffer.ToString(), out RichTextTag tag))
+                        if (Tags.TryGetValue(tagBuffer.ToString(), out RichTextTag tag) && tag is ParamsTagBase withParams && withParams.IsValidDelimiter(ch))
                         {
-                            if (tag is NoParamsTagBase noParams)
-                            {
-                                noParams.HandleTag(context);
+                            currentTag = withParams;
+                            delimiter = ch;
 
-                                tagBuffer.Clear();
-
-                                paramProcessor = null;
-                                continue; // do NOT add as a character
-                            }
-                            else if (currentState == ParserState.CollectingParams && paramProcessor != null)
-                            {
-                                string paramContent = paramBuffer.ToString();
-                                bool wasSuccessful = paramProcessor.Finish(context, paramContent);
-                                if (!wasSuccessful)
-                                {
-                                    FailTagMatch();
-                                }
-                                else
-                                {
-                                    paramProcessor = null;
-                                    tagBuffer.Clear();
-
-                                    continue;
-                                }
-                            }
-                            else
-                            {
-                                FailTagMatch();
-                            }
-
-                            paramProcessor = null;
+                            currentState = ParserState.CollectingParams;
+                            continue;
                         }
                         else
                         {
@@ -167,6 +148,25 @@
                 }
                 else if (currentState == ParserState.CollectingParams)
                 {
+                    if (ch == '>')
+                    {
+#pragma warning disable
+                        if (currentTag.HandleTag(context, delimiter.Value, paramBuffer.ToString()))
+#pragma warning restore
+                        {
+                            tagBuffer.Clear();
+                            paramBuffer.Clear();
+
+                            currentTag = null;
+                            delimiter = null;
+                            currentState = ParserState.CollectingTags;
+                            tagBufferSize = 0;
+                        } else
+                        {
+                            FailTagMatch();
+                        }
+                    }
+
                     paramBuffer.Append(ch);
                     continue; // do NOT add as a character
                 }
@@ -257,6 +257,68 @@
             {
                 context.CurrentLineWidth = 0;
                 context.NewOffset += context.WidthSinceSpace;
+            }
+        }
+
+        /// <summary>
+        /// Exports this parser's <see cref="RichTextTag"/>s to a <see cref="ParserBuilder"/>.
+        /// </summary>
+        /// <param name="builder">The builder to export the tags to.</param>
+        internal void ExportTo(ParserBuilder builder) => builder.AddTags(Tags.Values);
+
+        /// <summary>
+        /// Parses the tag attributes of a string.
+        /// </summary>
+        /// <param name="content">The content to parse.</param>
+        /// <param name="attributes">The pairs of attributes.</param>
+        /// <returns><see cref="true"/> if the content is valid, otherwise <see cref="false"/>.</returns>
+        public static bool GetTagAttributes(string content, out Dictionary<string, string> attributes)
+        {
+            IEnumerable<string> result = content.Split('"')
+                            .Select((element, index) => index % 2 == 0
+                               ? element.Split(' ')
+                               : new string[] { element })
+                            .SelectMany(element => element);
+
+            Dictionary<string, string> attributePairs = new();
+            attributes = attributePairs;
+
+            foreach (string possiblePair in result)
+            {
+                if (possiblePair == string.Empty)
+                {
+                    return false;
+                }
+
+                string[] results = possiblePair.Split('=');
+
+                if (results.Length != 2)
+                {
+                    return false;
+                }
+
+                attributePairs.Add(results[0], results[1]);
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        /// Avoids the client TMP matching a tag.
+        /// </summary>
+        /// <param name="context">The context of the parser.</param>
+        private void AvoidMatch(ParserContext context)
+        {
+            if (!context.IsMonospace && context.CurrentCSpace == 0)
+            {
+                context.ResultBuilder.Append('​'); // zero width space
+            }
+            else if (context.IsBold)
+            {
+                context.ResultBuilder.Append("<b>");
+            } else
+            {
+                context.ResultBuilder.Append("</b>");
             }
         }
 

@@ -1,42 +1,30 @@
-﻿namespace RueI.Parsing
+﻿namespace RueI.Records
 {
     using System.Text;
     using NorthwoodLib.Pools;
     using RueI.Enums;
 
     /// <summary>
-    /// Processes measurement params for a tag.
+    /// Defines a record that contains information about measurement info.
     /// </summary>
-    public class MeasurementParamProcessor : ParamProcessor
+    /// <param name="Value">The value of the measurement.</param>
+    /// <param name="Style">The style of the measurement.</param>
+    public record struct MeasurementInfo(float Value, MeasurementStyle Style)
     {
         /// <summary>
-        /// Represents an action to execute when processed.
+        /// Attempts to extract a <see cref="MeasurementInfo"/> from a string.
         /// </summary>
-        /// <param name="context">The context of the parser.</param>
-        /// <param name="value">The measurement value.</param>
-        /// <param name="style">The measurement style.</param>
-        public delegate void MeasurementTagHandler(ParserContext context, float value, MeasurementStyle style);
-
-        private MeasurementTagHandler tagHandler;
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MeasurementParamProcessor"/> class.
-        /// </summary>
-        /// <param name="processor">The action to execute when processed.</param>
-        public MeasurementParamProcessor(MeasurementTagHandler processor)
-        {
-            tagHandler = processor;
-        }
-
-        /// <inheritdoc/>
-        public override bool Finish(ParserContext context, string parserContent)
+        /// <param name="content">The content to parse.</param>
+        /// <param name="info">The returned info, if <see cref="true"/>.</param>
+        /// <returns><see cref="true"/> if the string was valid, otherwise <see cref="false"/>.</returns>
+        public static bool TryParse(string content, out MeasurementInfo info)
         {
             StringBuilder paramBuffer = StringBuilderPool.Shared.Rent(25);
             MeasurementStyle style = MeasurementStyle.Pixels;
 
             bool hasPeriod = false;
 
-            foreach (char ch in parserContent)
+            foreach (char ch in content)
             {
                 if (ch == 'e')
                 {
@@ -69,13 +57,15 @@
             string bufferString = StringBuilderPool.Shared.ToStringReturn(paramBuffer);
             if (float.TryParse(bufferString, out float result))
             {
-                tagHandler(context, result, style);
+                info = new(result, style);
                 return true;
             }
             else
             {
+                info = default;
                 return false;
             }
+
         }
     }
 }

@@ -13,7 +13,7 @@
         /// <typeparam name="T">The type of item to add.</typeparam>
         /// <param name="collection">The collection to add the elements to.</param>
         /// <param name="items">The items to add.</param>
-        public static void Add<T>(this Collection<T> collection, params T[] items)
+        public static void Add<T>(this ICollection<T> collection, params T[] items)
         {
             foreach (T item in items)
             {

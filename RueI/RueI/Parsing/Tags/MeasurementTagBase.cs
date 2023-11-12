@@ -1,24 +1,42 @@
 ﻿namespace RueI.Parsing.Tags
 {
+    using System.Text;
+    using NorthwoodLib.Pools;
     using RueI.Enums;
+    using RueI.Records;
 
     /// <summary>
-    /// Defines the base class for all tags that take in a measurement.
+    /// Defines the base class for all tags that only take in a measurement.
     /// </summary>
-    public abstract class MeasurementTagBase : RichTextTag
+    public abstract class MeasurementTagBase : ParamsTagBase
     {
-        /// <summary>
-        /// Gets a new measurement tag processor for this tag.
-        /// </summary>
-        /// <returns>The new measurement tag processor.</returns>
-        public override ParamProcessor? GetProcessor() => new MeasurementParamProcessor(HandleTag);
+        /// <inheritdoc/>
+        public override bool IsValidDelimiter(char ch) => ch == '=';
+
+        /// <inheritdoc/>
+        public override bool HandleTag(ParserContext context, char delimiter, string content)
+        {
+            if (!IsValidDelimiter(delimiter))
+            {
+                return false;
+            }
+
+            if (MeasurementInfo.TryParse(content, out MeasurementInfo info))
+            {
+                return HandleTag(context, info);
+            }
+            else
+            {
+                return false;
+            }
+        }
 
         /// <summary>
-        /// Handles an instance of the measurement tag.
+        /// Handles an instance of this tag.
         /// </summary>
         /// <param name="context">The context of the parser.</param>
-        /// <param name="measurement">The value of the measurement.</param>
-        /// <param name="style">The style of the measurement.</param>
-        protected abstract void HandleTag(ParserContext context, float measurement, MeasurementStyle style);
+        /// <param name="info">The information about the measurement.</param>
+        /// <returns><see cref="true"/> if the tag is valid, otherwise <see cref="false"/>.</returns>
+        public abstract bool HandleTag(ParserContext context, MeasurementInfo info);
     }
 }

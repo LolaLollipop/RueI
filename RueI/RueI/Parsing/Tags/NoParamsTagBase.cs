@@ -5,11 +5,8 @@
     /// </summary>
     public abstract class NoParamsTagBase : RichTextTag
     {
-        /// <summary>
-        /// Does not return anything.
-        /// </summary>
-        /// <returns><see cref="null"/>.</returns>
-        public sealed override ParamProcessor? GetProcessor() => null;
+        /// <inheritdoc/>
+        public override bool IsValidDelimiter(char ch) => ch == '>';
 
         /// <summary>
         /// Handles an instance of a tag without params.

@@ -97,6 +97,10 @@
             "yellow",
         });
 
+        public static Parser DefaultParser { get; } = new ParserBuilder()
+            .AddTag<SizeTag>()
+            .Build();
+
         /// <summary>
         /// Gets a <see cref="ReadOnlyDictionary{char, float}"/> of character sizes.
         /// </summary>

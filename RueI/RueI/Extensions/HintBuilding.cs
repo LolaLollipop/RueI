@@ -216,6 +216,25 @@
         }
 
         /// <summary>
+        /// Adds a horizontal scale tag to a <see cref="StringBuilder"/>.
+        /// </summary>
+        /// <param name="sb">The <see cref="StringBuilder"/> to use.</param>
+        /// <param name="indent">The scale size to include in the scale tag.</param>
+        /// <param name="style">The measurement style of the scale tag.</param>
+        /// <returns>A reference to the original <see cref="StringBuilder"/>.</returns>
+        public static StringBuilder SetScale(this StringBuilder sb, float indent, MeasurementStyle style = MeasurementStyle.Pixels)
+        {
+            string format = style switch
+            {
+                MeasurementStyle.Percentage => "%",
+                MeasurementStyle.Ems => "ems",
+                _ => string.Empty
+            };
+
+            return sb.Append($"<scale={indent}{format}>");
+        }
+
+        /// <summary>
         /// Adds a monospace tag to a <see cref="StringBuilder"/>.
         /// </summary>
         /// <param name="sb">The <see cref="StringBuilder"/> to use.</param>
@@ -462,6 +481,13 @@
         /// <param name="sb">The <see cref="StringBuilder"/> to use.</param>
         /// <returns>A reference to the original <see cref="StringBuilder"/>.</returns>
         public static StringBuilder CloseIndent(this StringBuilder sb) => sb.Append("</indent>");
+
+        /// <summary>
+        /// Adds a closing scale tag to a <see cref="StringBuilder"/>.
+        /// </summary>
+        /// <param name="sb">The <see cref="StringBuilder"/> to use.</param>
+        /// <returns>A reference to the original <see cref="StringBuilder"/>.</returns>
+        public static StringBuilder CloseScale(this StringBuilder sb) => sb.Append("</scale>");
 
         /// <summary>
         /// Adds a closing monospace tag to a <see cref="StringBuilder"/>.
