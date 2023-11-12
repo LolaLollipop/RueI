@@ -20,7 +20,10 @@ jobs:
       name: Checkout code
     - uses: nunit/docfx-action@v2.4.0
       name: Build Documentation
+      with:
+        args: docfx.json
     - name: Deploy GitHub Pages site           
       uses: actions/deploy-pages@v2.0.4  
       with:
-        args: docfx.json
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
