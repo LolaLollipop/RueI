@@ -1,0 +1,22 @@
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    name: Generate and publish the docs
+    steps:
+    - uses: actions/checkout@v1
+      name: Checkout code
+    - uses: nunit/docfx-action@v2.4.0
+      name: Build Documentation
+    - name: Deploy GitHub Pages site           
+      uses: actions/deploy-pages@v2.0.4  
+      with:
+        args: ./docfx.json
