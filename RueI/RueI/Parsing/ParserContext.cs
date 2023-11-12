@@ -7,7 +7,7 @@
     /// <summary>
     /// Describes the state of a parser at a time.
     /// </summary>
-    public class ParserContext : IDisposable
+    public class ParserContext : TextInfo, IDisposable
     {
         /// <summary>
         /// Gets the end result string builder.
@@ -25,29 +25,9 @@
         public Stack<float> SizeTags { get; } = new();
 
         /// <summary>
-        /// Gets or sets the current line height of the parser.
-        /// </summary>
-        public float CurrentLineHeight { get; set; } = Constants.DEFAULTHEIGHT;
-
-        /// <summary>
         /// Gets or sets the current line width of the parser.
         /// </summary>
         public float CurrentLineWidth { get; set; } = 0;
-
-        /// <summary>
-        /// Gets or sets the total width since a space.
-        /// </summary>
-        public float WidthSinceSpace { get; set; } = 0;
-
-        /// <summary>
-        /// Gets or sets the current character of the parser.
-        /// </summary>
-        public float Size { get; set; } = Constants.DEFAULTSIZE;
-
-        /// <summary>
-        /// Gets or sets the current additional character spacing of the parser.
-        /// </summary>
-        public float CurrentCSpace { get; set; } = 0;
 
         /// <summary>
         /// Gets or sets a value indicating whether the parser should parse tags other than noparse.
@@ -55,24 +35,14 @@
         public bool ShouldParse { get; set; } = true;
 
         /// <summary>
-        /// Gets or sets a value indicating whether the characters are currently in monospace.
+        /// Gets or sets the total width since a space.
         /// </summary>
-        public bool IsMonospace { get; set; } = false;
+        public float WidthSinceSpace { get; set; } = 0;
 
         /// <summary>
         /// Gets or sets a value indicating whether or not words are currently in no break.
         /// </summary>
         public bool NoBreak { get; set; } = false;
-
-        /// <summary>
-        /// Gets or sets a value indicating whether or not the characters are currently bold.
-        /// </summary>
-        public bool IsBold { get; set; } = false;
-
-        /// <summary>
-        /// Gets or sets the current case of the parser.
-        /// </summary>
-        public CaseStyle CurrentCase { get; set; } = CaseStyle.Smallcaps;
 
         /// <summary>
         /// Gets or sets the number of color tags that are nested.

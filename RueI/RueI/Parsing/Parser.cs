@@ -211,7 +211,7 @@
         /// <param name="context">The context to parse the char under.</param>
         /// <param name="ch">The char to calculate the length for.</param>
         /// <returns>A float indicating the total length of the char.</returns>
-        public float CalculateCharacterLength(ParserContext context, char ch)
+        public float CalculateCharacterLength(TextInfo context, char ch)
         {
             char functionalCase = context.CurrentCase switch
             {
@@ -222,7 +222,7 @@
 
             if (context.IsMonospace)
             {
-                return context.CurrentCSpace;
+                return context.Monospacing + context.CurrentCSpace;
             }
 
             if (Constants.CharacterLengths.TryGetValue(functionalCase, out float chSize))
@@ -261,12 +261,6 @@
         }
 
         /// <summary>
-        /// Exports this parser's <see cref="RichTextTag"/>s to a <see cref="ParserBuilder"/>.
-        /// </summary>
-        /// <param name="builder">The builder to export the tags to.</param>
-        internal void ExportTo(ParserBuilder builder) => builder.AddTags(Tags.Values);
-
-        /// <summary>
         /// Parses the tag attributes of a string.
         /// </summary>
         /// <param name="content">The content to parse.</param>
@@ -302,6 +296,12 @@
 
             return true;
         }
+
+        /// <summary>
+        /// Exports this parser's <see cref="RichTextTag"/>s to a <see cref="ParserBuilder"/>.
+        /// </summary>
+        /// <param name="builder">The builder to export the tags to.</param>
+        internal void ExportTo(ParserBuilder builder) => builder.AddTags(Tags.Values);
 
         /// <summary>
         /// Avoids the client TMP matching a tag.
