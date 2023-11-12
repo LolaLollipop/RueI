@@ -1,10 +1,10 @@
 on:
   push:
     branches:
-      - main
+      - master
   pull_request:
     branches:
-      - main
+      - master
   workflow_dispatch:
 
 jobs:
@@ -19,4 +19,4 @@ jobs:
     - name: Deploy GitHub Pages site           
       uses: actions/deploy-pages@v2.0.4  
       with:
-        args: ./docfx.json
+        args: docfx.json
