@@ -1,6 +1,7 @@
 {
   "metadata": [
     {
+      "allowCompilationErrors": true,
       "src": [
         {
           "src": "./",
