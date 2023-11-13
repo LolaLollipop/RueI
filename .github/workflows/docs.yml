@@ -1,3 +1,5 @@
+name: Clean up and deploy docs
+
 on:
   push:
     branches:
@@ -9,6 +11,7 @@ on:
 
 jobs:
   cleanup:
+    name: Cleanup prior deployments
     runs-on: ubuntu-latest
     permissions: write-all
 
@@ -21,6 +24,7 @@ jobs:
           onlyRemoveDeployments: true
           
   docs:
+    needs: cleanup
     permissions:
       contents: 'write'
       pages: 'write'
