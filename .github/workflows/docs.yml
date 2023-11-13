@@ -8,9 +8,21 @@ on:
   workflow_dispatch:
 
 jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    permissions: write-all
+
+    steps:
+      - name: Delete deployments
+        uses: strumwolf/delete-deployment-environment@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          environment: github-pages
+          onlyRemoveDeployments: true
+          
   docs:
     permissions:
-      contents: 'read'
+      contents: 'write'
       pages: 'write'
       id-token: 'write'
 
