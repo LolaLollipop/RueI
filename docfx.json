@@ -35,6 +35,7 @@
       "default",
       "modern"
     ],
+    "output": "_site",
     "globalMetadata": {
       "_appName": "RueI",
       "_appTitle": "RueI",
