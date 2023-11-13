@@ -48,10 +48,8 @@ jobs:
     - run: dotnet tool update -g docfx
     - run: docfx docfx.json
         
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
+    - uses: maxheld83/ghpages@master
+      name: Publish Documentation on GitHub Pages
       env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: docs/_site
+        BUILD_DIR: _site # docfx's default output directory is _site
+        GH_PAT: ${{ secrets.GITHUB_TOKEN }} # See https://github.com/maxheld83/ghpages
