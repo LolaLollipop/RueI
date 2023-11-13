@@ -47,11 +47,6 @@ jobs:
 
     - run: dotnet tool update -g docfx
     - run: docfx docfx.json
-    
-    - uses: nunit/docfx-action@v2.4.0
-      name: Build Documentation
-      with:
-        args: docfx.json
         
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
