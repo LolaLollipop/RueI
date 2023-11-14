@@ -1,7 +1,6 @@
 ---
 _layout: landing
 ---
-
 # RueI
 
 RueI is a **hint framework** for scp:sl. it provides the ability to show multiple hints at once, along with a lot of other features
