@@ -5,8 +5,7 @@ to use this, you first bring the class into scope:
 ```csharp
 using RueI.Extensions.HintBuilding;
 ```
-then, you can use it like so:
-btw im gonna waste time to make a dumb little stringbuilder extensions thing so you can do shit like 
+then, you can use it like so: 
 ```csharp
 StringBuilder sb = new()
   .SetColor(255, 0, 0)
