@@ -1,6 +1,7 @@
 {
   "metadata": [
     {
+      "allowCompilationErrors": true,
       "src": [
         {
           "src": "./",
@@ -30,11 +31,11 @@
         ]
       }
     ],
-    "output": "_site",
     "template": [
       "default",
       "modern"
     ],
+    "output": "_site",
     "globalMetadata": {
       "_appName": "RueI",
       "_appTitle": "RueI",

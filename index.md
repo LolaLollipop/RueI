@@ -2,10 +2,8 @@
 _layout: landing
 ---
 
-# This is the **HOMEPAGE**.
+# RueI
+RueI is a **hint framework** for scp:sl. it provides the ability to show multiple hints at once, along with a lot of other features
 
-Refer to [Markdown](http://daringfireball.net/projects/markdown/) for how to write markdown files.
-
-## Quick Start Notes:
-
-1. Add images to the *images* folder if the file is referencing an image.
+### for server owners
+installing RueI is easy. download the dll, and move it into your *dependencies* folder for the plugin framework you are using. note that RueI requires Harmony 2.2.2, you can get that [here](https://github.com/pardeike/Harmony).

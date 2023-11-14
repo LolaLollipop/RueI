@@ -1,6 +1,8 @@
 # RueI
 RueI is a hint framework for scp:sl
 
+docs are available [here](https://ruemena.github.io/RueI/).
+
 ### Features
 - support for displaying multiple hints at once without them interfering with eachother
 - cross-plugin compatibility 
