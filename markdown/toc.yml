@@ -3,6 +3,6 @@
 - name: Getting Started
   href: getting-started.md
 - name: HintBuilding Extensions
-- href: hintbuilding.md
+  href: hintbuilding.md
 - name: eMEC Guide
   href: eMec.md
