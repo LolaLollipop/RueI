@@ -728,96 +728,6 @@ references:
   isSpec: "True"
   fullName: RueI.Displays.Scheduler.Schedule
   nameWithType: Scheduler.Schedule
-- uid: RueI.DynamicElement
-  name: DynamicElement
-  href: api/RueI.DynamicElement.html
-  commentId: T:RueI.DynamicElement
-  fullName: RueI.DynamicElement
-  nameWithType: DynamicElement
-- uid: RueI.DynamicElement.#ctor(RueI.Delegates.GetContent,System.Single,System.Int32)
-  name: DynamicElement(GetContent, float, int)
-  href: api/RueI.DynamicElement.html#RueI_DynamicElement__ctor_RueI_Delegates_GetContent_System_Single_System_Int32_
-  commentId: M:RueI.DynamicElement.#ctor(RueI.Delegates.GetContent,System.Single,System.Int32)
-  name.vb: New(GetContent, Single, Integer)
-  fullName: RueI.DynamicElement.DynamicElement(RueI.Delegates.GetContent, float, int)
-  fullName.vb: RueI.DynamicElement.New(RueI.Delegates.GetContent, Single, Integer)
-  nameWithType: DynamicElement.DynamicElement(GetContent, float, int)
-  nameWithType.vb: DynamicElement.New(GetContent, Single, Integer)
-- uid: RueI.DynamicElement.#ctor*
-  name: DynamicElement
-  href: api/RueI.DynamicElement.html#RueI_DynamicElement__ctor_
-  commentId: Overload:RueI.DynamicElement.#ctor
-  isSpec: "True"
-  name.vb: New
-  fullName: RueI.DynamicElement.DynamicElement
-  fullName.vb: RueI.DynamicElement.New
-  nameWithType: DynamicElement.DynamicElement
-  nameWithType.vb: DynamicElement.New
-- uid: RueI.DynamicElement.ContentGetter
-  name: ContentGetter
-  href: api/RueI.DynamicElement.html#RueI_DynamicElement_ContentGetter
-  commentId: P:RueI.DynamicElement.ContentGetter
-  fullName: RueI.DynamicElement.ContentGetter
-  nameWithType: DynamicElement.ContentGetter
-- uid: RueI.DynamicElement.ContentGetter*
-  name: ContentGetter
-  href: api/RueI.DynamicElement.html#RueI_DynamicElement_ContentGetter_
-  commentId: Overload:RueI.DynamicElement.ContentGetter
-  isSpec: "True"
-  fullName: RueI.DynamicElement.ContentGetter
-  nameWithType: DynamicElement.ContentGetter
-- uid: RueI.DynamicElement.Enabled
-  name: Enabled
-  href: api/RueI.DynamicElement.html#RueI_DynamicElement_Enabled
-  commentId: P:RueI.DynamicElement.Enabled
-  fullName: RueI.DynamicElement.Enabled
-  nameWithType: DynamicElement.Enabled
-- uid: RueI.DynamicElement.Enabled*
-  name: Enabled
-  href: api/RueI.DynamicElement.html#RueI_DynamicElement_Enabled_
-  commentId: Overload:RueI.DynamicElement.Enabled
-  isSpec: "True"
-  fullName: RueI.DynamicElement.Enabled
-  nameWithType: DynamicElement.Enabled
-- uid: RueI.DynamicElement.ParsedData
-  name: ParsedData
-  href: api/RueI.DynamicElement.html#RueI_DynamicElement_ParsedData
-  commentId: P:RueI.DynamicElement.ParsedData
-  fullName: RueI.DynamicElement.ParsedData
-  nameWithType: DynamicElement.ParsedData
-- uid: RueI.DynamicElement.ParsedData*
-  name: ParsedData
-  href: api/RueI.DynamicElement.html#RueI_DynamicElement_ParsedData_
-  commentId: Overload:RueI.DynamicElement.ParsedData
-  isSpec: "True"
-  fullName: RueI.DynamicElement.ParsedData
-  nameWithType: DynamicElement.ParsedData
-- uid: RueI.DynamicElement.Position
-  name: Position
-  href: api/RueI.DynamicElement.html#RueI_DynamicElement_Position
-  commentId: P:RueI.DynamicElement.Position
-  fullName: RueI.DynamicElement.Position
-  nameWithType: DynamicElement.Position
-- uid: RueI.DynamicElement.Position*
-  name: Position
-  href: api/RueI.DynamicElement.html#RueI_DynamicElement_Position_
-  commentId: Overload:RueI.DynamicElement.Position
-  isSpec: "True"
-  fullName: RueI.DynamicElement.Position
-  nameWithType: DynamicElement.Position
-- uid: RueI.DynamicElement.ZIndex
-  name: ZIndex
-  href: api/RueI.DynamicElement.html#RueI_DynamicElement_ZIndex
-  commentId: P:RueI.DynamicElement.ZIndex
-  fullName: RueI.DynamicElement.ZIndex
-  nameWithType: DynamicElement.ZIndex
-- uid: RueI.DynamicElement.ZIndex*
-  name: ZIndex
-  href: api/RueI.DynamicElement.html#RueI_DynamicElement_ZIndex_
-  commentId: Overload:RueI.DynamicElement.ZIndex
-  isSpec: "True"
-  fullName: RueI.DynamicElement.ZIndex
-  nameWithType: DynamicElement.ZIndex
 - uid: RueI.Enums
   name: RueI.Enums
   href: api/RueI.Enums.html
@@ -1131,11 +1041,11 @@ references:
   isSpec: "True"
   fullName: RueI.Extensions.ElementHelpers.CalculateOffset
   nameWithType: ElementHelpers.CalculateOffset
-- uid: RueI.Extensions.ElementHelpers.GetFunctionalPosition(RueI.IElement)
+- uid: RueI.Extensions.ElementHelpers.GetFunctionalPosition(IElement)
   name: GetFunctionalPosition(IElement)
-  href: api/RueI.Extensions.ElementHelpers.html#RueI_Extensions_ElementHelpers_GetFunctionalPosition_RueI_IElement_
-  commentId: M:RueI.Extensions.ElementHelpers.GetFunctionalPosition(RueI.IElement)
-  fullName: RueI.Extensions.ElementHelpers.GetFunctionalPosition(RueI.IElement)
+  href: api/RueI.Extensions.ElementHelpers.html#RueI_Extensions_ElementHelpers_GetFunctionalPosition_IElement_
+  commentId: M:RueI.Extensions.ElementHelpers.GetFunctionalPosition(IElement)
+  fullName: RueI.Extensions.ElementHelpers.GetFunctionalPosition(IElement)
   nameWithType: ElementHelpers.GetFunctionalPosition(IElement)
 - uid: RueI.Extensions.ElementHelpers.GetFunctionalPosition*
   name: GetFunctionalPosition
@@ -2005,64 +1915,6 @@ references:
   fullName.vb: RueI.Extensions.Union(Of T, TOther).CType
   nameWithType: Union<T, TOther>.implicit operator
   nameWithType.vb: Union(Of T, TOther).CType
-- uid: RueI.IElement
-  name: IElement
-  href: api/RueI.IElement.html
-  commentId: T:RueI.IElement
-  fullName: RueI.IElement
-  nameWithType: IElement
-- uid: RueI.IElement.Enabled
-  name: Enabled
-  href: api/RueI.IElement.html#RueI_IElement_Enabled
-  commentId: P:RueI.IElement.Enabled
-  fullName: RueI.IElement.Enabled
-  nameWithType: IElement.Enabled
-- uid: RueI.IElement.Enabled*
-  name: Enabled
-  href: api/RueI.IElement.html#RueI_IElement_Enabled_
-  commentId: Overload:RueI.IElement.Enabled
-  isSpec: "True"
-  fullName: RueI.IElement.Enabled
-  nameWithType: IElement.Enabled
-- uid: RueI.IElement.ParsedData
-  name: ParsedData
-  href: api/RueI.IElement.html#RueI_IElement_ParsedData
-  commentId: P:RueI.IElement.ParsedData
-  fullName: RueI.IElement.ParsedData
-  nameWithType: IElement.ParsedData
-- uid: RueI.IElement.ParsedData*
-  name: ParsedData
-  href: api/RueI.IElement.html#RueI_IElement_ParsedData_
-  commentId: Overload:RueI.IElement.ParsedData
-  isSpec: "True"
-  fullName: RueI.IElement.ParsedData
-  nameWithType: IElement.ParsedData
-- uid: RueI.IElement.Position
-  name: Position
-  href: api/RueI.IElement.html#RueI_IElement_Position
-  commentId: P:RueI.IElement.Position
-  fullName: RueI.IElement.Position
-  nameWithType: IElement.Position
-- uid: RueI.IElement.Position*
-  name: Position
-  href: api/RueI.IElement.html#RueI_IElement_Position_
-  commentId: Overload:RueI.IElement.Position
-  isSpec: "True"
-  fullName: RueI.IElement.Position
-  nameWithType: IElement.Position
-- uid: RueI.IElement.ZIndex
-  name: ZIndex
-  href: api/RueI.IElement.html#RueI_IElement_ZIndex
-  commentId: P:RueI.IElement.ZIndex
-  fullName: RueI.IElement.ZIndex
-  nameWithType: IElement.ZIndex
-- uid: RueI.IElement.ZIndex*
-  name: ZIndex
-  href: api/RueI.IElement.html#RueI_IElement_ZIndex_
-  commentId: Overload:RueI.IElement.ZIndex
-  isSpec: "True"
-  fullName: RueI.IElement.ZIndex
-  nameWithType: IElement.ZIndex
 - uid: RueI.IScreenElement`1
   name: IScreenElement<T>
   href: api/RueI.IScreenElement-1.html
@@ -3356,99 +3208,6 @@ references:
   fullName.vb: RueI.ScreenSetElement(Of T).Screens
   nameWithType: ScreenSetElement<T>.Screens
   nameWithType.vb: ScreenSetElement(Of T).Screens
-- uid: RueI.SetElement
-  name: SetElement
-  href: api/RueI.SetElement.html
-  commentId: T:RueI.SetElement
-  fullName: RueI.SetElement
-  nameWithType: SetElement
-- uid: RueI.SetElement.#ctor(System.Single,System.Int32,System.String)
-  name: SetElement(float, int, string)
-  href: api/RueI.SetElement.html#RueI_SetElement__ctor_System_Single_System_Int32_System_String_
-  commentId: M:RueI.SetElement.#ctor(System.Single,System.Int32,System.String)
-  name.vb: New(Single, Integer, String)
-  fullName: RueI.SetElement.SetElement(float, int, string)
-  fullName.vb: RueI.SetElement.New(Single, Integer, String)
-  nameWithType: SetElement.SetElement(float, int, string)
-  nameWithType.vb: SetElement.New(Single, Integer, String)
-- uid: RueI.SetElement.#ctor*
-  name: SetElement
-  href: api/RueI.SetElement.html#RueI_SetElement__ctor_
-  commentId: Overload:RueI.SetElement.#ctor
-  isSpec: "True"
-  name.vb: New
-  fullName: RueI.SetElement.SetElement
-  fullName.vb: RueI.SetElement.New
-  nameWithType: SetElement.SetElement
-  nameWithType.vb: SetElement.New
-- uid: RueI.SetElement.Enabled
-  name: Enabled
-  href: api/RueI.SetElement.html#RueI_SetElement_Enabled
-  commentId: P:RueI.SetElement.Enabled
-  fullName: RueI.SetElement.Enabled
-  nameWithType: SetElement.Enabled
-- uid: RueI.SetElement.Enabled*
-  name: Enabled
-  href: api/RueI.SetElement.html#RueI_SetElement_Enabled_
-  commentId: Overload:RueI.SetElement.Enabled
-  isSpec: "True"
-  fullName: RueI.SetElement.Enabled
-  nameWithType: SetElement.Enabled
-- uid: RueI.SetElement.ParsedData
-  name: ParsedData
-  href: api/RueI.SetElement.html#RueI_SetElement_ParsedData
-  commentId: P:RueI.SetElement.ParsedData
-  fullName: RueI.SetElement.ParsedData
-  nameWithType: SetElement.ParsedData
-- uid: RueI.SetElement.ParsedData*
-  name: ParsedData
-  href: api/RueI.SetElement.html#RueI_SetElement_ParsedData_
-  commentId: Overload:RueI.SetElement.ParsedData
-  isSpec: "True"
-  fullName: RueI.SetElement.ParsedData
-  nameWithType: SetElement.ParsedData
-- uid: RueI.SetElement.Position
-  name: Position
-  href: api/RueI.SetElement.html#RueI_SetElement_Position
-  commentId: P:RueI.SetElement.Position
-  fullName: RueI.SetElement.Position
-  nameWithType: SetElement.Position
-- uid: RueI.SetElement.Position*
-  name: Position
-  href: api/RueI.SetElement.html#RueI_SetElement_Position_
-  commentId: Overload:RueI.SetElement.Position
-  isSpec: "True"
-  fullName: RueI.SetElement.Position
-  nameWithType: SetElement.Position
-- uid: RueI.SetElement.Set(System.String)
-  name: Set(string)
-  href: api/RueI.SetElement.html#RueI_SetElement_Set_System_String_
-  commentId: M:RueI.SetElement.Set(System.String)
-  name.vb: Set(String)
-  fullName: RueI.SetElement.Set(string)
-  fullName.vb: RueI.SetElement.Set(String)
-  nameWithType: SetElement.Set(string)
-  nameWithType.vb: SetElement.Set(String)
-- uid: RueI.SetElement.Set*
-  name: Set
-  href: api/RueI.SetElement.html#RueI_SetElement_Set_
-  commentId: Overload:RueI.SetElement.Set
-  isSpec: "True"
-  fullName: RueI.SetElement.Set
-  nameWithType: SetElement.Set
-- uid: RueI.SetElement.ZIndex
-  name: ZIndex
-  href: api/RueI.SetElement.html#RueI_SetElement_ZIndex
-  commentId: P:RueI.SetElement.ZIndex
-  fullName: RueI.SetElement.ZIndex
-  nameWithType: SetElement.ZIndex
-- uid: RueI.SetElement.ZIndex*
-  name: ZIndex
-  href: api/RueI.SetElement.html#RueI_SetElement_ZIndex_
-  commentId: Overload:RueI.SetElement.ZIndex
-  isSpec: "True"
-  fullName: RueI.SetElement.ZIndex
-  nameWithType: SetElement.ZIndex
 - uid: eMEC
   name: eMEC
   href: api/eMEC.html
