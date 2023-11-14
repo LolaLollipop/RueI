@@ -379,6 +379,11 @@
     "title": "RueI | RueI",
     "keywords": "RueI RueI is a hint framework for scp:sl. it provides the ability to show multiple hints at once, along with a lot of other features for server owners installing RueI is easy. download the dll, and move it into your dependencies folder for the plugin framework you are using. note that RueI requires Harmony 2.2.2, you can get that here."
   },
+  "markdown/customtags.html": {
+    "href": "markdown/customtags.html",
+    "title": "Creating Custom Tags | RueI",
+    "keywords": "Creating Custom Tags RueI supports creating custom rich text tags. all rich text tags should ultimately derive from [RichTextTag](../api/RueI/"
+  },
   "markdown/eMec.html": {
     "href": "markdown/eMec.html",
     "title": "eMec | RueI",
