@@ -389,6 +389,11 @@
     "title": "Getting Started | RueI",
     "keywords": "Getting Started"
   },
+  "markdown/hintbuilding.html": {
+    "href": "markdown/hintbuilding.html",
+    "title": "HintBuilding Extensions | RueI",
+    "keywords": "HintBuilding Extensions RueI provides extensions to StringBuilder"
+  },
   "markdown/introduction.html": {
     "href": "markdown/introduction.html",
     "title": "Introduction | RueI",

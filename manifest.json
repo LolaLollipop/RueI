@@ -805,6 +805,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "markdown/hintbuilding.md",
+      "output": {
+        ".html": {
+          "relative_path": "markdown/hintbuilding.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "markdown/introduction.md",
       "output": {
         ".html": {
