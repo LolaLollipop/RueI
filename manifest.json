@@ -827,9 +827,6 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "EmptyTocItemName"
-      ],
       "type": "Toc",
       "source_relative_path": "markdown/toc.yml",
       "output": {
