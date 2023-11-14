@@ -1,5 +1,5 @@
 # HintBuilding Extensions
-RueI provides extensions to [StringBuilder](https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder?view=net-7.0) through the [HintBuilding](api/extensions/hintbuilding/hintbuilding.html) class. this provides a large number of methods on StringBuilder to make adding tags easier and less error-prone.
+RueI provides extensions to [StringBuilder](https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder?view=net-7.0) through the [HintBuilding](./api/RueI.Extensions.HintBuilding.HintBuilding.html) class. this provides a large number of methods on StringBuilder to make adding tags easier and less error-prone.
 
 to use this, you first bring the class into scope:
 ```csharp
