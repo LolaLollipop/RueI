@@ -86,7 +86,20 @@
         <article data-uid="">
 <h1 id="hintbuilding-extensions">HintBuilding Extensions</h1>
 
-<p>RueI provides extensions to <a href="https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder?view=net-7.0">StringBuilder</a></p>
+<p>RueI provides extensions to <a href="https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder?view=net-7.0">StringBuilder</a> through the <a href="api/extensions/hintbuilding/hintbuilding.html">HintBuilding</a> class. this provides a large number of methods on StringBuilder to make adding tags easier and less error-prone.</p>
+<p>to use this, you first bring the class into scope:</p>
+<pre><code class="lang-csharp">using RueI.Extensions.HintBuilding;
+</code></pre>
+<p>then, you can use it like so:
+btw im gonna waste time to make a dumb little stringbuilder extensions thing so you can do shit like</p>
+<pre><code class="lang-csharp">StringBuilder sb = new()
+  .SetColor(255, 0, 0)
+  .SetSize(1.5, MeasurementStyle.Ems)
+  .Append(&quot;hello!&quot;)
+  .CloseColor()
+  .CloseSize();
+</code></pre>
+<p>since all of the methods return the original StringBuilder, you can chain them easily.</p>
 
 </article>
 
