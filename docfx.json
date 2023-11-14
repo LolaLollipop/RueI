@@ -3,7 +3,7 @@
     {
       "src": [
         {
-          "src": "../docs",
+          "src": "./",
           "files": [
             "RueI/RueI.csproj"
           ]

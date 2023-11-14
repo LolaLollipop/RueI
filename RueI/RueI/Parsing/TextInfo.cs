@@ -46,6 +46,11 @@
         public float Scale { get; set; } = 1;
 
         /// <summary>
+        /// Gets or sets a value indicating whether or not the parser is in subscript/superscript.
+        /// </summary>
+        public bool IsSuperOrSubScript { get; set; } = false;
+
+        /// <summary>
         /// Gets or sets the current case of the parser.
         /// </summary>
         public CaseStyle CurrentCase { get; set; } = CaseStyle.Smallcaps;

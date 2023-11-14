@@ -50,6 +50,11 @@
         public int ColorTags { get; set; } = 0;
 
         /// <summary>
+        /// Gets a list of tags to be closed within the parser.
+        /// </summary>
+        public List<RichTextTag> ClosingTags { get; } = new(10);
+
+        /// <summary>
         /// Disposes this ParserContext, returning the string builder to the pool.
         /// </summary>
         public void Dispose()

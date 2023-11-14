@@ -99,6 +99,9 @@
 
         public static Parser DefaultParser { get; } = new ParserBuilder()
             .AddTag<SizeTag>()
+            .AddTag<LineHeightTag>()
+            .AddTag<SpriteTag>()
+            .AddTag<CloseSizeTag>()
             .Build();
 
         /// <summary>

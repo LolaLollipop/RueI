@@ -23,7 +23,7 @@
                 _ => content // get until start of attribute pairs
             };
 
-
+            return true;
         }
 
         private static bool IsValidSprite(int index) => index >= 0 && index <= 15;

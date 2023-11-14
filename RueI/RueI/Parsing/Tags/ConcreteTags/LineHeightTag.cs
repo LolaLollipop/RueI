@@ -28,6 +28,8 @@
             context.CurrentLineHeight = convertedValue;
             context.ResultBuilder.AppendFormat(TAGFORMAT, convertedValue);
 
+            context.ClosingTags.Add(SharedTag<CloseLineHeightTag>.Singleton);
+
             return true;
         }
     }

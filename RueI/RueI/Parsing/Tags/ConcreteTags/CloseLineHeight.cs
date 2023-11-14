@@ -6,29 +6,20 @@
     /// <summary>
     /// Provides a way to handle line-height tags.
     /// </summary>
-    public class LineHeightTag : MeasurementTagBase
+    public class CloseLineHeightTag : NoParamsTagBase
     {
-        private const string TAGFORMAT = "<line-height={0}>";
+        private const string TAGFORMAT = "</line-height>";
 
         /// <inheritdoc/>
-        public override string[] Names { get; } = { "line-height" };
+        public override string[] Names { get; } = { "/line-height" };
 
         /// <inheritdoc/>
-        public override bool HandleTag(ParserContext context, MeasurementInfo info)
+        public override void HandleTag(ParserContext context)
         {
-            var (value, style) = info;
+            context.CurrentLineHeight = Constants.DEFAULTHEIGHT;
 
-            float convertedValue = style switch
-            {
-                MeasurementStyle.Percentage => value / 100 * Constants.DEFAULTSIZE,
-                MeasurementStyle.Ems => value * Constants.EMSTOPIXELS,
-                _ => value
-            };
-
-            context.CurrentLineHeight = convertedValue;
-            context.ResultBuilder.AppendFormat(TAGFORMAT, convertedValue);
-
-            return true;
+            context.ResultBuilder.Append(TAGFORMAT);
+            context.ClosingTags.Remove(this);
         }
     }
 }

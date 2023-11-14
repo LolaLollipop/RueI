@@ -1,17 +1,9 @@
 ﻿namespace RueI.Parsing.Tags
 {
     /// <summary>
-    /// Defines the base class for all tags that do not have params.
+    /// Defines a <see cref="RichTextTag"/> for RueI.
     /// </summary>
-    public abstract class NoParamsTagBase : RichTextTag
+    internal class RichTextTagAttribute : Attribute
     {
-        /// <inheritdoc/>
-        public override bool IsValidDelimiter(char ch) => ch == '>';
-
-        /// <summary>
-        /// Handles an instance of a tag without params.
-        /// </summary>
-        /// <param name="context">The context of the parser.</param>
-        public abstract void HandleTag(ParserContext context);
     }
 }

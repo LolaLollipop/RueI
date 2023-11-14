@@ -19,7 +19,7 @@
         /// Initializes a new instance of the <see cref="Parser"/> class.
         /// </summary>
         /// <param name="tags">The list of tags to initialize with.</param>
-        public Parser(IEnumerable<RichTextTag> tags)
+        internal Parser(IEnumerable<RichTextTag> tags)
         {
             Tags = new(ExtractTagsToPairs(tags));
         }
@@ -28,7 +28,7 @@
         /// Initializes a new instance of the <see cref="Parser"/> class.
         /// </summary>
         /// <param name="tags">The list of tags to initialize with.</param>
-        public Parser(params RichTextTag[] tags)
+        internal Parser(params RichTextTag[] tags)
         {
             Tags = new(ExtractTagsToPairs(tags));
         }
@@ -233,7 +233,12 @@
                     multiplier *= 0.8f;
                 }
 
-                return (chSize * multiplier) + chSize;
+                if (context.IsSuperOrSubScript)
+                {
+                    multiplier *= 0.5f;
+                }
+
+                return chSize * multiplier;
             }
             else
             {

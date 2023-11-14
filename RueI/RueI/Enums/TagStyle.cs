@@ -1,9 +1,10 @@
 ﻿namespace RueI.Enums
 {
     /// <summary>
-    /// Represents the parameters that a tag needs.
+    /// Represents the valid characters for a delimiter.
     /// </summary>
-    public enum TagStyle
+    [Flags]
+    public enum TagDelimiterStyle
     {
         /// <summary>
         /// Indicates that a tag does not take parameters.

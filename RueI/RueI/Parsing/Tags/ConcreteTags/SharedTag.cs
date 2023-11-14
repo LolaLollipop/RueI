@@ -1,41 +1,15 @@
 ﻿namespace RueI.Parsing.Tags.ConcreteTags
 {
-    using RueI.Enums;
-
     /// <summary>
-    /// Provides a way to handle size tags.
+    /// Provides a way to handle singletons of tags.
     /// </summary>
-    public class SpriteTag : ParamsTagBase
+    /// <typeparam name="T">The <see cref="RichTextTag"/> type to share.</typeparam>
+    public static class SharedTag<T>
+        where T : RichTextTag, new()
     {
-
-        /// <inheritdoc/>
-        public override string[] Names { get; } = { "sprite" };
-
-        /// <inheritdoc/>
-        public override bool IsValidDelimiter(char ch) => ch == '=' || ch == ' ';
-
-        /// <inheritdoc/>
-        public override bool HandleTag(ParserContext context, char delimiter, string content)
-        {
-            string attributed = delimiter switch
-            {
-                '=' => GetUntilChar(content, ' '),
-                _ => content // get until start of attribute pairs
-            };
-
-
-        }
-
-        private static bool IsValidSprite(int index) => index >= 0 && index <= 15;
-
-        private static string GetUntilChar(string content, char ch)
-        {
-            int index = content.IndexOf(ch);
-            return index switch
-            {
-                >= 0 => content.Substring(0, index),
-                _ => string.Empty
-            };
-        }
+        /// <summary>
+        /// Gets the shared singleton for this <see cref="RichTextTag"/>.
+        /// </summary>
+        public static T Singleton { get; } = new();
     }
 }

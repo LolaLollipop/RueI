@@ -2,6 +2,7 @@
 {
     using RueI.Enums;
     using RueI.Records;
+    using UnityEngine.Assertions;
 
     /// <summary>
     /// Provides a way to handle size tags.
@@ -27,6 +28,7 @@
             context.Size = value;
             context.CurrentLineHeight = Constants.DEFAULTHEIGHT * (value / Constants.DEFAULTSIZE);
             context.ResultBuilder.AppendFormat(TAGFORMAT, value);
+            // special handling for closing tags    
 
             return true;
         }
