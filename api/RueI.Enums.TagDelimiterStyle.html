@@ -2,10 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Enum TagStyle
+      <title>Enum TagDelimiterStyle
  | RueI </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Enum TagStyle
+      <meta name="title" content="Enum TagDelimiterStyle
  | RueI ">
       
       <link rel="icon" href="../favicon.ico">
@@ -17,7 +17,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/Ruemena/RueI/new/master/apiSpec/new?filename=RueI_Enums_TagStyle.md&amp;value=---%0Auid%3A%20RueI.Enums.TagStyle%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/Ruemena/RueI/new/master/apiSpec/new?filename=RueI_Enums_TagDelimiterStyle.md&amp;value=---%0Auid%3A%20RueI.Enums.TagDelimiterStyle%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -85,13 +85,13 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="RueI.Enums.TagStyle">
+        <article data-uid="RueI.Enums.TagDelimiterStyle">
 
 
 
 
-  <h1 id="RueI_Enums_TagStyle" data-uid="RueI.Enums.TagStyle" class="text-break">
-    Enum TagStyle
+  <h1 id="RueI_Enums_TagDelimiterStyle" data-uid="RueI.Enums.TagDelimiterStyle" class="text-break">
+    Enum TagDelimiterStyle
   <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Enums/TagStyle.cs/#L6"><i class="bi bi-code-slash"></i></a>
   </h1>
 
@@ -100,12 +100,13 @@
   <dl><dt>Assembly</dt><dd>RueI.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Represents the parameters that a tag needs.</p>
+  <div class="markdown summary"><p>Represents the valid characters for a delimiter.</p>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public enum TagStyle</code></pre>
+    <pre><code class="lang-csharp hljs">[Flags]
+public enum TagDelimiterStyle</code></pre>
   </div>
 
 
@@ -119,13 +120,13 @@
   <h2 id="fields">Fields
 </h2>
   <dl class="parameters">
-    <dt id="RueI_Enums_TagStyle_Color"><code>Color = 2</code></dt>
+    <dt id="RueI_Enums_TagDelimiterStyle_Color"><code>Color = 2</code></dt>
     <dd><p>Indicates that a tag takes a color as a parameter.</p>
 </dd>
-    <dt id="RueI_Enums_TagStyle_Measurement"><code>Measurement = 1</code></dt>
+    <dt id="RueI_Enums_TagDelimiterStyle_Measurement"><code>Measurement = 1</code></dt>
     <dd><p>Indicates that a tag takes a measurement as a parameter.</p>
 </dd>
-    <dt id="RueI_Enums_TagStyle_NoParams"><code>NoParams = 0</code></dt>
+    <dt id="RueI_Enums_TagDelimiterStyle_NoParams"><code>NoParams = 0</code></dt>
     <dd><p>Indicates that a tag does not take parameters.</p>
 </dd>
   </dl>

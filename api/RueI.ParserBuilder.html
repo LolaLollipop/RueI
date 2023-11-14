@@ -91,7 +91,7 @@
 
   <h1 id="RueI_ParserBuilder" data-uid="RueI.ParserBuilder" class="text-break">
     Class ParserBuilder
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/ParserBuilder.cs/#L9"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/ParserBuilder.cs/#L10"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -156,7 +156,7 @@
 
   <h3 id="RueI_ParserBuilder__ctor" data-uid="RueI.ParserBuilder.#ctor">
   ParserBuilder()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/ParserBuilder.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/ParserBuilder.cs/#L17"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="RueI.ParserBuilder.html">ParserBuilder</a> class.</p>
@@ -187,10 +187,10 @@
 
   <h3 id="RueI_ParserBuilder_AddTag__1" data-uid="RueI.ParserBuilder.AddTag``1">
   AddTag&lt;T&gt;()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/ParserBuilder.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/ParserBuilder.cs/#L26"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Creates a new instance of a <a class="xref" href="RueI.Parsing.RichTextTag.html">RichTextTag</a> and adds it to the builder.</p>
+  <div class="markdown level1 summary"><p>Gets the <a class="xref" href="RueI.Parsing.Tags.ConcreteTags.SharedTag-1.html">SharedTag&lt;T&gt;</a> of a <a class="xref" href="RueI.Parsing.RichTextTag.html">RichTextTag</a> type and adds it to the builder.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -222,92 +222,11 @@
 
 
 
-  <a id="RueI_ParserBuilder_AddTags_" data-uid="RueI.ParserBuilder.AddTags*"></a>
-
-  <h3 id="RueI_ParserBuilder_AddTags_RueI_Parsing_RichTextTag_RueI_Parsing_RichTextTag___" data-uid="RueI.ParserBuilder.AddTags(RueI.Parsing.RichTextTag,RueI.Parsing.RichTextTag[])">
-  AddTags(RichTextTag, params RichTextTag[])
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/ParserBuilder.cs/#L55"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Adds a certain number of <a class="xref" href="RueI.Parsing.RichTextTag.html">RichTextTag</a>s to this builder.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ParserBuilder AddTags(RichTextTag firstTag, params RichTextTag[] extraTags)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>firstTag</code> <a class="xref" href="RueI.Parsing.RichTextTag.html">RichTextTag</a></dt>
-    <dd><p>The first tag to add.</p>
-</dd>
-    <dt><code>extraTags</code> <a class="xref" href="RueI.Parsing.RichTextTag.html">RichTextTag</a>[]</dt>
-    <dd><p>The rest of the tags to add.</p>
-</dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="RueI.ParserBuilder.html">ParserBuilder</a></dt>
-    <dd><p>A reference to this <a class="xref" href="RueI.ParserBuilder.html">ParserBuilder</a>.</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="RueI_ParserBuilder_AddTags_" data-uid="RueI.ParserBuilder.AddTags*"></a>
-
-  <h3 id="RueI_ParserBuilder_AddTags_System_Collections_Generic_IEnumerable_RueI_Parsing_RichTextTag__" data-uid="RueI.ParserBuilder.AddTags(System.Collections.Generic.IEnumerable{RueI.Parsing.RichTextTag})">
-  AddTags(IEnumerable&lt;RichTextTag&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/ParserBuilder.cs/#L39"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Adds all the <a class="xref" href="RueI.Parsing.RichTextTag.html">RichTextTag</a>s from a <a class="xref" href="RueI.Parser.html">Parser</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ParserBuilder AddTags(IEnumerable&lt;RichTextTag&gt; enumerable)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>enumerable</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="RueI.Parsing.RichTextTag.html">RichTextTag</a>&gt;</dt>
-    <dd><p>The tags to add.</p>
-</dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="RueI.ParserBuilder.html">ParserBuilder</a></dt>
-    <dd><p>A reference to this <a class="xref" href="RueI.ParserBuilder.html">ParserBuilder</a>.</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
   <a id="RueI_ParserBuilder_Build_" data-uid="RueI.ParserBuilder.Build*"></a>
 
   <h3 id="RueI_ParserBuilder_Build" data-uid="RueI.ParserBuilder.Build">
   Build()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/ParserBuilder.cs/#L78"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/ParserBuilder.cs/#L51"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Builds this <a class="xref" href="RueI.ParserBuilder.html">ParserBuilder</a> into a <a class="xref" href="RueI.Parser.html">Parser</a>.</p>
@@ -336,50 +255,11 @@
 
 
 
-  <a id="RueI_ParserBuilder_ImportFrom_" data-uid="RueI.ParserBuilder.ImportFrom*"></a>
-
-  <h3 id="RueI_ParserBuilder_ImportFrom_RueI_Parser_" data-uid="RueI.ParserBuilder.ImportFrom(RueI.Parser)">
-  ImportFrom(Parser)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/ParserBuilder.cs/#L68"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Imports all the <a class="xref" href="RueI.Parsing.RichTextTag.html">RichTextTag</a>s from a <a class="xref" href="RueI.Parser.html">Parser</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ParserBuilder ImportFrom(Parser parser)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>parser</code> <a class="xref" href="RueI.Parser.html">Parser</a></dt>
-    <dd><p>The parser to import from.</p>
-</dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="RueI.ParserBuilder.html">ParserBuilder</a></dt>
-    <dd><p>A reference to this <a class="xref" href="RueI.ParserBuilder.html">ParserBuilder</a>.</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/ParserBuilder.cs/#L9" class="edit-link">Edit this page</a>
+          <a href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/ParserBuilder.cs/#L10" class="edit-link">Edit this page</a>
         </div>
 
 

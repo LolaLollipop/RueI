@@ -182,10 +182,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RueI.Enums.TagStyle.yml",
+      "source_relative_path": "api/RueI.Enums.TagDelimiterStyle.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RueI.Enums.TagStyle.html"
+          "relative_path": "api/RueI.Enums.TagDelimiterStyle.html"
         }
       },
       "version": ""
@@ -432,6 +432,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/RueI.Parsing.Tags.ConcreteTags.CloseSizeTag.yml",
       "output": {
         ".html": {
@@ -446,6 +456,26 @@
       "output": {
         ".html": {
           "relative_path": "api/RueI.Parsing.Tags.ConcreteTags.LineHeightTag.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Parsing.Tags.ConcreteTags.ResetTag.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Parsing.Tags.ConcreteTags.ResetTag.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Parsing.Tags.ConcreteTags.SharedTag-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Parsing.Tags.ConcreteTags.SharedTag-1.html"
         }
       },
       "version": ""

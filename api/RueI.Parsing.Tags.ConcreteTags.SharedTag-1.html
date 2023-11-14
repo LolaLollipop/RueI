@@ -2,10 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class SpriteTag
+      <title>Class SharedTag&lt;T&gt;
  | RueI </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class SpriteTag
+      <meta name="title" content="Class SharedTag&lt;T&gt;
  | RueI ">
       
       <link rel="icon" href="../favicon.ico">
@@ -17,7 +17,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/Ruemena/RueI/new/master/apiSpec/new?filename=RueI_Parsing_Tags_ConcreteTags_SpriteTag.md&amp;value=---%0Auid%3A%20RueI.Parsing.Tags.ConcreteTags.SpriteTag%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/Ruemena/RueI/new/master/apiSpec/new?filename=RueI_Parsing_Tags_ConcreteTags_SharedTag_1.md&amp;value=---%0Auid%3A%20RueI.Parsing.Tags.ConcreteTags.SharedTag%601%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -85,13 +85,13 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="RueI.Parsing.Tags.ConcreteTags.SpriteTag">
+        <article data-uid="RueI.Parsing.Tags.ConcreteTags.SharedTag`1">
 
 
 
-  <h1 id="RueI_Parsing_Tags_ConcreteTags_SpriteTag" data-uid="RueI.Parsing.Tags.ConcreteTags.SpriteTag" class="text-break">
-    Class SpriteTag
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/Tags/ConcreteTags/SpriteTag.cs/#L8"><i class="bi bi-code-slash"></i></a>
+  <h1 id="RueI_Parsing_Tags_ConcreteTags_SharedTag_1" data-uid="RueI.Parsing.Tags.ConcreteTags.SharedTag`1" class="text-break">
+    Class SharedTag&lt;T&gt;
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/Tags/ConcreteTags/SharedTag.cs/#L7"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -99,24 +99,28 @@
   <dl><dt>Assembly</dt><dd>RueI.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Provides a way to handle size tags.</p>
+  <div class="markdown summary"><p>Provides a way to handle singletons of tags.</p>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class SpriteTag : ParamsTagBase</code></pre>
+    <pre><code class="lang-csharp hljs">public static class SharedTag&lt;T&gt; where T : RichTextTag, new()</code></pre>
   </div>
 
 
 
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd><p>The <a class="xref" href="RueI.Parsing.RichTextTag.html">RichTextTag</a> type to share.</p>
+</dd>
+  </dl>
 
   <dl class="typelist inheritance">
     <dt>Inheritance</dt>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-      <div><a class="xref" href="RueI.Parsing.RichTextTag.html">RichTextTag</a></div>
-      <div><a class="xref" href="RueI.Parsing.Tags.ParamsTagBase.html">ParamsTagBase</a></div>
-      <div><span class="xref">SpriteTag</span></div>
+      <div><span class="xref">SharedTag&lt;T&gt;</span></div>
     </dd>
   </dl>
 
@@ -157,19 +161,19 @@
 </h2>
 
 
-  <a id="RueI_Parsing_Tags_ConcreteTags_SpriteTag_Names_" data-uid="RueI.Parsing.Tags.ConcreteTags.SpriteTag.Names*"></a>
+  <a id="RueI_Parsing_Tags_ConcreteTags_SharedTag_1_Singleton_" data-uid="RueI.Parsing.Tags.ConcreteTags.SharedTag`1.Singleton*"></a>
 
-  <h3 id="RueI_Parsing_Tags_ConcreteTags_SpriteTag_Names" data-uid="RueI.Parsing.Tags.ConcreteTags.SpriteTag.Names">
-  Names
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/Tags/ConcreteTags/SpriteTag.cs/#L12"><i class="bi bi-code-slash"></i></a>
+  <h3 id="RueI_Parsing_Tags_ConcreteTags_SharedTag_1_Singleton" data-uid="RueI.Parsing.Tags.ConcreteTags.SharedTag`1.Singleton">
+  Singleton
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/Tags/ConcreteTags/SharedTag.cs/#L13"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Gets the names of the rich text tag.</p>
+  <div class="markdown level1 summary"><p>Gets the shared singleton for this <a class="xref" href="RueI.Parsing.RichTextTag.html">RichTextTag</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override string[] Names { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public static T Singleton { get; }</code></pre>
   </div>
 
 
@@ -178,97 +182,9 @@
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dt><span class="xref">T</span></dt>
     <dd></dd>
   </dl>
-
-
-
-
-
-
-
-
-  <h2 class="section" id="methods">Methods
-</h2>
-
-
-  <a id="RueI_Parsing_Tags_ConcreteTags_SpriteTag_HandleTag_" data-uid="RueI.Parsing.Tags.ConcreteTags.SpriteTag.HandleTag*"></a>
-
-  <h3 id="RueI_Parsing_Tags_ConcreteTags_SpriteTag_HandleTag_RueI_Parsing_ParserContext_System_Char_System_String_" data-uid="RueI.Parsing.Tags.ConcreteTags.SpriteTag.HandleTag(RueI.Parsing.ParserContext,System.Char,System.String)">
-  HandleTag(ParserContext, char, string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/Tags/ConcreteTags/SpriteTag.cs/#L18"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Handles an instance of this tag.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override bool HandleTag(ParserContext context, char delimiter, string content)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>context</code> <a class="xref" href="RueI.Parsing.ParserContext.html">ParserContext</a></dt>
-    <dd><p>The context of the parser.</p>
-</dd>
-    <dt><code>delimiter</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></dt>
-    <dd><p>The delimiter of the tag.</p>
-</dd>
-    <dt><code>content</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd><p>The content of the tag.</p>
-</dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd><p>true if the tag is valid, otherwise false.</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="RueI_Parsing_Tags_ConcreteTags_SpriteTag_IsValidDelimiter_" data-uid="RueI.Parsing.Tags.ConcreteTags.SpriteTag.IsValidDelimiter*"></a>
-
-  <h3 id="RueI_Parsing_Tags_ConcreteTags_SpriteTag_IsValidDelimiter_System_Char_" data-uid="RueI.Parsing.Tags.ConcreteTags.SpriteTag.IsValidDelimiter(System.Char)">
-  IsValidDelimiter(char)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/Tags/ConcreteTags/SpriteTag.cs/#L15"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Returns a value indicating whether or not the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a> is a valid delimiter for this tag.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override bool IsValidDelimiter(char ch)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>ch</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></dt>
-    <dd><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a> to check.</p>
-</dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd><p>true if the char is a valid delimiter, otherwise false.</p>
-</dd>
-  </dl>
-
-
-
 
 
 
@@ -281,7 +197,7 @@
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/Tags/ConcreteTags/SpriteTag.cs/#L8" class="edit-link">Edit this page</a>
+          <a href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/Tags/ConcreteTags/SharedTag.cs/#L7" class="edit-link">Edit this page</a>
         </div>
 
 

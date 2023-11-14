@@ -890,30 +890,30 @@ references:
   commentId: F:RueI.Enums.MeasurementStyle.Pixels
   fullName: RueI.Enums.MeasurementStyle.Pixels
   nameWithType: MeasurementStyle.Pixels
-- uid: RueI.Enums.TagStyle
-  name: TagStyle
-  href: api/RueI.Enums.TagStyle.html
-  commentId: T:RueI.Enums.TagStyle
-  fullName: RueI.Enums.TagStyle
-  nameWithType: TagStyle
-- uid: RueI.Enums.TagStyle.Color
+- uid: RueI.Enums.TagDelimiterStyle
+  name: TagDelimiterStyle
+  href: api/RueI.Enums.TagDelimiterStyle.html
+  commentId: T:RueI.Enums.TagDelimiterStyle
+  fullName: RueI.Enums.TagDelimiterStyle
+  nameWithType: TagDelimiterStyle
+- uid: RueI.Enums.TagDelimiterStyle.Color
   name: Color
-  href: api/RueI.Enums.TagStyle.html#RueI_Enums_TagStyle_Color
-  commentId: F:RueI.Enums.TagStyle.Color
-  fullName: RueI.Enums.TagStyle.Color
-  nameWithType: TagStyle.Color
-- uid: RueI.Enums.TagStyle.Measurement
+  href: api/RueI.Enums.TagDelimiterStyle.html#RueI_Enums_TagDelimiterStyle_Color
+  commentId: F:RueI.Enums.TagDelimiterStyle.Color
+  fullName: RueI.Enums.TagDelimiterStyle.Color
+  nameWithType: TagDelimiterStyle.Color
+- uid: RueI.Enums.TagDelimiterStyle.Measurement
   name: Measurement
-  href: api/RueI.Enums.TagStyle.html#RueI_Enums_TagStyle_Measurement
-  commentId: F:RueI.Enums.TagStyle.Measurement
-  fullName: RueI.Enums.TagStyle.Measurement
-  nameWithType: TagStyle.Measurement
-- uid: RueI.Enums.TagStyle.NoParams
+  href: api/RueI.Enums.TagDelimiterStyle.html#RueI_Enums_TagDelimiterStyle_Measurement
+  commentId: F:RueI.Enums.TagDelimiterStyle.Measurement
+  fullName: RueI.Enums.TagDelimiterStyle.Measurement
+  nameWithType: TagDelimiterStyle.Measurement
+- uid: RueI.Enums.TagDelimiterStyle.NoParams
   name: NoParams
-  href: api/RueI.Enums.TagStyle.html#RueI_Enums_TagStyle_NoParams
-  commentId: F:RueI.Enums.TagStyle.NoParams
-  fullName: RueI.Enums.TagStyle.NoParams
-  nameWithType: TagStyle.NoParams
+  href: api/RueI.Enums.TagDelimiterStyle.html#RueI_Enums_TagDelimiterStyle_NoParams
+  commentId: F:RueI.Enums.TagDelimiterStyle.NoParams
+  fullName: RueI.Enums.TagDelimiterStyle.NoParams
+  nameWithType: TagDelimiterStyle.NoParams
 - uid: RueI.EventHandler
   name: EventHandler
   href: api/RueI.EventHandler.html
@@ -2155,34 +2155,6 @@ references:
   commentId: T:RueI.Parser
   fullName: RueI.Parser
   nameWithType: Parser
-- uid: RueI.Parser.#ctor(RueI.Parsing.RichTextTag[])
-  name: Parser(params RichTextTag[])
-  href: api/RueI.Parser.html#RueI_Parser__ctor_RueI_Parsing_RichTextTag___
-  commentId: M:RueI.Parser.#ctor(RueI.Parsing.RichTextTag[])
-  name.vb: New(ParamArray RichTextTag())
-  fullName: RueI.Parser.Parser(params RueI.Parsing.RichTextTag[])
-  fullName.vb: RueI.Parser.New(ParamArray RueI.Parsing.RichTextTag())
-  nameWithType: Parser.Parser(params RichTextTag[])
-  nameWithType.vb: Parser.New(ParamArray RichTextTag())
-- uid: RueI.Parser.#ctor(System.Collections.Generic.IEnumerable{RueI.Parsing.RichTextTag})
-  name: Parser(IEnumerable<RichTextTag>)
-  href: api/RueI.Parser.html#RueI_Parser__ctor_System_Collections_Generic_IEnumerable_RueI_Parsing_RichTextTag__
-  commentId: M:RueI.Parser.#ctor(System.Collections.Generic.IEnumerable{RueI.Parsing.RichTextTag})
-  name.vb: New(IEnumerable(Of RichTextTag))
-  fullName: RueI.Parser.Parser(System.Collections.Generic.IEnumerable<RueI.Parsing.RichTextTag>)
-  fullName.vb: RueI.Parser.New(System.Collections.Generic.IEnumerable(Of RueI.Parsing.RichTextTag))
-  nameWithType: Parser.Parser(IEnumerable<RichTextTag>)
-  nameWithType.vb: Parser.New(IEnumerable(Of RichTextTag))
-- uid: RueI.Parser.#ctor*
-  name: Parser
-  href: api/RueI.Parser.html#RueI_Parser__ctor_
-  commentId: Overload:RueI.Parser.#ctor
-  isSpec: "True"
-  name.vb: New
-  fullName: RueI.Parser.Parser
-  fullName.vb: RueI.Parser.New
-  nameWithType: Parser.Parser
-  nameWithType.vb: Parser.New
 - uid: RueI.Parser.AddCharacter(RueI.Parsing.ParserContext,System.Char)
   name: AddCharacter(ParserContext, char)
   href: api/RueI.Parser.html#RueI_Parser_AddCharacter_RueI_Parsing_ParserContext_System_Char_
@@ -2314,31 +2286,6 @@ references:
   fullName.vb: RueI.ParserBuilder.AddTag(Of T)()
   nameWithType: ParserBuilder.AddTag<T>()
   nameWithType.vb: ParserBuilder.AddTag(Of T)()
-- uid: RueI.ParserBuilder.AddTags(RueI.Parsing.RichTextTag,RueI.Parsing.RichTextTag[])
-  name: AddTags(RichTextTag, params RichTextTag[])
-  href: api/RueI.ParserBuilder.html#RueI_ParserBuilder_AddTags_RueI_Parsing_RichTextTag_RueI_Parsing_RichTextTag___
-  commentId: M:RueI.ParserBuilder.AddTags(RueI.Parsing.RichTextTag,RueI.Parsing.RichTextTag[])
-  name.vb: AddTags(RichTextTag, ParamArray RichTextTag())
-  fullName: RueI.ParserBuilder.AddTags(RueI.Parsing.RichTextTag, params RueI.Parsing.RichTextTag[])
-  fullName.vb: RueI.ParserBuilder.AddTags(RueI.Parsing.RichTextTag, ParamArray RueI.Parsing.RichTextTag())
-  nameWithType: ParserBuilder.AddTags(RichTextTag, params RichTextTag[])
-  nameWithType.vb: ParserBuilder.AddTags(RichTextTag, ParamArray RichTextTag())
-- uid: RueI.ParserBuilder.AddTags(System.Collections.Generic.IEnumerable{RueI.Parsing.RichTextTag})
-  name: AddTags(IEnumerable<RichTextTag>)
-  href: api/RueI.ParserBuilder.html#RueI_ParserBuilder_AddTags_System_Collections_Generic_IEnumerable_RueI_Parsing_RichTextTag__
-  commentId: M:RueI.ParserBuilder.AddTags(System.Collections.Generic.IEnumerable{RueI.Parsing.RichTextTag})
-  name.vb: AddTags(IEnumerable(Of RichTextTag))
-  fullName: RueI.ParserBuilder.AddTags(System.Collections.Generic.IEnumerable<RueI.Parsing.RichTextTag>)
-  fullName.vb: RueI.ParserBuilder.AddTags(System.Collections.Generic.IEnumerable(Of RueI.Parsing.RichTextTag))
-  nameWithType: ParserBuilder.AddTags(IEnumerable<RichTextTag>)
-  nameWithType.vb: ParserBuilder.AddTags(IEnumerable(Of RichTextTag))
-- uid: RueI.ParserBuilder.AddTags*
-  name: AddTags
-  href: api/RueI.ParserBuilder.html#RueI_ParserBuilder_AddTags_
-  commentId: Overload:RueI.ParserBuilder.AddTags
-  isSpec: "True"
-  fullName: RueI.ParserBuilder.AddTags
-  nameWithType: ParserBuilder.AddTags
 - uid: RueI.ParserBuilder.Build
   name: Build()
   href: api/RueI.ParserBuilder.html#RueI_ParserBuilder_Build
@@ -2352,19 +2299,6 @@ references:
   isSpec: "True"
   fullName: RueI.ParserBuilder.Build
   nameWithType: ParserBuilder.Build
-- uid: RueI.ParserBuilder.ImportFrom(RueI.Parser)
-  name: ImportFrom(Parser)
-  href: api/RueI.ParserBuilder.html#RueI_ParserBuilder_ImportFrom_RueI_Parser_
-  commentId: M:RueI.ParserBuilder.ImportFrom(RueI.Parser)
-  fullName: RueI.ParserBuilder.ImportFrom(RueI.Parser)
-  nameWithType: ParserBuilder.ImportFrom(Parser)
-- uid: RueI.ParserBuilder.ImportFrom*
-  name: ImportFrom
-  href: api/RueI.ParserBuilder.html#RueI_ParserBuilder_ImportFrom_
-  commentId: Overload:RueI.ParserBuilder.ImportFrom
-  isSpec: "True"
-  fullName: RueI.ParserBuilder.ImportFrom
-  nameWithType: ParserBuilder.ImportFrom
 - uid: RueI.Parsing
   name: RueI.Parsing
   href: api/RueI.Parsing.html
@@ -2377,6 +2311,19 @@ references:
   commentId: T:RueI.Parsing.ParserContext
   fullName: RueI.Parsing.ParserContext
   nameWithType: ParserContext
+- uid: RueI.Parsing.ParserContext.ClosingTags
+  name: ClosingTags
+  href: api/RueI.Parsing.ParserContext.html#RueI_Parsing_ParserContext_ClosingTags
+  commentId: P:RueI.Parsing.ParserContext.ClosingTags
+  fullName: RueI.Parsing.ParserContext.ClosingTags
+  nameWithType: ParserContext.ClosingTags
+- uid: RueI.Parsing.ParserContext.ClosingTags*
+  name: ClosingTags
+  href: api/RueI.Parsing.ParserContext.html#RueI_Parsing_ParserContext_ClosingTags_
+  commentId: Overload:RueI.Parsing.ParserContext.ClosingTags
+  isSpec: "True"
+  fullName: RueI.Parsing.ParserContext.ClosingTags
+  nameWithType: ParserContext.ClosingTags
 - uid: RueI.Parsing.ParserContext.ColorTags
   name: ColorTags
   href: api/RueI.Parsing.ParserContext.html#RueI_Parsing_ParserContext_ColorTags
@@ -2541,6 +2488,38 @@ references:
   commentId: N:RueI.Parsing.Tags.ConcreteTags
   fullName: RueI.Parsing.Tags.ConcreteTags
   nameWithType: RueI.Parsing.Tags.ConcreteTags
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag
+  name: CloseLineHeightTag
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.html
+  commentId: T:RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag
+  nameWithType: CloseLineHeightTag
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.HandleTag(RueI.Parsing.ParserContext)
+  name: HandleTag(ParserContext)
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.html#RueI_Parsing_Tags_ConcreteTags_CloseLineHeightTag_HandleTag_RueI_Parsing_ParserContext_
+  commentId: M:RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.HandleTag(RueI.Parsing.ParserContext)
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.HandleTag(RueI.Parsing.ParserContext)
+  nameWithType: CloseLineHeightTag.HandleTag(ParserContext)
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.HandleTag*
+  name: HandleTag
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.html#RueI_Parsing_Tags_ConcreteTags_CloseLineHeightTag_HandleTag_
+  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.HandleTag
+  isSpec: "True"
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.HandleTag
+  nameWithType: CloseLineHeightTag.HandleTag
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.Names
+  name: Names
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.html#RueI_Parsing_Tags_ConcreteTags_CloseLineHeightTag_Names
+  commentId: P:RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.Names
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.Names
+  nameWithType: CloseLineHeightTag.Names
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.Names*
+  name: Names
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.html#RueI_Parsing_Tags_ConcreteTags_CloseLineHeightTag_Names_
+  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.Names
+  isSpec: "True"
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.Names
+  nameWithType: CloseLineHeightTag.Names
 - uid: RueI.Parsing.Tags.ConcreteTags.CloseSizeTag
   name: CloseSizeTag
   href: api/RueI.Parsing.Tags.ConcreteTags.CloseSizeTag.html
@@ -2605,6 +2584,64 @@ references:
   isSpec: "True"
   fullName: RueI.Parsing.Tags.ConcreteTags.LineHeightTag.Names
   nameWithType: LineHeightTag.Names
+- uid: RueI.Parsing.Tags.ConcreteTags.ResetTag
+  name: ResetTag
+  href: api/RueI.Parsing.Tags.ConcreteTags.ResetTag.html
+  commentId: T:RueI.Parsing.Tags.ConcreteTags.ResetTag
+  fullName: RueI.Parsing.Tags.ConcreteTags.ResetTag
+  nameWithType: ResetTag
+- uid: RueI.Parsing.Tags.ConcreteTags.ResetTag.HandleTag(RueI.Parsing.ParserContext)
+  name: HandleTag(ParserContext)
+  href: api/RueI.Parsing.Tags.ConcreteTags.ResetTag.html#RueI_Parsing_Tags_ConcreteTags_ResetTag_HandleTag_RueI_Parsing_ParserContext_
+  commentId: M:RueI.Parsing.Tags.ConcreteTags.ResetTag.HandleTag(RueI.Parsing.ParserContext)
+  fullName: RueI.Parsing.Tags.ConcreteTags.ResetTag.HandleTag(RueI.Parsing.ParserContext)
+  nameWithType: ResetTag.HandleTag(ParserContext)
+- uid: RueI.Parsing.Tags.ConcreteTags.ResetTag.HandleTag*
+  name: HandleTag
+  href: api/RueI.Parsing.Tags.ConcreteTags.ResetTag.html#RueI_Parsing_Tags_ConcreteTags_ResetTag_HandleTag_
+  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.ResetTag.HandleTag
+  isSpec: "True"
+  fullName: RueI.Parsing.Tags.ConcreteTags.ResetTag.HandleTag
+  nameWithType: ResetTag.HandleTag
+- uid: RueI.Parsing.Tags.ConcreteTags.ResetTag.Names
+  name: Names
+  href: api/RueI.Parsing.Tags.ConcreteTags.ResetTag.html#RueI_Parsing_Tags_ConcreteTags_ResetTag_Names
+  commentId: P:RueI.Parsing.Tags.ConcreteTags.ResetTag.Names
+  fullName: RueI.Parsing.Tags.ConcreteTags.ResetTag.Names
+  nameWithType: ResetTag.Names
+- uid: RueI.Parsing.Tags.ConcreteTags.ResetTag.Names*
+  name: Names
+  href: api/RueI.Parsing.Tags.ConcreteTags.ResetTag.html#RueI_Parsing_Tags_ConcreteTags_ResetTag_Names_
+  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.ResetTag.Names
+  isSpec: "True"
+  fullName: RueI.Parsing.Tags.ConcreteTags.ResetTag.Names
+  nameWithType: ResetTag.Names
+- uid: RueI.Parsing.Tags.ConcreteTags.SharedTag`1
+  name: SharedTag<T>
+  href: api/RueI.Parsing.Tags.ConcreteTags.SharedTag-1.html
+  commentId: T:RueI.Parsing.Tags.ConcreteTags.SharedTag`1
+  name.vb: SharedTag(Of T)
+  fullName: RueI.Parsing.Tags.ConcreteTags.SharedTag<T>
+  fullName.vb: RueI.Parsing.Tags.ConcreteTags.SharedTag(Of T)
+  nameWithType: SharedTag<T>
+  nameWithType.vb: SharedTag(Of T)
+- uid: RueI.Parsing.Tags.ConcreteTags.SharedTag`1.Singleton
+  name: Singleton
+  href: api/RueI.Parsing.Tags.ConcreteTags.SharedTag-1.html#RueI_Parsing_Tags_ConcreteTags_SharedTag_1_Singleton
+  commentId: P:RueI.Parsing.Tags.ConcreteTags.SharedTag`1.Singleton
+  fullName: RueI.Parsing.Tags.ConcreteTags.SharedTag<T>.Singleton
+  fullName.vb: RueI.Parsing.Tags.ConcreteTags.SharedTag(Of T).Singleton
+  nameWithType: SharedTag<T>.Singleton
+  nameWithType.vb: SharedTag(Of T).Singleton
+- uid: RueI.Parsing.Tags.ConcreteTags.SharedTag`1.Singleton*
+  name: Singleton
+  href: api/RueI.Parsing.Tags.ConcreteTags.SharedTag-1.html#RueI_Parsing_Tags_ConcreteTags_SharedTag_1_Singleton_
+  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.SharedTag`1.Singleton
+  isSpec: "True"
+  fullName: RueI.Parsing.Tags.ConcreteTags.SharedTag<T>.Singleton
+  fullName.vb: RueI.Parsing.Tags.ConcreteTags.SharedTag(Of T).Singleton
+  nameWithType: SharedTag<T>.Singleton
+  nameWithType.vb: SharedTag(Of T).Singleton
 - uid: RueI.Parsing.Tags.ConcreteTags.SizeTag
   name: SizeTag
   href: api/RueI.Parsing.Tags.ConcreteTags.SizeTag.html
@@ -2860,6 +2897,19 @@ references:
   isSpec: "True"
   fullName: RueI.Parsing.TextInfo.IsMonospace
   nameWithType: TextInfo.IsMonospace
+- uid: RueI.Parsing.TextInfo.IsSuperOrSubScript
+  name: IsSuperOrSubScript
+  href: api/RueI.Parsing.TextInfo.html#RueI_Parsing_TextInfo_IsSuperOrSubScript
+  commentId: P:RueI.Parsing.TextInfo.IsSuperOrSubScript
+  fullName: RueI.Parsing.TextInfo.IsSuperOrSubScript
+  nameWithType: TextInfo.IsSuperOrSubScript
+- uid: RueI.Parsing.TextInfo.IsSuperOrSubScript*
+  name: IsSuperOrSubScript
+  href: api/RueI.Parsing.TextInfo.html#RueI_Parsing_TextInfo_IsSuperOrSubScript_
+  commentId: Overload:RueI.Parsing.TextInfo.IsSuperOrSubScript
+  isSpec: "True"
+  fullName: RueI.Parsing.TextInfo.IsSuperOrSubScript
+  nameWithType: TextInfo.IsSuperOrSubScript
 - uid: RueI.Parsing.TextInfo.Monospacing
   name: Monospacing
   href: api/RueI.Parsing.TextInfo.html#RueI_Parsing_TextInfo_Monospacing
