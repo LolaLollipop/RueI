@@ -18,7 +18,7 @@
         /// <summary>
         /// Gets a list of tags that the parser should add at the end.
         /// </summary>
-        private List<RichTextTag> endingTags = new(10);
+        private readonly List<NoParamsTag> endingTags = new(10);
 
         /// <summary>
         /// Gets the end result string builder.
@@ -65,7 +65,7 @@
         /// </summary>
         /// <typeparam name="T">The type of the <see cref="RichTextTag"/> to be added as an ending tag (as a <see cref="SharedTag{Tags}"/>).</typeparam>
         public void AddEndingTag<T>()
-            where T : RichTextTag, new()
+            where T : NoParamsTag, new()
         {
             endingTags.Add(SharedTag<T>.Singleton);
         }
@@ -75,9 +75,20 @@
         /// </summary>
         /// <typeparam name="T">The type of the <see cref="RichTextTag"/> to be removed from the ending tags (as a <see cref="SharedTag{Tags}"/>).</typeparam>
         public void RemoveEndingTag<T>()
-            where T : RichTextTag, new()
+            where T : NoParamsTag, new()
         {
             endingTags.Remove(SharedTag<T>.Singleton);
+        }
+
+        /// <summary>
+        /// Applies the <see cref="endingTags"/> tags to this <see cref="ParserContext"/>.
+        /// </summary>
+        internal void ApplyClosingTags()
+        {
+            foreach (NoParamsTag tag in endingTags)
+            {
+                tag.HandleTag(this);
+            }
         }
 
         /// <summary>

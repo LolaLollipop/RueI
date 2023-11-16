@@ -1,36 +1,39 @@
 ﻿namespace RueI.Parsing.Tags.ConcreteTags
 {
     using RueI.Enums;
-    using RueI.Records;
-    using UnityEngine.Assertions;
 
     /// <summary>
-    /// Provides a way to handle size tags.
+    /// Provides a way to handle color tags.
     /// </summary>
-    public class SizeTag : MeasurementTag
+    public class ColorTag : RichTextTag
     {
-        private const string TAGFORMAT = "<size={0}>";
+        /// <inheritdoc/>
+        public override string[] Names { get; } = { "color" };
 
         /// <inheritdoc/>
-        public override string[] Names { get; } = { "size" };
+        public override TagStyle TagStyle { get; } = TagStyle.ValueParam;
 
         /// <inheritdoc/>
-        public override bool HandleTag(ParserContext context, MeasurementInfo info)
+        public override bool HandleTag(ParserContext context, string param)
         {
-            context.SizeTags.Push(context.Size);
-            float value = info.Style switch
+            if (param.StartsWith("#"))
             {
-                MeasurementUnit.Percentage => info.Value / 100 * Constants.DEFAULTSIZE,
-                MeasurementUnit.Ems => info.Value * Constants.EMSTOPIXELS,
-                _ => info.Value
-            };
+                if (!Constants.ValidColorSizes.Contains(param.Length - 1))
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                string? unquoted = TagHelpers.ExtractFromQuotations(param);
+                if (unquoted == null || !Constants.Colors.Contains(unquoted))
+                {
+                    return false;
+                }
+            }
 
-            context.Size = value;
-            context.CurrentLineHeight = Constants.DEFAULTHEIGHT * (value / Constants.DEFAULTSIZE);
-            context.ResultBuilder.AppendFormat(TAGFORMAT, value);
-
-
-
+            context.ResultBuilder.Append($"<color={param}>");
+            context.AddEndingTag<CloseSizeTag>();
             return true;
         }
     }

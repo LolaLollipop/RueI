@@ -2,6 +2,7 @@
 {
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
+    using System.Net.Mime;
     using System.Text;
     using MEC;
     using NorthwoodLib.Pools;
@@ -91,7 +92,7 @@
                     AddCharacter(context, delimiter.Value);
                     delimiter = null;
                 }
-                Timing.Instance
+
                 tagBuffer.Clear();
                 paramBuffer.Clear();
 
@@ -120,7 +121,7 @@
                 }
                 else if (currentState == ParserState.DescendingTag)
                 {
-                    if ((ch > '\u0060' && ch < '\u007B') || ch == '-') // descend deeper into node
+                    if ((ch > '\u0060' && ch < '\u007B') || ch == '-' || ch == '\\') // descend deeper into node
                     {
                         if (tagBufferSize > Constants.MAXTAGNAMESIZE)
                         {
@@ -173,9 +174,7 @@
                 {
                     if (ch == '>')
                     {
-#pragma warning disable
-                        if (currentTag.HandleTag(context, delimiter.Value, paramBuffer.ToString()))
-#pragma warning restore
+                        if (currentTag!.HandleTag(context, paramBuffer.ToString()))
                         {
                             tagBuffer.Clear();
                             paramBuffer.Clear();
@@ -196,6 +195,8 @@
 
                 AddCharacter(context, ch);
             } // foreach
+
+            context.ApplyClosingTags();
 
             StringBuilderPool.Shared.Return(tagBuffer);
             StringBuilderPool.Shared.Return(paramBuffer);

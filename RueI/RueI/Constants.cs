@@ -9,7 +9,6 @@
     /// </summary>
     public static class Constants
     {
-
         /// <summary>
         /// Gets the default height if a line-height is not provided.
         /// </summary>
@@ -28,7 +27,7 @@
         public const float CAPSTOSMALLCAPS = 0.8f;
 
         /// <summary>
-        /// Gets the pixel amount applied to turn something into a pixel.
+        /// Gets the pixel increase for bold characters.
         /// </summary>
         public const float BOLDINCREASE = 2.45f * BETTER;
 
@@ -100,7 +99,6 @@
         public static Parser DefaultParser { get; } = new ParserBuilder()
             .AddTag<SizeTag>()
             .AddTag<LineHeightTag>()
-            .AddTag<SpriteTag>()
             .AddTag<CloseSizeTag>()
             .Build();
 
