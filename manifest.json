@@ -372,6 +372,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Interfaces.IElementContainer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Interfaces.IElementContainer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/RueI.Interfaces.ISettable.yml",
       "output": {
         ".html": {

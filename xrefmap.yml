@@ -1115,6 +1115,19 @@ references:
   commentId: T:RueI.Extensions.ElementHelpers
   fullName: RueI.Extensions.ElementHelpers
   nameWithType: ElementHelpers
+- uid: RueI.Extensions.ElementHelpers.AddTo(RueI.IElement,RueI.Interfaces.IElementContainer)
+  name: AddTo(IElement, IElementContainer)
+  href: api/RueI.Extensions.ElementHelpers.html#RueI_Extensions_ElementHelpers_AddTo_RueI_IElement_RueI_Interfaces_IElementContainer_
+  commentId: M:RueI.Extensions.ElementHelpers.AddTo(RueI.IElement,RueI.Interfaces.IElementContainer)
+  fullName: RueI.Extensions.ElementHelpers.AddTo(RueI.IElement, RueI.Interfaces.IElementContainer)
+  nameWithType: ElementHelpers.AddTo(IElement, IElementContainer)
+- uid: RueI.Extensions.ElementHelpers.AddTo*
+  name: AddTo
+  href: api/RueI.Extensions.ElementHelpers.html#RueI_Extensions_ElementHelpers_AddTo_
+  commentId: Overload:RueI.Extensions.ElementHelpers.AddTo
+  isSpec: "True"
+  fullName: RueI.Extensions.ElementHelpers.AddTo
+  nameWithType: ElementHelpers.AddTo
 - uid: RueI.Extensions.ElementHelpers.CalculateOffset(System.Single,System.Single,System.Single)
   name: CalculateOffset(float, float, float)
   href: api/RueI.Extensions.ElementHelpers.html#RueI_Extensions_ElementHelpers_CalculateOffset_System_Single_System_Single_System_Single_
@@ -2117,6 +2130,25 @@ references:
   commentId: N:RueI.Interfaces
   fullName: RueI.Interfaces
   nameWithType: RueI.Interfaces
+- uid: RueI.Interfaces.IElementContainer
+  name: IElementContainer
+  href: api/RueI.Interfaces.IElementContainer.html
+  commentId: T:RueI.Interfaces.IElementContainer
+  fullName: RueI.Interfaces.IElementContainer
+  nameWithType: IElementContainer
+- uid: RueI.Interfaces.IElementContainer.Elements
+  name: Elements
+  href: api/RueI.Interfaces.IElementContainer.html#RueI_Interfaces_IElementContainer_Elements
+  commentId: P:RueI.Interfaces.IElementContainer.Elements
+  fullName: RueI.Interfaces.IElementContainer.Elements
+  nameWithType: IElementContainer.Elements
+- uid: RueI.Interfaces.IElementContainer.Elements*
+  name: Elements
+  href: api/RueI.Interfaces.IElementContainer.html#RueI_Interfaces_IElementContainer_Elements_
+  commentId: Overload:RueI.Interfaces.IElementContainer.Elements
+  isSpec: "True"
+  fullName: RueI.Interfaces.IElementContainer.Elements
+  nameWithType: IElementContainer.Elements
 - uid: RueI.Interfaces.ISettable
   name: ISettable
   href: api/RueI.Interfaces.ISettable.html
