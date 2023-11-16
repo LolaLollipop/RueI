@@ -1,6 +1,5 @@
 ﻿namespace RueI.Parsing
 {
-    using Microsoft.SqlServer.Server;
     using RueI.Enums;
 
     /// <summary>

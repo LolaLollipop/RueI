@@ -1,8 +1,5 @@
 ﻿namespace RueI.Parsing.Tags.ConcreteTags
 {
-    using RueI.Enums;
-    using RueI.Records;
-
     /// <summary>
     /// Provides a way to handle line-height tags.
     /// </summary>

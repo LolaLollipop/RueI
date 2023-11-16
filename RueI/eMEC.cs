@@ -7,7 +7,6 @@ namespace eMEC
     using System.Diagnostics.CodeAnalysis;
     using MEC;
     using RueI.Extensions;
-    using UnityEngine;
 
     /// <summary>
     /// Provides extensions for working with MEC. The primary purpose is to provide better nullable functionality.

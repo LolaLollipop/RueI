@@ -1,7 +1,6 @@
 ﻿namespace RueI
 {
     using MEC;
-    using RueI.Extensions;
     using RueI.Interfaces;
 
     /// <summary>

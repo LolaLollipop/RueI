@@ -4,12 +4,8 @@
     using System.Reflection.Emit;
     using HarmonyLib;
     using Hints;
-    using Interactables.Interobjects.DoorUtils;
     using Mirror;
     using NorthwoodLib.Pools;
-    using PlayerRoles.PlayableScps.Scp079;
-    using PlayerRoles.Voice;
-    using RueI.Displays;
     using static HarmonyLib.AccessTools;
 
     [HarmonyPatch(typeof(HintDisplay), nameof(HintDisplay.Show))]

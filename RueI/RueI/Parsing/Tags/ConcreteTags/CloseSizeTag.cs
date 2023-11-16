@@ -1,7 +1,5 @@
 ﻿namespace RueI.Parsing.Tags.ConcreteTags
 {
-    using RueI.Enums;
-
     /// <summary>
     /// Provides a way to handle closing size tags.
     /// </summary>

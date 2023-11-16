@@ -2,7 +2,6 @@ namespace RueI.Parsing
 {
     using System.Text;
     using NorthwoodLib.Pools;
-    using RueI.Enums;
     using RueI.Parsing.Tags;
 
     /// <summary>

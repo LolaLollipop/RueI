@@ -1,7 +1,5 @@
 ﻿namespace RueI.Extensions
 {
-    using System.Collections.ObjectModel;
-
     /// <summary>
     /// Provides extensions for working with collections.
     /// </summary>

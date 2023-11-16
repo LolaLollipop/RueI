@@ -2,7 +2,6 @@
 {
     using RueI.Enums;
     using RueI.Records;
-    using UnityEngine.Assertions;
 
     /// <summary>
     /// Provides a way to handle size tags.
