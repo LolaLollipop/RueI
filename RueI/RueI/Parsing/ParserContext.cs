@@ -1,4 +1,4 @@
-﻿namespace RueI.Parsing
+namespace RueI.Parsing
 {
     using System.Text;
     using NorthwoodLib.Pools;
@@ -89,6 +89,8 @@
             {
                 tag.HandleTag(this);
             }
+
+            endingTags.Clear();
         }
 
         /// <summary>
