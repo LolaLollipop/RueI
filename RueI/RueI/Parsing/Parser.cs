@@ -76,8 +76,8 @@ namespace RueI
 
             void FailTagMatch() // not a tag, unload buffer
             {
-                this.AvoidMatch(context);
                 AddCharacter(context, '<')
+                this.AvoidMatch(context);
                 foreach (char ch in tagBuffer.ToString())
                 {
                     AddCharacter(context, ch);
@@ -106,6 +106,11 @@ namespace RueI
             {
                 if (ch == '<')
                 {
+                    if (currentState != ParserState.CollectingTags)
+                    {
+                        FailTagMatch();
+                    }
+
                     currentState = ParserState.DescendingTag;
                     continue; // do NOT add as a character
                 }
