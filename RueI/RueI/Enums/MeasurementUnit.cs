@@ -3,7 +3,7 @@
     /// <summary>
     /// Represents the unit used for a measurement parameter.
     /// </summary>
-    public enum MeasurementStyle
+    public enum MeasurementUnit
     {
         /// <summary>
         /// Indicates that the measurement is in pixels.

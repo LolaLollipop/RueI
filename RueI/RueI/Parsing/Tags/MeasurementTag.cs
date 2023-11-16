@@ -8,19 +8,20 @@
     /// <summary>
     /// Defines the base class for all tags that only take in a measurement.
     /// </summary>
-    public abstract class MeasurementTagBase : ParamsTagBase
+    public abstract class MeasurementTag : RichTextTag
     {
         /// <inheritdoc/>
-        public override bool IsValidDelimiter(char ch) => ch == '=';
+        public sealed override TagStyle TagStyle { get; } = TagStyle.ValueParam;
 
-        /// <inheritdoc/>
-        public override bool HandleTag(ParserContext context, char delimiter, string content)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="context"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public sealed override bool HandleTag(ParserContext context, string content)
         {
-            if (!IsValidDelimiter(delimiter))
-            {
-                return false;
-            }
-
             if (MeasurementInfo.TryParse(content, out MeasurementInfo info))
             {
                 return HandleTag(context, info);
@@ -32,11 +33,11 @@
         }
 
         /// <summary>
-        /// Handles an instance of this tag.
+        /// Handles an instance of this tag with <see cref="MeasurementInfo"/>.
         /// </summary>
         /// <param name="context">The context of the parser.</param>
         /// <param name="info">The information about the measurement.</param>
-        /// <returns><see cref="true"/> if the tag is valid, otherwise <see cref="false"/>.</returns>
+        /// <returns>true if the tag is valid, otherwise false.</returns>
         public abstract bool HandleTag(ParserContext context, MeasurementInfo info);
     }
 }

@@ -3,8 +3,7 @@
     /// <summary>
     /// Represents the valid characters for a delimiter.
     /// </summary>
-    [Flags]
-    public enum TagDelimiterStyle
+    public enum TagStyle
     {
         /// <summary>
         /// Indicates that a tag does not take parameters.
@@ -12,13 +11,13 @@
         NoParams,
 
         /// <summary>
-        /// Indicates that a tag takes a measurement as a parameter.
+        /// Indicates that a tag takes in a value (equal sign) param.
         /// </summary>
-        Measurement,
+        ValueParam,
 
         /// <summary>
-        /// Indicates that a tag takes a color as a parameter.
+        /// Indicates that a tag takes in only attributes (space delimiter).
         /// </summary>
-        Color,
+        Attributes,
     }
 }

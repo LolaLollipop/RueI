@@ -9,18 +9,23 @@
     /// </summary>
     /// <param name="Value">The value of the measurement.</param>
     /// <param name="Style">The style of the measurement.</param>
-    public record struct MeasurementInfo(float Value, MeasurementStyle Style)
+    /// <remarks>
+    /// This provides a convenient way to specify both the value and unit for a measurement,
+    /// as the base value when converted to pixels can differ depending on the
+    /// context of the measurement.
+    /// </remarks>
+    public record struct MeasurementInfo(float Value, MeasurementUnit Style)
     {
         /// <summary>
         /// Attempts to extract a <see cref="MeasurementInfo"/> from a string.
         /// </summary>
         /// <param name="content">The content to parse.</param>
-        /// <param name="info">The returned info, if <see cref="true"/>.</param>
-        /// <returns><see cref="true"/> if the string was valid, otherwise <see cref="false"/>.</returns>
+        /// <param name="info">The returned info, if true.</param>
+        /// <returns>true if the string was valid, otherwise false.</returns>
         public static bool TryParse(string content, out MeasurementInfo info)
         {
             StringBuilder paramBuffer = StringBuilderPool.Shared.Rent(25);
-            MeasurementStyle style = MeasurementStyle.Pixels;
+            MeasurementUnit style = MeasurementUnit.Pixels;
 
             bool hasPeriod = false;
 
@@ -28,12 +33,12 @@
             {
                 if (ch == 'e')
                 {
-                    style = MeasurementStyle.Ems;
+                    style = MeasurementUnit.Ems;
                     break;
                 }
                 else if (ch == '%')
                 {
-                    style = MeasurementStyle.Percentage;
+                    style = MeasurementUnit.Percentage;
                     break;
                 }
                 else if (ch == 'p') // pixels

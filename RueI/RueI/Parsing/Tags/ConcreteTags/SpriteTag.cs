@@ -7,7 +7,6 @@
     /// </summary>
     public class SpriteTag : ParamsTagBase
     {
-
         /// <inheritdoc/>
         public override string[] Names { get; } = { "sprite" };
 

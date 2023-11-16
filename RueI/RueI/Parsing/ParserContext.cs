@@ -3,12 +3,23 @@
     using System.Text;
     using NorthwoodLib.Pools;
     using RueI.Enums;
+    using RueI.Parsing.Tags;
 
     /// <summary>
     /// Describes the state of a parser at a time.
     /// </summary>
+    /// <remarks>
+    /// The <see cref="ParserContext"/> class provides a way for the general state of the parser,
+    /// such as the current line width or the vertical height, to be modified by passing it along.
+    /// Tags should modify this in order to change the end result of parsing.
+    /// </remarks>
     public class ParserContext : TextInfo, IDisposable
     {
+        /// <summary>
+        /// Gets a list of tags that the parser should add at the end.
+        /// </summary>
+        private List<RichTextTag> endingTags = new(10);
+
         /// <summary>
         /// Gets the end result string builder.
         /// </summary>
@@ -50,9 +61,24 @@
         public int ColorTags { get; set; } = 0;
 
         /// <summary>
-        /// Gets a list of tags to be closed within the parser.
+        /// Adds a <see cref="RichTextTag"/> to a list of tags that will be added to the end of the parser's result.
         /// </summary>
-        public List<RichTextTag> ClosingTags { get; } = new(10);
+        /// <typeparam name="T">The type of the <see cref="RichTextTag"/> to be added as an ending tag (as a <see cref="SharedTag{Tags}"/>).</typeparam>
+        public void AddEndingTag<T>()
+            where T : RichTextTag, new()
+        {
+            endingTags.Add(SharedTag<T>.Singleton);
+        }
+
+        /// <summary>
+        /// Removes a <see cref="RichTextTag"/> from the list list of tags that will be added to the end of the parser's result.
+        /// </summary>
+        /// <typeparam name="T">The type of the <see cref="RichTextTag"/> to be removed from the ending tags (as a <see cref="SharedTag{Tags}"/>).</typeparam>
+        public void RemoveEndingTag<T>()
+            where T : RichTextTag, new()
+        {
+            endingTags.Remove(SharedTag<T>.Singleton);
+        }
 
         /// <summary>
         /// Disposes this ParserContext, returning the string builder to the pool.

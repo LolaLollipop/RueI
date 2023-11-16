@@ -1,8 +1,9 @@
 ﻿namespace RueI
 {
+    using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.Text;
-
+    using MEC;
     using NorthwoodLib.Pools;
 
     using RueI.Enums;
@@ -21,22 +22,37 @@
         /// <param name="tags">The list of tags to initialize with.</param>
         internal Parser(IEnumerable<RichTextTag> tags)
         {
-            Tags = new(ExtractTagsToPairs(tags));
+            Dictionary<string, List<RichTextTag>> tagBuffer = new();
+
+            foreach (RichTextTag tag in tags)
+            {
+                foreach (string name in tag.Names)
+                {
+                    if (tagBuffer.TryGetValue(name, out List<RichTextTag> tagsOfName))
+                    {
+                        tagsOfName.Add(tag);
+                    } else
+                    {
+                        List<RichTextTag> richTextTags = new();
+                        tagBuffer.Add(name, richTextTags);
+                        richTextTags.Add(tag);
+                    }
+                }
+            }
+
+            Dictionary<string, ReadOnlyCollection<RichTextTag>> dictionary = tagBuffer.ToDictionary(kv => kv.Key, kv => new ReadOnlyCollection<RichTextTag>(kv.Value));
+            Tags = new(dictionary);
+
+            //Tags = (Lookup<string, RichTextTag>)tags.SelectMany(tag => tag.Names.Select(name => new { Name = name, Tag = tag })).ToLookup(x => x.Name, x => x.Tag);
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Parser"/> class.
+        /// Gets the tags that will be searched for when parsing.
         /// </summary>
-        /// <param name="tags">The list of tags to initialize with.</param>
-        internal Parser(params RichTextTag[] tags)
-        {
-            Tags = new(ExtractTagsToPairs(tags));
-        }
-
-        /// <summary>
-        /// Gets the current tags of the parser.
-        /// </summary>
-        public ReadOnlyDictionary<string, RichTextTag> Tags { get; }
+        /// <remarks>
+        /// Multiple tags can share the same name.
+        /// </remarks>
+        public ReadOnlyDictionary<string, ReadOnlyCollection<RichTextTag>> Tags { get; }
 
         /// <summary>
         /// Parses a rich text string.
@@ -50,7 +66,7 @@
             StringBuilder tagBuffer = StringBuilderPool.Shared.Rent(Constants.MAXTAGNAMESIZE);
             int tagBufferSize = 0;
 
-            ParamsTagBase? currentTag = null;
+            RichTextTag? currentTag = null;
             char? delimiter = null;
 
             StringBuilder paramBuffer = StringBuilderPool.Shared.Rent(30);
@@ -75,7 +91,7 @@
                     AddCharacter(context, delimiter.Value);
                     delimiter = null;
                 }
-
+                Timing.Instance
                 tagBuffer.Clear();
                 paramBuffer.Clear();
 
@@ -116,9 +132,9 @@
                     }
                     else if (ch == '>')
                     {
-                        if (Tags.TryGetValue(tagBuffer.ToString(), out RichTextTag tag) && tag is NoParamsTagBase noParams)
+                        if (TryGetBestMatch(tagBuffer.ToString(), TagStyle.NoParams, out RichTextTag? tag))
                         {
-                            noParams.HandleTag(context);
+                            tag!.HandleTag(context, string.Empty);
                             continue;
                         }
                         else
@@ -128,9 +144,16 @@
                     }
                     else if (ch == ' ' || ch == '=')
                     {
-                        if (Tags.TryGetValue(tagBuffer.ToString(), out RichTextTag tag) && tag is ParamsTagBase withParams && withParams.IsValidDelimiter(ch))
+                        TagStyle style = ch switch
                         {
-                            currentTag = withParams;
+                            ' ' => TagStyle.Attributes,
+                            '=' => TagStyle.ValueParam,
+                            _ => throw new ArgumentOutOfRangeException(nameof(ch)),
+                        };
+
+                        if (TryGetBestMatch(tagBuffer.ToString(), style, out RichTextTag? tag))
+                        {
+                            currentTag = tag;
                             delimiter = ch;
 
                             currentState = ParserState.CollectingParams;
@@ -306,7 +329,7 @@
         /// Exports this parser's <see cref="RichTextTag"/>s to a <see cref="ParserBuilder"/>.
         /// </summary>
         /// <param name="builder">The builder to export the tags to.</param>
-        internal void ExportTo(ParserBuilder builder) => builder.AddTags(Tags.Values);
+        internal void ExportTo(ParserBuilder builder) => builder.AddTags(Tags.SelectMany(x => x.Value).Distinct());
 
         /// <summary>
         /// Avoids the client TMP matching a tag.
@@ -344,6 +367,23 @@
             }
 
             return dict;
+        }
+
+        private bool TryGetBestMatch(string name, TagStyle style, out RichTextTag? tag)
+        {
+            tag = null;
+
+            if (Tags.TryGetValue(name, out ReadOnlyCollection<RichTextTag> filteredTags))
+            {
+                RichTextTag? chosenTag = filteredTags.FirstOrDefault(x => x.TagStyle == style);
+                if (chosenTag != null)
+                {
+                    tag = chosenTag;
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 }

@@ -39,12 +39,12 @@
         /// <param name="size">The size to include in the size tag.</param>
         /// <param name="style">The measurement style of the size tag.</param>
         /// <returns>A reference to the original <see cref="StringBuilder"/>.</returns>
-        public static StringBuilder SetSize(this StringBuilder sb, float size, MeasurementStyle style = MeasurementStyle.Pixels)
+        public static StringBuilder SetSize(this StringBuilder sb, float size, MeasurementUnit style = MeasurementUnit.Pixels)
         {
             string format = style switch
             {
-                MeasurementStyle.Percentage => "%",
-                MeasurementStyle.Ems => "ems",
+                MeasurementUnit.Percentage => "%",
+                MeasurementUnit.Ems => "ems",
                 _ => string.Empty
             };
 
@@ -58,12 +58,12 @@
         /// <param name="size">The line height to include in the line-height tag.</param>
         /// <param name="style">The measurement style of the line-height tag.</param>
         /// <returns>A reference to the original <see cref="StringBuilder"/>.</returns>
-        public static StringBuilder SetLineHeight(this StringBuilder sb, float size, MeasurementStyle style = MeasurementStyle.Pixels)
+        public static StringBuilder SetLineHeight(this StringBuilder sb, float size, MeasurementUnit style = MeasurementUnit.Pixels)
         {
             string format = style switch
             {
-                MeasurementStyle.Percentage => "%",
-                MeasurementStyle.Ems => "ems",
+                MeasurementUnit.Percentage => "%",
+                MeasurementUnit.Ems => "ems",
                 _ => string.Empty
             };
 
@@ -203,12 +203,12 @@
         /// <param name="indent">The indent size to include in the indent tag.</param>
         /// <param name="style">The measurement style of the indent tag.</param>
         /// <returns>A reference to the original <see cref="StringBuilder"/>.</returns>
-        public static StringBuilder SetIndent(this StringBuilder sb, float indent, MeasurementStyle style = MeasurementStyle.Pixels)
+        public static StringBuilder SetIndent(this StringBuilder sb, float indent, MeasurementUnit style = MeasurementUnit.Pixels)
         {
             string format = style switch
             {
-                MeasurementStyle.Percentage => "%",
-                MeasurementStyle.Ems => "ems",
+                MeasurementUnit.Percentage => "%",
+                MeasurementUnit.Ems => "ems",
                 _ => string.Empty
             };
 
@@ -230,12 +230,12 @@
         /// <param name="spacing">The size of the spacing.</param>
         /// <param name="style">The measurement style of the monospacing tag.</param>
         /// <returns>A reference to the original <see cref="StringBuilder"/>.</returns>
-        public static StringBuilder SetMonospace(this StringBuilder sb, float spacing, MeasurementStyle style = MeasurementStyle.Pixels)
+        public static StringBuilder SetMonospace(this StringBuilder sb, float spacing, MeasurementUnit style = MeasurementUnit.Pixels)
         {
             string format = style switch
             {
-                MeasurementStyle.Percentage => "%",
-                MeasurementStyle.Ems => "ems",
+                MeasurementUnit.Percentage => "%",
+                MeasurementUnit.Ems => "ems",
                 _ => string.Empty
             };
 
@@ -267,12 +267,12 @@
         /// <param name="margins">The size of the margins.</param>
         /// <param name="style">The measurement style of the margins tag.</param>
         /// <returns>A reference to the original <see cref="StringBuilder"/>.</returns>
-        public static StringBuilder SetMargins(this StringBuilder sb, float margins, MeasurementStyle style = MeasurementStyle.Pixels)
+        public static StringBuilder SetMargins(this StringBuilder sb, float margins, MeasurementUnit style = MeasurementUnit.Pixels)
         {
             string format = style switch
             {
-                MeasurementStyle.Percentage => "%",
-                MeasurementStyle.Ems => "ems",
+                MeasurementUnit.Percentage => "%",
+                MeasurementUnit.Ems => "ems",
                 _ => string.Empty
             };
 
@@ -322,12 +322,12 @@
         /// <param name="offset">The size of the new width.</param>
         /// <param name="style">The measurement style of the width tag.</param>
         /// <returns>A reference to the original <see cref="StringBuilder"/>.</returns>
-        public static StringBuilder SetWidth(this StringBuilder sb, float offset, MeasurementStyle style = MeasurementStyle.Pixels)
+        public static StringBuilder SetWidth(this StringBuilder sb, float offset, MeasurementUnit style = MeasurementUnit.Pixels)
         {
             string format = style switch
             {
-                MeasurementStyle.Percentage => "%",
-                MeasurementStyle.Ems => "ems",
+                MeasurementUnit.Percentage => "%",
+                MeasurementUnit.Ems => "ems",
                 _ => string.Empty
             };
 
@@ -341,12 +341,12 @@
         /// <param name="margins">The size of the pos tag.</param>
         /// <param name="style">The measurement style of the pos tag.</param>
         /// <returns>A reference to the original <see cref="StringBuilder"/>.</returns>
-        public static StringBuilder AddHorizontalPos(this StringBuilder sb, float margins, MeasurementStyle style = MeasurementStyle.Pixels)
+        public static StringBuilder AddHorizontalPos(this StringBuilder sb, float margins, MeasurementUnit style = MeasurementUnit.Pixels)
         {
             string format = style switch
             {
-                MeasurementStyle.Percentage => "%",
-                MeasurementStyle.Ems => "ems",
+                MeasurementUnit.Percentage => "%",
+                MeasurementUnit.Ems => "ems",
                 _ => string.Empty
             };
 
@@ -360,12 +360,12 @@
         /// <param name="margins">The size of the pos tag.</param>
         /// <param name="style">The measurement style of the pos tag.</param>
         /// <returns>A reference to the original <see cref="StringBuilder"/>.</returns>
-        public static StringBuilder AddSpace(this StringBuilder sb, float margins, MeasurementStyle style = MeasurementStyle.Pixels)
+        public static StringBuilder AddSpace(this StringBuilder sb, float margins, MeasurementUnit style = MeasurementUnit.Pixels)
         {
             string format = style switch
             {
-                MeasurementStyle.Percentage => "%",
-                MeasurementStyle.Ems => "ems",
+                MeasurementUnit.Percentage => "%",
+                MeasurementUnit.Ems => "ems",
                 _ => string.Empty
             };
 
@@ -379,12 +379,12 @@
         /// <param name="offset">The size of the voffset tag.</param>
         /// <param name="style">The measurement style of the voffset tag.</param>
         /// <returns>A reference to the original <see cref="StringBuilder"/>.</returns>
-        public static StringBuilder AddVOffset(this StringBuilder sb, float offset, MeasurementStyle style = MeasurementStyle.Pixels)
+        public static StringBuilder AddVOffset(this StringBuilder sb, float offset, MeasurementUnit style = MeasurementUnit.Pixels)
         {
             string format = style switch
             {
-                MeasurementStyle.Percentage => "%",
-                MeasurementStyle.Ems => "ems",
+                MeasurementUnit.Percentage => "%",
+                MeasurementUnit.Ems => "ems",
                 _ => string.Empty
             };
 

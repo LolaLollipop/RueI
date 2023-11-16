@@ -6,7 +6,7 @@
     /// <summary>
     /// Provides a way to handle line-height tags.
     /// </summary>
-    public class CloseLineHeightTag : NoParamsTagBase
+    public class CloseLineHeightTag : NoParamsTag
     {
         private const string TAGFORMAT = "</line-height>";
 
@@ -14,12 +14,13 @@
         public override string[] Names { get; } = { "/line-height" };
 
         /// <inheritdoc/>
-        public override void HandleTag(ParserContext context)
+        public override bool HandleTag(ParserContext context)
         {
             context.CurrentLineHeight = Constants.DEFAULTHEIGHT;
 
             context.ResultBuilder.Append(TAGFORMAT);
-            context.ClosingTags.Remove(this);
+            context.RemoveEndingTag<CloseLineHeightTag>();
+            return true;
         }
     }
 }

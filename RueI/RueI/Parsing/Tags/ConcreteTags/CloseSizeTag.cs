@@ -5,7 +5,7 @@
     /// <summary>
     /// Provides a way to handle closing size tags.
     /// </summary>
-    public class CloseSizeTag : NoParamsTagBase
+    public class CloseSizeTag : NoParamsTag
     {
         private const string TAGFORMAT = "</size>";
 
@@ -13,7 +13,7 @@
         public override string[] Names { get; } = { "/size" };
 
         /// <inheritdoc/>
-        public override void HandleTag(ParserContext context)
+        public override bool HandleTag(ParserContext context)
         {
             if (context.SizeTags.Any())
             {
@@ -25,6 +25,8 @@
             }
 
             context.ResultBuilder.Append(TAGFORMAT);
+
+            return true;
         }
     }
 }

@@ -2,6 +2,7 @@
 {
     using NorthwoodLib.Pools;
     using RueI.Parsing;
+    using RueI.Parsing.Tags;
     using RueI.Parsing.Tags.ConcreteTags;
 
     /// <summary>
@@ -9,7 +10,7 @@
     /// </summary>
     public sealed class ParserBuilder
     {
-        private List<RichTextTag> currentTags = ListPool<RichTextTag>.Shared.Rent(10);
+        private readonly List<RichTextTag> currentTags = ListPool<RichTextTag>.Shared.Rent(10);
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ParserBuilder"/> class.
@@ -33,6 +34,23 @@
         }
 
         /// <summary>
+        /// Imports all of the <see cref="RichTextTag"/>s from a <see cref="Parser"/>, adding it to the builder.
+        /// </summary>
+        /// <param name="parser">The <see cref="Parser"/> to import the tags from.</param>
+        /// <returns>A reference to this <see cref="ParserBuilder"/>.</returns>
+        public ParserBuilder ImportFrom(Parser parser)
+        {
+            parser.ExportTo(this);
+            return this;
+        }
+
+        /// <summary>
+        /// Builds this <see cref="ParserBuilder"/> into a <see cref="Parser"/>.
+        /// </summary>
+        /// <returns>The built <see cref="Parser"/>.</returns>
+        public Parser Build() => new(currentTags);
+
+        /// <summary>
         /// Adds all of the tags from an <see cref="IEnumerable{RichTextTag}"/>.
         /// </summary>
         /// <param name="tags">The tags to add.</param>
@@ -43,11 +61,5 @@
                 currentTags.Add(tag);
             }
         }
-
-        /// <summary>
-        /// Builds this <see cref="ParserBuilder"/> into a <see cref="Parser"/>.
-        /// </summary>
-        /// <returns>The built <see cref="Parser"/>.</returns>
-        public Parser Build() => new(currentTags);
     }
 }
