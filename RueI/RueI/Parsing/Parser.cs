@@ -189,7 +189,8 @@ namespace RueI
                             delimiter = null;
                             currentState = ParserState.CollectingTags;
                             tagBufferSize = 0;
-                        } else
+                        } 
+                        else
                         {
                             FailTagMatch();
                         }
