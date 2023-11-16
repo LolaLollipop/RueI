@@ -2660,6 +2660,54 @@ references:
   isSpec: "True"
   fullName: RueI.Parsing.Tags.ConcreteTags.CloseSizeTag.Names
   nameWithType: CloseSizeTag.Names
+- uid: RueI.Parsing.Tags.ConcreteTags.ColorTag
+  name: ColorTag
+  href: api/RueI.Parsing.Tags.ConcreteTags.ColorTag.html
+  commentId: T:RueI.Parsing.Tags.ConcreteTags.ColorTag
+  fullName: RueI.Parsing.Tags.ConcreteTags.ColorTag
+  nameWithType: ColorTag
+- uid: RueI.Parsing.Tags.ConcreteTags.ColorTag.HandleTag(RueI.Parsing.ParserContext,System.String)
+  name: HandleTag(ParserContext, string)
+  href: api/RueI.Parsing.Tags.ConcreteTags.ColorTag.html#RueI_Parsing_Tags_ConcreteTags_ColorTag_HandleTag_RueI_Parsing_ParserContext_System_String_
+  commentId: M:RueI.Parsing.Tags.ConcreteTags.ColorTag.HandleTag(RueI.Parsing.ParserContext,System.String)
+  name.vb: HandleTag(ParserContext, String)
+  fullName: RueI.Parsing.Tags.ConcreteTags.ColorTag.HandleTag(RueI.Parsing.ParserContext, string)
+  fullName.vb: RueI.Parsing.Tags.ConcreteTags.ColorTag.HandleTag(RueI.Parsing.ParserContext, String)
+  nameWithType: ColorTag.HandleTag(ParserContext, string)
+  nameWithType.vb: ColorTag.HandleTag(ParserContext, String)
+- uid: RueI.Parsing.Tags.ConcreteTags.ColorTag.HandleTag*
+  name: HandleTag
+  href: api/RueI.Parsing.Tags.ConcreteTags.ColorTag.html#RueI_Parsing_Tags_ConcreteTags_ColorTag_HandleTag_
+  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.ColorTag.HandleTag
+  isSpec: "True"
+  fullName: RueI.Parsing.Tags.ConcreteTags.ColorTag.HandleTag
+  nameWithType: ColorTag.HandleTag
+- uid: RueI.Parsing.Tags.ConcreteTags.ColorTag.Names
+  name: Names
+  href: api/RueI.Parsing.Tags.ConcreteTags.ColorTag.html#RueI_Parsing_Tags_ConcreteTags_ColorTag_Names
+  commentId: P:RueI.Parsing.Tags.ConcreteTags.ColorTag.Names
+  fullName: RueI.Parsing.Tags.ConcreteTags.ColorTag.Names
+  nameWithType: ColorTag.Names
+- uid: RueI.Parsing.Tags.ConcreteTags.ColorTag.Names*
+  name: Names
+  href: api/RueI.Parsing.Tags.ConcreteTags.ColorTag.html#RueI_Parsing_Tags_ConcreteTags_ColorTag_Names_
+  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.ColorTag.Names
+  isSpec: "True"
+  fullName: RueI.Parsing.Tags.ConcreteTags.ColorTag.Names
+  nameWithType: ColorTag.Names
+- uid: RueI.Parsing.Tags.ConcreteTags.ColorTag.TagStyle
+  name: TagStyle
+  href: api/RueI.Parsing.Tags.ConcreteTags.ColorTag.html#RueI_Parsing_Tags_ConcreteTags_ColorTag_TagStyle
+  commentId: P:RueI.Parsing.Tags.ConcreteTags.ColorTag.TagStyle
+  fullName: RueI.Parsing.Tags.ConcreteTags.ColorTag.TagStyle
+  nameWithType: ColorTag.TagStyle
+- uid: RueI.Parsing.Tags.ConcreteTags.ColorTag.TagStyle*
+  name: TagStyle
+  href: api/RueI.Parsing.Tags.ConcreteTags.ColorTag.html#RueI_Parsing_Tags_ConcreteTags_ColorTag_TagStyle_
+  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.ColorTag.TagStyle
+  isSpec: "True"
+  fullName: RueI.Parsing.Tags.ConcreteTags.ColorTag.TagStyle
+  nameWithType: ColorTag.TagStyle
 - uid: RueI.Parsing.Tags.ConcreteTags.LineHeightTag
   name: LineHeightTag
   href: api/RueI.Parsing.Tags.ConcreteTags.LineHeightTag.html
@@ -2724,57 +2772,6 @@ references:
   isSpec: "True"
   fullName: RueI.Parsing.Tags.ConcreteTags.SizeTag.Names
   nameWithType: SizeTag.Names
-- uid: RueI.Parsing.Tags.ConcreteTags.SpriteTag
-  name: SpriteTag
-  href: api/RueI.Parsing.Tags.ConcreteTags.SpriteTag.html
-  commentId: T:RueI.Parsing.Tags.ConcreteTags.SpriteTag
-  fullName: RueI.Parsing.Tags.ConcreteTags.SpriteTag
-  nameWithType: SpriteTag
-- uid: RueI.Parsing.Tags.ConcreteTags.SpriteTag.HandleTag(RueI.Parsing.ParserContext,System.Char,System.String)
-  name: HandleTag(ParserContext, char, string)
-  href: api/RueI.Parsing.Tags.ConcreteTags.SpriteTag.html#RueI_Parsing_Tags_ConcreteTags_SpriteTag_HandleTag_RueI_Parsing_ParserContext_System_Char_System_String_
-  commentId: M:RueI.Parsing.Tags.ConcreteTags.SpriteTag.HandleTag(RueI.Parsing.ParserContext,System.Char,System.String)
-  name.vb: HandleTag(ParserContext, Char, String)
-  fullName: RueI.Parsing.Tags.ConcreteTags.SpriteTag.HandleTag(RueI.Parsing.ParserContext, char, string)
-  fullName.vb: RueI.Parsing.Tags.ConcreteTags.SpriteTag.HandleTag(RueI.Parsing.ParserContext, Char, String)
-  nameWithType: SpriteTag.HandleTag(ParserContext, char, string)
-  nameWithType.vb: SpriteTag.HandleTag(ParserContext, Char, String)
-- uid: RueI.Parsing.Tags.ConcreteTags.SpriteTag.HandleTag*
-  name: HandleTag
-  href: api/RueI.Parsing.Tags.ConcreteTags.SpriteTag.html#RueI_Parsing_Tags_ConcreteTags_SpriteTag_HandleTag_
-  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.SpriteTag.HandleTag
-  isSpec: "True"
-  fullName: RueI.Parsing.Tags.ConcreteTags.SpriteTag.HandleTag
-  nameWithType: SpriteTag.HandleTag
-- uid: RueI.Parsing.Tags.ConcreteTags.SpriteTag.IsValidDelimiter(System.Char)
-  name: IsValidDelimiter(char)
-  href: api/RueI.Parsing.Tags.ConcreteTags.SpriteTag.html#RueI_Parsing_Tags_ConcreteTags_SpriteTag_IsValidDelimiter_System_Char_
-  commentId: M:RueI.Parsing.Tags.ConcreteTags.SpriteTag.IsValidDelimiter(System.Char)
-  name.vb: IsValidDelimiter(Char)
-  fullName: RueI.Parsing.Tags.ConcreteTags.SpriteTag.IsValidDelimiter(char)
-  fullName.vb: RueI.Parsing.Tags.ConcreteTags.SpriteTag.IsValidDelimiter(Char)
-  nameWithType: SpriteTag.IsValidDelimiter(char)
-  nameWithType.vb: SpriteTag.IsValidDelimiter(Char)
-- uid: RueI.Parsing.Tags.ConcreteTags.SpriteTag.IsValidDelimiter*
-  name: IsValidDelimiter
-  href: api/RueI.Parsing.Tags.ConcreteTags.SpriteTag.html#RueI_Parsing_Tags_ConcreteTags_SpriteTag_IsValidDelimiter_
-  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.SpriteTag.IsValidDelimiter
-  isSpec: "True"
-  fullName: RueI.Parsing.Tags.ConcreteTags.SpriteTag.IsValidDelimiter
-  nameWithType: SpriteTag.IsValidDelimiter
-- uid: RueI.Parsing.Tags.ConcreteTags.SpriteTag.Names
-  name: Names
-  href: api/RueI.Parsing.Tags.ConcreteTags.SpriteTag.html#RueI_Parsing_Tags_ConcreteTags_SpriteTag_Names
-  commentId: P:RueI.Parsing.Tags.ConcreteTags.SpriteTag.Names
-  fullName: RueI.Parsing.Tags.ConcreteTags.SpriteTag.Names
-  nameWithType: SpriteTag.Names
-- uid: RueI.Parsing.Tags.ConcreteTags.SpriteTag.Names*
-  name: Names
-  href: api/RueI.Parsing.Tags.ConcreteTags.SpriteTag.html#RueI_Parsing_Tags_ConcreteTags_SpriteTag_Names_
-  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.SpriteTag.Names
-  isSpec: "True"
-  fullName: RueI.Parsing.Tags.ConcreteTags.SpriteTag.Names
-  nameWithType: SpriteTag.Names
 - uid: RueI.Parsing.Tags.MeasurementTag
   name: MeasurementTag
   href: api/RueI.Parsing.Tags.MeasurementTag.html

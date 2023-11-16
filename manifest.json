@@ -472,6 +472,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Parsing.Tags.ConcreteTags.ColorTag.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Parsing.Tags.ConcreteTags.ColorTag.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/RueI.Parsing.Tags.ConcreteTags.LineHeightTag.yml",
       "output": {
         ".html": {
@@ -486,16 +496,6 @@
       "output": {
         ".html": {
           "relative_path": "api/RueI.Parsing.Tags.ConcreteTags.SizeTag.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/RueI.Parsing.Tags.ConcreteTags.SpriteTag.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/RueI.Parsing.Tags.ConcreteTags.SpriteTag.html"
         }
       },
       "version": ""

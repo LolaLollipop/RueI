@@ -473,7 +473,7 @@ Tags should modify this in order to change the end result of parsing.</p>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void AddEndingTag&lt;T&gt;() where T : RichTextTag, new()</code></pre>
+    <pre><code class="lang-csharp hljs">public void AddEndingTag&lt;T&gt;() where T : NoParamsTag, new()</code></pre>
   </div>
 
 
@@ -498,7 +498,7 @@ Tags should modify this in order to change the end result of parsing.</p>
 
   <h3 id="RueI_Parsing_ParserContext_Dispose" data-uid="RueI.Parsing.ParserContext.Dispose">
   Dispose()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/ParserContext.cs/#L86"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/ParserContext.cs/#L97"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Disposes this ParserContext, returning the string builder to the pool.</p>
@@ -533,7 +533,7 @@ Tags should modify this in order to change the end result of parsing.</p>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void RemoveEndingTag&lt;T&gt;() where T : RichTextTag, new()</code></pre>
+    <pre><code class="lang-csharp hljs">public void RemoveEndingTag&lt;T&gt;() where T : NoParamsTag, new()</code></pre>
   </div>
 
 
