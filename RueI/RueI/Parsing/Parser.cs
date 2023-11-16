@@ -1,4 +1,4 @@
-﻿namespace RueI
+namespace RueI
 {
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
@@ -74,13 +74,9 @@
 
             void FailTagMatch() // not a tag, unload buffer
             {
+                AddCharacter(context, '<')
                 this.AvoidMatch(context);
                 foreach (char ch in tagBuffer.ToString())
-                {
-                    AddCharacter(context, ch);
-                }
-
-                foreach (char ch in paramBuffer.ToString())
                 {
                     AddCharacter(context, ch);
                 }
@@ -89,6 +85,11 @@
                 {
                     AddCharacter(context, delimiter.Value);
                     delimiter = null;
+                }
+
+                foreach (char ch in paramBuffer.ToString())
+                {
+                    AddCharacter(context, ch);
                 }
 
                 tagBuffer.Clear();
@@ -103,6 +104,11 @@
             {
                 if (ch == '<')
                 {
+                    if (currentState != ParserState.CollectingTags)
+                    {
+                        FailTagMatch();
+                    }
+
                     currentState = ParserState.DescendingTag;
                     continue; // do NOT add as a character
                 }
@@ -181,7 +187,8 @@
                             delimiter = null;
                             currentState = ParserState.CollectingTags;
                             tagBufferSize = 0;
-                        } else
+                        } 
+                        else
                         {
                             FailTagMatch();
                         }
