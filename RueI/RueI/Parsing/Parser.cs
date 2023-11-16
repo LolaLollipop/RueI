@@ -2,19 +2,17 @@
 {
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
-    using System.Net.Mime;
     using System.Text;
-    using MEC;
     using NorthwoodLib.Pools;
 
     using RueI.Enums;
     using RueI.Parsing;
-    using RueI.Parsing.Tags;
     using RueI.Records;
 
     /// <summary>
     /// Helps parse the content of elements.
     /// </summary>
+    /// <include file='./docs.xml' path='docs/members[@name="parser"]/Parser/*'/>
     public class Parser
     {
         /// <summary>
