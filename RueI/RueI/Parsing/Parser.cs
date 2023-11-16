@@ -1,4 +1,4 @@
-namespace RueI
+﻿namespace RueI
 {
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
@@ -12,7 +12,7 @@ namespace RueI
     /// <summary>
     /// Helps parse the content of elements.
     /// </summary>
-    /// <include file='./docs.xml' path='docs/members[@name="parser"]/Parser/*'/>
+    /// <include file='docs.xml' path='docs/members[@name="parser"]/Parser/*'/>
     public class Parser
     {
         /// <summary>
@@ -74,9 +74,15 @@ namespace RueI
 
             void FailTagMatch() // not a tag, unload buffer
             {
-                AddCharacter(context, '<')
+                AddCharacter(context, '<');
+
                 this.AvoidMatch(context);
                 foreach (char ch in tagBuffer.ToString())
+                {
+                    AddCharacter(context, ch);
+                }
+
+                foreach (char ch in paramBuffer.ToString())
                 {
                     AddCharacter(context, ch);
                 }
@@ -85,11 +91,6 @@ namespace RueI
                 {
                     AddCharacter(context, delimiter.Value);
                     delimiter = null;
-                }
-
-                foreach (char ch in paramBuffer.ToString())
-                {
-                    AddCharacter(context, ch);
                 }
 
                 tagBuffer.Clear();
@@ -104,11 +105,6 @@ namespace RueI
             {
                 if (ch == '<')
                 {
-                    if (currentState != ParserState.CollectingTags)
-                    {
-                        FailTagMatch();
-                    }
-
                     currentState = ParserState.DescendingTag;
                     continue; // do NOT add as a character
                 }
@@ -187,8 +183,7 @@ namespace RueI
                             delimiter = null;
                             currentState = ParserState.CollectingTags;
                             tagBufferSize = 0;
-                        } 
-                        else
+                        } else
                         {
                             FailTagMatch();
                         }

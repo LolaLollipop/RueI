@@ -2,6 +2,7 @@
 {
     using MEC;
     using RueI.Extensions;
+    using RueI.Interfaces;
 
     /// <summary>
     /// Represents a <see cref="Display"/> that hides elements based on an active screen.
@@ -39,7 +40,8 @@
     /// <summary>
     /// Represents a display attached to a <see cref="DisplayCoordinator"/>.
     /// </summary>
-    public class Display : DisplayBase
+    /// <include file='docs.xml' path='docs/members[@name="display"]/Display/*'/>
+    public class Display : DisplayBase, IElementContainer
     {
         /// <summary>
         /// Gets the ratelimit used for displaying hints.

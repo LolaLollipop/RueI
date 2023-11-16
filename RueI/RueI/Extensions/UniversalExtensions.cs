@@ -13,9 +13,12 @@
         /// <typeparam name="T">The type of this instance and the collection to add to.</typeparam>
         /// <param name="item">The instance to add.</param>
         /// <param name="collection">The collection to add the elements to.</param>
-        public static void AddTo<T>(this T item, ICollection<T> collection)
+        /// <returns>A reference to <paramref name="item"/>.</returns>
+        public static T AddTo<T>(this T item, ICollection<T> collection)
+            where T : class
         {
             collection.Add(item);
+            return item;
         }
     }
 }
