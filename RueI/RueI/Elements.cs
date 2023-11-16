@@ -1,4 +1,4 @@
-﻿namespace RueI
+namespace RueI
 {
     using RueI.Delegates;
     using RueI.Interfaces;
@@ -111,6 +111,9 @@
     /// <summary>
     /// Represents a non-cached element that evaluates and parses a function when getting its content.
     /// </summary>
+    /// <remarks>
+    /// The content of this element is re-evaluated by calling a function every time the display is updated. This makes it suitable for scenarios where you need to have information constantly updated. For example, you may use this to display the health of SCPs in an SCP list.
+    /// </remarks>
     public class DynamicElement : IElement
     {
         /// <summary>
