@@ -866,54 +866,54 @@ references:
   commentId: F:RueI.Enums.ColorStyle.Named
   fullName: RueI.Enums.ColorStyle.Named
   nameWithType: ColorStyle.Named
-- uid: RueI.Enums.MeasurementStyle
-  name: MeasurementStyle
-  href: api/RueI.Enums.MeasurementStyle.html
-  commentId: T:RueI.Enums.MeasurementStyle
-  fullName: RueI.Enums.MeasurementStyle
-  nameWithType: MeasurementStyle
-- uid: RueI.Enums.MeasurementStyle.Ems
+- uid: RueI.Enums.MeasurementUnit
+  name: MeasurementUnit
+  href: api/RueI.Enums.MeasurementUnit.html
+  commentId: T:RueI.Enums.MeasurementUnit
+  fullName: RueI.Enums.MeasurementUnit
+  nameWithType: MeasurementUnit
+- uid: RueI.Enums.MeasurementUnit.Ems
   name: Ems
-  href: api/RueI.Enums.MeasurementStyle.html#RueI_Enums_MeasurementStyle_Ems
-  commentId: F:RueI.Enums.MeasurementStyle.Ems
-  fullName: RueI.Enums.MeasurementStyle.Ems
-  nameWithType: MeasurementStyle.Ems
-- uid: RueI.Enums.MeasurementStyle.Percentage
+  href: api/RueI.Enums.MeasurementUnit.html#RueI_Enums_MeasurementUnit_Ems
+  commentId: F:RueI.Enums.MeasurementUnit.Ems
+  fullName: RueI.Enums.MeasurementUnit.Ems
+  nameWithType: MeasurementUnit.Ems
+- uid: RueI.Enums.MeasurementUnit.Percentage
   name: Percentage
-  href: api/RueI.Enums.MeasurementStyle.html#RueI_Enums_MeasurementStyle_Percentage
-  commentId: F:RueI.Enums.MeasurementStyle.Percentage
-  fullName: RueI.Enums.MeasurementStyle.Percentage
-  nameWithType: MeasurementStyle.Percentage
-- uid: RueI.Enums.MeasurementStyle.Pixels
+  href: api/RueI.Enums.MeasurementUnit.html#RueI_Enums_MeasurementUnit_Percentage
+  commentId: F:RueI.Enums.MeasurementUnit.Percentage
+  fullName: RueI.Enums.MeasurementUnit.Percentage
+  nameWithType: MeasurementUnit.Percentage
+- uid: RueI.Enums.MeasurementUnit.Pixels
   name: Pixels
-  href: api/RueI.Enums.MeasurementStyle.html#RueI_Enums_MeasurementStyle_Pixels
-  commentId: F:RueI.Enums.MeasurementStyle.Pixels
-  fullName: RueI.Enums.MeasurementStyle.Pixels
-  nameWithType: MeasurementStyle.Pixels
-- uid: RueI.Enums.TagDelimiterStyle
-  name: TagDelimiterStyle
-  href: api/RueI.Enums.TagDelimiterStyle.html
-  commentId: T:RueI.Enums.TagDelimiterStyle
-  fullName: RueI.Enums.TagDelimiterStyle
-  nameWithType: TagDelimiterStyle
-- uid: RueI.Enums.TagDelimiterStyle.Color
-  name: Color
-  href: api/RueI.Enums.TagDelimiterStyle.html#RueI_Enums_TagDelimiterStyle_Color
-  commentId: F:RueI.Enums.TagDelimiterStyle.Color
-  fullName: RueI.Enums.TagDelimiterStyle.Color
-  nameWithType: TagDelimiterStyle.Color
-- uid: RueI.Enums.TagDelimiterStyle.Measurement
-  name: Measurement
-  href: api/RueI.Enums.TagDelimiterStyle.html#RueI_Enums_TagDelimiterStyle_Measurement
-  commentId: F:RueI.Enums.TagDelimiterStyle.Measurement
-  fullName: RueI.Enums.TagDelimiterStyle.Measurement
-  nameWithType: TagDelimiterStyle.Measurement
-- uid: RueI.Enums.TagDelimiterStyle.NoParams
+  href: api/RueI.Enums.MeasurementUnit.html#RueI_Enums_MeasurementUnit_Pixels
+  commentId: F:RueI.Enums.MeasurementUnit.Pixels
+  fullName: RueI.Enums.MeasurementUnit.Pixels
+  nameWithType: MeasurementUnit.Pixels
+- uid: RueI.Enums.TagStyle
+  name: TagStyle
+  href: api/RueI.Enums.TagStyle.html
+  commentId: T:RueI.Enums.TagStyle
+  fullName: RueI.Enums.TagStyle
+  nameWithType: TagStyle
+- uid: RueI.Enums.TagStyle.Attributes
+  name: Attributes
+  href: api/RueI.Enums.TagStyle.html#RueI_Enums_TagStyle_Attributes
+  commentId: F:RueI.Enums.TagStyle.Attributes
+  fullName: RueI.Enums.TagStyle.Attributes
+  nameWithType: TagStyle.Attributes
+- uid: RueI.Enums.TagStyle.NoParams
   name: NoParams
-  href: api/RueI.Enums.TagDelimiterStyle.html#RueI_Enums_TagDelimiterStyle_NoParams
-  commentId: F:RueI.Enums.TagDelimiterStyle.NoParams
-  fullName: RueI.Enums.TagDelimiterStyle.NoParams
-  nameWithType: TagDelimiterStyle.NoParams
+  href: api/RueI.Enums.TagStyle.html#RueI_Enums_TagStyle_NoParams
+  commentId: F:RueI.Enums.TagStyle.NoParams
+  fullName: RueI.Enums.TagStyle.NoParams
+  nameWithType: TagStyle.NoParams
+- uid: RueI.Enums.TagStyle.ValueParam
+  name: ValueParam
+  href: api/RueI.Enums.TagStyle.html#RueI_Enums_TagStyle_ValueParam
+  commentId: F:RueI.Enums.TagStyle.ValueParam
+  fullName: RueI.Enums.TagStyle.ValueParam
+  nameWithType: TagStyle.ValueParam
 - uid: RueI.EventHandler
   name: EventHandler
   href: api/RueI.EventHandler.html
@@ -1156,15 +1156,15 @@ references:
   commentId: T:RueI.Extensions.HintBuilding.HintBuilding
   fullName: RueI.Extensions.HintBuilding.HintBuilding
   nameWithType: HintBuilding
-- uid: RueI.Extensions.HintBuilding.HintBuilding.AddHorizontalPos(System.Text.StringBuilder,System.Single,RueI.Enums.MeasurementStyle)
-  name: AddHorizontalPos(StringBuilder, float, MeasurementStyle)
-  href: api/RueI.Extensions.HintBuilding.HintBuilding.html#RueI_Extensions_HintBuilding_HintBuilding_AddHorizontalPos_System_Text_StringBuilder_System_Single_RueI_Enums_MeasurementStyle_
-  commentId: M:RueI.Extensions.HintBuilding.HintBuilding.AddHorizontalPos(System.Text.StringBuilder,System.Single,RueI.Enums.MeasurementStyle)
-  name.vb: AddHorizontalPos(StringBuilder, Single, MeasurementStyle)
-  fullName: RueI.Extensions.HintBuilding.HintBuilding.AddHorizontalPos(System.Text.StringBuilder, float, RueI.Enums.MeasurementStyle)
-  fullName.vb: RueI.Extensions.HintBuilding.HintBuilding.AddHorizontalPos(System.Text.StringBuilder, Single, RueI.Enums.MeasurementStyle)
-  nameWithType: HintBuilding.AddHorizontalPos(StringBuilder, float, MeasurementStyle)
-  nameWithType.vb: HintBuilding.AddHorizontalPos(StringBuilder, Single, MeasurementStyle)
+- uid: RueI.Extensions.HintBuilding.HintBuilding.AddHorizontalPos(System.Text.StringBuilder,System.Single,RueI.Enums.MeasurementUnit)
+  name: AddHorizontalPos(StringBuilder, float, MeasurementUnit)
+  href: api/RueI.Extensions.HintBuilding.HintBuilding.html#RueI_Extensions_HintBuilding_HintBuilding_AddHorizontalPos_System_Text_StringBuilder_System_Single_RueI_Enums_MeasurementUnit_
+  commentId: M:RueI.Extensions.HintBuilding.HintBuilding.AddHorizontalPos(System.Text.StringBuilder,System.Single,RueI.Enums.MeasurementUnit)
+  name.vb: AddHorizontalPos(StringBuilder, Single, MeasurementUnit)
+  fullName: RueI.Extensions.HintBuilding.HintBuilding.AddHorizontalPos(System.Text.StringBuilder, float, RueI.Enums.MeasurementUnit)
+  fullName.vb: RueI.Extensions.HintBuilding.HintBuilding.AddHorizontalPos(System.Text.StringBuilder, Single, RueI.Enums.MeasurementUnit)
+  nameWithType: HintBuilding.AddHorizontalPos(StringBuilder, float, MeasurementUnit)
+  nameWithType.vb: HintBuilding.AddHorizontalPos(StringBuilder, Single, MeasurementUnit)
 - uid: RueI.Extensions.HintBuilding.HintBuilding.AddHorizontalPos*
   name: AddHorizontalPos
   href: api/RueI.Extensions.HintBuilding.HintBuilding.html#RueI_Extensions_HintBuilding_HintBuilding_AddHorizontalPos_
@@ -1185,15 +1185,15 @@ references:
   isSpec: "True"
   fullName: RueI.Extensions.HintBuilding.HintBuilding.AddLinebreak
   nameWithType: HintBuilding.AddLinebreak
-- uid: RueI.Extensions.HintBuilding.HintBuilding.AddSpace(System.Text.StringBuilder,System.Single,RueI.Enums.MeasurementStyle)
-  name: AddSpace(StringBuilder, float, MeasurementStyle)
-  href: api/RueI.Extensions.HintBuilding.HintBuilding.html#RueI_Extensions_HintBuilding_HintBuilding_AddSpace_System_Text_StringBuilder_System_Single_RueI_Enums_MeasurementStyle_
-  commentId: M:RueI.Extensions.HintBuilding.HintBuilding.AddSpace(System.Text.StringBuilder,System.Single,RueI.Enums.MeasurementStyle)
-  name.vb: AddSpace(StringBuilder, Single, MeasurementStyle)
-  fullName: RueI.Extensions.HintBuilding.HintBuilding.AddSpace(System.Text.StringBuilder, float, RueI.Enums.MeasurementStyle)
-  fullName.vb: RueI.Extensions.HintBuilding.HintBuilding.AddSpace(System.Text.StringBuilder, Single, RueI.Enums.MeasurementStyle)
-  nameWithType: HintBuilding.AddSpace(StringBuilder, float, MeasurementStyle)
-  nameWithType.vb: HintBuilding.AddSpace(StringBuilder, Single, MeasurementStyle)
+- uid: RueI.Extensions.HintBuilding.HintBuilding.AddSpace(System.Text.StringBuilder,System.Single,RueI.Enums.MeasurementUnit)
+  name: AddSpace(StringBuilder, float, MeasurementUnit)
+  href: api/RueI.Extensions.HintBuilding.HintBuilding.html#RueI_Extensions_HintBuilding_HintBuilding_AddSpace_System_Text_StringBuilder_System_Single_RueI_Enums_MeasurementUnit_
+  commentId: M:RueI.Extensions.HintBuilding.HintBuilding.AddSpace(System.Text.StringBuilder,System.Single,RueI.Enums.MeasurementUnit)
+  name.vb: AddSpace(StringBuilder, Single, MeasurementUnit)
+  fullName: RueI.Extensions.HintBuilding.HintBuilding.AddSpace(System.Text.StringBuilder, float, RueI.Enums.MeasurementUnit)
+  fullName.vb: RueI.Extensions.HintBuilding.HintBuilding.AddSpace(System.Text.StringBuilder, Single, RueI.Enums.MeasurementUnit)
+  nameWithType: HintBuilding.AddSpace(StringBuilder, float, MeasurementUnit)
+  nameWithType.vb: HintBuilding.AddSpace(StringBuilder, Single, MeasurementUnit)
 - uid: RueI.Extensions.HintBuilding.HintBuilding.AddSpace*
   name: AddSpace
   href: api/RueI.Extensions.HintBuilding.HintBuilding.html#RueI_Extensions_HintBuilding_HintBuilding_AddSpace_
@@ -1226,15 +1226,15 @@ references:
   isSpec: "True"
   fullName: RueI.Extensions.HintBuilding.HintBuilding.AddSprite
   nameWithType: HintBuilding.AddSprite
-- uid: RueI.Extensions.HintBuilding.HintBuilding.AddVOffset(System.Text.StringBuilder,System.Single,RueI.Enums.MeasurementStyle)
-  name: AddVOffset(StringBuilder, float, MeasurementStyle)
-  href: api/RueI.Extensions.HintBuilding.HintBuilding.html#RueI_Extensions_HintBuilding_HintBuilding_AddVOffset_System_Text_StringBuilder_System_Single_RueI_Enums_MeasurementStyle_
-  commentId: M:RueI.Extensions.HintBuilding.HintBuilding.AddVOffset(System.Text.StringBuilder,System.Single,RueI.Enums.MeasurementStyle)
-  name.vb: AddVOffset(StringBuilder, Single, MeasurementStyle)
-  fullName: RueI.Extensions.HintBuilding.HintBuilding.AddVOffset(System.Text.StringBuilder, float, RueI.Enums.MeasurementStyle)
-  fullName.vb: RueI.Extensions.HintBuilding.HintBuilding.AddVOffset(System.Text.StringBuilder, Single, RueI.Enums.MeasurementStyle)
-  nameWithType: HintBuilding.AddVOffset(StringBuilder, float, MeasurementStyle)
-  nameWithType.vb: HintBuilding.AddVOffset(StringBuilder, Single, MeasurementStyle)
+- uid: RueI.Extensions.HintBuilding.HintBuilding.AddVOffset(System.Text.StringBuilder,System.Single,RueI.Enums.MeasurementUnit)
+  name: AddVOffset(StringBuilder, float, MeasurementUnit)
+  href: api/RueI.Extensions.HintBuilding.HintBuilding.html#RueI_Extensions_HintBuilding_HintBuilding_AddVOffset_System_Text_StringBuilder_System_Single_RueI_Enums_MeasurementUnit_
+  commentId: M:RueI.Extensions.HintBuilding.HintBuilding.AddVOffset(System.Text.StringBuilder,System.Single,RueI.Enums.MeasurementUnit)
+  name.vb: AddVOffset(StringBuilder, Single, MeasurementUnit)
+  fullName: RueI.Extensions.HintBuilding.HintBuilding.AddVOffset(System.Text.StringBuilder, float, RueI.Enums.MeasurementUnit)
+  fullName.vb: RueI.Extensions.HintBuilding.HintBuilding.AddVOffset(System.Text.StringBuilder, Single, RueI.Enums.MeasurementUnit)
+  nameWithType: HintBuilding.AddVOffset(StringBuilder, float, MeasurementUnit)
+  nameWithType.vb: HintBuilding.AddVOffset(StringBuilder, Single, MeasurementUnit)
 - uid: RueI.Extensions.HintBuilding.HintBuilding.AddVOffset*
   name: AddVOffset
   href: api/RueI.Extensions.HintBuilding.HintBuilding.html#RueI_Extensions_HintBuilding_HintBuilding_AddVOffset_
@@ -1597,15 +1597,15 @@ references:
   isSpec: "True"
   fullName: RueI.Extensions.HintBuilding.HintBuilding.SetColor
   nameWithType: HintBuilding.SetColor
-- uid: RueI.Extensions.HintBuilding.HintBuilding.SetIndent(System.Text.StringBuilder,System.Single,RueI.Enums.MeasurementStyle)
-  name: SetIndent(StringBuilder, float, MeasurementStyle)
-  href: api/RueI.Extensions.HintBuilding.HintBuilding.html#RueI_Extensions_HintBuilding_HintBuilding_SetIndent_System_Text_StringBuilder_System_Single_RueI_Enums_MeasurementStyle_
-  commentId: M:RueI.Extensions.HintBuilding.HintBuilding.SetIndent(System.Text.StringBuilder,System.Single,RueI.Enums.MeasurementStyle)
-  name.vb: SetIndent(StringBuilder, Single, MeasurementStyle)
-  fullName: RueI.Extensions.HintBuilding.HintBuilding.SetIndent(System.Text.StringBuilder, float, RueI.Enums.MeasurementStyle)
-  fullName.vb: RueI.Extensions.HintBuilding.HintBuilding.SetIndent(System.Text.StringBuilder, Single, RueI.Enums.MeasurementStyle)
-  nameWithType: HintBuilding.SetIndent(StringBuilder, float, MeasurementStyle)
-  nameWithType.vb: HintBuilding.SetIndent(StringBuilder, Single, MeasurementStyle)
+- uid: RueI.Extensions.HintBuilding.HintBuilding.SetIndent(System.Text.StringBuilder,System.Single,RueI.Enums.MeasurementUnit)
+  name: SetIndent(StringBuilder, float, MeasurementUnit)
+  href: api/RueI.Extensions.HintBuilding.HintBuilding.html#RueI_Extensions_HintBuilding_HintBuilding_SetIndent_System_Text_StringBuilder_System_Single_RueI_Enums_MeasurementUnit_
+  commentId: M:RueI.Extensions.HintBuilding.HintBuilding.SetIndent(System.Text.StringBuilder,System.Single,RueI.Enums.MeasurementUnit)
+  name.vb: SetIndent(StringBuilder, Single, MeasurementUnit)
+  fullName: RueI.Extensions.HintBuilding.HintBuilding.SetIndent(System.Text.StringBuilder, float, RueI.Enums.MeasurementUnit)
+  fullName.vb: RueI.Extensions.HintBuilding.HintBuilding.SetIndent(System.Text.StringBuilder, Single, RueI.Enums.MeasurementUnit)
+  nameWithType: HintBuilding.SetIndent(StringBuilder, float, MeasurementUnit)
+  nameWithType.vb: HintBuilding.SetIndent(StringBuilder, Single, MeasurementUnit)
 - uid: RueI.Extensions.HintBuilding.HintBuilding.SetIndent*
   name: SetIndent
   href: api/RueI.Extensions.HintBuilding.HintBuilding.html#RueI_Extensions_HintBuilding_HintBuilding_SetIndent_
@@ -1626,15 +1626,15 @@ references:
   isSpec: "True"
   fullName: RueI.Extensions.HintBuilding.HintBuilding.SetItalics
   nameWithType: HintBuilding.SetItalics
-- uid: RueI.Extensions.HintBuilding.HintBuilding.SetLineHeight(System.Text.StringBuilder,System.Single,RueI.Enums.MeasurementStyle)
-  name: SetLineHeight(StringBuilder, float, MeasurementStyle)
-  href: api/RueI.Extensions.HintBuilding.HintBuilding.html#RueI_Extensions_HintBuilding_HintBuilding_SetLineHeight_System_Text_StringBuilder_System_Single_RueI_Enums_MeasurementStyle_
-  commentId: M:RueI.Extensions.HintBuilding.HintBuilding.SetLineHeight(System.Text.StringBuilder,System.Single,RueI.Enums.MeasurementStyle)
-  name.vb: SetLineHeight(StringBuilder, Single, MeasurementStyle)
-  fullName: RueI.Extensions.HintBuilding.HintBuilding.SetLineHeight(System.Text.StringBuilder, float, RueI.Enums.MeasurementStyle)
-  fullName.vb: RueI.Extensions.HintBuilding.HintBuilding.SetLineHeight(System.Text.StringBuilder, Single, RueI.Enums.MeasurementStyle)
-  nameWithType: HintBuilding.SetLineHeight(StringBuilder, float, MeasurementStyle)
-  nameWithType.vb: HintBuilding.SetLineHeight(StringBuilder, Single, MeasurementStyle)
+- uid: RueI.Extensions.HintBuilding.HintBuilding.SetLineHeight(System.Text.StringBuilder,System.Single,RueI.Enums.MeasurementUnit)
+  name: SetLineHeight(StringBuilder, float, MeasurementUnit)
+  href: api/RueI.Extensions.HintBuilding.HintBuilding.html#RueI_Extensions_HintBuilding_HintBuilding_SetLineHeight_System_Text_StringBuilder_System_Single_RueI_Enums_MeasurementUnit_
+  commentId: M:RueI.Extensions.HintBuilding.HintBuilding.SetLineHeight(System.Text.StringBuilder,System.Single,RueI.Enums.MeasurementUnit)
+  name.vb: SetLineHeight(StringBuilder, Single, MeasurementUnit)
+  fullName: RueI.Extensions.HintBuilding.HintBuilding.SetLineHeight(System.Text.StringBuilder, float, RueI.Enums.MeasurementUnit)
+  fullName.vb: RueI.Extensions.HintBuilding.HintBuilding.SetLineHeight(System.Text.StringBuilder, Single, RueI.Enums.MeasurementUnit)
+  nameWithType: HintBuilding.SetLineHeight(StringBuilder, float, MeasurementUnit)
+  nameWithType.vb: HintBuilding.SetLineHeight(StringBuilder, Single, MeasurementUnit)
 - uid: RueI.Extensions.HintBuilding.HintBuilding.SetLineHeight*
   name: SetLineHeight
   href: api/RueI.Extensions.HintBuilding.HintBuilding.html#RueI_Extensions_HintBuilding_HintBuilding_SetLineHeight_
@@ -1642,15 +1642,15 @@ references:
   isSpec: "True"
   fullName: RueI.Extensions.HintBuilding.HintBuilding.SetLineHeight
   nameWithType: HintBuilding.SetLineHeight
-- uid: RueI.Extensions.HintBuilding.HintBuilding.SetMargins(System.Text.StringBuilder,System.Single,RueI.Enums.MeasurementStyle)
-  name: SetMargins(StringBuilder, float, MeasurementStyle)
-  href: api/RueI.Extensions.HintBuilding.HintBuilding.html#RueI_Extensions_HintBuilding_HintBuilding_SetMargins_System_Text_StringBuilder_System_Single_RueI_Enums_MeasurementStyle_
-  commentId: M:RueI.Extensions.HintBuilding.HintBuilding.SetMargins(System.Text.StringBuilder,System.Single,RueI.Enums.MeasurementStyle)
-  name.vb: SetMargins(StringBuilder, Single, MeasurementStyle)
-  fullName: RueI.Extensions.HintBuilding.HintBuilding.SetMargins(System.Text.StringBuilder, float, RueI.Enums.MeasurementStyle)
-  fullName.vb: RueI.Extensions.HintBuilding.HintBuilding.SetMargins(System.Text.StringBuilder, Single, RueI.Enums.MeasurementStyle)
-  nameWithType: HintBuilding.SetMargins(StringBuilder, float, MeasurementStyle)
-  nameWithType.vb: HintBuilding.SetMargins(StringBuilder, Single, MeasurementStyle)
+- uid: RueI.Extensions.HintBuilding.HintBuilding.SetMargins(System.Text.StringBuilder,System.Single,RueI.Enums.MeasurementUnit)
+  name: SetMargins(StringBuilder, float, MeasurementUnit)
+  href: api/RueI.Extensions.HintBuilding.HintBuilding.html#RueI_Extensions_HintBuilding_HintBuilding_SetMargins_System_Text_StringBuilder_System_Single_RueI_Enums_MeasurementUnit_
+  commentId: M:RueI.Extensions.HintBuilding.HintBuilding.SetMargins(System.Text.StringBuilder,System.Single,RueI.Enums.MeasurementUnit)
+  name.vb: SetMargins(StringBuilder, Single, MeasurementUnit)
+  fullName: RueI.Extensions.HintBuilding.HintBuilding.SetMargins(System.Text.StringBuilder, float, RueI.Enums.MeasurementUnit)
+  fullName.vb: RueI.Extensions.HintBuilding.HintBuilding.SetMargins(System.Text.StringBuilder, Single, RueI.Enums.MeasurementUnit)
+  nameWithType: HintBuilding.SetMargins(StringBuilder, float, MeasurementUnit)
+  nameWithType.vb: HintBuilding.SetMargins(StringBuilder, Single, MeasurementUnit)
 - uid: RueI.Extensions.HintBuilding.HintBuilding.SetMargins*
   name: SetMargins
   href: api/RueI.Extensions.HintBuilding.HintBuilding.html#RueI_Extensions_HintBuilding_HintBuilding_SetMargins_
@@ -1689,15 +1689,15 @@ references:
   isSpec: "True"
   fullName: RueI.Extensions.HintBuilding.HintBuilding.SetMark
   nameWithType: HintBuilding.SetMark
-- uid: RueI.Extensions.HintBuilding.HintBuilding.SetMonospace(System.Text.StringBuilder,System.Single,RueI.Enums.MeasurementStyle)
-  name: SetMonospace(StringBuilder, float, MeasurementStyle)
-  href: api/RueI.Extensions.HintBuilding.HintBuilding.html#RueI_Extensions_HintBuilding_HintBuilding_SetMonospace_System_Text_StringBuilder_System_Single_RueI_Enums_MeasurementStyle_
-  commentId: M:RueI.Extensions.HintBuilding.HintBuilding.SetMonospace(System.Text.StringBuilder,System.Single,RueI.Enums.MeasurementStyle)
-  name.vb: SetMonospace(StringBuilder, Single, MeasurementStyle)
-  fullName: RueI.Extensions.HintBuilding.HintBuilding.SetMonospace(System.Text.StringBuilder, float, RueI.Enums.MeasurementStyle)
-  fullName.vb: RueI.Extensions.HintBuilding.HintBuilding.SetMonospace(System.Text.StringBuilder, Single, RueI.Enums.MeasurementStyle)
-  nameWithType: HintBuilding.SetMonospace(StringBuilder, float, MeasurementStyle)
-  nameWithType.vb: HintBuilding.SetMonospace(StringBuilder, Single, MeasurementStyle)
+- uid: RueI.Extensions.HintBuilding.HintBuilding.SetMonospace(System.Text.StringBuilder,System.Single,RueI.Enums.MeasurementUnit)
+  name: SetMonospace(StringBuilder, float, MeasurementUnit)
+  href: api/RueI.Extensions.HintBuilding.HintBuilding.html#RueI_Extensions_HintBuilding_HintBuilding_SetMonospace_System_Text_StringBuilder_System_Single_RueI_Enums_MeasurementUnit_
+  commentId: M:RueI.Extensions.HintBuilding.HintBuilding.SetMonospace(System.Text.StringBuilder,System.Single,RueI.Enums.MeasurementUnit)
+  name.vb: SetMonospace(StringBuilder, Single, MeasurementUnit)
+  fullName: RueI.Extensions.HintBuilding.HintBuilding.SetMonospace(System.Text.StringBuilder, float, RueI.Enums.MeasurementUnit)
+  fullName.vb: RueI.Extensions.HintBuilding.HintBuilding.SetMonospace(System.Text.StringBuilder, Single, RueI.Enums.MeasurementUnit)
+  nameWithType: HintBuilding.SetMonospace(StringBuilder, float, MeasurementUnit)
+  nameWithType.vb: HintBuilding.SetMonospace(StringBuilder, Single, MeasurementUnit)
 - uid: RueI.Extensions.HintBuilding.HintBuilding.SetMonospace*
   name: SetMonospace
   href: api/RueI.Extensions.HintBuilding.HintBuilding.html#RueI_Extensions_HintBuilding_HintBuilding_SetMonospace_
@@ -1763,15 +1763,15 @@ references:
   isSpec: "True"
   fullName: RueI.Extensions.HintBuilding.HintBuilding.SetScale
   nameWithType: HintBuilding.SetScale
-- uid: RueI.Extensions.HintBuilding.HintBuilding.SetSize(System.Text.StringBuilder,System.Single,RueI.Enums.MeasurementStyle)
-  name: SetSize(StringBuilder, float, MeasurementStyle)
-  href: api/RueI.Extensions.HintBuilding.HintBuilding.html#RueI_Extensions_HintBuilding_HintBuilding_SetSize_System_Text_StringBuilder_System_Single_RueI_Enums_MeasurementStyle_
-  commentId: M:RueI.Extensions.HintBuilding.HintBuilding.SetSize(System.Text.StringBuilder,System.Single,RueI.Enums.MeasurementStyle)
-  name.vb: SetSize(StringBuilder, Single, MeasurementStyle)
-  fullName: RueI.Extensions.HintBuilding.HintBuilding.SetSize(System.Text.StringBuilder, float, RueI.Enums.MeasurementStyle)
-  fullName.vb: RueI.Extensions.HintBuilding.HintBuilding.SetSize(System.Text.StringBuilder, Single, RueI.Enums.MeasurementStyle)
-  nameWithType: HintBuilding.SetSize(StringBuilder, float, MeasurementStyle)
-  nameWithType.vb: HintBuilding.SetSize(StringBuilder, Single, MeasurementStyle)
+- uid: RueI.Extensions.HintBuilding.HintBuilding.SetSize(System.Text.StringBuilder,System.Single,RueI.Enums.MeasurementUnit)
+  name: SetSize(StringBuilder, float, MeasurementUnit)
+  href: api/RueI.Extensions.HintBuilding.HintBuilding.html#RueI_Extensions_HintBuilding_HintBuilding_SetSize_System_Text_StringBuilder_System_Single_RueI_Enums_MeasurementUnit_
+  commentId: M:RueI.Extensions.HintBuilding.HintBuilding.SetSize(System.Text.StringBuilder,System.Single,RueI.Enums.MeasurementUnit)
+  name.vb: SetSize(StringBuilder, Single, MeasurementUnit)
+  fullName: RueI.Extensions.HintBuilding.HintBuilding.SetSize(System.Text.StringBuilder, float, RueI.Enums.MeasurementUnit)
+  fullName.vb: RueI.Extensions.HintBuilding.HintBuilding.SetSize(System.Text.StringBuilder, Single, RueI.Enums.MeasurementUnit)
+  nameWithType: HintBuilding.SetSize(StringBuilder, float, MeasurementUnit)
+  nameWithType.vb: HintBuilding.SetSize(StringBuilder, Single, MeasurementUnit)
 - uid: RueI.Extensions.HintBuilding.HintBuilding.SetSize*
   name: SetSize
   href: api/RueI.Extensions.HintBuilding.HintBuilding.html#RueI_Extensions_HintBuilding_HintBuilding_SetSize_
@@ -1831,15 +1831,15 @@ references:
   isSpec: "True"
   fullName: RueI.Extensions.HintBuilding.HintBuilding.SetUnderline
   nameWithType: HintBuilding.SetUnderline
-- uid: RueI.Extensions.HintBuilding.HintBuilding.SetWidth(System.Text.StringBuilder,System.Single,RueI.Enums.MeasurementStyle)
-  name: SetWidth(StringBuilder, float, MeasurementStyle)
-  href: api/RueI.Extensions.HintBuilding.HintBuilding.html#RueI_Extensions_HintBuilding_HintBuilding_SetWidth_System_Text_StringBuilder_System_Single_RueI_Enums_MeasurementStyle_
-  commentId: M:RueI.Extensions.HintBuilding.HintBuilding.SetWidth(System.Text.StringBuilder,System.Single,RueI.Enums.MeasurementStyle)
-  name.vb: SetWidth(StringBuilder, Single, MeasurementStyle)
-  fullName: RueI.Extensions.HintBuilding.HintBuilding.SetWidth(System.Text.StringBuilder, float, RueI.Enums.MeasurementStyle)
-  fullName.vb: RueI.Extensions.HintBuilding.HintBuilding.SetWidth(System.Text.StringBuilder, Single, RueI.Enums.MeasurementStyle)
-  nameWithType: HintBuilding.SetWidth(StringBuilder, float, MeasurementStyle)
-  nameWithType.vb: HintBuilding.SetWidth(StringBuilder, Single, MeasurementStyle)
+- uid: RueI.Extensions.HintBuilding.HintBuilding.SetWidth(System.Text.StringBuilder,System.Single,RueI.Enums.MeasurementUnit)
+  name: SetWidth(StringBuilder, float, MeasurementUnit)
+  href: api/RueI.Extensions.HintBuilding.HintBuilding.html#RueI_Extensions_HintBuilding_HintBuilding_SetWidth_System_Text_StringBuilder_System_Single_RueI_Enums_MeasurementUnit_
+  commentId: M:RueI.Extensions.HintBuilding.HintBuilding.SetWidth(System.Text.StringBuilder,System.Single,RueI.Enums.MeasurementUnit)
+  name.vb: SetWidth(StringBuilder, Single, MeasurementUnit)
+  fullName: RueI.Extensions.HintBuilding.HintBuilding.SetWidth(System.Text.StringBuilder, float, RueI.Enums.MeasurementUnit)
+  fullName.vb: RueI.Extensions.HintBuilding.HintBuilding.SetWidth(System.Text.StringBuilder, Single, RueI.Enums.MeasurementUnit)
+  nameWithType: HintBuilding.SetWidth(StringBuilder, float, MeasurementUnit)
+  nameWithType.vb: HintBuilding.SetWidth(StringBuilder, Single, MeasurementUnit)
 - uid: RueI.Extensions.HintBuilding.HintBuilding.SetWidth*
   name: SetWidth
   href: api/RueI.Extensions.HintBuilding.HintBuilding.html#RueI_Extensions_HintBuilding_HintBuilding_SetWidth_
@@ -2005,6 +2005,28 @@ references:
   fullName.vb: RueI.Extensions.Union(Of T, TOther).CType
   nameWithType: Union<T, TOther>.implicit operator
   nameWithType.vb: Union(Of T, TOther).CType
+- uid: RueI.Extensions.UniversalExtensions
+  name: UniversalExtensions
+  href: api/RueI.Extensions.UniversalExtensions.html
+  commentId: T:RueI.Extensions.UniversalExtensions
+  fullName: RueI.Extensions.UniversalExtensions
+  nameWithType: UniversalExtensions
+- uid: RueI.Extensions.UniversalExtensions.AddTo*
+  name: AddTo
+  href: api/RueI.Extensions.UniversalExtensions.html#RueI_Extensions_UniversalExtensions_AddTo_
+  commentId: Overload:RueI.Extensions.UniversalExtensions.AddTo
+  isSpec: "True"
+  fullName: RueI.Extensions.UniversalExtensions.AddTo
+  nameWithType: UniversalExtensions.AddTo
+- uid: RueI.Extensions.UniversalExtensions.AddTo``1(``0,System.Collections.Generic.ICollection{``0})
+  name: AddTo<T>(T, ICollection<T>)
+  href: api/RueI.Extensions.UniversalExtensions.html#RueI_Extensions_UniversalExtensions_AddTo__1___0_System_Collections_Generic_ICollection___0__
+  commentId: M:RueI.Extensions.UniversalExtensions.AddTo``1(``0,System.Collections.Generic.ICollection{``0})
+  name.vb: AddTo(Of T)(T, ICollection(Of T))
+  fullName: RueI.Extensions.UniversalExtensions.AddTo<T>(T, System.Collections.Generic.ICollection<T>)
+  fullName.vb: RueI.Extensions.UniversalExtensions.AddTo(Of T)(T, System.Collections.Generic.ICollection(Of T))
+  nameWithType: UniversalExtensions.AddTo<T>(T, ICollection<T>)
+  nameWithType.vb: UniversalExtensions.AddTo(Of T)(T, ICollection(Of T))
 - uid: RueI.IElement
   name: IElement
   href: api/RueI.IElement.html
@@ -2299,31 +2321,88 @@ references:
   isSpec: "True"
   fullName: RueI.ParserBuilder.Build
   nameWithType: ParserBuilder.Build
+- uid: RueI.ParserBuilder.ImportFrom(RueI.Parser)
+  name: ImportFrom(Parser)
+  href: api/RueI.ParserBuilder.html#RueI_ParserBuilder_ImportFrom_RueI_Parser_
+  commentId: M:RueI.ParserBuilder.ImportFrom(RueI.Parser)
+  fullName: RueI.ParserBuilder.ImportFrom(RueI.Parser)
+  nameWithType: ParserBuilder.ImportFrom(Parser)
+- uid: RueI.ParserBuilder.ImportFrom*
+  name: ImportFrom
+  href: api/RueI.ParserBuilder.html#RueI_ParserBuilder_ImportFrom_
+  commentId: Overload:RueI.ParserBuilder.ImportFrom
+  isSpec: "True"
+  fullName: RueI.ParserBuilder.ImportFrom
+  nameWithType: ParserBuilder.ImportFrom
 - uid: RueI.Parsing
   name: RueI.Parsing
   href: api/RueI.Parsing.html
   commentId: N:RueI.Parsing
   fullName: RueI.Parsing
   nameWithType: RueI.Parsing
+- uid: RueI.Parsing.NoParamsTag
+  name: NoParamsTag
+  href: api/RueI.Parsing.NoParamsTag.html
+  commentId: T:RueI.Parsing.NoParamsTag
+  fullName: RueI.Parsing.NoParamsTag
+  nameWithType: NoParamsTag
+- uid: RueI.Parsing.NoParamsTag.HandleTag(RueI.Parsing.ParserContext)
+  name: HandleTag(ParserContext)
+  href: api/RueI.Parsing.NoParamsTag.html#RueI_Parsing_NoParamsTag_HandleTag_RueI_Parsing_ParserContext_
+  commentId: M:RueI.Parsing.NoParamsTag.HandleTag(RueI.Parsing.ParserContext)
+  fullName: RueI.Parsing.NoParamsTag.HandleTag(RueI.Parsing.ParserContext)
+  nameWithType: NoParamsTag.HandleTag(ParserContext)
+- uid: RueI.Parsing.NoParamsTag.HandleTag(RueI.Parsing.ParserContext,System.String)
+  name: HandleTag(ParserContext, string)
+  href: api/RueI.Parsing.NoParamsTag.html#RueI_Parsing_NoParamsTag_HandleTag_RueI_Parsing_ParserContext_System_String_
+  commentId: M:RueI.Parsing.NoParamsTag.HandleTag(RueI.Parsing.ParserContext,System.String)
+  name.vb: HandleTag(ParserContext, String)
+  fullName: RueI.Parsing.NoParamsTag.HandleTag(RueI.Parsing.ParserContext, string)
+  fullName.vb: RueI.Parsing.NoParamsTag.HandleTag(RueI.Parsing.ParserContext, String)
+  nameWithType: NoParamsTag.HandleTag(ParserContext, string)
+  nameWithType.vb: NoParamsTag.HandleTag(ParserContext, String)
+- uid: RueI.Parsing.NoParamsTag.HandleTag*
+  name: HandleTag
+  href: api/RueI.Parsing.NoParamsTag.html#RueI_Parsing_NoParamsTag_HandleTag_
+  commentId: Overload:RueI.Parsing.NoParamsTag.HandleTag
+  isSpec: "True"
+  fullName: RueI.Parsing.NoParamsTag.HandleTag
+  nameWithType: NoParamsTag.HandleTag
+- uid: RueI.Parsing.NoParamsTag.TagStyle
+  name: TagStyle
+  href: api/RueI.Parsing.NoParamsTag.html#RueI_Parsing_NoParamsTag_TagStyle
+  commentId: P:RueI.Parsing.NoParamsTag.TagStyle
+  fullName: RueI.Parsing.NoParamsTag.TagStyle
+  nameWithType: NoParamsTag.TagStyle
+- uid: RueI.Parsing.NoParamsTag.TagStyle*
+  name: TagStyle
+  href: api/RueI.Parsing.NoParamsTag.html#RueI_Parsing_NoParamsTag_TagStyle_
+  commentId: Overload:RueI.Parsing.NoParamsTag.TagStyle
+  isSpec: "True"
+  fullName: RueI.Parsing.NoParamsTag.TagStyle
+  nameWithType: NoParamsTag.TagStyle
 - uid: RueI.Parsing.ParserContext
   name: ParserContext
   href: api/RueI.Parsing.ParserContext.html
   commentId: T:RueI.Parsing.ParserContext
   fullName: RueI.Parsing.ParserContext
   nameWithType: ParserContext
-- uid: RueI.Parsing.ParserContext.ClosingTags
-  name: ClosingTags
-  href: api/RueI.Parsing.ParserContext.html#RueI_Parsing_ParserContext_ClosingTags
-  commentId: P:RueI.Parsing.ParserContext.ClosingTags
-  fullName: RueI.Parsing.ParserContext.ClosingTags
-  nameWithType: ParserContext.ClosingTags
-- uid: RueI.Parsing.ParserContext.ClosingTags*
-  name: ClosingTags
-  href: api/RueI.Parsing.ParserContext.html#RueI_Parsing_ParserContext_ClosingTags_
-  commentId: Overload:RueI.Parsing.ParserContext.ClosingTags
+- uid: RueI.Parsing.ParserContext.AddEndingTag*
+  name: AddEndingTag
+  href: api/RueI.Parsing.ParserContext.html#RueI_Parsing_ParserContext_AddEndingTag_
+  commentId: Overload:RueI.Parsing.ParserContext.AddEndingTag
   isSpec: "True"
-  fullName: RueI.Parsing.ParserContext.ClosingTags
-  nameWithType: ParserContext.ClosingTags
+  fullName: RueI.Parsing.ParserContext.AddEndingTag
+  nameWithType: ParserContext.AddEndingTag
+- uid: RueI.Parsing.ParserContext.AddEndingTag``1
+  name: AddEndingTag<T>()
+  href: api/RueI.Parsing.ParserContext.html#RueI_Parsing_ParserContext_AddEndingTag__1
+  commentId: M:RueI.Parsing.ParserContext.AddEndingTag``1
+  name.vb: AddEndingTag(Of T)()
+  fullName: RueI.Parsing.ParserContext.AddEndingTag<T>()
+  fullName.vb: RueI.Parsing.ParserContext.AddEndingTag(Of T)()
+  nameWithType: ParserContext.AddEndingTag<T>()
+  nameWithType.vb: ParserContext.AddEndingTag(Of T)()
 - uid: RueI.Parsing.ParserContext.ColorTags
   name: ColorTags
   href: api/RueI.Parsing.ParserContext.html#RueI_Parsing_ParserContext_ColorTags
@@ -2389,6 +2468,22 @@ references:
   isSpec: "True"
   fullName: RueI.Parsing.ParserContext.NoBreak
   nameWithType: ParserContext.NoBreak
+- uid: RueI.Parsing.ParserContext.RemoveEndingTag*
+  name: RemoveEndingTag
+  href: api/RueI.Parsing.ParserContext.html#RueI_Parsing_ParserContext_RemoveEndingTag_
+  commentId: Overload:RueI.Parsing.ParserContext.RemoveEndingTag
+  isSpec: "True"
+  fullName: RueI.Parsing.ParserContext.RemoveEndingTag
+  nameWithType: ParserContext.RemoveEndingTag
+- uid: RueI.Parsing.ParserContext.RemoveEndingTag``1
+  name: RemoveEndingTag<T>()
+  href: api/RueI.Parsing.ParserContext.html#RueI_Parsing_ParserContext_RemoveEndingTag__1
+  commentId: M:RueI.Parsing.ParserContext.RemoveEndingTag``1
+  name.vb: RemoveEndingTag(Of T)()
+  fullName: RueI.Parsing.ParserContext.RemoveEndingTag<T>()
+  fullName.vb: RueI.Parsing.ParserContext.RemoveEndingTag(Of T)()
+  nameWithType: ParserContext.RemoveEndingTag<T>()
+  nameWithType.vb: ParserContext.RemoveEndingTag(Of T)()
 - uid: RueI.Parsing.ParserContext.ResultBuilder
   name: ResultBuilder
   href: api/RueI.Parsing.ParserContext.html#RueI_Parsing_ParserContext_ResultBuilder
@@ -2447,22 +2542,22 @@ references:
   commentId: T:RueI.Parsing.RichTextTag
   fullName: RueI.Parsing.RichTextTag
   nameWithType: RichTextTag
-- uid: RueI.Parsing.RichTextTag.IsValidDelimiter(System.Char)
-  name: IsValidDelimiter(char)
-  href: api/RueI.Parsing.RichTextTag.html#RueI_Parsing_RichTextTag_IsValidDelimiter_System_Char_
-  commentId: M:RueI.Parsing.RichTextTag.IsValidDelimiter(System.Char)
-  name.vb: IsValidDelimiter(Char)
-  fullName: RueI.Parsing.RichTextTag.IsValidDelimiter(char)
-  fullName.vb: RueI.Parsing.RichTextTag.IsValidDelimiter(Char)
-  nameWithType: RichTextTag.IsValidDelimiter(char)
-  nameWithType.vb: RichTextTag.IsValidDelimiter(Char)
-- uid: RueI.Parsing.RichTextTag.IsValidDelimiter*
-  name: IsValidDelimiter
-  href: api/RueI.Parsing.RichTextTag.html#RueI_Parsing_RichTextTag_IsValidDelimiter_
-  commentId: Overload:RueI.Parsing.RichTextTag.IsValidDelimiter
+- uid: RueI.Parsing.RichTextTag.HandleTag(RueI.Parsing.ParserContext,System.String)
+  name: HandleTag(ParserContext, string)
+  href: api/RueI.Parsing.RichTextTag.html#RueI_Parsing_RichTextTag_HandleTag_RueI_Parsing_ParserContext_System_String_
+  commentId: M:RueI.Parsing.RichTextTag.HandleTag(RueI.Parsing.ParserContext,System.String)
+  name.vb: HandleTag(ParserContext, String)
+  fullName: RueI.Parsing.RichTextTag.HandleTag(RueI.Parsing.ParserContext, string)
+  fullName.vb: RueI.Parsing.RichTextTag.HandleTag(RueI.Parsing.ParserContext, String)
+  nameWithType: RichTextTag.HandleTag(ParserContext, string)
+  nameWithType.vb: RichTextTag.HandleTag(ParserContext, String)
+- uid: RueI.Parsing.RichTextTag.HandleTag*
+  name: HandleTag
+  href: api/RueI.Parsing.RichTextTag.html#RueI_Parsing_RichTextTag_HandleTag_
+  commentId: Overload:RueI.Parsing.RichTextTag.HandleTag
   isSpec: "True"
-  fullName: RueI.Parsing.RichTextTag.IsValidDelimiter
-  nameWithType: RichTextTag.IsValidDelimiter
+  fullName: RueI.Parsing.RichTextTag.HandleTag
+  nameWithType: RichTextTag.HandleTag
 - uid: RueI.Parsing.RichTextTag.Names
   name: Names
   href: api/RueI.Parsing.RichTextTag.html#RueI_Parsing_RichTextTag_Names
@@ -2476,6 +2571,19 @@ references:
   isSpec: "True"
   fullName: RueI.Parsing.RichTextTag.Names
   nameWithType: RichTextTag.Names
+- uid: RueI.Parsing.RichTextTag.TagStyle
+  name: TagStyle
+  href: api/RueI.Parsing.RichTextTag.html#RueI_Parsing_RichTextTag_TagStyle
+  commentId: P:RueI.Parsing.RichTextTag.TagStyle
+  fullName: RueI.Parsing.RichTextTag.TagStyle
+  nameWithType: RichTextTag.TagStyle
+- uid: RueI.Parsing.RichTextTag.TagStyle*
+  name: TagStyle
+  href: api/RueI.Parsing.RichTextTag.html#RueI_Parsing_RichTextTag_TagStyle_
+  commentId: Overload:RueI.Parsing.RichTextTag.TagStyle
+  isSpec: "True"
+  fullName: RueI.Parsing.RichTextTag.TagStyle
+  nameWithType: RichTextTag.TagStyle
 - uid: RueI.Parsing.Tags
   name: RueI.Parsing.Tags
   href: api/RueI.Parsing.Tags.html
@@ -2584,64 +2692,6 @@ references:
   isSpec: "True"
   fullName: RueI.Parsing.Tags.ConcreteTags.LineHeightTag.Names
   nameWithType: LineHeightTag.Names
-- uid: RueI.Parsing.Tags.ConcreteTags.ResetTag
-  name: ResetTag
-  href: api/RueI.Parsing.Tags.ConcreteTags.ResetTag.html
-  commentId: T:RueI.Parsing.Tags.ConcreteTags.ResetTag
-  fullName: RueI.Parsing.Tags.ConcreteTags.ResetTag
-  nameWithType: ResetTag
-- uid: RueI.Parsing.Tags.ConcreteTags.ResetTag.HandleTag(RueI.Parsing.ParserContext)
-  name: HandleTag(ParserContext)
-  href: api/RueI.Parsing.Tags.ConcreteTags.ResetTag.html#RueI_Parsing_Tags_ConcreteTags_ResetTag_HandleTag_RueI_Parsing_ParserContext_
-  commentId: M:RueI.Parsing.Tags.ConcreteTags.ResetTag.HandleTag(RueI.Parsing.ParserContext)
-  fullName: RueI.Parsing.Tags.ConcreteTags.ResetTag.HandleTag(RueI.Parsing.ParserContext)
-  nameWithType: ResetTag.HandleTag(ParserContext)
-- uid: RueI.Parsing.Tags.ConcreteTags.ResetTag.HandleTag*
-  name: HandleTag
-  href: api/RueI.Parsing.Tags.ConcreteTags.ResetTag.html#RueI_Parsing_Tags_ConcreteTags_ResetTag_HandleTag_
-  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.ResetTag.HandleTag
-  isSpec: "True"
-  fullName: RueI.Parsing.Tags.ConcreteTags.ResetTag.HandleTag
-  nameWithType: ResetTag.HandleTag
-- uid: RueI.Parsing.Tags.ConcreteTags.ResetTag.Names
-  name: Names
-  href: api/RueI.Parsing.Tags.ConcreteTags.ResetTag.html#RueI_Parsing_Tags_ConcreteTags_ResetTag_Names
-  commentId: P:RueI.Parsing.Tags.ConcreteTags.ResetTag.Names
-  fullName: RueI.Parsing.Tags.ConcreteTags.ResetTag.Names
-  nameWithType: ResetTag.Names
-- uid: RueI.Parsing.Tags.ConcreteTags.ResetTag.Names*
-  name: Names
-  href: api/RueI.Parsing.Tags.ConcreteTags.ResetTag.html#RueI_Parsing_Tags_ConcreteTags_ResetTag_Names_
-  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.ResetTag.Names
-  isSpec: "True"
-  fullName: RueI.Parsing.Tags.ConcreteTags.ResetTag.Names
-  nameWithType: ResetTag.Names
-- uid: RueI.Parsing.Tags.ConcreteTags.SharedTag`1
-  name: SharedTag<T>
-  href: api/RueI.Parsing.Tags.ConcreteTags.SharedTag-1.html
-  commentId: T:RueI.Parsing.Tags.ConcreteTags.SharedTag`1
-  name.vb: SharedTag(Of T)
-  fullName: RueI.Parsing.Tags.ConcreteTags.SharedTag<T>
-  fullName.vb: RueI.Parsing.Tags.ConcreteTags.SharedTag(Of T)
-  nameWithType: SharedTag<T>
-  nameWithType.vb: SharedTag(Of T)
-- uid: RueI.Parsing.Tags.ConcreteTags.SharedTag`1.Singleton
-  name: Singleton
-  href: api/RueI.Parsing.Tags.ConcreteTags.SharedTag-1.html#RueI_Parsing_Tags_ConcreteTags_SharedTag_1_Singleton
-  commentId: P:RueI.Parsing.Tags.ConcreteTags.SharedTag`1.Singleton
-  fullName: RueI.Parsing.Tags.ConcreteTags.SharedTag<T>.Singleton
-  fullName.vb: RueI.Parsing.Tags.ConcreteTags.SharedTag(Of T).Singleton
-  nameWithType: SharedTag<T>.Singleton
-  nameWithType.vb: SharedTag(Of T).Singleton
-- uid: RueI.Parsing.Tags.ConcreteTags.SharedTag`1.Singleton*
-  name: Singleton
-  href: api/RueI.Parsing.Tags.ConcreteTags.SharedTag-1.html#RueI_Parsing_Tags_ConcreteTags_SharedTag_1_Singleton_
-  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.SharedTag`1.Singleton
-  isSpec: "True"
-  fullName: RueI.Parsing.Tags.ConcreteTags.SharedTag<T>.Singleton
-  fullName.vb: RueI.Parsing.Tags.ConcreteTags.SharedTag(Of T).Singleton
-  nameWithType: SharedTag<T>.Singleton
-  nameWithType.vb: SharedTag(Of T).Singleton
 - uid: RueI.Parsing.Tags.ConcreteTags.SizeTag
   name: SizeTag
   href: api/RueI.Parsing.Tags.ConcreteTags.SizeTag.html
@@ -2725,107 +2775,95 @@ references:
   isSpec: "True"
   fullName: RueI.Parsing.Tags.ConcreteTags.SpriteTag.Names
   nameWithType: SpriteTag.Names
-- uid: RueI.Parsing.Tags.MeasurementTagBase
-  name: MeasurementTagBase
-  href: api/RueI.Parsing.Tags.MeasurementTagBase.html
-  commentId: T:RueI.Parsing.Tags.MeasurementTagBase
-  fullName: RueI.Parsing.Tags.MeasurementTagBase
-  nameWithType: MeasurementTagBase
-- uid: RueI.Parsing.Tags.MeasurementTagBase.HandleTag(RueI.Parsing.ParserContext,RueI.Records.MeasurementInfo)
+- uid: RueI.Parsing.Tags.MeasurementTag
+  name: MeasurementTag
+  href: api/RueI.Parsing.Tags.MeasurementTag.html
+  commentId: T:RueI.Parsing.Tags.MeasurementTag
+  fullName: RueI.Parsing.Tags.MeasurementTag
+  nameWithType: MeasurementTag
+- uid: RueI.Parsing.Tags.MeasurementTag.HandleTag(RueI.Parsing.ParserContext,RueI.Records.MeasurementInfo)
   name: HandleTag(ParserContext, MeasurementInfo)
-  href: api/RueI.Parsing.Tags.MeasurementTagBase.html#RueI_Parsing_Tags_MeasurementTagBase_HandleTag_RueI_Parsing_ParserContext_RueI_Records_MeasurementInfo_
-  commentId: M:RueI.Parsing.Tags.MeasurementTagBase.HandleTag(RueI.Parsing.ParserContext,RueI.Records.MeasurementInfo)
-  fullName: RueI.Parsing.Tags.MeasurementTagBase.HandleTag(RueI.Parsing.ParserContext, RueI.Records.MeasurementInfo)
-  nameWithType: MeasurementTagBase.HandleTag(ParserContext, MeasurementInfo)
-- uid: RueI.Parsing.Tags.MeasurementTagBase.HandleTag(RueI.Parsing.ParserContext,System.Char,System.String)
-  name: HandleTag(ParserContext, char, string)
-  href: api/RueI.Parsing.Tags.MeasurementTagBase.html#RueI_Parsing_Tags_MeasurementTagBase_HandleTag_RueI_Parsing_ParserContext_System_Char_System_String_
-  commentId: M:RueI.Parsing.Tags.MeasurementTagBase.HandleTag(RueI.Parsing.ParserContext,System.Char,System.String)
-  name.vb: HandleTag(ParserContext, Char, String)
-  fullName: RueI.Parsing.Tags.MeasurementTagBase.HandleTag(RueI.Parsing.ParserContext, char, string)
-  fullName.vb: RueI.Parsing.Tags.MeasurementTagBase.HandleTag(RueI.Parsing.ParserContext, Char, String)
-  nameWithType: MeasurementTagBase.HandleTag(ParserContext, char, string)
-  nameWithType.vb: MeasurementTagBase.HandleTag(ParserContext, Char, String)
-- uid: RueI.Parsing.Tags.MeasurementTagBase.HandleTag*
+  href: api/RueI.Parsing.Tags.MeasurementTag.html#RueI_Parsing_Tags_MeasurementTag_HandleTag_RueI_Parsing_ParserContext_RueI_Records_MeasurementInfo_
+  commentId: M:RueI.Parsing.Tags.MeasurementTag.HandleTag(RueI.Parsing.ParserContext,RueI.Records.MeasurementInfo)
+  fullName: RueI.Parsing.Tags.MeasurementTag.HandleTag(RueI.Parsing.ParserContext, RueI.Records.MeasurementInfo)
+  nameWithType: MeasurementTag.HandleTag(ParserContext, MeasurementInfo)
+- uid: RueI.Parsing.Tags.MeasurementTag.HandleTag(RueI.Parsing.ParserContext,System.String)
+  name: HandleTag(ParserContext, string)
+  href: api/RueI.Parsing.Tags.MeasurementTag.html#RueI_Parsing_Tags_MeasurementTag_HandleTag_RueI_Parsing_ParserContext_System_String_
+  commentId: M:RueI.Parsing.Tags.MeasurementTag.HandleTag(RueI.Parsing.ParserContext,System.String)
+  name.vb: HandleTag(ParserContext, String)
+  fullName: RueI.Parsing.Tags.MeasurementTag.HandleTag(RueI.Parsing.ParserContext, string)
+  fullName.vb: RueI.Parsing.Tags.MeasurementTag.HandleTag(RueI.Parsing.ParserContext, String)
+  nameWithType: MeasurementTag.HandleTag(ParserContext, string)
+  nameWithType.vb: MeasurementTag.HandleTag(ParserContext, String)
+- uid: RueI.Parsing.Tags.MeasurementTag.HandleTag*
   name: HandleTag
-  href: api/RueI.Parsing.Tags.MeasurementTagBase.html#RueI_Parsing_Tags_MeasurementTagBase_HandleTag_
-  commentId: Overload:RueI.Parsing.Tags.MeasurementTagBase.HandleTag
+  href: api/RueI.Parsing.Tags.MeasurementTag.html#RueI_Parsing_Tags_MeasurementTag_HandleTag_
+  commentId: Overload:RueI.Parsing.Tags.MeasurementTag.HandleTag
   isSpec: "True"
-  fullName: RueI.Parsing.Tags.MeasurementTagBase.HandleTag
-  nameWithType: MeasurementTagBase.HandleTag
-- uid: RueI.Parsing.Tags.MeasurementTagBase.IsValidDelimiter(System.Char)
-  name: IsValidDelimiter(char)
-  href: api/RueI.Parsing.Tags.MeasurementTagBase.html#RueI_Parsing_Tags_MeasurementTagBase_IsValidDelimiter_System_Char_
-  commentId: M:RueI.Parsing.Tags.MeasurementTagBase.IsValidDelimiter(System.Char)
-  name.vb: IsValidDelimiter(Char)
-  fullName: RueI.Parsing.Tags.MeasurementTagBase.IsValidDelimiter(char)
-  fullName.vb: RueI.Parsing.Tags.MeasurementTagBase.IsValidDelimiter(Char)
-  nameWithType: MeasurementTagBase.IsValidDelimiter(char)
-  nameWithType.vb: MeasurementTagBase.IsValidDelimiter(Char)
-- uid: RueI.Parsing.Tags.MeasurementTagBase.IsValidDelimiter*
-  name: IsValidDelimiter
-  href: api/RueI.Parsing.Tags.MeasurementTagBase.html#RueI_Parsing_Tags_MeasurementTagBase_IsValidDelimiter_
-  commentId: Overload:RueI.Parsing.Tags.MeasurementTagBase.IsValidDelimiter
+  fullName: RueI.Parsing.Tags.MeasurementTag.HandleTag
+  nameWithType: MeasurementTag.HandleTag
+- uid: RueI.Parsing.Tags.MeasurementTag.TagStyle
+  name: TagStyle
+  href: api/RueI.Parsing.Tags.MeasurementTag.html#RueI_Parsing_Tags_MeasurementTag_TagStyle
+  commentId: P:RueI.Parsing.Tags.MeasurementTag.TagStyle
+  fullName: RueI.Parsing.Tags.MeasurementTag.TagStyle
+  nameWithType: MeasurementTag.TagStyle
+- uid: RueI.Parsing.Tags.MeasurementTag.TagStyle*
+  name: TagStyle
+  href: api/RueI.Parsing.Tags.MeasurementTag.html#RueI_Parsing_Tags_MeasurementTag_TagStyle_
+  commentId: Overload:RueI.Parsing.Tags.MeasurementTag.TagStyle
   isSpec: "True"
-  fullName: RueI.Parsing.Tags.MeasurementTagBase.IsValidDelimiter
-  nameWithType: MeasurementTagBase.IsValidDelimiter
-- uid: RueI.Parsing.Tags.NoParamsTagBase
-  name: NoParamsTagBase
-  href: api/RueI.Parsing.Tags.NoParamsTagBase.html
-  commentId: T:RueI.Parsing.Tags.NoParamsTagBase
-  fullName: RueI.Parsing.Tags.NoParamsTagBase
-  nameWithType: NoParamsTagBase
-- uid: RueI.Parsing.Tags.NoParamsTagBase.HandleTag(RueI.Parsing.ParserContext)
-  name: HandleTag(ParserContext)
-  href: api/RueI.Parsing.Tags.NoParamsTagBase.html#RueI_Parsing_Tags_NoParamsTagBase_HandleTag_RueI_Parsing_ParserContext_
-  commentId: M:RueI.Parsing.Tags.NoParamsTagBase.HandleTag(RueI.Parsing.ParserContext)
-  fullName: RueI.Parsing.Tags.NoParamsTagBase.HandleTag(RueI.Parsing.ParserContext)
-  nameWithType: NoParamsTagBase.HandleTag(ParserContext)
-- uid: RueI.Parsing.Tags.NoParamsTagBase.HandleTag*
-  name: HandleTag
-  href: api/RueI.Parsing.Tags.NoParamsTagBase.html#RueI_Parsing_Tags_NoParamsTagBase_HandleTag_
-  commentId: Overload:RueI.Parsing.Tags.NoParamsTagBase.HandleTag
+  fullName: RueI.Parsing.Tags.MeasurementTag.TagStyle
+  nameWithType: MeasurementTag.TagStyle
+- uid: RueI.Parsing.Tags.SharedTag`1
+  name: SharedTag<T>
+  href: api/RueI.Parsing.Tags.SharedTag-1.html
+  commentId: T:RueI.Parsing.Tags.SharedTag`1
+  name.vb: SharedTag(Of T)
+  fullName: RueI.Parsing.Tags.SharedTag<T>
+  fullName.vb: RueI.Parsing.Tags.SharedTag(Of T)
+  nameWithType: SharedTag<T>
+  nameWithType.vb: SharedTag(Of T)
+- uid: RueI.Parsing.Tags.SharedTag`1.Singleton
+  name: Singleton
+  href: api/RueI.Parsing.Tags.SharedTag-1.html#RueI_Parsing_Tags_SharedTag_1_Singleton
+  commentId: P:RueI.Parsing.Tags.SharedTag`1.Singleton
+  fullName: RueI.Parsing.Tags.SharedTag<T>.Singleton
+  fullName.vb: RueI.Parsing.Tags.SharedTag(Of T).Singleton
+  nameWithType: SharedTag<T>.Singleton
+  nameWithType.vb: SharedTag(Of T).Singleton
+- uid: RueI.Parsing.Tags.SharedTag`1.Singleton*
+  name: Singleton
+  href: api/RueI.Parsing.Tags.SharedTag-1.html#RueI_Parsing_Tags_SharedTag_1_Singleton_
+  commentId: Overload:RueI.Parsing.Tags.SharedTag`1.Singleton
   isSpec: "True"
-  fullName: RueI.Parsing.Tags.NoParamsTagBase.HandleTag
-  nameWithType: NoParamsTagBase.HandleTag
-- uid: RueI.Parsing.Tags.NoParamsTagBase.IsValidDelimiter(System.Char)
-  name: IsValidDelimiter(char)
-  href: api/RueI.Parsing.Tags.NoParamsTagBase.html#RueI_Parsing_Tags_NoParamsTagBase_IsValidDelimiter_System_Char_
-  commentId: M:RueI.Parsing.Tags.NoParamsTagBase.IsValidDelimiter(System.Char)
-  name.vb: IsValidDelimiter(Char)
-  fullName: RueI.Parsing.Tags.NoParamsTagBase.IsValidDelimiter(char)
-  fullName.vb: RueI.Parsing.Tags.NoParamsTagBase.IsValidDelimiter(Char)
-  nameWithType: NoParamsTagBase.IsValidDelimiter(char)
-  nameWithType.vb: NoParamsTagBase.IsValidDelimiter(Char)
-- uid: RueI.Parsing.Tags.NoParamsTagBase.IsValidDelimiter*
-  name: IsValidDelimiter
-  href: api/RueI.Parsing.Tags.NoParamsTagBase.html#RueI_Parsing_Tags_NoParamsTagBase_IsValidDelimiter_
-  commentId: Overload:RueI.Parsing.Tags.NoParamsTagBase.IsValidDelimiter
+  fullName: RueI.Parsing.Tags.SharedTag<T>.Singleton
+  fullName.vb: RueI.Parsing.Tags.SharedTag(Of T).Singleton
+  nameWithType: SharedTag<T>.Singleton
+  nameWithType.vb: SharedTag(Of T).Singleton
+- uid: RueI.Parsing.Tags.TagHelpers
+  name: TagHelpers
+  href: api/RueI.Parsing.Tags.TagHelpers.html
+  commentId: T:RueI.Parsing.Tags.TagHelpers
+  fullName: RueI.Parsing.Tags.TagHelpers
+  nameWithType: TagHelpers
+- uid: RueI.Parsing.Tags.TagHelpers.ExtractFromQuotations(System.String)
+  name: ExtractFromQuotations(string)
+  href: api/RueI.Parsing.Tags.TagHelpers.html#RueI_Parsing_Tags_TagHelpers_ExtractFromQuotations_System_String_
+  commentId: M:RueI.Parsing.Tags.TagHelpers.ExtractFromQuotations(System.String)
+  name.vb: ExtractFromQuotations(String)
+  fullName: RueI.Parsing.Tags.TagHelpers.ExtractFromQuotations(string)
+  fullName.vb: RueI.Parsing.Tags.TagHelpers.ExtractFromQuotations(String)
+  nameWithType: TagHelpers.ExtractFromQuotations(string)
+  nameWithType.vb: TagHelpers.ExtractFromQuotations(String)
+- uid: RueI.Parsing.Tags.TagHelpers.ExtractFromQuotations*
+  name: ExtractFromQuotations
+  href: api/RueI.Parsing.Tags.TagHelpers.html#RueI_Parsing_Tags_TagHelpers_ExtractFromQuotations_
+  commentId: Overload:RueI.Parsing.Tags.TagHelpers.ExtractFromQuotations
   isSpec: "True"
-  fullName: RueI.Parsing.Tags.NoParamsTagBase.IsValidDelimiter
-  nameWithType: NoParamsTagBase.IsValidDelimiter
-- uid: RueI.Parsing.Tags.ParamsTagBase
-  name: ParamsTagBase
-  href: api/RueI.Parsing.Tags.ParamsTagBase.html
-  commentId: T:RueI.Parsing.Tags.ParamsTagBase
-  fullName: RueI.Parsing.Tags.ParamsTagBase
-  nameWithType: ParamsTagBase
-- uid: RueI.Parsing.Tags.ParamsTagBase.HandleTag(RueI.Parsing.ParserContext,System.Char,System.String)
-  name: HandleTag(ParserContext, char, string)
-  href: api/RueI.Parsing.Tags.ParamsTagBase.html#RueI_Parsing_Tags_ParamsTagBase_HandleTag_RueI_Parsing_ParserContext_System_Char_System_String_
-  commentId: M:RueI.Parsing.Tags.ParamsTagBase.HandleTag(RueI.Parsing.ParserContext,System.Char,System.String)
-  name.vb: HandleTag(ParserContext, Char, String)
-  fullName: RueI.Parsing.Tags.ParamsTagBase.HandleTag(RueI.Parsing.ParserContext, char, string)
-  fullName.vb: RueI.Parsing.Tags.ParamsTagBase.HandleTag(RueI.Parsing.ParserContext, Char, String)
-  nameWithType: ParamsTagBase.HandleTag(ParserContext, char, string)
-  nameWithType.vb: ParamsTagBase.HandleTag(ParserContext, Char, String)
-- uid: RueI.Parsing.Tags.ParamsTagBase.HandleTag*
-  name: HandleTag
-  href: api/RueI.Parsing.Tags.ParamsTagBase.html#RueI_Parsing_Tags_ParamsTagBase_HandleTag_
-  commentId: Overload:RueI.Parsing.Tags.ParamsTagBase.HandleTag
-  isSpec: "True"
-  fullName: RueI.Parsing.Tags.ParamsTagBase.HandleTag
-  nameWithType: ParamsTagBase.HandleTag
+  fullName: RueI.Parsing.Tags.TagHelpers.ExtractFromQuotations
+  nameWithType: TagHelpers.ExtractFromQuotations
 - uid: RueI.Parsing.TextInfo
   name: TextInfo
   href: api/RueI.Parsing.TextInfo.html
@@ -3002,15 +3040,15 @@ references:
   commentId: T:RueI.Records.MeasurementInfo
   fullName: RueI.Records.MeasurementInfo
   nameWithType: MeasurementInfo
-- uid: RueI.Records.MeasurementInfo.#ctor(System.Single,RueI.Enums.MeasurementStyle)
-  name: MeasurementInfo(float, MeasurementStyle)
-  href: api/RueI.Records.MeasurementInfo.html#RueI_Records_MeasurementInfo__ctor_System_Single_RueI_Enums_MeasurementStyle_
-  commentId: M:RueI.Records.MeasurementInfo.#ctor(System.Single,RueI.Enums.MeasurementStyle)
-  name.vb: New(Single, MeasurementStyle)
-  fullName: RueI.Records.MeasurementInfo.MeasurementInfo(float, RueI.Enums.MeasurementStyle)
-  fullName.vb: RueI.Records.MeasurementInfo.New(Single, RueI.Enums.MeasurementStyle)
-  nameWithType: MeasurementInfo.MeasurementInfo(float, MeasurementStyle)
-  nameWithType.vb: MeasurementInfo.New(Single, MeasurementStyle)
+- uid: RueI.Records.MeasurementInfo.#ctor(System.Single,RueI.Enums.MeasurementUnit)
+  name: MeasurementInfo(float, MeasurementUnit)
+  href: api/RueI.Records.MeasurementInfo.html#RueI_Records_MeasurementInfo__ctor_System_Single_RueI_Enums_MeasurementUnit_
+  commentId: M:RueI.Records.MeasurementInfo.#ctor(System.Single,RueI.Enums.MeasurementUnit)
+  name.vb: New(Single, MeasurementUnit)
+  fullName: RueI.Records.MeasurementInfo.MeasurementInfo(float, RueI.Enums.MeasurementUnit)
+  fullName.vb: RueI.Records.MeasurementInfo.New(Single, RueI.Enums.MeasurementUnit)
+  nameWithType: MeasurementInfo.MeasurementInfo(float, MeasurementUnit)
+  nameWithType.vb: MeasurementInfo.New(Single, MeasurementUnit)
 - uid: RueI.Records.MeasurementInfo.#ctor*
   name: MeasurementInfo
   href: api/RueI.Records.MeasurementInfo.html#RueI_Records_MeasurementInfo__ctor_

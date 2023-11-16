@@ -91,7 +91,7 @@
 
   <h1 id="RueI_Parser" data-uid="RueI.Parser" class="text-break">
     Class Parser
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/Parser.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/Parser.cs/#L17"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -146,6 +146,13 @@
     </div>
   </dd></dl>
 
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="RueI.Extensions.UniversalExtensions.html#RueI_Extensions_UniversalExtensions_AddTo__1___0_System_Collections_Generic_ICollection___0__">UniversalExtensions.AddTo&lt;T&gt;(T, ICollection&lt;T&gt;)</a>
+  </div>
+  </dd></dl>
 
 
 
@@ -159,15 +166,15 @@
 
   <h3 id="RueI_Parser_Tags" data-uid="RueI.Parser.Tags">
   Tags
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/Parser.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/Parser.cs/#L55"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Gets the current tags of the parser.</p>
+  <div class="markdown level1 summary"><p>Gets the tags that will be searched for when parsing.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ReadOnlyDictionary&lt;string, RichTextTag&gt; Tags { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public ReadOnlyDictionary&lt;string, ReadOnlyCollection&lt;RichTextTag&gt;&gt; Tags { get; }</code></pre>
   </div>
 
 
@@ -176,13 +183,16 @@
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.readonlydictionary-2">ReadOnlyDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="RueI.Parsing.RichTextTag.html">RichTextTag</a>&gt;</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.readonlydictionary-2">ReadOnlyDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.readonlycollection-1">ReadOnlyCollection</a>&lt;<a class="xref" href="RueI.Parsing.RichTextTag.html">RichTextTag</a>&gt;&gt;</dt>
     <dd></dd>
   </dl>
 
 
 
 
+  <h4 class="section" id="RueI_Parser_Tags_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Multiple tags can share the same name.</p>
+</div>
 
 
 
@@ -195,7 +205,7 @@
 
   <h3 id="RueI_Parser_AddCharacter_RueI_Parsing_ParserContext_System_Char_" data-uid="RueI.Parser.AddCharacter(RueI.Parsing.ParserContext,System.Char)">
   AddCharacter(ParserContext, char)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/Parser.cs/#L187"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/Parser.cs/#L210"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Adds a character to a parser context.</p>
@@ -231,7 +241,7 @@
 
   <h3 id="RueI_Parser_CalculateCharacterLength_RueI_Parsing_TextInfo_System_Char_" data-uid="RueI.Parser.CalculateCharacterLength(RueI.Parsing.TextInfo,System.Char)">
   CalculateCharacterLength(TextInfo, char)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/Parser.cs/#L214"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/Parser.cs/#L237"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Calculates the length of an <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a> with a context.</p>
@@ -273,7 +283,7 @@
 
   <h3 id="RueI_Parser_CreateLineBreak_RueI_Parsing_ParserContext_" data-uid="RueI.Parser.CreateLineBreak(RueI.Parsing.ParserContext)">
   CreateLineBreak(ParserContext)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/Parser.cs/#L254"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/Parser.cs/#L277"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Generates the effects of a linebreak for a parser.</p>
@@ -306,7 +316,7 @@
 
   <h3 id="RueI_Parser_GetTagAttributes_System_String_System_Collections_Generic_Dictionary_System_String_System_String___" data-uid="RueI.Parser.GetTagAttributes(System.String,System.Collections.Generic.Dictionary{System.String,System.String}@)">
   GetTagAttributes(string, out Dictionary&lt;string, string&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/Parser.cs/#L274"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/Parser.cs/#L297"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Parses the tag attributes of a string.</p>
@@ -348,7 +358,7 @@
 
   <h3 id="RueI_Parser_Parse_System_String_" data-uid="RueI.Parser.Parse(System.String)">
   Parse(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/Parser.cs/#L46"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/Parser.cs/#L62"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Parses a rich text string.</p>
@@ -387,7 +397,7 @@
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/Parser.cs/#L16" class="edit-link">Edit this page</a>
+          <a href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/Parser.cs/#L17" class="edit-link">Edit this page</a>
         </div>
 
 

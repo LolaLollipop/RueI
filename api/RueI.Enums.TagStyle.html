@@ -2,10 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Enum MeasurementStyle
+      <title>Enum TagStyle
  | RueI </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Enum MeasurementStyle
+      <meta name="title" content="Enum TagStyle
  | RueI ">
       
       <link rel="icon" href="../favicon.ico">
@@ -17,7 +17,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/Ruemena/RueI/new/master/apiSpec/new?filename=RueI_Enums_MeasurementStyle.md&amp;value=---%0Auid%3A%20RueI.Enums.MeasurementStyle%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/Ruemena/RueI/new/master/apiSpec/new?filename=RueI_Enums_TagStyle.md&amp;value=---%0Auid%3A%20RueI.Enums.TagStyle%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -85,14 +85,14 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="RueI.Enums.MeasurementStyle">
+        <article data-uid="RueI.Enums.TagStyle">
 
 
 
 
-  <h1 id="RueI_Enums_MeasurementStyle" data-uid="RueI.Enums.MeasurementStyle" class="text-break">
-    Enum MeasurementStyle
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Enums/MeasurementStyle.cs/#L6"><i class="bi bi-code-slash"></i></a>
+  <h1 id="RueI_Enums_TagStyle" data-uid="RueI.Enums.TagStyle" class="text-break">
+    Enum TagStyle
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Enums/TagStyle.cs/#L6"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -100,12 +100,12 @@
   <dl><dt>Assembly</dt><dd>RueI.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Represents the unit used for a measurement parameter.</p>
+  <div class="markdown summary"><p>Represents the valid characters for a delimiter.</p>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public enum MeasurementStyle</code></pre>
+    <pre><code class="lang-csharp hljs">public enum TagStyle</code></pre>
   </div>
 
 
@@ -115,18 +115,25 @@
 
 
 
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="RueI.Extensions.UniversalExtensions.html#RueI_Extensions_UniversalExtensions_AddTo__1___0_System_Collections_Generic_ICollection___0__">UniversalExtensions.AddTo&lt;T&gt;(T, ICollection&lt;T&gt;)</a>
+  </div>
+  </dd></dl>
 
   <h2 id="fields">Fields
 </h2>
   <dl class="parameters">
-    <dt id="RueI_Enums_MeasurementStyle_Ems"><code>Ems = 2</code></dt>
-    <dd><p>Indicates that the measurement is in ems.</p>
+    <dt id="RueI_Enums_TagStyle_Attributes"><code>Attributes = 2</code></dt>
+    <dd><p>Indicates that a tag takes in only attributes (space delimiter).</p>
 </dd>
-    <dt id="RueI_Enums_MeasurementStyle_Percentage"><code>Percentage = 1</code></dt>
-    <dd><p>Indicates that the measurement is a percentage of the default.</p>
+    <dt id="RueI_Enums_TagStyle_NoParams"><code>NoParams = 0</code></dt>
+    <dd><p>Indicates that a tag does not take parameters.</p>
 </dd>
-    <dt id="RueI_Enums_MeasurementStyle_Pixels"><code>Pixels = 0</code></dt>
-    <dd><p>Indicates that the measurement is in pixels.</p>
+    <dt id="RueI_Enums_TagStyle_ValueParam"><code>ValueParam = 1</code></dt>
+    <dd><p>Indicates that a tag takes in a value (equal sign) param.</p>
 </dd>
   </dl>
 
@@ -135,7 +142,7 @@
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Enums/MeasurementStyle.cs/#L6" class="edit-link">Edit this page</a>
+          <a href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Enums/TagStyle.cs/#L6" class="edit-link">Edit this page</a>
         </div>
 
 

@@ -172,20 +172,20 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RueI.Enums.MeasurementStyle.yml",
+      "source_relative_path": "api/RueI.Enums.MeasurementUnit.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RueI.Enums.MeasurementStyle.html"
+          "relative_path": "api/RueI.Enums.MeasurementUnit.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RueI.Enums.TagDelimiterStyle.yml",
+      "source_relative_path": "api/RueI.Enums.TagStyle.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RueI.Enums.TagDelimiterStyle.html"
+          "relative_path": "api/RueI.Enums.TagStyle.html"
         }
       },
       "version": ""
@@ -332,6 +332,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Extensions.UniversalExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Extensions.UniversalExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/RueI.Extensions.yml",
       "output": {
         ".html": {
@@ -412,6 +422,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Parsing.NoParamsTag.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Parsing.NoParamsTag.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/RueI.Parsing.ParserContext.yml",
       "output": {
         ".html": {
@@ -462,26 +482,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RueI.Parsing.Tags.ConcreteTags.ResetTag.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/RueI.Parsing.Tags.ConcreteTags.ResetTag.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/RueI.Parsing.Tags.ConcreteTags.SharedTag-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/RueI.Parsing.Tags.ConcreteTags.SharedTag-1.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/RueI.Parsing.Tags.ConcreteTags.SizeTag.yml",
       "output": {
         ".html": {
@@ -512,30 +512,30 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RueI.Parsing.Tags.MeasurementTagBase.yml",
+      "source_relative_path": "api/RueI.Parsing.Tags.MeasurementTag.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RueI.Parsing.Tags.MeasurementTagBase.html"
+          "relative_path": "api/RueI.Parsing.Tags.MeasurementTag.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RueI.Parsing.Tags.NoParamsTagBase.yml",
+      "source_relative_path": "api/RueI.Parsing.Tags.SharedTag-1.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RueI.Parsing.Tags.NoParamsTagBase.html"
+          "relative_path": "api/RueI.Parsing.Tags.SharedTag-1.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RueI.Parsing.Tags.ParamsTagBase.yml",
+      "source_relative_path": "api/RueI.Parsing.Tags.TagHelpers.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RueI.Parsing.Tags.ParamsTagBase.html"
+          "relative_path": "api/RueI.Parsing.Tags.TagHelpers.html"
         }
       },
       "version": ""

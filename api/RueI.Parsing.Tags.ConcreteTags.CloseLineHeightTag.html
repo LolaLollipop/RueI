@@ -104,7 +104,7 @@
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class CloseLineHeightTag : NoParamsTagBase</code></pre>
+    <pre><code class="lang-csharp hljs">public class CloseLineHeightTag : NoParamsTag</code></pre>
   </div>
 
 
@@ -115,7 +115,7 @@
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
       <div><a class="xref" href="RueI.Parsing.RichTextTag.html">RichTextTag</a></div>
-      <div><a class="xref" href="RueI.Parsing.Tags.NoParamsTagBase.html">NoParamsTagBase</a></div>
+      <div><a class="xref" href="RueI.Parsing.NoParamsTag.html">NoParamsTag</a></div>
       <div><span class="xref">CloseLineHeightTag</span></div>
     </dd>
   </dl>
@@ -126,7 +126,10 @@
     <dt>Inherited Members</dt>
     <dd>
     <div>
-      <a class="xref" href="RueI.Parsing.Tags.NoParamsTagBase.html#RueI_Parsing_Tags_NoParamsTagBase_IsValidDelimiter_System_Char_">NoParamsTagBase.IsValidDelimiter(char)</a>
+      <a class="xref" href="RueI.Parsing.NoParamsTag.html#RueI_Parsing_NoParamsTag_TagStyle">NoParamsTag.TagStyle</a>
+    </div>
+    <div>
+      <a class="xref" href="RueI.Parsing.NoParamsTag.html#RueI_Parsing_NoParamsTag_HandleTag_RueI_Parsing_ParserContext_System_String_">NoParamsTag.HandleTag(ParserContext, string)</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
@@ -151,6 +154,13 @@
     </div>
   </dd></dl>
 
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="RueI.Extensions.UniversalExtensions.html#RueI_Extensions_UniversalExtensions_AddTo__1___0_System_Collections_Generic_ICollection___0__">UniversalExtensions.AddTo&lt;T&gt;(T, ICollection&lt;T&gt;)</a>
+  </div>
+  </dd></dl>
 
 
 
@@ -167,7 +177,7 @@
   <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/Tags/ConcreteTags/CloseLineHeight.cs/#L14"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Gets the names of the rich text tag.</p>
+  <div class="markdown level1 summary"><p>Gets the names of this tag.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -203,12 +213,12 @@
   <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/Tags/ConcreteTags/CloseLineHeight.cs/#L17"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Handles an instance of a tag without params.</p>
+  <div class="markdown level1 summary"><p>Applies this tag (without parameters) to a <a class="xref" href="RueI.Parsing.ParserContext.html">ParserContext</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void HandleTag(ParserContext context)</code></pre>
+    <pre><code class="lang-csharp hljs">public override bool HandleTag(ParserContext context)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -218,6 +228,12 @@
 </dd>
   </dl>
 
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true if the tag is valid, otherwise false.</p>
+</dd>
+  </dl>
 
 
 
@@ -225,6 +241,9 @@
 
 
 
+  <h4 class="section" id="RueI_Parsing_Tags_ConcreteTags_CloseLineHeightTag_HandleTag_RueI_Parsing_ParserContext__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>If the tag does not have parameters, <code class="paramref">parameters</code> will always be <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string.empty">Empty</a>.</p>
+</div>
 
 
 

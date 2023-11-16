@@ -104,7 +104,7 @@
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class LineHeightTag : MeasurementTagBase</code></pre>
+    <pre><code class="lang-csharp hljs">public class LineHeightTag : MeasurementTag</code></pre>
   </div>
 
 
@@ -115,8 +115,7 @@
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
       <div><a class="xref" href="RueI.Parsing.RichTextTag.html">RichTextTag</a></div>
-      <div><a class="xref" href="RueI.Parsing.Tags.ParamsTagBase.html">ParamsTagBase</a></div>
-      <div><a class="xref" href="RueI.Parsing.Tags.MeasurementTagBase.html">MeasurementTagBase</a></div>
+      <div><a class="xref" href="RueI.Parsing.Tags.MeasurementTag.html">MeasurementTag</a></div>
       <div><span class="xref">LineHeightTag</span></div>
     </dd>
   </dl>
@@ -127,10 +126,10 @@
     <dt>Inherited Members</dt>
     <dd>
     <div>
-      <a class="xref" href="RueI.Parsing.Tags.MeasurementTagBase.html#RueI_Parsing_Tags_MeasurementTagBase_IsValidDelimiter_System_Char_">MeasurementTagBase.IsValidDelimiter(char)</a>
+      <a class="xref" href="RueI.Parsing.Tags.MeasurementTag.html#RueI_Parsing_Tags_MeasurementTag_TagStyle">MeasurementTag.TagStyle</a>
     </div>
     <div>
-      <a class="xref" href="RueI.Parsing.Tags.MeasurementTagBase.html#RueI_Parsing_Tags_MeasurementTagBase_HandleTag_RueI_Parsing_ParserContext_System_Char_System_String_">MeasurementTagBase.HandleTag(ParserContext, char, string)</a>
+      <a class="xref" href="RueI.Parsing.Tags.MeasurementTag.html#RueI_Parsing_Tags_MeasurementTag_HandleTag_RueI_Parsing_ParserContext_System_String_">MeasurementTag.HandleTag(ParserContext, string)</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
@@ -155,6 +154,13 @@
     </div>
   </dd></dl>
 
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="RueI.Extensions.UniversalExtensions.html#RueI_Extensions_UniversalExtensions_AddTo__1___0_System_Collections_Generic_ICollection___0__">UniversalExtensions.AddTo&lt;T&gt;(T, ICollection&lt;T&gt;)</a>
+  </div>
+  </dd></dl>
 
 
 
@@ -171,7 +177,7 @@
   <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/Tags/ConcreteTags/LineHeightTag.cs/#L14"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Gets the names of the rich text tag.</p>
+  <div class="markdown level1 summary"><p>Gets the names of this tag.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -207,7 +213,7 @@
   <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/Tags/ConcreteTags/LineHeightTag.cs/#L17"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Handles an instance of this tag.</p>
+  <div class="markdown level1 summary"><p>Handles an instance of this tag with <a class="xref" href="RueI.Records.MeasurementInfo.html">MeasurementInfo</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
