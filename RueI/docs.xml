@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <docs>
 	<members name="display">
 		<Display>
@@ -9,7 +9,7 @@
 					
 					SetElement helloElem = new(300, zIndex: 10, "hello").AddTo(display);
 					SetElement worldElem = new(250, zIndex: 10, "world").AddTo(display);
-					display.Add(helloElem, worldElem);
+					display.Elements.Add(helloElem, worldElem);
 
 					display.Update(); // Update the display
 				</code>
