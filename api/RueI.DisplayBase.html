@@ -11,8 +11,8 @@
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
-      <meta name="docfx:navrel" content="../toc.html">
-      <meta name="docfx:tocrel" content="toc.html">
+      <meta name="docfx:navrel" content="../toc.json">
+      <meta name="docfx:tocrel" content="toc.json">
       
       <meta name="docfx:rel" content="../">
       
@@ -91,7 +91,7 @@
 
   <h1 id="RueI_DisplayBase" data-uid="RueI.DisplayBase" class="text-break">
     Class DisplayBase
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Display.cs/#L97"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Display.cs/#L136"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -123,7 +123,7 @@
     <dt>Derived</dt>
     <dd>
       <div><a class="xref" href="RueI.Display.html">Display</a></div>
-      <div><a class="xref" href="RueI.ScreenDisplay-1.html">ScreenDisplay&lt;T&gt;</a></div>
+      <div><a class="xref" href="RueI.ScreenDisplay.html">ScreenDisplay</a></div>
     </dd>
   </dl>
 
@@ -173,7 +173,7 @@
 
   <h3 id="RueI_DisplayBase__ctor_ReferenceHub_" data-uid="RueI.DisplayBase.#ctor(ReferenceHub)">
   DisplayBase(ReferenceHub)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Display.cs/#L103"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Display.cs/#L142"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="RueI.DisplayBase.html">DisplayBase</a> class.</p>
@@ -204,9 +204,9 @@
 
   <a id="RueI_DisplayBase__ctor_" data-uid="RueI.DisplayBase.#ctor*"></a>
 
-  <h3 id="RueI_DisplayBase__ctor_RueI_DisplayCoordinator_" data-uid="RueI.DisplayBase.#ctor(RueI.DisplayCoordinator)">
-  DisplayBase(DisplayCoordinator)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Display.cs/#L113"><i class="bi bi-code-slash"></i></a>
+  <h3 id="RueI_DisplayBase__ctor_RueI_DisplayCore_" data-uid="RueI.DisplayBase.#ctor(RueI.DisplayCore)">
+  DisplayBase(DisplayCore)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Display.cs/#L152"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="RueI.DisplayBase.html">DisplayBase</a> class.</p>
@@ -214,13 +214,13 @@
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public DisplayBase(DisplayCoordinator coordinator)</code></pre>
+    <pre><code class="lang-csharp hljs">public DisplayBase(DisplayCore coordinator)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>coordinator</code> <a class="xref" href="RueI.DisplayCoordinator.html">DisplayCoordinator</a></dt>
-    <dd><p>The <a class="xref" href="RueI.DisplayCoordinator.html">DisplayCoordinator</a> to assign the display to.</p>
+    <dt><code>coordinator</code> <a class="xref" href="RueI.DisplayCore.html">DisplayCore</a></dt>
+    <dd><p>The <a class="xref" href="RueI.DisplayCore.html">DisplayCore</a> to assign the display to.</p>
 </dd>
   </dl>
 
@@ -243,15 +243,15 @@
 
   <h3 id="RueI_DisplayBase_Coordinator" data-uid="RueI.DisplayBase.Coordinator">
   Coordinator
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Display.cs/#L132"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Display.cs/#L171"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Gets the <a class="xref" href="RueI.DisplayCoordinator.html">DisplayCoordinator</a> that this display is attached to.</p>
+  <div class="markdown level1 summary"><p>Gets the <a class="xref" href="RueI.DisplayCore.html">DisplayCore</a> that this display is attached to.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public DisplayCoordinator Coordinator { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public DisplayCore Coordinator { get; }</code></pre>
   </div>
 
 
@@ -260,7 +260,7 @@
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="RueI.DisplayCoordinator.html">DisplayCoordinator</a></dt>
+    <dt><a class="xref" href="RueI.DisplayCore.html">DisplayCore</a></dt>
     <dd></dd>
   </dl>
 
@@ -275,7 +275,7 @@
 
   <h3 id="RueI_DisplayBase_IsActive" data-uid="RueI.DisplayBase.IsActive">
   IsActive
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Display.cs/#L122"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Display.cs/#L161"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets a value indicating whether or not this display is active.</p>
@@ -307,7 +307,7 @@
 
   <h3 id="RueI_DisplayBase_ReferenceHub" data-uid="RueI.DisplayBase.ReferenceHub">
   ReferenceHub
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Display.cs/#L127"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Display.cs/#L166"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the <a class="xref" href="RueI.DisplayBase.html#RueI_DisplayBase_ReferenceHub">ReferenceHub</a> that this display is assigned to.</p>
@@ -343,7 +343,7 @@
 
   <h3 id="RueI_DisplayBase_Delete" data-uid="RueI.DisplayBase.Delete">
   Delete()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Display.cs/#L143"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Display.cs/#L187"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Deletes this display, removing it from the player's coordinator.</p>
@@ -370,7 +370,7 @@
 
   <h3 id="RueI_DisplayBase_GetAllElements" data-uid="RueI.DisplayBase.GetAllElements">
   GetAllElements()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Display.cs/#L138"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Display.cs/#L177"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets all of the elements of this display.</p>
@@ -399,11 +399,38 @@
 
 
 
+  <a id="RueI_DisplayBase_Update_" data-uid="RueI.DisplayBase.Update*"></a>
+
+  <h3 id="RueI_DisplayBase_Update" data-uid="RueI.DisplayBase.Update">
+  Update()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Display.cs/#L182"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Updates the parent <a class="xref" href="RueI.DisplayCore.html">DisplayCore</a> of this <a class="xref" href="RueI.DisplayBase.html">DisplayBase</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Update()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Display.cs/#L97" class="edit-link">Edit this page</a>
+          <a href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Display.cs/#L136" class="edit-link">Edit this page</a>
         </div>
 
 

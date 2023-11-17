@@ -11,8 +11,8 @@
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
-      <meta name="docfx:navrel" content="../toc.html">
-      <meta name="docfx:tocrel" content="toc.html">
+      <meta name="docfx:navrel" content="../toc.json">
+      <meta name="docfx:tocrel" content="toc.json">
       
       <meta name="docfx:rel" content="../">
       
@@ -91,7 +91,7 @@
 
   <h1 id="RueI_IElement" data-uid="RueI.IElement" class="text-break">
     Interface IElement
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements.cs/#L192"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements.cs/#L94"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -140,7 +140,7 @@
 
   <h3 id="RueI_IElement_Enabled" data-uid="RueI.IElement.Enabled">
   Enabled
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements.cs/#L197"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements.cs/#L99"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets or sets a value indicating whether or not this element is enabled and will show.</p>
@@ -172,7 +172,7 @@
 
   <h3 id="RueI_IElement_ParsedData" data-uid="RueI.IElement.ParsedData">
   ParsedData
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements.cs/#L202"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements.cs/#L105"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the data used for parsing.</p>
@@ -196,6 +196,44 @@
 
 
 
+  <h4 class="section" id="RueI_IElement_ParsedData_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This contains information used to ensure that multiple elements can be displayed at once. To obtain this, you should almost always use <a class="xref" href="RueI.Parser.html#RueI_Parser_Parse_System_String_">Parse(string)</a>.</p>
+</div>
+
+
+
+
+  <a id="RueI_IElement_Parser_" data-uid="RueI.IElement.Parser*"></a>
+
+  <h3 id="RueI_IElement_Parser" data-uid="RueI.IElement.Parser">
+  Parser
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements.cs/#L121"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the <a class="xref" href="RueI.IElement.html#RueI_IElement_Parser">Parser</a> currently in use by this <a class="xref" href="RueI.IElement.html">IElement</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Parser Parser { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="RueI.Parser.html">Parser</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+  <h4 class="section" id="RueI_IElement_Parser_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Implementations should default this to <a class="xref" href="RueI.Constants.html#RueI_Constants_DefaultParser">DefaultParser</a>.</p>
+</div>
 
 
 
@@ -204,7 +242,7 @@
 
   <h3 id="RueI_IElement_Position" data-uid="RueI.IElement.Position">
   Position
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements.cs/#L207"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements.cs/#L110"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets or sets the position of the element on a scale from 0-1000, where 0 represents the bottom of the screen and 1000 represents the top.</p>
@@ -236,7 +274,7 @@
 
   <h3 id="RueI_IElement_ZIndex" data-uid="RueI.IElement.ZIndex">
   ZIndex
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements.cs/#L212"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements.cs/#L115"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets or sets the priority of the hint (determining if it shows above another hint).</p>
@@ -268,7 +306,7 @@
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements.cs/#L192" class="edit-link">Edit this page</a>
+          <a href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements.cs/#L94" class="edit-link">Edit this page</a>
         </div>
 
 

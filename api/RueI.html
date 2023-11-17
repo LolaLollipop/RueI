@@ -11,8 +11,8 @@
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
-      <meta name="docfx:navrel" content="../toc.html">
-      <meta name="docfx:tocrel" content="toc.html">
+      <meta name="docfx:navrel" content="../toc.json">
+      <meta name="docfx:tocrel" content="toc.json">
       
       <meta name="docfx:rel" content="../">
       
@@ -97,18 +97,13 @@
 Classes
 </h3>
     <dl class="jumplist">
-      <dt><a class="xref" href="RueI.AsScreen-2.html">AsScreen&lt;TEnum, TWrapper&gt;</a></dt>
-      <dd><p>Provides a wrapper that enables screen functionality for elements that do not normally support.</p>
-</dd>
-    </dl>
-    <dl class="jumplist">
       <dt><a class="xref" href="RueI.Constants.html">Constants</a></dt>
       <dd><p>Provides a variety of constant values.</p>
 </dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="RueI.Display.html">Display</a></dt>
-      <dd><p>Represents a display attached to a <a class="xref" href="RueI.DisplayCoordinator.html">DisplayCoordinator</a>.</p>
+      <dd><p>Represents a display attached to a <a class="xref" href="RueI.DisplayCore.html">DisplayCore</a>.</p>
 </dd>
     </dl>
     <dl class="jumplist">
@@ -117,8 +112,8 @@ Classes
 </dd>
     </dl>
     <dl class="jumplist">
-      <dt><a class="xref" href="RueI.DisplayCoordinator.html">DisplayCoordinator</a></dt>
-      <dd><p>Coordinates multiple PlayerDisplays.</p>
+      <dt><a class="xref" href="RueI.DisplayCore.html">DisplayCore</a></dt>
+      <dd><p>Is responsible for managing all of the <a class="xref" href="RueI.DisplayBase.html">DisplayBase</a>s for a ReferenceHub.</p>
 </dd>
     </dl>
     <dl class="jumplist">
@@ -151,18 +146,13 @@ Classes
 </dd>
     </dl>
     <dl class="jumplist">
-      <dt><a class="xref" href="RueI.ScreenDisplay-1.html">ScreenDisplay&lt;T&gt;</a></dt>
-      <dd><p>Represents a <a class="xref" href="RueI.Display.html">Display</a> that hides elements based on an active screen.</p>
+      <dt><a class="xref" href="RueI.Screen.html">Screen</a></dt>
+      <dd><p>Represents a <a class="xref" href="RueI.Interfaces.IElementContainer.html">IElementContainer</a> inside a <a class="xref" href="RueI.ScreenDisplay.html">ScreenDisplay</a>.</p>
 </dd>
     </dl>
     <dl class="jumplist">
-      <dt><a class="xref" href="RueI.ScreenDynamicElement-1.html">ScreenDynamicElement&lt;T&gt;</a></dt>
-      <dd><p>Represents a <a class="xref" href="RueI.DynamicElement.html">DynamicElement</a> that it is tied to a number of screens.</p>
-</dd>
-    </dl>
-    <dl class="jumplist">
-      <dt><a class="xref" href="RueI.ScreenSetElement-1.html">ScreenSetElement&lt;T&gt;</a></dt>
-      <dd><p>Represents a <a class="xref" href="RueI.DynamicElement.html">DynamicElement</a> that is tied to a number of screens.</p>
+      <dt><a class="xref" href="RueI.ScreenDisplay.html">ScreenDisplay</a></dt>
+      <dd><p>Represents a display attached to a <a class="xref" href="RueI.DisplayCore.html">DisplayCore</a> with support for <a class="xref" href="RueI.Screen.html">Screen</a>s.</p>
 </dd>
     </dl>
     <dl class="jumplist">
@@ -176,11 +166,6 @@ Interfaces
     <dl class="jumplist">
       <dt><a class="xref" href="RueI.IElement.html">IElement</a></dt>
       <dd><p>Represents the base class for all elements.</p>
-</dd>
-    </dl>
-    <dl class="jumplist">
-      <dt><a class="xref" href="RueI.IScreenElement-1.html">IScreenElement&lt;T&gt;</a></dt>
-      <dd><p>Represents an element that is shown when certain screens are active.</p>
 </dd>
     </dl>
 

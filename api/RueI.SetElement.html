@@ -11,8 +11,8 @@
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
-      <meta name="docfx:navrel" content="../toc.html">
-      <meta name="docfx:tocrel" content="toc.html">
+      <meta name="docfx:navrel" content="../toc.json">
+      <meta name="docfx:tocrel" content="toc.json">
       
       <meta name="docfx:rel" content="../">
       
@@ -91,7 +91,7 @@
 
   <h1 id="RueI_SetElement" data-uid="RueI.SetElement" class="text-break">
     Class SetElement
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements.cs/#L151"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements.cs/#L50"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -126,12 +126,6 @@
     </dd>
   </dl>
 
-  <dl class="typelist derived">
-    <dt>Derived</dt>
-    <dd>
-      <div><a class="xref" href="RueI.ScreenSetElement-1.html">ScreenSetElement&lt;T&gt;</a></div>
-    </dd>
-  </dl>
 
   <dl class="typelist derived">
     <dt>Inherited Members</dt>
@@ -183,9 +177,9 @@
 
   <a id="RueI_SetElement__ctor_" data-uid="RueI.SetElement.#ctor*"></a>
 
-  <h3 id="RueI_SetElement__ctor_System_Single_System_Int32_System_String_" data-uid="RueI.SetElement.#ctor(System.Single,System.Int32,System.String)">
-  SetElement(float, int, string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements.cs/#L161"><i class="bi bi-code-slash"></i></a>
+  <h3 id="RueI_SetElement__ctor_System_Single_System_String_" data-uid="RueI.SetElement.#ctor(System.Single,System.String)">
+  SetElement(float, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements.cs/#L60"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="RueI.SetElement.html">SetElement</a> class.</p>
@@ -193,16 +187,13 @@
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public SetElement(float position, int zIndex = 0, string content = &quot;&quot;)</code></pre>
+    <pre><code class="lang-csharp hljs">public SetElement(float position, string content = &quot;&quot;)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>position</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd><p>The scaled position of the element, where 0 is the bottom of the screen and 1000 is the top.</p>
-</dd>
-    <dt><code>zIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd><p>A value determing the priority of the hint, where higher numbers means that it will render above hints with a lower number.</p>
 </dd>
     <dt><code>content</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd><p>The content to set the element to.</p>
@@ -228,7 +219,7 @@
 
   <h3 id="RueI_SetElement_Enabled" data-uid="RueI.SetElement.Enabled">
   Enabled
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements.cs/#L171"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements.cs/#L70"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets or sets a value indicating whether or not this element is enabled and will show.</p>
@@ -260,7 +251,7 @@
 
   <h3 id="RueI_SetElement_ParsedData" data-uid="RueI.SetElement.ParsedData">
   ParsedData
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements.cs/#L168"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements.cs/#L67"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the data used for parsing.</p>
@@ -284,6 +275,44 @@
 
 
 
+  <h4 class="section" id="RueI_SetElement_ParsedData_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This contains information used to ensure that multiple elements can be displayed at once. To obtain this, you should almost always use <a class="xref" href="RueI.Parser.html#RueI_Parser_Parse_System_String_">Parse(string)</a>.</p>
+</div>
+
+
+
+
+  <a id="RueI_SetElement_Parser_" data-uid="RueI.SetElement.Parser*"></a>
+
+  <h3 id="RueI_SetElement_Parser" data-uid="RueI.SetElement.Parser">
+  Parser
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements.cs/#L79"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the <a class="xref" href="RueI.IElement.html#RueI_IElement_Parser">Parser</a> currently in use by this <a class="xref" href="RueI.IElement.html">IElement</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Parser Parser { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="RueI.Parser.html">Parser</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+  <h4 class="section" id="RueI_SetElement_Parser_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Implementations should default this to <a class="xref" href="RueI.Constants.html#RueI_Constants_DefaultParser">DefaultParser</a>.</p>
+</div>
 
 
 
@@ -292,7 +321,7 @@
 
   <h3 id="RueI_SetElement_Position" data-uid="RueI.SetElement.Position">
   Position
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements.cs/#L174"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements.cs/#L73"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets or sets the position of the element on a scale from 0-1000, where 0 represents the bottom of the screen and 1000 represents the top.</p>
@@ -324,7 +353,7 @@
 
   <h3 id="RueI_SetElement_ZIndex" data-uid="RueI.SetElement.ZIndex">
   ZIndex
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements.cs/#L177"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements.cs/#L76"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets or sets the priority of the hint (determining if it shows above another hint).</p>
@@ -360,7 +389,7 @@
 
   <h3 id="RueI_SetElement_Set_System_String_" data-uid="RueI.SetElement.Set(System.String)">
   Set(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements.cs/#L183"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements.cs/#L85"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Sets the content of this element.</p>
@@ -393,7 +422,7 @@
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements.cs/#L151" class="edit-link">Edit this page</a>
+          <a href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements.cs/#L50" class="edit-link">Edit this page</a>
         </div>
 
 
