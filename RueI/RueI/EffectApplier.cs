@@ -1,10 +1,9 @@
-﻿namespace RueI.Displays
+﻿namespace RueI.Displays;
+
+/// <summary>
+/// Provides a means of doing batch operations.
+/// </summary>
+public class EffectApplier
 {
-    /// <summary>
-    /// Provides a means of doing batch operations.
-    /// </summary>
-    public class EffectApplier
-    {
-        
-    }
+    
 }

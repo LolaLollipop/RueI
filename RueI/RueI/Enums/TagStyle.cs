@@ -1,23 +1,22 @@
-﻿namespace RueI.Enums
+﻿namespace RueI.Enums;
+
+/// <summary>
+/// Represents the valid characters for a delimiter.
+/// </summary>
+public enum TagStyle
 {
     /// <summary>
-    /// Represents the valid characters for a delimiter.
+    /// Indicates that a tag does not take parameters.
     /// </summary>
-    public enum TagStyle
-    {
-        /// <summary>
-        /// Indicates that a tag does not take parameters.
-        /// </summary>
-        NoParams,
+    NoParams,
 
-        /// <summary>
-        /// Indicates that a tag takes in a value (equal sign) param.
-        /// </summary>
-        ValueParam,
+    /// <summary>
+    /// Indicates that a tag takes in a value (equal sign) param.
+    /// </summary>
+    ValueParam,
 
-        /// <summary>
-        /// Indicates that a tag takes in only attributes (space delimiter).
-        /// </summary>
-        Attributes,
-    }
+    /// <summary>
+    /// Indicates that a tag takes in only attributes (space delimiter).
+    /// </summary>
+    Attributes,
 }

@@ -1,149 +1,192 @@
-﻿namespace RueI
+﻿namespace RueI;
+
+using RueI.Extensions;
+using RueI.Interfaces;
+
+/// <summary>
+/// Represents a <see cref="IElementContainer"/> inside a <see cref="ScreenDisplay"/>.
+/// </summary>
+public class Screen : IElementContainer
 {
-    using MEC;
-    using RueI.Interfaces;
-
     /// <summary>
-    /// Represents a <see cref="Display"/> that hides elements based on an active screen.
+    /// Initializes a new instance of the <see cref="Screen"/> class.
     /// </summary>
-    /// <typeparam name="T">The enum to be used as the screen identifier.</typeparam>
-    public class ScreenDisplay<T> : DisplayBase
-        where T : Enum
+    /// <param name="scrDisplay">The <see cref="ScreenDisplay"/> to add this to.</param>
+    public Screen(ScreenDisplay scrDisplay)
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ScreenDisplay{T}"/> class.
-        /// </summary>
-        /// <param name="hub">The <see cref="ReferenceHub"/> to assign the display to.</param>
-        /// <param name="defaultScreen">The default <see cref="T"/> to use as a screen.</param>
-        public ScreenDisplay(ReferenceHub hub, T defaultScreen)
-            : base(hub)
-        {
-            CurrentScreen = defaultScreen;
-        }
-
-        /// <summary>
-        /// Gets a list of all <see cref="IScreenElement{T}"/>s of the display.
-        /// </summary>
-        public List<IScreenElement<T>> Elements { get; } = new();
-
-        /// <summary>
-        /// Gets or sets the current screen that the display is on.
-        /// </summary>
-        /// <remarks>Updating this does not automatically update the display.</remarks>
-        public T CurrentScreen { get; set; }
-
-        /// <inheritdoc/>
-        public override IEnumerable<IElement> GetAllElements() => Elements;
+        scrDisplay.Screens.Add(this);
     }
 
     /// <summary>
-    /// Represents a display attached to a <see cref="DisplayCoordinator"/>.
+    /// Gets the elements of this screen.
     /// </summary>
-    /// <include file='docs.xml' path='docs/members[@name="display"]/Display/*'/>
-    public class Display : DisplayBase, IElementContainer
+    public List<IElement> Elements { get; } = new();
+}
+
+/// <summary>
+/// Represents a display attached to a <see cref="DisplayCore"/> with support for <see cref="Screen"/>s.
+/// </summary>
+public class ScreenDisplay : DisplayBase
+{
+    /// <summary>
+    /// Initializes a new instance of the <see cref="ScreenDisplay"/> class.
+    /// </summary>
+    /// <param name="hub">The <see cref="ReferenceHub"/> to assign the display to.</param>
+    /// <param name="screen">The default <see cref="Screen"/> to use for this <see cref="ScreenDisplay"/>.</param>
+    public ScreenDisplay(ReferenceHub hub, Screen screen)
+        : base(hub)
     {
-        /// <summary>
-        /// Gets the ratelimit used for displaying hints.
-        /// </summary>
-        public const float HINTRATELIMIT = 0.55f;
-
-        private CoroutineHandle? rateLimitTask;
-        private bool rateLimitActive = false;
-        private bool shouldUpdate = false;
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Display"/> class.
-        /// </summary>
-        /// <param name="hub">The <see cref="ReferenceHub"/> to assign the display to.</param>
-        public Display(ReferenceHub hub)
-            : base(hub)
-        {
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Display"/> class.
-        /// </summary>
-        /// <param name="coordinator">The <see cref="DisplayCoordinator"/> to assign the display to.</param>
-        public Display(DisplayCoordinator coordinator)
-            : base(coordinator)
-        {
-        }
-
-        /// <summary>
-        /// Finalizes an instance of the <see cref="Display"/> class.
-        /// </summary>
-        ~Display()
-        {
-            if (rateLimitTask is CoroutineHandle ch)
-            {
-                Timing.KillCoroutines(ch);
-            }
-        }
-
-        /// <summary>
-        /// Gets the elements of this display.
-        /// </summary>
-        public List<IElement> Elements { get; } = new();
-
-        public void Update() => DisplayCoordinator.Get(ReferenceHub).Update();
-
-        /// <inheritdoc/>
-        public override IEnumerable<IElement> GetAllElements() => Elements.Where(x => x.Enabled);
+        CurrentScreen = screen;
     }
 
     /// <summary>
-    /// Defines the base class for all displays.
+    /// Initializes a new instance of the <see cref="ScreenDisplay"/> class.
     /// </summary>
-    public abstract class DisplayBase
+    /// <param name="coordinator">The <see cref="DisplayCore"/> to assign the display to.</param>
+    /// <param name="screen">The default <see cref="Screen"/> to use for this <see cref="ScreenDisplay"/>.</param>
+    public ScreenDisplay(DisplayCore coordinator, Screen screen)
+        : base(coordinator)
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DisplayBase"/> class.
-        /// </summary>
-        /// <param name="hub">The <see cref="ReferenceHub"/> to assign the display to.</param>
-        public DisplayBase(ReferenceHub hub)
+        CurrentScreen = screen;
+    }
+
+    /// <summary>
+    /// Gets the current screen of this display.
+    /// </summary>
+    public Screen CurrentScreen { get; private set; }
+
+    /// <summary>
+    /// Gets all of the screens of this display.
+    /// </summary>
+    public List<Screen> Screens { get; } = new();
+
+    /// <summary>
+    /// Gets the elements of this display that will be displayed regardless of screen.
+    /// </summary>
+    public List<IElement> GlobalElements { get; } = new();
+
+    /// <summary>
+    /// Sets the <see cref="CurrentScreen"/> of this display.
+    /// </summary>
+    /// <param name="screen">The <see cref="Screen"/> to set the <see cref="CurrentScreen"/> to.</param>
+    /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="screen"/> is not a <see cref="Screen"/> within <see cref="Screens"/>.</exception>
+    public void SetScreen(Screen screen)
+    {
+        if (Screens.Contains(screen))
         {
-            ReferenceHub = hub;
-            Coordinator = DisplayCoordinator.Get(hub);
+            CurrentScreen = screen;
+        }
+        else
+        {
+            throw new ArgumentOutOfRangeException("screen", "Must be a screen within the ScreenDisplay");
+        }
+    }
+
+    /// <inheritdoc/>
+    public override IEnumerable<IElement> GetAllElements()
+    {
+        foreach (IElement element in CurrentScreen.Elements.FilterDisabled())
+        {
+            yield return element;
         }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DisplayBase"/> class.
-        /// </summary>
-        /// <param name="coordinator">The <see cref="DisplayCoordinator"/> to assign the display to.</param>
-        public DisplayBase(DisplayCoordinator coordinator)
+        foreach (IElement element in GlobalElements.FilterDisabled())
         {
-            Coordinator = coordinator;
-            ReferenceHub = coordinator.Hub;
+            yield return element;
         }
+    }
+}
 
-        /// <summary>
-        /// Gets a value indicating whether or not this display is active.
-        /// </summary>
-        public bool IsActive { get; private set; } = true;
+/// <summary>
+/// Represents a display attached to a <see cref="DisplayCore"/>.
+/// </summary>
+/// <include file='docs.xml' path='docs/members[@name="display"]/Display/*'/>
+public class Display : DisplayBase, IElementContainer
+{
+    /// <summary>
+    /// Initializes a new instance of the <see cref="Display"/> class.
+    /// </summary>
+    /// <param name="hub">The <see cref="ReferenceHub"/> to assign the display to.</param>
+    public Display(ReferenceHub hub)
+        : base(hub)
+    {
+    }
 
-        /// <summary>
-        /// Gets the <see cref="ReferenceHub"/> that this display is assigned to.
-        /// </summary>
-        public ReferenceHub ReferenceHub { get; }
+    /// <summary>
+    /// Initializes a new instance of the <see cref="Display"/> class.
+    /// </summary>
+    /// <param name="coordinator">The <see cref="DisplayCore"/> to assign the display to.</param>
+    public Display(DisplayCore coordinator)
+        : base(coordinator)
+    {
+    }
 
-        /// <summary>
-        /// Gets the <see cref="DisplayCoordinator"/> that this display is attached to.
-        /// </summary>
-        public DisplayCoordinator Coordinator { get; }
+    /// <summary>
+    /// Gets the elements of this display.
+    /// </summary>
+    public List<IElement> Elements { get; } = new();
 
-        /// <summary>
-        /// Gets all of the elements of this display.
-        /// </summary>
-        /// <returns>The <see cref="IEnumerator{IElement}"/> of elements.</returns>
-        public abstract IEnumerable<IElement> GetAllElements();
+    /// <inheritdoc/>
+    public override IEnumerable<IElement> GetAllElements() => Elements.FilterDisabled();
+}
 
-        /// <summary>
-        /// Deletes this display, removing it from the player's coordinator.
-        /// </summary>
-        public void Delete()
-        {
-            Coordinator.RemoveDisplay(this);
-            IsActive = false;
-        }
+/// <summary>
+/// Defines the base class for all displays.
+/// </summary>
+public abstract class DisplayBase
+{
+    /// <summary>
+    /// Initializes a new instance of the <see cref="DisplayBase"/> class.
+    /// </summary>
+    /// <param name="hub">The <see cref="ReferenceHub"/> to assign the display to.</param>
+    public DisplayBase(ReferenceHub hub)
+    {
+        ReferenceHub = hub;
+        Coordinator = DisplayCore.Get(hub);
+    }
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="DisplayBase"/> class.
+    /// </summary>
+    /// <param name="coordinator">The <see cref="DisplayCore"/> to assign the display to.</param>
+    public DisplayBase(DisplayCore coordinator)
+    {
+        Coordinator = coordinator;
+        ReferenceHub = coordinator.Hub;
+    }
+
+    /// <summary>
+    /// Gets a value indicating whether or not this display is active.
+    /// </summary>
+    public bool IsActive { get; private set; } = true;
+
+    /// <summary>
+    /// Gets the <see cref="ReferenceHub"/> that this display is assigned to.
+    /// </summary>
+    public ReferenceHub ReferenceHub { get; }
+
+    /// <summary>
+    /// Gets the <see cref="DisplayCore"/> that this display is attached to.
+    /// </summary>
+    public DisplayCore Coordinator { get; }
+
+    /// <summary>
+    /// Gets all of the elements of this display.
+    /// </summary>
+    /// <returns>The <see cref="IEnumerator{IElement}"/> of elements.</returns>
+    public abstract IEnumerable<IElement> GetAllElements();
+
+    /// <summary>
+    /// Updates the parent <see cref="DisplayCore"/> of this <see cref="DisplayBase"/>.
+    /// </summary>
+    public void Update() => DisplayCore.Get(ReferenceHub).Update();
+
+    /// <summary>
+    /// Deletes this display, removing it from the player's coordinator.
+    /// </summary>
+    public void Delete()
+    {
+        Coordinator.RemoveDisplay(this);
+        IsActive = false;
     }
 }

@@ -1,18 +1,17 @@
-﻿namespace RueI.Enums
+﻿namespace RueI.Enums;
+
+/// <summary>
+/// Represents the style used for a color parameter.
+/// </summary>
+public enum ColorStyle
 {
     /// <summary>
-    /// Represents the style used for a color parameter.
+    /// Indicates that the color parameter is a named color.
     /// </summary>
-    public enum ColorStyle
-    {
-        /// <summary>
-        /// Indicates that the color parameter is a named color.
-        /// </summary>
-        Named,
+    Named,
 
-        /// <summary>
-        /// Indicates that the color parameter is a hex code.
-        /// </summary>
-        HexCode,
-    }
+    /// <summary>
+    /// Indicates that the color parameter is a hex code.
+    /// </summary>
+    HexCode,
 }

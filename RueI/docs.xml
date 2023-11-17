@@ -22,8 +22,9 @@
 				This example demonstrates creating and using a <see cref="ParserBuilder"/>.
 				<code>
 					Parser builder = new ParserBuilder()
-									.ImportFrom(Constants.DefaultParser)
-									.Build();
+						.ImportFrom(Constants.DefaultParser)
+						.AddTag&lt;MyCustomTag&gt;(); <!-- .AddTag<MyCustomTag>(); -->
+						.Build();
 					
 					builder.Parse("hello world!")
 				</code>

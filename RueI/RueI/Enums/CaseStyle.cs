@@ -1,23 +1,22 @@
-﻿namespace RueI.Enums
+﻿namespace RueI.Enums;
+
+/// <summary>
+/// Represents the case style of the parser.
+/// </summary>
+public enum CaseStyle
 {
     /// <summary>
-    /// Represents the case style of the parser.
+    /// Indicates that all text will be in uppercase, but lowercase characters will be slightly smaller.
     /// </summary>
-    public enum CaseStyle
-    {
-        /// <summary>
-        /// Indicates that all text will be in uppercase, but lowercase characters will be slightly smaller.
-        /// </summary>
-        Smallcaps,
+    Smallcaps,
 
-        /// <summary>
-        /// Indicates that all text will be in lowercase.
-        /// </summary>
-        Lowercase,
+    /// <summary>
+    /// Indicates that all text will be in lowercase.
+    /// </summary>
+    Lowercase,
 
-        /// <summary>
-        /// Indicates that all text will be in uppercase.
-        /// </summary>
-        Uppercase,
-    }
+    /// <summary>
+    /// Indicates that all text will be in uppercase.
+    /// </summary>
+    Uppercase,
 }

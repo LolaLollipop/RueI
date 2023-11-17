@@ -1,36 +1,35 @@
-﻿namespace RueI.Parsing.Tags.ConcreteTags
+﻿namespace RueI.Parsing.Tags.ConcreteTags;
+
+using RueI.Enums;
+using RueI.Records;
+
+/// <summary>
+/// Provides a way to handle line-height tags.
+/// </summary>
+public class LineHeightTag : MeasurementTag
 {
-    using RueI.Enums;
-    using RueI.Records;
+    private const string TAGFORMAT = "<line-height={0}>";
 
-    /// <summary>
-    /// Provides a way to handle line-height tags.
-    /// </summary>
-    public class LineHeightTag : MeasurementTag
+    /// <inheritdoc/>
+    public override string[] Names { get; } = { "line-height" };
+
+    /// <inheritdoc/>
+    public override bool HandleTag(ParserContext context, MeasurementInfo info)
     {
-        private const string TAGFORMAT = "<line-height={0}>";
+        var (value, style) = info;
 
-        /// <inheritdoc/>
-        public override string[] Names { get; } = { "line-height" };
-
-        /// <inheritdoc/>
-        public override bool HandleTag(ParserContext context, MeasurementInfo info)
+        float convertedValue = style switch
         {
-            var (value, style) = info;
+            MeasurementUnit.Percentage => value / 100 * Constants.DEFAULTSIZE,
+            MeasurementUnit.Ems => value * Constants.EMSTOPIXELS,
+            _ => value
+        };
 
-            float convertedValue = style switch
-            {
-                MeasurementUnit.Percentage => value / 100 * Constants.DEFAULTSIZE,
-                MeasurementUnit.Ems => value * Constants.EMSTOPIXELS,
-                _ => value
-            };
+        context.CurrentLineHeight = convertedValue;
+        context.ResultBuilder.AppendFormat(TAGFORMAT, convertedValue);
 
-            context.CurrentLineHeight = convertedValue;
-            context.ResultBuilder.AppendFormat(TAGFORMAT, convertedValue);
+        context.AddEndingTag<CloseLineHeightTag>();
 
-            context.AddEndingTag<CloseLineHeightTag>();
-
-            return true;
-        }
+        return true;
     }
 }
