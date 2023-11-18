@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <docs>
+	<emec>
+		<members name="updatetask">
+			<UpdateTask>
+				<example>
+					This example demonstrates simple usage of three UpdateTasks.
+					
+					<code>
+						
+					</code>
+				</example>
+			</UpdateTask>
+		</members>
+	</emec>
 	<members name="display">
 		<Display>
 			<example>

@@ -1,41 +1,40 @@
-﻿using eMEC;
+﻿namespace RueI;
+
 using System.Runtime.CompilerServices;
+using eMEC;
 
-namespace RueI
+public static class Main
 {
-    public static class Main
+    private static bool isInit = false;
+
+    public static TaskPool RoundTaskPool { get; set; } = new();
+
+    static Main()
     {
-        private static bool isInit = false;
+        isInit = true;
 
-        public static TaskPool RoundTaskPool { get; set; } = new();
+        RoundRestarting.RoundRestart.OnRestartTriggered += EventHandler.OnRestart;
+        PlayerRoles.PlayerRoleManager.OnServerRoleSet += EventHandler.OnServerRoleSet;
 
-        static Main()
+        ServerConsole.AddLog("[Info] [RueI] Thank you for using RueI!", ConsoleColor.Yellow);
+        ServerConsole.AddLog("[Info] [RueI] RueI is completely open-source and licensed under CC0", ConsoleColor.Yellow);
+        ServerConsole.AddLog("[Info] [RueI] https://github.com/Ruemena/RueI", ConsoleColor.Yellow);
+
+        try
         {
-            isInit = true;
-
-            RoundRestarting.RoundRestart.OnRestartTriggered += EventHandler.OnRestart;
-            PlayerRoles.PlayerRoleManager.OnServerRoleSet += EventHandler.OnServerRoleSet;
-
-            ServerConsole.AddLog("[Info] [RueI] Thank you for using RueI!", ConsoleColor.Yellow);
-            ServerConsole.AddLog("[Info] [RueI] RueI is completely open-source and licensed under CC0", ConsoleColor.Yellow);
-            ServerConsole.AddLog("[Info] [RueI] https://github.com/Ruemena/RueI", ConsoleColor.Yellow);
-
-            try
-            {
-                var harmony = new HarmonyLib.Harmony("com.example.patch");
-            }
-            catch(Exception)
-            {
-                ServerConsole.AddLog("[Warn] [RueI] Could not load Harmony patches.", ConsoleColor.Yellow);
-            }
+            var harmony = new HarmonyLib.Harmony("com.example.patch");
         }
-
-        public static void EnsureInit()
+        catch(Exception)
         {
-            if (!isInit)
-            {
-                RuntimeHelpers.RunClassConstructor(typeof(Main).TypeHandle);
-            }
+            ServerConsole.AddLog("[Warn] [RueI] Could not load Harmony patches.", ConsoleColor.Yellow);
+        }
+    }
+
+    public static void EnsureInit()
+    {
+        if (!isInit)
+        {
+            RuntimeHelpers.RunClassConstructor(typeof(Main).TypeHandle);
         }
     }
 }

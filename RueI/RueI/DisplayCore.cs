@@ -12,7 +12,7 @@ using RueI.Records;
 /// </summary>
 public class DisplayCore
 {
-    private List<DisplayBase> displays = new();
+    private readonly List<DisplayBase> displays = new();
 
     static DisplayCore()
     {
@@ -26,7 +26,7 @@ public class DisplayCore
     {
         this.Hub = hub;
 
-        DisplayCoordinators.Add(hub, this);
+        DisplayCores.Add(hub, this);
         Scheduler = new(this);
     }
 
@@ -36,9 +36,9 @@ public class DisplayCore
     public Scheduler Scheduler { get; }
 
     /// <summary>
-    /// Gets a dictionary containing the DisplayCoordinators for each ReferenceHub.
+    /// Gets a dictionary containing the DisplayCores for each ReferenceHub.
     /// </summary>
-    internal static Dictionary<ReferenceHub, DisplayCore> DisplayCoordinators { get; } = new();
+    internal static Dictionary<ReferenceHub, DisplayCore> DisplayCores { get; } = new();
 
     /// <summary>
     /// Gets the <see cref="ReferenceHub"/> that this display is for.
@@ -57,7 +57,7 @@ public class DisplayCore
     /// <returns>The DisplayCore.</returns>
     public static DisplayCore Get(ReferenceHub hub)
     {
-        if (DisplayCoordinators.TryGetValue(hub, out DisplayCore value))
+        if (DisplayCores.TryGetValue(hub, out DisplayCore value))
         {
             return value;
         }
@@ -68,7 +68,7 @@ public class DisplayCore
     }
 
     /// <summary>
-    /// Updates this display.
+    /// Updates this <see cref="DisplayCore"/>.
     /// </summary>
     /// <param name="priority">The priority of the update - defaults to 100.</param>
     public void Update(int priority = 100)
@@ -86,8 +86,7 @@ public class DisplayCore
     /// </summary>
     internal void InternalUpdate()
     {
-        string text = ParseElements();
-        ServerConsole.AddLog(text);
+        string text = ElemCombiner.Combine(GetAllElements());
         Hub.connectionToClient.Send(new HintMessage(new TextHint(text, new HintParameter[] { new StringHintParameter(text) }, null, 99999)));
     }
 
@@ -108,57 +107,8 @@ public class DisplayCore
     /// </summary>
     private static void OnRestart()
     {
-        DisplayCoordinators.Clear();
+        DisplayCores.Clear();
     }
 
     private IEnumerable<IElement> GetAllElements() => displays.SelectMany(x => x.GetAllElements());
-
-    private string ParseElements()
-    {
-        List<IElement> elements = GetAllElements().ToPooledList();
-
-        if (!elements.Any())
-        {
-            return string.Empty;
-        }
-
-        PluginAPI.Core.Log.Info(elements.Count.ToString());
-        StringBuilder sb = StringBuilderPool.Shared.Rent();
-        float totalOffset = 0;
-
-        float lastPosition = 0;
-        float lastOffset = 0;
-
-        elements.Sort();
-
-        for (int i = 0; i < elements.Count; i++)
-        {
-            IElement curElement = elements[i];
-
-            ParsedData parsedData = curElement.ParsedData;
-
-            float funcPos = curElement.GetFunctionalPosition();
-
-            if (i != 0)
-            {
-                float calcedOffset = ElementHelpers.CalculateOffset(lastPosition, lastOffset, funcPos);
-                sb.Append($"<line-height={calcedOffset}px>\n");
-                totalOffset += calcedOffset;
-            }
-            else
-            {
-                totalOffset += funcPos;
-            }
-
-            sb.Append(parsedData.Content);
-            sb.Append(Constants.TAGCLOSER);
-
-            totalOffset += parsedData.Offset;
-            lastPosition = funcPos;
-            lastOffset = parsedData.Offset;
-        }
-
-        ListPool<IElement>.Shared.Return(elements);
-        return $"<line-height={totalOffset}px>\n" + StringBuilderPool.Shared.ToStringReturn(sb);
-    }
 }

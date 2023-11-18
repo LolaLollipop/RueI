@@ -1,16 +1,24 @@
 ﻿namespace RueI.Parsing.Tags;
 
 /// <summary>
-/// Provides a way to handle singletons of tags.
+/// Provides a number of helper functions for <see cref="RichTextTag"/>s.
 /// </summary>
-/// <typeparam name="T">The <see cref="RichTextTag"/> type to share.</typeparam>
-/// <remarks>
-/// This class provides a way to guarantee that only one instance of a tag will ever be used by the parser,
-/// since tags are not static to support inheritance but must act similar to it.
-/// </remarks>
 public static class TagHelpers
 {
-    // TODO: document
+    /// <summary>
+    /// Validates and extracts the text from inside quotations for tag parameters, or returns the original string.
+    /// </summary>
+    /// <param name="str">The <see cref="string"/> to extract the quotations from.</param>
+    /// <returns>The string with the quotes removed, or null if the string is invalid.</returns>
+    /// <example>
+    /// This code demonstrates the behavior of <see cref="ExtractFromQuotations(string)"/>.
+    /// <code>
+    /// ExtractFromQuotations("\"hello world\"") // -> hello world
+    /// ExtractFromQuotations("hello world") // -> hello world
+    /// ExtractFromQuotations("\"hello world") // -> null
+    /// ExtractFromQuotations("hello world\"") // -> null
+    /// </code>
+    /// </example>
     public static string? ExtractFromQuotations(string str)
     {
         return (str.StartsWith("\""), str.EndsWith("\"")) switch
