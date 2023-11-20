@@ -9,8 +9,8 @@
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
-      <meta name="docfx:navrel" content="../toc.json">
-      <meta name="docfx:tocrel" content="toc.json">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
       
       <meta name="docfx:rel" content="../">
       
@@ -86,6 +86,14 @@
         <article data-uid="">
 <h1 id="getting-started">Getting Started</h1>
 
+<p>this guide assumes that you have a basic level of knowledge with c#.</p>
+<p>there are two main ways of using RueI: through a normal dependency or through reflection.</p>
+<ul>
+<li>with a normal dependency, you include RueI as a dependency in your project. the advantages of this are that it gives you type safety, it is significantly faster, and it is just overall much easier to use. however, if someone does <em>not</em> have RueI installed, then your plugin will stop working. this makes it ideal for plugins that rely on RueI heavily, or if you're creating a plugin for your own use.</li>
+<li>with reflection, you can dynamically add support for RueI, meaning that your plugin works even if someone doesn't have RueI installed.</li>
+</ul>
+<p>this guide will cover how to use RueI using the first option, as a normal dependency.</p>
+<h3 id="installing-ruei">installing RueI</h3>
 
 </article>
 
