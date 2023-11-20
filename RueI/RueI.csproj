@@ -11,6 +11,13 @@
 	<Version>2.0.0</Version>
 	<Authors>Rue &lt;3, Override (some help)</Authors>
 	<GenerateDocumentationFile>False</GenerateDocumentationFile>
+	<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	<Description>hint framework for scp:sl</Description>
+	<RepositoryUrl>https://github.com/Ruemena/RueI</RepositoryUrl>
+	<PackageProjectUrl>https://github.com/Ruemena/RueI</PackageProjectUrl>
+	<PackageTags>scpsl</PackageTags>
+	<AssemblyVersion>2.0.0</AssemblyVersion>
+	<FileVersion>2.0.0</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
