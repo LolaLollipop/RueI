@@ -30,7 +30,8 @@ public class Parser
                 if (tagBuffer.TryGetValue(name, out List<RichTextTag> tagsOfName))
                 {
                     tagsOfName.Add(tag);
-                } else
+                }
+                else
                 {
                     List<RichTextTag> richTextTags = new();
                     tagBuffer.Add(name, richTextTags);
@@ -41,8 +42,6 @@ public class Parser
 
         Dictionary<string, ReadOnlyCollection<RichTextTag>> dictionary = tagBuffer.ToDictionary(kv => kv.Key, kv => new ReadOnlyCollection<RichTextTag>(kv.Value));
         Tags = new(dictionary);
-
-        //Tags = (Lookup<string, RichTextTag>)tags.SelectMany(tag => tag.Names.Select(name => new { Name = name, Tag = tag })).ToLookup(x => x.Name, x => x.Tag);
     }
 
     /// <summary>
@@ -121,7 +120,7 @@ public class Parser
             }
             else if (currentState == ParserState.DescendingTag)
             {
-                if ((ch > '\u0060' && ch < '\u007B') || ch == '-' || ch == '\\') // descend deeper into node
+                if ((ch > '\u0060' && ch < '\u007B') || ch == '-' || ch == '\\')
                 {
                     if (tagBufferSize > Constants.MAXTAGNAMESIZE)
                     {
@@ -129,7 +128,7 @@ public class Parser
                     }
 
                     tagBuffer.Append(ch);
-                    continue;
+                    continue; // do NOT add as a character
                 }
                 else if (ch == '>')
                 {
@@ -183,7 +182,8 @@ public class Parser
                         delimiter = null;
                         currentState = ParserState.CollectingTags;
                         tagBufferSize = 0;
-                    } else
+                    }
+                    else
                     {
                         FailTagMatch();
                     }
@@ -251,7 +251,7 @@ public class Parser
 
         if (Constants.CharacterLengths.TryGetValue(functionalCase, out float chSize))
         {
-            float multiplier = context.Size / 35;
+            float multiplier = context.Size / Constants.DEFAULTSIZE;
             if (context.CurrentCase == CaseStyle.Smallcaps && char.IsLower(ch))
             {
                 multiplier *= 0.8f;
@@ -345,29 +345,11 @@ public class Parser
         else if (context.IsBold)
         {
             context.ResultBuilder.Append("<b>");
-        } else
+        }
+        else
         {
             context.ResultBuilder.Append("</b>");
         }
-    }
-
-    /// <summary>
-    /// Extracts the tags of an <see cref="IEnumerable{T}"/> containing <see cref="RichTextTag"/>s.
-    /// </summary>
-    /// <param name="tags">The <see cref="IEnumerable{T}"/> containing <see cref="RichTextTag"/>s.</param>
-    /// <returns>A new dictionary containing the modified values.</returns>
-    private Dictionary<string, RichTextTag> ExtractTagsToPairs(IEnumerable<RichTextTag> tags)
-    {
-        Dictionary<string, RichTextTag> dict = new();
-        foreach (var tag in tags)
-        {
-            foreach (string name in tag.Names)
-            {
-                dict.Add(name, tag);
-            }
-        }
-
-        return dict;
     }
 
     private bool TryGetBestMatch(string name, TagStyle style, out RichTextTag? tag)
@@ -382,6 +364,20 @@ public class Parser
                 tag = chosenTag;
                 return true;
             }
+        }
+
+        return false;
+    }
+
+    private bool TryGetBestMatch(IEnumerable<RichTextTag> tags, TagStyle style, out RichTextTag? tag)
+    {
+        tag = null;
+
+        RichTextTag? chosenTag = tags.FirstOrDefault(x => x.TagStyle == style);
+        if (chosenTag != null)
+        {
+            tag = chosenTag;
+            return true;
         }
 
         return false;

@@ -9,6 +9,8 @@ public static class Main
 
     public static TaskPool RoundTaskPool { get; set; } = new();
 
+    public static Version Version = new(1, 0, 0);
+
     static Main()
     {
         isInit = true;
@@ -16,7 +18,7 @@ public static class Main
         RoundRestarting.RoundRestart.OnRestartTriggered += EventHandler.OnRestart;
         PlayerRoles.PlayerRoleManager.OnServerRoleSet += EventHandler.OnServerRoleSet;
 
-        ServerConsole.AddLog("[Info] [RueI] Thank you for using RueI!", ConsoleColor.Yellow);
+        ServerConsole.AddLog($"[Info] [RueI] Thank you for using RueI! Running v{Version}", ConsoleColor.Yellow);
         ServerConsole.AddLog("[Info] [RueI] RueI is completely open-source and licensed under CC0", ConsoleColor.Yellow);
         ServerConsole.AddLog("[Info] [RueI] https://github.com/Ruemena/RueI", ConsoleColor.Yellow);
 

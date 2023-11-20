@@ -28,8 +28,6 @@ public class SizeTag : MeasurementTag
         context.CurrentLineHeight = Constants.DEFAULTHEIGHT * (value / Constants.DEFAULTSIZE);
         context.ResultBuilder.AppendFormat(TAGFORMAT, value);
 
-
-
         return true;
     }
 }

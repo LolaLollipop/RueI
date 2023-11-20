@@ -8,7 +8,7 @@ using RueI.Enums;
 public abstract class NoParamsTag : RichTextTag
 {
     /// <inheritdoc/>
-    public override TagStyle TagStyle { get; } = TagStyle.NoParams;
+    public sealed override TagStyle TagStyle { get; } = TagStyle.NoParams;
 
     /// <inheritdoc/>
     public sealed override bool HandleTag(ParserContext context, string parameters) => HandleTag(context, string.Empty);

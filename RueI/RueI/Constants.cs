@@ -30,7 +30,7 @@ public static class Constants
     /// <summary>
     /// Gets the pixel increase for bold characters.
     /// </summary>
-    public const float BOLDINCREASE = 2.45f * BETTER;
+    public const float BOLDINCREASE = 2.429f;
 
     /// <summary>
     /// Gets the width of the display area (in pixels).
@@ -78,6 +78,18 @@ public static class Constants
         4,
         6,
         8,
+    });
+
+    /// <summary>
+    /// Gets a <see cref="ReadOnlyCollection{T}"/> of valid alignments for <see cref="AlignTag"/>.
+    /// </summary>
+    public static ReadOnlyCollection<string> Alignments { get; } = new(new string[]
+    {
+        "left",
+        "center",
+        "right",
+        "justified",
+        "flush",
     });
 
     public static ReadOnlyCollection<string> Colors { get; } = new(new string[]

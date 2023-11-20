@@ -24,7 +24,6 @@ public static class ElemCombiner
             return string.Empty;
         }
 
-        PluginAPI.Core.Log.Info(elements.Count.ToString());
         StringBuilder sb = StringBuilderPool.Shared.Rent();
         float totalOffset = 0;
 
@@ -43,7 +42,7 @@ public static class ElemCombiner
 
             if (i != 0)
             {
-                float calcedOffset = ElementHelpers.CalculateOffset(lastPosition, lastOffset, funcPos);
+                float calcedOffset = CalculateOffset(lastPosition, lastOffset, funcPos);
                 sb.Append($"<line-height={calcedOffset}px>\n");
                 totalOffset += calcedOffset;
             }
@@ -60,6 +59,20 @@ public static class ElemCombiner
         }
 
         ListPool<IElement>.Shared.Return(elements);
-        return $"<line-height={totalOffset}px>\n" + StringBuilderPool.Shared.ToStringReturn(sb);
+        sb.Insert(0, "<line-height={totalOffset}px>\n");
+        return StringBuilderPool.Shared.ToStringReturn(sb);
+    }
+
+    /// <summary>
+    /// Calculates the offset for two hints.
+    /// </summary>
+    /// <param name="hintOnePos">The first hint's vertical position.</param>
+    /// <param name="hintOneTotalLines">The first hint's total line-height, excluding the vertical position.</param>
+    /// <param name="hintTwoPos">The second hint's vertical position.</param>
+    /// <returns>A float indicating the new offset.</returns>
+    public static float CalculateOffset(float hintOnePos, float hintOneTotalLines, float hintTwoPos)
+    {
+        float calc = (hintOnePos + (2 * hintOneTotalLines)) - hintTwoPos;
+        return calc / -2;
     }
 }

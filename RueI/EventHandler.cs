@@ -24,7 +24,7 @@ public static class EventHandler
         if (reason == RoleChangeReason.Died)
         {
 
-        } 
+        }
         else if (reason == RoleChangeReason.Destroyed)
         {
 

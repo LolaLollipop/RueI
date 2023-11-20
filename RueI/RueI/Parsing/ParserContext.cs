@@ -3,6 +3,7 @@ namespace RueI.Parsing;
 using System.Text;
 using NorthwoodLib.Pools;
 using RueI.Parsing.Tags;
+using RueI.Parsing.Tags.ConcreteTags;
 
 /// <summary>
 /// Describes the state of a parser at a time.
@@ -80,7 +81,7 @@ public class ParserContext : TextInfo, IDisposable
     }
 
     /// <summary>
-    /// Applies the <see cref="endingTags"/> tags to this <see cref="ParserContext"/>.
+    /// Applies the <see cref="endingTags"/> and closing <see cref="SizeTags"/> tags to this <see cref="ParserContext"/>.
     /// </summary>
     internal void ApplyClosingTags()
     {
@@ -89,6 +90,12 @@ public class ParserContext : TextInfo, IDisposable
             tag.HandleTag(this);
         }
 
+        foreach (float t in SizeTags)
+        {
+            SharedTag<CloseSizeTag>.Singleton.HandleTag(this);
+        }
+
+        SizeTags.Clear();
         endingTags.Clear();
     }
 

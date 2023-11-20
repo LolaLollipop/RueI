@@ -11,13 +11,7 @@ public abstract class MeasurementTag : RichTextTag
     /// <inheritdoc/>
     public sealed override TagStyle TagStyle { get; } = TagStyle.ValueParam;
 
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="context"></param>
-    /// <param name="parameters"></param>
-    /// <returns></returns>
-    /// <exception cref="NotImplementedException"></exception>
+    /// <inheritdoc/>
     public sealed override bool HandleTag(ParserContext context, string content)
     {
         if (MeasurementInfo.TryParse(content, out MeasurementInfo info))
