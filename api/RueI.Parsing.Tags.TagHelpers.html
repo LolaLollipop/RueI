@@ -91,7 +91,7 @@
 
   <h1 id="RueI_Parsing_Tags_TagHelpers" data-uid="RueI.Parsing.Tags.TagHelpers" class="text-break">
     Class TagHelpers
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/Tags/TagHelpers.cs/#L11"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/Tags/TagHelpers.cs/#L6"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -99,7 +99,7 @@
   <dl><dt>Assembly</dt><dd>RueI.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Provides a way to handle singletons of tags.</p>
+  <div class="markdown summary"><p>Provides a number of helper functions for <a class="xref" href="RueI.Parsing.RichTextTag.html">RichTextTag</a>s.</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -149,10 +149,6 @@
 
 
 
-  <h2 id="RueI_Parsing_Tags_TagHelpers_remarks">Remarks</h2>
-  <div class="markdown level0 remarks"><p>This class provides a way to guarantee that only one instance of a tag will ever be used by the parser,
-since tags are not static to support inheritance but must act similar to it.</p>
-</div>
 
 
   <h2 class="section" id="methods">Methods
@@ -163,10 +159,11 @@ since tags are not static to support inheritance but must act similar to it.</p>
 
   <h3 id="RueI_Parsing_Tags_TagHelpers_ExtractFromQuotations_System_String_" data-uid="RueI.Parsing.Tags.TagHelpers.ExtractFromQuotations(System.String)">
   ExtractFromQuotations(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/Tags/TagHelpers.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/Tags/TagHelpers.cs/#L22"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Validates and extracts the text from inside quotations for tag parameters, or returns the original string.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -176,19 +173,28 @@ since tags are not static to support inheritance but must act similar to it.</p>
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>str</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> to extract the quotations from.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>The string with the quotes removed, or null if the string is invalid.</p>
+</dd>
   </dl>
 
 
 
 
 
+
+  <h4 class="section" id="RueI_Parsing_Tags_TagHelpers_ExtractFromQuotations_System_String__examples">Examples</h4>
+  <p>This code demonstrates the behavior of <a class="xref" href="RueI.Parsing.Tags.TagHelpers.html#RueI_Parsing_Tags_TagHelpers_ExtractFromQuotations_System_String_">ExtractFromQuotations(string)</a>.</p>
+<pre><code class="lang-csharp">ExtractFromQuotations("\"hello world\"") // -&gt; hello world
+ExtractFromQuotations("hello world") // -&gt; hello world
+ExtractFromQuotations("\"hello world") // -&gt; null
+ExtractFromQuotations("hello world\"") // -&gt; null</code></pre>
 
 
 
@@ -199,7 +205,7 @@ since tags are not static to support inheritance but must act similar to it.</p>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/Tags/TagHelpers.cs/#L11" class="edit-link">Edit this page</a>
+          <a href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/Tags/TagHelpers.cs/#L6" class="edit-link">Edit this page</a>
         </div>
 
 

@@ -13,6 +13,19 @@ references:
   commentId: T:RueI.Constants
   fullName: RueI.Constants
   nameWithType: Constants
+- uid: RueI.Constants.Alignments
+  name: Alignments
+  href: api/RueI.Constants.html#RueI_Constants_Alignments
+  commentId: P:RueI.Constants.Alignments
+  fullName: RueI.Constants.Alignments
+  nameWithType: Constants.Alignments
+- uid: RueI.Constants.Alignments*
+  name: Alignments
+  href: api/RueI.Constants.html#RueI_Constants_Alignments_
+  commentId: Overload:RueI.Constants.Alignments
+  isSpec: "True"
+  fullName: RueI.Constants.Alignments
+  nameWithType: Constants.Alignments
 - uid: RueI.Constants.BOLDINCREASE
   name: BOLDINCREASE
   href: api/RueI.Constants.html#RueI_Constants_BOLDINCREASE
@@ -113,19 +126,6 @@ references:
   commentId: F:RueI.Constants.MAXTAGNAMESIZE
   fullName: RueI.Constants.MAXTAGNAMESIZE
   nameWithType: Constants.MAXTAGNAMESIZE
-- uid: RueI.Constants.OldCharacterLengths
-  name: OldCharacterLengths
-  href: api/RueI.Constants.html#RueI_Constants_OldCharacterLengths
-  commentId: P:RueI.Constants.OldCharacterLengths
-  fullName: RueI.Constants.OldCharacterLengths
-  nameWithType: Constants.OldCharacterLengths
-- uid: RueI.Constants.OldCharacterLengths*
-  name: OldCharacterLengths
-  href: api/RueI.Constants.html#RueI_Constants_OldCharacterLengths_
-  commentId: Overload:RueI.Constants.OldCharacterLengths
-  isSpec: "True"
-  fullName: RueI.Constants.OldCharacterLengths
-  nameWithType: Constants.OldCharacterLengths
 - uid: RueI.Constants.Parser
   name: Parser
   href: api/RueI.Constants.html#RueI_Constants_Parser
@@ -139,12 +139,6 @@ references:
   isSpec: "True"
   fullName: RueI.Constants.Parser
   nameWithType: Constants.Parser
-- uid: RueI.Constants.TAGCLOSER
-  name: TAGCLOSER
-  href: api/RueI.Constants.html#RueI_Constants_TAGCLOSER
-  commentId: F:RueI.Constants.TAGCLOSER
-  fullName: RueI.Constants.TAGCLOSER
-  nameWithType: Constants.TAGCLOSER
 - uid: RueI.Constants.ValidColorSizes
   name: ValidColorSizes
   href: api/RueI.Constants.html#RueI_Constants_ValidColorSizes
@@ -679,6 +673,44 @@ references:
   isSpec: "True"
   fullName: RueI.DynamicElement.ZIndex
   nameWithType: DynamicElement.ZIndex
+- uid: RueI.ElemCombiner
+  name: ElemCombiner
+  href: api/RueI.ElemCombiner.html
+  commentId: T:RueI.ElemCombiner
+  fullName: RueI.ElemCombiner
+  nameWithType: ElemCombiner
+- uid: RueI.ElemCombiner.CalculateOffset(System.Single,System.Single,System.Single)
+  name: CalculateOffset(float, float, float)
+  href: api/RueI.ElemCombiner.html#RueI_ElemCombiner_CalculateOffset_System_Single_System_Single_System_Single_
+  commentId: M:RueI.ElemCombiner.CalculateOffset(System.Single,System.Single,System.Single)
+  name.vb: CalculateOffset(Single, Single, Single)
+  fullName: RueI.ElemCombiner.CalculateOffset(float, float, float)
+  fullName.vb: RueI.ElemCombiner.CalculateOffset(Single, Single, Single)
+  nameWithType: ElemCombiner.CalculateOffset(float, float, float)
+  nameWithType.vb: ElemCombiner.CalculateOffset(Single, Single, Single)
+- uid: RueI.ElemCombiner.CalculateOffset*
+  name: CalculateOffset
+  href: api/RueI.ElemCombiner.html#RueI_ElemCombiner_CalculateOffset_
+  commentId: Overload:RueI.ElemCombiner.CalculateOffset
+  isSpec: "True"
+  fullName: RueI.ElemCombiner.CalculateOffset
+  nameWithType: ElemCombiner.CalculateOffset
+- uid: RueI.ElemCombiner.Combine(System.Collections.Generic.IEnumerable{RueI.IElement})
+  name: Combine(IEnumerable<IElement>)
+  href: api/RueI.ElemCombiner.html#RueI_ElemCombiner_Combine_System_Collections_Generic_IEnumerable_RueI_IElement__
+  commentId: M:RueI.ElemCombiner.Combine(System.Collections.Generic.IEnumerable{RueI.IElement})
+  name.vb: Combine(IEnumerable(Of IElement))
+  fullName: RueI.ElemCombiner.Combine(System.Collections.Generic.IEnumerable<RueI.IElement>)
+  fullName.vb: RueI.ElemCombiner.Combine(System.Collections.Generic.IEnumerable(Of RueI.IElement))
+  nameWithType: ElemCombiner.Combine(IEnumerable<IElement>)
+  nameWithType.vb: ElemCombiner.Combine(IEnumerable(Of IElement))
+- uid: RueI.ElemCombiner.Combine*
+  name: Combine
+  href: api/RueI.ElemCombiner.html#RueI_ElemCombiner_Combine_
+  commentId: Overload:RueI.ElemCombiner.Combine
+  isSpec: "True"
+  fullName: RueI.ElemCombiner.Combine
+  nameWithType: ElemCombiner.Combine
 - uid: RueI.Enums
   name: RueI.Enums
   href: api/RueI.Enums.html
@@ -989,22 +1021,6 @@ references:
   isSpec: "True"
   fullName: RueI.Extensions.ElementHelpers.AddTo
   nameWithType: ElementHelpers.AddTo
-- uid: RueI.Extensions.ElementHelpers.CalculateOffset(System.Single,System.Single,System.Single)
-  name: CalculateOffset(float, float, float)
-  href: api/RueI.Extensions.ElementHelpers.html#RueI_Extensions_ElementHelpers_CalculateOffset_System_Single_System_Single_System_Single_
-  commentId: M:RueI.Extensions.ElementHelpers.CalculateOffset(System.Single,System.Single,System.Single)
-  name.vb: CalculateOffset(Single, Single, Single)
-  fullName: RueI.Extensions.ElementHelpers.CalculateOffset(float, float, float)
-  fullName.vb: RueI.Extensions.ElementHelpers.CalculateOffset(Single, Single, Single)
-  nameWithType: ElementHelpers.CalculateOffset(float, float, float)
-  nameWithType.vb: ElementHelpers.CalculateOffset(Single, Single, Single)
-- uid: RueI.Extensions.ElementHelpers.CalculateOffset*
-  name: CalculateOffset
-  href: api/RueI.Extensions.ElementHelpers.html#RueI_Extensions_ElementHelpers_CalculateOffset_
-  commentId: Overload:RueI.Extensions.ElementHelpers.CalculateOffset
-  isSpec: "True"
-  fullName: RueI.Extensions.ElementHelpers.CalculateOffset
-  nameWithType: ElementHelpers.CalculateOffset
 - uid: RueI.Extensions.ElementHelpers.FilterDisabled(System.Collections.Generic.IEnumerable{RueI.IElement})
   name: FilterDisabled(IEnumerable<IElement>)
   href: api/RueI.Extensions.ElementHelpers.html#RueI_Extensions_ElementHelpers_FilterDisabled_System_Collections_Generic_IEnumerable_RueI_IElement__
@@ -2067,6 +2083,12 @@ references:
   isSpec: "True"
   fullName: RueI.Main.RoundTaskPool
   nameWithType: Main.RoundTaskPool
+- uid: RueI.Main.Version
+  name: Version
+  href: api/RueI.Main.html#RueI_Main_Version
+  commentId: F:RueI.Main.Version
+  fullName: RueI.Main.Version
+  nameWithType: Main.Version
 - uid: RueI.Parser
   name: Parser
   href: api/RueI.Parser.html
@@ -2236,6 +2258,83 @@ references:
   commentId: N:RueI.Parsing
   fullName: RueI.Parsing
   nameWithType: RueI.Parsing
+- uid: RueI.Parsing.ClosingTag`1
+  name: ClosingTag<T>
+  href: api/RueI.Parsing.ClosingTag-1.html
+  commentId: T:RueI.Parsing.ClosingTag`1
+  name.vb: ClosingTag(Of T)
+  fullName: RueI.Parsing.ClosingTag<T>
+  fullName.vb: RueI.Parsing.ClosingTag(Of T)
+  nameWithType: ClosingTag<T>
+  nameWithType.vb: ClosingTag(Of T)
+- uid: RueI.Parsing.ClosingTag`1.ApplyTo(RueI.Parsing.ParserContext)
+  name: ApplyTo(ParserContext)
+  href: api/RueI.Parsing.ClosingTag-1.html#RueI_Parsing_ClosingTag_1_ApplyTo_RueI_Parsing_ParserContext_
+  commentId: M:RueI.Parsing.ClosingTag`1.ApplyTo(RueI.Parsing.ParserContext)
+  fullName: RueI.Parsing.ClosingTag<T>.ApplyTo(RueI.Parsing.ParserContext)
+  fullName.vb: RueI.Parsing.ClosingTag(Of T).ApplyTo(RueI.Parsing.ParserContext)
+  nameWithType: ClosingTag<T>.ApplyTo(ParserContext)
+  nameWithType.vb: ClosingTag(Of T).ApplyTo(ParserContext)
+- uid: RueI.Parsing.ClosingTag`1.ApplyTo*
+  name: ApplyTo
+  href: api/RueI.Parsing.ClosingTag-1.html#RueI_Parsing_ClosingTag_1_ApplyTo_
+  commentId: Overload:RueI.Parsing.ClosingTag`1.ApplyTo
+  isSpec: "True"
+  fullName: RueI.Parsing.ClosingTag<T>.ApplyTo
+  fullName.vb: RueI.Parsing.ClosingTag(Of T).ApplyTo
+  nameWithType: ClosingTag<T>.ApplyTo
+  nameWithType.vb: ClosingTag(Of T).ApplyTo
+- uid: RueI.Parsing.ClosingTag`1.HandleTag(RueI.Parsing.ParserContext)
+  name: HandleTag(ParserContext)
+  href: api/RueI.Parsing.ClosingTag-1.html#RueI_Parsing_ClosingTag_1_HandleTag_RueI_Parsing_ParserContext_
+  commentId: M:RueI.Parsing.ClosingTag`1.HandleTag(RueI.Parsing.ParserContext)
+  fullName: RueI.Parsing.ClosingTag<T>.HandleTag(RueI.Parsing.ParserContext)
+  fullName.vb: RueI.Parsing.ClosingTag(Of T).HandleTag(RueI.Parsing.ParserContext)
+  nameWithType: ClosingTag<T>.HandleTag(ParserContext)
+  nameWithType.vb: ClosingTag(Of T).HandleTag(ParserContext)
+- uid: RueI.Parsing.ClosingTag`1.HandleTag*
+  name: HandleTag
+  href: api/RueI.Parsing.ClosingTag-1.html#RueI_Parsing_ClosingTag_1_HandleTag_
+  commentId: Overload:RueI.Parsing.ClosingTag`1.HandleTag
+  isSpec: "True"
+  fullName: RueI.Parsing.ClosingTag<T>.HandleTag
+  fullName.vb: RueI.Parsing.ClosingTag(Of T).HandleTag
+  nameWithType: ClosingTag<T>.HandleTag
+  nameWithType.vb: ClosingTag(Of T).HandleTag
+- uid: RueI.Parsing.ClosingTag`1.Name
+  name: Name
+  href: api/RueI.Parsing.ClosingTag-1.html#RueI_Parsing_ClosingTag_1_Name
+  commentId: P:RueI.Parsing.ClosingTag`1.Name
+  fullName: RueI.Parsing.ClosingTag<T>.Name
+  fullName.vb: RueI.Parsing.ClosingTag(Of T).Name
+  nameWithType: ClosingTag<T>.Name
+  nameWithType.vb: ClosingTag(Of T).Name
+- uid: RueI.Parsing.ClosingTag`1.Name*
+  name: Name
+  href: api/RueI.Parsing.ClosingTag-1.html#RueI_Parsing_ClosingTag_1_Name_
+  commentId: Overload:RueI.Parsing.ClosingTag`1.Name
+  isSpec: "True"
+  fullName: RueI.Parsing.ClosingTag<T>.Name
+  fullName.vb: RueI.Parsing.ClosingTag(Of T).Name
+  nameWithType: ClosingTag<T>.Name
+  nameWithType.vb: ClosingTag(Of T).Name
+- uid: RueI.Parsing.ClosingTag`1.Names
+  name: Names
+  href: api/RueI.Parsing.ClosingTag-1.html#RueI_Parsing_ClosingTag_1_Names
+  commentId: P:RueI.Parsing.ClosingTag`1.Names
+  fullName: RueI.Parsing.ClosingTag<T>.Names
+  fullName.vb: RueI.Parsing.ClosingTag(Of T).Names
+  nameWithType: ClosingTag<T>.Names
+  nameWithType.vb: ClosingTag(Of T).Names
+- uid: RueI.Parsing.ClosingTag`1.Names*
+  name: Names
+  href: api/RueI.Parsing.ClosingTag-1.html#RueI_Parsing_ClosingTag_1_Names_
+  commentId: Overload:RueI.Parsing.ClosingTag`1.Names
+  isSpec: "True"
+  fullName: RueI.Parsing.ClosingTag<T>.Names
+  fullName.vb: RueI.Parsing.ClosingTag(Of T).Names
+  nameWithType: ClosingTag<T>.Names
+  nameWithType.vb: ClosingTag(Of T).Names
 - uid: RueI.Parsing.NoParamsTag
   name: NoParamsTag
   href: api/RueI.Parsing.NoParamsTag.html
@@ -2492,38 +2591,239 @@ references:
   commentId: N:RueI.Parsing.Tags.ConcreteTags
   fullName: RueI.Parsing.Tags.ConcreteTags
   nameWithType: RueI.Parsing.Tags.ConcreteTags
+- uid: RueI.Parsing.Tags.ConcreteTags.AlignTag
+  name: AlignTag
+  href: api/RueI.Parsing.Tags.ConcreteTags.AlignTag.html
+  commentId: T:RueI.Parsing.Tags.ConcreteTags.AlignTag
+  fullName: RueI.Parsing.Tags.ConcreteTags.AlignTag
+  nameWithType: AlignTag
+- uid: RueI.Parsing.Tags.ConcreteTags.AlignTag.HandleTag(RueI.Parsing.ParserContext,System.String)
+  name: HandleTag(ParserContext, string)
+  href: api/RueI.Parsing.Tags.ConcreteTags.AlignTag.html#RueI_Parsing_Tags_ConcreteTags_AlignTag_HandleTag_RueI_Parsing_ParserContext_System_String_
+  commentId: M:RueI.Parsing.Tags.ConcreteTags.AlignTag.HandleTag(RueI.Parsing.ParserContext,System.String)
+  name.vb: HandleTag(ParserContext, String)
+  fullName: RueI.Parsing.Tags.ConcreteTags.AlignTag.HandleTag(RueI.Parsing.ParserContext, string)
+  fullName.vb: RueI.Parsing.Tags.ConcreteTags.AlignTag.HandleTag(RueI.Parsing.ParserContext, String)
+  nameWithType: AlignTag.HandleTag(ParserContext, string)
+  nameWithType.vb: AlignTag.HandleTag(ParserContext, String)
+- uid: RueI.Parsing.Tags.ConcreteTags.AlignTag.HandleTag*
+  name: HandleTag
+  href: api/RueI.Parsing.Tags.ConcreteTags.AlignTag.html#RueI_Parsing_Tags_ConcreteTags_AlignTag_HandleTag_
+  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.AlignTag.HandleTag
+  isSpec: "True"
+  fullName: RueI.Parsing.Tags.ConcreteTags.AlignTag.HandleTag
+  nameWithType: AlignTag.HandleTag
+- uid: RueI.Parsing.Tags.ConcreteTags.AlignTag.Names
+  name: Names
+  href: api/RueI.Parsing.Tags.ConcreteTags.AlignTag.html#RueI_Parsing_Tags_ConcreteTags_AlignTag_Names
+  commentId: P:RueI.Parsing.Tags.ConcreteTags.AlignTag.Names
+  fullName: RueI.Parsing.Tags.ConcreteTags.AlignTag.Names
+  nameWithType: AlignTag.Names
+- uid: RueI.Parsing.Tags.ConcreteTags.AlignTag.Names*
+  name: Names
+  href: api/RueI.Parsing.Tags.ConcreteTags.AlignTag.html#RueI_Parsing_Tags_ConcreteTags_AlignTag_Names_
+  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.AlignTag.Names
+  isSpec: "True"
+  fullName: RueI.Parsing.Tags.ConcreteTags.AlignTag.Names
+  nameWithType: AlignTag.Names
+- uid: RueI.Parsing.Tags.ConcreteTags.AlignTag.TagStyle
+  name: TagStyle
+  href: api/RueI.Parsing.Tags.ConcreteTags.AlignTag.html#RueI_Parsing_Tags_ConcreteTags_AlignTag_TagStyle
+  commentId: P:RueI.Parsing.Tags.ConcreteTags.AlignTag.TagStyle
+  fullName: RueI.Parsing.Tags.ConcreteTags.AlignTag.TagStyle
+  nameWithType: AlignTag.TagStyle
+- uid: RueI.Parsing.Tags.ConcreteTags.AlignTag.TagStyle*
+  name: TagStyle
+  href: api/RueI.Parsing.Tags.ConcreteTags.AlignTag.html#RueI_Parsing_Tags_ConcreteTags_AlignTag_TagStyle_
+  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.AlignTag.TagStyle
+  isSpec: "True"
+  fullName: RueI.Parsing.Tags.ConcreteTags.AlignTag.TagStyle
+  nameWithType: AlignTag.TagStyle
+- uid: RueI.Parsing.Tags.ConcreteTags.AllcapsTag
+  name: AllcapsTag
+  href: api/RueI.Parsing.Tags.ConcreteTags.AllcapsTag.html
+  commentId: T:RueI.Parsing.Tags.ConcreteTags.AllcapsTag
+  fullName: RueI.Parsing.Tags.ConcreteTags.AllcapsTag
+  nameWithType: AllcapsTag
+- uid: RueI.Parsing.Tags.ConcreteTags.AllcapsTag.HandleTag(RueI.Parsing.ParserContext)
+  name: HandleTag(ParserContext)
+  href: api/RueI.Parsing.Tags.ConcreteTags.AllcapsTag.html#RueI_Parsing_Tags_ConcreteTags_AllcapsTag_HandleTag_RueI_Parsing_ParserContext_
+  commentId: M:RueI.Parsing.Tags.ConcreteTags.AllcapsTag.HandleTag(RueI.Parsing.ParserContext)
+  fullName: RueI.Parsing.Tags.ConcreteTags.AllcapsTag.HandleTag(RueI.Parsing.ParserContext)
+  nameWithType: AllcapsTag.HandleTag(ParserContext)
+- uid: RueI.Parsing.Tags.ConcreteTags.AllcapsTag.HandleTag*
+  name: HandleTag
+  href: api/RueI.Parsing.Tags.ConcreteTags.AllcapsTag.html#RueI_Parsing_Tags_ConcreteTags_AllcapsTag_HandleTag_
+  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.AllcapsTag.HandleTag
+  isSpec: "True"
+  fullName: RueI.Parsing.Tags.ConcreteTags.AllcapsTag.HandleTag
+  nameWithType: AllcapsTag.HandleTag
+- uid: RueI.Parsing.Tags.ConcreteTags.AllcapsTag.Names
+  name: Names
+  href: api/RueI.Parsing.Tags.ConcreteTags.AllcapsTag.html#RueI_Parsing_Tags_ConcreteTags_AllcapsTag_Names
+  commentId: P:RueI.Parsing.Tags.ConcreteTags.AllcapsTag.Names
+  fullName: RueI.Parsing.Tags.ConcreteTags.AllcapsTag.Names
+  nameWithType: AllcapsTag.Names
+- uid: RueI.Parsing.Tags.ConcreteTags.AllcapsTag.Names*
+  name: Names
+  href: api/RueI.Parsing.Tags.ConcreteTags.AllcapsTag.html#RueI_Parsing_Tags_ConcreteTags_AllcapsTag_Names_
+  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.AllcapsTag.Names
+  isSpec: "True"
+  fullName: RueI.Parsing.Tags.ConcreteTags.AllcapsTag.Names
+  nameWithType: AllcapsTag.Names
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseAlignTag
+  name: CloseAlignTag
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseAlignTag.html
+  commentId: T:RueI.Parsing.Tags.ConcreteTags.CloseAlignTag
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseAlignTag
+  nameWithType: CloseAlignTag
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseAlignTag.Name
+  name: Name
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseAlignTag.html#RueI_Parsing_Tags_ConcreteTags_CloseAlignTag_Name
+  commentId: P:RueI.Parsing.Tags.ConcreteTags.CloseAlignTag.Name
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseAlignTag.Name
+  nameWithType: CloseAlignTag.Name
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseAlignTag.Name*
+  name: Name
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseAlignTag.html#RueI_Parsing_Tags_ConcreteTags_CloseAlignTag_Name_
+  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.CloseAlignTag.Name
+  isSpec: "True"
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseAlignTag.Name
+  nameWithType: CloseAlignTag.Name
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseAllcapsTag
+  name: CloseAllcapsTag
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseAllcapsTag.html
+  commentId: T:RueI.Parsing.Tags.ConcreteTags.CloseAllcapsTag
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseAllcapsTag
+  nameWithType: CloseAllcapsTag
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseAllcapsTag.HandleTag(RueI.Parsing.ParserContext)
+  name: HandleTag(ParserContext)
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseAllcapsTag.html#RueI_Parsing_Tags_ConcreteTags_CloseAllcapsTag_HandleTag_RueI_Parsing_ParserContext_
+  commentId: M:RueI.Parsing.Tags.ConcreteTags.CloseAllcapsTag.HandleTag(RueI.Parsing.ParserContext)
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseAllcapsTag.HandleTag(RueI.Parsing.ParserContext)
+  nameWithType: CloseAllcapsTag.HandleTag(ParserContext)
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseAllcapsTag.HandleTag*
+  name: HandleTag
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseAllcapsTag.html#RueI_Parsing_Tags_ConcreteTags_CloseAllcapsTag_HandleTag_
+  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.CloseAllcapsTag.HandleTag
+  isSpec: "True"
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseAllcapsTag.HandleTag
+  nameWithType: CloseAllcapsTag.HandleTag
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseAllcapsTag.Names
+  name: Names
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseAllcapsTag.html#RueI_Parsing_Tags_ConcreteTags_CloseAllcapsTag_Names
+  commentId: P:RueI.Parsing.Tags.ConcreteTags.CloseAllcapsTag.Names
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseAllcapsTag.Names
+  nameWithType: CloseAllcapsTag.Names
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseAllcapsTag.Names*
+  name: Names
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseAllcapsTag.html#RueI_Parsing_Tags_ConcreteTags_CloseAllcapsTag_Names_
+  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.CloseAllcapsTag.Names
+  isSpec: "True"
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseAllcapsTag.Names
+  nameWithType: CloseAllcapsTag.Names
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseColorTag
+  name: CloseColorTag
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseColorTag.html
+  commentId: T:RueI.Parsing.Tags.ConcreteTags.CloseColorTag
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseColorTag
+  nameWithType: CloseColorTag
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseColorTag.Name
+  name: Name
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseColorTag.html#RueI_Parsing_Tags_ConcreteTags_CloseColorTag_Name
+  commentId: P:RueI.Parsing.Tags.ConcreteTags.CloseColorTag.Name
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseColorTag.Name
+  nameWithType: CloseColorTag.Name
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseColorTag.Name*
+  name: Name
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseColorTag.html#RueI_Parsing_Tags_ConcreteTags_CloseColorTag_Name_
+  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.CloseColorTag.Name
+  isSpec: "True"
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseColorTag.Name
+  nameWithType: CloseColorTag.Name
 - uid: RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag
   name: CloseLineHeightTag
   href: api/RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.html
   commentId: T:RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag
   fullName: RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag
   nameWithType: CloseLineHeightTag
-- uid: RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.HandleTag(RueI.Parsing.ParserContext)
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.ApplyTo(RueI.Parsing.ParserContext)
+  name: ApplyTo(ParserContext)
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.html#RueI_Parsing_Tags_ConcreteTags_CloseLineHeightTag_ApplyTo_RueI_Parsing_ParserContext_
+  commentId: M:RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.ApplyTo(RueI.Parsing.ParserContext)
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.ApplyTo(RueI.Parsing.ParserContext)
+  nameWithType: CloseLineHeightTag.ApplyTo(ParserContext)
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.ApplyTo*
+  name: ApplyTo
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.html#RueI_Parsing_Tags_ConcreteTags_CloseLineHeightTag_ApplyTo_
+  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.ApplyTo
+  isSpec: "True"
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.ApplyTo
+  nameWithType: CloseLineHeightTag.ApplyTo
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.Name
+  name: Name
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.html#RueI_Parsing_Tags_ConcreteTags_CloseLineHeightTag_Name
+  commentId: P:RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.Name
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.Name
+  nameWithType: CloseLineHeightTag.Name
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.Name*
+  name: Name
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.html#RueI_Parsing_Tags_ConcreteTags_CloseLineHeightTag_Name_
+  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.Name
+  isSpec: "True"
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.Name
+  nameWithType: CloseLineHeightTag.Name
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseLowercase
+  name: CloseLowercase
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseLowercase.html
+  commentId: T:RueI.Parsing.Tags.ConcreteTags.CloseLowercase
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseLowercase
+  nameWithType: CloseLowercase
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseLowercase.HandleTag(RueI.Parsing.ParserContext)
   name: HandleTag(ParserContext)
-  href: api/RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.html#RueI_Parsing_Tags_ConcreteTags_CloseLineHeightTag_HandleTag_RueI_Parsing_ParserContext_
-  commentId: M:RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.HandleTag(RueI.Parsing.ParserContext)
-  fullName: RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.HandleTag(RueI.Parsing.ParserContext)
-  nameWithType: CloseLineHeightTag.HandleTag(ParserContext)
-- uid: RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.HandleTag*
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseLowercase.html#RueI_Parsing_Tags_ConcreteTags_CloseLowercase_HandleTag_RueI_Parsing_ParserContext_
+  commentId: M:RueI.Parsing.Tags.ConcreteTags.CloseLowercase.HandleTag(RueI.Parsing.ParserContext)
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseLowercase.HandleTag(RueI.Parsing.ParserContext)
+  nameWithType: CloseLowercase.HandleTag(ParserContext)
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseLowercase.HandleTag*
   name: HandleTag
-  href: api/RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.html#RueI_Parsing_Tags_ConcreteTags_CloseLineHeightTag_HandleTag_
-  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.HandleTag
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseLowercase.html#RueI_Parsing_Tags_ConcreteTags_CloseLowercase_HandleTag_
+  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.CloseLowercase.HandleTag
   isSpec: "True"
-  fullName: RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.HandleTag
-  nameWithType: CloseLineHeightTag.HandleTag
-- uid: RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.Names
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseLowercase.HandleTag
+  nameWithType: CloseLowercase.HandleTag
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseLowercase.Names
   name: Names
-  href: api/RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.html#RueI_Parsing_Tags_ConcreteTags_CloseLineHeightTag_Names
-  commentId: P:RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.Names
-  fullName: RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.Names
-  nameWithType: CloseLineHeightTag.Names
-- uid: RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.Names*
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseLowercase.html#RueI_Parsing_Tags_ConcreteTags_CloseLowercase_Names
+  commentId: P:RueI.Parsing.Tags.ConcreteTags.CloseLowercase.Names
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseLowercase.Names
+  nameWithType: CloseLowercase.Names
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseLowercase.Names*
   name: Names
-  href: api/RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.html#RueI_Parsing_Tags_ConcreteTags_CloseLineHeightTag_Names_
-  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.Names
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseLowercase.html#RueI_Parsing_Tags_ConcreteTags_CloseLowercase_Names_
+  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.CloseLowercase.Names
   isSpec: "True"
-  fullName: RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.Names
-  nameWithType: CloseLineHeightTag.Names
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseLowercase.Names
+  nameWithType: CloseLowercase.Names
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseScaleTag
+  name: CloseScaleTag
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseScaleTag.html
+  commentId: T:RueI.Parsing.Tags.ConcreteTags.CloseScaleTag
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseScaleTag
+  nameWithType: CloseScaleTag
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseScaleTag.Name
+  name: Name
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseScaleTag.html#RueI_Parsing_Tags_ConcreteTags_CloseScaleTag_Name
+  commentId: P:RueI.Parsing.Tags.ConcreteTags.CloseScaleTag.Name
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseScaleTag.Name
+  nameWithType: CloseScaleTag.Name
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseScaleTag.Name*
+  name: Name
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseScaleTag.html#RueI_Parsing_Tags_ConcreteTags_CloseScaleTag_Name_
+  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.CloseScaleTag.Name
+  isSpec: "True"
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseScaleTag.Name
+  nameWithType: CloseScaleTag.Name
 - uid: RueI.Parsing.Tags.ConcreteTags.CloseSizeTag
   name: CloseSizeTag
   href: api/RueI.Parsing.Tags.ConcreteTags.CloseSizeTag.html
@@ -2556,6 +2856,38 @@ references:
   isSpec: "True"
   fullName: RueI.Parsing.Tags.ConcreteTags.CloseSizeTag.Names
   nameWithType: CloseSizeTag.Names
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseSmallcapsTag
+  name: CloseSmallcapsTag
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseSmallcapsTag.html
+  commentId: T:RueI.Parsing.Tags.ConcreteTags.CloseSmallcapsTag
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseSmallcapsTag
+  nameWithType: CloseSmallcapsTag
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseSmallcapsTag.HandleTag(RueI.Parsing.ParserContext)
+  name: HandleTag(ParserContext)
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseSmallcapsTag.html#RueI_Parsing_Tags_ConcreteTags_CloseSmallcapsTag_HandleTag_RueI_Parsing_ParserContext_
+  commentId: M:RueI.Parsing.Tags.ConcreteTags.CloseSmallcapsTag.HandleTag(RueI.Parsing.ParserContext)
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseSmallcapsTag.HandleTag(RueI.Parsing.ParserContext)
+  nameWithType: CloseSmallcapsTag.HandleTag(ParserContext)
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseSmallcapsTag.HandleTag*
+  name: HandleTag
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseSmallcapsTag.html#RueI_Parsing_Tags_ConcreteTags_CloseSmallcapsTag_HandleTag_
+  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.CloseSmallcapsTag.HandleTag
+  isSpec: "True"
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseSmallcapsTag.HandleTag
+  nameWithType: CloseSmallcapsTag.HandleTag
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseSmallcapsTag.Names
+  name: Names
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseSmallcapsTag.html#RueI_Parsing_Tags_ConcreteTags_CloseSmallcapsTag_Names
+  commentId: P:RueI.Parsing.Tags.ConcreteTags.CloseSmallcapsTag.Names
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseSmallcapsTag.Names
+  nameWithType: CloseSmallcapsTag.Names
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseSmallcapsTag.Names*
+  name: Names
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseSmallcapsTag.html#RueI_Parsing_Tags_ConcreteTags_CloseSmallcapsTag_Names_
+  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.CloseSmallcapsTag.Names
+  isSpec: "True"
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseSmallcapsTag.Names
+  nameWithType: CloseSmallcapsTag.Names
 - uid: RueI.Parsing.Tags.ConcreteTags.ColorTag
   name: ColorTag
   href: api/RueI.Parsing.Tags.ConcreteTags.ColorTag.html
@@ -2636,6 +2968,86 @@ references:
   isSpec: "True"
   fullName: RueI.Parsing.Tags.ConcreteTags.LineHeightTag.Names
   nameWithType: LineHeightTag.Names
+- uid: RueI.Parsing.Tags.ConcreteTags.LowercaseTag
+  name: LowercaseTag
+  href: api/RueI.Parsing.Tags.ConcreteTags.LowercaseTag.html
+  commentId: T:RueI.Parsing.Tags.ConcreteTags.LowercaseTag
+  fullName: RueI.Parsing.Tags.ConcreteTags.LowercaseTag
+  nameWithType: LowercaseTag
+- uid: RueI.Parsing.Tags.ConcreteTags.LowercaseTag.HandleTag(RueI.Parsing.ParserContext)
+  name: HandleTag(ParserContext)
+  href: api/RueI.Parsing.Tags.ConcreteTags.LowercaseTag.html#RueI_Parsing_Tags_ConcreteTags_LowercaseTag_HandleTag_RueI_Parsing_ParserContext_
+  commentId: M:RueI.Parsing.Tags.ConcreteTags.LowercaseTag.HandleTag(RueI.Parsing.ParserContext)
+  fullName: RueI.Parsing.Tags.ConcreteTags.LowercaseTag.HandleTag(RueI.Parsing.ParserContext)
+  nameWithType: LowercaseTag.HandleTag(ParserContext)
+- uid: RueI.Parsing.Tags.ConcreteTags.LowercaseTag.HandleTag*
+  name: HandleTag
+  href: api/RueI.Parsing.Tags.ConcreteTags.LowercaseTag.html#RueI_Parsing_Tags_ConcreteTags_LowercaseTag_HandleTag_
+  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.LowercaseTag.HandleTag
+  isSpec: "True"
+  fullName: RueI.Parsing.Tags.ConcreteTags.LowercaseTag.HandleTag
+  nameWithType: LowercaseTag.HandleTag
+- uid: RueI.Parsing.Tags.ConcreteTags.LowercaseTag.Names
+  name: Names
+  href: api/RueI.Parsing.Tags.ConcreteTags.LowercaseTag.html#RueI_Parsing_Tags_ConcreteTags_LowercaseTag_Names
+  commentId: P:RueI.Parsing.Tags.ConcreteTags.LowercaseTag.Names
+  fullName: RueI.Parsing.Tags.ConcreteTags.LowercaseTag.Names
+  nameWithType: LowercaseTag.Names
+- uid: RueI.Parsing.Tags.ConcreteTags.LowercaseTag.Names*
+  name: Names
+  href: api/RueI.Parsing.Tags.ConcreteTags.LowercaseTag.html#RueI_Parsing_Tags_ConcreteTags_LowercaseTag_Names_
+  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.LowercaseTag.Names
+  isSpec: "True"
+  fullName: RueI.Parsing.Tags.ConcreteTags.LowercaseTag.Names
+  nameWithType: LowercaseTag.Names
+- uid: RueI.Parsing.Tags.ConcreteTags.ScaleTag
+  name: ScaleTag
+  href: api/RueI.Parsing.Tags.ConcreteTags.ScaleTag.html
+  commentId: T:RueI.Parsing.Tags.ConcreteTags.ScaleTag
+  fullName: RueI.Parsing.Tags.ConcreteTags.ScaleTag
+  nameWithType: ScaleTag
+- uid: RueI.Parsing.Tags.ConcreteTags.ScaleTag.HandleTag(RueI.Parsing.ParserContext,System.String)
+  name: HandleTag(ParserContext, string)
+  href: api/RueI.Parsing.Tags.ConcreteTags.ScaleTag.html#RueI_Parsing_Tags_ConcreteTags_ScaleTag_HandleTag_RueI_Parsing_ParserContext_System_String_
+  commentId: M:RueI.Parsing.Tags.ConcreteTags.ScaleTag.HandleTag(RueI.Parsing.ParserContext,System.String)
+  name.vb: HandleTag(ParserContext, String)
+  fullName: RueI.Parsing.Tags.ConcreteTags.ScaleTag.HandleTag(RueI.Parsing.ParserContext, string)
+  fullName.vb: RueI.Parsing.Tags.ConcreteTags.ScaleTag.HandleTag(RueI.Parsing.ParserContext, String)
+  nameWithType: ScaleTag.HandleTag(ParserContext, string)
+  nameWithType.vb: ScaleTag.HandleTag(ParserContext, String)
+- uid: RueI.Parsing.Tags.ConcreteTags.ScaleTag.HandleTag*
+  name: HandleTag
+  href: api/RueI.Parsing.Tags.ConcreteTags.ScaleTag.html#RueI_Parsing_Tags_ConcreteTags_ScaleTag_HandleTag_
+  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.ScaleTag.HandleTag
+  isSpec: "True"
+  fullName: RueI.Parsing.Tags.ConcreteTags.ScaleTag.HandleTag
+  nameWithType: ScaleTag.HandleTag
+- uid: RueI.Parsing.Tags.ConcreteTags.ScaleTag.Names
+  name: Names
+  href: api/RueI.Parsing.Tags.ConcreteTags.ScaleTag.html#RueI_Parsing_Tags_ConcreteTags_ScaleTag_Names
+  commentId: P:RueI.Parsing.Tags.ConcreteTags.ScaleTag.Names
+  fullName: RueI.Parsing.Tags.ConcreteTags.ScaleTag.Names
+  nameWithType: ScaleTag.Names
+- uid: RueI.Parsing.Tags.ConcreteTags.ScaleTag.Names*
+  name: Names
+  href: api/RueI.Parsing.Tags.ConcreteTags.ScaleTag.html#RueI_Parsing_Tags_ConcreteTags_ScaleTag_Names_
+  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.ScaleTag.Names
+  isSpec: "True"
+  fullName: RueI.Parsing.Tags.ConcreteTags.ScaleTag.Names
+  nameWithType: ScaleTag.Names
+- uid: RueI.Parsing.Tags.ConcreteTags.ScaleTag.TagStyle
+  name: TagStyle
+  href: api/RueI.Parsing.Tags.ConcreteTags.ScaleTag.html#RueI_Parsing_Tags_ConcreteTags_ScaleTag_TagStyle
+  commentId: P:RueI.Parsing.Tags.ConcreteTags.ScaleTag.TagStyle
+  fullName: RueI.Parsing.Tags.ConcreteTags.ScaleTag.TagStyle
+  nameWithType: ScaleTag.TagStyle
+- uid: RueI.Parsing.Tags.ConcreteTags.ScaleTag.TagStyle*
+  name: TagStyle
+  href: api/RueI.Parsing.Tags.ConcreteTags.ScaleTag.html#RueI_Parsing_Tags_ConcreteTags_ScaleTag_TagStyle_
+  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.ScaleTag.TagStyle
+  isSpec: "True"
+  fullName: RueI.Parsing.Tags.ConcreteTags.ScaleTag.TagStyle
+  nameWithType: ScaleTag.TagStyle
 - uid: RueI.Parsing.Tags.ConcreteTags.SizeTag
   name: SizeTag
   href: api/RueI.Parsing.Tags.ConcreteTags.SizeTag.html
@@ -2668,6 +3080,38 @@ references:
   isSpec: "True"
   fullName: RueI.Parsing.Tags.ConcreteTags.SizeTag.Names
   nameWithType: SizeTag.Names
+- uid: RueI.Parsing.Tags.ConcreteTags.SmallcapsTag
+  name: SmallcapsTag
+  href: api/RueI.Parsing.Tags.ConcreteTags.SmallcapsTag.html
+  commentId: T:RueI.Parsing.Tags.ConcreteTags.SmallcapsTag
+  fullName: RueI.Parsing.Tags.ConcreteTags.SmallcapsTag
+  nameWithType: SmallcapsTag
+- uid: RueI.Parsing.Tags.ConcreteTags.SmallcapsTag.HandleTag(RueI.Parsing.ParserContext)
+  name: HandleTag(ParserContext)
+  href: api/RueI.Parsing.Tags.ConcreteTags.SmallcapsTag.html#RueI_Parsing_Tags_ConcreteTags_SmallcapsTag_HandleTag_RueI_Parsing_ParserContext_
+  commentId: M:RueI.Parsing.Tags.ConcreteTags.SmallcapsTag.HandleTag(RueI.Parsing.ParserContext)
+  fullName: RueI.Parsing.Tags.ConcreteTags.SmallcapsTag.HandleTag(RueI.Parsing.ParserContext)
+  nameWithType: SmallcapsTag.HandleTag(ParserContext)
+- uid: RueI.Parsing.Tags.ConcreteTags.SmallcapsTag.HandleTag*
+  name: HandleTag
+  href: api/RueI.Parsing.Tags.ConcreteTags.SmallcapsTag.html#RueI_Parsing_Tags_ConcreteTags_SmallcapsTag_HandleTag_
+  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.SmallcapsTag.HandleTag
+  isSpec: "True"
+  fullName: RueI.Parsing.Tags.ConcreteTags.SmallcapsTag.HandleTag
+  nameWithType: SmallcapsTag.HandleTag
+- uid: RueI.Parsing.Tags.ConcreteTags.SmallcapsTag.Names
+  name: Names
+  href: api/RueI.Parsing.Tags.ConcreteTags.SmallcapsTag.html#RueI_Parsing_Tags_ConcreteTags_SmallcapsTag_Names
+  commentId: P:RueI.Parsing.Tags.ConcreteTags.SmallcapsTag.Names
+  fullName: RueI.Parsing.Tags.ConcreteTags.SmallcapsTag.Names
+  nameWithType: SmallcapsTag.Names
+- uid: RueI.Parsing.Tags.ConcreteTags.SmallcapsTag.Names*
+  name: Names
+  href: api/RueI.Parsing.Tags.ConcreteTags.SmallcapsTag.html#RueI_Parsing_Tags_ConcreteTags_SmallcapsTag_Names_
+  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.SmallcapsTag.Names
+  isSpec: "True"
+  fullName: RueI.Parsing.Tags.ConcreteTags.SmallcapsTag.Names
+  nameWithType: SmallcapsTag.Names
 - uid: RueI.Parsing.Tags.MeasurementTag
   name: MeasurementTag
   href: api/RueI.Parsing.Tags.MeasurementTag.html

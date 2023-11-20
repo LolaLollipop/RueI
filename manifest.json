@@ -142,6 +142,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/RueI.ElemCombiner.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.ElemCombiner.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/RueI.Enums.CaseStyle.yml",
       "output": {
         ".html": {
@@ -412,6 +422,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Parsing.ClosingTag-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Parsing.ClosingTag-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/RueI.Parsing.NoParamsTag.yml",
       "output": {
         ".html": {
@@ -442,6 +462,56 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Parsing.Tags.ConcreteTags.AlignTag.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Parsing.Tags.ConcreteTags.AlignTag.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Parsing.Tags.ConcreteTags.AllcapsTag.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Parsing.Tags.ConcreteTags.AllcapsTag.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Parsing.Tags.ConcreteTags.CloseAlignTag.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Parsing.Tags.ConcreteTags.CloseAlignTag.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Parsing.Tags.ConcreteTags.CloseAllcapsTag.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Parsing.Tags.ConcreteTags.CloseAllcapsTag.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Parsing.Tags.ConcreteTags.CloseColorTag.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Parsing.Tags.ConcreteTags.CloseColorTag.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.yml",
       "output": {
         ".html": {
@@ -452,10 +522,40 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Parsing.Tags.ConcreteTags.CloseLowercase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Parsing.Tags.ConcreteTags.CloseLowercase.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Parsing.Tags.ConcreteTags.CloseScaleTag.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Parsing.Tags.ConcreteTags.CloseScaleTag.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/RueI.Parsing.Tags.ConcreteTags.CloseSizeTag.yml",
       "output": {
         ".html": {
           "relative_path": "api/RueI.Parsing.Tags.ConcreteTags.CloseSizeTag.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Parsing.Tags.ConcreteTags.CloseSmallcapsTag.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Parsing.Tags.ConcreteTags.CloseSmallcapsTag.html"
         }
       },
       "version": ""
@@ -482,10 +582,40 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Parsing.Tags.ConcreteTags.LowercaseTag.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Parsing.Tags.ConcreteTags.LowercaseTag.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Parsing.Tags.ConcreteTags.ScaleTag.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Parsing.Tags.ConcreteTags.ScaleTag.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/RueI.Parsing.Tags.ConcreteTags.SizeTag.yml",
       "output": {
         ".html": {
           "relative_path": "api/RueI.Parsing.Tags.ConcreteTags.SizeTag.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Parsing.Tags.ConcreteTags.SmallcapsTag.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Parsing.Tags.ConcreteTags.SmallcapsTag.html"
         }
       },
       "version": ""
