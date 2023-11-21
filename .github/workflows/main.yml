@@ -1,0 +1,65 @@
+name: Build
+
+on:
+  workflow_dispatch:  # Manually trigger the workflow from the GitHub Actions UI
+
+jobs:
+  build_and_publish:
+    strategy:
+      matrix:
+        configuration: [Release]
+
+    runs-on: windows-latest
+
+    env:
+      DOWNLOAD_URL: https://misaka-zerotwo.github.io/SL-References/Dev.zip
+      REFERENCES_PATH: ${{ github.workspace }}/References
+      PROJECT_FOLDER: RueI
+      Solution_Name: RueI.sln
+      Solution_Path: ${{ github.workspace }}/RueI/RueI.sln
+      Project_Path: RueI/RueI.csproj
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+
+    # Install the .NET Core SDK
+    - name: Setup .NET Core SDK
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '7.0.306'
+        
+    - name: Get references
+      shell: pwsh
+      run: |
+        Invoke-WebRequest -Uri $env:DOWNLOAD_URL -OutFile "$env:REFERENCES_PATH.zip"
+        Expand-Archive -Path "$env:REFERENCES_PATH.zip" -DestinationPath $env:REFERENCES_PATH
+
+    - name: List Contents of references folder
+      run: |
+        Get-ChildItem -Path $env:REFERENCES_PATH -Recurse
+
+    # Download and setup NuGet
+    - name: Download and Setup NuGet
+      uses: NuGet/setup-nuget@v1.1.1
+
+    # Restore NuGet packages
+    - name: Restore NuGet packages
+      run: nuget restore ${{ env.Solution_Name }}
+      
+    - name: Download and Setup MSBuild
+      uses: microsoft/setup-msbuild@v1.0.2
+      
+    # Restore the application to populate the obj folder with RuntimeIdentifiers
+    - name: Restore the application
+      run: msbuild $env:Solution_Name /t:Restore /p:Configuration=$env:Configuration
+      env:
+        Configuration: ${{ matrix.configuration }}
+        
+    - name: Build the app
+      run: msbuild ${{ env.Project_Path }} /p:Configuration=Release /p:REFERENCES_PATH="$env:REFERENCES_PATH.zip" /p:NoRestore=true
+      env:
+        Project_Path: ${{ env.Project_Path }}
+        Configuration: ${{ matrix.configuration }}

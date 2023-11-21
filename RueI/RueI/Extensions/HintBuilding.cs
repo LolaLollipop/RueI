@@ -1,11 +1,11 @@
-﻿namespace RueI.Extensions.HintBuilding;
+namespace RueI.Extensions.HintBuilding;
 
 using System.Drawing;
 using System.Text;
 using RueI.Enums;
 
 /// <summary>
-/// Provides extensions for working with collections.
+/// Provides extensions for adding rich text tags to <see cref="StringBuilder"/>s.
 /// </summary>
 public static class HintBuilding
 {
