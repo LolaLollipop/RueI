@@ -37,6 +37,10 @@ jobs:
         Invoke-WebRequest -Uri $env:DOWNLOAD_URL -OutFile "$env:REFERENCES_PATH.zip"
         Expand-Archive -Path "$env:REFERENCES_PATH.zip" -DestinationPath $env:REFERENCES_PATH
 
+    - name: List Contents of references folder
+      run: |
+        Get-ChildItem -Path $env:REFERENCES_PATH -Recurse
+
     # Download and setup NuGet
     - name: Download and Setup NuGet
       uses: NuGet/setup-nuget@v1.1.1
