@@ -9,6 +9,7 @@ using RueI.Displays;
 public class DisplayCore
 {
     private readonly List<DisplayBase> displays = new();
+    private readonly Dictionary<ElemReference<IElement>, IElement> referencedElements = new();
 
     static DisplayCore()
     {
@@ -79,6 +80,59 @@ public class DisplayCore
     }
 
     /// <summary>
+    /// Gets an <see cref="IElement"/> as <typeparamref name="T"/> if the <see cref="ElemReference{T}"/> exists within this <see cref="DisplayCore"/>'s element references.
+    /// </summary>
+    /// <typeparam name="T">The type of the <see cref="IElement"/> to get.</typeparam>
+    /// <param name="reference">The <see cref="ElemReference{T}"/> to use.</param>
+    /// <returns>The instance of <typeparamref name="T"/> if the <see cref="IElement"/> exists within the <see cref="DisplayCore"/>'s element references, otherwise null.</returns>
+    public T? GetElement<T>(ElemReference<T> reference)
+        where T : IElement
+    {
+        if (referencedElements.TryGetValue(reference, out IElement value) && value is T casted)
+        {
+            return casted;
+        }
+        else
+        {
+            return default;
+        }
+    }
+
+    /// <summary>
+    /// Gets an <see cref="IElement"/> as <typeparamref name="T"/>, or creates it.
+    /// </summary>
+    /// <typeparam name="T">The type of the <see cref="IElement"/> to get.</typeparam>
+    /// <param name="reference">The <see cref="ElemReference{T}"/> to use.</param>
+    /// <param name="creator">A function that creates a new instance of <typeparamref name="T"/> if it does not exist.</param>
+    /// <returns>The instance of <typeparamref name="T"/>.</returns>
+    public T GetElementOrNew<T>(ElemReference<T> reference, Func<T> creator)
+        where T : IElement
+    {
+        if (referencedElements.TryGetValue(reference, out IElement value) && value is T casted)
+        {
+            return casted;
+        }
+        else
+        {
+            T created = creator();
+            referencedElements.Add(reference, created);
+            return created;
+        }
+    }
+
+    /// <summary>
+    /// Adds an <see cref="IElement"/> as an <see cref="ElemReference{T}"/>.
+    /// </summary>
+    /// <typeparam name="T">The type of the <see cref="IElement"/> to add.</typeparam>
+    /// <param name="reference">The <see cref="ElemReference{T}"/> to use.</param>
+    /// <param name="element">The <see cref="IElement"/> to add.</param>
+    public void AddAsReference<T>(ElemReference<T> reference, T element)
+        where T : IElement
+    {
+        referencedElements.Add(reference, element);
+    }
+
+    /// <summary>
     /// Updates this display, skipping all checks.
     /// </summary>
     internal void InternalUpdate()
@@ -107,5 +161,6 @@ public class DisplayCore
         DisplayCores.Clear();
     }
 
-    private IEnumerable<IElement> GetAllElements() => displays.SelectMany(x => x.GetAllElements());
+    private IEnumerable<IElement> GetAllElements() => displays.SelectMany(x => x.GetAllElements())
+                                                      .Concat(referencedElements.Values.Where(x => x.Enabled));
 }
