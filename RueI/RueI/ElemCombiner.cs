@@ -59,7 +59,7 @@ public static class ElemCombiner
         }
 
         ListPool<IElement>.Shared.Return(elements);
-        sb.Insert(0, "<line-height={totalOffset}px>\n");
+        sb.Insert(0, $"<line-height={totalOffset}px>\n");
         return StringBuilderPool.Shared.ToStringReturn(sb);
     }
 

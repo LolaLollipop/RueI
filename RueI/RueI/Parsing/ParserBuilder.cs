@@ -1,4 +1,4 @@
-﻿namespace RueI;
+﻿namespace RueI.Parsing;
 
 using NorthwoodLib.Pools;
 using RueI.Parsing;

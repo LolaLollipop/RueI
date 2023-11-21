@@ -1,11 +1,7 @@
 ﻿namespace RueI;
 
-using System.Text;
 using Hints;
-using NorthwoodLib.Pools;
 using RueI.Displays;
-using RueI.Extensions;
-using RueI.Records;
 
 /// <summary>
 /// Is responsible for managing all of the <see cref="DisplayBase"/>s for a <see cref="ReferenceHub"/>.
@@ -21,6 +17,7 @@ public class DisplayCore
 
     /// <summary>
     /// Initializes a new instance of the <see cref="DisplayCore"/> class.
+    /// </summary>
     /// <param name="hub">The hub to create the display for.</param>
     private DisplayCore(ReferenceHub hub)
     {

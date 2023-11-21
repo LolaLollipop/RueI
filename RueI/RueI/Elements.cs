@@ -55,7 +55,6 @@ public class SetElement : IElement, ISettable
     /// Initializes a new instance of the <see cref="SetElement"/> class.
     /// </summary>
     /// <param name="position">The scaled position of the element, where 0 is the bottom of the screen and 1000 is the top.</param>
-    /// <param name="zIndex">A value determing the priority of the hint, where higher numbers means that it will render above hints with a lower number.</param>
     /// <param name="content">The content to set the element to.</param>
     public SetElement(float position, string content = "")
     {

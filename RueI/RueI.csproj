@@ -10,7 +10,7 @@
 	<Copyright>CC0 1.0</Copyright>
 	<Version>2.0.0</Version>
 	<Authors>Rue &lt;3, Override (some help)</Authors>
-	<GenerateDocumentationFile>False</GenerateDocumentationFile>
+	<GenerateDocumentationFile>True</GenerateDocumentationFile>
 	<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 	<Description>hint framework for scp:sl</Description>
 	<RepositoryUrl>https://github.com/Ruemena/RueI</RepositoryUrl>
@@ -45,25 +45,25 @@
 
   <ItemGroup>
 	  <Reference Include="Assembly-CSharp">
-	    <HintPath>..\..\..\..\Downloads\Master (2)\Assembly-CSharp.dll</HintPath>
+	    <HintPath>../References/Assembly-CSharp.dll</HintPath>
 	  </Reference>
 	  <Reference Include="Assembly-CSharp-firstpass">
-	    <HintPath>..\..\..\..\Downloads\Master (2)\Assembly-CSharp-firstpass.dll</HintPath>
+	    <HintPath>../References/Assembly-CSharp-firstpass.dll</HintPath>
 	  </Reference>
 	  <Reference Include="Mirror">
-      <HintPath>..\..\..\..\Downloads\Master (2)\Mirror.dll</HintPath>
+      <HintPath>../References/Mirror.dll</HintPath>
     </Reference>
     <Reference Include="NorthwoodLib">
-      <HintPath>..\..\..\..\Downloads\Master (2)\NorthwoodLib.dll</HintPath>
+      <HintPath>../References/NorthwoodLib.dll</HintPath>
     </Reference>
     <Reference Include="PluginAPI">
-      <HintPath>..\..\..\..\Downloads\Master (2)\PluginAPI.dll</HintPath>
+      <HintPath>../References/PluginAPI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine">
-      <HintPath>..\..\..\..\Downloads\Master (2)\UnityEngine.dll</HintPath>
+      <HintPath>../References/UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>..\..\..\..\Downloads\Master (2)\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>../References/UnityEngine.CoreModule.dll</HintPath>
     </Reference>
   </ItemGroup>
 

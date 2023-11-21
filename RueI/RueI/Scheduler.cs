@@ -49,15 +49,15 @@ public class Scheduler
         }
     }
 
-    private static TimeSpan minimumBatch = TimeSpan.FromMilliseconds(0.625);
+    private static readonly TimeSpan MinimumBatch = TimeSpan.FromMilliseconds(0.625);
 
     private readonly Cooldown rateLimiter = new();
     private readonly List<ScheduledJob> jobs = new();
 
     private readonly UpdateTask performTask = new();
 
-    private List<BatchJob> currentBatches = new(10);
-    private DisplayCore coordinator;
+    private readonly List<BatchJob> currentBatches = new(10);
+    private readonly DisplayCore coordinator;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="Scheduler"/> class.
@@ -140,7 +140,7 @@ public class Scheduler
     /// <param name="time">The amount of time to delay for.</param>
     internal void Delay(TimeSpan time)
     {
-        rateLimiter.Start(time.Max(minimumBatch));
+        rateLimiter.Start(time.Max(MinimumBatch));
     }
 
     private void UpdateBatches()
@@ -149,7 +149,7 @@ public class Scheduler
         currentBatches.Clear();
 
         List<ScheduledJob> currentBatch = ListPool<ScheduledJob>.Shared.Rent(10);
-        DateTimeOffset currentBatchTime = DateTimeOffset.UtcNow + minimumBatch;
+        DateTimeOffset currentBatchTime = DateTimeOffset.UtcNow + MinimumBatch;
 
         foreach (ScheduledJob job in jobs)
         {
@@ -174,7 +174,6 @@ public class Scheduler
     /// <summary>
     /// Immediately performs the first batch job.
     /// </summary>
-    /// <param name="batchJob">The job to perform.</param>
     private void PerformFirstBatch()
     {
         BatchJob batchJob = currentBatches.First();
