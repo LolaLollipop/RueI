@@ -126,19 +126,6 @@ references:
   commentId: F:RueI.Constants.MAXTAGNAMESIZE
   fullName: RueI.Constants.MAXTAGNAMESIZE
   nameWithType: Constants.MAXTAGNAMESIZE
-- uid: RueI.Constants.Parser
-  name: Parser
-  href: api/RueI.Constants.html#RueI_Constants_Parser
-  commentId: P:RueI.Constants.Parser
-  fullName: RueI.Constants.Parser
-  nameWithType: Constants.Parser
-- uid: RueI.Constants.Parser*
-  name: Parser
-  href: api/RueI.Constants.html#RueI_Constants_Parser_
-  commentId: Overload:RueI.Constants.Parser
-  isSpec: "True"
-  fullName: RueI.Constants.Parser
-  nameWithType: Constants.Parser
 - uid: RueI.Constants.ValidColorSizes
   name: ValidColorSizes
   href: api/RueI.Constants.html#RueI_Constants_ValidColorSizes
@@ -2185,73 +2172,6 @@ references:
   isSpec: "True"
   fullName: RueI.Parser.Tags
   nameWithType: Parser.Tags
-- uid: RueI.ParserBuilder
-  name: ParserBuilder
-  href: api/RueI.ParserBuilder.html
-  commentId: T:RueI.ParserBuilder
-  fullName: RueI.ParserBuilder
-  nameWithType: ParserBuilder
-- uid: RueI.ParserBuilder.#ctor
-  name: ParserBuilder()
-  href: api/RueI.ParserBuilder.html#RueI_ParserBuilder__ctor
-  commentId: M:RueI.ParserBuilder.#ctor
-  name.vb: New()
-  fullName: RueI.ParserBuilder.ParserBuilder()
-  fullName.vb: RueI.ParserBuilder.New()
-  nameWithType: ParserBuilder.ParserBuilder()
-  nameWithType.vb: ParserBuilder.New()
-- uid: RueI.ParserBuilder.#ctor*
-  name: ParserBuilder
-  href: api/RueI.ParserBuilder.html#RueI_ParserBuilder__ctor_
-  commentId: Overload:RueI.ParserBuilder.#ctor
-  isSpec: "True"
-  name.vb: New
-  fullName: RueI.ParserBuilder.ParserBuilder
-  fullName.vb: RueI.ParserBuilder.New
-  nameWithType: ParserBuilder.ParserBuilder
-  nameWithType.vb: ParserBuilder.New
-- uid: RueI.ParserBuilder.AddTag*
-  name: AddTag
-  href: api/RueI.ParserBuilder.html#RueI_ParserBuilder_AddTag_
-  commentId: Overload:RueI.ParserBuilder.AddTag
-  isSpec: "True"
-  fullName: RueI.ParserBuilder.AddTag
-  nameWithType: ParserBuilder.AddTag
-- uid: RueI.ParserBuilder.AddTag``1
-  name: AddTag<T>()
-  href: api/RueI.ParserBuilder.html#RueI_ParserBuilder_AddTag__1
-  commentId: M:RueI.ParserBuilder.AddTag``1
-  name.vb: AddTag(Of T)()
-  fullName: RueI.ParserBuilder.AddTag<T>()
-  fullName.vb: RueI.ParserBuilder.AddTag(Of T)()
-  nameWithType: ParserBuilder.AddTag<T>()
-  nameWithType.vb: ParserBuilder.AddTag(Of T)()
-- uid: RueI.ParserBuilder.Build
-  name: Build()
-  href: api/RueI.ParserBuilder.html#RueI_ParserBuilder_Build
-  commentId: M:RueI.ParserBuilder.Build
-  fullName: RueI.ParserBuilder.Build()
-  nameWithType: ParserBuilder.Build()
-- uid: RueI.ParserBuilder.Build*
-  name: Build
-  href: api/RueI.ParserBuilder.html#RueI_ParserBuilder_Build_
-  commentId: Overload:RueI.ParserBuilder.Build
-  isSpec: "True"
-  fullName: RueI.ParserBuilder.Build
-  nameWithType: ParserBuilder.Build
-- uid: RueI.ParserBuilder.ImportFrom(RueI.Parser)
-  name: ImportFrom(Parser)
-  href: api/RueI.ParserBuilder.html#RueI_ParserBuilder_ImportFrom_RueI_Parser_
-  commentId: M:RueI.ParserBuilder.ImportFrom(RueI.Parser)
-  fullName: RueI.ParserBuilder.ImportFrom(RueI.Parser)
-  nameWithType: ParserBuilder.ImportFrom(Parser)
-- uid: RueI.ParserBuilder.ImportFrom*
-  name: ImportFrom
-  href: api/RueI.ParserBuilder.html#RueI_ParserBuilder_ImportFrom_
-  commentId: Overload:RueI.ParserBuilder.ImportFrom
-  isSpec: "True"
-  fullName: RueI.ParserBuilder.ImportFrom
-  nameWithType: ParserBuilder.ImportFrom
 - uid: RueI.Parsing
   name: RueI.Parsing
   href: api/RueI.Parsing.html
@@ -2376,6 +2296,73 @@ references:
   isSpec: "True"
   fullName: RueI.Parsing.NoParamsTag.TagStyle
   nameWithType: NoParamsTag.TagStyle
+- uid: RueI.Parsing.ParserBuilder
+  name: ParserBuilder
+  href: api/RueI.Parsing.ParserBuilder.html
+  commentId: T:RueI.Parsing.ParserBuilder
+  fullName: RueI.Parsing.ParserBuilder
+  nameWithType: ParserBuilder
+- uid: RueI.Parsing.ParserBuilder.#ctor
+  name: ParserBuilder()
+  href: api/RueI.Parsing.ParserBuilder.html#RueI_Parsing_ParserBuilder__ctor
+  commentId: M:RueI.Parsing.ParserBuilder.#ctor
+  name.vb: New()
+  fullName: RueI.Parsing.ParserBuilder.ParserBuilder()
+  fullName.vb: RueI.Parsing.ParserBuilder.New()
+  nameWithType: ParserBuilder.ParserBuilder()
+  nameWithType.vb: ParserBuilder.New()
+- uid: RueI.Parsing.ParserBuilder.#ctor*
+  name: ParserBuilder
+  href: api/RueI.Parsing.ParserBuilder.html#RueI_Parsing_ParserBuilder__ctor_
+  commentId: Overload:RueI.Parsing.ParserBuilder.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: RueI.Parsing.ParserBuilder.ParserBuilder
+  fullName.vb: RueI.Parsing.ParserBuilder.New
+  nameWithType: ParserBuilder.ParserBuilder
+  nameWithType.vb: ParserBuilder.New
+- uid: RueI.Parsing.ParserBuilder.AddTag*
+  name: AddTag
+  href: api/RueI.Parsing.ParserBuilder.html#RueI_Parsing_ParserBuilder_AddTag_
+  commentId: Overload:RueI.Parsing.ParserBuilder.AddTag
+  isSpec: "True"
+  fullName: RueI.Parsing.ParserBuilder.AddTag
+  nameWithType: ParserBuilder.AddTag
+- uid: RueI.Parsing.ParserBuilder.AddTag``1
+  name: AddTag<T>()
+  href: api/RueI.Parsing.ParserBuilder.html#RueI_Parsing_ParserBuilder_AddTag__1
+  commentId: M:RueI.Parsing.ParserBuilder.AddTag``1
+  name.vb: AddTag(Of T)()
+  fullName: RueI.Parsing.ParserBuilder.AddTag<T>()
+  fullName.vb: RueI.Parsing.ParserBuilder.AddTag(Of T)()
+  nameWithType: ParserBuilder.AddTag<T>()
+  nameWithType.vb: ParserBuilder.AddTag(Of T)()
+- uid: RueI.Parsing.ParserBuilder.Build
+  name: Build()
+  href: api/RueI.Parsing.ParserBuilder.html#RueI_Parsing_ParserBuilder_Build
+  commentId: M:RueI.Parsing.ParserBuilder.Build
+  fullName: RueI.Parsing.ParserBuilder.Build()
+  nameWithType: ParserBuilder.Build()
+- uid: RueI.Parsing.ParserBuilder.Build*
+  name: Build
+  href: api/RueI.Parsing.ParserBuilder.html#RueI_Parsing_ParserBuilder_Build_
+  commentId: Overload:RueI.Parsing.ParserBuilder.Build
+  isSpec: "True"
+  fullName: RueI.Parsing.ParserBuilder.Build
+  nameWithType: ParserBuilder.Build
+- uid: RueI.Parsing.ParserBuilder.ImportFrom(RueI.Parser)
+  name: ImportFrom(Parser)
+  href: api/RueI.Parsing.ParserBuilder.html#RueI_Parsing_ParserBuilder_ImportFrom_RueI_Parser_
+  commentId: M:RueI.Parsing.ParserBuilder.ImportFrom(RueI.Parser)
+  fullName: RueI.Parsing.ParserBuilder.ImportFrom(RueI.Parser)
+  nameWithType: ParserBuilder.ImportFrom(Parser)
+- uid: RueI.Parsing.ParserBuilder.ImportFrom*
+  name: ImportFrom
+  href: api/RueI.Parsing.ParserBuilder.html#RueI_Parsing_ParserBuilder_ImportFrom_
+  commentId: Overload:RueI.Parsing.ParserBuilder.ImportFrom
+  isSpec: "True"
+  fullName: RueI.Parsing.ParserBuilder.ImportFrom
+  nameWithType: ParserBuilder.ImportFrom
 - uid: RueI.Parsing.ParserContext
   name: ParserContext
   href: api/RueI.Parsing.ParserContext.html

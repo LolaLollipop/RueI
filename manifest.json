@@ -412,16 +412,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RueI.ParserBuilder.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/RueI.ParserBuilder.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/RueI.Parsing.ClosingTag-1.yml",
       "output": {
         ".html": {
@@ -436,6 +426,16 @@
       "output": {
         ".html": {
           "relative_path": "api/RueI.Parsing.NoParamsTag.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Parsing.ParserBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Parsing.ParserBuilder.html"
         }
       },
       "version": ""
