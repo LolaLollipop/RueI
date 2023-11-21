@@ -166,7 +166,7 @@
 
   <h3 id="RueI_DisplayCore_Scheduler" data-uid="RueI.DisplayCore.Scheduler">
   Scheduler
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/DisplayCore.cs/#L33"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/DisplayCore.cs/#L34"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the <a class="xref" href="RueI.Displays.Scheduler.html">Scheduler</a> for this <a class="xref" href="RueI.DisplayCore.html">DisplayCore</a>.</p>
@@ -198,11 +198,53 @@
 </h2>
 
 
+  <a id="RueI_DisplayCore_AddAsReference_" data-uid="RueI.DisplayCore.AddAsReference*"></a>
+
+  <h3 id="RueI_DisplayCore_AddAsReference__1_RueI_ElemReference___0____0_" data-uid="RueI.DisplayCore.AddAsReference``1(RueI.ElemReference{``0},``0)">
+  AddAsReference&lt;T&gt;(ElemReference&lt;T&gt;, T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/DisplayCore.cs/#L129"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Adds an <a class="xref" href="RueI.IElement.html">IElement</a> as an <a class="xref" href="RueI.ElemReference-1.html">ElemReference&lt;T&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddAsReference&lt;T&gt;(ElemReference&lt;T&gt; reference, T element) where T : IElement</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>reference</code> <a class="xref" href="RueI.ElemReference-1.html">ElemReference</a>&lt;T&gt;</dt>
+    <dd><p>The <a class="xref" href="RueI.ElemReference-1.html">ElemReference&lt;T&gt;</a> to use.</p>
+</dd>
+    <dt><code>element</code> <span class="xref">T</span></dt>
+    <dd><p>The <a class="xref" href="RueI.IElement.html">IElement</a> to add.</p>
+</dd>
+  </dl>
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd><p>The type of the <a class="xref" href="RueI.IElement.html">IElement</a> to add.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <a id="RueI_DisplayCore_Get_" data-uid="RueI.DisplayCore.Get*"></a>
 
   <h3 id="RueI_DisplayCore_Get_ReferenceHub_" data-uid="RueI.DisplayCore.Get(ReferenceHub)">
   Get(ReferenceHub)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/DisplayCore.cs/#L55"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/DisplayCore.cs/#L56"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets a DisplayCore from a ReferenceHub, or creates it if it doesn't exist.</p>
@@ -237,11 +279,104 @@
 
 
 
+  <a id="RueI_DisplayCore_GetElementOrNew_" data-uid="RueI.DisplayCore.GetElementOrNew*"></a>
+
+  <h3 id="RueI_DisplayCore_GetElementOrNew__1_RueI_ElemReference___0__System_Func___0__" data-uid="RueI.DisplayCore.GetElementOrNew``1(RueI.ElemReference{``0},System.Func{``0})">
+  GetElementOrNew&lt;T&gt;(ElemReference&lt;T&gt;, Func&lt;T&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/DisplayCore.cs/#L108"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets an <a class="xref" href="RueI.IElement.html">IElement</a> as <code class="typeparamref">T</code>, or creates it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T GetElementOrNew&lt;T&gt;(ElemReference&lt;T&gt; reference, Func&lt;T&gt; creator) where T : IElement</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>reference</code> <a class="xref" href="RueI.ElemReference-1.html">ElemReference</a>&lt;T&gt;</dt>
+    <dd><p>The <a class="xref" href="RueI.ElemReference-1.html">ElemReference&lt;T&gt;</a> to use.</p>
+</dd>
+    <dt><code>creator</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-1">Func</a>&lt;T&gt;</dt>
+    <dd><p>A function that creates a new instance of <code class="typeparamref">T</code> if it does not exist.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd><p>The instance of <code class="typeparamref">T</code>.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd><p>The type of the <a class="xref" href="RueI.IElement.html">IElement</a> to get.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="RueI_DisplayCore_GetElement_" data-uid="RueI.DisplayCore.GetElement*"></a>
+
+  <h3 id="RueI_DisplayCore_GetElement__1_RueI_ElemReference___0__" data-uid="RueI.DisplayCore.GetElement``1(RueI.ElemReference{``0})">
+  GetElement&lt;T&gt;(ElemReference&lt;T&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/DisplayCore.cs/#L88"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets an <a class="xref" href="RueI.IElement.html">IElement</a> as <code class="typeparamref">T</code> if the <a class="xref" href="RueI.ElemReference-1.html">ElemReference&lt;T&gt;</a> exists within this <a class="xref" href="RueI.DisplayCore.html">DisplayCore</a>'s element references.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T? GetElement&lt;T&gt;(ElemReference&lt;T&gt; reference) where T : IElement</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>reference</code> <a class="xref" href="RueI.ElemReference-1.html">ElemReference</a>&lt;T&gt;</dt>
+    <dd><p>The <a class="xref" href="RueI.ElemReference-1.html">ElemReference&lt;T&gt;</a> to use.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd><p>The instance of <code class="typeparamref">T</code> if the <a class="xref" href="RueI.IElement.html">IElement</a> exists within the <a class="xref" href="RueI.DisplayCore.html">DisplayCore</a>'s element references, otherwise null.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd><p>The type of the <a class="xref" href="RueI.IElement.html">IElement</a> to get.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <a id="RueI_DisplayCore_Update_" data-uid="RueI.DisplayCore.Update*"></a>
 
   <h3 id="RueI_DisplayCore_Update_System_Int32_" data-uid="RueI.DisplayCore.Update(System.Int32)">
   Update(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/DisplayCore.cs/#L71"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/DisplayCore.cs/#L72"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Updates this <a class="xref" href="RueI.DisplayCore.html">DisplayCore</a>.</p>

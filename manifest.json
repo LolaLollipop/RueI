@@ -152,6 +152,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/RueI.ElemReference-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.ElemReference-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/RueI.Enums.CaseStyle.yml",
       "output": {
         ".html": {

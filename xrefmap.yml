@@ -335,6 +335,22 @@ references:
   commentId: T:RueI.DisplayCore
   fullName: RueI.DisplayCore
   nameWithType: DisplayCore
+- uid: RueI.DisplayCore.AddAsReference*
+  name: AddAsReference
+  href: api/RueI.DisplayCore.html#RueI_DisplayCore_AddAsReference_
+  commentId: Overload:RueI.DisplayCore.AddAsReference
+  isSpec: "True"
+  fullName: RueI.DisplayCore.AddAsReference
+  nameWithType: DisplayCore.AddAsReference
+- uid: RueI.DisplayCore.AddAsReference``1(RueI.ElemReference{``0},``0)
+  name: AddAsReference<T>(ElemReference<T>, T)
+  href: api/RueI.DisplayCore.html#RueI_DisplayCore_AddAsReference__1_RueI_ElemReference___0____0_
+  commentId: M:RueI.DisplayCore.AddAsReference``1(RueI.ElemReference{``0},``0)
+  name.vb: AddAsReference(Of T)(ElemReference(Of T), T)
+  fullName: RueI.DisplayCore.AddAsReference<T>(RueI.ElemReference<T>, T)
+  fullName.vb: RueI.DisplayCore.AddAsReference(Of T)(RueI.ElemReference(Of T), T)
+  nameWithType: DisplayCore.AddAsReference<T>(ElemReference<T>, T)
+  nameWithType.vb: DisplayCore.AddAsReference(Of T)(ElemReference(Of T), T)
 - uid: RueI.DisplayCore.Get(ReferenceHub)
   name: Get(ReferenceHub)
   href: api/RueI.DisplayCore.html#RueI_DisplayCore_Get_ReferenceHub_
@@ -348,6 +364,38 @@ references:
   isSpec: "True"
   fullName: RueI.DisplayCore.Get
   nameWithType: DisplayCore.Get
+- uid: RueI.DisplayCore.GetElement*
+  name: GetElement
+  href: api/RueI.DisplayCore.html#RueI_DisplayCore_GetElement_
+  commentId: Overload:RueI.DisplayCore.GetElement
+  isSpec: "True"
+  fullName: RueI.DisplayCore.GetElement
+  nameWithType: DisplayCore.GetElement
+- uid: RueI.DisplayCore.GetElementOrNew*
+  name: GetElementOrNew
+  href: api/RueI.DisplayCore.html#RueI_DisplayCore_GetElementOrNew_
+  commentId: Overload:RueI.DisplayCore.GetElementOrNew
+  isSpec: "True"
+  fullName: RueI.DisplayCore.GetElementOrNew
+  nameWithType: DisplayCore.GetElementOrNew
+- uid: RueI.DisplayCore.GetElementOrNew``1(RueI.ElemReference{``0},System.Func{``0})
+  name: GetElementOrNew<T>(ElemReference<T>, Func<T>)
+  href: api/RueI.DisplayCore.html#RueI_DisplayCore_GetElementOrNew__1_RueI_ElemReference___0__System_Func___0__
+  commentId: M:RueI.DisplayCore.GetElementOrNew``1(RueI.ElemReference{``0},System.Func{``0})
+  name.vb: GetElementOrNew(Of T)(ElemReference(Of T), Func(Of T))
+  fullName: RueI.DisplayCore.GetElementOrNew<T>(RueI.ElemReference<T>, System.Func<T>)
+  fullName.vb: RueI.DisplayCore.GetElementOrNew(Of T)(RueI.ElemReference(Of T), System.Func(Of T))
+  nameWithType: DisplayCore.GetElementOrNew<T>(ElemReference<T>, Func<T>)
+  nameWithType.vb: DisplayCore.GetElementOrNew(Of T)(ElemReference(Of T), Func(Of T))
+- uid: RueI.DisplayCore.GetElement``1(RueI.ElemReference{``0})
+  name: GetElement<T>(ElemReference<T>)
+  href: api/RueI.DisplayCore.html#RueI_DisplayCore_GetElement__1_RueI_ElemReference___0__
+  commentId: M:RueI.DisplayCore.GetElement``1(RueI.ElemReference{``0})
+  name.vb: GetElement(Of T)(ElemReference(Of T))
+  fullName: RueI.DisplayCore.GetElement<T>(RueI.ElemReference<T>)
+  fullName.vb: RueI.DisplayCore.GetElement(Of T)(RueI.ElemReference(Of T))
+  nameWithType: DisplayCore.GetElement<T>(ElemReference<T>)
+  nameWithType.vb: DisplayCore.GetElement(Of T)(ElemReference(Of T))
 - uid: RueI.DisplayCore.Scheduler
   name: Scheduler
   href: api/RueI.DisplayCore.html#RueI_DisplayCore_Scheduler
@@ -698,6 +746,34 @@ references:
   isSpec: "True"
   fullName: RueI.ElemCombiner.Combine
   nameWithType: ElemCombiner.Combine
+- uid: RueI.ElemReference`1
+  name: ElemReference<T>
+  href: api/RueI.ElemReference-1.html
+  commentId: T:RueI.ElemReference`1
+  name.vb: ElemReference(Of T)
+  fullName: RueI.ElemReference<T>
+  fullName.vb: RueI.ElemReference(Of T)
+  nameWithType: ElemReference<T>
+  nameWithType.vb: ElemReference(Of T)
+- uid: RueI.ElemReference`1.op_Implicit(RueI.ElemReference{`0})~RueI.ElemReference{RueI.IElement}
+  name: implicit operator ElemReference<IElement>(ElemReference<T>)
+  href: api/RueI.ElemReference-1.html#RueI_ElemReference_1_op_Implicit_RueI_ElemReference__0___RueI_ElemReference_RueI_IElement_
+  commentId: M:RueI.ElemReference`1.op_Implicit(RueI.ElemReference{`0})~RueI.ElemReference{RueI.IElement}
+  name.vb: CType(ElemReference(Of T))
+  fullName: RueI.ElemReference<T>.implicit operator RueI.ElemReference<RueI.IElement>(RueI.ElemReference<T>)
+  fullName.vb: RueI.ElemReference(Of T).CType(RueI.ElemReference(Of T))
+  nameWithType: ElemReference<T>.implicit operator ElemReference<IElement>(ElemReference<T>)
+  nameWithType.vb: ElemReference(Of T).CType(ElemReference(Of T))
+- uid: RueI.ElemReference`1.op_Implicit*
+  name: implicit operator
+  href: api/RueI.ElemReference-1.html#RueI_ElemReference_1_op_Implicit_
+  commentId: Overload:RueI.ElemReference`1.op_Implicit
+  isSpec: "True"
+  name.vb: CType
+  fullName: RueI.ElemReference<T>.implicit operator
+  fullName.vb: RueI.ElemReference(Of T).CType
+  nameWithType: ElemReference<T>.implicit operator
+  nameWithType.vb: ElemReference(Of T).CType
 - uid: RueI.Enums
   name: RueI.Enums
   href: api/RueI.Enums.html
