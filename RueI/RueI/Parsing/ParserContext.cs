@@ -83,7 +83,7 @@ public class ParserContext : TextInfo, IDisposable
     /// <summary>
     /// Applies the <see cref="endingTags"/> and closing <see cref="SizeTags"/> tags to this <see cref="ParserContext"/>.
     /// </summary>
-    internal void ApplyClosingTags()
+    public void ApplyClosingTags()
     {
         foreach (NoParamsTag tag in endingTags)
         {
