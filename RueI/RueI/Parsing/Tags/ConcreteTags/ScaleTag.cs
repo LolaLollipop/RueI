@@ -5,6 +5,7 @@ using RueI.Enums;
 /// <summary>
 /// Provides a way to handle scale tags.
 /// </summary>
+[RichTextTag]
 public class ScaleTag : RichTextTag
 {
     /// <inheritdoc/>

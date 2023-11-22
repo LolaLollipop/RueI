@@ -6,6 +6,7 @@ using RueI.Records;
 /// <summary>
 /// Provides a way to handle line-height tags.
 /// </summary>
+[RichTextTag]
 public class LineHeightTag : MeasurementTag
 {
     private const string TAGFORMAT = "<line-height={0}>";

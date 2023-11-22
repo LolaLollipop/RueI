@@ -3,6 +3,7 @@
 /// <summary>
 /// Provides a way to handle closing line-height tags.
 /// </summary>
+[RichTextTag]
 public class CloseLineHeightTag : ClosingTag<CloseLineHeightTag>
 {
     /// <inheritdoc/>

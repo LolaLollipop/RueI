@@ -6,6 +6,7 @@ using RueI.Records;
 /// <summary>
 /// Provides a way to handle scale tags.
 /// </summary>
+[RichTextTag]
 public class AlignTag : RichTextTag
 {
     /// <inheritdoc/>

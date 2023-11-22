@@ -91,10 +91,4 @@ public static partial class Constants
         "white",
         "yellow",
     });
-
-    public static Parser DefaultParser { get; } = new ParserBuilder()
-        .AddTag<SizeTag>()
-        .AddTag<LineHeightTag>()
-        .AddTag<CloseSizeTag>()
-        .Build();
 }

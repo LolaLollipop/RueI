@@ -3,6 +3,7 @@
 /// <summary>
 /// Provides a way to handle closing size tags.
 /// </summary>
+[RichTextTag]
 public class CloseSizeTag : NoParamsTag
 {
     private const string TAGFORMAT = "</size>";

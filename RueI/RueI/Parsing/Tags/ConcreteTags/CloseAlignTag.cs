@@ -3,6 +3,7 @@
 /// <summary>
 /// Provides a way to handle closing align tags.
 /// </summary>
+[RichTextTag]
 public class CloseAlignTag : ClosingTag<CloseAlignTag>
 {
     /// <inheritdoc/>
