@@ -6,14 +6,13 @@ using System.Collections.ObjectModel;
 /// Provides a variety of constant values.
 /// </summary>
 /// <remarks>This class is mosty designed for internal use within RueI. However, they can still be useful for external use.</remarks>
-public static partial class Constants
+public static class CharacterLengths
 {
     /// <summary>
     /// Gets a <see cref="ReadOnlyDictionary{TKey, TValue}"/> of character sizes.
     /// </summary>
-    public static ReadOnlyDictionary<char, float> CharacterLengths { get; } = new(new Dictionary<char, float>()
+    public static ReadOnlyDictionary<char, float> Lengths { get; } = new(new Dictionary<char, float>()
     {
-        { ' ', 0f },
         { '', 0f },
         { ' ', 8.437592455621301f },
         { '!', 7.828032544378698f },

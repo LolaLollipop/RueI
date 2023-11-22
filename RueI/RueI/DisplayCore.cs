@@ -20,11 +20,15 @@ public class DisplayCore
     /// Initializes a new instance of the <see cref="DisplayCore"/> class.
     /// </summary>
     /// <param name="hub">The hub to create the display for.</param>
-    private DisplayCore(ReferenceHub hub)
+    protected DisplayCore(ReferenceHub hub)
     {
         this.Hub = hub;
 
-        DisplayCores.Add(hub, this);
+        if (hub != null)
+        {
+            DisplayCores.Add(hub, this);
+        }
+
         Scheduler = new(this);
     }
 

@@ -20,4 +20,10 @@
     <ProjectReference Include="..\RueI\RueI.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>../References/Assembly-CSharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

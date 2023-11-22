@@ -256,7 +256,7 @@ public class Parser
             return context.Monospacing + context.CurrentCSpace;
         }
 
-        if (Constants.CharacterLengths.TryGetValue(functionalCase, out float chSize))
+        if (CharacterLengths.Lengths.TryGetValue(functionalCase, out float chSize))
         {
             float multiplier = context.Size / Constants.DEFAULTSIZE;
             if (context.CurrentCase == CaseStyle.Smallcaps && char.IsLower(ch))
