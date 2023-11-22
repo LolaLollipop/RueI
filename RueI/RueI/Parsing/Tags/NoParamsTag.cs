@@ -18,6 +18,5 @@ public abstract class NoParamsTag : RichTextTag
     /// </summary>
     /// <param name="context">The context of the parser.</param>
     /// <returns>true if the tag is valid, otherwise false.</returns>
-    /// <remarks>If the tag does not have parameters, <paramref name="parameters"/> will always be <see cref="string.Empty"/>.</remarks>
     public abstract bool HandleTag(ParserContext context);
 }

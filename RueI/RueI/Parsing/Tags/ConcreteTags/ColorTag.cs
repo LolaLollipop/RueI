@@ -5,6 +5,7 @@ using RueI.Enums;
 /// <summary>
 /// Provides a way to handle color tags.
 /// </summary>
+[RichTextTag]
 public class ColorTag : RichTextTag
 {
     /// <inheritdoc/>

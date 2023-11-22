@@ -6,6 +6,7 @@ using RueI.Records;
 /// <summary>
 /// Provides a way to handle size tags.
 /// </summary>
+[RichTextTag]
 public class SizeTag : MeasurementTag
 {
     private const string TAGFORMAT = "<size={0}>";

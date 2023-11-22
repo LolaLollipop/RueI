@@ -5,6 +5,7 @@ using RueI.Enums;
 /// <summary>
 /// Provides a way to handle smallcaps tags.
 /// </summary>
+[RichTextTag]
 public class SmallcapsTag : NoParamsTag
 {
     /// <inheritdoc/>
@@ -23,6 +24,7 @@ public class SmallcapsTag : NoParamsTag
 /// <summary>
 /// Provides a way to handle closing smallcaps tags.
 /// </summary>
+[RichTextTag]
 public class CloseSmallcapsTag : NoParamsTag
 {
     /// <inheritdoc/>
@@ -38,6 +40,7 @@ public class CloseSmallcapsTag : NoParamsTag
 /// <summary>
 /// Provides a way to handle allcaps tags.
 /// </summary>
+[RichTextTag]
 public class AllcapsTag : NoParamsTag
 {
     /// <inheritdoc/>
@@ -60,6 +63,7 @@ public class AllcapsTag : NoParamsTag
 /// <summary>
 /// Provides a way to handle closing smallcaps tags.
 /// </summary>
+[RichTextTag]
 public class CloseAllcapsTag : NoParamsTag
 {
     /// <inheritdoc/>
@@ -80,6 +84,7 @@ public class CloseAllcapsTag : NoParamsTag
 /// <summary>
 /// Provides a way to handle lowercase tags.
 /// </summary>
+[RichTextTag]
 public class LowercaseTag : NoParamsTag
 {
     /// <inheritdoc/>
@@ -102,6 +107,7 @@ public class LowercaseTag : NoParamsTag
 /// <summary>
 /// Provides a way to handle closing smallcaps tags.
 /// </summary>
+[RichTextTag]
 public class CloseLowercase : NoParamsTag
 {
     /// <inheritdoc/>

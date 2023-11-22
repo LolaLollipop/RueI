@@ -3,6 +3,7 @@
 /// <summary>
 /// Provides a way to handle closing scale tags.
 /// </summary>
+[RichTextTag]
 public class CloseScaleTag : ClosingTag<CloseScaleTag>
 {
     /// <inheritdoc/>
