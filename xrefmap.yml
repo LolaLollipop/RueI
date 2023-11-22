@@ -2481,6 +2481,19 @@ references:
   fullName.vb: RueI.Parsing.ParserContext.AddEndingTag(Of T)()
   nameWithType: ParserContext.AddEndingTag<T>()
   nameWithType.vb: ParserContext.AddEndingTag(Of T)()
+- uid: RueI.Parsing.ParserContext.ApplyClosingTags
+  name: ApplyClosingTags()
+  href: api/RueI.Parsing.ParserContext.html#RueI_Parsing_ParserContext_ApplyClosingTags
+  commentId: M:RueI.Parsing.ParserContext.ApplyClosingTags
+  fullName: RueI.Parsing.ParserContext.ApplyClosingTags()
+  nameWithType: ParserContext.ApplyClosingTags()
+- uid: RueI.Parsing.ParserContext.ApplyClosingTags*
+  name: ApplyClosingTags
+  href: api/RueI.Parsing.ParserContext.html#RueI_Parsing_ParserContext_ApplyClosingTags_
+  commentId: Overload:RueI.Parsing.ParserContext.ApplyClosingTags
+  isSpec: "True"
+  fullName: RueI.Parsing.ParserContext.ApplyClosingTags
+  nameWithType: ParserContext.ApplyClosingTags
 - uid: RueI.Parsing.ParserContext.ColorTags
   name: ColorTags
   href: api/RueI.Parsing.ParserContext.html#RueI_Parsing_ParserContext_ColorTags
