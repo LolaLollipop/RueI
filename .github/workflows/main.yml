@@ -1,6 +1,12 @@
 name: Build and run unit tests
 
 on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
   workflow_dispatch:  # Manually trigger the workflow from the GitHub Actions UI
 
 jobs:
