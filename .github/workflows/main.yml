@@ -1,10 +1,16 @@
-name: build
+name: Build and run unit tests
 
 on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
   workflow_dispatch:  # Manually trigger the workflow from the GitHub Actions UI
 
 jobs:
-  build_and_publish:
+  build_and_test:
     strategy:
       matrix:
         configuration: [Release]

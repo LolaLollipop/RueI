@@ -1,5 +1,5 @@
 # RueI
-[![build](https://github.com/Ruemena/RueI/actions/workflows/main.yml/badge.svg)](https://github.com/Ruemena/RueI/actions/workflows/main.yml)
+[![build and unit tests](https://github.com/Ruemena/RueI/actions/workflows/main.yml/badge.svg)](https://github.com/Ruemena/RueI/actions/workflows/main.yml)
 
 RueI is a hint framework for scp:sl
 
