@@ -120,25 +120,6 @@ references:
   isSpec: "True"
   fullName: RueI.Constants.ValidColorSizes
   nameWithType: Constants.ValidColorSizes
-- uid: RueI.DefaultParser
-  name: DefaultParser
-  href: api/RueI.DefaultParser.html
-  commentId: T:RueI.DefaultParser
-  fullName: RueI.DefaultParser
-  nameWithType: DefaultParser
-- uid: RueI.DefaultParser.Parser
-  name: Parser
-  href: api/RueI.DefaultParser.html#RueI_DefaultParser_Parser
-  commentId: P:RueI.DefaultParser.Parser
-  fullName: RueI.DefaultParser.Parser
-  nameWithType: DefaultParser.Parser
-- uid: RueI.DefaultParser.Parser*
-  name: Parser
-  href: api/RueI.DefaultParser.html#RueI_DefaultParser_Parser_
-  commentId: Overload:RueI.DefaultParser.Parser
-  isSpec: "True"
-  fullName: RueI.DefaultParser.Parser
-  nameWithType: DefaultParser.Parser
 - uid: RueI.Delegates
   name: RueI.Delegates
   href: api/RueI.Delegates.html
@@ -2203,6 +2184,19 @@ references:
   isSpec: "True"
   fullName: RueI.Parser.CreateLineBreak
   nameWithType: Parser.CreateLineBreak
+- uid: RueI.Parser.DefaultParser
+  name: DefaultParser
+  href: api/RueI.Parser.html#RueI_Parser_DefaultParser
+  commentId: P:RueI.Parser.DefaultParser
+  fullName: RueI.Parser.DefaultParser
+  nameWithType: Parser.DefaultParser
+- uid: RueI.Parser.DefaultParser*
+  name: DefaultParser
+  href: api/RueI.Parser.html#RueI_Parser_DefaultParser_
+  commentId: Overload:RueI.Parser.DefaultParser
+  isSpec: "True"
+  fullName: RueI.Parser.DefaultParser
+  nameWithType: Parser.DefaultParser
 - uid: RueI.Parser.GetTagAttributes(System.String,System.Collections.Generic.Dictionary{System.String,System.String}@)
   name: GetTagAttributes(string, out Dictionary<string, string>)
   href: api/RueI.Parser.html#RueI_Parser_GetTagAttributes_System_String_System_Collections_Generic_Dictionary_System_String_System_String___
@@ -2397,6 +2391,19 @@ references:
   fullName.vb: RueI.Parsing.ParserBuilder.New
   nameWithType: ParserBuilder.ParserBuilder
   nameWithType.vb: ParserBuilder.New
+- uid: RueI.Parsing.ParserBuilder.AddFromAssembly(System.Reflection.Assembly)
+  name: AddFromAssembly(Assembly)
+  href: api/RueI.Parsing.ParserBuilder.html#RueI_Parsing_ParserBuilder_AddFromAssembly_System_Reflection_Assembly_
+  commentId: M:RueI.Parsing.ParserBuilder.AddFromAssembly(System.Reflection.Assembly)
+  fullName: RueI.Parsing.ParserBuilder.AddFromAssembly(System.Reflection.Assembly)
+  nameWithType: ParserBuilder.AddFromAssembly(Assembly)
+- uid: RueI.Parsing.ParserBuilder.AddFromAssembly*
+  name: AddFromAssembly
+  href: api/RueI.Parsing.ParserBuilder.html#RueI_Parsing_ParserBuilder_AddFromAssembly_
+  commentId: Overload:RueI.Parsing.ParserBuilder.AddFromAssembly
+  isSpec: "True"
+  fullName: RueI.Parsing.ParserBuilder.AddFromAssembly
+  nameWithType: ParserBuilder.AddFromAssembly
 - uid: RueI.Parsing.ParserBuilder.AddTag*
   name: AddTag
   href: api/RueI.Parsing.ParserBuilder.html#RueI_Parsing_ParserBuilder_AddTag_
@@ -3229,6 +3236,12 @@ references:
   isSpec: "True"
   fullName: RueI.Parsing.Tags.MeasurementTag.TagStyle
   nameWithType: MeasurementTag.TagStyle
+- uid: RueI.Parsing.Tags.RichTextTagAttribute
+  name: RichTextTagAttribute
+  href: api/RueI.Parsing.Tags.RichTextTagAttribute.html
+  commentId: T:RueI.Parsing.Tags.RichTextTagAttribute
+  fullName: RueI.Parsing.Tags.RichTextTagAttribute
+  nameWithType: RichTextTagAttribute
 - uid: RueI.Parsing.Tags.SharedTag`1
   name: SharedTag<T>
   href: api/RueI.Parsing.Tags.SharedTag-1.html

@@ -32,16 +32,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RueI.DefaultParser.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/RueI.DefaultParser.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/RueI.Delegates.GetContent.yml",
       "output": {
         ".html": {
@@ -656,6 +646,16 @@
       "output": {
         ".html": {
           "relative_path": "api/RueI.Parsing.Tags.MeasurementTag.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Parsing.Tags.RichTextTagAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Parsing.Tags.RichTextTagAttribute.html"
         }
       },
       "version": ""
