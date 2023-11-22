@@ -88,19 +88,6 @@ references:
   commentId: F:RueI.Constants.DISPLAYAREAWIDTH
   fullName: RueI.Constants.DISPLAYAREAWIDTH
   nameWithType: Constants.DISPLAYAREAWIDTH
-- uid: RueI.Constants.DefaultParser
-  name: DefaultParser
-  href: api/RueI.Constants.html#RueI_Constants_DefaultParser
-  commentId: P:RueI.Constants.DefaultParser
-  fullName: RueI.Constants.DefaultParser
-  nameWithType: Constants.DefaultParser
-- uid: RueI.Constants.DefaultParser*
-  name: DefaultParser
-  href: api/RueI.Constants.html#RueI_Constants_DefaultParser_
-  commentId: Overload:RueI.Constants.DefaultParser
-  isSpec: "True"
-  fullName: RueI.Constants.DefaultParser
-  nameWithType: Constants.DefaultParser
 - uid: RueI.Constants.EMSTOPIXELS
   name: EMSTOPIXELS
   href: api/RueI.Constants.html#RueI_Constants_EMSTOPIXELS
@@ -139,6 +126,25 @@ references:
   isSpec: "True"
   fullName: RueI.Constants.ValidColorSizes
   nameWithType: Constants.ValidColorSizes
+- uid: RueI.DefaultParser
+  name: DefaultParser
+  href: api/RueI.DefaultParser.html
+  commentId: T:RueI.DefaultParser
+  fullName: RueI.DefaultParser
+  nameWithType: DefaultParser
+- uid: RueI.DefaultParser.Parser
+  name: Parser
+  href: api/RueI.DefaultParser.html#RueI_DefaultParser_Parser
+  commentId: P:RueI.DefaultParser.Parser
+  fullName: RueI.DefaultParser.Parser
+  nameWithType: DefaultParser.Parser
+- uid: RueI.DefaultParser.Parser*
+  name: Parser
+  href: api/RueI.DefaultParser.html#RueI_DefaultParser_Parser_
+  commentId: Overload:RueI.DefaultParser.Parser
+  isSpec: "True"
+  fullName: RueI.DefaultParser.Parser
+  nameWithType: DefaultParser.Parser
 - uid: RueI.Delegates
   name: RueI.Delegates
   href: api/RueI.Delegates.html
