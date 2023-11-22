@@ -12,6 +12,11 @@ public sealed class ParserBuilder
     private readonly List<RichTextTag> currentTags = ListPool<RichTextTag>.Shared.Rent(10);
 
     /// <summary>
+    /// Gets the number of tags within this <see cref="ParserBuilder"/>.
+    /// </summary>
+    public int TagsCount=> currentTags.Count;
+
+    /// <summary>
     /// Initializes a new instance of the <see cref="ParserBuilder"/> class.
     /// </summary>
     public ParserBuilder()

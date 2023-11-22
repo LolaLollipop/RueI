@@ -53,11 +53,6 @@ public static partial class Constants
     public static TimeSpan HintRateLimit { get; } = TimeSpan.FromMilliseconds(0.525);
 
     /// <summary>
-    /// Gets the default color for hints.
-    /// </summary>
-    public const string DEFAULTCOLOR = "#FFF";
-
-    /// <summary>
     /// Gets a list of allowed sizes of color param tags, ignoring the hashtag.
     /// </summary>
     public static ReadOnlyCollection<int> ValidColorSizes { get; } = new(new int[]

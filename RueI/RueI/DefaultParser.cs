@@ -5,23 +5,27 @@ using RueI.Parsing;
 using RueI.Parsing.Tags;
 
 /// <summary>
-/// Provides the default and main <see cref="Parser"/> for RueI.
+/// Provides the default and main <see cref="RueI.Parser"/> for RueI.
 /// </summary>
 public static class DefaultParser
 {
     /// <summary>
-    /// Gets the default <see cref="Parser"/>.
+    /// Gets the default <see cref="RueI.Parser"/>.
     /// </summary>
-    public static Parser Parser { get; } = GetParser();
+    public static Parser Parser { get; } = GetParser(typeof(DefaultParser).Assembly);
 
-    private static Parser GetParser()
+    /// <summary>
+    /// Gets a new <see cref="RueI.Parser"/> from an assembly by getting all of the <see cref="RichTextTagAttribute"/> classes.
+    /// </summary>
+    /// <returns>A new <see cref="RueI.Parser"/>.</returns>
+    /// <remarks>This method is used for unit testing.</remarks>
+    private static Parser GetParser(Assembly assembly)
     {
         ParserBuilder builder = new();
-        Assembly currentAssembly = typeof(DefaultParser).Assembly;
 
         MethodInfo addTag = typeof(ParserBuilder).GetMethod(nameof(ParserBuilder.AddTag));
 
-        foreach (Type type in currentAssembly.GetTypes())
+        foreach (Type type in assembly.GetTypes())
         {
             if (type.GetCustomAttributes(typeof(RichTextTagAttribute), true).Any() && type.IsSubclassOf(typeof(RichTextTag)))
             {

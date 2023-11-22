@@ -7,3 +7,6 @@ RueI/obj
 _site/
 api/
 References/
+packages/
+RueITests/obj
+RueITests/bin
