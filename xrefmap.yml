@@ -64,12 +64,6 @@ references:
   isSpec: "True"
   fullName: RueI.Constants.Colors
   nameWithType: Constants.Colors
-- uid: RueI.Constants.DEFAULTCOLOR
-  name: DEFAULTCOLOR
-  href: api/RueI.Constants.html#RueI_Constants_DEFAULTCOLOR
-  commentId: F:RueI.Constants.DEFAULTCOLOR
-  fullName: RueI.Constants.DEFAULTCOLOR
-  nameWithType: Constants.DEFAULTCOLOR
 - uid: RueI.Constants.DEFAULTHEIGHT
   name: DEFAULTHEIGHT
   href: api/RueI.Constants.html#RueI_Constants_DEFAULTHEIGHT
@@ -2445,6 +2439,19 @@ references:
   isSpec: "True"
   fullName: RueI.Parsing.ParserBuilder.ImportFrom
   nameWithType: ParserBuilder.ImportFrom
+- uid: RueI.Parsing.ParserBuilder.TagsCount
+  name: TagsCount
+  href: api/RueI.Parsing.ParserBuilder.html#RueI_Parsing_ParserBuilder_TagsCount
+  commentId: P:RueI.Parsing.ParserBuilder.TagsCount
+  fullName: RueI.Parsing.ParserBuilder.TagsCount
+  nameWithType: ParserBuilder.TagsCount
+- uid: RueI.Parsing.ParserBuilder.TagsCount*
+  name: TagsCount
+  href: api/RueI.Parsing.ParserBuilder.html#RueI_Parsing_ParserBuilder_TagsCount_
+  commentId: Overload:RueI.Parsing.ParserBuilder.TagsCount
+  isSpec: "True"
+  fullName: RueI.Parsing.ParserBuilder.TagsCount
+  nameWithType: ParserBuilder.TagsCount
 - uid: RueI.Parsing.ParserContext
   name: ParserContext
   href: api/RueI.Parsing.ParserContext.html
