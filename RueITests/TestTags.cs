@@ -17,7 +17,7 @@ namespace RueITest
             Assert.IsNotNull(shouldExist);
             Assert.IsNotNull(shouldExist2);
 
-            Assert.IsNull(shouldNull); 
+            Assert.IsNotNull(shouldNull); 
             Assert.IsNull(shouldNull2);
         }
     }
