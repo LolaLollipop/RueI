@@ -1114,12 +1114,6 @@ references:
   commentId: T:RueI.Extensions.ElementHelpers
   fullName: RueI.Extensions.ElementHelpers
   nameWithType: ElementHelpers
-- uid: RueI.Extensions.ElementHelpers.AddTo(RueI.IElement,RueI.Interfaces.IElementContainer)
-  name: AddTo(IElement, IElementContainer)
-  href: api/RueI.Extensions.ElementHelpers.html#RueI_Extensions_ElementHelpers_AddTo_RueI_IElement_RueI_Interfaces_IElementContainer_
-  commentId: M:RueI.Extensions.ElementHelpers.AddTo(RueI.IElement,RueI.Interfaces.IElementContainer)
-  fullName: RueI.Extensions.ElementHelpers.AddTo(RueI.IElement, RueI.Interfaces.IElementContainer)
-  nameWithType: ElementHelpers.AddTo(IElement, IElementContainer)
 - uid: RueI.Extensions.ElementHelpers.AddTo*
   name: AddTo
   href: api/RueI.Extensions.ElementHelpers.html#RueI_Extensions_ElementHelpers_AddTo_
@@ -1127,6 +1121,15 @@ references:
   isSpec: "True"
   fullName: RueI.Extensions.ElementHelpers.AddTo
   nameWithType: ElementHelpers.AddTo
+- uid: RueI.Extensions.ElementHelpers.AddTo``1(``0,RueI.Interfaces.IElementContainer)
+  name: AddTo<T>(T, IElementContainer)
+  href: api/RueI.Extensions.ElementHelpers.html#RueI_Extensions_ElementHelpers_AddTo__1___0_RueI_Interfaces_IElementContainer_
+  commentId: M:RueI.Extensions.ElementHelpers.AddTo``1(``0,RueI.Interfaces.IElementContainer)
+  name.vb: AddTo(Of T)(T, IElementContainer)
+  fullName: RueI.Extensions.ElementHelpers.AddTo<T>(T, RueI.Interfaces.IElementContainer)
+  fullName.vb: RueI.Extensions.ElementHelpers.AddTo(Of T)(T, RueI.Interfaces.IElementContainer)
+  nameWithType: ElementHelpers.AddTo<T>(T, IElementContainer)
+  nameWithType.vb: ElementHelpers.AddTo(Of T)(T, IElementContainer)
 - uid: RueI.Extensions.ElementHelpers.FilterDisabled(System.Collections.Generic.IEnumerable{RueI.IElement})
   name: FilterDisabled(IEnumerable<IElement>)
   href: api/RueI.Extensions.ElementHelpers.html#RueI_Extensions_ElementHelpers_FilterDisabled_System_Collections_Generic_IEnumerable_RueI_IElement__
@@ -2969,6 +2972,19 @@ references:
   commentId: T:RueI.Parsing.Tags.ConcreteTags.CloseScaleTag
   fullName: RueI.Parsing.Tags.ConcreteTags.CloseScaleTag
   nameWithType: CloseScaleTag
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseScaleTag.ApplyTo(RueI.Parsing.ParserContext)
+  name: ApplyTo(ParserContext)
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseScaleTag.html#RueI_Parsing_Tags_ConcreteTags_CloseScaleTag_ApplyTo_RueI_Parsing_ParserContext_
+  commentId: M:RueI.Parsing.Tags.ConcreteTags.CloseScaleTag.ApplyTo(RueI.Parsing.ParserContext)
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseScaleTag.ApplyTo(RueI.Parsing.ParserContext)
+  nameWithType: CloseScaleTag.ApplyTo(ParserContext)
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseScaleTag.ApplyTo*
+  name: ApplyTo
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseScaleTag.html#RueI_Parsing_Tags_ConcreteTags_CloseScaleTag_ApplyTo_
+  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.CloseScaleTag.ApplyTo
+  isSpec: "True"
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseScaleTag.ApplyTo
+  nameWithType: CloseScaleTag.ApplyTo
 - uid: RueI.Parsing.Tags.ConcreteTags.CloseScaleTag.Name
   name: Name
   href: api/RueI.Parsing.Tags.ConcreteTags.CloseScaleTag.html#RueI_Parsing_Tags_ConcreteTags_CloseScaleTag_Name
@@ -3732,6 +3748,15 @@ references:
   commentId: T:RueI.Screen
   fullName: RueI.Screen
   nameWithType: Screen
+- uid: RueI.Screen.#ctor
+  name: Screen()
+  href: api/RueI.Screen.html#RueI_Screen__ctor
+  commentId: M:RueI.Screen.#ctor
+  name.vb: New()
+  fullName: RueI.Screen.Screen()
+  fullName.vb: RueI.Screen.New()
+  nameWithType: Screen.Screen()
+  nameWithType.vb: Screen.New()
 - uid: RueI.Screen.#ctor(RueI.ScreenDisplay)
   name: Screen(ScreenDisplay)
   href: api/RueI.Screen.html#RueI_Screen__ctor_RueI_ScreenDisplay_

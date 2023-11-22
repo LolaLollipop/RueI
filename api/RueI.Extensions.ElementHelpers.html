@@ -157,9 +157,9 @@
 
   <a id="RueI_Extensions_ElementHelpers_AddTo_" data-uid="RueI.Extensions.ElementHelpers.AddTo*"></a>
 
-  <h3 id="RueI_Extensions_ElementHelpers_AddTo_RueI_IElement_RueI_Interfaces_IElementContainer_" data-uid="RueI.Extensions.ElementHelpers.AddTo(RueI.IElement,RueI.Interfaces.IElementContainer)">
-  AddTo(IElement, IElementContainer)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Extensions/ElementHelpers.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  <h3 id="RueI_Extensions_ElementHelpers_AddTo__1___0_RueI_Interfaces_IElementContainer_" data-uid="RueI.Extensions.ElementHelpers.AddTo``1(``0,RueI.Interfaces.IElementContainer)">
+  AddTo&lt;T&gt;(T, IElementContainer)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Extensions/ElementHelpers.cs/#L17"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Adds an <a class="xref" href="RueI.IElement.html">IElement</a> to a <a class="xref" href="RueI.Interfaces.IElementContainer.html">IElementContainer</a>.</p>
@@ -167,12 +167,12 @@
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static IElement AddTo(this IElement element, IElementContainer container)</code></pre>
+    <pre><code class="lang-csharp hljs">public static T AddTo&lt;T&gt;(this T element, IElementContainer container) where T : IElement</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>element</code> <a class="xref" href="RueI.IElement.html">IElement</a></dt>
+    <dt><code>element</code> <span class="xref">T</span></dt>
     <dd><p>The element to add.</p>
 </dd>
     <dt><code>container</code> <a class="xref" href="RueI.Interfaces.IElementContainer.html">IElementContainer</a></dt>
@@ -182,11 +182,17 @@
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="RueI.IElement.html">IElement</a></dt>
+    <dt><span class="xref">T</span></dt>
     <dd><p>A reference to this element.</p>
 </dd>
   </dl>
 
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd><p>The type of the <a class="xref" href="RueI.IElement.html">IElement</a>.</p>
+</dd>
+  </dl>
 
 
 
@@ -201,7 +207,7 @@
 
   <h3 id="RueI_Extensions_ElementHelpers_FilterDisabled_System_Collections_Generic_IEnumerable_RueI_IElement__" data-uid="RueI.Extensions.ElementHelpers.FilterDisabled(System.Collections.Generic.IEnumerable{RueI.IElement})">
   FilterDisabled(IEnumerable&lt;IElement&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Extensions/ElementHelpers.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Extensions/ElementHelpers.cs/#L29"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Filters out all of the disabled <a class="xref" href="RueI.IElement.html">IElement</a>s in an <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable&lt;T&gt;</a>.</p>
@@ -240,7 +246,7 @@
 
   <h3 id="RueI_Extensions_ElementHelpers_GetFunctionalPosition_RueI_IElement_" data-uid="RueI.Extensions.ElementHelpers.GetFunctionalPosition(RueI.IElement)">
   GetFunctionalPosition(IElement)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Extensions/ElementHelpers.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Extensions/ElementHelpers.cs/#L36"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the functional (un-scaled) position of an element.</p>
