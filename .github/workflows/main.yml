@@ -63,3 +63,6 @@ jobs:
       env:
         Project_Path: ${{ env.Project_Path }}
         Configuration: ${{ matrix.configuration }}
+        
+    - name: Test with the dotnet CLI
+      run: dotnet test
