@@ -30,7 +30,7 @@ public static class ElemCombiner
         float lastPosition = 0;
         float lastOffset = 0;
 
-        elements.Sort();
+        elements.Sort(CompareElement);
 
         for (int i = 0; i < elements.Count; i++)
         {
@@ -75,4 +75,6 @@ public static class ElemCombiner
         float calc = (hintOnePos + (2 * hintOneTotalLines)) - hintTwoPos;
         return calc / -2;
     }
+
+    private static int CompareElement(IElement first, IElement second) => first.ZIndex - second.ZIndex;
 }

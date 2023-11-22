@@ -10,10 +10,16 @@ public static class ElementHelpers
     /// <summary>
     /// Adds an <see cref="IElement"/> to a <see cref="IElementContainer"/>.
     /// </summary>
+    /// <typeparam name="T">The type of the <see cref="IElement"/>.</typeparam>
     /// <param name="element">The element to add.</param>
     /// <param name="container">The <see cref="IElementContainer"/> to add to.</param>
     /// <returns>A reference to this element.</returns>
-    public static IElement AddTo(this IElement element, IElementContainer container) => element.AddTo(container.Elements);
+    public static T AddTo<T>(this T element, IElementContainer container)
+        where T : IElement
+    {
+        element.AddTo(container.Elements);
+        return element;
+    }
 
     /// <summary>
     /// Filters out all of the disabled <see cref="IElement"/>s in an <see cref="IEnumerable{T}"/>.

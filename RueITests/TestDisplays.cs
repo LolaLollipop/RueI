@@ -1,5 +1,6 @@
 using RueI;
 using RueI.Enums;
+using RueI.Extensions;
 using RueI.Parsing;
 using RueI.Parsing.Tags;
 using RueI.Records;
@@ -20,7 +21,7 @@ public class MockDisplayCore : DisplayCore
 public class TestDisplayCore
 {
     [TestMethod]
-    public void TestDisplay()
+    public void TestReferences()
     {
         static SetElement CreateNewElem() => new(100, "hello world");
 
@@ -34,5 +35,35 @@ public class TestDisplayCore
         Assert.IsNotNull(core.GetElement(elemRef));
         Assert.IsNotNull(core.GetElement(elemRefTwo));
         Assert.AreNotEqual(core.GetElement(elemRef), core.GetElement(elemRefTwo));
+    }
+
+    [TestMethod]
+    public void TestCombining()
+    {
+        List<SetElement> elements = new()
+        {
+            new(500, "hello world")
+            {
+                ZIndex = 5
+            },
+            new(200, "goodbye world")
+            {
+                ZIndex = 10
+            }
+        };
+
+        Console.WriteLine(ElemCombiner.Combine(elements));
+    }
+
+    [TestMethod]
+    public void TestScreens()
+    {
+        MockDisplayCore core = new();
+
+        ScreenDisplay display = new(core, new());
+        Screen screen = new(display);
+
+        SetElement element = new(500, "hello world");
+        SetElement anotherElement = new(500, "hello next world");
     }
 }

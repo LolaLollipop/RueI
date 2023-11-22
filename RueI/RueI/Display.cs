@@ -11,6 +11,13 @@ public class Screen : IElementContainer
     /// <summary>
     /// Initializes a new instance of the <see cref="Screen"/> class.
     /// </summary>
+    public Screen()
+    {
+    }
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="Screen"/> class.
+    /// </summary>
     /// <param name="scrDisplay">The <see cref="ScreenDisplay"/> to add this to.</param>
     public Screen(ScreenDisplay scrDisplay)
     {
