@@ -38,7 +38,7 @@ public class DynamicElement : IElement
     public int ZIndex { get; set; }
 
     /// <inheritdoc/>
-    public Parser Parser { get; set; } = DefaultParser.Parser;
+    public Parser Parser { get; set; } = Parser.DefaultParser;
 
     /// <inheritdoc/>
     public ParsedData ParsedData => Parser.Parse(ContentGetter());
@@ -75,7 +75,7 @@ public class SetElement : IElement, ISettable
     public int ZIndex { get; set; } = 0;
 
     /// <inheritdoc/>
-    public Parser Parser { get; set; } = DefaultParser.Parser;
+    public Parser Parser { get; set; } = Parser.DefaultParser;
 
     /// <summary>
     /// Sets the content of this element.
@@ -116,6 +116,6 @@ public interface IElement
     /// <summary>
     /// Gets or sets the <see cref="Parser"/> currently in use by this <see cref="IElement"/>.
     /// </summary>
-    /// <remarks>Implementations should default this to <see cref="DefaultParser.Parser"/>.</remarks>
+    /// <remarks>Implementations should default this to <see cref="Parser.DefaultParser"/>.</remarks>
     public Parser Parser { get; set; }
 }

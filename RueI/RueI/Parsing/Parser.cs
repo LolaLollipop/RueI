@@ -2,11 +2,13 @@
 
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Reflection;
 using System.Text;
 using NorthwoodLib.Pools;
 
 using RueI.Enums;
 using RueI.Parsing;
+using RueI.Parsing.Tags;
 using RueI.Records;
 
 /// <summary>
@@ -43,6 +45,11 @@ public class Parser
         Dictionary<string, ReadOnlyCollection<RichTextTag>> dictionary = tagBuffer.ToDictionary(kv => kv.Key, kv => new ReadOnlyCollection<RichTextTag>(kv.Value));
         Tags = new(dictionary);
     }
+
+    /// <summary>
+    /// Gets the default <see cref="RueI.Parser"/>.
+    /// </summary>
+    public static Parser DefaultParser { get; } = new ParserBuilder().AddFromAssembly(typeof(Parser).Assembly).Build();
 
     /// <summary>
     /// Gets the tags that will be searched for when parsing.

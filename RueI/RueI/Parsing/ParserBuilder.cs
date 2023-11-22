@@ -3,6 +3,7 @@
 using NorthwoodLib.Pools;
 using RueI.Parsing;
 using RueI.Parsing.Tags;
+using System.Reflection;
 
 /// <summary>
 /// Builds <see cref="Parser"/>s.
@@ -12,15 +13,36 @@ public sealed class ParserBuilder
     private readonly List<RichTextTag> currentTags = ListPool<RichTextTag>.Shared.Rent(10);
 
     /// <summary>
-    /// Gets the number of tags within this <see cref="ParserBuilder"/>.
-    /// </summary>
-    public int TagsCount=> currentTags.Count;
-
-    /// <summary>
     /// Initializes a new instance of the <see cref="ParserBuilder"/> class.
     /// </summary>
     public ParserBuilder()
     {
+    }
+
+    /// <summary>
+    /// Gets the number of tags within this <see cref="ParserBuilder"/>.
+    /// </summary>
+    public int TagsCount => currentTags.Count;
+
+    /// <summary>
+    /// Adds new <see cref="RichTextTag"/>s from an assembly by getting all of the <see cref="RichTextTagAttribute"/> classes.
+    /// </summary>
+    /// <param name="assembly">The <see cref="Assembly"/> to get the classes from.</param>
+    /// <returns>A reference to this <see cref="ParserBuilder"/>.</returns>
+    public ParserBuilder AddFromAssembly(Assembly assembly)
+    {
+        MethodInfo addTag = typeof(ParserBuilder).GetMethod(nameof(AddTag));
+
+        foreach (Type type in assembly.GetTypes())
+        {
+            if (type.GetCustomAttributes(typeof(RichTextTagAttribute), true).Any() && type.IsSubclassOf(typeof(RichTextTag)))
+            {
+                MethodInfo generic = addTag.MakeGenericMethod(type);
+                generic.Invoke(this, Array.Empty<object>());
+            }
+        }
+
+        return this;
     }
 
     /// <summary>

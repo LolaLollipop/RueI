@@ -1,24 +1,57 @@
+using RueI;
+using RueI.Parsing;
 using RueI.Parsing.Tags;
+using System.Linq;
 
-namespace RueITest
+namespace RueITest;
+
+[RichTextTag]
+public class NotTag
 {
-    [TestClass]
-    public class TestTags
+}
+
+[RichTextTag]
+public class RealTag : NoParamsTag
+{
+    public override string[] Names { get; } = { "hello" };
+
+    public override bool HandleTag(ParserContext context) => throw new NotImplementedException();
+}
+
+[TestClass]
+public class TestTags
+{
+    [TestMethod]
+    public void TestTagBuilding()
     {
-        [TestMethod]
-        public void TestUtility()
-        {
-            string? shouldExist = TagHelpers.ExtractFromQuotations("hello world");
-            string? shouldExist2 = TagHelpers.ExtractFromQuotations("\"hello world - - - again\"");
+        ParserBuilder builder = new();
 
-            string? shouldNull = TagHelpers.ExtractFromQuotations("\"hello  !!!         \nworld");
-            string? shouldNull2 = TagHelpers.ExtractFromQuotations("hello world again\"");
+        builder.AddFromAssembly(typeof(TestTags).Assembly);
+        Parser parser = builder.Build();
 
-            Assert.IsNotNull(shouldExist);
-            Assert.IsNotNull(shouldExist2);
+        Assert.AreEqual(1, parser.Tags.Count);
+        Assert.IsTrue(parser.Tags.Values.Any(x => x.Contains(SharedTag<RealTag>.Singleton)));
+    }
 
-            Assert.IsNull(shouldNull); 
-            Assert.IsNull(shouldNull2);
-        }
+    [TestMethod]
+    [DataRow("\"hello  !!!         \nworld")]
+    [DataRow("hello world again\"")]
+    public void TestQuoteFailures(string input)
+    {
+        string? shouldNull = TagHelpers.ExtractFromQuotations(input);
+
+        Assert.IsNull(shouldNull); 
+    }
+
+    [TestMethod]
+    [DataRow("\"hello world - - - again\"")]
+    [DataRow("hello \n\n\nworld")]
+    [DataRow("\"y")]
+    public void TestQuoteSuccess(string input)
+    {
+        string? shouldExist = TagHelpers.ExtractFromQuotations(input);
+
+        Assert.IsNotNull(shouldExist);
     }
 }
+///"\"hello world - - - again\""
