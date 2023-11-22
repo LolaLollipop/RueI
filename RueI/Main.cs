@@ -1,5 +1,11 @@
 ﻿namespace RueI;
 
+/*********\
+*  /\_/\  *
+* ( o.o ) *
+*  > ^ <  *
+\*********/
+
 using System.Runtime.CompilerServices;
 using eMEC;
 
