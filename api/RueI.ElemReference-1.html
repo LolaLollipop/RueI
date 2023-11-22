@@ -2,10 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class ElemReference&lt;T&gt;
+      <title>Struct ElemReference&lt;T&gt;
  | RueI </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class ElemReference&lt;T&gt;
+      <meta name="title" content="Struct ElemReference&lt;T&gt;
  | RueI ">
       
       <link rel="icon" href="../favicon.ico">
@@ -90,7 +90,7 @@
 
 
   <h1 id="RueI_ElemReference_1" data-uid="RueI.ElemReference`1" class="text-break">
-    Class ElemReference&lt;T&gt;
+    Struct ElemReference&lt;T&gt;
   <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/ElemReference.cs/#L7"><i class="bi bi-code-slash"></i></a>
   </h1>
 
@@ -104,7 +104,7 @@
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class ElemReference&lt;T&gt; where T : IElement</code></pre>
+    <pre><code class="lang-csharp hljs">public struct ElemReference&lt;T&gt; : IEquatable&lt;ElemReference&lt;T&gt;&gt; where T : IElement</code></pre>
   </div>
 
 
@@ -116,24 +116,26 @@
 </dd>
   </dl>
 
-  <dl class="typelist inheritance">
-    <dt>Inheritance</dt>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
     <dd>
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-      <div><span class="xref">ElemReference&lt;T&gt;</span></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="RueI.ElemReference-1.html">ElemReference</a>&lt;T&gt;&gt;</div>
     </dd>
   </dl>
-
 
 
   <dl class="typelist derived">
     <dt>Inherited Members</dt>
     <dd>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.equals">ValueType.Equals(object)</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode">ValueType.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.tostring">ValueType.ToString()</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
@@ -142,20 +144,84 @@
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
-    </div>
-    <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
     </div>
   </dd></dl>
 
-  <dl class="typelist extensionMethods">
-    <dt>Extension Methods</dt>
-    <dd>
-  <div>
-      <a class="xref" href="RueI.Extensions.UniversalExtensions.html#RueI_Extensions_UniversalExtensions_AddTo__1___0_System_Collections_Generic_ICollection___0__">UniversalExtensions.AddTo&lt;T&gt;(T, ICollection&lt;T&gt;)</a>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="RueI_ElemReference_1__ctor_" data-uid="RueI.ElemReference`1.#ctor*"></a>
+
+  <h3 id="RueI_ElemReference_1__ctor" data-uid="RueI.ElemReference`1.#ctor">
+  ElemReference()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/ElemReference.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="RueI.ElemReference-1.html">ElemReference&lt;T&gt;</a> struct.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ElemReference()</code></pre>
   </div>
-  </dd></dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="RueI_ElemReference_1_Equals_" data-uid="RueI.ElemReference`1.Equals*"></a>
+
+  <h3 id="RueI_ElemReference_1_Equals_RueI_ElemReference__0__" data-uid="RueI.ElemReference`1.Equals(RueI.ElemReference{`0})">
+  Equals(ElemReference&lt;T&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/ElemReference.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Compares this <a class="xref" href="RueI.ElemReference-1.html">ElemReference&lt;T&gt;</a> to another <a class="xref" href="RueI.ElemReference-1.html">ElemReference&lt;T&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly bool Equals(ElemReference&lt;T&gt; other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>other</code> <a class="xref" href="RueI.ElemReference-1.html">ElemReference</a>&lt;T&gt;</dt>
+    <dd><p>The other <a class="xref" href="RueI.ElemReference-1.html">ElemReference&lt;T&gt;</a>.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>A value indicating whether or not the two are equal.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
 
 
 
@@ -169,7 +235,7 @@
 
   <h3 id="RueI_ElemReference_1_op_Implicit_RueI_ElemReference__0___RueI_ElemReference_RueI_IElement_" data-uid="RueI.ElemReference`1.op_Implicit(RueI.ElemReference{`0})~RueI.ElemReference{RueI.IElement}">
   implicit operator ElemReference&lt;IElement&gt;(ElemReference&lt;T&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/ElemReference.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/ElemReference.cs/#L32"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Safely casts this to a <a class="xref" href="RueI.ElemReference-1.html">ElemReference&lt;T&gt;</a> with <a class="xref" href="RueI.IElement.html">IElement</a> generic.</p>

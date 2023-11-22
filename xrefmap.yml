@@ -7,6 +7,25 @@ references:
   commentId: N:RueI
   fullName: RueI
   nameWithType: RueI
+- uid: RueI.CharacterLengths
+  name: CharacterLengths
+  href: api/RueI.CharacterLengths.html
+  commentId: T:RueI.CharacterLengths
+  fullName: RueI.CharacterLengths
+  nameWithType: CharacterLengths
+- uid: RueI.CharacterLengths.Lengths
+  name: Lengths
+  href: api/RueI.CharacterLengths.html#RueI_CharacterLengths_Lengths
+  commentId: P:RueI.CharacterLengths.Lengths
+  fullName: RueI.CharacterLengths.Lengths
+  nameWithType: CharacterLengths.Lengths
+- uid: RueI.CharacterLengths.Lengths*
+  name: Lengths
+  href: api/RueI.CharacterLengths.html#RueI_CharacterLengths_Lengths_
+  commentId: Overload:RueI.CharacterLengths.Lengths
+  isSpec: "True"
+  fullName: RueI.CharacterLengths.Lengths
+  nameWithType: CharacterLengths.Lengths
 - uid: RueI.Constants
   name: Constants
   href: api/RueI.Constants.html
@@ -38,19 +57,6 @@ references:
   commentId: F:RueI.Constants.CAPSTOSMALLCAPS
   fullName: RueI.Constants.CAPSTOSMALLCAPS
   nameWithType: Constants.CAPSTOSMALLCAPS
-- uid: RueI.Constants.CharacterLengths
-  name: CharacterLengths
-  href: api/RueI.Constants.html#RueI_Constants_CharacterLengths
-  commentId: P:RueI.Constants.CharacterLengths
-  fullName: RueI.Constants.CharacterLengths
-  nameWithType: Constants.CharacterLengths
-- uid: RueI.Constants.CharacterLengths*
-  name: CharacterLengths
-  href: api/RueI.Constants.html#RueI_Constants_CharacterLengths_
-  commentId: Overload:RueI.Constants.CharacterLengths
-  isSpec: "True"
-  fullName: RueI.Constants.CharacterLengths
-  nameWithType: Constants.CharacterLengths
 - uid: RueI.Constants.Colors
   name: Colors
   href: api/RueI.Constants.html#RueI_Constants_Colors
@@ -316,6 +322,25 @@ references:
   commentId: T:RueI.DisplayCore
   fullName: RueI.DisplayCore
   nameWithType: DisplayCore
+- uid: RueI.DisplayCore.#ctor(ReferenceHub)
+  name: DisplayCore(ReferenceHub)
+  href: api/RueI.DisplayCore.html#RueI_DisplayCore__ctor_ReferenceHub_
+  commentId: M:RueI.DisplayCore.#ctor(ReferenceHub)
+  name.vb: New(ReferenceHub)
+  fullName: RueI.DisplayCore.DisplayCore(ReferenceHub)
+  fullName.vb: RueI.DisplayCore.New(ReferenceHub)
+  nameWithType: DisplayCore.DisplayCore(ReferenceHub)
+  nameWithType.vb: DisplayCore.New(ReferenceHub)
+- uid: RueI.DisplayCore.#ctor*
+  name: DisplayCore
+  href: api/RueI.DisplayCore.html#RueI_DisplayCore__ctor_
+  commentId: Overload:RueI.DisplayCore.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: RueI.DisplayCore.DisplayCore
+  fullName.vb: RueI.DisplayCore.New
+  nameWithType: DisplayCore.DisplayCore
+  nameWithType.vb: DisplayCore.New
 - uid: RueI.DisplayCore.AddAsReference*
   name: AddAsReference
   href: api/RueI.DisplayCore.html#RueI_DisplayCore_AddAsReference_
@@ -736,6 +761,43 @@ references:
   fullName.vb: RueI.ElemReference(Of T)
   nameWithType: ElemReference<T>
   nameWithType.vb: ElemReference(Of T)
+- uid: RueI.ElemReference`1.#ctor
+  name: ElemReference()
+  href: api/RueI.ElemReference-1.html#RueI_ElemReference_1__ctor
+  commentId: M:RueI.ElemReference`1.#ctor
+  name.vb: New()
+  fullName: RueI.ElemReference<T>.ElemReference()
+  fullName.vb: RueI.ElemReference(Of T).New()
+  nameWithType: ElemReference<T>.ElemReference()
+  nameWithType.vb: ElemReference(Of T).New()
+- uid: RueI.ElemReference`1.#ctor*
+  name: ElemReference
+  href: api/RueI.ElemReference-1.html#RueI_ElemReference_1__ctor_
+  commentId: Overload:RueI.ElemReference`1.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: RueI.ElemReference<T>.ElemReference
+  fullName.vb: RueI.ElemReference(Of T).New
+  nameWithType: ElemReference<T>.ElemReference
+  nameWithType.vb: ElemReference(Of T).New
+- uid: RueI.ElemReference`1.Equals(RueI.ElemReference{`0})
+  name: Equals(ElemReference<T>)
+  href: api/RueI.ElemReference-1.html#RueI_ElemReference_1_Equals_RueI_ElemReference__0__
+  commentId: M:RueI.ElemReference`1.Equals(RueI.ElemReference{`0})
+  name.vb: Equals(ElemReference(Of T))
+  fullName: RueI.ElemReference<T>.Equals(RueI.ElemReference<T>)
+  fullName.vb: RueI.ElemReference(Of T).Equals(RueI.ElemReference(Of T))
+  nameWithType: ElemReference<T>.Equals(ElemReference<T>)
+  nameWithType.vb: ElemReference(Of T).Equals(ElemReference(Of T))
+- uid: RueI.ElemReference`1.Equals*
+  name: Equals
+  href: api/RueI.ElemReference-1.html#RueI_ElemReference_1_Equals_
+  commentId: Overload:RueI.ElemReference`1.Equals
+  isSpec: "True"
+  fullName: RueI.ElemReference<T>.Equals
+  fullName.vb: RueI.ElemReference(Of T).Equals
+  nameWithType: ElemReference<T>.Equals
+  nameWithType.vb: ElemReference(Of T).Equals
 - uid: RueI.ElemReference`1.op_Implicit(RueI.ElemReference{`0})~RueI.ElemReference{RueI.IElement}
   name: implicit operator ElemReference<IElement>(ElemReference<T>)
   href: api/RueI.ElemReference-1.html#RueI_ElemReference_1_op_Implicit_RueI_ElemReference__0___RueI_ElemReference_RueI_IElement_

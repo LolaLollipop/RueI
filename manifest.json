@@ -22,6 +22,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/RueI.CharacterLengths.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.CharacterLengths.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/RueI.Constants.yml",
       "output": {
         ".html": {
