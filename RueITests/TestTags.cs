@@ -46,7 +46,7 @@ public class TestTags
     [TestMethod]
     [DataRow("\"hello world - - - again\"")]
     [DataRow("hello \n\n\nworld")]
-    [DataRow("\"y")]
+    [DataRow("")]
     public void TestQuoteSuccess(string input)
     {
         string? shouldExist = TagHelpers.ExtractFromQuotations(input);
