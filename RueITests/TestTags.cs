@@ -1,8 +1,8 @@
 using RueI;
-using RueI.Enums;
 using RueI.Parsing;
+using RueI.Parsing.Enums;
+using RueI.Parsing.Records;
 using RueI.Parsing.Tags;
-using RueI.Records;
 
 namespace RueITest;
 

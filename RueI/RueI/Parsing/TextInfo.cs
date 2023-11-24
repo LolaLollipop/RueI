@@ -1,6 +1,6 @@
 ﻿namespace RueI.Parsing;
 
-using RueI.Enums;
+using RueI.Parsing.Enums;
 
 /// <summary>
 /// Provides information about TMP text at a certain point.

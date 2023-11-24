@@ -9,13 +9,17 @@
 using System.Runtime.CompilerServices;
 using eMEC;
 
+/// <summary>
+/// Represents the main class for RueI.
+/// </summary>
 public static class Main
 {
+    /// <summary>
+    /// Gets the current version of RueI.
+    /// </summary>
+    public static readonly Version Version = new(1, 0, 0);
+
     private static bool isInit = false;
-
-    public static TaskPool RoundTaskPool { get; set; } = new();
-
-    public static Version Version = new(1, 0, 0);
 
     static Main()
     {
@@ -38,6 +42,9 @@ public static class Main
         }
     }
 
+    /// <summary>
+    /// Ensures that RueI is properly initialized.
+    /// </summary>
     public static void EnsureInit()
     {
         if (!isInit)

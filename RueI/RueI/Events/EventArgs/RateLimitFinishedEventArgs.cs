@@ -1,5 +1,7 @@
 ﻿namespace RueI.Events;
 
+using RueI.Displays;
+
 /// <summary>
 /// Contains all information after a player's <see cref="DisplayCoordinator"/> is updated.
 /// </summary>
