@@ -1,7 +1,7 @@
-namespace RueI;
+namespace RueI.Elements;
 
-using RueI.Elements;
 using RueI.Elements.Interfaces;
+using RueI.Parsing;
 using RueI.Parsing.Records;
 
 /// <summary>

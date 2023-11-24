@@ -1,4 +1,4 @@
-﻿namespace RueI;
+﻿namespace RueI.Parsing;
 
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
