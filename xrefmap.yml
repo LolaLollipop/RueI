@@ -1175,13 +1175,13 @@ references:
   commentId: T:RueI.Events.DisplayUpdatedEventArgs
   fullName: RueI.Events.DisplayUpdatedEventArgs
   nameWithType: DisplayUpdatedEventArgs
-- uid: RueI.Events.DisplayUpdatedEventArgs.#ctor(ReferenceHub,DisplayCore)
+- uid: RueI.Events.DisplayUpdatedEventArgs.#ctor(ReferenceHub,RueI.Displays.DisplayCore)
   name: DisplayUpdatedEventArgs(ReferenceHub, DisplayCore)
-  href: api/RueI.Events.DisplayUpdatedEventArgs.html#RueI_Events_DisplayUpdatedEventArgs__ctor_ReferenceHub_DisplayCore_
-  commentId: M:RueI.Events.DisplayUpdatedEventArgs.#ctor(ReferenceHub,DisplayCore)
+  href: api/RueI.Events.DisplayUpdatedEventArgs.html#RueI_Events_DisplayUpdatedEventArgs__ctor_ReferenceHub_RueI_Displays_DisplayCore_
+  commentId: M:RueI.Events.DisplayUpdatedEventArgs.#ctor(ReferenceHub,RueI.Displays.DisplayCore)
   name.vb: New(ReferenceHub, DisplayCore)
-  fullName: RueI.Events.DisplayUpdatedEventArgs.DisplayUpdatedEventArgs(ReferenceHub, DisplayCore)
-  fullName.vb: RueI.Events.DisplayUpdatedEventArgs.New(ReferenceHub, DisplayCore)
+  fullName: RueI.Events.DisplayUpdatedEventArgs.DisplayUpdatedEventArgs(ReferenceHub, RueI.Displays.DisplayCore)
+  fullName.vb: RueI.Events.DisplayUpdatedEventArgs.New(ReferenceHub, RueI.Displays.DisplayCore)
   nameWithType: DisplayUpdatedEventArgs.DisplayUpdatedEventArgs(ReferenceHub, DisplayCore)
   nameWithType.vb: DisplayUpdatedEventArgs.New(ReferenceHub, DisplayCore)
 - uid: RueI.Events.DisplayUpdatedEventArgs.#ctor*
@@ -2266,19 +2266,6 @@ references:
   isSpec: "True"
   fullName: RueI.Main.EnsureInit
   nameWithType: Main.EnsureInit
-- uid: RueI.Main.RoundTaskPool
-  name: RoundTaskPool
-  href: api/RueI.Main.html#RueI_Main_RoundTaskPool
-  commentId: P:RueI.Main.RoundTaskPool
-  fullName: RueI.Main.RoundTaskPool
-  nameWithType: Main.RoundTaskPool
-- uid: RueI.Main.RoundTaskPool*
-  name: RoundTaskPool
-  href: api/RueI.Main.html#RueI_Main_RoundTaskPool_
-  commentId: Overload:RueI.Main.RoundTaskPool
-  isSpec: "True"
-  fullName: RueI.Main.RoundTaskPool
-  nameWithType: Main.RoundTaskPool
 - uid: RueI.Main.Version
   name: Version
   href: api/RueI.Main.html#RueI_Main_Version

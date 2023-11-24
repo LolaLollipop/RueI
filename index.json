@@ -207,7 +207,7 @@
   "api/RueI.Main.html": {
     "href": "api/RueI.Main.html",
     "title": "Class Main | RueI",
-    "keywords": "Class Main Namespace RueI Assembly RueI.dll public static class Main Inheritance object Main Inherited Members object.ToString() object.Equals(object) object.Equals(object, object) object.ReferenceEquals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() Fields Version public static Version Version Field Value Version Properties RoundTaskPool public static TaskPool RoundTaskPool { get; set; } Property Value TaskPool Methods EnsureInit() public static void EnsureInit()"
+    "keywords": "Class Main Namespace RueI Assembly RueI.dll Represents the main class for RueI. public static class Main Inheritance object Main Inherited Members object.ToString() object.Equals(object) object.Equals(object, object) object.ReferenceEquals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() Fields Version Gets the current version of RueI. public static readonly Version Version Field Value Version Methods EnsureInit() Ensures that RueI is properly initialized. public static void EnsureInit()"
   },
   "api/RueI.Parser.html": {
     "href": "api/RueI.Parser.html",
@@ -462,7 +462,7 @@
   "api/RueI.html": {
     "href": "api/RueI.html",
     "title": "Namespace RueI | RueI",
-    "keywords": "Namespace RueI Classes CharacterLengths Provides a variety of constant values. Constants Provides a variety of constant values. EventHandler Handles events for RueI. Main Parser Helps parse the content of elements. Ruetility Provides helpful functions for dealing with elements and hints. SetElement Represents a simple cached element with settable content."
+    "keywords": "Namespace RueI Classes CharacterLengths Provides a variety of constant values. Constants Provides a variety of constant values. EventHandler Handles events for RueI. Main Represents the main class for RueI. Parser Helps parse the content of elements. Ruetility Provides helpful functions for dealing with elements and hints. SetElement Represents a simple cached element with settable content."
   },
   "api/eMEC.Cooldown.html": {
     "href": "api/eMEC.Cooldown.html",
