@@ -1,6 +1,6 @@
 ﻿namespace RueI.Parsing.Tags.ConcreteTags;
 
-using RueI.Enums;
+using RueI.Parsing.Enums;
 
 /// <summary>
 /// Provides a way to handle smallcaps tags.

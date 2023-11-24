@@ -1,10 +1,10 @@
-﻿namespace RueI.Displays;
+﻿namespace RueI.Displays.Scheduling;
 
 using System.Diagnostics;
 using eMEC;
 using NorthwoodLib.Pools;
+using RueI.Displays.Scheduling.Records;
 using RueI.Extensions;
-using RueI.Records;
 
 /// <summary>
 /// Provides a means of doing batch operations.
@@ -13,7 +13,6 @@ public class Scheduler
 {
     public class RateLimiter
     {
-
         private Stopwatch consumer = new();
 
         /// <summary>
@@ -179,13 +178,13 @@ public class Scheduler
         BatchJob batchJob = currentBatches.First();
 
         coordinator.IgnoreUpdate = true;
-        foreach (ScheduledJob job in batchJob.jobs)
+        foreach (ScheduledJob job in batchJob.Jobs)
         {
             job.Action();
         }
 
         coordinator.IgnoreUpdate = false;
-        ListPool<ScheduledJob>.Shared.Return(batchJob.jobs);
+        ListPool<ScheduledJob>.Shared.Return(batchJob.Jobs);
 
         currentBatches.RemoveAt(0);
         rateLimiter.Start(Constants.HintRateLimit);

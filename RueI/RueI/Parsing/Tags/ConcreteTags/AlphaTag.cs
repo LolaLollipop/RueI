@@ -3,13 +3,13 @@
 using RueI.Parsing.Enums;
 
 /// <summary>
-/// Provides a way to handle scale tags.
+/// Provides a way to handle line-height tags.
 /// </summary>
 [RichTextTag]
-public class ScaleTag : RichTextTag
+public class AlphaTag : RichTextTag
 {
     /// <inheritdoc/>
-    public override string[] Names { get; } = { "scale" };
+    public override string[] Names { get; } = { "alpha" };
 
     /// <inheritdoc/>
     public override TagStyle TagStyle { get; } = TagStyle.ValueParam;
@@ -17,16 +17,13 @@ public class ScaleTag : RichTextTag
     /// <inheritdoc/>
     public override bool HandleTag(ParserContext context, string content)
     {
-        if (!float.TryParse(content, out float result))
+        if (content.Length != 3 || content.EndsWith(" "))
         {
             return false;
         }
 
-        context.Scale = result;
-        context.ResultBuilder.Append($"<scale={result}>");
-
-        context.AddEndingTag<CloseLineHeightTag>();
-
+        context.ResultBuilder.Append($"<alpha={content}>");
+        context.AddEndingTag<CloseAlphaTag>();
         return true;
     }
 }

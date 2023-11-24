@@ -1,9 +1,10 @@
-﻿namespace RueI;
+﻿namespace RueI.Displays;
 
 using System.Text;
 using NorthwoodLib.Pools;
 using RueI.Extensions;
-using RueI.Records;
+using RueI.Elements;
+using RueI.Parsing.Records;
 
 /// <summary>
 /// Provides a means of combining <see cref="IElement"/>s.

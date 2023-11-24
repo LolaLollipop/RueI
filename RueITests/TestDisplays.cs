@@ -1,9 +1,5 @@
 using RueI;
-using RueI.Enums;
-using RueI.Extensions;
-using RueI.Parsing;
-using RueI.Parsing.Tags;
-using RueI.Records;
+using RueI.Displays;
 
 namespace RueITest;
 
@@ -52,7 +48,7 @@ public class TestDisplayCore
             }
         };
 
-        Console.WriteLine(ElemCombiner.Combine(elements));
+        ElemCombiner.Combine(elements);
     }
 
     [TestMethod]

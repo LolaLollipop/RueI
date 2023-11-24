@@ -1,4 +1,6 @@
-﻿namespace RueI;
+﻿namespace RueI.Displays;
+
+using RueI.Elements;
 
 /// <summary>
 /// Represents a reference to an element present within any number of player's displays.

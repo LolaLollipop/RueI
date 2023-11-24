@@ -1,4 +1,4 @@
-﻿namespace RueI.Enums;
+﻿namespace RueI.Parsing.Enums;
 
 /// <summary>
 /// Represents the unit used for a measurement parameter.

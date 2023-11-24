@@ -1,14 +1,13 @@
 ﻿namespace RueI;
 
 using System.Collections.ObjectModel;
-using RueI.Parsing;
 using RueI.Parsing.Tags.ConcreteTags;
 
 /// <summary>
 /// Provides a variety of constant values.
 /// </summary>
 /// <remarks>This class is mosty designed for internal use within RueI. However, they can still be useful for external use.</remarks>
-public static partial class Constants
+public static class Constants
 {
     /// <summary>
     /// Gets the default height if a line-height is not provided.

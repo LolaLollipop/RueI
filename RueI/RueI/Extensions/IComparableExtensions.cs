@@ -26,7 +26,7 @@ public static class IComparableExtensions
     }
 
     /// <summary>
-    /// Gets the maximum of two <see cref="IComparable{T}"/>, if a bool is <see cref="true"/>.
+    /// Gets the maximum of two <see cref="IComparable{T}"/>, if a bool is true.
     /// </summary>
     /// <typeparam name="T">The type to use.</typeparam>
     /// <param name="first">The first value.</param>

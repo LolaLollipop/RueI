@@ -1,4 +1,4 @@
-﻿namespace RueI.Enums;
+﻿namespace RueI.Parsing.Enums;
 
 /// <summary>
 /// Represents the style used for a color parameter.

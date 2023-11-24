@@ -4,15 +4,16 @@ using RueI.Parsing.Enums;
 using RueI.Parsing.Records;
 
 /// <summary>
-/// Provides a way to handle line-height tags.
+/// Provides a way to handle cspace tags.
 /// </summary>
 [RichTextTag]
-public class LineHeightTag : MeasurementTag
+public class CSpaceTag : MeasurementTag
 {
-    private const string TAGFORMAT = "<line-height={0}>";
+    /// <inheritdoc/>
+    public override string[] Names { get; } = { "cspace" };
 
     /// <inheritdoc/>
-    public override string[] Names { get; } = { "line-height" };
+    public override bool AllowPercentages { get; } = false;
 
     /// <inheritdoc/>
     public override bool HandleTag(ParserContext context, MeasurementInfo info)
@@ -21,15 +22,14 @@ public class LineHeightTag : MeasurementTag
 
         float convertedValue = style switch
         {
-            MeasurementUnit.Percentage => value / 100 * Constants.DEFAULTSIZE,
             MeasurementUnit.Ems => value * Constants.EMSTOPIXELS,
             _ => value
         };
 
-        context.CurrentLineHeight = convertedValue;
-        context.ResultBuilder.AppendFormat(TAGFORMAT, convertedValue);
+        context.CurrentCSpace = convertedValue;
+        context.ResultBuilder.Append($"<cspace={convertedValue}>");
 
-        context.AddEndingTag<CloseLineHeightTag>();
+        context.AddEndingTag<CloseCSpaceTag>();
 
         return true;
     }

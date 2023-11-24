@@ -1,4 +1,6 @@
-﻿namespace RueI.Interfaces;
+﻿namespace RueI.Displays.Interfaces;
+
+using RueI.Elements;
 
 /// <summary>
 /// Defines a container for multiple elements.

@@ -2,14 +2,12 @@
 
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Reflection;
 using System.Text;
 using NorthwoodLib.Pools;
 
-using RueI.Enums;
+using RueI.Parsing.Enums;
 using RueI.Parsing;
-using RueI.Parsing.Tags;
-using RueI.Records;
+using RueI.Parsing.Records;
 
 /// <summary>
 /// Helps parse the content of elements.
@@ -60,6 +58,131 @@ public class Parser
     public ReadOnlyDictionary<string, ReadOnlyCollection<RichTextTag>> Tags { get; }
 
     /// <summary>
+    /// Adds a character to a parser context.
+    /// </summary>
+    /// <param name="context">The context of the parser.</param>
+    /// <param name="ch">The character to add.</param>
+    public static void AddCharacter(ParserContext context, char ch)
+    {
+        float size = CalculateCharacterLength(context, ch);
+
+        context.WidthSinceSpace += size;
+
+        context.ResultBuilder.Append(ch);
+
+        if (context.CurrentLineWidth + context.WidthSinceSpace > Constants.DISPLAYAREAWIDTH)
+        {
+            CreateLineBreak(context);
+        }
+        else if (ch == ' ' || ch == '​') // zero width space
+        {
+            if (!context.NoBreak)
+            {
+                context.WidthSinceSpace = 0;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Calculates the length of an <see cref="char"/> with a context.
+    /// </summary>
+    /// <param name="context">The context to parse the char under.</param>
+    /// <param name="ch">The char to calculate the length for.</param>
+    /// <returns>A float indicating the total length of the char.</returns>
+    public static float CalculateCharacterLength(TextInfo context, char ch)
+    {
+        char functionalCase = context.CurrentCase switch
+        {
+            CaseStyle.Smallcaps or CaseStyle.Uppercase => char.ToUpper(ch),
+            CaseStyle.Lowercase => char.ToLower(ch),
+            _ => ch
+        };
+
+        if (context.IsMonospace)
+        {
+            return context.Monospacing + context.CurrentCSpace;
+        }
+
+        if (CharacterLengths.Lengths.TryGetValue(functionalCase, out float chSize))
+        {
+            float multiplier = context.Size / Constants.DEFAULTSIZE;
+            if (context.CurrentCase == CaseStyle.Smallcaps && char.IsLower(ch))
+            {
+                multiplier *= 0.8f;
+            }
+
+            if (context.IsSuperOrSubScript)
+            {
+                multiplier *= 0.5f;
+            }
+
+            return chSize * multiplier;
+        }
+        else
+        {
+            // TODO: handle warnings
+            return default;
+        }
+    }
+
+    /// <summary>
+    /// Generates the effects of a linebreak for a parser.
+    /// </summary>
+    /// <param name="context">The context of the parser.</param>
+    public static void CreateLineBreak(ParserContext context)
+    {
+        if (context.CurrentLineWidth < Constants.DISPLAYAREAWIDTH)
+        {
+            context.CurrentLineWidth = context.WidthSinceSpace;
+            context.NewOffset += context.CurrentLineHeight;
+        }
+        else
+        {
+            context.CurrentLineWidth = 0;
+            context.NewOffset += context.WidthSinceSpace;
+        }
+
+        context.CurrentLineWidth += context.Indent;
+    }
+
+    /// <summary>
+    /// Parses the tag attributes of a string.
+    /// </summary>
+    /// <param name="content">The content to parse.</param>
+    /// <param name="attributes">The pairs of attributes.</param>
+    /// <returns>true if the content is valid, otherwise false.</returns>
+    public static bool GetTagAttributes(string content, out Dictionary<string, string> attributes)
+    {
+        IEnumerable<string> result = content.Split('"')
+                        .Select((element, index) => index % 2 == 0
+                           ? element.Split(' ')
+                           : new string[] { element })
+                        .SelectMany(element => element);
+
+        Dictionary<string, string> attributePairs = new();
+        attributes = attributePairs;
+
+        foreach (string possiblePair in result)
+        {
+            if (possiblePair == string.Empty)
+            {
+                return false;
+            }
+
+            string[] results = possiblePair.Split('=');
+
+            if (results.Length != 2)
+            {
+                return false;
+            }
+
+            attributePairs.Add(results[0], results[1]);
+        }
+
+        return true;
+    }
+
+    /// <summary>
     /// Parses a rich text string.
     /// </summary>
     /// <param name="text">The string to parse.</param>
@@ -82,7 +205,7 @@ public class Parser
         {
             AddCharacter(context, '<');
 
-            this.AvoidMatch(context);
+            AvoidMatch(context);
             foreach (char ch in tagBuffer.ToString())
             {
                 AddCharacter(context, ch);
@@ -211,129 +334,6 @@ public class Parser
     }
 
     /// <summary>
-    /// Adds a character to a parser context.
-    /// </summary>
-    /// <param name="context">The context of the parser.</param>
-    /// <param name="ch">The character to add.</param>
-    public void AddCharacter(ParserContext context, char ch)
-    {
-        float size = CalculateCharacterLength(context, ch);
-
-        context.WidthSinceSpace += size;
-
-        context.ResultBuilder.Append(ch);
-
-        if (context.CurrentLineWidth + context.WidthSinceSpace > Constants.DISPLAYAREAWIDTH)
-        {
-            CreateLineBreak(context);
-        }
-        else if (ch == ' ')
-        {
-            if (!context.NoBreak)
-            {
-                context.WidthSinceSpace = 0;
-            }
-        }
-    }
-
-    /// <summary>
-    /// Calculates the length of an <see cref="char"/> with a context.
-    /// </summary>
-    /// <param name="context">The context to parse the char under.</param>
-    /// <param name="ch">The char to calculate the length for.</param>
-    /// <returns>A float indicating the total length of the char.</returns>
-    public float CalculateCharacterLength(TextInfo context, char ch)
-    {
-        char functionalCase = context.CurrentCase switch
-        {
-            CaseStyle.Smallcaps or CaseStyle.Uppercase => char.ToUpper(ch),
-            CaseStyle.Lowercase => char.ToLower(ch),
-            _ => ch
-        };
-
-        if (context.IsMonospace)
-        {
-            return context.Monospacing + context.CurrentCSpace;
-        }
-
-        if (CharacterLengths.Lengths.TryGetValue(functionalCase, out float chSize))
-        {
-            float multiplier = context.Size / Constants.DEFAULTSIZE;
-            if (context.CurrentCase == CaseStyle.Smallcaps && char.IsLower(ch))
-            {
-                multiplier *= 0.8f;
-            }
-
-            if (context.IsSuperOrSubScript)
-            {
-                multiplier *= 0.5f;
-            }
-
-            return chSize * multiplier;
-        }
-        else
-        {
-            // TODO: handle warnings
-            return default;
-        }
-    }
-
-    /// <summary>
-    /// Generates the effects of a linebreak for a parser.
-    /// </summary>
-    /// <param name="context">The context of the parser.</param>
-    public void CreateLineBreak(ParserContext context)
-    {
-        if (context.CurrentLineWidth < Constants.DISPLAYAREAWIDTH)
-        {
-            context.CurrentLineWidth = context.WidthSinceSpace;
-            context.NewOffset += context.CurrentLineHeight;
-        }
-        else
-        {
-            context.CurrentLineWidth = 0;
-            context.NewOffset += context.WidthSinceSpace;
-        }
-    }
-
-    /// <summary>
-    /// Parses the tag attributes of a string.
-    /// </summary>
-    /// <param name="content">The content to parse.</param>
-    /// <param name="attributes">The pairs of attributes.</param>
-    /// <returns><see cref="true"/> if the content is valid, otherwise <see cref="false"/>.</returns>
-    public static bool GetTagAttributes(string content, out Dictionary<string, string> attributes)
-    {
-        IEnumerable<string> result = content.Split('"')
-                        .Select((element, index) => index % 2 == 0
-                           ? element.Split(' ')
-                           : new string[] { element })
-                        .SelectMany(element => element);
-
-        Dictionary<string, string> attributePairs = new();
-        attributes = attributePairs;
-
-        foreach (string possiblePair in result)
-        {
-            if (possiblePair == string.Empty)
-            {
-                return false;
-            }
-
-            string[] results = possiblePair.Split('=');
-
-            if (results.Length != 2)
-            {
-                return false;
-            }
-
-            attributePairs.Add(results[0], results[1]);
-        }
-
-        return true;
-    }
-
-    /// <summary>
     /// Exports this parser's <see cref="RichTextTag"/>s to a <see cref="ParserBuilder"/>.
     /// </summary>
     /// <param name="builder">The builder to export the tags to.</param>
@@ -343,7 +343,7 @@ public class Parser
     /// Avoids the client TMP matching a tag.
     /// </summary>
     /// <param name="context">The context of the parser.</param>
-    private void AvoidMatch(ParserContext context)
+    private static void AvoidMatch(ParserContext context)
     {
         if (!context.IsMonospace && context.CurrentCSpace == 0)
         {

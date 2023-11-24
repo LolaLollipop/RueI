@@ -2,7 +2,7 @@ namespace RueI.Extensions.HintBuilding;
 
 using System.Drawing;
 using System.Text;
-using RueI.Enums;
+using RueI.Parsing.Enums;
 
 /// <summary>
 /// Provides extensions for adding rich text tags to <see cref="StringBuilder"/>s.

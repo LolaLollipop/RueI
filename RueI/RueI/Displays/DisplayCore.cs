@@ -1,7 +1,9 @@
-﻿namespace RueI;
+﻿namespace RueI.Displays;
 
+using RueI.Elements;
 using Hints;
 using RueI.Displays;
+using RueI.Displays.Scheduling;
 
 /// <summary>
 /// Is responsible for managing all of the <see cref="DisplayBase"/>s for a <see cref="ReferenceHub"/>.
@@ -33,7 +35,7 @@ public class DisplayCore
     }
 
     /// <summary>
-    /// Gets the <see cref="Displays.Scheduler"/> for this <see cref="DisplayCore"/>.
+    /// Gets the <see cref="Displays.Scheduling.Scheduler"/> for this <see cref="DisplayCore"/>.
     /// </summary>
     public Scheduler Scheduler { get; }
 

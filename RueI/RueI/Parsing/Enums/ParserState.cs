@@ -1,4 +1,4 @@
-﻿namespace RueI.Enums;
+﻿namespace RueI.Parsing.Enums;
 
 /// <summary>
 /// Represents the state of the parser.

@@ -19,7 +19,7 @@ public static class Events
     public static event RueIEvent<RateLimitFinishedEventArgs>? RateLimitFinished;
 
     /// <summary>
-    /// Called after a player's <see cref="DisplayCore"/> is updated.
+    /// Called after a player's <see cref="Displays.DisplayCore"/> is updated.
     /// </summary>
     public static event RueIEvent<DisplayUpdatedEventArgs>? DisplayUpdated;
 

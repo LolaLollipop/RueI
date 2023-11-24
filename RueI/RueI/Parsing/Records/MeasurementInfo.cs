@@ -1,8 +1,8 @@
-﻿namespace RueI.Records;
+﻿namespace RueI.Parsing.Records;
 
 using System.Text;
 using NorthwoodLib.Pools;
-using RueI.Enums;
+using RueI.Parsing.Enums;
 
 /// <summary>
 /// Defines a record that contains information about measurement info.
@@ -70,6 +70,5 @@ public record struct MeasurementInfo(float Value, MeasurementUnit Style)
             info = default;
             return false;
         }
-
     }
 }

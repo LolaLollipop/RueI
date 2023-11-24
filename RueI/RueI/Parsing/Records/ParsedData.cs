@@ -1,4 +1,4 @@
-﻿namespace RueI.Records;
+﻿namespace RueI.Parsing.Records;
 
 /// <summary>
 /// Defines a record that contains information used for displaying multiple elements.

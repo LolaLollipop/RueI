@@ -1,6 +1,6 @@
 ﻿namespace RueI.Parsing.Tags.ConcreteTags;
 
-using RueI.Enums;
+using RueI.Parsing.Enums;
 
 /// <summary>
 /// Provides a way to handle color tags.
@@ -15,26 +15,26 @@ public class ColorTag : RichTextTag
     public override TagStyle TagStyle { get; } = TagStyle.ValueParam;
 
     /// <inheritdoc/>
-    public override bool HandleTag(ParserContext context, string param)
+    public override bool HandleTag(ParserContext context, string content)
     {
-        if (param.StartsWith("#"))
+        if (content.StartsWith("#"))
         {
-            if (!Constants.ValidColorSizes.Contains(param.Length - 1))
+            if (!Constants.ValidColorSizes.Contains(content.Length - 1))
             {
                 return false;
             }
         }
         else
         {
-            string? unquoted = TagHelpers.ExtractFromQuotations(param);
+            string? unquoted = TagHelpers.ExtractFromQuotations(content);
             if (unquoted == null || !Constants.Colors.Contains(unquoted))
             {
                 return false;
             }
         }
 
-        context.ResultBuilder.Append($"<color={param}>");
-        context.AddEndingTag<CloseSizeTag>();
+        context.ResultBuilder.Append($"<color={content}>");
+        context.AddEndingTag<CloseSizeTag>(allowDuplicates: true);
         return true;
     }
 }

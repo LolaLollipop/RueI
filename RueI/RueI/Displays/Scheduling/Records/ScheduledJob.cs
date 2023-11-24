@@ -1,4 +1,4 @@
-﻿namespace RueI.Records;
+﻿namespace RueI.Displays.Scheduling.Records;
 
 /// <summary>
 /// Defines a scheduled job for a <see cref="Scheduler"/>.

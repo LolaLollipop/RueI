@@ -1,8 +1,5 @@
 ﻿namespace RueI.Parsing;
 
-using RueI.Enums;
-using RueI.Parsing.Tags.ConcreteTags;
-
 /// <summary>
 /// Defines the base class for all rich text tags.
 /// </summary>

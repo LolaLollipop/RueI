@@ -1,7 +1,6 @@
 ﻿namespace RueI.Parsing.Tags.ConcreteTags;
 
-using RueI.Enums;
-using RueI.Records;
+using RueI.Parsing.Enums;
 
 /// <summary>
 /// Provides a way to handle scale tags.

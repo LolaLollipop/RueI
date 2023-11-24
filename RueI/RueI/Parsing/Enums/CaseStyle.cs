@@ -1,4 +1,4 @@
-﻿namespace RueI.Enums;
+﻿namespace RueI.Parsing.Enums;
 
 /// <summary>
 /// Represents the case style of the parser.

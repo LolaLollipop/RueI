@@ -1,7 +1,7 @@
 ﻿namespace RueI.Parsing.Tags;
 
-using RueI.Enums;
-using RueI.Records;
+using RueI.Parsing.Enums;
+using RueI.Parsing.Records;
 
 /// <summary>
 /// Defines the base class for all tags that only take in a measurement.
@@ -11,10 +11,15 @@ public abstract class MeasurementTag : RichTextTag
     /// <inheritdoc/>
     public sealed override TagStyle TagStyle { get; } = TagStyle.ValueParam;
 
+    /// <summary>
+    /// Gets a value indicating whether or not this tag allows parentheses.
+    /// </summary>
+    public virtual bool AllowPercentages { get; } = true;
+
     /// <inheritdoc/>
     public sealed override bool HandleTag(ParserContext context, string content)
     {
-        if (MeasurementInfo.TryParse(content, out MeasurementInfo info))
+        if (MeasurementInfo.TryParse(content, out MeasurementInfo info) && (info.Style != MeasurementUnit.Percentage || AllowPercentages))
         {
             return HandleTag(context, info);
         }

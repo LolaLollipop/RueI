@@ -31,6 +31,11 @@ public class ParserContext : TextInfo, IDisposable
     public float NewOffset { get; set; } = 0;
 
     /// <summary>
+    /// Gets or sets the current width of the text.
+    /// </summary>
+    public float DisplayAreaWidth { get; set; } = Constants.DISPLAYAREAWIDTH;
+
+    /// <summary>
     /// Gets a stack containing all of the nested sizes.
     /// </summary>
     public Stack<float> SizeTags { get; } = new();
@@ -39,6 +44,11 @@ public class ParserContext : TextInfo, IDisposable
     /// Gets or sets the current line width of the parser.
     /// </summary>
     public float CurrentLineWidth { get; set; } = 0;
+
+    /// <summary>
+    /// Gets or sets the current indent of the parser.
+    /// </summary>
+    public float Indent { get; set; } = 0;
 
     /// <summary>
     /// Gets or sets a value indicating whether the parser should parse tags other than noparse.
@@ -64,10 +74,18 @@ public class ParserContext : TextInfo, IDisposable
     /// Adds a <see cref="RichTextTag"/> to a list of tags that will be added to the end of the parser's result.
     /// </summary>
     /// <typeparam name="T">The type of the <see cref="RichTextTag"/> to be added as an ending tag (as a <see cref="SharedTag{Tags}"/>).</typeparam>
-    public void AddEndingTag<T>()
+    /// <param name="allowDuplicates">Whether or not duplicates are allowed, accommodating for nested tags.</param>
+    public void AddEndingTag<T>(bool allowDuplicates = false)
         where T : NoParamsTag, new()
     {
-        endingTags.Add(SharedTag<T>.Singleton);
+        NoParamsTag singleton = SharedTag<T>.Singleton;
+
+        if (!allowDuplicates && endingTags.Contains(singleton))
+        {
+            return;
+        }
+
+        endingTags.Add(singleton);
     }
 
     /// <summary>

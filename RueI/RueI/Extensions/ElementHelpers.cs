@@ -1,6 +1,7 @@
 ﻿namespace RueI.Extensions;
 
-using RueI.Interfaces;
+using RueI.Elements;
+using RueI.Displays.Interfaces;
 
 /// <summary>
 /// Provides extensions and helpers for working with elements.

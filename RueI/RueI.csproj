@@ -68,7 +68,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="RueI\Enums\Extensions\" />
+    <Folder Include="RueI\Parsing\Enums\Extensions\" />
+    <Folder Include="RueI\Records\" />
   </ItemGroup>
 
   <ItemGroup>
