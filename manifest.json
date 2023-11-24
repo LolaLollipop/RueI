@@ -42,60 +42,30 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RueI.Delegates.GetContent.yml",
+      "source_relative_path": "api/RueI.Displays.Display.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RueI.Delegates.GetContent.html"
+          "relative_path": "api/RueI.Displays.Display.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RueI.Delegates.ParseTag.yml",
+      "source_relative_path": "api/RueI.Displays.DisplayBase.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RueI.Delegates.ParseTag.html"
+          "relative_path": "api/RueI.Displays.DisplayBase.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RueI.Delegates.yml",
+      "source_relative_path": "api/RueI.Displays.DisplayCore.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RueI.Delegates.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/RueI.Display.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/RueI.Display.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/RueI.DisplayBase.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/RueI.DisplayBase.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/RueI.DisplayCore.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/RueI.DisplayCore.html"
+          "relative_path": "api/RueI.Displays.DisplayCore.html"
         }
       },
       "version": ""
@@ -112,20 +82,110 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RueI.Displays.Scheduler.RateLimiter.yml",
+      "source_relative_path": "api/RueI.Displays.ElemCombiner.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RueI.Displays.Scheduler.RateLimiter.html"
+          "relative_path": "api/RueI.Displays.ElemCombiner.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RueI.Displays.Scheduler.yml",
+      "source_relative_path": "api/RueI.Displays.ElemReference-1.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RueI.Displays.Scheduler.html"
+          "relative_path": "api/RueI.Displays.ElemReference-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Displays.Interfaces.IElementContainer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Displays.Interfaces.IElementContainer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Displays.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Displays.Interfaces.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Displays.Scheduling.Records.ScheduledJob.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Displays.Scheduling.Records.ScheduledJob.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Displays.Scheduling.Records.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Displays.Scheduling.Records.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Displays.Scheduling.Scheduler.RateLimiter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Displays.Scheduling.Scheduler.RateLimiter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Displays.Scheduling.Scheduler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Displays.Scheduling.Scheduler.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Displays.Scheduling.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Displays.Scheduling.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Displays.Screen.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Displays.Screen.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Displays.ScreenDisplay.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Displays.ScreenDisplay.html"
         }
       },
       "version": ""
@@ -142,80 +202,70 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RueI.DynamicElement.yml",
+      "source_relative_path": "api/RueI.Elements.Delegates.GetContent.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RueI.DynamicElement.html"
+          "relative_path": "api/RueI.Elements.Delegates.GetContent.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RueI.ElemCombiner.yml",
+      "source_relative_path": "api/RueI.Elements.Delegates.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RueI.ElemCombiner.html"
+          "relative_path": "api/RueI.Elements.Delegates.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RueI.ElemReference-1.yml",
+      "source_relative_path": "api/RueI.Elements.DynamicElement.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RueI.ElemReference-1.html"
+          "relative_path": "api/RueI.Elements.DynamicElement.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RueI.Enums.CaseStyle.yml",
+      "source_relative_path": "api/RueI.Elements.IElement.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RueI.Enums.CaseStyle.html"
+          "relative_path": "api/RueI.Elements.IElement.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RueI.Enums.ColorStyle.yml",
+      "source_relative_path": "api/RueI.Elements.Interfaces.ISettable.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RueI.Enums.ColorStyle.html"
+          "relative_path": "api/RueI.Elements.Interfaces.ISettable.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RueI.Enums.MeasurementUnit.yml",
+      "source_relative_path": "api/RueI.Elements.Interfaces.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RueI.Enums.MeasurementUnit.html"
+          "relative_path": "api/RueI.Elements.Interfaces.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RueI.Enums.TagStyle.yml",
+      "source_relative_path": "api/RueI.Elements.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RueI.Enums.TagStyle.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/RueI.Enums.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/RueI.Enums.html"
+          "relative_path": "api/RueI.Elements.html"
         }
       },
       "version": ""
@@ -372,46 +422,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RueI.IElement.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/RueI.IElement.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/RueI.Interfaces.IElementContainer.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/RueI.Interfaces.IElementContainer.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/RueI.Interfaces.ISettable.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/RueI.Interfaces.ISettable.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/RueI.Interfaces.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/RueI.Interfaces.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/RueI.Main.yml",
       "output": {
         ".html": {
@@ -436,6 +446,56 @@
       "output": {
         ".html": {
           "relative_path": "api/RueI.Parsing.ClosingTag-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Parsing.Enums.CaseStyle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Parsing.Enums.CaseStyle.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Parsing.Enums.ColorStyle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Parsing.Enums.ColorStyle.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Parsing.Enums.MeasurementUnit.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Parsing.Enums.MeasurementUnit.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Parsing.Enums.TagStyle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Parsing.Enums.TagStyle.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Parsing.Enums.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Parsing.Enums.html"
         }
       },
       "version": ""
@@ -472,6 +532,36 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Parsing.Records.MeasurementInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Parsing.Records.MeasurementInfo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Parsing.Records.ParsedData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Parsing.Records.ParsedData.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Parsing.Records.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Parsing.Records.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/RueI.Parsing.RichTextTag.yml",
       "output": {
         ".html": {
@@ -502,6 +592,36 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Parsing.Tags.ConcreteTags.AlphaTag.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Parsing.Tags.ConcreteTags.AlphaTag.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Parsing.Tags.ConcreteTags.BoldTag.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Parsing.Tags.ConcreteTags.BoldTag.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Parsing.Tags.ConcreteTags.CSpaceTag.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Parsing.Tags.ConcreteTags.CSpaceTag.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/RueI.Parsing.Tags.ConcreteTags.CloseAlignTag.yml",
       "output": {
         ".html": {
@@ -522,10 +642,50 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Parsing.Tags.ConcreteTags.CloseAlphaTag.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Parsing.Tags.ConcreteTags.CloseAlphaTag.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Parsing.Tags.ConcreteTags.CloseBoldTag.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Parsing.Tags.ConcreteTags.CloseBoldTag.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Parsing.Tags.ConcreteTags.CloseCSpaceTag.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Parsing.Tags.ConcreteTags.CloseCSpaceTag.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/RueI.Parsing.Tags.ConcreteTags.CloseColorTag.yml",
       "output": {
         ".html": {
           "relative_path": "api/RueI.Parsing.Tags.ConcreteTags.CloseColorTag.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Parsing.Tags.ConcreteTags.CloseItalicsTag.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Parsing.Tags.ConcreteTags.CloseItalicsTag.html"
         }
       },
       "version": ""
@@ -586,6 +746,16 @@
       "output": {
         ".html": {
           "relative_path": "api/RueI.Parsing.Tags.ConcreteTags.ColorTag.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Parsing.Tags.ConcreteTags.ItalicsTag.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Parsing.Tags.ConcreteTags.ItalicsTag.html"
         }
       },
       "version": ""
@@ -742,70 +912,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RueI.Records.MeasurementInfo.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/RueI.Records.MeasurementInfo.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/RueI.Records.ParsedData.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/RueI.Records.ParsedData.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/RueI.Records.ScheduledJob.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/RueI.Records.ScheduledJob.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/RueI.Records.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/RueI.Records.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/RueI.Ruetility.yml",
       "output": {
         ".html": {
           "relative_path": "api/RueI.Ruetility.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/RueI.Screen.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/RueI.Screen.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/RueI.ScreenDisplay.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/RueI.ScreenDisplay.html"
         }
       },
       "version": ""

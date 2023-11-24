@@ -2,10 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class SizeTag
+      <title>Class Screen
  | RueI </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class SizeTag
+      <meta name="title" content="Class Screen
  | RueI ">
       
       <link rel="icon" href="../favicon.ico">
@@ -17,7 +17,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/Ruemena/RueI/new/master/apiSpec/new?filename=RueI_Parsing_Tags_ConcreteTags_SizeTag.md&amp;value=---%0Auid%3A%20RueI.Parsing.Tags.ConcreteTags.SizeTag%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/Ruemena/RueI/new/master/apiSpec/new?filename=RueI_Displays_Screen.md&amp;value=---%0Auid%3A%20RueI.Displays.Screen%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -85,26 +85,26 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="RueI.Parsing.Tags.ConcreteTags.SizeTag">
+        <article data-uid="RueI.Displays.Screen">
 
 
 
-  <h1 id="RueI_Parsing_Tags_ConcreteTags_SizeTag" data-uid="RueI.Parsing.Tags.ConcreteTags.SizeTag" class="text-break">
-    Class SizeTag
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/Tags/ConcreteTags/SizeTag.cs/#L9"><i class="bi bi-code-slash"></i></a>
+  <h1 id="RueI_Displays_Screen" data-uid="RueI.Displays.Screen" class="text-break">
+    Class Screen
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/Screen.cs/#L9"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
-    <dl><dt>Namespace</dt><dd><a class="xref" href="RueI.html">RueI</a>.<a class="xref" href="RueI.Parsing.html">Parsing</a>.<a class="xref" href="RueI.Parsing.Tags.html">Tags</a>.<a class="xref" href="RueI.Parsing.Tags.ConcreteTags.html">ConcreteTags</a></dd></dl>
+    <dl><dt>Namespace</dt><dd><a class="xref" href="RueI.html">RueI</a>.<a class="xref" href="RueI.Displays.html">Displays</a></dd></dl>
   <dl><dt>Assembly</dt><dd>RueI.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Provides a way to handle size tags.</p>
+  <div class="markdown summary"><p>Represents a <a class="xref" href="RueI.Displays.Interfaces.IElementContainer.html">IElementContainer</a> inside a <a class="xref" href="RueI.Displays.ScreenDisplay.html">ScreenDisplay</a>.</p>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class SizeTag : MeasurementTag</code></pre>
+    <pre><code class="lang-csharp hljs">public class Screen : IElementContainer</code></pre>
   </div>
 
 
@@ -114,26 +114,21 @@
     <dt>Inheritance</dt>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-      <div><a class="xref" href="RueI.Parsing.RichTextTag.html">RichTextTag</a></div>
-      <div><a class="xref" href="RueI.Parsing.Tags.MeasurementTag.html">MeasurementTag</a></div>
-      <div><span class="xref">SizeTag</span></div>
+      <div><span class="xref">Screen</span></div>
     </dd>
   </dl>
 
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="RueI.Displays.Interfaces.IElementContainer.html">IElementContainer</a></div>
+    </dd>
+  </dl>
 
 
   <dl class="typelist derived">
     <dt>Inherited Members</dt>
     <dd>
-    <div>
-      <a class="xref" href="RueI.Parsing.Tags.MeasurementTag.html#RueI_Parsing_Tags_MeasurementTag_TagStyle">MeasurementTag.TagStyle</a>
-    </div>
-    <div>
-      <a class="xref" href="RueI.Parsing.Tags.MeasurementTag.html#RueI_Parsing_Tags_MeasurementTag_AllowPercentages">MeasurementTag.AllowPercentages</a>
-    </div>
-    <div>
-      <a class="xref" href="RueI.Parsing.Tags.MeasurementTag.html#RueI_Parsing_Tags_MeasurementTag_HandleTag_RueI_Parsing_ParserContext_System_String_">MeasurementTag.HandleTag(ParserContext, string)</a>
-    </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
     </div>
@@ -169,23 +164,87 @@
 
 
 
-  <h2 class="section" id="properties">Properties
+  <h2 class="section" id="constructors">Constructors
 </h2>
 
 
-  <a id="RueI_Parsing_Tags_ConcreteTags_SizeTag_Names_" data-uid="RueI.Parsing.Tags.ConcreteTags.SizeTag.Names*"></a>
+  <a id="RueI_Displays_Screen__ctor_" data-uid="RueI.Displays.Screen.#ctor*"></a>
 
-  <h3 id="RueI_Parsing_Tags_ConcreteTags_SizeTag_Names" data-uid="RueI.Parsing.Tags.ConcreteTags.SizeTag.Names">
-  Names
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/Tags/ConcreteTags/SizeTag.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  <h3 id="RueI_Displays_Screen__ctor" data-uid="RueI.Displays.Screen.#ctor">
+  Screen()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/Screen.cs/#L14"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Gets the names of this tag.</p>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="RueI.Displays.Screen.html">Screen</a> class.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override string[] Names { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public Screen()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="RueI_Displays_Screen__ctor_" data-uid="RueI.Displays.Screen.#ctor*"></a>
+
+  <h3 id="RueI_Displays_Screen__ctor_RueI_Displays_ScreenDisplay_" data-uid="RueI.Displays.Screen.#ctor(RueI.Displays.ScreenDisplay)">
+  Screen(ScreenDisplay)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/Screen.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="RueI.Displays.Screen.html">Screen</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Screen(ScreenDisplay scrDisplay)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>scrDisplay</code> <a class="xref" href="RueI.Displays.ScreenDisplay.html">ScreenDisplay</a></dt>
+    <dd><p>The <a class="xref" href="RueI.Displays.ScreenDisplay.html">ScreenDisplay</a> to add this to.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="RueI_Displays_Screen_Elements_" data-uid="RueI.Displays.Screen.Elements*"></a>
+
+  <h3 id="RueI_Displays_Screen_Elements" data-uid="RueI.Displays.Screen.Elements">
+  Elements
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/Screen.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the elements of this screen.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;IElement&gt; Elements { get; }</code></pre>
   </div>
 
 
@@ -194,55 +253,9 @@
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="RueI.Elements.IElement.html">IElement</a>&gt;</dt>
     <dd></dd>
   </dl>
-
-
-
-
-
-
-
-
-  <h2 class="section" id="methods">Methods
-</h2>
-
-
-  <a id="RueI_Parsing_Tags_ConcreteTags_SizeTag_HandleTag_" data-uid="RueI.Parsing.Tags.ConcreteTags.SizeTag.HandleTag*"></a>
-
-  <h3 id="RueI_Parsing_Tags_ConcreteTags_SizeTag_HandleTag_RueI_Parsing_ParserContext_RueI_Parsing_Records_MeasurementInfo_" data-uid="RueI.Parsing.Tags.ConcreteTags.SizeTag.HandleTag(RueI.Parsing.ParserContext,RueI.Parsing.Records.MeasurementInfo)">
-  HandleTag(ParserContext, MeasurementInfo)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/Tags/ConcreteTags/SizeTag.cs/#L18"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Handles an instance of this tag with <a class="xref" href="RueI.Parsing.Records.MeasurementInfo.html">MeasurementInfo</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override bool HandleTag(ParserContext context, MeasurementInfo info)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>context</code> <a class="xref" href="RueI.Parsing.ParserContext.html">ParserContext</a></dt>
-    <dd><p>The context of the parser.</p>
-</dd>
-    <dt><code>info</code> <a class="xref" href="RueI.Parsing.Records.MeasurementInfo.html">MeasurementInfo</a></dt>
-    <dd><p>The information about the measurement.</p>
-</dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd><p>true if the tag is valid, otherwise false.</p>
-</dd>
-  </dl>
-
-
-
 
 
 
@@ -255,7 +268,7 @@
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/Tags/ConcreteTags/SizeTag.cs/#L9" class="edit-link">Edit this page</a>
+          <a href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/Screen.cs/#L9" class="edit-link">Edit this page</a>
         </div>
 
 
