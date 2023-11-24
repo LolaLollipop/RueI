@@ -17,7 +17,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/Ruemena/RueI/new/master/apiSpec/new?filename=RueI_Parser.md&amp;value=---%0Auid%3A%20RueI.Parser%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/Ruemena/RueI/new/master/apiSpec/new?filename=RueI_Parsing_Parser.md&amp;value=---%0Auid%3A%20RueI.Parsing.Parser%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -85,17 +85,17 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="RueI.Parser">
+        <article data-uid="RueI.Parsing.Parser">
 
 
 
-  <h1 id="RueI_Parser" data-uid="RueI.Parser" class="text-break">
+  <h1 id="RueI_Parsing_Parser" data-uid="RueI.Parsing.Parser" class="text-break">
     Class Parser
   <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/Parser.cs/#L16"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
-    <dl><dt>Namespace</dt><dd><a class="xref" href="RueI.html">RueI</a></dd></dl>
+    <dl><dt>Namespace</dt><dd><a class="xref" href="RueI.html">RueI</a>.<a class="xref" href="RueI.Parsing.html">Parsing</a></dd></dl>
   <dl><dt>Assembly</dt><dd>RueI.dll</dd></dl>
   </div>
 
@@ -155,7 +155,7 @@
   </dd></dl>
 
 
-  <h2 id="RueI_Parser_examples">Examples</h2>
+  <h2 id="RueI_Parsing_Parser_examples">Examples</h2>
   <p>This example demonstrates creating and using a <a class="xref" href="RueI.Parsing.ParserBuilder.html">ParserBuilder</a>.</p>
 <pre><code class="lang-csharp">Parser builder = new ParserBuilder()
 	.ImportFrom(Constants.DefaultParser)
@@ -171,14 +171,14 @@ builder.Parse("hello world!")</code></pre>
 </h2>
 
 
-  <a id="RueI_Parser_DefaultParser_" data-uid="RueI.Parser.DefaultParser*"></a>
+  <a id="RueI_Parsing_Parser_DefaultParser_" data-uid="RueI.Parsing.Parser.DefaultParser*"></a>
 
-  <h3 id="RueI_Parser_DefaultParser" data-uid="RueI.Parser.DefaultParser">
+  <h3 id="RueI_Parsing_Parser_DefaultParser" data-uid="RueI.Parsing.Parser.DefaultParser">
   DefaultParser
   <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/Parser.cs/#L50"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Gets the default <a class="xref" href="RueI.Parser.html">Parser</a>.</p>
+  <div class="markdown level1 summary"><p>Gets the default RueI.Parser.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -192,7 +192,7 @@ builder.Parse("hello world!")</code></pre>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="RueI.Parser.html">Parser</a></dt>
+    <dt><a class="xref" href="RueI.Parsing.Parser.html">Parser</a></dt>
     <dd></dd>
   </dl>
 
@@ -203,9 +203,9 @@ builder.Parse("hello world!")</code></pre>
 
 
 
-  <a id="RueI_Parser_Tags_" data-uid="RueI.Parser.Tags*"></a>
+  <a id="RueI_Parsing_Parser_Tags_" data-uid="RueI.Parsing.Parser.Tags*"></a>
 
-  <h3 id="RueI_Parser_Tags" data-uid="RueI.Parser.Tags">
+  <h3 id="RueI_Parsing_Parser_Tags" data-uid="RueI.Parsing.Parser.Tags">
   Tags
   <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/Parser.cs/#L58"><i class="bi bi-code-slash"></i></a>
   </h3>
@@ -231,7 +231,7 @@ builder.Parse("hello world!")</code></pre>
 
 
 
-  <h4 class="section" id="RueI_Parser_Tags_remarks">Remarks</h4>
+  <h4 class="section" id="RueI_Parsing_Parser_Tags_remarks">Remarks</h4>
   <div class="markdown level1 remarks"><p>Multiple tags can share the same name.</p>
 </div>
 
@@ -242,9 +242,9 @@ builder.Parse("hello world!")</code></pre>
 </h2>
 
 
-  <a id="RueI_Parser_AddCharacter_" data-uid="RueI.Parser.AddCharacter*"></a>
+  <a id="RueI_Parsing_Parser_AddCharacter_" data-uid="RueI.Parsing.Parser.AddCharacter*"></a>
 
-  <h3 id="RueI_Parser_AddCharacter_RueI_Parsing_ParserContext_System_Char_" data-uid="RueI.Parser.AddCharacter(RueI.Parsing.ParserContext,System.Char)">
+  <h3 id="RueI_Parsing_Parser_AddCharacter_RueI_Parsing_ParserContext_System_Char_" data-uid="RueI.Parsing.Parser.AddCharacter(RueI.Parsing.ParserContext,System.Char)">
   AddCharacter(ParserContext, char)
   <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/Parser.cs/#L65"><i class="bi bi-code-slash"></i></a>
   </h3>
@@ -278,9 +278,9 @@ builder.Parse("hello world!")</code></pre>
 
 
 
-  <a id="RueI_Parser_CalculateCharacterLength_" data-uid="RueI.Parser.CalculateCharacterLength*"></a>
+  <a id="RueI_Parsing_Parser_CalculateCharacterLength_" data-uid="RueI.Parsing.Parser.CalculateCharacterLength*"></a>
 
-  <h3 id="RueI_Parser_CalculateCharacterLength_RueI_Parsing_TextInfo_System_Char_" data-uid="RueI.Parser.CalculateCharacterLength(RueI.Parsing.TextInfo,System.Char)">
+  <h3 id="RueI_Parsing_Parser_CalculateCharacterLength_RueI_Parsing_TextInfo_System_Char_" data-uid="RueI.Parsing.Parser.CalculateCharacterLength(RueI.Parsing.TextInfo,System.Char)">
   CalculateCharacterLength(TextInfo, char)
   <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/Parser.cs/#L92"><i class="bi bi-code-slash"></i></a>
   </h3>
@@ -320,9 +320,9 @@ builder.Parse("hello world!")</code></pre>
 
 
 
-  <a id="RueI_Parser_CreateLineBreak_" data-uid="RueI.Parser.CreateLineBreak*"></a>
+  <a id="RueI_Parsing_Parser_CreateLineBreak_" data-uid="RueI.Parsing.Parser.CreateLineBreak*"></a>
 
-  <h3 id="RueI_Parser_CreateLineBreak_RueI_Parsing_ParserContext_" data-uid="RueI.Parser.CreateLineBreak(RueI.Parsing.ParserContext)">
+  <h3 id="RueI_Parsing_Parser_CreateLineBreak_RueI_Parsing_ParserContext_" data-uid="RueI.Parsing.Parser.CreateLineBreak(RueI.Parsing.ParserContext)">
   CreateLineBreak(ParserContext)
   <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/Parser.cs/#L132"><i class="bi bi-code-slash"></i></a>
   </h3>
@@ -353,9 +353,9 @@ builder.Parse("hello world!")</code></pre>
 
 
 
-  <a id="RueI_Parser_GetTagAttributes_" data-uid="RueI.Parser.GetTagAttributes*"></a>
+  <a id="RueI_Parsing_Parser_GetTagAttributes_" data-uid="RueI.Parsing.Parser.GetTagAttributes*"></a>
 
-  <h3 id="RueI_Parser_GetTagAttributes_System_String_System_Collections_Generic_Dictionary_System_String_System_String___" data-uid="RueI.Parser.GetTagAttributes(System.String,System.Collections.Generic.Dictionary{System.String,System.String}@)">
+  <h3 id="RueI_Parsing_Parser_GetTagAttributes_System_String_System_Collections_Generic_Dictionary_System_String_System_String___" data-uid="RueI.Parsing.Parser.GetTagAttributes(System.String,System.Collections.Generic.Dictionary{System.String,System.String}@)">
   GetTagAttributes(string, out Dictionary&lt;string, string&gt;)
   <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/Parser.cs/#L154"><i class="bi bi-code-slash"></i></a>
   </h3>
@@ -395,9 +395,9 @@ builder.Parse("hello world!")</code></pre>
 
 
 
-  <a id="RueI_Parser_Parse_" data-uid="RueI.Parser.Parse*"></a>
+  <a id="RueI_Parsing_Parser_Parse_" data-uid="RueI.Parsing.Parser.Parse*"></a>
 
-  <h3 id="RueI_Parser_Parse_System_String_" data-uid="RueI.Parser.Parse(System.String)">
+  <h3 id="RueI_Parsing_Parser_Parse_System_String_" data-uid="RueI.Parsing.Parser.Parse(System.String)">
   Parse(string)
   <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/Parser.cs/#L190"><i class="bi bi-code-slash"></i></a>
   </h3>

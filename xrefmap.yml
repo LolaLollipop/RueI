@@ -1118,6 +1118,112 @@ references:
   isSpec: "True"
   fullName: RueI.Elements.Interfaces.ISettable.Set
   nameWithType: ISettable.Set
+- uid: RueI.Elements.SetElement
+  name: SetElement
+  href: api/RueI.Elements.SetElement.html
+  commentId: T:RueI.Elements.SetElement
+  fullName: RueI.Elements.SetElement
+  nameWithType: SetElement
+- uid: RueI.Elements.SetElement.#ctor(System.Single,System.String)
+  name: SetElement(float, string)
+  href: api/RueI.Elements.SetElement.html#RueI_Elements_SetElement__ctor_System_Single_System_String_
+  commentId: M:RueI.Elements.SetElement.#ctor(System.Single,System.String)
+  name.vb: New(Single, String)
+  fullName: RueI.Elements.SetElement.SetElement(float, string)
+  fullName.vb: RueI.Elements.SetElement.New(Single, String)
+  nameWithType: SetElement.SetElement(float, string)
+  nameWithType.vb: SetElement.New(Single, String)
+- uid: RueI.Elements.SetElement.#ctor*
+  name: SetElement
+  href: api/RueI.Elements.SetElement.html#RueI_Elements_SetElement__ctor_
+  commentId: Overload:RueI.Elements.SetElement.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: RueI.Elements.SetElement.SetElement
+  fullName.vb: RueI.Elements.SetElement.New
+  nameWithType: SetElement.SetElement
+  nameWithType.vb: SetElement.New
+- uid: RueI.Elements.SetElement.Enabled
+  name: Enabled
+  href: api/RueI.Elements.SetElement.html#RueI_Elements_SetElement_Enabled
+  commentId: P:RueI.Elements.SetElement.Enabled
+  fullName: RueI.Elements.SetElement.Enabled
+  nameWithType: SetElement.Enabled
+- uid: RueI.Elements.SetElement.Enabled*
+  name: Enabled
+  href: api/RueI.Elements.SetElement.html#RueI_Elements_SetElement_Enabled_
+  commentId: Overload:RueI.Elements.SetElement.Enabled
+  isSpec: "True"
+  fullName: RueI.Elements.SetElement.Enabled
+  nameWithType: SetElement.Enabled
+- uid: RueI.Elements.SetElement.ParsedData
+  name: ParsedData
+  href: api/RueI.Elements.SetElement.html#RueI_Elements_SetElement_ParsedData
+  commentId: P:RueI.Elements.SetElement.ParsedData
+  fullName: RueI.Elements.SetElement.ParsedData
+  nameWithType: SetElement.ParsedData
+- uid: RueI.Elements.SetElement.ParsedData*
+  name: ParsedData
+  href: api/RueI.Elements.SetElement.html#RueI_Elements_SetElement_ParsedData_
+  commentId: Overload:RueI.Elements.SetElement.ParsedData
+  isSpec: "True"
+  fullName: RueI.Elements.SetElement.ParsedData
+  nameWithType: SetElement.ParsedData
+- uid: RueI.Elements.SetElement.Parser
+  name: Parser
+  href: api/RueI.Elements.SetElement.html#RueI_Elements_SetElement_Parser
+  commentId: P:RueI.Elements.SetElement.Parser
+  fullName: RueI.Elements.SetElement.Parser
+  nameWithType: SetElement.Parser
+- uid: RueI.Elements.SetElement.Parser*
+  name: Parser
+  href: api/RueI.Elements.SetElement.html#RueI_Elements_SetElement_Parser_
+  commentId: Overload:RueI.Elements.SetElement.Parser
+  isSpec: "True"
+  fullName: RueI.Elements.SetElement.Parser
+  nameWithType: SetElement.Parser
+- uid: RueI.Elements.SetElement.Position
+  name: Position
+  href: api/RueI.Elements.SetElement.html#RueI_Elements_SetElement_Position
+  commentId: P:RueI.Elements.SetElement.Position
+  fullName: RueI.Elements.SetElement.Position
+  nameWithType: SetElement.Position
+- uid: RueI.Elements.SetElement.Position*
+  name: Position
+  href: api/RueI.Elements.SetElement.html#RueI_Elements_SetElement_Position_
+  commentId: Overload:RueI.Elements.SetElement.Position
+  isSpec: "True"
+  fullName: RueI.Elements.SetElement.Position
+  nameWithType: SetElement.Position
+- uid: RueI.Elements.SetElement.Set(System.String)
+  name: Set(string)
+  href: api/RueI.Elements.SetElement.html#RueI_Elements_SetElement_Set_System_String_
+  commentId: M:RueI.Elements.SetElement.Set(System.String)
+  name.vb: Set(String)
+  fullName: RueI.Elements.SetElement.Set(string)
+  fullName.vb: RueI.Elements.SetElement.Set(String)
+  nameWithType: SetElement.Set(string)
+  nameWithType.vb: SetElement.Set(String)
+- uid: RueI.Elements.SetElement.Set*
+  name: Set
+  href: api/RueI.Elements.SetElement.html#RueI_Elements_SetElement_Set_
+  commentId: Overload:RueI.Elements.SetElement.Set
+  isSpec: "True"
+  fullName: RueI.Elements.SetElement.Set
+  nameWithType: SetElement.Set
+- uid: RueI.Elements.SetElement.ZIndex
+  name: ZIndex
+  href: api/RueI.Elements.SetElement.html#RueI_Elements_SetElement_ZIndex
+  commentId: P:RueI.Elements.SetElement.ZIndex
+  fullName: RueI.Elements.SetElement.ZIndex
+  nameWithType: SetElement.ZIndex
+- uid: RueI.Elements.SetElement.ZIndex*
+  name: ZIndex
+  href: api/RueI.Elements.SetElement.html#RueI_Elements_SetElement_ZIndex_
+  commentId: Overload:RueI.Elements.SetElement.ZIndex
+  isSpec: "True"
+  fullName: RueI.Elements.SetElement.ZIndex
+  nameWithType: SetElement.ZIndex
 - uid: RueI.EventHandler
   name: EventHandler
   href: api/RueI.EventHandler.html
@@ -2272,115 +2378,6 @@ references:
   commentId: F:RueI.Main.Version
   fullName: RueI.Main.Version
   nameWithType: Main.Version
-- uid: RueI.Parser
-  name: Parser
-  href: api/RueI.Parser.html
-  commentId: T:RueI.Parser
-  fullName: RueI.Parser
-  nameWithType: Parser
-- uid: RueI.Parser.AddCharacter(RueI.Parsing.ParserContext,System.Char)
-  name: AddCharacter(ParserContext, char)
-  href: api/RueI.Parser.html#RueI_Parser_AddCharacter_RueI_Parsing_ParserContext_System_Char_
-  commentId: M:RueI.Parser.AddCharacter(RueI.Parsing.ParserContext,System.Char)
-  name.vb: AddCharacter(ParserContext, Char)
-  fullName: RueI.Parser.AddCharacter(RueI.Parsing.ParserContext, char)
-  fullName.vb: RueI.Parser.AddCharacter(RueI.Parsing.ParserContext, Char)
-  nameWithType: Parser.AddCharacter(ParserContext, char)
-  nameWithType.vb: Parser.AddCharacter(ParserContext, Char)
-- uid: RueI.Parser.AddCharacter*
-  name: AddCharacter
-  href: api/RueI.Parser.html#RueI_Parser_AddCharacter_
-  commentId: Overload:RueI.Parser.AddCharacter
-  isSpec: "True"
-  fullName: RueI.Parser.AddCharacter
-  nameWithType: Parser.AddCharacter
-- uid: RueI.Parser.CalculateCharacterLength(RueI.Parsing.TextInfo,System.Char)
-  name: CalculateCharacterLength(TextInfo, char)
-  href: api/RueI.Parser.html#RueI_Parser_CalculateCharacterLength_RueI_Parsing_TextInfo_System_Char_
-  commentId: M:RueI.Parser.CalculateCharacterLength(RueI.Parsing.TextInfo,System.Char)
-  name.vb: CalculateCharacterLength(TextInfo, Char)
-  fullName: RueI.Parser.CalculateCharacterLength(RueI.Parsing.TextInfo, char)
-  fullName.vb: RueI.Parser.CalculateCharacterLength(RueI.Parsing.TextInfo, Char)
-  nameWithType: Parser.CalculateCharacterLength(TextInfo, char)
-  nameWithType.vb: Parser.CalculateCharacterLength(TextInfo, Char)
-- uid: RueI.Parser.CalculateCharacterLength*
-  name: CalculateCharacterLength
-  href: api/RueI.Parser.html#RueI_Parser_CalculateCharacterLength_
-  commentId: Overload:RueI.Parser.CalculateCharacterLength
-  isSpec: "True"
-  fullName: RueI.Parser.CalculateCharacterLength
-  nameWithType: Parser.CalculateCharacterLength
-- uid: RueI.Parser.CreateLineBreak(RueI.Parsing.ParserContext)
-  name: CreateLineBreak(ParserContext)
-  href: api/RueI.Parser.html#RueI_Parser_CreateLineBreak_RueI_Parsing_ParserContext_
-  commentId: M:RueI.Parser.CreateLineBreak(RueI.Parsing.ParserContext)
-  fullName: RueI.Parser.CreateLineBreak(RueI.Parsing.ParserContext)
-  nameWithType: Parser.CreateLineBreak(ParserContext)
-- uid: RueI.Parser.CreateLineBreak*
-  name: CreateLineBreak
-  href: api/RueI.Parser.html#RueI_Parser_CreateLineBreak_
-  commentId: Overload:RueI.Parser.CreateLineBreak
-  isSpec: "True"
-  fullName: RueI.Parser.CreateLineBreak
-  nameWithType: Parser.CreateLineBreak
-- uid: RueI.Parser.DefaultParser
-  name: DefaultParser
-  href: api/RueI.Parser.html#RueI_Parser_DefaultParser
-  commentId: P:RueI.Parser.DefaultParser
-  fullName: RueI.Parser.DefaultParser
-  nameWithType: Parser.DefaultParser
-- uid: RueI.Parser.DefaultParser*
-  name: DefaultParser
-  href: api/RueI.Parser.html#RueI_Parser_DefaultParser_
-  commentId: Overload:RueI.Parser.DefaultParser
-  isSpec: "True"
-  fullName: RueI.Parser.DefaultParser
-  nameWithType: Parser.DefaultParser
-- uid: RueI.Parser.GetTagAttributes(System.String,System.Collections.Generic.Dictionary{System.String,System.String}@)
-  name: GetTagAttributes(string, out Dictionary<string, string>)
-  href: api/RueI.Parser.html#RueI_Parser_GetTagAttributes_System_String_System_Collections_Generic_Dictionary_System_String_System_String___
-  commentId: M:RueI.Parser.GetTagAttributes(System.String,System.Collections.Generic.Dictionary{System.String,System.String}@)
-  name.vb: GetTagAttributes(String, Dictionary(Of String, String))
-  fullName: RueI.Parser.GetTagAttributes(string, out System.Collections.Generic.Dictionary<string, string>)
-  fullName.vb: RueI.Parser.GetTagAttributes(String, System.Collections.Generic.Dictionary(Of String, String))
-  nameWithType: Parser.GetTagAttributes(string, out Dictionary<string, string>)
-  nameWithType.vb: Parser.GetTagAttributes(String, Dictionary(Of String, String))
-- uid: RueI.Parser.GetTagAttributes*
-  name: GetTagAttributes
-  href: api/RueI.Parser.html#RueI_Parser_GetTagAttributes_
-  commentId: Overload:RueI.Parser.GetTagAttributes
-  isSpec: "True"
-  fullName: RueI.Parser.GetTagAttributes
-  nameWithType: Parser.GetTagAttributes
-- uid: RueI.Parser.Parse(System.String)
-  name: Parse(string)
-  href: api/RueI.Parser.html#RueI_Parser_Parse_System_String_
-  commentId: M:RueI.Parser.Parse(System.String)
-  name.vb: Parse(String)
-  fullName: RueI.Parser.Parse(string)
-  fullName.vb: RueI.Parser.Parse(String)
-  nameWithType: Parser.Parse(string)
-  nameWithType.vb: Parser.Parse(String)
-- uid: RueI.Parser.Parse*
-  name: Parse
-  href: api/RueI.Parser.html#RueI_Parser_Parse_
-  commentId: Overload:RueI.Parser.Parse
-  isSpec: "True"
-  fullName: RueI.Parser.Parse
-  nameWithType: Parser.Parse
-- uid: RueI.Parser.Tags
-  name: Tags
-  href: api/RueI.Parser.html#RueI_Parser_Tags
-  commentId: P:RueI.Parser.Tags
-  fullName: RueI.Parser.Tags
-  nameWithType: Parser.Tags
-- uid: RueI.Parser.Tags*
-  name: Tags
-  href: api/RueI.Parser.html#RueI_Parser_Tags_
-  commentId: Overload:RueI.Parser.Tags
-  isSpec: "True"
-  fullName: RueI.Parser.Tags
-  nameWithType: Parser.Tags
 - uid: RueI.Parsing
   name: RueI.Parsing
   href: api/RueI.Parsing.html
@@ -2601,6 +2598,115 @@ references:
   isSpec: "True"
   fullName: RueI.Parsing.NoParamsTag.TagStyle
   nameWithType: NoParamsTag.TagStyle
+- uid: RueI.Parsing.Parser
+  name: Parser
+  href: api/RueI.Parsing.Parser.html
+  commentId: T:RueI.Parsing.Parser
+  fullName: RueI.Parsing.Parser
+  nameWithType: Parser
+- uid: RueI.Parsing.Parser.AddCharacter(RueI.Parsing.ParserContext,System.Char)
+  name: AddCharacter(ParserContext, char)
+  href: api/RueI.Parsing.Parser.html#RueI_Parsing_Parser_AddCharacter_RueI_Parsing_ParserContext_System_Char_
+  commentId: M:RueI.Parsing.Parser.AddCharacter(RueI.Parsing.ParserContext,System.Char)
+  name.vb: AddCharacter(ParserContext, Char)
+  fullName: RueI.Parsing.Parser.AddCharacter(RueI.Parsing.ParserContext, char)
+  fullName.vb: RueI.Parsing.Parser.AddCharacter(RueI.Parsing.ParserContext, Char)
+  nameWithType: Parser.AddCharacter(ParserContext, char)
+  nameWithType.vb: Parser.AddCharacter(ParserContext, Char)
+- uid: RueI.Parsing.Parser.AddCharacter*
+  name: AddCharacter
+  href: api/RueI.Parsing.Parser.html#RueI_Parsing_Parser_AddCharacter_
+  commentId: Overload:RueI.Parsing.Parser.AddCharacter
+  isSpec: "True"
+  fullName: RueI.Parsing.Parser.AddCharacter
+  nameWithType: Parser.AddCharacter
+- uid: RueI.Parsing.Parser.CalculateCharacterLength(RueI.Parsing.TextInfo,System.Char)
+  name: CalculateCharacterLength(TextInfo, char)
+  href: api/RueI.Parsing.Parser.html#RueI_Parsing_Parser_CalculateCharacterLength_RueI_Parsing_TextInfo_System_Char_
+  commentId: M:RueI.Parsing.Parser.CalculateCharacterLength(RueI.Parsing.TextInfo,System.Char)
+  name.vb: CalculateCharacterLength(TextInfo, Char)
+  fullName: RueI.Parsing.Parser.CalculateCharacterLength(RueI.Parsing.TextInfo, char)
+  fullName.vb: RueI.Parsing.Parser.CalculateCharacterLength(RueI.Parsing.TextInfo, Char)
+  nameWithType: Parser.CalculateCharacterLength(TextInfo, char)
+  nameWithType.vb: Parser.CalculateCharacterLength(TextInfo, Char)
+- uid: RueI.Parsing.Parser.CalculateCharacterLength*
+  name: CalculateCharacterLength
+  href: api/RueI.Parsing.Parser.html#RueI_Parsing_Parser_CalculateCharacterLength_
+  commentId: Overload:RueI.Parsing.Parser.CalculateCharacterLength
+  isSpec: "True"
+  fullName: RueI.Parsing.Parser.CalculateCharacterLength
+  nameWithType: Parser.CalculateCharacterLength
+- uid: RueI.Parsing.Parser.CreateLineBreak(RueI.Parsing.ParserContext)
+  name: CreateLineBreak(ParserContext)
+  href: api/RueI.Parsing.Parser.html#RueI_Parsing_Parser_CreateLineBreak_RueI_Parsing_ParserContext_
+  commentId: M:RueI.Parsing.Parser.CreateLineBreak(RueI.Parsing.ParserContext)
+  fullName: RueI.Parsing.Parser.CreateLineBreak(RueI.Parsing.ParserContext)
+  nameWithType: Parser.CreateLineBreak(ParserContext)
+- uid: RueI.Parsing.Parser.CreateLineBreak*
+  name: CreateLineBreak
+  href: api/RueI.Parsing.Parser.html#RueI_Parsing_Parser_CreateLineBreak_
+  commentId: Overload:RueI.Parsing.Parser.CreateLineBreak
+  isSpec: "True"
+  fullName: RueI.Parsing.Parser.CreateLineBreak
+  nameWithType: Parser.CreateLineBreak
+- uid: RueI.Parsing.Parser.DefaultParser
+  name: DefaultParser
+  href: api/RueI.Parsing.Parser.html#RueI_Parsing_Parser_DefaultParser
+  commentId: P:RueI.Parsing.Parser.DefaultParser
+  fullName: RueI.Parsing.Parser.DefaultParser
+  nameWithType: Parser.DefaultParser
+- uid: RueI.Parsing.Parser.DefaultParser*
+  name: DefaultParser
+  href: api/RueI.Parsing.Parser.html#RueI_Parsing_Parser_DefaultParser_
+  commentId: Overload:RueI.Parsing.Parser.DefaultParser
+  isSpec: "True"
+  fullName: RueI.Parsing.Parser.DefaultParser
+  nameWithType: Parser.DefaultParser
+- uid: RueI.Parsing.Parser.GetTagAttributes(System.String,System.Collections.Generic.Dictionary{System.String,System.String}@)
+  name: GetTagAttributes(string, out Dictionary<string, string>)
+  href: api/RueI.Parsing.Parser.html#RueI_Parsing_Parser_GetTagAttributes_System_String_System_Collections_Generic_Dictionary_System_String_System_String___
+  commentId: M:RueI.Parsing.Parser.GetTagAttributes(System.String,System.Collections.Generic.Dictionary{System.String,System.String}@)
+  name.vb: GetTagAttributes(String, Dictionary(Of String, String))
+  fullName: RueI.Parsing.Parser.GetTagAttributes(string, out System.Collections.Generic.Dictionary<string, string>)
+  fullName.vb: RueI.Parsing.Parser.GetTagAttributes(String, System.Collections.Generic.Dictionary(Of String, String))
+  nameWithType: Parser.GetTagAttributes(string, out Dictionary<string, string>)
+  nameWithType.vb: Parser.GetTagAttributes(String, Dictionary(Of String, String))
+- uid: RueI.Parsing.Parser.GetTagAttributes*
+  name: GetTagAttributes
+  href: api/RueI.Parsing.Parser.html#RueI_Parsing_Parser_GetTagAttributes_
+  commentId: Overload:RueI.Parsing.Parser.GetTagAttributes
+  isSpec: "True"
+  fullName: RueI.Parsing.Parser.GetTagAttributes
+  nameWithType: Parser.GetTagAttributes
+- uid: RueI.Parsing.Parser.Parse(System.String)
+  name: Parse(string)
+  href: api/RueI.Parsing.Parser.html#RueI_Parsing_Parser_Parse_System_String_
+  commentId: M:RueI.Parsing.Parser.Parse(System.String)
+  name.vb: Parse(String)
+  fullName: RueI.Parsing.Parser.Parse(string)
+  fullName.vb: RueI.Parsing.Parser.Parse(String)
+  nameWithType: Parser.Parse(string)
+  nameWithType.vb: Parser.Parse(String)
+- uid: RueI.Parsing.Parser.Parse*
+  name: Parse
+  href: api/RueI.Parsing.Parser.html#RueI_Parsing_Parser_Parse_
+  commentId: Overload:RueI.Parsing.Parser.Parse
+  isSpec: "True"
+  fullName: RueI.Parsing.Parser.Parse
+  nameWithType: Parser.Parse
+- uid: RueI.Parsing.Parser.Tags
+  name: Tags
+  href: api/RueI.Parsing.Parser.html#RueI_Parsing_Parser_Tags
+  commentId: P:RueI.Parsing.Parser.Tags
+  fullName: RueI.Parsing.Parser.Tags
+  nameWithType: Parser.Tags
+- uid: RueI.Parsing.Parser.Tags*
+  name: Tags
+  href: api/RueI.Parsing.Parser.html#RueI_Parsing_Parser_Tags_
+  commentId: Overload:RueI.Parsing.Parser.Tags
+  isSpec: "True"
+  fullName: RueI.Parsing.Parser.Tags
+  nameWithType: Parser.Tags
 - uid: RueI.Parsing.ParserBuilder
   name: ParserBuilder
   href: api/RueI.Parsing.ParserBuilder.html
@@ -2668,11 +2774,11 @@ references:
   isSpec: "True"
   fullName: RueI.Parsing.ParserBuilder.Build
   nameWithType: ParserBuilder.Build
-- uid: RueI.Parsing.ParserBuilder.ImportFrom(RueI.Parser)
+- uid: RueI.Parsing.ParserBuilder.ImportFrom(RueI.Parsing.Parser)
   name: ImportFrom(Parser)
-  href: api/RueI.Parsing.ParserBuilder.html#RueI_Parsing_ParserBuilder_ImportFrom_RueI_Parser_
-  commentId: M:RueI.Parsing.ParserBuilder.ImportFrom(RueI.Parser)
-  fullName: RueI.Parsing.ParserBuilder.ImportFrom(RueI.Parser)
+  href: api/RueI.Parsing.ParserBuilder.html#RueI_Parsing_ParserBuilder_ImportFrom_RueI_Parsing_Parser_
+  commentId: M:RueI.Parsing.ParserBuilder.ImportFrom(RueI.Parsing.Parser)
+  fullName: RueI.Parsing.ParserBuilder.ImportFrom(RueI.Parsing.Parser)
   nameWithType: ParserBuilder.ImportFrom(Parser)
 - uid: RueI.Parsing.ParserBuilder.ImportFrom*
   name: ImportFrom
@@ -4191,112 +4297,6 @@ references:
   isSpec: "True"
   fullName: RueI.Ruetility.ScaledPositionToFunctional
   nameWithType: Ruetility.ScaledPositionToFunctional
-- uid: RueI.SetElement
-  name: SetElement
-  href: api/RueI.SetElement.html
-  commentId: T:RueI.SetElement
-  fullName: RueI.SetElement
-  nameWithType: SetElement
-- uid: RueI.SetElement.#ctor(System.Single,System.String)
-  name: SetElement(float, string)
-  href: api/RueI.SetElement.html#RueI_SetElement__ctor_System_Single_System_String_
-  commentId: M:RueI.SetElement.#ctor(System.Single,System.String)
-  name.vb: New(Single, String)
-  fullName: RueI.SetElement.SetElement(float, string)
-  fullName.vb: RueI.SetElement.New(Single, String)
-  nameWithType: SetElement.SetElement(float, string)
-  nameWithType.vb: SetElement.New(Single, String)
-- uid: RueI.SetElement.#ctor*
-  name: SetElement
-  href: api/RueI.SetElement.html#RueI_SetElement__ctor_
-  commentId: Overload:RueI.SetElement.#ctor
-  isSpec: "True"
-  name.vb: New
-  fullName: RueI.SetElement.SetElement
-  fullName.vb: RueI.SetElement.New
-  nameWithType: SetElement.SetElement
-  nameWithType.vb: SetElement.New
-- uid: RueI.SetElement.Enabled
-  name: Enabled
-  href: api/RueI.SetElement.html#RueI_SetElement_Enabled
-  commentId: P:RueI.SetElement.Enabled
-  fullName: RueI.SetElement.Enabled
-  nameWithType: SetElement.Enabled
-- uid: RueI.SetElement.Enabled*
-  name: Enabled
-  href: api/RueI.SetElement.html#RueI_SetElement_Enabled_
-  commentId: Overload:RueI.SetElement.Enabled
-  isSpec: "True"
-  fullName: RueI.SetElement.Enabled
-  nameWithType: SetElement.Enabled
-- uid: RueI.SetElement.ParsedData
-  name: ParsedData
-  href: api/RueI.SetElement.html#RueI_SetElement_ParsedData
-  commentId: P:RueI.SetElement.ParsedData
-  fullName: RueI.SetElement.ParsedData
-  nameWithType: SetElement.ParsedData
-- uid: RueI.SetElement.ParsedData*
-  name: ParsedData
-  href: api/RueI.SetElement.html#RueI_SetElement_ParsedData_
-  commentId: Overload:RueI.SetElement.ParsedData
-  isSpec: "True"
-  fullName: RueI.SetElement.ParsedData
-  nameWithType: SetElement.ParsedData
-- uid: RueI.SetElement.Parser
-  name: Parser
-  href: api/RueI.SetElement.html#RueI_SetElement_Parser
-  commentId: P:RueI.SetElement.Parser
-  fullName: RueI.SetElement.Parser
-  nameWithType: SetElement.Parser
-- uid: RueI.SetElement.Parser*
-  name: Parser
-  href: api/RueI.SetElement.html#RueI_SetElement_Parser_
-  commentId: Overload:RueI.SetElement.Parser
-  isSpec: "True"
-  fullName: RueI.SetElement.Parser
-  nameWithType: SetElement.Parser
-- uid: RueI.SetElement.Position
-  name: Position
-  href: api/RueI.SetElement.html#RueI_SetElement_Position
-  commentId: P:RueI.SetElement.Position
-  fullName: RueI.SetElement.Position
-  nameWithType: SetElement.Position
-- uid: RueI.SetElement.Position*
-  name: Position
-  href: api/RueI.SetElement.html#RueI_SetElement_Position_
-  commentId: Overload:RueI.SetElement.Position
-  isSpec: "True"
-  fullName: RueI.SetElement.Position
-  nameWithType: SetElement.Position
-- uid: RueI.SetElement.Set(System.String)
-  name: Set(string)
-  href: api/RueI.SetElement.html#RueI_SetElement_Set_System_String_
-  commentId: M:RueI.SetElement.Set(System.String)
-  name.vb: Set(String)
-  fullName: RueI.SetElement.Set(string)
-  fullName.vb: RueI.SetElement.Set(String)
-  nameWithType: SetElement.Set(string)
-  nameWithType.vb: SetElement.Set(String)
-- uid: RueI.SetElement.Set*
-  name: Set
-  href: api/RueI.SetElement.html#RueI_SetElement_Set_
-  commentId: Overload:RueI.SetElement.Set
-  isSpec: "True"
-  fullName: RueI.SetElement.Set
-  nameWithType: SetElement.Set
-- uid: RueI.SetElement.ZIndex
-  name: ZIndex
-  href: api/RueI.SetElement.html#RueI_SetElement_ZIndex
-  commentId: P:RueI.SetElement.ZIndex
-  fullName: RueI.SetElement.ZIndex
-  nameWithType: SetElement.ZIndex
-- uid: RueI.SetElement.ZIndex*
-  name: ZIndex
-  href: api/RueI.SetElement.html#RueI_SetElement_ZIndex_
-  commentId: Overload:RueI.SetElement.ZIndex
-  isSpec: "True"
-  fullName: RueI.SetElement.ZIndex
-  nameWithType: SetElement.ZIndex
 - uid: eMEC
   name: eMEC
   href: api/eMEC.html
