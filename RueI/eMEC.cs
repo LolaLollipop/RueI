@@ -6,7 +6,8 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using MEC;
-using RueI.Extensions;
+using RueI;
+using static RueI.UnityAlternative;
 
 /// <summary>
 /// Provides extensions for working with MEC. The primary purpose is to provide better nullable functionality.
@@ -57,6 +58,8 @@ public interface ITaskable
 public class UpdateTask : TaskBase
 {
     private readonly Stopwatch stopwatch = new();
+    private TimeSpan? storedTimeLeft;
+    private bool isPaused = false;
 
     /// <summary>
     /// Gets or sets a method that will be run when the task is finished.
@@ -88,7 +91,7 @@ public class UpdateTask : TaskBase
     [MemberNotNullWhen(returnValue: true, nameof(ElapsedTime))]
     [MemberNotNullWhen(returnValue: true, nameof(Action))]
     [MemberNotNullWhen(returnValue: true, nameof(Length))]
-    public override bool IsRunning => ch?.IsRunningOrPaused() ?? false;
+    public override bool IsRunning => isPaused || (operation?.IsRunning ?? false);
 
     /// <summary>
     /// Starts the task.
@@ -101,7 +104,7 @@ public class UpdateTask : TaskBase
         Action = action;
         Length = length;
         stopwatch.Start();
-        ch = Timing.CallDelayed(((float)length.TotalSeconds).Max(0), () =>
+        operation = Provider.PerformAsync(length, () =>
         {
             Action();
             ResetState();
@@ -154,7 +157,7 @@ public class UpdateTask : TaskBase
 
             if (newTime > TimeSpan.Zero)
             {
-                ch?.Kill();
+                operation.Cancel();
                 Start(newTime, Action);
             }
             else
@@ -172,7 +175,9 @@ public class UpdateTask : TaskBase
     {
         if (IsRunning)
         {
-            Timing.PauseCoroutines(ch.Value);
+            storedTimeLeft = TimeLeft;
+            isPaused = true;
+            operation?.Cancel();
             stopwatch.Stop();
         }
     }
@@ -182,9 +187,14 @@ public class UpdateTask : TaskBase
     /// </summary>
     public void Resume()
     {
-        if (IsRunning)
+        if (IsRunning && isPaused)
         {
-            Timing.ResumeCoroutines(ch.Value);
+            operation = Provider.PerformAsync(Length.Value, () =>
+            {
+                Action();
+                ResetState();
+            });
+
             stopwatch.Start();
         }
     }
@@ -204,7 +214,7 @@ public class UpdateTask : TaskBase
 /// </summary>
 public abstract class TaskBase : ITaskable
 {
-    protected CoroutineHandle? ch;
+    protected IAsyncOperation? operation;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="TaskBase"/> class.
@@ -233,7 +243,7 @@ public abstract class TaskBase : ITaskable
     /// <summary>
     /// Gets a value indicating whether or not this task is currently running.
     /// </summary>
-    [MemberNotNullWhen(returnValue: true, nameof(ch))]
+    [MemberNotNullWhen(returnValue: true, nameof(operation))]
     public abstract bool IsRunning { get; }
 
     /// <inheritdoc/>
@@ -244,7 +254,7 @@ public abstract class TaskBase : ITaskable
     /// </summary>
     public virtual void End()
     {
-        ch?.Kill();
+        operation?.Cancel();
         ResetState();
     }
 
@@ -256,7 +266,7 @@ public abstract class TaskBase : ITaskable
 
     protected virtual void ResetState()
     {
-        ch = null;
+        operation = null;
     }
 }
 

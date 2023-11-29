@@ -1,6 +1,7 @@
 ﻿namespace RueI;
 
 using System.Reflection;
+using static UnityAlternative;
 
 /*********\
 *  /\_/\  *
@@ -31,7 +32,7 @@ public static class Main
 
         if (!StartupArgs.Args.Contains("-noRMsg", StringComparison.OrdinalIgnoreCase)) // TODO: make this work
         {
-            ServerConsole.AddLog($"[Info] [RueI] Thank you for using RueI! Running v{Version.ToString(3)}", ConsoleColor.Yellow);
+            Provider.Log($"[Info] [RueI] Thank you for using RueI! Running v{Version.ToString(3)}");
         }
 
         try
@@ -40,7 +41,7 @@ public static class Main
         }
         catch(Exception)
         {
-            ServerConsole.AddLog("[Warn] [RueI] Could not load Harmony patches.", ConsoleColor.Yellow);
+            Provider.Log("[Warn] [RueI] Could not load Harmony patches.");
         }
 
         _ = CharacterLengths.Lengths.Count; // force static initializer
