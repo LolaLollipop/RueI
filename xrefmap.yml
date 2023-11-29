@@ -1316,19 +1316,19 @@ references:
   fullName.vb: RueI.Events.DisplayUpdatedEventArgs.New
   nameWithType: DisplayUpdatedEventArgs.DisplayUpdatedEventArgs
   nameWithType.vb: DisplayUpdatedEventArgs.New
-- uid: RueI.Events.DisplayUpdatedEventArgs.DisplayCoordinator
-  name: DisplayCoordinator
-  href: api/RueI.Events.DisplayUpdatedEventArgs.html#RueI_Events_DisplayUpdatedEventArgs_DisplayCoordinator
-  commentId: P:RueI.Events.DisplayUpdatedEventArgs.DisplayCoordinator
-  fullName: RueI.Events.DisplayUpdatedEventArgs.DisplayCoordinator
-  nameWithType: DisplayUpdatedEventArgs.DisplayCoordinator
-- uid: RueI.Events.DisplayUpdatedEventArgs.DisplayCoordinator*
-  name: DisplayCoordinator
-  href: api/RueI.Events.DisplayUpdatedEventArgs.html#RueI_Events_DisplayUpdatedEventArgs_DisplayCoordinator_
-  commentId: Overload:RueI.Events.DisplayUpdatedEventArgs.DisplayCoordinator
+- uid: RueI.Events.DisplayUpdatedEventArgs.DisplayCore
+  name: DisplayCore
+  href: api/RueI.Events.DisplayUpdatedEventArgs.html#RueI_Events_DisplayUpdatedEventArgs_DisplayCore
+  commentId: P:RueI.Events.DisplayUpdatedEventArgs.DisplayCore
+  fullName: RueI.Events.DisplayUpdatedEventArgs.DisplayCore
+  nameWithType: DisplayUpdatedEventArgs.DisplayCore
+- uid: RueI.Events.DisplayUpdatedEventArgs.DisplayCore*
+  name: DisplayCore
+  href: api/RueI.Events.DisplayUpdatedEventArgs.html#RueI_Events_DisplayUpdatedEventArgs_DisplayCore_
+  commentId: Overload:RueI.Events.DisplayUpdatedEventArgs.DisplayCore
   isSpec: "True"
-  fullName: RueI.Events.DisplayUpdatedEventArgs.DisplayCoordinator
-  nameWithType: DisplayUpdatedEventArgs.DisplayCoordinator
+  fullName: RueI.Events.DisplayUpdatedEventArgs.DisplayCore
+  nameWithType: DisplayUpdatedEventArgs.DisplayCore
 - uid: RueI.Events.DisplayUpdatedEventArgs.ReferenceHub
   name: ReferenceHub
   href: api/RueI.Events.DisplayUpdatedEventArgs.html#RueI_Events_DisplayUpdatedEventArgs_ReferenceHub
@@ -2546,6 +2546,105 @@ references:
   commentId: F:RueI.Main.Version
   fullName: RueI.Main.Version
   nameWithType: Main.Version
+- uid: RueI.NonUnityProvider
+  name: NonUnityProvider
+  href: api/RueI.NonUnityProvider.html
+  commentId: T:RueI.NonUnityProvider
+  fullName: RueI.NonUnityProvider
+  nameWithType: NonUnityProvider
+- uid: RueI.NonUnityProvider.Log(System.String)
+  name: Log(string)
+  href: api/RueI.NonUnityProvider.html#RueI_NonUnityProvider_Log_System_String_
+  commentId: M:RueI.NonUnityProvider.Log(System.String)
+  name.vb: Log(String)
+  fullName: RueI.NonUnityProvider.Log(string)
+  fullName.vb: RueI.NonUnityProvider.Log(String)
+  nameWithType: NonUnityProvider.Log(string)
+  nameWithType.vb: NonUnityProvider.Log(String)
+- uid: RueI.NonUnityProvider.Log*
+  name: Log
+  href: api/RueI.NonUnityProvider.html#RueI_NonUnityProvider_Log_
+  commentId: Overload:RueI.NonUnityProvider.Log
+  isSpec: "True"
+  fullName: RueI.NonUnityProvider.Log
+  nameWithType: NonUnityProvider.Log
+- uid: RueI.NonUnityProvider.PerformAsync(System.TimeSpan,System.Action)
+  name: PerformAsync(TimeSpan, Action)
+  href: api/RueI.NonUnityProvider.html#RueI_NonUnityProvider_PerformAsync_System_TimeSpan_System_Action_
+  commentId: M:RueI.NonUnityProvider.PerformAsync(System.TimeSpan,System.Action)
+  fullName: RueI.NonUnityProvider.PerformAsync(System.TimeSpan, System.Action)
+  nameWithType: NonUnityProvider.PerformAsync(TimeSpan, Action)
+- uid: RueI.NonUnityProvider.PerformAsync*
+  name: PerformAsync
+  href: api/RueI.NonUnityProvider.html#RueI_NonUnityProvider_PerformAsync_
+  commentId: Overload:RueI.NonUnityProvider.PerformAsync
+  isSpec: "True"
+  fullName: RueI.NonUnityProvider.PerformAsync
+  nameWithType: NonUnityProvider.PerformAsync
+- uid: RueI.NonUnityProvider.TaskAsyncOperation
+  name: NonUnityProvider.TaskAsyncOperation
+  href: api/RueI.NonUnityProvider.TaskAsyncOperation.html
+  commentId: T:RueI.NonUnityProvider.TaskAsyncOperation
+  fullName: RueI.NonUnityProvider.TaskAsyncOperation
+  nameWithType: NonUnityProvider.TaskAsyncOperation
+- uid: RueI.NonUnityProvider.TaskAsyncOperation.#ctor(System.TimeSpan,System.Action)
+  name: TaskAsyncOperation(TimeSpan, Action)
+  href: api/RueI.NonUnityProvider.TaskAsyncOperation.html#RueI_NonUnityProvider_TaskAsyncOperation__ctor_System_TimeSpan_System_Action_
+  commentId: M:RueI.NonUnityProvider.TaskAsyncOperation.#ctor(System.TimeSpan,System.Action)
+  name.vb: New(TimeSpan, Action)
+  fullName: RueI.NonUnityProvider.TaskAsyncOperation.TaskAsyncOperation(System.TimeSpan, System.Action)
+  fullName.vb: RueI.NonUnityProvider.TaskAsyncOperation.New(System.TimeSpan, System.Action)
+  nameWithType: NonUnityProvider.TaskAsyncOperation.TaskAsyncOperation(TimeSpan, Action)
+  nameWithType.vb: NonUnityProvider.TaskAsyncOperation.New(TimeSpan, Action)
+- uid: RueI.NonUnityProvider.TaskAsyncOperation.#ctor*
+  name: TaskAsyncOperation
+  href: api/RueI.NonUnityProvider.TaskAsyncOperation.html#RueI_NonUnityProvider_TaskAsyncOperation__ctor_
+  commentId: Overload:RueI.NonUnityProvider.TaskAsyncOperation.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: RueI.NonUnityProvider.TaskAsyncOperation.TaskAsyncOperation
+  fullName.vb: RueI.NonUnityProvider.TaskAsyncOperation.New
+  nameWithType: NonUnityProvider.TaskAsyncOperation.TaskAsyncOperation
+  nameWithType.vb: NonUnityProvider.TaskAsyncOperation.New
+- uid: RueI.NonUnityProvider.TaskAsyncOperation.Cancel
+  name: Cancel()
+  href: api/RueI.NonUnityProvider.TaskAsyncOperation.html#RueI_NonUnityProvider_TaskAsyncOperation_Cancel
+  commentId: M:RueI.NonUnityProvider.TaskAsyncOperation.Cancel
+  fullName: RueI.NonUnityProvider.TaskAsyncOperation.Cancel()
+  nameWithType: NonUnityProvider.TaskAsyncOperation.Cancel()
+- uid: RueI.NonUnityProvider.TaskAsyncOperation.Cancel*
+  name: Cancel
+  href: api/RueI.NonUnityProvider.TaskAsyncOperation.html#RueI_NonUnityProvider_TaskAsyncOperation_Cancel_
+  commentId: Overload:RueI.NonUnityProvider.TaskAsyncOperation.Cancel
+  isSpec: "True"
+  fullName: RueI.NonUnityProvider.TaskAsyncOperation.Cancel
+  nameWithType: NonUnityProvider.TaskAsyncOperation.Cancel
+- uid: RueI.NonUnityProvider.TaskAsyncOperation.Dispose
+  name: Dispose()
+  href: api/RueI.NonUnityProvider.TaskAsyncOperation.html#RueI_NonUnityProvider_TaskAsyncOperation_Dispose
+  commentId: M:RueI.NonUnityProvider.TaskAsyncOperation.Dispose
+  fullName: RueI.NonUnityProvider.TaskAsyncOperation.Dispose()
+  nameWithType: NonUnityProvider.TaskAsyncOperation.Dispose()
+- uid: RueI.NonUnityProvider.TaskAsyncOperation.Dispose*
+  name: Dispose
+  href: api/RueI.NonUnityProvider.TaskAsyncOperation.html#RueI_NonUnityProvider_TaskAsyncOperation_Dispose_
+  commentId: Overload:RueI.NonUnityProvider.TaskAsyncOperation.Dispose
+  isSpec: "True"
+  fullName: RueI.NonUnityProvider.TaskAsyncOperation.Dispose
+  nameWithType: NonUnityProvider.TaskAsyncOperation.Dispose
+- uid: RueI.NonUnityProvider.TaskAsyncOperation.IsRunning
+  name: IsRunning
+  href: api/RueI.NonUnityProvider.TaskAsyncOperation.html#RueI_NonUnityProvider_TaskAsyncOperation_IsRunning
+  commentId: P:RueI.NonUnityProvider.TaskAsyncOperation.IsRunning
+  fullName: RueI.NonUnityProvider.TaskAsyncOperation.IsRunning
+  nameWithType: NonUnityProvider.TaskAsyncOperation.IsRunning
+- uid: RueI.NonUnityProvider.TaskAsyncOperation.IsRunning*
+  name: IsRunning
+  href: api/RueI.NonUnityProvider.TaskAsyncOperation.html#RueI_NonUnityProvider_TaskAsyncOperation_IsRunning_
+  commentId: Overload:RueI.NonUnityProvider.TaskAsyncOperation.IsRunning
+  isSpec: "True"
+  fullName: RueI.NonUnityProvider.TaskAsyncOperation.IsRunning
+  nameWithType: NonUnityProvider.TaskAsyncOperation.IsRunning
 - uid: RueI.Parsing
   name: RueI.Parsing
   href: api/RueI.Parsing.html
@@ -4491,6 +4590,185 @@ references:
   isSpec: "True"
   fullName: RueI.Ruetility.ScaledPositionToFunctional
   nameWithType: Ruetility.ScaledPositionToFunctional
+- uid: RueI.UnityAlternative
+  name: UnityAlternative
+  href: api/RueI.UnityAlternative.html
+  commentId: T:RueI.UnityAlternative
+  fullName: RueI.UnityAlternative
+  nameWithType: UnityAlternative
+- uid: RueI.UnityAlternative.IAsyncOperation
+  name: UnityAlternative.IAsyncOperation
+  href: api/RueI.UnityAlternative.IAsyncOperation.html
+  commentId: T:RueI.UnityAlternative.IAsyncOperation
+  fullName: RueI.UnityAlternative.IAsyncOperation
+  nameWithType: UnityAlternative.IAsyncOperation
+- uid: RueI.UnityAlternative.IAsyncOperation.Cancel
+  name: Cancel()
+  href: api/RueI.UnityAlternative.IAsyncOperation.html#RueI_UnityAlternative_IAsyncOperation_Cancel
+  commentId: M:RueI.UnityAlternative.IAsyncOperation.Cancel
+  fullName: RueI.UnityAlternative.IAsyncOperation.Cancel()
+  nameWithType: UnityAlternative.IAsyncOperation.Cancel()
+- uid: RueI.UnityAlternative.IAsyncOperation.Cancel*
+  name: Cancel
+  href: api/RueI.UnityAlternative.IAsyncOperation.html#RueI_UnityAlternative_IAsyncOperation_Cancel_
+  commentId: Overload:RueI.UnityAlternative.IAsyncOperation.Cancel
+  isSpec: "True"
+  fullName: RueI.UnityAlternative.IAsyncOperation.Cancel
+  nameWithType: UnityAlternative.IAsyncOperation.Cancel
+- uid: RueI.UnityAlternative.IAsyncOperation.IsRunning
+  name: IsRunning
+  href: api/RueI.UnityAlternative.IAsyncOperation.html#RueI_UnityAlternative_IAsyncOperation_IsRunning
+  commentId: P:RueI.UnityAlternative.IAsyncOperation.IsRunning
+  fullName: RueI.UnityAlternative.IAsyncOperation.IsRunning
+  nameWithType: UnityAlternative.IAsyncOperation.IsRunning
+- uid: RueI.UnityAlternative.IAsyncOperation.IsRunning*
+  name: IsRunning
+  href: api/RueI.UnityAlternative.IAsyncOperation.html#RueI_UnityAlternative_IAsyncOperation_IsRunning_
+  commentId: Overload:RueI.UnityAlternative.IAsyncOperation.IsRunning
+  isSpec: "True"
+  fullName: RueI.UnityAlternative.IAsyncOperation.IsRunning
+  nameWithType: UnityAlternative.IAsyncOperation.IsRunning
+- uid: RueI.UnityAlternative.Log(System.String)
+  name: Log(string)
+  href: api/RueI.UnityAlternative.html#RueI_UnityAlternative_Log_System_String_
+  commentId: M:RueI.UnityAlternative.Log(System.String)
+  name.vb: Log(String)
+  fullName: RueI.UnityAlternative.Log(string)
+  fullName.vb: RueI.UnityAlternative.Log(String)
+  nameWithType: UnityAlternative.Log(string)
+  nameWithType.vb: UnityAlternative.Log(String)
+- uid: RueI.UnityAlternative.Log*
+  name: Log
+  href: api/RueI.UnityAlternative.html#RueI_UnityAlternative_Log_
+  commentId: Overload:RueI.UnityAlternative.Log
+  isSpec: "True"
+  fullName: RueI.UnityAlternative.Log
+  nameWithType: UnityAlternative.Log
+- uid: RueI.UnityAlternative.PerformAsync(System.TimeSpan,System.Action)
+  name: PerformAsync(TimeSpan, Action)
+  href: api/RueI.UnityAlternative.html#RueI_UnityAlternative_PerformAsync_System_TimeSpan_System_Action_
+  commentId: M:RueI.UnityAlternative.PerformAsync(System.TimeSpan,System.Action)
+  fullName: RueI.UnityAlternative.PerformAsync(System.TimeSpan, System.Action)
+  nameWithType: UnityAlternative.PerformAsync(TimeSpan, Action)
+- uid: RueI.UnityAlternative.PerformAsync*
+  name: PerformAsync
+  href: api/RueI.UnityAlternative.html#RueI_UnityAlternative_PerformAsync_
+  commentId: Overload:RueI.UnityAlternative.PerformAsync
+  isSpec: "True"
+  fullName: RueI.UnityAlternative.PerformAsync
+  nameWithType: UnityAlternative.PerformAsync
+- uid: RueI.UnityAlternative.Provider
+  name: Provider
+  href: api/RueI.UnityAlternative.html#RueI_UnityAlternative_Provider
+  commentId: P:RueI.UnityAlternative.Provider
+  fullName: RueI.UnityAlternative.Provider
+  nameWithType: UnityAlternative.Provider
+- uid: RueI.UnityAlternative.Provider*
+  name: Provider
+  href: api/RueI.UnityAlternative.html#RueI_UnityAlternative_Provider_
+  commentId: Overload:RueI.UnityAlternative.Provider
+  isSpec: "True"
+  fullName: RueI.UnityAlternative.Provider
+  nameWithType: UnityAlternative.Provider
+- uid: RueI.UnityProvider
+  name: UnityProvider
+  href: api/RueI.UnityProvider.html
+  commentId: T:RueI.UnityProvider
+  fullName: RueI.UnityProvider
+  nameWithType: UnityProvider
+- uid: RueI.UnityProvider.Log(System.String)
+  name: Log(string)
+  href: api/RueI.UnityProvider.html#RueI_UnityProvider_Log_System_String_
+  commentId: M:RueI.UnityProvider.Log(System.String)
+  name.vb: Log(String)
+  fullName: RueI.UnityProvider.Log(string)
+  fullName.vb: RueI.UnityProvider.Log(String)
+  nameWithType: UnityProvider.Log(string)
+  nameWithType.vb: UnityProvider.Log(String)
+- uid: RueI.UnityProvider.Log*
+  name: Log
+  href: api/RueI.UnityProvider.html#RueI_UnityProvider_Log_
+  commentId: Overload:RueI.UnityProvider.Log
+  isSpec: "True"
+  fullName: RueI.UnityProvider.Log
+  nameWithType: UnityProvider.Log
+- uid: RueI.UnityProvider.MECAsyncOperation
+  name: UnityProvider.MECAsyncOperation
+  href: api/RueI.UnityProvider.MECAsyncOperation.html
+  commentId: T:RueI.UnityProvider.MECAsyncOperation
+  fullName: RueI.UnityProvider.MECAsyncOperation
+  nameWithType: UnityProvider.MECAsyncOperation
+- uid: RueI.UnityProvider.MECAsyncOperation.#ctor(System.TimeSpan,System.Action)
+  name: MECAsyncOperation(TimeSpan, Action)
+  href: api/RueI.UnityProvider.MECAsyncOperation.html#RueI_UnityProvider_MECAsyncOperation__ctor_System_TimeSpan_System_Action_
+  commentId: M:RueI.UnityProvider.MECAsyncOperation.#ctor(System.TimeSpan,System.Action)
+  name.vb: New(TimeSpan, Action)
+  fullName: RueI.UnityProvider.MECAsyncOperation.MECAsyncOperation(System.TimeSpan, System.Action)
+  fullName.vb: RueI.UnityProvider.MECAsyncOperation.New(System.TimeSpan, System.Action)
+  nameWithType: UnityProvider.MECAsyncOperation.MECAsyncOperation(TimeSpan, Action)
+  nameWithType.vb: UnityProvider.MECAsyncOperation.New(TimeSpan, Action)
+- uid: RueI.UnityProvider.MECAsyncOperation.#ctor*
+  name: MECAsyncOperation
+  href: api/RueI.UnityProvider.MECAsyncOperation.html#RueI_UnityProvider_MECAsyncOperation__ctor_
+  commentId: Overload:RueI.UnityProvider.MECAsyncOperation.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: RueI.UnityProvider.MECAsyncOperation.MECAsyncOperation
+  fullName.vb: RueI.UnityProvider.MECAsyncOperation.New
+  nameWithType: UnityProvider.MECAsyncOperation.MECAsyncOperation
+  nameWithType.vb: UnityProvider.MECAsyncOperation.New
+- uid: RueI.UnityProvider.MECAsyncOperation.Cancel
+  name: Cancel()
+  href: api/RueI.UnityProvider.MECAsyncOperation.html#RueI_UnityProvider_MECAsyncOperation_Cancel
+  commentId: M:RueI.UnityProvider.MECAsyncOperation.Cancel
+  fullName: RueI.UnityProvider.MECAsyncOperation.Cancel()
+  nameWithType: UnityProvider.MECAsyncOperation.Cancel()
+- uid: RueI.UnityProvider.MECAsyncOperation.Cancel*
+  name: Cancel
+  href: api/RueI.UnityProvider.MECAsyncOperation.html#RueI_UnityProvider_MECAsyncOperation_Cancel_
+  commentId: Overload:RueI.UnityProvider.MECAsyncOperation.Cancel
+  isSpec: "True"
+  fullName: RueI.UnityProvider.MECAsyncOperation.Cancel
+  nameWithType: UnityProvider.MECAsyncOperation.Cancel
+- uid: RueI.UnityProvider.MECAsyncOperation.Dispose
+  name: Dispose()
+  href: api/RueI.UnityProvider.MECAsyncOperation.html#RueI_UnityProvider_MECAsyncOperation_Dispose
+  commentId: M:RueI.UnityProvider.MECAsyncOperation.Dispose
+  fullName: RueI.UnityProvider.MECAsyncOperation.Dispose()
+  nameWithType: UnityProvider.MECAsyncOperation.Dispose()
+- uid: RueI.UnityProvider.MECAsyncOperation.Dispose*
+  name: Dispose
+  href: api/RueI.UnityProvider.MECAsyncOperation.html#RueI_UnityProvider_MECAsyncOperation_Dispose_
+  commentId: Overload:RueI.UnityProvider.MECAsyncOperation.Dispose
+  isSpec: "True"
+  fullName: RueI.UnityProvider.MECAsyncOperation.Dispose
+  nameWithType: UnityProvider.MECAsyncOperation.Dispose
+- uid: RueI.UnityProvider.MECAsyncOperation.IsRunning
+  name: IsRunning
+  href: api/RueI.UnityProvider.MECAsyncOperation.html#RueI_UnityProvider_MECAsyncOperation_IsRunning
+  commentId: P:RueI.UnityProvider.MECAsyncOperation.IsRunning
+  fullName: RueI.UnityProvider.MECAsyncOperation.IsRunning
+  nameWithType: UnityProvider.MECAsyncOperation.IsRunning
+- uid: RueI.UnityProvider.MECAsyncOperation.IsRunning*
+  name: IsRunning
+  href: api/RueI.UnityProvider.MECAsyncOperation.html#RueI_UnityProvider_MECAsyncOperation_IsRunning_
+  commentId: Overload:RueI.UnityProvider.MECAsyncOperation.IsRunning
+  isSpec: "True"
+  fullName: RueI.UnityProvider.MECAsyncOperation.IsRunning
+  nameWithType: UnityProvider.MECAsyncOperation.IsRunning
+- uid: RueI.UnityProvider.PerformAsync(System.TimeSpan,System.Action)
+  name: PerformAsync(TimeSpan, Action)
+  href: api/RueI.UnityProvider.html#RueI_UnityProvider_PerformAsync_System_TimeSpan_System_Action_
+  commentId: M:RueI.UnityProvider.PerformAsync(System.TimeSpan,System.Action)
+  fullName: RueI.UnityProvider.PerformAsync(System.TimeSpan, System.Action)
+  nameWithType: UnityProvider.PerformAsync(TimeSpan, Action)
+- uid: RueI.UnityProvider.PerformAsync*
+  name: PerformAsync
+  href: api/RueI.UnityProvider.html#RueI_UnityProvider_PerformAsync_
+  commentId: Overload:RueI.UnityProvider.PerformAsync
+  isSpec: "True"
+  fullName: RueI.UnityProvider.PerformAsync
+  nameWithType: UnityProvider.PerformAsync
 - uid: eMEC
   name: eMEC
   href: api/eMEC.html
@@ -4788,12 +5066,12 @@ references:
   isSpec: "True"
   fullName: eMEC.TaskBase.ResetState
   nameWithType: TaskBase.ResetState
-- uid: eMEC.TaskBase.ch
-  name: ch
-  href: api/eMEC.TaskBase.html#eMEC_TaskBase_ch
-  commentId: F:eMEC.TaskBase.ch
-  fullName: eMEC.TaskBase.ch
-  nameWithType: TaskBase.ch
+- uid: eMEC.TaskBase.operation
+  name: operation
+  href: api/eMEC.TaskBase.html#eMEC_TaskBase_operation
+  commentId: F:eMEC.TaskBase.operation
+  fullName: eMEC.TaskBase.operation
+  nameWithType: TaskBase.operation
 - uid: eMEC.TaskPool
   name: TaskPool
   href: api/eMEC.TaskPool.html

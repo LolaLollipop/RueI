@@ -472,6 +472,26 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/RueI.NonUnityProvider.TaskAsyncOperation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.NonUnityProvider.TaskAsyncOperation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RueI.NonUnityProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.NonUnityProvider.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/RueI.Parsing.ClosingTag-1.yml",
       "output": {
         ".html": {
@@ -956,6 +976,46 @@
       "output": {
         ".html": {
           "relative_path": "api/RueI.Ruetility.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RueI.UnityAlternative.IAsyncOperation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.UnityAlternative.IAsyncOperation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RueI.UnityAlternative.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.UnityAlternative.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RueI.UnityProvider.MECAsyncOperation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.UnityProvider.MECAsyncOperation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RueI.UnityProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.UnityProvider.html"
         }
       },
       "version": ""
