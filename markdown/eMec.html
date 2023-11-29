@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>eMec | RueI </title>
+      <title>eMEC | RueI </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="eMec | RueI ">
+      <meta name="title" content="eMEC | RueI ">
       
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
@@ -84,10 +84,10 @@
         </div>
 
         <article data-uid="">
-<h1 id="emec">eMec</h1>
+<h1 id="emec">eMEC</h1>
 
-<p>eMec is a wrapper for MEC that is used by RueI. it is absolutely not necessary to use it in your own plugins, but it does provide some utility.</p>
-<p>the core of eMEC are <code>Tasks</code> (not to be confused with .NET Tasks).</p>
+<p>eMEC is a wrapper for MEC that is used by RueI. it is absolutely not necessary to use it in your own plugins, but it does provide some utility.</p>
+<p>eMEC provides a few notable advantages over the usual MEC. firstly, it is much higher level - you do not directly manipulate CoroutineHandles directly. instead, you use <code>TaskBases</code> (not to be confused with .NET Tasks). secondly, if RueI detects that it is <em>not</em> running in Unity, it will automatically swap over to using .NET tasks, which means that you can do unit tests on things that use <code>TaskBases</code> but also use them normally in scp:sl.</p>
 
 </article>
 
