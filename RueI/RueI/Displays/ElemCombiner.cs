@@ -38,13 +38,12 @@ public static class ElemCombiner
             IElement curElement = elements[i];
 
             ParsedData parsedData = curElement.ParsedData;
-
             float funcPos = curElement.GetFunctionalPosition();
 
             if (i != 0)
             {
                 float calcedOffset = CalculateOffset(lastPosition, lastOffset, funcPos);
-                sb.Append($"<line-height={calcedOffset}px>\n");
+                sb.Append($"<line-height={calcedOffset}px>\n</line-height>");
                 totalOffset += calcedOffset;
             }
             else
@@ -73,7 +72,7 @@ public static class ElemCombiner
     /// <returns>A float indicating the new offset.</returns>
     public static float CalculateOffset(float hintOnePos, float hintOneTotalLines, float hintTwoPos)
     {
-        float calc = (hintOnePos + (2 * hintOneTotalLines)) - hintTwoPos;
+        float calc = hintOnePos + (2 * hintOneTotalLines) - hintTwoPos;
         return calc / -2;
     }
 

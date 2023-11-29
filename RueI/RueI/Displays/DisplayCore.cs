@@ -2,8 +2,8 @@
 
 using RueI.Elements;
 using Hints;
-using RueI.Displays;
 using RueI.Displays.Scheduling;
+using RueI.Extensions;
 
 /// <summary>
 /// Is responsible for managing all of the <see cref="DisplayBase"/>s for a <see cref="ReferenceHub"/>.
@@ -24,7 +24,7 @@ public class DisplayCore
     /// <param name="hub">The hub to create the display for.</param>
     protected DisplayCore(ReferenceHub hub)
     {
-        this.Hub = hub;
+        Hub = hub;
 
         if (hub != null)
         {
@@ -32,10 +32,11 @@ public class DisplayCore
         }
 
         Scheduler = new(this);
+        AnonymousDisplay = new(this);
     }
 
     /// <summary>
-    /// Gets the <see cref="Displays.Scheduling.Scheduler"/> for this <see cref="DisplayCore"/>.
+    /// Gets the <see cref="Scheduling.Scheduler"/> for this <see cref="DisplayCore"/>.
     /// </summary>
     public Scheduler Scheduler { get; }
 
@@ -43,6 +44,11 @@ public class DisplayCore
     /// Gets a dictionary containing the DisplayCores for each ReferenceHub.
     /// </summary>
     internal static Dictionary<ReferenceHub, DisplayCore> DisplayCores { get; } = new();
+
+    /// <summary>
+    /// Gets a display of anonymous <see cref="IElement"/>s added to this display.
+    /// </summary>
+    internal Display AnonymousDisplay { get; }
 
     /// <summary>
     /// Gets the <see cref="ReferenceHub"/> that this display is for.
@@ -135,7 +141,29 @@ public class DisplayCore
     public void AddAsReference<T>(ElemReference<T> reference, T element)
         where T : IElement
     {
-        referencedElements.Add(reference, element);
+        referencedElements[reference] = element;
+    }
+
+    /// <summary>
+    /// Sets the content of a <see cref="SetElement"/> <see cref="ElemReference{T}"/>, or creates it.
+    /// </summary>
+    /// <param name="reference">The <see cref="ElemReference{T}"/> to use.</param>
+    /// <param name="content">The new content of the <see cref="SetElement"/>.</param>
+    /// <param name="position">The position of the <see cref="SetElement"/> if it needs to be created.</param>
+    public void SetElementOrNew(ElemReference<SetElement> reference, string content, float position)
+    {
+        if (referencedElements.TryGetValue(reference, out IElement value))
+        {
+            if (value is SetElement element)
+            {
+                element.Set(content);
+            }
+        }
+        else
+        {
+            SetElement element = new(position, content);
+            referencedElements.Add(reference, element);
+        }
     }
 
     /// <summary>
@@ -144,7 +172,7 @@ public class DisplayCore
     internal void InternalUpdate()
     {
         string text = ElemCombiner.Combine(GetAllElements());
-        Hub.connectionToClient.Send(new HintMessage(new TextHint(text, new HintParameter[] { new StringHintParameter(text) }, null, 99999)));
+        Hub.connectionToClient.Send(new HintMessage(new TextHint(text, new HintParameter[] { new StringHintParameter(text) }, new HintEffect[] { HintEffectPresets.FadeIn(0, 0, 1) }, 99999)));
     }
 
     /// <summary>
@@ -168,5 +196,5 @@ public class DisplayCore
     }
 
     private IEnumerable<IElement> GetAllElements() => displays.SelectMany(x => x.GetAllElements())
-                                                      .Concat(referencedElements.Values.Where(x => x.Enabled));
+                                                      .Concat(referencedElements.Values.FilterDisabled());
 }

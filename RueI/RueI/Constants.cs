@@ -74,6 +74,9 @@ public static class Constants
         "flush",
     });
 
+    /// <summary>
+    /// Gets a list of allowed colors for <see cref="ColorTag"/>.
+    /// </summary>
     public static ReadOnlyCollection<string> Colors { get; } = new(new string[]
     {
         "black",

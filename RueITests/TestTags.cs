@@ -53,6 +53,17 @@ public class TestTags
     }
 
     [TestMethod]
+    [DataRow("A VERY VERY VERY VERY A VERY VERY VERY VERY A VERY VERY VERY VERY A VERY VERY VERY VERY A VERY VERY VERY VERY A VERY VERY VERY VERY A VERY VERY VERY VERY A VERY VERY VERY VERY A VERY VERY VERY VERY A VERY VERY VERY VERY A VERY VERY VERY VERY LONG WORLD", 121.995f)]
+    [DataRow("A VERY VERY VERY VERY A VERY VERY VERY VERY A VERY VERY VERY VERY A VERY VERY VERY VERY A VERY VERY VERY VERY A VERY VERY VERY VERY A VERY VERY VERY VERY A VERY VERY VERY VERY A VERY VERY VERY VERY A VERY", 121.995f)]
+    [DataRow("A VERY VERY\n\n\nVERY VERY", 121.995f)]
+    public void TestParser(string text, float expectedOffset)
+    {
+        (_, float offset) = Parser.DefaultParser.Parse(text);
+        Assert.AreEqual(expectedOffset, offset, 0.01f);
+    }
+
+
+    [TestMethod]
     [Description("Tests the measurement info parsing")]
     public void CreateMeasurementInfo_ShouldSucceed()
     {

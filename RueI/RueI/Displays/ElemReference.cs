@@ -3,14 +3,26 @@
 using RueI.Elements;
 
 /// <summary>
+/// Gets new IDs for <see cref="ElemReference{T}"/>s.
+/// </summary>
+internal static class ElementID
+{
+    private static int nextID = 0;
+
+    /// <summary>
+    /// Gets a new ID.
+    /// </summary>
+    /// <returns>A new ID.</returns>
+    internal static int GetID() => nextID++;
+}
+
+/// <summary>
 /// Represents a reference to an element present within any number of player's displays.
 /// </summary>
 /// <typeparam name="T">The type of the element to act as a reference to.</typeparam>
 public readonly struct ElemReference<T> : IEquatable<ElemReference<T>>
     where T : IElement
 {
-    private static int nextID = 0;
-
     private readonly int id;
 
     /// <summary>
@@ -18,8 +30,7 @@ public readonly struct ElemReference<T> : IEquatable<ElemReference<T>>
     /// </summary>
     public ElemReference()
     {
-        id = nextID;
-        nextID++;
+        id = ElementID.GetID();
     }
 
     private ElemReference(int id)

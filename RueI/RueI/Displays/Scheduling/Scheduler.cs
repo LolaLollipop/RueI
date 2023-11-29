@@ -164,10 +164,16 @@ public class Scheduler
             }
         }
 
-        ListPool<ScheduledJob>.Shared.Return(currentBatch);
+        if (currentBatch.Count != 0)
+        {
+            BatchJob finishedBatch = new(currentBatch, CalculateWeighted(currentBatch));
+            currentBatches.Add(finishedBatch);
+        }
 
         TimeSpan performAt = (currentBatches.First().PerformAt - DateTimeOffset.UtcNow).MaxIf(rateLimiter.Active, rateLimiter.TimeLeft);
         performTask.Start(performAt, PerformFirstBatch);
+
+        ListPool<ScheduledJob>.Shared.Return(currentBatch);
     }
 
     /// <summary>
@@ -175,6 +181,8 @@ public class Scheduler
     /// </summary>
     private void PerformFirstBatch()
     {
+        ServerConsole.AddLog("performing first batch");
+
         BatchJob batchJob = currentBatches.First();
 
         coordinator.IgnoreUpdate = true;

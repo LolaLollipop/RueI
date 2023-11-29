@@ -6,7 +6,6 @@ using System.Text;
 using NorthwoodLib.Pools;
 
 using RueI.Parsing.Enums;
-using RueI.Parsing;
 using RueI.Parsing.Records;
 
 /// <summary>
@@ -45,7 +44,7 @@ public class Parser
     }
 
     /// <summary>
-    /// Gets the default <see cref="RueI.Parser"/>.
+    /// Gets the default <see cref="Parser"/>.
     /// </summary>
     public static Parser DefaultParser { get; } = new ParserBuilder().AddFromAssembly(typeof(Parser).Assembly).Build();
 
@@ -66,19 +65,30 @@ public class Parser
     {
         float size = CalculateCharacterLength(context, ch);
 
-        context.WidthSinceSpace += size;
-
         context.ResultBuilder.Append(ch);
 
-        if (context.CurrentLineWidth + context.WidthSinceSpace > Constants.DISPLAYAREAWIDTH)
+        // TODO: any chars
+        if (ch == ' ' || ch == '​') // zero width space
         {
-            CreateLineBreak(context);
-        }
-        else if (ch == ' ' || ch == '​') // zero width space
-        {
+            context.CurrentLineWidth += size;
+
             if (!context.NoBreak)
             {
+                context.CurrentLineWidth += context.WidthSinceSpace;
                 context.WidthSinceSpace = 0;
+            }
+        }
+        else
+        {
+            if (context.CurrentLineWidth + context.WidthSinceSpace > context.DisplayAreaWidth)
+            {
+                CreateLineBreak(context);
+            }
+
+            context.WidthSinceSpace += size;
+            if (context.Size > context.BiggestCharSize)
+            {
+                context.BiggestCharSize = context.Size;
             }
         }
     }
@@ -131,17 +141,22 @@ public class Parser
     /// <param name="context">The context of the parser.</param>
     public static void CreateLineBreak(ParserContext context)
     {
-        if (context.CurrentLineWidth < Constants.DISPLAYAREAWIDTH)
+        if (context.WidthSinceSpace > Constants.DISPLAYAREAWIDTH)
         {
-            context.CurrentLineWidth = context.WidthSinceSpace;
-            context.NewOffset += context.CurrentLineHeight;
+            context.CurrentLineWidth = 0;
         }
         else
         {
-            context.CurrentLineWidth = 0;
-            context.NewOffset += context.WidthSinceSpace;
+            context.CurrentLineWidth = context.WidthSinceSpace;
         }
 
+        if (context.WidthSinceSpace > 0 || context.CurrentLineWidth > 0)
+        {
+            context.NewOffset += ((context.BiggestCharSize / Constants.DEFAULTSIZE * Constants.DEFAULTHEIGHT) - Constants.DEFAULTHEIGHT) / 2;
+        }
+
+        context.BiggestCharSize = 0;
+        context.NewOffset += context.CurrentLineHeight;
         context.CurrentLineWidth += context.Indent;
     }
 
@@ -150,7 +165,7 @@ public class Parser
     /// </summary>
     /// <param name="content">The content to parse.</param>
     /// <param name="attributes">The pairs of attributes.</param>
-    /// <returns>true if the content is valid, otherwise false.</returns>
+    /// <returns>true if the content is valid, otherwise false.</returns>,
     public static bool GetTagAttributes(string content, out Dictionary<string, string> attributes)
     {
         IEnumerable<string> result = content.Split('"')
@@ -240,6 +255,7 @@ public class Parser
             else if (ch == '\n')
             {
                 context.ResultBuilder.Append('\n');
+                context.WidthSinceSpace = 0;
                 CreateLineBreak(context);
                 if (currentState != ParserState.CollectingTags)
                 {
@@ -327,6 +343,10 @@ public class Parser
         } // foreach
 
         context.ApplyClosingTags();
+        if (context.WidthSinceSpace > 0 || context.CurrentLineWidth > 0)
+        {
+            context.NewOffset += ((context.BiggestCharSize / Constants.DEFAULTSIZE * Constants.DEFAULTHEIGHT) - Constants.DEFAULTHEIGHT) / 2;
+        }
 
         StringBuilderPool.Shared.Return(tagBuffer);
         StringBuilderPool.Shared.Return(paramBuffer);

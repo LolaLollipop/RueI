@@ -15,6 +15,8 @@ public abstract class DisplayBase
     {
         ReferenceHub = hub;
         Coordinator = DisplayCore.Get(hub);
+
+        Coordinator.AddDisplay(this);
     }
 
     /// <summary>
@@ -25,6 +27,8 @@ public abstract class DisplayBase
     {
         Coordinator = coordinator;
         ReferenceHub = coordinator.Hub;
+
+        coordinator.AddDisplay(this);
     }
 
     /// <summary>

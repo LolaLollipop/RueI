@@ -71,6 +71,16 @@ public class ParserContext : TextInfo, IDisposable
     public int ColorTags { get; set; } = 0;
 
     /// <summary>
+    /// Gets or sets the biggest char size of the line.
+    /// </summary>
+    public float BiggestCharSize { get; set; } = 0;
+
+    /// <summary>
+    /// Gets or sets a value indicating whether or not the current line has any characters.
+    /// </summary>
+    public bool LineHasAnyChars { get; set; } = false;
+
+    /// <summary>
     /// Adds a <see cref="RichTextTag"/> to a list of tags that will be added to the end of the parser's result.
     /// </summary>
     /// <typeparam name="T">The type of the <see cref="RichTextTag"/> to be added as an ending tag (as a <see cref="SharedTag{Tags}"/>).</typeparam>

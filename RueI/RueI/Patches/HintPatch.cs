@@ -1,13 +1,16 @@
 ﻿namespace RueI.Patches;
 
-using System.Reflection;
-using System.Reflection.Emit;
 using HarmonyLib;
 using Hints;
 using Mirror;
 using NorthwoodLib.Pools;
+using System.Reflection;
+using System.Reflection.Emit;
 using static HarmonyLib.AccessTools;
 
+/// <summary>
+/// Patches <see cref="HintDisplay.Show"/> to detect when hints are shown.
+/// </summary>
 [HarmonyPatch(typeof(HintDisplay), nameof(HintDisplay.Show))]
 public static class HintPatch
 {
@@ -15,7 +18,7 @@ public static class HintPatch
     {
         if (ReferenceHub.TryGetHub(connection.identity.gameObject, out ReferenceHub hub))
         {
-            
+
         }
     }
 
@@ -39,7 +42,7 @@ public static class HintPatch
                 new(OpCodes.Call, Method(typeof(HintPatch), nameof(HandleAnonymousHint))),
         };
 
-        newInstructions.InsertRange(index, collection);
+        //newInstructions.InsertRange(index, collection);
 
         foreach (CodeInstruction instruction in newInstructions)
         {

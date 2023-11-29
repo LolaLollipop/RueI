@@ -1,5 +1,7 @@
 ﻿namespace RueI;
 
+using System.Reflection;
+
 /*********\
 *  /\_/\  *
 * ( o.o ) *
@@ -7,7 +9,6 @@
 \*********/
 
 using System.Runtime.CompilerServices;
-using eMEC;
 
 /// <summary>
 /// Represents the main class for RueI.
@@ -17,7 +18,7 @@ public static class Main
     /// <summary>
     /// Gets the current version of RueI.
     /// </summary>
-    public static readonly Version Version = new(1, 0, 0);
+    public static readonly Version Version = Assembly.GetAssembly(typeof(Main)).GetName().Version;
 
     private static bool isInit = false;
 
@@ -28,9 +29,10 @@ public static class Main
         RoundRestarting.RoundRestart.OnRestartTriggered += EventHandler.OnRestart;
         PlayerRoles.PlayerRoleManager.OnServerRoleSet += EventHandler.OnServerRoleSet;
 
-        ServerConsole.AddLog($"[Info] [RueI] Thank you for using RueI! Running v{Version}", ConsoleColor.Yellow);
-        ServerConsole.AddLog("[Info] [RueI] RueI is completely open-source and licensed under CC0", ConsoleColor.Yellow);
-        ServerConsole.AddLog("[Info] [RueI] https://github.com/Ruemena/RueI", ConsoleColor.Yellow);
+        if (!StartupArgs.Args.Contains("-noRMsg", StringComparison.OrdinalIgnoreCase)) // TODO: make this work
+        {
+            ServerConsole.AddLog($"[Info] [RueI] Thank you for using RueI! Running v{Version.ToString(3)}", ConsoleColor.Yellow);
+        }
 
         try
         {
@@ -40,6 +42,8 @@ public static class Main
         {
             ServerConsole.AddLog("[Warn] [RueI] Could not load Harmony patches.", ConsoleColor.Yellow);
         }
+
+        _ = CharacterLengths.Lengths.Count; // force static initializer
     }
 
     /// <summary>

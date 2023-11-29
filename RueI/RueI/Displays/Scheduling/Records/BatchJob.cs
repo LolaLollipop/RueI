@@ -14,7 +14,7 @@ internal class BatchJob
     /// <param name="performAt">When the jobs should be performed.</param>
     public BatchJob(List<ScheduledJob> jobs, DateTimeOffset performAt)
     {
-        this.Jobs = jobs;
+        Jobs = jobs;
         PerformAt = performAt;
     }
 
