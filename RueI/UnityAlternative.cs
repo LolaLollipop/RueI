@@ -43,6 +43,7 @@ public abstract class UnityAlternative
     /// </summary>
     /// <param name="span">How long until the action should be ran.</param>
     /// <param name="action">The action to run when finished.</param>
+    /// <returns>A <see cref="IAsyncOperation"/> to use.</returns>
     public abstract IAsyncOperation PerformAsync(TimeSpan span, Action action);
 
     private static UnityAlternative GetProvider()

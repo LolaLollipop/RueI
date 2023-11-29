@@ -187,9 +187,9 @@ public class UpdateTask : TaskBase
     /// </summary>
     public void Resume()
     {
-        if (IsRunning && isPaused)
+        if (IsRunning && isPaused && storedTimeLeft != null)
         {
-            operation = Provider.PerformAsync(Length.Value, () =>
+            operation = Provider.PerformAsync(storedTimeLeft.Value, () =>
             {
                 Action();
                 ResetState();
