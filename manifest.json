@@ -342,10 +342,40 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Extensions.AutoElement-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Extensions.AutoElement-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Extensions.AutoElementBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Extensions.AutoElementBase.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/RueI.Extensions.CollectionExtensions.yml",
       "output": {
         ".html": {
           "relative_path": "api/RueI.Extensions.CollectionExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Extensions.ElemRefResolver-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Extensions.ElemRefResolver-1.html"
         }
       },
       "version": ""
@@ -402,10 +432,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RueI.Extensions.Union-2.yml",
+      "source_relative_path": "api/RueI.Extensions.Intersection-2.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RueI.Extensions.Union-2.html"
+          "relative_path": "api/RueI.Extensions.Intersection-2.html"
         }
       },
       "version": ""
