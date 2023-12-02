@@ -92,10 +92,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RueI.Displays.ElemReference-1.yml",
+      "source_relative_path": "api/RueI.Displays.IElemReference-1.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RueI.Displays.ElemReference-1.html"
+          "relative_path": "api/RueI.Displays.IElemReference-1.html"
         }
       },
       "version": ""
@@ -116,6 +116,16 @@
       "output": {
         ".html": {
           "relative_path": "api/RueI.Displays.Interfaces.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Displays.Scheduling.JobToken.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Displays.Scheduling.JobToken.html"
         }
       },
       "version": ""
@@ -232,10 +242,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RueI.Elements.IElement.yml",
+      "source_relative_path": "api/RueI.Elements.Element.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RueI.Elements.IElement.html"
+          "relative_path": "api/RueI.Elements.Element.html"
         }
       },
       "version": ""
@@ -342,20 +352,20 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RueI.Extensions.AutoElement-1.yml",
+      "source_relative_path": "api/RueI.Extensions.AutoElement.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RueI.Extensions.AutoElement-1.html"
+          "relative_path": "api/RueI.Extensions.AutoElement.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RueI.Extensions.AutoElementBase.yml",
+      "source_relative_path": "api/RueI.Extensions.AutoGiverBase.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RueI.Extensions.AutoElementBase.html"
+          "relative_path": "api/RueI.Extensions.AutoGiverBase.html"
         }
       },
       "version": ""
@@ -436,6 +446,16 @@
       "output": {
         ".html": {
           "relative_path": "api/RueI.Extensions.Intersection-2.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Extensions.Roles.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Extensions.Roles.html"
         }
       },
       "version": ""

@@ -2,10 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Struct ElemReference&lt;T&gt;
+      <title>Struct Roles
  | RueI </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Struct ElemReference&lt;T&gt;
+      <meta name="title" content="Struct Roles
  | RueI ">
       
       <link rel="icon" href="../favicon.ico">
@@ -17,7 +17,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/Ruemena/RueI/new/master/apiSpec/new?filename=RueI_Displays_ElemReference_1.md&amp;value=---%0Auid%3A%20RueI.Displays.ElemReference%601%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/Ruemena/RueI/new/master/apiSpec/new?filename=RueI_Extensions_Roles.md&amp;value=---%0Auid%3A%20RueI.Extensions.Roles%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -85,44 +85,32 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="RueI.Displays.ElemReference`1">
+        <article data-uid="RueI.Extensions.Roles">
 
 
 
-  <h1 id="RueI_Displays_ElemReference_1" data-uid="RueI.Displays.ElemReference`1" class="text-break">
-    Struct ElemReference&lt;T&gt;
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/ElemReference.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  <h1 id="RueI_Extensions_Roles" data-uid="RueI.Extensions.Roles" class="text-break">
+    Struct Roles
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/AutoGiving/Roles.cs/#L8"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
-    <dl><dt>Namespace</dt><dd><a class="xref" href="RueI.html">RueI</a>.<a class="xref" href="RueI.Displays.html">Displays</a></dd></dl>
+    <dl><dt>Namespace</dt><dd><a class="xref" href="RueI.html">RueI</a>.<a class="xref" href="RueI.Extensions.html">Extensions</a></dd></dl>
   <dl><dt>Assembly</dt><dd>RueI.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Represents a reference to an element present within any number of player's displays.</p>
+  <div class="markdown summary"><p>Provides a means for describing multiple RoleTypeIds.</p>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public readonly struct ElemReference&lt;T&gt; : IEquatable&lt;ElemReference&lt;T&gt;&gt; where T : IElement</code></pre>
+    <pre><code class="lang-csharp hljs">public readonly struct Roles</code></pre>
   </div>
 
 
 
-  <h4 class="section">Type Parameters</h4>
-  <dl class="parameters">
-    <dt><code>T</code></dt>
-    <dd><p>The type of the element to act as a reference to.</p>
-</dd>
-  </dl>
 
 
-  <dl class="typelist implements">
-    <dt>Implements</dt>
-    <dd>
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="RueI.Displays.ElemReference-1.html">ElemReference</a>&lt;T&gt;&gt;</div>
-    </dd>
-  </dl>
 
 
   <dl class="typelist derived">
@@ -157,21 +145,27 @@
 </h2>
 
 
-  <a id="RueI_Displays_ElemReference_1__ctor_" data-uid="RueI.Displays.ElemReference`1.#ctor*"></a>
+  <a id="RueI_Extensions_Roles__ctor_" data-uid="RueI.Extensions.Roles.#ctor*"></a>
 
-  <h3 id="RueI_Displays_ElemReference_1__ctor" data-uid="RueI.Displays.ElemReference`1.#ctor">
-  ElemReference()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/ElemReference.cs/#L31"><i class="bi bi-code-slash"></i></a>
+  <h3 id="RueI_Extensions_Roles__ctor_System_Collections_Generic_IEnumerable_RoleTypeId__" data-uid="RueI.Extensions.Roles.#ctor(System.Collections.Generic.IEnumerable{RoleTypeId})">
+  Roles(IEnumerable&lt;RoleTypeId&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/AutoGiving/Roles.cs/#L16"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="RueI.Displays.ElemReference-1.html">ElemReference&lt;T&gt;</a> struct.</p>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="RueI.Extensions.Roles.html">Roles</a> struct.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ElemReference()</code></pre>
+    <pre><code class="lang-csharp hljs">public Roles(IEnumerable&lt;RoleTypeId&gt; enumerableRoles)</code></pre>
   </div>
 
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>enumerableRoles</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<span class="xref">RoleTypeId</span>&gt;</dt>
+    <dd><p>The roles to use.</p>
+</dd>
+  </dl>
 
 
 
@@ -188,32 +182,32 @@
 </h2>
 
 
-  <a id="RueI_Displays_ElemReference_1_Equals_" data-uid="RueI.Displays.ElemReference`1.Equals*"></a>
+  <a id="RueI_Extensions_Roles_Has_" data-uid="RueI.Extensions.Roles.Has*"></a>
 
-  <h3 id="RueI_Displays_ElemReference_1_Equals_RueI_Displays_ElemReference__0__" data-uid="RueI.Displays.ElemReference`1.Equals(RueI.Displays.ElemReference{`0})">
-  Equals(ElemReference&lt;T&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/ElemReference.cs/#L52"><i class="bi bi-code-slash"></i></a>
+  <h3 id="RueI_Extensions_Roles_Has_RoleTypeId_" data-uid="RueI.Extensions.Roles.Has(RoleTypeId)">
+  Has(RoleTypeId)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/AutoGiving/Roles.cs/#L34"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Compares this <a class="xref" href="RueI.Displays.ElemReference-1.html">ElemReference&lt;T&gt;</a> to another <a class="xref" href="RueI.Displays.ElemReference-1.html">ElemReference&lt;T&gt;</a>.</p>
+  <div class="markdown level1 summary"><p>Determines whether or not this contains a certain RoleTypeId.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool Equals(ElemReference&lt;T&gt; other)</code></pre>
+    <pre><code class="lang-csharp hljs">public bool Has(RoleTypeId roleId)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>other</code> <a class="xref" href="RueI.Displays.ElemReference-1.html">ElemReference</a>&lt;T&gt;</dt>
-    <dd><p>The other <a class="xref" href="RueI.Displays.ElemReference-1.html">ElemReference&lt;T&gt;</a>.</p>
+    <dt><code>roleId</code> <span class="xref">RoleTypeId</span></dt>
+    <dd><p>The RoleTypeId to check.</p>
 </dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd><p>A value indicating whether or not the two are equal.</p>
+    <dd><p>A value indicating whether or not this has a certain RoleTypeId.</p>
 </dd>
   </dl>
 
@@ -231,32 +225,36 @@
 </h2>
 
 
-  <a id="RueI_Displays_ElemReference_1_op_Implicit_" data-uid="RueI.Displays.ElemReference`1.op_Implicit*"></a>
+  <a id="RueI_Extensions_Roles_op_BitwiseOr_" data-uid="RueI.Extensions.Roles.op_BitwiseOr*"></a>
 
-  <h3 id="RueI_Displays_ElemReference_1_op_Implicit_RueI_Displays_ElemReference__0___RueI_Displays_ElemReference_RueI_Elements_IElement_" data-uid="RueI.Displays.ElemReference`1.op_Implicit(RueI.Displays.ElemReference{`0})~RueI.Displays.ElemReference{RueI.Elements.IElement}">
-  implicit operator ElemReference&lt;IElement&gt;(ElemReference&lt;T&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/ElemReference.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  <h3 id="RueI_Extensions_Roles_op_BitwiseOr_RueI_Extensions_Roles_RueI_Extensions_Roles_" data-uid="RueI.Extensions.Roles.op_BitwiseOr(RueI.Extensions.Roles,RueI.Extensions.Roles)">
+  operator |(Roles, Roles)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/AutoGiving/Roles.cs/#L27"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Safely casts this to a <a class="xref" href="RueI.Displays.ElemReference-1.html">ElemReference&lt;T&gt;</a> with <a class="xref" href="RueI.Elements.IElement.html">IElement</a> generic.</p>
+  <div class="markdown level1 summary"><p>Combines two <a class="xref" href="RueI.Extensions.Roles.html">Roles</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static implicit operator ElemReference&lt;IElement&gt;(ElemReference&lt;T&gt; toCast)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Roles operator |(Roles left, Roles right)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>toCast</code> <a class="xref" href="RueI.Displays.ElemReference-1.html">ElemReference</a>&lt;T&gt;</dt>
-    <dd><p>The <a class="xref" href="RueI.Displays.ElemReference-1.html">ElemReference&lt;T&gt;</a> to cast.</p>
+    <dt><code>left</code> <a class="xref" href="RueI.Extensions.Roles.html">Roles</a></dt>
+    <dd><p>The first <a class="xref" href="RueI.Extensions.Roles.html">Roles</a>.</p>
+</dd>
+    <dt><code>right</code> <a class="xref" href="RueI.Extensions.Roles.html">Roles</a></dt>
+    <dd><p>The second <a class="xref" href="RueI.Extensions.Roles.html">Roles</a>.</p>
 </dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="RueI.Displays.ElemReference-1.html">ElemReference</a>&lt;<a class="xref" href="RueI.Elements.IElement.html">IElement</a>&gt;</dt>
-    <dd></dd>
+    <dt><a class="xref" href="RueI.Extensions.Roles.html">Roles</a></dt>
+    <dd><p>A combined <a class="xref" href="RueI.Extensions.Roles.html">Roles</a>.</p>
+</dd>
   </dl>
 
 
@@ -273,7 +271,7 @@
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/ElemReference.cs/#L23" class="edit-link">Edit this page</a>
+          <a href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/AutoGiving/Roles.cs/#L8" class="edit-link">Edit this page</a>
         </div>
 
 

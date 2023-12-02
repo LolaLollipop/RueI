@@ -2,10 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Interface IElement
+      <title>Class Element
  | RueI </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Interface IElement
+      <meta name="title" content="Class Element
  | RueI ">
       
       <link rel="icon" href="../favicon.ico">
@@ -17,7 +17,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/Ruemena/RueI/new/master/apiSpec/new?filename=RueI_Elements_IElement.md&amp;value=---%0Auid%3A%20RueI.Elements.IElement%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/Ruemena/RueI/new/master/apiSpec/new?filename=RueI_Elements_Element.md&amp;value=---%0Auid%3A%20RueI.Elements.Element%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -85,13 +85,13 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="RueI.Elements.IElement">
+        <article data-uid="RueI.Elements.Element">
 
 
 
-  <h1 id="RueI_Elements_IElement" data-uid="RueI.Elements.IElement" class="text-break">
-    Interface IElement
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements/IElement.cs/#L9"><i class="bi bi-code-slash"></i></a>
+  <h1 id="RueI_Elements_Element" data-uid="RueI.Elements.Element" class="text-break">
+    Class Element
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements/Element.cs/#L9"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -104,15 +104,54 @@
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IElement</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class Element</code></pre>
   </div>
 
 
 
 
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">Element</span></div>
+    </dd>
+  </dl>
 
 
+  <dl class="typelist derived">
+    <dt>Derived</dt>
+    <dd>
+      <div><a class="xref" href="RueI.Elements.DynamicElement.html">DynamicElement</a></div>
+      <div><a class="xref" href="RueI.Elements.SetElement.html">SetElement</a></div>
+    </dd>
+  </dl>
 
+  <dl class="typelist derived">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+  </dd></dl>
 
   <dl class="typelist extensionMethods">
     <dt>Extension Methods</dt>
@@ -121,7 +160,7 @@
       <a class="xref" href="RueI.Extensions.ElementHelpers.html#RueI_Extensions_ElementHelpers_AddTo__1___0_RueI_Displays_Interfaces_IElementContainer_">ElementHelpers.AddTo&lt;T&gt;(T, IElementContainer)</a>
   </div>
   <div>
-      <a class="xref" href="RueI.Extensions.ElementHelpers.html#RueI_Extensions_ElementHelpers_GetFunctionalPosition_RueI_Elements_IElement_">ElementHelpers.GetFunctionalPosition(IElement)</a>
+      <a class="xref" href="RueI.Extensions.ElementHelpers.html#RueI_Extensions_ElementHelpers_GetFunctionalPosition_RueI_Elements_Element_">ElementHelpers.GetFunctionalPosition(Element)</a>
   </div>
   <div>
       <a class="xref" href="RueI.Extensions.UniversalExtensions.html#RueI_Extensions_UniversalExtensions_AddTo__1___0_System_Collections_Generic_ICollection___0__">UniversalExtensions.AddTo&lt;T&gt;(T, ICollection&lt;T&gt;)</a>
@@ -132,15 +171,52 @@
 
 
 
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="RueI_Elements_Element__ctor_" data-uid="RueI.Elements.Element.#ctor*"></a>
+
+  <h3 id="RueI_Elements_Element__ctor_System_Single_" data-uid="RueI.Elements.Element.#ctor(System.Single)">
+  Element(float)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements/Element.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="RueI.Elements.Element.html">Element</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Element(float position)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>position</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The position of the element, where 0 represents the bottom of the screen and 1000 represents the top.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <h2 class="section" id="properties">Properties
 </h2>
 
 
-  <a id="RueI_Elements_IElement_Enabled_" data-uid="RueI.Elements.IElement.Enabled*"></a>
+  <a id="RueI_Elements_Element_Enabled_" data-uid="RueI.Elements.Element.Enabled*"></a>
 
-  <h3 id="RueI_Elements_IElement_Enabled" data-uid="RueI.Elements.IElement.Enabled">
+  <h3 id="RueI_Elements_Element_Enabled" data-uid="RueI.Elements.Element.Enabled">
   Enabled
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements/IElement.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements/Element.cs/#L23"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets or sets a value indicating whether or not this element is enabled and will show.</p>
@@ -148,7 +224,7 @@
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool Enabled { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public bool Enabled { get; set; }</code></pre>
   </div>
 
 
@@ -168,19 +244,19 @@
 
 
 
-  <a id="RueI_Elements_IElement_ParsedData_" data-uid="RueI.Elements.IElement.ParsedData*"></a>
+  <a id="RueI_Elements_Element_ParsedData_" data-uid="RueI.Elements.Element.ParsedData*"></a>
 
-  <h3 id="RueI_Elements_IElement_ParsedData" data-uid="RueI.Elements.IElement.ParsedData">
+  <h3 id="RueI_Elements_Element_ParsedData" data-uid="RueI.Elements.Element.ParsedData">
   ParsedData
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements/IElement.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements/Element.cs/#L45"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Gets the data used for parsing.</p>
+  <div class="markdown level1 summary"><p>Gets or sets the data used for parsing.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">ParsedData ParsedData { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">protected virtual ParsedData ParsedData { get; set; }</code></pre>
   </div>
 
 
@@ -196,26 +272,26 @@
 
 
 
-  <h4 class="section" id="RueI_Elements_IElement_ParsedData_remarks">Remarks</h4>
+  <h4 class="section" id="RueI_Elements_Element_ParsedData_remarks">Remarks</h4>
   <div class="markdown level1 remarks"><p>This contains information used to ensure that multiple elements can be displayed at once. To obtain this, you should almost always use <a class="xref" href="RueI.Parsing.Parser.html#RueI_Parsing_Parser_Parse_System_String_">Parse(string)</a>.</p>
 </div>
 
 
 
 
-  <a id="RueI_Elements_IElement_Parser_" data-uid="RueI.Elements.IElement.Parser*"></a>
+  <a id="RueI_Elements_Element_Parser_" data-uid="RueI.Elements.Element.Parser*"></a>
 
-  <h3 id="RueI_Elements_IElement_Parser" data-uid="RueI.Elements.IElement.Parser">
+  <h3 id="RueI_Elements_Element_Parser" data-uid="RueI.Elements.Element.Parser">
   Parser
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements/IElement.cs/#L36"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements/Element.cs/#L39"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Gets or sets the <a class="xref" href="RueI.Elements.IElement.html#RueI_Elements_IElement_Parser">Parser</a> currently in use by this <a class="xref" href="RueI.Elements.IElement.html">IElement</a>.</p>
+  <div class="markdown level1 summary"><p>Gets or sets the <a class="xref" href="RueI.Elements.Element.html#RueI_Elements_Element_Parser">Parser</a> currently in use by this <a class="xref" href="RueI.Elements.Element.html">Element</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Parser Parser { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public Parser Parser { get; set; }</code></pre>
   </div>
 
 
@@ -231,18 +307,18 @@
 
 
 
-  <h4 class="section" id="RueI_Elements_IElement_Parser_remarks">Remarks</h4>
+  <h4 class="section" id="RueI_Elements_Element_Parser_remarks">Remarks</h4>
   <div class="markdown level1 remarks"><p>Implementations should default this to <a class="xref" href="RueI.Parsing.Parser.html#RueI_Parsing_Parser_DefaultParser">DefaultParser</a>.</p>
 </div>
 
 
 
 
-  <a id="RueI_Elements_IElement_Position_" data-uid="RueI.Elements.IElement.Position*"></a>
+  <a id="RueI_Elements_Element_Position_" data-uid="RueI.Elements.Element.Position*"></a>
 
-  <h3 id="RueI_Elements_IElement_Position" data-uid="RueI.Elements.IElement.Position">
+  <h3 id="RueI_Elements_Element_Position" data-uid="RueI.Elements.Element.Position">
   Position
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements/IElement.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements/Element.cs/#L28"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets or sets the position of the element on a scale from 0-1000, where 0 represents the bottom of the screen and 1000 represents the top.</p>
@@ -250,7 +326,7 @@
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">float Position { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public float Position { get; set; }</code></pre>
   </div>
 
 
@@ -270,11 +346,11 @@
 
 
 
-  <a id="RueI_Elements_IElement_ZIndex_" data-uid="RueI.Elements.IElement.ZIndex*"></a>
+  <a id="RueI_Elements_Element_ZIndex_" data-uid="RueI.Elements.Element.ZIndex*"></a>
 
-  <h3 id="RueI_Elements_IElement_ZIndex" data-uid="RueI.Elements.IElement.ZIndex">
+  <h3 id="RueI_Elements_Element_ZIndex" data-uid="RueI.Elements.Element.ZIndex">
   ZIndex
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements/IElement.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements/Element.cs/#L33"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets or sets the priority of the hint (determining if it shows above another hint).</p>
@@ -282,7 +358,7 @@
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">int ZIndex { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public int ZIndex { get; set; }</code></pre>
   </div>
 
 
@@ -306,7 +382,7 @@
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements/IElement.cs/#L9" class="edit-link">Edit this page</a>
+          <a href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements/Element.cs/#L9" class="edit-link">Edit this page</a>
         </div>
 
 

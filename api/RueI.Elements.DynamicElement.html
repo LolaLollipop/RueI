@@ -104,7 +104,7 @@
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class DynamicElement : IElement</code></pre>
+    <pre><code class="lang-csharp hljs">public class DynamicElement : Element</code></pre>
   </div>
 
 
@@ -114,21 +114,28 @@
     <dt>Inheritance</dt>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="RueI.Elements.Element.html">Element</a></div>
       <div><span class="xref">DynamicElement</span></div>
     </dd>
   </dl>
 
-  <dl class="typelist implements">
-    <dt>Implements</dt>
-    <dd>
-      <div><a class="xref" href="RueI.Elements.IElement.html">IElement</a></div>
-    </dd>
-  </dl>
 
 
   <dl class="typelist derived">
     <dt>Inherited Members</dt>
     <dd>
+    <div>
+      <a class="xref" href="RueI.Elements.Element.html#RueI_Elements_Element_Enabled">Element.Enabled</a>
+    </div>
+    <div>
+      <a class="xref" href="RueI.Elements.Element.html#RueI_Elements_Element_Position">Element.Position</a>
+    </div>
+    <div>
+      <a class="xref" href="RueI.Elements.Element.html#RueI_Elements_Element_ZIndex">Element.ZIndex</a>
+    </div>
+    <div>
+      <a class="xref" href="RueI.Elements.Element.html#RueI_Elements_Element_Parser">Element.Parser</a>
+    </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
     </div>
@@ -162,7 +169,7 @@
       <a class="xref" href="RueI.Extensions.UniversalExtensions.html#RueI_Extensions_UniversalExtensions_AddTo__1___0_System_Collections_Generic_ICollection___0__">UniversalExtensions.AddTo&lt;T&gt;(T, ICollection&lt;T&gt;)</a>
   </div>
   <div>
-      <a class="xref" href="RueI.Extensions.ElementHelpers.html#RueI_Extensions_ElementHelpers_GetFunctionalPosition_RueI_Elements_IElement_">ElementHelpers.GetFunctionalPosition(IElement)</a>
+      <a class="xref" href="RueI.Extensions.ElementHelpers.html#RueI_Extensions_ElementHelpers_GetFunctionalPosition_RueI_Elements_Element_">ElementHelpers.GetFunctionalPosition(Element)</a>
   </div>
   </dd></dl>
 
@@ -179,9 +186,9 @@
 
   <a id="RueI_Elements_DynamicElement__ctor_" data-uid="RueI.Elements.DynamicElement.#ctor*"></a>
 
-  <h3 id="RueI_Elements_DynamicElement__ctor_RueI_Elements_Delegates_GetContent_System_Single_System_Int32_" data-uid="RueI.Elements.DynamicElement.#ctor(RueI.Elements.Delegates.GetContent,System.Single,System.Int32)">
-  DynamicElement(GetContent, float, int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements/DynamicElement.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  <h3 id="RueI_Elements_DynamicElement__ctor_RueI_Elements_Delegates_GetContent_System_Single_" data-uid="RueI.Elements.DynamicElement.#ctor(RueI.Elements.Delegates.GetContent,System.Single)">
+  DynamicElement(GetContent, float)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements/DynamicElement.cs/#L20"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="RueI.Elements.DynamicElement.html">DynamicElement</a> class.</p>
@@ -189,7 +196,7 @@
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public DynamicElement(GetContent contentGetter, float position, int zIndex = 0)</code></pre>
+    <pre><code class="lang-csharp hljs">public DynamicElement(GetContent contentGetter, float position)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -199,9 +206,6 @@
 </dd>
     <dt><code>position</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd><p>The scaled position of the element, where 0 is the bottom of the screen and 1000 is the top.</p>
-</dd>
-    <dt><code>zIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd><p>A value determing the priority of the hint, where higher numbers means that it will render above hints with a lower number.</p>
 </dd>
   </dl>
 
@@ -252,51 +256,19 @@
 
 
 
-  <a id="RueI_Elements_DynamicElement_Enabled_" data-uid="RueI.Elements.DynamicElement.Enabled*"></a>
-
-  <h3 id="RueI_Elements_DynamicElement_Enabled" data-uid="RueI.Elements.DynamicElement.Enabled">
-  Enabled
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements/DynamicElement.cs/#L32"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Gets or sets a value indicating whether or not this element is enabled and will show.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool Enabled { get; set; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
   <a id="RueI_Elements_DynamicElement_ParsedData_" data-uid="RueI.Elements.DynamicElement.ParsedData*"></a>
 
   <h3 id="RueI_Elements_DynamicElement_ParsedData" data-uid="RueI.Elements.DynamicElement.ParsedData">
   ParsedData
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements/DynamicElement.cs/#L44"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements/DynamicElement.cs/#L32"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Gets the data used for parsing.</p>
+  <div class="markdown level1 summary"><p>Gets or sets the data used for parsing.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ParsedData ParsedData { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">protected override ParsedData ParsedData { get; }</code></pre>
   </div>
 
 
@@ -315,105 +287,6 @@
   <h4 class="section" id="RueI_Elements_DynamicElement_ParsedData_remarks">Remarks</h4>
   <div class="markdown level1 remarks"><p>This contains information used to ensure that multiple elements can be displayed at once. To obtain this, you should almost always use <a class="xref" href="RueI.Parsing.Parser.html#RueI_Parsing_Parser_Parse_System_String_">Parse(string)</a>.</p>
 </div>
-
-
-
-
-  <a id="RueI_Elements_DynamicElement_Parser_" data-uid="RueI.Elements.DynamicElement.Parser*"></a>
-
-  <h3 id="RueI_Elements_DynamicElement_Parser" data-uid="RueI.Elements.DynamicElement.Parser">
-  Parser
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements/DynamicElement.cs/#L41"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Gets or sets the <a class="xref" href="RueI.Elements.IElement.html#RueI_Elements_IElement_Parser">Parser</a> currently in use by this <a class="xref" href="RueI.Elements.IElement.html">IElement</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Parser Parser { get; set; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="RueI.Parsing.Parser.html">Parser</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-  <h4 class="section" id="RueI_Elements_DynamicElement_Parser_remarks">Remarks</h4>
-  <div class="markdown level1 remarks"><p>Implementations should default this to <a class="xref" href="RueI.Parsing.Parser.html#RueI_Parsing_Parser_DefaultParser">DefaultParser</a>.</p>
-</div>
-
-
-
-
-  <a id="RueI_Elements_DynamicElement_Position_" data-uid="RueI.Elements.DynamicElement.Position*"></a>
-
-  <h3 id="RueI_Elements_DynamicElement_Position" data-uid="RueI.Elements.DynamicElement.Position">
-  Position
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements/DynamicElement.cs/#L35"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Gets or sets the position of the element on a scale from 0-1000, where 0 represents the bottom of the screen and 1000 represents the top.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public float Position { get; set; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-  <a id="RueI_Elements_DynamicElement_ZIndex_" data-uid="RueI.Elements.DynamicElement.ZIndex*"></a>
-
-  <h3 id="RueI_Elements_DynamicElement_ZIndex" data-uid="RueI.Elements.DynamicElement.ZIndex">
-  ZIndex
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements/DynamicElement.cs/#L38"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Gets or sets the priority of the hint (determining if it shows above another hint).</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int ZIndex { get; set; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
 
 
 

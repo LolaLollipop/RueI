@@ -2,10 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class Intersection&lt;T, TOther&gt;
+      <title>Class AutoElement
  | RueI </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class Intersection&lt;T, TOther&gt;
+      <meta name="title" content="Class AutoElement
  | RueI ">
       
       <link rel="icon" href="../favicon.ico">
@@ -17,7 +17,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/Ruemena/RueI/new/master/apiSpec/new?filename=RueI_Extensions_Intersection_2.md&amp;value=---%0Auid%3A%20RueI.Extensions.Intersection%602%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/Ruemena/RueI/new/master/apiSpec/new?filename=RueI_Extensions_AutoElement.md&amp;value=---%0Auid%3A%20RueI.Extensions.AutoElement%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -85,13 +85,13 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="RueI.Extensions.Intersection`2">
+        <article data-uid="RueI.Extensions.AutoElement">
 
 
 
-  <h1 id="RueI_Extensions_Intersection_2" data-uid="RueI.Extensions.Intersection`2" class="text-break">
-    Class Intersection&lt;T, TOther&gt;
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Extensions/Intersection.cs/#L8"><i class="bi bi-code-slash"></i></a>
+  <h1 id="RueI_Extensions_AutoElement" data-uid="RueI.Extensions.AutoElement" class="text-break">
+    Class AutoElement
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/AutoGiving/AutoGivers.cs/#L64"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -99,31 +99,23 @@
   <dl><dt>Assembly</dt><dd>RueI.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Represents an intersection between a class and an interface.</p>
+  <div class="markdown summary"><p>Manages and automatically assigns elements to ReferenceHubs meeting a criteria.</p>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Intersection&lt;T, TOther&gt; where T : class where TOther : class</code></pre>
+    <pre><code class="lang-csharp hljs">public class AutoElement : AutoGiverBase</code></pre>
   </div>
 
 
 
-  <h4 class="section">Type Parameters</h4>
-  <dl class="parameters">
-    <dt><code>T</code></dt>
-    <dd><p>The more derived class.</p>
-</dd>
-    <dt><code>TOther</code></dt>
-    <dd><p>The interface to be derived from.</p>
-</dd>
-  </dl>
 
   <dl class="typelist inheritance">
     <dt>Inheritance</dt>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-      <div><span class="xref">Intersection&lt;T, TOther&gt;</span></div>
+      <div><a class="xref" href="RueI.Extensions.AutoGiverBase.html">AutoGiverBase</a></div>
+      <div><span class="xref">AutoElement</span></div>
     </dd>
   </dl>
 
@@ -132,6 +124,9 @@
   <dl class="typelist derived">
     <dt>Inherited Members</dt>
     <dd>
+    <div>
+      <a class="xref" href="RueI.Extensions.AutoGiverBase.html#RueI_Extensions_AutoGiverBase_AutoGivers">AutoGiverBase.AutoGivers</a>
+    </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
     </div>
@@ -171,19 +166,19 @@
 </h2>
 
 
-  <a id="RueI_Extensions_Intersection_2_Class_" data-uid="RueI.Extensions.Intersection`2.Class*"></a>
+  <a id="RueI_Extensions_AutoElement_Roles_" data-uid="RueI.Extensions.AutoElement.Roles*"></a>
 
-  <h3 id="RueI_Extensions_Intersection_2_Class" data-uid="RueI.Extensions.Intersection`2.Class">
-  Class
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Extensions/Intersection.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  <h3 id="RueI_Extensions_AutoElement_Roles" data-uid="RueI.Extensions.AutoElement.Roles">
+  Roles
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/AutoGiving/AutoGivers.cs/#L102"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Gets the derived class of the intersection.</p>
+  <div class="markdown level1 summary"><p>Gets or sets the roles that this <a class="xref" href="RueI.Extensions.AutoElement.html">AutoElement</a> will give this element on.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public T Class { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public Roles Roles { get; set; }</code></pre>
   </div>
 
 
@@ -192,39 +187,7 @@
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><span class="xref">T</span></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-  <a id="RueI_Extensions_Intersection_2_Interface_" data-uid="RueI.Extensions.Intersection`2.Interface*"></a>
-
-  <h3 id="RueI_Extensions_Intersection_2_Interface" data-uid="RueI.Extensions.Intersection`2.Interface">
-  Interface
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Extensions/Intersection.cs/#L26"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Gets the interface of the intersection.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public TOther Interface { get; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><span class="xref">TOther</span></dt>
+    <dt><a class="xref" href="RueI.Extensions.Roles.html">Roles</a></dt>
     <dd></dd>
   </dl>
 
@@ -239,39 +202,45 @@
 </h2>
 
 
-  <a id="RueI_Extensions_Intersection_2_New_" data-uid="RueI.Extensions.Intersection`2.New*"></a>
+  <a id="RueI_Extensions_AutoElement_Create_" data-uid="RueI.Extensions.AutoElement.Create*"></a>
 
-  <h3 id="RueI_Extensions_Intersection_2_New__1___0_" data-uid="RueI.Extensions.Intersection`2.New``1(``0)">
-  New&lt;TClass&gt;(TClass)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Extensions/Intersection.cs/#L38"><i class="bi bi-code-slash"></i></a>
+  <h3 id="RueI_Extensions_AutoElement_Create__1_RueI_Extensions_Roles_RueI_Displays_IElemReference___0__System_Func_RueI_Displays_DisplayCore___0__" data-uid="RueI.Extensions.AutoElement.Create``1(RueI.Extensions.Roles,RueI.Displays.IElemReference{``0},System.Func{RueI.Displays.DisplayCore,``0})">
+  Create&lt;T&gt;(Roles, IElemReference&lt;T&gt;, Func&lt;DisplayCore, T&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/AutoGiving/AutoGivers.cs/#L125"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Creates a new intersection for a class.</p>
+  <div class="markdown level1 summary"><p>Creates a new <a class="xref" href="RueI.Extensions.AutoElement.html">AutoElement</a> using a ElemReference&lt;T&gt;.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Intersection&lt;T, TOther&gt; New&lt;TClass&gt;(TClass value) where TClass : class, T, TOther</code></pre>
+    <pre><code class="lang-csharp hljs">public static AutoElement Create&lt;T&gt;(Roles roles, IElemReference&lt;T&gt; reference, Func&lt;DisplayCore, T&gt; creator) where T : Element</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>value</code> <span class="xref">TClass</span></dt>
-    <dd><p>The value of the intersected type.</p>
+    <dt><code>roles</code> <a class="xref" href="RueI.Extensions.Roles.html">Roles</a></dt>
+    <dd><p>The <a class="xref" href="RueI.Extensions.AutoElement.html#RueI_Extensions_AutoElement_Roles">Roles</a> to use for the <a class="xref" href="RueI.Extensions.AutoElement.html">AutoElement</a>.</p>
+</dd>
+    <dt><code>reference</code> <a class="xref" href="RueI.Displays.IElemReference-1.html">IElemReference</a>&lt;T&gt;</dt>
+    <dd><p>The ElemReference&lt;T&gt; to use.</p>
+</dd>
+    <dt><code>creator</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="RueI.Displays.DisplayCore.html">DisplayCore</a>, T&gt;</dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func&lt;T, TResult&gt;</a> that creates the elements.</p>
 </dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="RueI.Extensions.Intersection-2.html">Intersection</a>&lt;T, TOther&gt;</dt>
-    <dd><p>A new intersection of the two types.</p>
+    <dt><a class="xref" href="RueI.Extensions.AutoElement.html">AutoElement</a></dt>
+    <dd><p>A new <a class="xref" href="RueI.Extensions.AutoElement.html">AutoElement</a>.</p>
 </dd>
   </dl>
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
-    <dt><code>TClass</code></dt>
-    <dd><p>The class to create the intersection for.</p>
+    <dt><code>T</code></dt>
+    <dd><p>The type of the <a class="xref" href="RueI.Elements.Element.html">Element</a>.</p>
 </dd>
   </dl>
 
@@ -284,34 +253,43 @@
 
 
 
-  <h2 class="section" id="operators">Operators
-</h2>
+  <a id="RueI_Extensions_AutoElement_Create_" data-uid="RueI.Extensions.AutoElement.Create*"></a>
 
-
-  <a id="RueI_Extensions_Intersection_2_op_Implicit_" data-uid="RueI.Extensions.Intersection`2.op_Implicit*"></a>
-
-  <h3 id="RueI_Extensions_Intersection_2_op_Implicit_RueI_Extensions_Intersection__0__1____0" data-uid="RueI.Extensions.Intersection`2.op_Implicit(RueI.Extensions.Intersection{`0,`1})~`0">
-  implicit operator T(Intersection&lt;T, TOther&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Extensions/Intersection.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  <h3 id="RueI_Extensions_AutoElement_Create__1_RueI_Extensions_Roles___0_" data-uid="RueI.Extensions.AutoElement.Create``1(RueI.Extensions.Roles,``0)">
+  Create&lt;T&gt;(Roles, T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/AutoGiving/AutoGivers.cs/#L111"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Creates a new <a class="xref" href="RueI.Extensions.AutoElement.html">AutoElement</a> of a shared <a class="xref" href="RueI.Elements.Element.html">Element</a>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static implicit operator T(Intersection&lt;T, TOther&gt; intersection)</code></pre>
+    <pre><code class="lang-csharp hljs">public static AutoElement Create&lt;T&gt;(Roles roles, T element) where T : Element</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>intersection</code> <a class="xref" href="RueI.Extensions.Intersection-2.html">Intersection</a>&lt;T, TOther&gt;</dt>
-    <dd></dd>
+    <dt><code>roles</code> <a class="xref" href="RueI.Extensions.Roles.html">Roles</a></dt>
+    <dd><p>The <a class="xref" href="RueI.Extensions.AutoElement.html#RueI_Extensions_AutoElement_Roles">Roles</a> to use for the <a class="xref" href="RueI.Extensions.AutoElement.html">AutoElement</a>.</p>
+</dd>
+    <dt><code>element</code> <span class="xref">T</span></dt>
+    <dd><p>The <code class="paramref">element</code> to use.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><span class="xref">T</span></dt>
-    <dd></dd>
+    <dt><a class="xref" href="RueI.Extensions.AutoElement.html">AutoElement</a></dt>
+    <dd><p>A new <a class="xref" href="RueI.Extensions.AutoElement.html">AutoElement</a>.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd><p>The type of the <a class="xref" href="RueI.Elements.Element.html">Element</a>.</p>
+</dd>
   </dl>
 
 
@@ -323,32 +301,28 @@
 
 
 
+  <a id="RueI_Extensions_AutoElement_GiveTo_" data-uid="RueI.Extensions.AutoElement.GiveTo*"></a>
 
-  <a id="RueI_Extensions_Intersection_2_op_Implicit_" data-uid="RueI.Extensions.Intersection`2.op_Implicit*"></a>
-
-  <h3 id="RueI_Extensions_Intersection_2_op_Implicit_RueI_Extensions_Intersection__0__1____1" data-uid="RueI.Extensions.Intersection`2.op_Implicit(RueI.Extensions.Intersection{`0,`1})~`1">
-  implicit operator TOther(Intersection&lt;T, TOther&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Extensions/Intersection.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  <h3 id="RueI_Extensions_AutoElement_GiveTo_RueI_Displays_DisplayCore_" data-uid="RueI.Extensions.AutoElement.GiveTo(RueI.Displays.DisplayCore)">
+  GiveTo(DisplayCore)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/AutoGiving/AutoGivers.cs/#L132"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gives this <a class="xref" href="RueI.Extensions.AutoElement.html">AutoElement</a> to a <a class="xref" href="RueI.Displays.DisplayCore.html">DisplayCore</a>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static implicit operator TOther(Intersection&lt;T, TOther&gt; intersection)</code></pre>
+    <pre><code class="lang-csharp hljs">protected override void GiveTo(DisplayCore core)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>intersection</code> <a class="xref" href="RueI.Extensions.Intersection-2.html">Intersection</a>&lt;T, TOther&gt;</dt>
-    <dd></dd>
+    <dt><code>core</code> <a class="xref" href="RueI.Displays.DisplayCore.html">DisplayCore</a></dt>
+    <dd><p>The core to give this to.</p>
+</dd>
   </dl>
 
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><span class="xref">TOther</span></dt>
-    <dd></dd>
-  </dl>
 
 
 
@@ -364,7 +338,7 @@
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Extensions/Intersection.cs/#L8" class="edit-link">Edit this page</a>
+          <a href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/AutoGiving/AutoGivers.cs/#L64" class="edit-link">Edit this page</a>
         </div>
 
 

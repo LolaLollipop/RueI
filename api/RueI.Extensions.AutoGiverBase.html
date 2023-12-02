@@ -2,10 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class AutoElementBase
+      <title>Class AutoGiverBase
  | RueI </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class AutoElementBase
+      <meta name="title" content="Class AutoGiverBase
  | RueI ">
       
       <link rel="icon" href="../favicon.ico">
@@ -17,7 +17,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/Ruemena/RueI/new/master/apiSpec/new?filename=RueI_Extensions_AutoElementBase.md&amp;value=---%0Auid%3A%20RueI.Extensions.AutoElementBase%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/Ruemena/RueI/new/master/apiSpec/new?filename=RueI_Extensions_AutoGiverBase.md&amp;value=---%0Auid%3A%20RueI.Extensions.AutoGiverBase%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -85,13 +85,13 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="RueI.Extensions.AutoElementBase">
+        <article data-uid="RueI.Extensions.AutoGiverBase">
 
 
 
-  <h1 id="RueI_Extensions_AutoElementBase" data-uid="RueI.Extensions.AutoElementBase" class="text-break">
-    Class AutoElementBase
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/AutoAssigning/AutoAssignerBase.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  <h1 id="RueI_Extensions_AutoGiverBase" data-uid="RueI.Extensions.AutoGiverBase" class="text-break">
+    Class AutoGiverBase
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/AutoGiving/AutoGivers.cs/#L27"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -104,7 +104,7 @@
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class AutoElementBase</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class AutoGiverBase</code></pre>
   </div>
 
 
@@ -114,7 +114,7 @@
     <dt>Inheritance</dt>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-      <div><span class="xref">AutoElementBase</span></div>
+      <div><span class="xref">AutoGiverBase</span></div>
     </dd>
   </dl>
 
@@ -122,7 +122,7 @@
   <dl class="typelist derived">
     <dt>Derived</dt>
     <dd>
-      <div><a class="xref" href="RueI.Extensions.AutoElement-1.html">AutoElement</a>&lt;T&gt;</div>
+      <div><a class="xref" href="RueI.Extensions.AutoElement.html">AutoElement</a></div>
     </dd>
   </dl>
 
@@ -164,18 +164,54 @@
 
 
 
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="RueI_Extensions_AutoGiverBase_AutoGivers_" data-uid="RueI.Extensions.AutoGiverBase.AutoGivers*"></a>
+
+  <h3 id="RueI_Extensions_AutoGiverBase_AutoGivers" data-uid="RueI.Extensions.AutoGiverBase.AutoGivers">
+  AutoGivers
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/AutoGiving/AutoGivers.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets a list of all active instances of <a class="xref" href="RueI.Extensions.AutoGiverBase.html">AutoGiverBase</a>s.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected static List&lt;WeakReference&lt;AutoGiverBase&gt;&gt; AutoGivers { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.weakreference-1">WeakReference</a>&lt;<a class="xref" href="RueI.Extensions.AutoGiverBase.html">AutoGiverBase</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <h2 class="section" id="methods">Methods
 </h2>
 
 
-  <a id="RueI_Extensions_AutoElementBase_GiveTo_" data-uid="RueI.Extensions.AutoElementBase.GiveTo*"></a>
+  <a id="RueI_Extensions_AutoGiverBase_GiveTo_" data-uid="RueI.Extensions.AutoGiverBase.GiveTo*"></a>
 
-  <h3 id="RueI_Extensions_AutoElementBase_GiveTo_RueI_Displays_DisplayCore_" data-uid="RueI.Extensions.AutoElementBase.GiveTo(RueI.Displays.DisplayCore)">
+  <h3 id="RueI_Extensions_AutoGiverBase_GiveTo_RueI_Displays_DisplayCore_" data-uid="RueI.Extensions.AutoGiverBase.GiveTo(RueI.Displays.DisplayCore)">
   GiveTo(DisplayCore)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/AutoAssigning/AutoAssignerBase.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/AutoGiving/AutoGivers.cs/#L45"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Gives this <a class="xref" href="RueI.Extensions.AutoElement-1.html">AutoElement&lt;T&gt;</a> to a <a class="xref" href="RueI.Displays.DisplayCore.html">DisplayCore</a>.</p>
+  <div class="markdown level1 summary"><p>Gives this <a class="xref" href="RueI.Extensions.AutoElement.html">AutoElement</a> to a <a class="xref" href="RueI.Displays.DisplayCore.html">DisplayCore</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -205,7 +241,7 @@
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/AutoAssigning/AutoAssignerBase.cs/#L26" class="edit-link">Edit this page</a>
+          <a href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/AutoGiving/AutoGivers.cs/#L27" class="edit-link">Edit this page</a>
         </div>
 
 

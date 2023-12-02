@@ -91,7 +91,7 @@
 
   <h1 id="RueI_Extensions_ElemRefResolver_1" data-uid="RueI.Extensions.ElemRefResolver`1" class="text-break">
     Class ElemRefResolver&lt;T&gt;
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/AutoAssigning/AutoAssignerBase.cs/#L12"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/AutoGiving/AutoGivers.cs/#L13"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -99,12 +99,12 @@
   <dl><dt>Assembly</dt><dd>RueI.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Represents a <a class="xref" href="RueI.Displays.ElemReference-1.html">ElemReference&lt;T&gt;</a> and its associated creator.</p>
+  <div class="markdown summary"><p>Represents a <a class="xref" href="RueI.Displays.IElemReference-1.html">IElemReference&lt;T&gt;</a> and its associated creator.</p>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public record ElemRefResolver&lt;T&gt; : IEquatable&lt;ElemRefResolver&lt;T&gt;&gt; where T : IElement</code></pre>
+    <pre><code class="lang-csharp hljs">public record ElemRefResolver&lt;T&gt; : IEquatable&lt;ElemRefResolver&lt;T&gt;&gt; where T : Element</code></pre>
   </div>
 
 
@@ -176,23 +176,23 @@
 
   <a id="RueI_Extensions_ElemRefResolver_1__ctor_" data-uid="RueI.Extensions.ElemRefResolver`1.#ctor*"></a>
 
-  <h3 id="RueI_Extensions_ElemRefResolver_1__ctor_RueI_Displays_ElemReference__0__System_Func__0__" data-uid="RueI.Extensions.ElemRefResolver`1.#ctor(RueI.Displays.ElemReference{`0},System.Func{`0})">
-  ElemRefResolver(ElemReference&lt;T&gt;, Func&lt;T&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/AutoAssigning/AutoAssignerBase.cs/#L12"><i class="bi bi-code-slash"></i></a>
+  <h3 id="RueI_Extensions_ElemRefResolver_1__ctor_RueI_Displays_IElemReference__0__System_Func__0__" data-uid="RueI.Extensions.ElemRefResolver`1.#ctor(RueI.Displays.IElemReference{`0},System.Func{`0})">
+  ElemRefResolver(IElemReference&lt;T&gt;, Func&lt;T&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/AutoGiving/AutoGivers.cs/#L13"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Represents a <a class="xref" href="RueI.Displays.ElemReference-1.html">ElemReference&lt;T&gt;</a> and its associated creator.</p>
+  <div class="markdown level1 summary"><p>Represents a <a class="xref" href="RueI.Displays.IElemReference-1.html">IElemReference&lt;T&gt;</a> and its associated creator.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ElemRefResolver(ElemReference&lt;T&gt; elemRef, Func&lt;T&gt; creator)</code></pre>
+    <pre><code class="lang-csharp hljs">public ElemRefResolver(IElemReference&lt;T&gt; elemRef, Func&lt;T&gt; creator)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>elemRef</code> <a class="xref" href="RueI.Displays.ElemReference-1.html">ElemReference</a>&lt;T&gt;</dt>
-    <dd><p>The <a class="xref" href="RueI.Displays.ElemReference-1.html">ElemReference&lt;T&gt;</a> to use.</p>
+    <dt><code>elemRef</code> <a class="xref" href="RueI.Displays.IElemReference-1.html">IElemReference</a>&lt;T&gt;</dt>
+    <dd><p>The <a class="xref" href="RueI.Displays.IElemReference-1.html">IElemReference&lt;T&gt;</a> to use.</p>
 </dd>
     <dt><code>creator</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-1">Func</a>&lt;T&gt;</dt>
     <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-1">Func&lt;TResult&gt;</a> that creates the element. if it does not exist.</p>
@@ -218,7 +218,7 @@
 
   <h3 id="RueI_Extensions_ElemRefResolver_1_creator" data-uid="RueI.Extensions.ElemRefResolver`1.creator">
   creator
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/AutoAssigning/AutoAssignerBase.cs/#L12"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/AutoGiving/AutoGivers.cs/#L13"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-1">Func&lt;TResult&gt;</a> that creates the element. if it does not exist.</p>
@@ -250,15 +250,15 @@
 
   <h3 id="RueI_Extensions_ElemRefResolver_1_elemRef" data-uid="RueI.Extensions.ElemRefResolver`1.elemRef">
   elemRef
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/AutoAssigning/AutoAssignerBase.cs/#L12"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/AutoGiving/AutoGivers.cs/#L13"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>The <a class="xref" href="RueI.Displays.ElemReference-1.html">ElemReference&lt;T&gt;</a> to use.</p>
+  <div class="markdown level1 summary"><p>The <a class="xref" href="RueI.Displays.IElemReference-1.html">IElemReference&lt;T&gt;</a> to use.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ElemReference&lt;T&gt; elemRef { get; init; }</code></pre>
+    <pre><code class="lang-csharp hljs">public IElemReference&lt;T&gt; elemRef { get; init; }</code></pre>
   </div>
 
 
@@ -267,7 +267,7 @@
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="RueI.Displays.ElemReference-1.html">ElemReference</a>&lt;T&gt;</dt>
+    <dt><a class="xref" href="RueI.Displays.IElemReference-1.html">IElemReference</a>&lt;T&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -286,10 +286,10 @@
 
   <h3 id="RueI_Extensions_ElemRefResolver_1_GetFor_RueI_Displays_DisplayCore_" data-uid="RueI.Extensions.ElemRefResolver`1.GetFor(RueI.Displays.DisplayCore)">
   GetFor(DisplayCore)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/AutoAssigning/AutoAssignerBase.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/AutoGiving/AutoGivers.cs/#L21"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Gets an instance of <code class="typeparamref">T</code> using the <a class="xref" href="RueI.Displays.ElemReference-1.html">ElemReference&lt;T&gt;</a>, or creates it.</p>
+  <div class="markdown level1 summary"><p>Gets an instance of <code class="typeparamref">T</code> using the <a class="xref" href="RueI.Displays.IElemReference-1.html">IElemReference&lt;T&gt;</a>, or creates it.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -325,7 +325,7 @@
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/AutoAssigning/AutoAssignerBase.cs/#L12" class="edit-link">Edit this page</a>
+          <a href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/AutoGiving/AutoGivers.cs/#L13" class="edit-link">Edit this page</a>
         </div>
 
 
