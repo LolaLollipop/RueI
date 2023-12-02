@@ -1,3 +1,6 @@
+using RueI.Displays.Scheduling;
+using RueI.Displays;
+using RueI.Elements;
 using RueI.Extensions;
 
 namespace RueITest;
@@ -16,6 +19,7 @@ public class TestExtensions
         Assert.AreEqual(7, seven.MaxIf(true, 49));
         Assert.AreEqual(49, seven.MaxIf(false, 49));
     }
+
 
     [TestMethod]
     public void TestICollection()
@@ -36,6 +40,12 @@ public class TestExtensions
         "world".AddTo(list);
 
         Assert.AreEqual(2, list.Count);
+    }
+
+    [TestMethod]
+    public void TestUnion()
+    {
+        
     }
 }
 ///"\"hello world - - - again\""

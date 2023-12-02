@@ -5,6 +5,7 @@ using eMEC;
 using NorthwoodLib.Pools;
 using RueI.Displays.Scheduling.Records;
 using RueI.Extensions;
+using Utils.NonAllocLINQ;
 
 /// <summary>
 /// Provides a means of doing batch operations.
@@ -48,7 +49,7 @@ public class Scheduler
         }
     }
 
-    private static readonly TimeSpan MinimumBatch = TimeSpan.FromMilliseconds(0.625);
+    private static readonly TimeSpan MinimumBatch = TimeSpan.FromMilliseconds(625);
 
     private readonly Cooldown rateLimiter = new();
     private readonly List<ScheduledJob> jobs = new();
@@ -79,6 +80,11 @@ public class Scheduler
     /// <returns>The weighted <see cref="DateTimeOffset"/> of all of the jobs.</returns>
     public static DateTimeOffset CalculateWeighted(IEnumerable<ScheduledJob> jobs)
     {
+        if (!jobs.Any())
+        {
+            return default;
+        }
+
         long currentSum = 0;
         int prioritySum = 0;
 
@@ -107,9 +113,10 @@ public class Scheduler
     /// <param name="time">How long into the future to run the action at.</param>
     /// <param name="action">The <see cref="Action"/> to run.</param>
     /// <param name="priority">The priority of the job, giving it additional weight when calculating.</param>
-    public void Schedule(TimeSpan time, Action action, int priority)
+    /// <param name="token">An optional token to assign to the <see cref="ScheduledJob"/>.</param>
+    public void Schedule(TimeSpan time, Action action, int priority, JobToken? token = null)
     {
-        Schedule(new ScheduledJob(DateTimeOffset.UtcNow + time, action, priority));
+        Schedule(new ScheduledJob(DateTimeOffset.UtcNow + time, action, priority, token));
     }
 
     /// <summary>
@@ -118,9 +125,10 @@ public class Scheduler
     /// <param name="action">The <see cref="Action"/> to run.</param>
     /// <param name="time">How long into the future to run the action at.</param>
     /// <param name="priority">The priority of the job, giving it additional weight when calculating.</param>
-    public void Schedule(Action action, TimeSpan time, int priority)
+    /// <param name="token">An optional token to assign to the <see cref="ScheduledJob"/>.</param>
+    public void Schedule(Action action, TimeSpan time, int priority, JobToken? token = null)
     {
-        Schedule(new ScheduledJob(DateTimeOffset.UtcNow + time, action, priority));
+        Schedule(new ScheduledJob(DateTimeOffset.UtcNow + time, action, priority, token));
     }
 
     /// <summary>
@@ -128,10 +136,30 @@ public class Scheduler
     /// </summary>
     /// <param name="time">How long into the future to run the action at.</param>
     /// <param name="action">The <see cref="Action"/> to run.</param>
-    public void Schedule(TimeSpan time, Action action)
+    /// <param name="token">An optional token to assign to the <see cref="ScheduledJob"/>.</param>
+    public void Schedule(TimeSpan time, Action action, JobToken? token = null)
     {
-        Schedule(time, action, 1);
+        Schedule(time, action, 1, token);
     }
+
+    /// <summary>
+    /// Attempts to kill a single job using the <see cref="JobToken"/>.
+    /// </summary>
+    /// <param name="token">The <see cref="JobToken"/> to use as a reference.</param>
+    public void KillJob(JobToken token)
+    {
+        int index = jobs.FindIndex(x => x.Token == token);
+        if (index != -1)
+        {
+            jobs.RemoveAt(index);
+        }
+    }
+
+    /// <summary>
+    /// Attempts to kill all jobs that have the <see cref="JobToken"/>.
+    /// </summary>
+    /// <param name="token">The <see cref="JobToken"/> to use as a reference.</param>
+    public void KillMultiple(JobToken token) => jobs.RemoveAll(x => x.Token == token);
 
     /// <summary>
     /// Delays any updates from occuring for a certain period of time.
@@ -144,6 +172,11 @@ public class Scheduler
 
     private void UpdateBatches()
     {
+        if (!jobs.Any())
+        {
+            return;
+        }
+
         jobs.Sort();
         currentBatches.Clear();
 
@@ -161,6 +194,8 @@ public class Scheduler
                 BatchJob finishedBatch = new(currentBatch, CalculateWeighted(currentBatch));
                 currentBatches.Add(finishedBatch);
                 currentBatch = ListPool<ScheduledJob>.Shared.Rent(10);
+
+                currentBatch.Add(job);
             }
         }
 
@@ -171,9 +206,8 @@ public class Scheduler
         }
 
         TimeSpan performAt = (currentBatches.First().PerformAt - DateTimeOffset.UtcNow).MaxIf(rateLimiter.Active, rateLimiter.TimeLeft);
-        performTask.Start(performAt, PerformFirstBatch);
 
-        ListPool<ScheduledJob>.Shared.Return(currentBatch);
+        performTask.Start(performAt, PerformFirstBatch);
     }
 
     /// <summary>
@@ -181,8 +215,6 @@ public class Scheduler
     /// </summary>
     private void PerformFirstBatch()
     {
-        ServerConsole.AddLog("performing first batch");
-
         BatchJob batchJob = currentBatches.First();
 
         coordinator.IgnoreUpdate = true;

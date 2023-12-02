@@ -1,6 +1,7 @@
 using RueI;
 using RueI.Displays;
 using RueI.Elements;
+using System.Diagnostics;
 
 namespace RueITest;
 
@@ -23,8 +24,11 @@ public class TestDisplayCore
         static SetElement CreateNewElem() => new(100, "hello world");
 
         MockDisplayCore core = new();
-        ElemReference<SetElement> elemRef = new();
-        ElemReference<SetElement> elemRefTwo = new();
+        IElemReference<SetElement> elemRef = DisplayCore.GetReference<SetElement>();
+        IElemReference<SetElement> elemRefTwo = DisplayCore.GetReference<SetElement>();
+
+        Assert.AreEqual(elemRef, elemRef);
+        Assert.AreNotEqual(elemRef, elemRefTwo);
 
         SetElement elem = core.GetElementOrNew(elemRef, CreateNewElem);
         core.AddAsReference(elemRefTwo, new(500, "goodbye world"));
@@ -62,5 +66,24 @@ public class TestDisplayCore
 
         SetElement element = new(500, "hello world");
         SetElement anotherElement = new(500, "hello next world");
+    }
+
+    [TestMethod]
+    public async Task TestScheduling()
+    {
+        Stopwatch stopwatchOne = new();
+        Stopwatch stopwatchTwo = new();
+
+        MockDisplayCore core = new();
+
+        core.Scheduler.Schedule(TimeSpan.FromMilliseconds(200), stopwatchOne.Stop);
+        core.Scheduler.Schedule(TimeSpan.FromMilliseconds(400), stopwatchTwo.Stop);
+
+        stopwatchOne.Start();
+        stopwatchTwo.Start();
+
+        await Task.Delay(600);
+
+        Assert.AreEqual(300, (stopwatchOne.ElapsedMilliseconds + stopwatchTwo.ElapsedMilliseconds) / 2, 50);
     }
 }

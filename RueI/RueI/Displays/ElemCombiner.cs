@@ -7,18 +7,18 @@ using RueI.Elements;
 using RueI.Parsing.Records;
 
 /// <summary>
-/// Provides a means of combining <see cref="IElement"/>s.
+/// Provides a means of combining <see cref="Element"/>s.
 /// </summary>
 public static class ElemCombiner
 {
     /// <summary>
-    /// Combines multiple <see cref="IElement"/>s into a string.
+    /// Combines multiple <see cref="Element"/>s into a string.
     /// </summary>
-    /// <param name="enumElems">The <see cref="IEnumerable{T}"/> of <see cref="IElement"/>s to combine.</param>
-    /// <returns>A <see cref="string"/> with all of the combined <see cref="IElement"/>s.</returns>
-    public static string Combine(IEnumerable<IElement> enumElems)
+    /// <param name="enumElems">The <see cref="IEnumerable{T}"/> of <see cref="Element"/>s to combine.</param>
+    /// <returns>A <see cref="string"/> with all of the combined <see cref="Element"/>s.</returns>
+    public static string Combine(IEnumerable<Element> enumElems)
     {
-        List<IElement> elements = enumElems.ToPooledList();
+        List<Element> elements = enumElems.ToPooledList();
 
         if (!elements.Any())
         {
@@ -35,7 +35,7 @@ public static class ElemCombiner
 
         for (int i = 0; i < elements.Count; i++)
         {
-            IElement curElement = elements[i];
+            Element curElement = elements[i];
 
             ParsedData parsedData = curElement.ParsedData;
             float funcPos = curElement.GetFunctionalPosition();
@@ -58,7 +58,7 @@ public static class ElemCombiner
             lastOffset = parsedData.Offset;
         }
 
-        ListPool<IElement>.Shared.Return(elements);
+        ListPool<Element>.Shared.Return(elements);
         sb.Insert(0, $"<line-height={totalOffset}px>\n");
         return StringBuilderPool.Shared.ToStringReturn(sb);
     }
@@ -76,5 +76,5 @@ public static class ElemCombiner
         return calc / -2;
     }
 
-    private static int CompareElement(IElement first, IElement second) => first.ZIndex - second.ZIndex;
+    private static int CompareElement(Element first, Element second) => first.ZIndex - second.ZIndex;
 }

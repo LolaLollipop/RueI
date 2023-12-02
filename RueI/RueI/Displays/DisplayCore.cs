@@ -11,7 +11,7 @@ using RueI.Extensions;
 public class DisplayCore
 {
     private readonly List<DisplayBase> displays = new();
-    private readonly Dictionary<ElemReference<IElement>, IElement> referencedElements = new();
+    private readonly Dictionary<IElemReference<Element>, Element> referencedElements = new();
 
     static DisplayCore()
     {
@@ -46,7 +46,7 @@ public class DisplayCore
     internal static Dictionary<ReferenceHub, DisplayCore> DisplayCores { get; } = new();
 
     /// <summary>
-    /// Gets a display of anonymous <see cref="IElement"/>s added to this display.
+    /// Gets a display of anonymous <see cref="Element"/>s added to this display.
     /// </summary>
     internal Display AnonymousDisplay { get; }
 
@@ -78,6 +78,17 @@ public class DisplayCore
     }
 
     /// <summary>
+    /// Gets a new <see cref="IElemReference{T}"/>.
+    /// </summary>
+    /// <typeparam name="T">The type of the element.</typeparam>
+    /// <returns>A new, unique <see cref="IElemReference{T}"/>.</returns>
+    public static IElemReference<T> GetReference<T>()
+        where T : Element
+    {
+        return new ElemReference<T>();
+    }
+
+    /// <summary>
     /// Updates this <see cref="DisplayCore"/>.
     /// </summary>
     /// <param name="priority">The priority of the update - defaults to 100.</param>
@@ -92,15 +103,15 @@ public class DisplayCore
     }
 
     /// <summary>
-    /// Gets an <see cref="IElement"/> as <typeparamref name="T"/> if the <see cref="ElemReference{T}"/> exists within this <see cref="DisplayCore"/>'s element references.
+    /// Gets an <see cref="Element"/> as <typeparamref name="T"/> if the <see cref="IElemReference{T}"/> exists within this <see cref="DisplayCore"/>'s element references.
     /// </summary>
-    /// <typeparam name="T">The type of the <see cref="IElement"/> to get.</typeparam>
-    /// <param name="reference">The <see cref="ElemReference{T}"/> to use.</param>
-    /// <returns>The instance of <typeparamref name="T"/> if the <see cref="IElement"/> exists within the <see cref="DisplayCore"/>'s element references, otherwise null.</returns>
-    public T? GetElement<T>(ElemReference<T> reference)
-        where T : IElement
+    /// <typeparam name="T">The type of the <see cref="Element"/> to get.</typeparam>
+    /// <param name="reference">The <see cref="IElemReference{T}"/> to use.</param>
+    /// <returns>The instance of <typeparamref name="T"/> if the <see cref="Element"/> exists within the <see cref="DisplayCore"/>'s element references, otherwise null.</returns>
+    public T? GetElement<T>(IElemReference<T> reference)
+        where T : Element
     {
-        if (referencedElements.TryGetValue(reference, out IElement value) && value is T casted)
+        if (referencedElements.TryGetValue(reference, out Element value) && value is T casted)
         {
             return casted;
         }
@@ -111,16 +122,16 @@ public class DisplayCore
     }
 
     /// <summary>
-    /// Gets an <see cref="IElement"/> as <typeparamref name="T"/>, or creates it.
+    /// Gets an <see cref="Element"/> as <typeparamref name="T"/>, or creates it.
     /// </summary>
-    /// <typeparam name="T">The type of the <see cref="IElement"/> to get.</typeparam>
-    /// <param name="reference">The <see cref="ElemReference{T}"/> to use.</param>
+    /// <typeparam name="T">The type of the <see cref="Element"/> to get.</typeparam>
+    /// <param name="reference">The <see cref="IElemReference{T}"/> to use.</param>
     /// <param name="creator">A function that creates a new instance of <typeparamref name="T"/> if it does not exist.</param>
     /// <returns>The instance of <typeparamref name="T"/>.</returns>
-    public T GetElementOrNew<T>(ElemReference<T> reference, Func<T> creator)
-        where T : IElement
+    public T GetElementOrNew<T>(IElemReference<T> reference, Func<T> creator)
+        where T : Element
     {
-        if (referencedElements.TryGetValue(reference, out IElement value) && value is T casted)
+        if (referencedElements.TryGetValue(reference, out Element value) && value is T casted)
         {
             return casted;
         }
@@ -133,26 +144,37 @@ public class DisplayCore
     }
 
     /// <summary>
-    /// Adds an <see cref="IElement"/> as an <see cref="ElemReference{T}"/>.
+    /// Adds an <see cref="Element"/> as an <see cref="IElemReference{T}"/>.
     /// </summary>
-    /// <typeparam name="T">The type of the <see cref="IElement"/> to add.</typeparam>
-    /// <param name="reference">The <see cref="ElemReference{T}"/> to use.</param>
-    /// <param name="element">The <see cref="IElement"/> to add.</param>
-    public void AddAsReference<T>(ElemReference<T> reference, T element)
-        where T : IElement
+    /// <typeparam name="T">The type of the <see cref="Element"/> to add.</typeparam>
+    /// <param name="reference">The <see cref="IElemReference{T}"/> to use.</param>
+    /// <param name="element">The <see cref="Element"/> to add.</param>
+    public void AddAsReference<T>(IElemReference<T> reference, T element)
+        where T : Element
     {
         referencedElements[reference] = element;
     }
 
     /// <summary>
-    /// Sets the content of a <see cref="SetElement"/> <see cref="ElemReference{T}"/>, or creates it.
+    /// Removes a <see cref="IElemReference{T}"/> from this <see cref="DisplayCore"/>.
     /// </summary>
-    /// <param name="reference">The <see cref="ElemReference{T}"/> to use.</param>
+    /// <typeparam name="T">The type of the <see cref="Element"/> to remove.</typeparam>
+    /// <param name="reference">The <see cref="IElemReference{T}"/> to remove.</param>
+    public void RemoveReference<T>(IElemReference<T> reference)
+        where T : Element
+    {
+        referencedElements.Remove(reference);
+    }
+
+    /// <summary>
+    /// Sets the content of a <see cref="SetElement"/> <see cref="IElemReference{T}"/>, or creates it.
+    /// </summary>
+    /// <param name="reference">The <see cref="IElemReference{T}"/> to use.</param>
     /// <param name="content">The new content of the <see cref="SetElement"/>.</param>
     /// <param name="position">The position of the <see cref="SetElement"/> if it needs to be created.</param>
-    public void SetElementOrNew(ElemReference<SetElement> reference, string content, float position)
+    public void SetElementOrNew(IElemReference<SetElement> reference, string content, float position)
     {
-        if (referencedElements.TryGetValue(reference, out IElement value))
+        if (referencedElements.TryGetValue(reference, out Element value))
         {
             if (value is SetElement element)
             {
@@ -172,7 +194,7 @@ public class DisplayCore
     internal void InternalUpdate()
     {
         string text = ElemCombiner.Combine(GetAllElements());
-        Hub.connectionToClient.Send(new HintMessage(new TextHint(text, new HintParameter[] { new StringHintParameter(text) }, new HintEffect[] { HintEffectPresets.FadeIn(0, 0, 1) }, 99999)));
+        UnityAlternative.Provider.ShowHint(Hub, text);
     }
 
     /// <summary>
@@ -195,6 +217,11 @@ public class DisplayCore
         DisplayCores.Clear();
     }
 
-    private IEnumerable<IElement> GetAllElements() => displays.SelectMany(x => x.GetAllElements())
+    private IEnumerable<Element> GetAllElements() => displays.SelectMany(x => x.GetAllElements())
                                                       .Concat(referencedElements.Values.FilterDisabled());
+
+    private class ElemReference<T> : IElemReference<T>
+        where T : Element
+    {
+    }
 }

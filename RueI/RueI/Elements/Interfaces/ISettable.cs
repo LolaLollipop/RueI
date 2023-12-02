@@ -5,7 +5,7 @@ using RueI.Elements;
 /// <summary>
 /// Defines an element that can be set.
 /// </summary>
-public interface ISettable : IElement
+public interface ISettable
 {
     /// <summary>
     /// Sets the content of this element.

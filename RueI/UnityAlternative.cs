@@ -1,10 +1,10 @@
 ﻿namespace RueI;
 
-using eMEC;
+using Hints;
 using MEC;
 using RueI.Extensions;
 using UnityEngine;
-using static RueI.NonUnityProvider;
+using static System.Net.Mime.MediaTypeNames;
 
 /// <summary>
 /// Defines the base class for a provider of methods that may or may not use Unity.
@@ -46,6 +46,13 @@ public abstract class UnityAlternative
     /// <returns>A <see cref="IAsyncOperation"/> to use.</returns>
     public abstract IAsyncOperation PerformAsync(TimeSpan span, Action action);
 
+    /// <summary>
+    /// Shows a hint for a <see cref="ReferenceHub"/>.
+    /// </summary>
+    /// <param name="hub">The <see cref="ReferenceHub"/> to use.</param>
+    /// <param name="message">The message to show.</param>
+    internal abstract void ShowHint(ReferenceHub hub, string message);
+
     private static UnityAlternative GetProvider()
     {
         try
@@ -71,6 +78,9 @@ public class NonUnityProvider : UnityAlternative
     /// <inheritdoc/>
     public override IAsyncOperation PerformAsync(TimeSpan span, Action action) => new TaskAsyncOperation(span, action);
 
+    /// <inheritdoc/>
+    internal override void ShowHint(ReferenceHub hub, string message) => Log(message);
+
     /// <summary>
     /// Represents an async operation using a <see cref="Task"/>.
     /// </summary>
@@ -86,10 +96,14 @@ public class NonUnityProvider : UnityAlternative
         /// <param name="action">The action to run when finished.</param>
         public TaskAsyncOperation(TimeSpan span, Action action)
         {
-            source = new();
-            task = Task.Run(async () =>
+            CancellationTokenSource newSource = new();
+            source = newSource;
+
+            task = Task.Run(
+                async () =>
             {
                 await Task.Delay(span);
+                newSource.Token.ThrowIfCancellationRequested();
                 action();
             });
         }
@@ -117,6 +131,9 @@ public class UnityProvider : UnityAlternative
 
     /// <inheritdoc/>
     public override IAsyncOperation PerformAsync(TimeSpan span, Action action) => new MECAsyncOperation(span, action);
+
+    /// <inheritdoc/>
+    internal override void ShowHint(ReferenceHub hub, string message) => hub.connectionToClient.Send(new HintMessage(new TextHint(message, new HintParameter[] { new StringHintParameter(message) }, new HintEffect[] { HintEffectPresets.FadeIn(0, 0, 1) }, 99999)));
 
     /// <summary>
     /// Represents an async operation using a <see cref="Task"/>.

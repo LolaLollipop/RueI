@@ -43,7 +43,7 @@ public class ScreenDisplay : DisplayBase
     /// <summary>
     /// Gets the elements of this display that will be displayed regardless of screen.
     /// </summary>
-    public List<IElement> GlobalElements { get; } = new();
+    public List<Element> GlobalElements { get; } = new();
 
     /// <summary>
     /// Sets the <see cref="CurrentScreen"/> of this display.
@@ -63,14 +63,14 @@ public class ScreenDisplay : DisplayBase
     }
 
     /// <inheritdoc/>
-    public override IEnumerable<IElement> GetAllElements()
+    public override IEnumerable<Element> GetAllElements()
     {
-        foreach (IElement element in CurrentScreen.Elements.FilterDisabled())
+        foreach (Element element in CurrentScreen.Elements.FilterDisabled())
         {
             yield return element;
         }
 
-        foreach (IElement element in GlobalElements.FilterDisabled())
+        foreach (Element element in GlobalElements.FilterDisabled())
         {
             yield return element;
         }

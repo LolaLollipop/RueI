@@ -345,7 +345,7 @@ public class Parser
         context.ApplyClosingTags();
         if (context.WidthSinceSpace > 0 || context.CurrentLineWidth > 0)
         {
-            context.NewOffset += ((context.BiggestCharSize / Constants.DEFAULTSIZE * Constants.DEFAULTHEIGHT) - Constants.DEFAULTHEIGHT) / 2;
+            context.NewOffset += context.BiggestCharSize - Constants.DEFAULTSIZE;
         }
 
         StringBuilderPool.Shared.Return(tagBuffer);

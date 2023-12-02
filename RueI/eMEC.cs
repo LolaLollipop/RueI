@@ -266,6 +266,7 @@ public abstract class TaskBase : ITaskable
 
     protected virtual void ResetState()
     {
+        operation?.Dispose();
         operation = null;
     }
 }

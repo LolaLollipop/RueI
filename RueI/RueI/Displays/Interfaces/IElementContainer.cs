@@ -10,5 +10,5 @@ public interface IElementContainer
     /// <summary>
     /// Gets the elements of this <see cref="IElementContainer"/>.
     /// </summary>
-    public List<IElement> Elements { get; }
+    public List<Element> Elements { get; }
 }

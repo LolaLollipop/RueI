@@ -468,9 +468,8 @@ public static class CharacterLengths
         }
         catch(Exception e)
         {
-            ServerConsole.AddLog(e.ToString());
         }
-        ServerConsole.AddLog("NO!!");
+
         return new ReadOnlyDictionary<char, float>(charSizes);
     }
 }

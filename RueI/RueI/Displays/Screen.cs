@@ -27,5 +27,5 @@ public class Screen : IElementContainer
     /// <summary>
     /// Gets the elements of this screen.
     /// </summary>
-    public List<IElement> Elements { get; } = new();
+    public List<Element> Elements { get; } = new();
 }

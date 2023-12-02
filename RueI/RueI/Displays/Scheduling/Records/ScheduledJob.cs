@@ -1,4 +1,6 @@
-﻿namespace RueI.Displays.Scheduling.Records;
+﻿using RueI.Extensions;
+
+namespace RueI.Displays.Scheduling.Records;
 
 /// <summary>
 /// Defines a scheduled job for a <see cref="Scheduler"/>.
@@ -11,11 +13,13 @@ public class ScheduledJob : IComparable<ScheduledJob>
     /// <param name="finishAt">When the job should be performed.</param>
     /// <param name="action">The action to perform when done.</param>
     /// <param name="priority">The priority of the element.</param>
-    internal ScheduledJob(DateTimeOffset finishAt, Action action, int priority)
+    /// <param name="token">A token to assign to this <see cref="ScheduledJob"/>.</param>
+    internal ScheduledJob(DateTimeOffset finishAt, Action action, int priority, JobToken? token = null)
     {
         FinishAt = finishAt;
         Action = action;
-        Priority = priority;
+        Priority = priority.Max(1);
+        Token = token;
     }
 
     /// <summary>
@@ -32,6 +36,11 @@ public class ScheduledJob : IComparable<ScheduledJob>
     /// Gets the priority of the element.
     /// </summary>
     internal int Priority { get; private set; } = 1;
+
+    /// <summary>
+    /// Gets the <see cref="JobToken"/> of this, if it has one.
+    /// </summary>
+    internal JobToken? Token { get; }
 
     /// <summary>
     /// Compares this <see cref="ScheduledJob"/> to another job.

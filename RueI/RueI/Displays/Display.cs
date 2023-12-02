@@ -31,8 +31,8 @@ public class Display : DisplayBase, IElementContainer
     /// <summary>
     /// Gets the elements of this display.
     /// </summary>
-    public List<IElement> Elements { get; } = new();
+    public List<Element> Elements { get; } = new();
 
     /// <inheritdoc/>
-    public override IEnumerable<IElement> GetAllElements() => Elements.FilterDisabled();
+    public override IEnumerable<Element> GetAllElements() => Elements.FilterDisabled();
 }

@@ -50,7 +50,7 @@ public abstract class DisplayBase
     /// Gets all of the elements of this display.
     /// </summary>
     /// <returns>The <see cref="IEnumerator{IElement}"/> of elements.</returns>
-    public abstract IEnumerable<IElement> GetAllElements();
+    public abstract IEnumerable<Element> GetAllElements();
 
     /// <summary>
     /// Updates the parent <see cref="DisplayCore"/> of this <see cref="DisplayBase"/>.

@@ -113,14 +113,14 @@ public class ParserContext : TextInfo, IDisposable
     /// </summary>
     public void ApplyClosingTags()
     {
-        foreach (NoParamsTag tag in endingTags)
+        foreach (NoParamsTag tag in endingTags.ToList())
         {
             tag.HandleTag(this);
         }
 
         foreach (float t in SizeTags)
         {
-            SharedTag<CloseSizeTag>.Singleton.HandleTag(this);
+            ResultBuilder.Append("</size>");
         }
 
         SizeTags.Clear();

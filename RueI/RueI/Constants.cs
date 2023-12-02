@@ -49,7 +49,7 @@ public static class Constants
     /// <summary>
     /// Gets the ratelimit used for displaying hints.
     /// </summary>
-    public static TimeSpan HintRateLimit { get; } = TimeSpan.FromMilliseconds(0.525);
+    public static TimeSpan HintRateLimit { get; } = TimeSpan.FromMilliseconds(525);
 
     /// <summary>
     /// Gets a list of allowed sizes of color param tags, ignoring the hashtag.
