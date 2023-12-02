@@ -2,6 +2,8 @@
   href: introduction.md
 - name: Getting Started
   href: getting-started.md
+- name: Using the Scheduler
+  href: scheduling.md
 - name: HintBuilding Extensions
   href: hintbuilding.md
 - name: eMEC Guide
