@@ -1104,11 +1104,11 @@
       "type": "Toc",
       "source_relative_path": "api/toc.yml",
       "output": {
-        ".json": {
-          "relative_path": "api/toc.json"
-        },
         ".html": {
           "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
         }
       },
       "version": ""
@@ -1174,14 +1174,24 @@
       "version": ""
     },
     {
+      "type": "Conceptual",
+      "source_relative_path": "markdown/scheduling.md",
+      "output": {
+        ".html": {
+          "relative_path": "markdown/scheduling.html"
+        }
+      },
+      "version": ""
+    },
+    {
       "type": "Toc",
       "source_relative_path": "markdown/toc.yml",
       "output": {
-        ".json": {
-          "relative_path": "markdown/toc.json"
-        },
         ".html": {
           "relative_path": "markdown/toc.html"
+        },
+        ".json": {
+          "relative_path": "markdown/toc.json"
         }
       },
       "version": ""
@@ -1190,11 +1200,11 @@
       "type": "Toc",
       "source_relative_path": "toc.yml",
       "output": {
-        ".json": {
-          "relative_path": "toc.json"
-        },
         ".html": {
           "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
         }
       },
       "version": ""
