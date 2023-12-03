@@ -73,6 +73,8 @@ public class Scheduler
     /// </summary>
     internal bool RateLimitActive => rateLimiter.Active;
 
+    private static DateTimeOffset Now => DateTimeOffset.UtcNow;
+
     /// <summary>
     /// Calculates the weighted time for a list of jobs to be performed.
     /// </summary>
@@ -116,7 +118,7 @@ public class Scheduler
     /// <param name="token">An optional token to assign to the <see cref="ScheduledJob"/>.</param>
     public void Schedule(TimeSpan time, Action action, int priority, JobToken? token = null)
     {
-        Schedule(new ScheduledJob(DateTimeOffset.UtcNow + time, action, priority, token));
+        Schedule(new ScheduledJob(Now + time, action, priority, token));
     }
 
     /// <summary>
@@ -128,7 +130,7 @@ public class Scheduler
     /// <param name="token">An optional token to assign to the <see cref="ScheduledJob"/>.</param>
     public void Schedule(Action action, TimeSpan time, int priority, JobToken? token = null)
     {
-        Schedule(new ScheduledJob(DateTimeOffset.UtcNow + time, action, priority, token));
+        Schedule(new ScheduledJob(Now + time, action, priority, token));
     }
 
     /// <summary>
@@ -181,7 +183,7 @@ public class Scheduler
         currentBatches.Clear();
 
         List<ScheduledJob> currentBatch = ListPool<ScheduledJob>.Shared.Rent(10);
-        DateTimeOffset currentBatchTime = DateTimeOffset.UtcNow + MinimumBatch;
+        DateTimeOffset currentBatchTime = jobs.First().FinishAt + MinimumBatch;
 
         foreach (ScheduledJob job in jobs)
         {
@@ -202,10 +204,11 @@ public class Scheduler
         if (currentBatch.Count != 0)
         {
             BatchJob finishedBatch = new(currentBatch, CalculateWeighted(currentBatch));
+
             currentBatches.Add(finishedBatch);
         }
 
-        TimeSpan performAt = (currentBatches.First().PerformAt - DateTimeOffset.UtcNow).MaxIf(rateLimiter.Active, rateLimiter.TimeLeft);
+        TimeSpan performAt = (currentBatches.First().PerformAt - Now).MaxIf(rateLimiter.Active, rateLimiter.TimeLeft);
 
         performTask.Start(performAt, PerformFirstBatch);
     }

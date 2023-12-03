@@ -73,17 +73,20 @@ public class TestDisplayCore
     {
         Stopwatch stopwatchOne = new();
         Stopwatch stopwatchTwo = new();
+        Stopwatch stopwatchThree = new();
 
         MockDisplayCore core = new();
 
         core.Scheduler.Schedule(TimeSpan.FromMilliseconds(200), stopwatchOne.Stop);
-        core.Scheduler.Schedule(TimeSpan.FromMilliseconds(400), stopwatchTwo.Stop);
+        core.Scheduler.Schedule(TimeSpan.FromMilliseconds(300), stopwatchTwo.Stop);
+        core.Scheduler.Schedule(TimeSpan.FromMilliseconds(400), stopwatchThree.Stop);
 
         stopwatchOne.Start();
         stopwatchTwo.Start();
+        stopwatchThree.Start();
 
         await Task.Delay(600);
 
-        Assert.AreEqual(300, (stopwatchOne.ElapsedMilliseconds + stopwatchTwo.ElapsedMilliseconds) / 2, 50);
+        Assert.AreEqual(300, (stopwatchOne.ElapsedMilliseconds + stopwatchTwo.ElapsedMilliseconds + stopwatchThree.ElapsedMilliseconds) / 3, 50);
     }
 }
