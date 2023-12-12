@@ -545,6 +545,192 @@ references:
   isSpec: "True"
   fullName: RueI.Displays.Interfaces.IElementContainer.Elements
   nameWithType: IElementContainer.Elements
+- uid: RueI.Displays.Roles
+  name: Roles
+  href: api/RueI.Displays.Roles.html
+  commentId: T:RueI.Displays.Roles
+  fullName: RueI.Displays.Roles
+  nameWithType: Roles
+- uid: RueI.Displays.Roles.ChaosConscript
+  name: ChaosConscript
+  href: api/RueI.Displays.Roles.html#RueI_Displays_Roles_ChaosConscript
+  commentId: F:RueI.Displays.Roles.ChaosConscript
+  fullName: RueI.Displays.Roles.ChaosConscript
+  nameWithType: Roles.ChaosConscript
+- uid: RueI.Displays.Roles.ChaosMarauder
+  name: ChaosMarauder
+  href: api/RueI.Displays.Roles.html#RueI_Displays_Roles_ChaosMarauder
+  commentId: F:RueI.Displays.Roles.ChaosMarauder
+  fullName: RueI.Displays.Roles.ChaosMarauder
+  nameWithType: Roles.ChaosMarauder
+- uid: RueI.Displays.Roles.ChaosRepressor
+  name: ChaosRepressor
+  href: api/RueI.Displays.Roles.html#RueI_Displays_Roles_ChaosRepressor
+  commentId: F:RueI.Displays.Roles.ChaosRepressor
+  fullName: RueI.Displays.Roles.ChaosRepressor
+  nameWithType: Roles.ChaosRepressor
+- uid: RueI.Displays.Roles.ChaosRifleman
+  name: ChaosRifleman
+  href: api/RueI.Displays.Roles.html#RueI_Displays_Roles_ChaosRifleman
+  commentId: F:RueI.Displays.Roles.ChaosRifleman
+  fullName: RueI.Displays.Roles.ChaosRifleman
+  nameWithType: Roles.ChaosRifleman
+- uid: RueI.Displays.Roles.ChaosRoles
+  name: ChaosRoles
+  href: api/RueI.Displays.Roles.html#RueI_Displays_Roles_ChaosRoles
+  commentId: F:RueI.Displays.Roles.ChaosRoles
+  fullName: RueI.Displays.Roles.ChaosRoles
+  nameWithType: Roles.ChaosRoles
+- uid: RueI.Displays.Roles.ClassD
+  name: ClassD
+  href: api/RueI.Displays.Roles.html#RueI_Displays_Roles_ClassD
+  commentId: F:RueI.Displays.Roles.ClassD
+  fullName: RueI.Displays.Roles.ClassD
+  nameWithType: Roles.ClassD
+- uid: RueI.Displays.Roles.CustomRole
+  name: CustomRole
+  href: api/RueI.Displays.Roles.html#RueI_Displays_Roles_CustomRole
+  commentId: F:RueI.Displays.Roles.CustomRole
+  fullName: RueI.Displays.Roles.CustomRole
+  nameWithType: Roles.CustomRole
+- uid: RueI.Displays.Roles.FacilityGuard
+  name: FacilityGuard
+  href: api/RueI.Displays.Roles.html#RueI_Displays_Roles_FacilityGuard
+  commentId: F:RueI.Displays.Roles.FacilityGuard
+  fullName: RueI.Displays.Roles.FacilityGuard
+  nameWithType: Roles.FacilityGuard
+- uid: RueI.Displays.Roles.Filmmaker
+  name: Filmmaker
+  href: api/RueI.Displays.Roles.html#RueI_Displays_Roles_Filmmaker
+  commentId: F:RueI.Displays.Roles.Filmmaker
+  fullName: RueI.Displays.Roles.Filmmaker
+  nameWithType: Roles.Filmmaker
+- uid: RueI.Displays.Roles.HumanRoles
+  name: HumanRoles
+  href: api/RueI.Displays.Roles.html#RueI_Displays_Roles_HumanRoles
+  commentId: F:RueI.Displays.Roles.HumanRoles
+  fullName: RueI.Displays.Roles.HumanRoles
+  nameWithType: Roles.HumanRoles
+- uid: RueI.Displays.Roles.MilitaryRoles
+  name: MilitaryRoles
+  href: api/RueI.Displays.Roles.html#RueI_Displays_Roles_MilitaryRoles
+  commentId: F:RueI.Displays.Roles.MilitaryRoles
+  fullName: RueI.Displays.Roles.MilitaryRoles
+  nameWithType: Roles.MilitaryRoles
+- uid: RueI.Displays.Roles.NtfCaptain
+  name: NtfCaptain
+  href: api/RueI.Displays.Roles.html#RueI_Displays_Roles_NtfCaptain
+  commentId: F:RueI.Displays.Roles.NtfCaptain
+  fullName: RueI.Displays.Roles.NtfCaptain
+  nameWithType: Roles.NtfCaptain
+- uid: RueI.Displays.Roles.NtfPrivate
+  name: NtfPrivate
+  href: api/RueI.Displays.Roles.html#RueI_Displays_Roles_NtfPrivate
+  commentId: F:RueI.Displays.Roles.NtfPrivate
+  fullName: RueI.Displays.Roles.NtfPrivate
+  nameWithType: Roles.NtfPrivate
+- uid: RueI.Displays.Roles.NtfRoles
+  name: NtfRoles
+  href: api/RueI.Displays.Roles.html#RueI_Displays_Roles_NtfRoles
+  commentId: F:RueI.Displays.Roles.NtfRoles
+  fullName: RueI.Displays.Roles.NtfRoles
+  nameWithType: Roles.NtfRoles
+- uid: RueI.Displays.Roles.NtfSergeant
+  name: NtfSergeant
+  href: api/RueI.Displays.Roles.html#RueI_Displays_Roles_NtfSergeant
+  commentId: F:RueI.Displays.Roles.NtfSergeant
+  fullName: RueI.Displays.Roles.NtfSergeant
+  nameWithType: Roles.NtfSergeant
+- uid: RueI.Displays.Roles.NtfSpecialist
+  name: NtfSpecialist
+  href: api/RueI.Displays.Roles.html#RueI_Displays_Roles_NtfSpecialist
+  commentId: F:RueI.Displays.Roles.NtfSpecialist
+  fullName: RueI.Displays.Roles.NtfSpecialist
+  nameWithType: Roles.NtfSpecialist
+- uid: RueI.Displays.Roles.Overwatch
+  name: Overwatch
+  href: api/RueI.Displays.Roles.html#RueI_Displays_Roles_Overwatch
+  commentId: F:RueI.Displays.Roles.Overwatch
+  fullName: RueI.Displays.Roles.Overwatch
+  nameWithType: Roles.Overwatch
+- uid: RueI.Displays.Roles.Scientist
+  name: Scientist
+  href: api/RueI.Displays.Roles.html#RueI_Displays_Roles_Scientist
+  commentId: F:RueI.Displays.Roles.Scientist
+  fullName: RueI.Displays.Roles.Scientist
+  nameWithType: Roles.Scientist
+- uid: RueI.Displays.Roles.Scp049
+  name: Scp049
+  href: api/RueI.Displays.Roles.html#RueI_Displays_Roles_Scp049
+  commentId: F:RueI.Displays.Roles.Scp049
+  fullName: RueI.Displays.Roles.Scp049
+  nameWithType: Roles.Scp049
+- uid: RueI.Displays.Roles.Scp0492
+  name: Scp0492
+  href: api/RueI.Displays.Roles.html#RueI_Displays_Roles_Scp0492
+  commentId: F:RueI.Displays.Roles.Scp0492
+  fullName: RueI.Displays.Roles.Scp0492
+  nameWithType: Roles.Scp0492
+- uid: RueI.Displays.Roles.Scp079
+  name: Scp079
+  href: api/RueI.Displays.Roles.html#RueI_Displays_Roles_Scp079
+  commentId: F:RueI.Displays.Roles.Scp079
+  fullName: RueI.Displays.Roles.Scp079
+  nameWithType: Roles.Scp079
+- uid: RueI.Displays.Roles.Scp096
+  name: Scp096
+  href: api/RueI.Displays.Roles.html#RueI_Displays_Roles_Scp096
+  commentId: F:RueI.Displays.Roles.Scp096
+  fullName: RueI.Displays.Roles.Scp096
+  nameWithType: Roles.Scp096
+- uid: RueI.Displays.Roles.Scp106
+  name: Scp106
+  href: api/RueI.Displays.Roles.html#RueI_Displays_Roles_Scp106
+  commentId: F:RueI.Displays.Roles.Scp106
+  fullName: RueI.Displays.Roles.Scp106
+  nameWithType: Roles.Scp106
+- uid: RueI.Displays.Roles.Scp173
+  name: Scp173
+  href: api/RueI.Displays.Roles.html#RueI_Displays_Roles_Scp173
+  commentId: F:RueI.Displays.Roles.Scp173
+  fullName: RueI.Displays.Roles.Scp173
+  nameWithType: Roles.Scp173
+- uid: RueI.Displays.Roles.Scp3114
+  name: Scp3114
+  href: api/RueI.Displays.Roles.html#RueI_Displays_Roles_Scp3114
+  commentId: F:RueI.Displays.Roles.Scp3114
+  fullName: RueI.Displays.Roles.Scp3114
+  nameWithType: Roles.Scp3114
+- uid: RueI.Displays.Roles.Scp939
+  name: Scp939
+  href: api/RueI.Displays.Roles.html#RueI_Displays_Roles_Scp939
+  commentId: F:RueI.Displays.Roles.Scp939
+  fullName: RueI.Displays.Roles.Scp939
+  nameWithType: Roles.Scp939
+- uid: RueI.Displays.Roles.Scps
+  name: Scps
+  href: api/RueI.Displays.Roles.html#RueI_Displays_Roles_Scps
+  commentId: F:RueI.Displays.Roles.Scps
+  fullName: RueI.Displays.Roles.Scps
+  nameWithType: Roles.Scps
+- uid: RueI.Displays.Roles.ScpsNo0492
+  name: ScpsNo0492
+  href: api/RueI.Displays.Roles.html#RueI_Displays_Roles_ScpsNo0492
+  commentId: F:RueI.Displays.Roles.ScpsNo0492
+  fullName: RueI.Displays.Roles.ScpsNo0492
+  nameWithType: Roles.ScpsNo0492
+- uid: RueI.Displays.Roles.Spectator
+  name: Spectator
+  href: api/RueI.Displays.Roles.html#RueI_Displays_Roles_Spectator
+  commentId: F:RueI.Displays.Roles.Spectator
+  fullName: RueI.Displays.Roles.Spectator
+  nameWithType: Roles.Spectator
+- uid: RueI.Displays.Roles.Tutorial
+  name: Tutorial
+  href: api/RueI.Displays.Roles.html#RueI_Displays_Roles_Tutorial
+  commentId: F:RueI.Displays.Roles.Tutorial
+  fullName: RueI.Displays.Roles.Tutorial
+  nameWithType: Roles.Tutorial
 - uid: RueI.Displays.Scheduling
   name: RueI.Displays.Scheduling
   href: api/RueI.Displays.Scheduling.html
@@ -1358,24 +1544,37 @@ references:
   isSpec: "True"
   fullName: RueI.Extensions.AutoElement.Create
   nameWithType: AutoElement.Create
-- uid: RueI.Extensions.AutoElement.Create``1(RueI.Extensions.Roles,RueI.Displays.IElemReference{``0},System.Func{RueI.Displays.DisplayCore,``0})
+- uid: RueI.Extensions.AutoElement.Create``1(RueI.Displays.Roles,RueI.Displays.IElemReference{``0},System.Func{RueI.Displays.DisplayCore,``0})
   name: Create<T>(Roles, IElemReference<T>, Func<DisplayCore, T>)
-  href: api/RueI.Extensions.AutoElement.html#RueI_Extensions_AutoElement_Create__1_RueI_Extensions_Roles_RueI_Displays_IElemReference___0__System_Func_RueI_Displays_DisplayCore___0__
-  commentId: M:RueI.Extensions.AutoElement.Create``1(RueI.Extensions.Roles,RueI.Displays.IElemReference{``0},System.Func{RueI.Displays.DisplayCore,``0})
+  href: api/RueI.Extensions.AutoElement.html#RueI_Extensions_AutoElement_Create__1_RueI_Displays_Roles_RueI_Displays_IElemReference___0__System_Func_RueI_Displays_DisplayCore___0__
+  commentId: M:RueI.Extensions.AutoElement.Create``1(RueI.Displays.Roles,RueI.Displays.IElemReference{``0},System.Func{RueI.Displays.DisplayCore,``0})
   name.vb: Create(Of T)(Roles, IElemReference(Of T), Func(Of DisplayCore, T))
-  fullName: RueI.Extensions.AutoElement.Create<T>(RueI.Extensions.Roles, RueI.Displays.IElemReference<T>, System.Func<RueI.Displays.DisplayCore, T>)
-  fullName.vb: RueI.Extensions.AutoElement.Create(Of T)(RueI.Extensions.Roles, RueI.Displays.IElemReference(Of T), System.Func(Of RueI.Displays.DisplayCore, T))
+  fullName: RueI.Extensions.AutoElement.Create<T>(RueI.Displays.Roles, RueI.Displays.IElemReference<T>, System.Func<RueI.Displays.DisplayCore, T>)
+  fullName.vb: RueI.Extensions.AutoElement.Create(Of T)(RueI.Displays.Roles, RueI.Displays.IElemReference(Of T), System.Func(Of RueI.Displays.DisplayCore, T))
   nameWithType: AutoElement.Create<T>(Roles, IElemReference<T>, Func<DisplayCore, T>)
   nameWithType.vb: AutoElement.Create(Of T)(Roles, IElemReference(Of T), Func(Of DisplayCore, T))
-- uid: RueI.Extensions.AutoElement.Create``1(RueI.Extensions.Roles,``0)
+- uid: RueI.Extensions.AutoElement.Create``1(RueI.Displays.Roles,``0)
   name: Create<T>(Roles, T)
-  href: api/RueI.Extensions.AutoElement.html#RueI_Extensions_AutoElement_Create__1_RueI_Extensions_Roles___0_
-  commentId: M:RueI.Extensions.AutoElement.Create``1(RueI.Extensions.Roles,``0)
+  href: api/RueI.Extensions.AutoElement.html#RueI_Extensions_AutoElement_Create__1_RueI_Displays_Roles___0_
+  commentId: M:RueI.Extensions.AutoElement.Create``1(RueI.Displays.Roles,``0)
   name.vb: Create(Of T)(Roles, T)
-  fullName: RueI.Extensions.AutoElement.Create<T>(RueI.Extensions.Roles, T)
-  fullName.vb: RueI.Extensions.AutoElement.Create(Of T)(RueI.Extensions.Roles, T)
+  fullName: RueI.Extensions.AutoElement.Create<T>(RueI.Displays.Roles, T)
+  fullName.vb: RueI.Extensions.AutoElement.Create(Of T)(RueI.Displays.Roles, T)
   nameWithType: AutoElement.Create<T>(Roles, T)
   nameWithType.vb: AutoElement.Create(Of T)(Roles, T)
+- uid: RueI.Extensions.AutoElement.Disable
+  name: Disable()
+  href: api/RueI.Extensions.AutoElement.html#RueI_Extensions_AutoElement_Disable
+  commentId: M:RueI.Extensions.AutoElement.Disable
+  fullName: RueI.Extensions.AutoElement.Disable()
+  nameWithType: AutoElement.Disable()
+- uid: RueI.Extensions.AutoElement.Disable*
+  name: Disable
+  href: api/RueI.Extensions.AutoElement.html#RueI_Extensions_AutoElement_Disable_
+  commentId: Overload:RueI.Extensions.AutoElement.Disable
+  isSpec: "True"
+  fullName: RueI.Extensions.AutoElement.Disable
+  nameWithType: AutoElement.Disable
 - uid: RueI.Extensions.AutoElement.GiveTo(RueI.Displays.DisplayCore)
   name: GiveTo(DisplayCore)
   href: api/RueI.Extensions.AutoElement.html#RueI_Extensions_AutoElement_GiveTo_RueI_Displays_DisplayCore_
@@ -1402,38 +1601,6 @@ references:
   isSpec: "True"
   fullName: RueI.Extensions.AutoElement.Roles
   nameWithType: AutoElement.Roles
-- uid: RueI.Extensions.AutoGiverBase
-  name: AutoGiverBase
-  href: api/RueI.Extensions.AutoGiverBase.html
-  commentId: T:RueI.Extensions.AutoGiverBase
-  fullName: RueI.Extensions.AutoGiverBase
-  nameWithType: AutoGiverBase
-- uid: RueI.Extensions.AutoGiverBase.AutoGivers
-  name: AutoGivers
-  href: api/RueI.Extensions.AutoGiverBase.html#RueI_Extensions_AutoGiverBase_AutoGivers
-  commentId: P:RueI.Extensions.AutoGiverBase.AutoGivers
-  fullName: RueI.Extensions.AutoGiverBase.AutoGivers
-  nameWithType: AutoGiverBase.AutoGivers
-- uid: RueI.Extensions.AutoGiverBase.AutoGivers*
-  name: AutoGivers
-  href: api/RueI.Extensions.AutoGiverBase.html#RueI_Extensions_AutoGiverBase_AutoGivers_
-  commentId: Overload:RueI.Extensions.AutoGiverBase.AutoGivers
-  isSpec: "True"
-  fullName: RueI.Extensions.AutoGiverBase.AutoGivers
-  nameWithType: AutoGiverBase.AutoGivers
-- uid: RueI.Extensions.AutoGiverBase.GiveTo(RueI.Displays.DisplayCore)
-  name: GiveTo(DisplayCore)
-  href: api/RueI.Extensions.AutoGiverBase.html#RueI_Extensions_AutoGiverBase_GiveTo_RueI_Displays_DisplayCore_
-  commentId: M:RueI.Extensions.AutoGiverBase.GiveTo(RueI.Displays.DisplayCore)
-  fullName: RueI.Extensions.AutoGiverBase.GiveTo(RueI.Displays.DisplayCore)
-  nameWithType: AutoGiverBase.GiveTo(DisplayCore)
-- uid: RueI.Extensions.AutoGiverBase.GiveTo*
-  name: GiveTo
-  href: api/RueI.Extensions.AutoGiverBase.html#RueI_Extensions_AutoGiverBase_GiveTo_
-  commentId: Overload:RueI.Extensions.AutoGiverBase.GiveTo
-  isSpec: "True"
-  fullName: RueI.Extensions.AutoGiverBase.GiveTo
-  nameWithType: AutoGiverBase.GiveTo
 - uid: RueI.Extensions.CollectionExtensions
   name: CollectionExtensions
   href: api/RueI.Extensions.CollectionExtensions.html
@@ -1586,6 +1753,31 @@ references:
   isSpec: "True"
   fullName: RueI.Extensions.ElementHelpers.GetFunctionalPosition
   nameWithType: ElementHelpers.GetFunctionalPosition
+- uid: RueI.Extensions.EnumExtensions
+  name: EnumExtensions
+  href: api/RueI.Extensions.EnumExtensions.html
+  commentId: T:RueI.Extensions.EnumExtensions
+  fullName: RueI.Extensions.EnumExtensions
+  nameWithType: EnumExtensions
+- uid: RueI.Extensions.EnumExtensions.HasFlagFast(RueI.Displays.Roles,RoleTypeId)
+  name: HasFlagFast(Roles, RoleTypeId)
+  href: api/RueI.Extensions.EnumExtensions.html#RueI_Extensions_EnumExtensions_HasFlagFast_RueI_Displays_Roles_RoleTypeId_
+  commentId: M:RueI.Extensions.EnumExtensions.HasFlagFast(RueI.Displays.Roles,RoleTypeId)
+  fullName: RueI.Extensions.EnumExtensions.HasFlagFast(RueI.Displays.Roles, RoleTypeId)
+  nameWithType: EnumExtensions.HasFlagFast(Roles, RoleTypeId)
+- uid: RueI.Extensions.EnumExtensions.HasFlagFast(RueI.Displays.Roles,RueI.Displays.Roles)
+  name: HasFlagFast(Roles, Roles)
+  href: api/RueI.Extensions.EnumExtensions.html#RueI_Extensions_EnumExtensions_HasFlagFast_RueI_Displays_Roles_RueI_Displays_Roles_
+  commentId: M:RueI.Extensions.EnumExtensions.HasFlagFast(RueI.Displays.Roles,RueI.Displays.Roles)
+  fullName: RueI.Extensions.EnumExtensions.HasFlagFast(RueI.Displays.Roles, RueI.Displays.Roles)
+  nameWithType: EnumExtensions.HasFlagFast(Roles, Roles)
+- uid: RueI.Extensions.EnumExtensions.HasFlagFast*
+  name: HasFlagFast
+  href: api/RueI.Extensions.EnumExtensions.html#RueI_Extensions_EnumExtensions_HasFlagFast_
+  commentId: Overload:RueI.Extensions.EnumExtensions.HasFlagFast
+  isSpec: "True"
+  fullName: RueI.Extensions.EnumExtensions.HasFlagFast
+  nameWithType: EnumExtensions.HasFlagFast
 - uid: RueI.Extensions.HintBuilding
   name: RueI.Extensions.HintBuilding
   href: api/RueI.Extensions.HintBuilding.html
@@ -2333,6 +2525,22 @@ references:
   commentId: T:RueI.Extensions.IEnumerableExtensions
   fullName: RueI.Extensions.IEnumerableExtensions
   nameWithType: IEnumerableExtensions
+- uid: RueI.Extensions.IEnumerableExtensions.Only*
+  name: Only
+  href: api/RueI.Extensions.IEnumerableExtensions.html#RueI_Extensions_IEnumerableExtensions_Only_
+  commentId: Overload:RueI.Extensions.IEnumerableExtensions.Only
+  isSpec: "True"
+  fullName: RueI.Extensions.IEnumerableExtensions.Only
+  nameWithType: IEnumerableExtensions.Only
+- uid: RueI.Extensions.IEnumerableExtensions.Only``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})
+  name: Only<T>(IEnumerable<T>, Func<T, bool>)
+  href: api/RueI.Extensions.IEnumerableExtensions.html#RueI_Extensions_IEnumerableExtensions_Only__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Boolean__
+  commentId: M:RueI.Extensions.IEnumerableExtensions.Only``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})
+  name.vb: Only(Of T)(IEnumerable(Of T), Func(Of T, Boolean))
+  fullName: RueI.Extensions.IEnumerableExtensions.Only<T>(System.Collections.Generic.IEnumerable<T>, System.Func<T, bool>)
+  fullName.vb: RueI.Extensions.IEnumerableExtensions.Only(Of T)(System.Collections.Generic.IEnumerable(Of T), System.Func(Of T, Boolean))
+  nameWithType: IEnumerableExtensions.Only<T>(IEnumerable<T>, Func<T, bool>)
+  nameWithType.vb: IEnumerableExtensions.Only(Of T)(IEnumerable(Of T), Func(Of T, Boolean))
 - uid: RueI.Extensions.IEnumerableExtensions.ToPooledList*
   name: ToPooledList
   href: api/RueI.Extensions.IEnumerableExtensions.html#RueI_Extensions_IEnumerableExtensions_ToPooledList_
@@ -2447,63 +2655,6 @@ references:
   fullName.vb: RueI.Extensions.Intersection(Of T, TOther).CType
   nameWithType: Intersection<T, TOther>.implicit operator
   nameWithType.vb: Intersection(Of T, TOther).CType
-- uid: RueI.Extensions.Roles
-  name: Roles
-  href: api/RueI.Extensions.Roles.html
-  commentId: T:RueI.Extensions.Roles
-  fullName: RueI.Extensions.Roles
-  nameWithType: Roles
-- uid: RueI.Extensions.Roles.#ctor(System.Collections.Generic.IEnumerable{RoleTypeId})
-  name: Roles(IEnumerable<RoleTypeId>)
-  href: api/RueI.Extensions.Roles.html#RueI_Extensions_Roles__ctor_System_Collections_Generic_IEnumerable_RoleTypeId__
-  commentId: M:RueI.Extensions.Roles.#ctor(System.Collections.Generic.IEnumerable{RoleTypeId})
-  name.vb: New(IEnumerable(Of RoleTypeId))
-  fullName: RueI.Extensions.Roles.Roles(System.Collections.Generic.IEnumerable<RoleTypeId>)
-  fullName.vb: RueI.Extensions.Roles.New(System.Collections.Generic.IEnumerable(Of RoleTypeId))
-  nameWithType: Roles.Roles(IEnumerable<RoleTypeId>)
-  nameWithType.vb: Roles.New(IEnumerable(Of RoleTypeId))
-- uid: RueI.Extensions.Roles.#ctor*
-  name: Roles
-  href: api/RueI.Extensions.Roles.html#RueI_Extensions_Roles__ctor_
-  commentId: Overload:RueI.Extensions.Roles.#ctor
-  isSpec: "True"
-  name.vb: New
-  fullName: RueI.Extensions.Roles.Roles
-  fullName.vb: RueI.Extensions.Roles.New
-  nameWithType: Roles.Roles
-  nameWithType.vb: Roles.New
-- uid: RueI.Extensions.Roles.Has(RoleTypeId)
-  name: Has(RoleTypeId)
-  href: api/RueI.Extensions.Roles.html#RueI_Extensions_Roles_Has_RoleTypeId_
-  commentId: M:RueI.Extensions.Roles.Has(RoleTypeId)
-  fullName: RueI.Extensions.Roles.Has(RoleTypeId)
-  nameWithType: Roles.Has(RoleTypeId)
-- uid: RueI.Extensions.Roles.Has*
-  name: Has
-  href: api/RueI.Extensions.Roles.html#RueI_Extensions_Roles_Has_
-  commentId: Overload:RueI.Extensions.Roles.Has
-  isSpec: "True"
-  fullName: RueI.Extensions.Roles.Has
-  nameWithType: Roles.Has
-- uid: RueI.Extensions.Roles.op_BitwiseOr(RueI.Extensions.Roles,RueI.Extensions.Roles)
-  name: operator |(Roles, Roles)
-  href: api/RueI.Extensions.Roles.html#RueI_Extensions_Roles_op_BitwiseOr_RueI_Extensions_Roles_RueI_Extensions_Roles_
-  commentId: M:RueI.Extensions.Roles.op_BitwiseOr(RueI.Extensions.Roles,RueI.Extensions.Roles)
-  name.vb: Or(Roles, Roles)
-  fullName: RueI.Extensions.Roles.operator |(RueI.Extensions.Roles, RueI.Extensions.Roles)
-  fullName.vb: RueI.Extensions.Roles.Or(RueI.Extensions.Roles, RueI.Extensions.Roles)
-  nameWithType: Roles.operator |(Roles, Roles)
-  nameWithType.vb: Roles.Or(Roles, Roles)
-- uid: RueI.Extensions.Roles.op_BitwiseOr*
-  name: operator |
-  href: api/RueI.Extensions.Roles.html#RueI_Extensions_Roles_op_BitwiseOr_
-  commentId: Overload:RueI.Extensions.Roles.op_BitwiseOr
-  isSpec: "True"
-  name.vb: Or
-  fullName: RueI.Extensions.Roles.operator |
-  fullName.vb: RueI.Extensions.Roles.Or
-  nameWithType: Roles.operator |
-  nameWithType.vb: Roles.Or
 - uid: RueI.Extensions.UniversalExtensions
   name: UniversalExtensions
   href: api/RueI.Extensions.UniversalExtensions.html
@@ -2908,12 +3059,15 @@ references:
   isSpec: "True"
   fullName: RueI.Parsing.Parser.CalculateCharacterLength
   nameWithType: Parser.CalculateCharacterLength
-- uid: RueI.Parsing.Parser.CreateLineBreak(RueI.Parsing.ParserContext)
-  name: CreateLineBreak(ParserContext)
-  href: api/RueI.Parsing.Parser.html#RueI_Parsing_Parser_CreateLineBreak_RueI_Parsing_ParserContext_
-  commentId: M:RueI.Parsing.Parser.CreateLineBreak(RueI.Parsing.ParserContext)
-  fullName: RueI.Parsing.Parser.CreateLineBreak(RueI.Parsing.ParserContext)
-  nameWithType: Parser.CreateLineBreak(ParserContext)
+- uid: RueI.Parsing.Parser.CreateLineBreak(RueI.Parsing.ParserContext,System.Boolean)
+  name: CreateLineBreak(ParserContext, bool)
+  href: api/RueI.Parsing.Parser.html#RueI_Parsing_Parser_CreateLineBreak_RueI_Parsing_ParserContext_System_Boolean_
+  commentId: M:RueI.Parsing.Parser.CreateLineBreak(RueI.Parsing.ParserContext,System.Boolean)
+  name.vb: CreateLineBreak(ParserContext, Boolean)
+  fullName: RueI.Parsing.Parser.CreateLineBreak(RueI.Parsing.ParserContext, bool)
+  fullName.vb: RueI.Parsing.Parser.CreateLineBreak(RueI.Parsing.ParserContext, Boolean)
+  nameWithType: Parser.CreateLineBreak(ParserContext, bool)
+  nameWithType.vb: Parser.CreateLineBreak(ParserContext, Boolean)
 - uid: RueI.Parsing.Parser.CreateLineBreak*
   name: CreateLineBreak
   href: api/RueI.Parsing.Parser.html#RueI_Parsing_Parser_CreateLineBreak_
@@ -3185,6 +3339,19 @@ references:
   isSpec: "True"
   fullName: RueI.Parsing.ParserContext.Indent
   nameWithType: ParserContext.Indent
+- uid: RueI.Parsing.ParserContext.LeftMargin
+  name: LeftMargin
+  href: api/RueI.Parsing.ParserContext.html#RueI_Parsing_ParserContext_LeftMargin
+  commentId: P:RueI.Parsing.ParserContext.LeftMargin
+  fullName: RueI.Parsing.ParserContext.LeftMargin
+  nameWithType: ParserContext.LeftMargin
+- uid: RueI.Parsing.ParserContext.LeftMargin*
+  name: LeftMargin
+  href: api/RueI.Parsing.ParserContext.html#RueI_Parsing_ParserContext_LeftMargin_
+  commentId: Overload:RueI.Parsing.ParserContext.LeftMargin
+  isSpec: "True"
+  fullName: RueI.Parsing.ParserContext.LeftMargin
+  nameWithType: ParserContext.LeftMargin
 - uid: RueI.Parsing.ParserContext.LineHasAnyChars
   name: LineHasAnyChars
   href: api/RueI.Parsing.ParserContext.html#RueI_Parsing_ParserContext_LineHasAnyChars
@@ -3198,6 +3365,32 @@ references:
   isSpec: "True"
   fullName: RueI.Parsing.ParserContext.LineHasAnyChars
   nameWithType: ParserContext.LineHasAnyChars
+- uid: RueI.Parsing.ParserContext.LineIndent
+  name: LineIndent
+  href: api/RueI.Parsing.ParserContext.html#RueI_Parsing_ParserContext_LineIndent
+  commentId: P:RueI.Parsing.ParserContext.LineIndent
+  fullName: RueI.Parsing.ParserContext.LineIndent
+  nameWithType: ParserContext.LineIndent
+- uid: RueI.Parsing.ParserContext.LineIndent*
+  name: LineIndent
+  href: api/RueI.Parsing.ParserContext.html#RueI_Parsing_ParserContext_LineIndent_
+  commentId: Overload:RueI.Parsing.ParserContext.LineIndent
+  isSpec: "True"
+  fullName: RueI.Parsing.ParserContext.LineIndent
+  nameWithType: ParserContext.LineIndent
+- uid: RueI.Parsing.ParserContext.Margin
+  name: Margin
+  href: api/RueI.Parsing.ParserContext.html#RueI_Parsing_ParserContext_Margin
+  commentId: P:RueI.Parsing.ParserContext.Margin
+  fullName: RueI.Parsing.ParserContext.Margin
+  nameWithType: ParserContext.Margin
+- uid: RueI.Parsing.ParserContext.Margin*
+  name: Margin
+  href: api/RueI.Parsing.ParserContext.html#RueI_Parsing_ParserContext_Margin_
+  commentId: Overload:RueI.Parsing.ParserContext.Margin
+  isSpec: "True"
+  fullName: RueI.Parsing.ParserContext.Margin
+  nameWithType: ParserContext.Margin
 - uid: RueI.Parsing.ParserContext.NewOffset
   name: NewOffset
   href: api/RueI.Parsing.ParserContext.html#RueI_Parsing_ParserContext_NewOffset
@@ -3253,6 +3446,19 @@ references:
   isSpec: "True"
   fullName: RueI.Parsing.ParserContext.ResultBuilder
   nameWithType: ParserContext.ResultBuilder
+- uid: RueI.Parsing.ParserContext.RightMargin
+  name: RightMargin
+  href: api/RueI.Parsing.ParserContext.html#RueI_Parsing_ParserContext_RightMargin
+  commentId: P:RueI.Parsing.ParserContext.RightMargin
+  fullName: RueI.Parsing.ParserContext.RightMargin
+  nameWithType: ParserContext.RightMargin
+- uid: RueI.Parsing.ParserContext.RightMargin*
+  name: RightMargin
+  href: api/RueI.Parsing.ParserContext.html#RueI_Parsing_ParserContext_RightMargin_
+  commentId: Overload:RueI.Parsing.ParserContext.RightMargin
+  isSpec: "True"
+  fullName: RueI.Parsing.ParserContext.RightMargin
+  nameWithType: ParserContext.RightMargin
 - uid: RueI.Parsing.ParserContext.ShouldParse
   name: ShouldParse
   href: api/RueI.Parsing.ParserContext.html#RueI_Parsing_ParserContext_ShouldParse
@@ -3279,6 +3485,19 @@ references:
   isSpec: "True"
   fullName: RueI.Parsing.ParserContext.SizeTags
   nameWithType: ParserContext.SizeTags
+- uid: RueI.Parsing.ParserContext.SkipOverflow
+  name: SkipOverflow
+  href: api/RueI.Parsing.ParserContext.html#RueI_Parsing_ParserContext_SkipOverflow
+  commentId: P:RueI.Parsing.ParserContext.SkipOverflow
+  fullName: RueI.Parsing.ParserContext.SkipOverflow
+  nameWithType: ParserContext.SkipOverflow
+- uid: RueI.Parsing.ParserContext.SkipOverflow*
+  name: SkipOverflow
+  href: api/RueI.Parsing.ParserContext.html#RueI_Parsing_ParserContext_SkipOverflow_
+  commentId: Overload:RueI.Parsing.ParserContext.SkipOverflow
+  isSpec: "True"
+  fullName: RueI.Parsing.ParserContext.SkipOverflow
+  nameWithType: ParserContext.SkipOverflow
 - uid: RueI.Parsing.ParserContext.WidthSinceSpace
   name: WidthSinceSpace
   href: api/RueI.Parsing.ParserContext.html#RueI_Parsing_ParserContext_WidthSinceSpace
@@ -3834,6 +4053,38 @@ references:
   isSpec: "True"
   fullName: RueI.Parsing.Tags.ConcreteTags.CloseColorTag.Name
   nameWithType: CloseColorTag.Name
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseIndentTag
+  name: CloseIndentTag
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseIndentTag.html
+  commentId: T:RueI.Parsing.Tags.ConcreteTags.CloseIndentTag
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseIndentTag
+  nameWithType: CloseIndentTag
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseIndentTag.ApplyTo(RueI.Parsing.ParserContext)
+  name: ApplyTo(ParserContext)
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseIndentTag.html#RueI_Parsing_Tags_ConcreteTags_CloseIndentTag_ApplyTo_RueI_Parsing_ParserContext_
+  commentId: M:RueI.Parsing.Tags.ConcreteTags.CloseIndentTag.ApplyTo(RueI.Parsing.ParserContext)
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseIndentTag.ApplyTo(RueI.Parsing.ParserContext)
+  nameWithType: CloseIndentTag.ApplyTo(ParserContext)
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseIndentTag.ApplyTo*
+  name: ApplyTo
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseIndentTag.html#RueI_Parsing_Tags_ConcreteTags_CloseIndentTag_ApplyTo_
+  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.CloseIndentTag.ApplyTo
+  isSpec: "True"
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseIndentTag.ApplyTo
+  nameWithType: CloseIndentTag.ApplyTo
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseIndentTag.Name
+  name: Name
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseIndentTag.html#RueI_Parsing_Tags_ConcreteTags_CloseIndentTag_Name
+  commentId: P:RueI.Parsing.Tags.ConcreteTags.CloseIndentTag.Name
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseIndentTag.Name
+  nameWithType: CloseIndentTag.Name
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseIndentTag.Name*
+  name: Name
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseIndentTag.html#RueI_Parsing_Tags_ConcreteTags_CloseIndentTag_Name_
+  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.CloseIndentTag.Name
+  isSpec: "True"
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseIndentTag.Name
+  nameWithType: CloseIndentTag.Name
 - uid: RueI.Parsing.Tags.ConcreteTags.CloseItalicsTag
   name: CloseItalicsTag
   href: api/RueI.Parsing.Tags.ConcreteTags.CloseItalicsTag.html
@@ -3885,6 +4136,38 @@ references:
   isSpec: "True"
   fullName: RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.Name
   nameWithType: CloseLineHeightTag.Name
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseLineIndentTag
+  name: CloseLineIndentTag
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseLineIndentTag.html
+  commentId: T:RueI.Parsing.Tags.ConcreteTags.CloseLineIndentTag
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseLineIndentTag
+  nameWithType: CloseLineIndentTag
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseLineIndentTag.ApplyTo(RueI.Parsing.ParserContext)
+  name: ApplyTo(ParserContext)
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseLineIndentTag.html#RueI_Parsing_Tags_ConcreteTags_CloseLineIndentTag_ApplyTo_RueI_Parsing_ParserContext_
+  commentId: M:RueI.Parsing.Tags.ConcreteTags.CloseLineIndentTag.ApplyTo(RueI.Parsing.ParserContext)
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseLineIndentTag.ApplyTo(RueI.Parsing.ParserContext)
+  nameWithType: CloseLineIndentTag.ApplyTo(ParserContext)
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseLineIndentTag.ApplyTo*
+  name: ApplyTo
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseLineIndentTag.html#RueI_Parsing_Tags_ConcreteTags_CloseLineIndentTag_ApplyTo_
+  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.CloseLineIndentTag.ApplyTo
+  isSpec: "True"
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseLineIndentTag.ApplyTo
+  nameWithType: CloseLineIndentTag.ApplyTo
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseLineIndentTag.Name
+  name: Name
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseLineIndentTag.html#RueI_Parsing_Tags_ConcreteTags_CloseLineIndentTag_Name
+  commentId: P:RueI.Parsing.Tags.ConcreteTags.CloseLineIndentTag.Name
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseLineIndentTag.Name
+  nameWithType: CloseLineIndentTag.Name
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseLineIndentTag.Name*
+  name: Name
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseLineIndentTag.html#RueI_Parsing_Tags_ConcreteTags_CloseLineIndentTag_Name_
+  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.CloseLineIndentTag.Name
+  isSpec: "True"
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseLineIndentTag.Name
+  nameWithType: CloseLineIndentTag.Name
 - uid: RueI.Parsing.Tags.ConcreteTags.CloseLowercase
   name: CloseLowercase
   href: api/RueI.Parsing.Tags.ConcreteTags.CloseLowercase.html
@@ -3917,6 +4200,38 @@ references:
   isSpec: "True"
   fullName: RueI.Parsing.Tags.ConcreteTags.CloseLowercase.Names
   nameWithType: CloseLowercase.Names
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseNoparse
+  name: CloseNoparse
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseNoparse.html
+  commentId: T:RueI.Parsing.Tags.ConcreteTags.CloseNoparse
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseNoparse
+  nameWithType: CloseNoparse
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseNoparse.ApplyTo(RueI.Parsing.ParserContext)
+  name: ApplyTo(ParserContext)
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseNoparse.html#RueI_Parsing_Tags_ConcreteTags_CloseNoparse_ApplyTo_RueI_Parsing_ParserContext_
+  commentId: M:RueI.Parsing.Tags.ConcreteTags.CloseNoparse.ApplyTo(RueI.Parsing.ParserContext)
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseNoparse.ApplyTo(RueI.Parsing.ParserContext)
+  nameWithType: CloseNoparse.ApplyTo(ParserContext)
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseNoparse.ApplyTo*
+  name: ApplyTo
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseNoparse.html#RueI_Parsing_Tags_ConcreteTags_CloseNoparse_ApplyTo_
+  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.CloseNoparse.ApplyTo
+  isSpec: "True"
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseNoparse.ApplyTo
+  nameWithType: CloseNoparse.ApplyTo
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseNoparse.Name
+  name: Name
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseNoparse.html#RueI_Parsing_Tags_ConcreteTags_CloseNoparse_Name
+  commentId: P:RueI.Parsing.Tags.ConcreteTags.CloseNoparse.Name
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseNoparse.Name
+  nameWithType: CloseNoparse.Name
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseNoparse.Name*
+  name: Name
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseNoparse.html#RueI_Parsing_Tags_ConcreteTags_CloseNoparse_Name_
+  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.CloseNoparse.Name
+  isSpec: "True"
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseNoparse.Name
+  nameWithType: CloseNoparse.Name
 - uid: RueI.Parsing.Tags.ConcreteTags.CloseScaleTag
   name: CloseScaleTag
   href: api/RueI.Parsing.Tags.ConcreteTags.CloseScaleTag.html
@@ -4061,6 +4376,86 @@ references:
   isSpec: "True"
   fullName: RueI.Parsing.Tags.ConcreteTags.ColorTag.TagStyle
   nameWithType: ColorTag.TagStyle
+- uid: RueI.Parsing.Tags.ConcreteTags.IndentTag
+  name: IndentTag
+  href: api/RueI.Parsing.Tags.ConcreteTags.IndentTag.html
+  commentId: T:RueI.Parsing.Tags.ConcreteTags.IndentTag
+  fullName: RueI.Parsing.Tags.ConcreteTags.IndentTag
+  nameWithType: IndentTag
+- uid: RueI.Parsing.Tags.ConcreteTags.IndentTag.HandleTag(RueI.Parsing.ParserContext,RueI.Parsing.Records.MeasurementInfo)
+  name: HandleTag(ParserContext, MeasurementInfo)
+  href: api/RueI.Parsing.Tags.ConcreteTags.IndentTag.html#RueI_Parsing_Tags_ConcreteTags_IndentTag_HandleTag_RueI_Parsing_ParserContext_RueI_Parsing_Records_MeasurementInfo_
+  commentId: M:RueI.Parsing.Tags.ConcreteTags.IndentTag.HandleTag(RueI.Parsing.ParserContext,RueI.Parsing.Records.MeasurementInfo)
+  fullName: RueI.Parsing.Tags.ConcreteTags.IndentTag.HandleTag(RueI.Parsing.ParserContext, RueI.Parsing.Records.MeasurementInfo)
+  nameWithType: IndentTag.HandleTag(ParserContext, MeasurementInfo)
+- uid: RueI.Parsing.Tags.ConcreteTags.IndentTag.HandleTag*
+  name: HandleTag
+  href: api/RueI.Parsing.Tags.ConcreteTags.IndentTag.html#RueI_Parsing_Tags_ConcreteTags_IndentTag_HandleTag_
+  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.IndentTag.HandleTag
+  isSpec: "True"
+  fullName: RueI.Parsing.Tags.ConcreteTags.IndentTag.HandleTag
+  nameWithType: IndentTag.HandleTag
+- uid: RueI.Parsing.Tags.ConcreteTags.IndentTag.Names
+  name: Names
+  href: api/RueI.Parsing.Tags.ConcreteTags.IndentTag.html#RueI_Parsing_Tags_ConcreteTags_IndentTag_Names
+  commentId: P:RueI.Parsing.Tags.ConcreteTags.IndentTag.Names
+  fullName: RueI.Parsing.Tags.ConcreteTags.IndentTag.Names
+  nameWithType: IndentTag.Names
+- uid: RueI.Parsing.Tags.ConcreteTags.IndentTag.Names*
+  name: Names
+  href: api/RueI.Parsing.Tags.ConcreteTags.IndentTag.html#RueI_Parsing_Tags_ConcreteTags_IndentTag_Names_
+  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.IndentTag.Names
+  isSpec: "True"
+  fullName: RueI.Parsing.Tags.ConcreteTags.IndentTag.Names
+  nameWithType: IndentTag.Names
+- uid: RueI.Parsing.Tags.ConcreteTags.ItalicsAngleTag
+  name: ItalicsAngleTag
+  href: api/RueI.Parsing.Tags.ConcreteTags.ItalicsAngleTag.html
+  commentId: T:RueI.Parsing.Tags.ConcreteTags.ItalicsAngleTag
+  fullName: RueI.Parsing.Tags.ConcreteTags.ItalicsAngleTag
+  nameWithType: ItalicsAngleTag
+- uid: RueI.Parsing.Tags.ConcreteTags.ItalicsAngleTag.HandleTag(RueI.Parsing.ParserContext,System.String)
+  name: HandleTag(ParserContext, string)
+  href: api/RueI.Parsing.Tags.ConcreteTags.ItalicsAngleTag.html#RueI_Parsing_Tags_ConcreteTags_ItalicsAngleTag_HandleTag_RueI_Parsing_ParserContext_System_String_
+  commentId: M:RueI.Parsing.Tags.ConcreteTags.ItalicsAngleTag.HandleTag(RueI.Parsing.ParserContext,System.String)
+  name.vb: HandleTag(ParserContext, String)
+  fullName: RueI.Parsing.Tags.ConcreteTags.ItalicsAngleTag.HandleTag(RueI.Parsing.ParserContext, string)
+  fullName.vb: RueI.Parsing.Tags.ConcreteTags.ItalicsAngleTag.HandleTag(RueI.Parsing.ParserContext, String)
+  nameWithType: ItalicsAngleTag.HandleTag(ParserContext, string)
+  nameWithType.vb: ItalicsAngleTag.HandleTag(ParserContext, String)
+- uid: RueI.Parsing.Tags.ConcreteTags.ItalicsAngleTag.HandleTag*
+  name: HandleTag
+  href: api/RueI.Parsing.Tags.ConcreteTags.ItalicsAngleTag.html#RueI_Parsing_Tags_ConcreteTags_ItalicsAngleTag_HandleTag_
+  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.ItalicsAngleTag.HandleTag
+  isSpec: "True"
+  fullName: RueI.Parsing.Tags.ConcreteTags.ItalicsAngleTag.HandleTag
+  nameWithType: ItalicsAngleTag.HandleTag
+- uid: RueI.Parsing.Tags.ConcreteTags.ItalicsAngleTag.Names
+  name: Names
+  href: api/RueI.Parsing.Tags.ConcreteTags.ItalicsAngleTag.html#RueI_Parsing_Tags_ConcreteTags_ItalicsAngleTag_Names
+  commentId: P:RueI.Parsing.Tags.ConcreteTags.ItalicsAngleTag.Names
+  fullName: RueI.Parsing.Tags.ConcreteTags.ItalicsAngleTag.Names
+  nameWithType: ItalicsAngleTag.Names
+- uid: RueI.Parsing.Tags.ConcreteTags.ItalicsAngleTag.Names*
+  name: Names
+  href: api/RueI.Parsing.Tags.ConcreteTags.ItalicsAngleTag.html#RueI_Parsing_Tags_ConcreteTags_ItalicsAngleTag_Names_
+  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.ItalicsAngleTag.Names
+  isSpec: "True"
+  fullName: RueI.Parsing.Tags.ConcreteTags.ItalicsAngleTag.Names
+  nameWithType: ItalicsAngleTag.Names
+- uid: RueI.Parsing.Tags.ConcreteTags.ItalicsAngleTag.TagStyle
+  name: TagStyle
+  href: api/RueI.Parsing.Tags.ConcreteTags.ItalicsAngleTag.html#RueI_Parsing_Tags_ConcreteTags_ItalicsAngleTag_TagStyle
+  commentId: P:RueI.Parsing.Tags.ConcreteTags.ItalicsAngleTag.TagStyle
+  fullName: RueI.Parsing.Tags.ConcreteTags.ItalicsAngleTag.TagStyle
+  nameWithType: ItalicsAngleTag.TagStyle
+- uid: RueI.Parsing.Tags.ConcreteTags.ItalicsAngleTag.TagStyle*
+  name: TagStyle
+  href: api/RueI.Parsing.Tags.ConcreteTags.ItalicsAngleTag.html#RueI_Parsing_Tags_ConcreteTags_ItalicsAngleTag_TagStyle_
+  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.ItalicsAngleTag.TagStyle
+  isSpec: "True"
+  fullName: RueI.Parsing.Tags.ConcreteTags.ItalicsAngleTag.TagStyle
+  nameWithType: ItalicsAngleTag.TagStyle
 - uid: RueI.Parsing.Tags.ConcreteTags.ItalicsTag
   name: ItalicsTag
   href: api/RueI.Parsing.Tags.ConcreteTags.ItalicsTag.html
@@ -4125,6 +4520,38 @@ references:
   isSpec: "True"
   fullName: RueI.Parsing.Tags.ConcreteTags.LineHeightTag.Names
   nameWithType: LineHeightTag.Names
+- uid: RueI.Parsing.Tags.ConcreteTags.LineIndentTag
+  name: LineIndentTag
+  href: api/RueI.Parsing.Tags.ConcreteTags.LineIndentTag.html
+  commentId: T:RueI.Parsing.Tags.ConcreteTags.LineIndentTag
+  fullName: RueI.Parsing.Tags.ConcreteTags.LineIndentTag
+  nameWithType: LineIndentTag
+- uid: RueI.Parsing.Tags.ConcreteTags.LineIndentTag.HandleTag(RueI.Parsing.ParserContext,RueI.Parsing.Records.MeasurementInfo)
+  name: HandleTag(ParserContext, MeasurementInfo)
+  href: api/RueI.Parsing.Tags.ConcreteTags.LineIndentTag.html#RueI_Parsing_Tags_ConcreteTags_LineIndentTag_HandleTag_RueI_Parsing_ParserContext_RueI_Parsing_Records_MeasurementInfo_
+  commentId: M:RueI.Parsing.Tags.ConcreteTags.LineIndentTag.HandleTag(RueI.Parsing.ParserContext,RueI.Parsing.Records.MeasurementInfo)
+  fullName: RueI.Parsing.Tags.ConcreteTags.LineIndentTag.HandleTag(RueI.Parsing.ParserContext, RueI.Parsing.Records.MeasurementInfo)
+  nameWithType: LineIndentTag.HandleTag(ParserContext, MeasurementInfo)
+- uid: RueI.Parsing.Tags.ConcreteTags.LineIndentTag.HandleTag*
+  name: HandleTag
+  href: api/RueI.Parsing.Tags.ConcreteTags.LineIndentTag.html#RueI_Parsing_Tags_ConcreteTags_LineIndentTag_HandleTag_
+  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.LineIndentTag.HandleTag
+  isSpec: "True"
+  fullName: RueI.Parsing.Tags.ConcreteTags.LineIndentTag.HandleTag
+  nameWithType: LineIndentTag.HandleTag
+- uid: RueI.Parsing.Tags.ConcreteTags.LineIndentTag.Names
+  name: Names
+  href: api/RueI.Parsing.Tags.ConcreteTags.LineIndentTag.html#RueI_Parsing_Tags_ConcreteTags_LineIndentTag_Names
+  commentId: P:RueI.Parsing.Tags.ConcreteTags.LineIndentTag.Names
+  fullName: RueI.Parsing.Tags.ConcreteTags.LineIndentTag.Names
+  nameWithType: LineIndentTag.Names
+- uid: RueI.Parsing.Tags.ConcreteTags.LineIndentTag.Names*
+  name: Names
+  href: api/RueI.Parsing.Tags.ConcreteTags.LineIndentTag.html#RueI_Parsing_Tags_ConcreteTags_LineIndentTag_Names_
+  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.LineIndentTag.Names
+  isSpec: "True"
+  fullName: RueI.Parsing.Tags.ConcreteTags.LineIndentTag.Names
+  nameWithType: LineIndentTag.Names
 - uid: RueI.Parsing.Tags.ConcreteTags.LowercaseTag
   name: LowercaseTag
   href: api/RueI.Parsing.Tags.ConcreteTags.LowercaseTag.html
@@ -4157,6 +4584,38 @@ references:
   isSpec: "True"
   fullName: RueI.Parsing.Tags.ConcreteTags.LowercaseTag.Names
   nameWithType: LowercaseTag.Names
+- uid: RueI.Parsing.Tags.ConcreteTags.NoparseTag
+  name: NoparseTag
+  href: api/RueI.Parsing.Tags.ConcreteTags.NoparseTag.html
+  commentId: T:RueI.Parsing.Tags.ConcreteTags.NoparseTag
+  fullName: RueI.Parsing.Tags.ConcreteTags.NoparseTag
+  nameWithType: NoparseTag
+- uid: RueI.Parsing.Tags.ConcreteTags.NoparseTag.HandleTag(RueI.Parsing.ParserContext)
+  name: HandleTag(ParserContext)
+  href: api/RueI.Parsing.Tags.ConcreteTags.NoparseTag.html#RueI_Parsing_Tags_ConcreteTags_NoparseTag_HandleTag_RueI_Parsing_ParserContext_
+  commentId: M:RueI.Parsing.Tags.ConcreteTags.NoparseTag.HandleTag(RueI.Parsing.ParserContext)
+  fullName: RueI.Parsing.Tags.ConcreteTags.NoparseTag.HandleTag(RueI.Parsing.ParserContext)
+  nameWithType: NoparseTag.HandleTag(ParserContext)
+- uid: RueI.Parsing.Tags.ConcreteTags.NoparseTag.HandleTag*
+  name: HandleTag
+  href: api/RueI.Parsing.Tags.ConcreteTags.NoparseTag.html#RueI_Parsing_Tags_ConcreteTags_NoparseTag_HandleTag_
+  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.NoparseTag.HandleTag
+  isSpec: "True"
+  fullName: RueI.Parsing.Tags.ConcreteTags.NoparseTag.HandleTag
+  nameWithType: NoparseTag.HandleTag
+- uid: RueI.Parsing.Tags.ConcreteTags.NoparseTag.Names
+  name: Names
+  href: api/RueI.Parsing.Tags.ConcreteTags.NoparseTag.html#RueI_Parsing_Tags_ConcreteTags_NoparseTag_Names
+  commentId: P:RueI.Parsing.Tags.ConcreteTags.NoparseTag.Names
+  fullName: RueI.Parsing.Tags.ConcreteTags.NoparseTag.Names
+  nameWithType: NoparseTag.Names
+- uid: RueI.Parsing.Tags.ConcreteTags.NoparseTag.Names*
+  name: Names
+  href: api/RueI.Parsing.Tags.ConcreteTags.NoparseTag.html#RueI_Parsing_Tags_ConcreteTags_NoparseTag_Names_
+  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.NoparseTag.Names
+  isSpec: "True"
+  fullName: RueI.Parsing.Tags.ConcreteTags.NoparseTag.Names
+  nameWithType: NoparseTag.Names
 - uid: RueI.Parsing.Tags.ConcreteTags.ScaleTag
   name: ScaleTag
   href: api/RueI.Parsing.Tags.ConcreteTags.ScaleTag.html

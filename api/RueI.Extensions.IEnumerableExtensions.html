@@ -155,6 +155,54 @@
 </h2>
 
 
+  <a id="RueI_Extensions_IEnumerableExtensions_Only_" data-uid="RueI.Extensions.IEnumerableExtensions.Only*"></a>
+
+  <h3 id="RueI_Extensions_IEnumerableExtensions_Only__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Boolean__" data-uid="RueI.Extensions.IEnumerableExtensions.Only``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})">
+  Only&lt;T&gt;(IEnumerable&lt;T&gt;, Func&lt;T, bool&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Extensions/IEnumerableExtensions.cs/#L54"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Determines if a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable&lt;T&gt;</a> has only one element that passes a filter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool Only&lt;T&gt;(this IEnumerable&lt;T&gt; enumerable, Func&lt;T, bool&gt; filter)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>enumerable</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;T&gt;</dt>
+    <dd><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable&lt;T&gt;</a> to check.</p>
+</dd>
+    <dt><code>filter</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;T, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</dt>
+    <dd><p>A filter to use.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true if there is only one element in the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable&lt;T&gt;</a> and that element passes the filter, otherwise false.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd><p>The inner type of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable&lt;T&gt;</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <a id="RueI_Extensions_IEnumerableExtensions_ToPooledList_" data-uid="RueI.Extensions.IEnumerableExtensions.ToPooledList*"></a>
 
   <h3 id="RueI_Extensions_IEnumerableExtensions_ToPooledList__1_System_Collections_Generic_IEnumerable___0__" data-uid="RueI.Extensions.IEnumerableExtensions.ToPooledList``1(System.Collections.Generic.IEnumerable{``0})">

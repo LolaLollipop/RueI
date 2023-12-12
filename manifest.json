@@ -122,6 +122,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Displays.Roles.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Displays.Roles.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/RueI.Displays.Scheduling.JobToken.yml",
       "output": {
         ".html": {
@@ -362,16 +372,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RueI.Extensions.AutoGiverBase.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/RueI.Extensions.AutoGiverBase.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/RueI.Extensions.CollectionExtensions.yml",
       "output": {
         ".html": {
@@ -396,6 +396,16 @@
       "output": {
         ".html": {
           "relative_path": "api/RueI.Extensions.ElementHelpers.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Extensions.EnumExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Extensions.EnumExtensions.html"
         }
       },
       "version": ""
@@ -446,16 +456,6 @@
       "output": {
         ".html": {
           "relative_path": "api/RueI.Extensions.Intersection-2.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/RueI.Extensions.Roles.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/RueI.Extensions.Roles.html"
         }
       },
       "version": ""
@@ -762,6 +762,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Parsing.Tags.ConcreteTags.CloseIndentTag.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Parsing.Tags.ConcreteTags.CloseIndentTag.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/RueI.Parsing.Tags.ConcreteTags.CloseItalicsTag.yml",
       "output": {
         ".html": {
@@ -782,10 +792,30 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Parsing.Tags.ConcreteTags.CloseLineIndentTag.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Parsing.Tags.ConcreteTags.CloseLineIndentTag.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/RueI.Parsing.Tags.ConcreteTags.CloseLowercase.yml",
       "output": {
         ".html": {
           "relative_path": "api/RueI.Parsing.Tags.ConcreteTags.CloseLowercase.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Parsing.Tags.ConcreteTags.CloseNoparse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Parsing.Tags.ConcreteTags.CloseNoparse.html"
         }
       },
       "version": ""
@@ -832,6 +862,26 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Parsing.Tags.ConcreteTags.IndentTag.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Parsing.Tags.ConcreteTags.IndentTag.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Parsing.Tags.ConcreteTags.ItalicsAngleTag.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Parsing.Tags.ConcreteTags.ItalicsAngleTag.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/RueI.Parsing.Tags.ConcreteTags.ItalicsTag.yml",
       "output": {
         ".html": {
@@ -852,10 +902,30 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Parsing.Tags.ConcreteTags.LineIndentTag.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Parsing.Tags.ConcreteTags.LineIndentTag.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/RueI.Parsing.Tags.ConcreteTags.LowercaseTag.yml",
       "output": {
         ".html": {
           "relative_path": "api/RueI.Parsing.Tags.ConcreteTags.LowercaseTag.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Parsing.Tags.ConcreteTags.NoparseTag.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Parsing.Tags.ConcreteTags.NoparseTag.html"
         }
       },
       "version": ""
