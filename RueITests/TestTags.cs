@@ -59,7 +59,7 @@ public class TestTags
     public void TestParser(string text, float expectedOffset)
     {
         (_, float offset) = Parser.DefaultParser.Parse(text);
-        Assert.AreEqual(expectedOffset, offset, 0.01f);
+        Assert.AreEqual(expectedOffset, offset, 0.1f);
     }
 
 

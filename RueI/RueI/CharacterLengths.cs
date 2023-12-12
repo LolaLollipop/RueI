@@ -1,8 +1,7 @@
-﻿namespace RueI;
+﻿using System.Collections.ObjectModel;
+using System.Runtime.CompilerServices;
 
-using System.Collections.ObjectModel;
-using System.Reflection;
-
+namespace RueI;
 /// <summary>
 /// Provides a variety of constant values.
 /// </summary>
@@ -454,22 +453,19 @@ public static class CharacterLengths
         };
 #endregion
 #pragma warning restore SA1123 // Do not place regions within elements
-
         try
         {
-            Assembly? assembly = PluginAPI.Loader.AssemblyLoader.Dependencies.FirstOrDefault(x => x.GetName().Name == "System.Collections.Immutable");
-            if (assembly != null)
-            {
-                Type staticFrozen = assembly.GetExportedTypes().FirstOrDefault(x => x.Name == "FrozenDictionary" && x.IsAbstract && x.IsSealed);
-                MethodInfo method = staticFrozen.GetMethods().First(x => x.GetParameters().Length == 2);
-                IReadOnlyDictionary<char, float> dict = (IReadOnlyDictionary<char, float>)method.MakeGenericMethod(typeof(char), typeof(float)).Invoke(null, new[] { charSizes, null } );
-                return dict;
-            }
+            return LoadFrozenDictionary(charSizes);
         }
         catch(Exception e)
         {
+            UnityProvider.Provider.Log(e.ToString());
+            UnityProvider.Provider.Log("[Warn] [RueI] Could not find System.Collections.Immutable");
+            return new ReadOnlyDictionary<char, float>(charSizes);
         }
-
-        return new ReadOnlyDictionary<char, float>(charSizes);
     }
+
+    [MethodImpl(MethodImplOptions.NoInlining)]
+    private static IReadOnlyDictionary<char, float> LoadFrozenDictionary(Dictionary<char, float> sizes) => System.Collections.Frozen.FrozenDictionary.ToFrozenDictionary(sizes);
+
 }

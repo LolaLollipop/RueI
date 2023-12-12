@@ -43,4 +43,17 @@ public static class IEnumerableExtensions
 
         return pooledList;
     }
+
+    /// <summary>
+    /// Determines if a <see cref="IEnumerable{T}"/> has only one element that passes a filter.
+    /// </summary>
+    /// <typeparam name="T">The inner type of the <see cref="IEnumerable{T}"/>.</typeparam>
+    /// <param name="enumerable">The <see cref="IEnumerable{T}"/> to check.</param>
+    /// <param name="filter">A filter to use.</param>
+    /// <returns>true if there is only one element in the <see cref="IEnumerable{T}"/> and that element passes the filter, otherwise false.</returns>
+    public static bool Only<T>(this IEnumerable<T> enumerable, Func<T, bool> filter)
+    {
+        using IEnumerator<T> enumerator = enumerable.GetEnumerator();
+        return !enumerator.MoveNext() || !filter(enumerator.Current) || enumerator.MoveNext();
+    }
 }

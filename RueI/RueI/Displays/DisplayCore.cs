@@ -10,6 +10,7 @@ using RueI.Extensions;
 /// </summary>
 public class DisplayCore
 {
+    // TODO: make this not break if someone rejoins
     private readonly List<DisplayBase> displays = new();
     private readonly Dictionary<IElemReference<Element>, Element> referencedElements = new();
 

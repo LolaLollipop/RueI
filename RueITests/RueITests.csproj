@@ -24,6 +24,9 @@
     <Reference Include="Assembly-CSharp">
       <HintPath>../References/Assembly-CSharp.dll</HintPath>
     </Reference>
+	  <Reference Include="PluginAPI">
+		  <HintPath>../References/PluginAPI.dll</HintPath>
+	  </Reference>
   </ItemGroup>
 
 </Project>

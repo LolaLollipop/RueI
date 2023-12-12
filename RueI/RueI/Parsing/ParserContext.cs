@@ -51,6 +51,11 @@ public class ParserContext : TextInfo, IDisposable
     public float Indent { get; set; } = 0;
 
     /// <summary>
+    /// Gets or sets the current line indent of the parser.
+    /// </summary>
+    public float LineIndent { get; set; } = 0;
+
+    /// <summary>
     /// Gets or sets a value indicating whether the parser should parse tags other than noparse.
     /// </summary>
     public bool ShouldParse { get; set; } = true;
@@ -74,6 +79,26 @@ public class ParserContext : TextInfo, IDisposable
     /// Gets or sets the biggest char size of the line.
     /// </summary>
     public float BiggestCharSize { get; set; } = 0;
+
+    /// <summary>
+    /// Gets or sets a value indicating whether or not overflow checks will be skipped.
+    /// </summary>
+    public bool SkipOverflow { get; set; } = false;
+
+    /// <summary>
+    /// Gets or sets the right margin of the line.
+    /// </summary>
+    public float RightMargin { get; set; } = 0;
+
+    /// <summary>
+    /// Gets or sets the left margin of the line.
+    /// </summary>
+    public float LeftMargin { get; set; } = 0;
+
+    /// <summary>
+    /// Gets or sets the total margin of the line.
+    /// </summary>
+    public float Margin { get; set; } = 0;
 
     /// <summary>
     /// Gets or sets a value indicating whether or not the current line has any characters.

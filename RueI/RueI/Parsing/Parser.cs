@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 using NorthwoodLib.Pools;
-
 using RueI.Parsing.Enums;
 using RueI.Parsing.Records;
+using RueI.Parsing.Tags.ConcreteTags;
 
 /// <summary>
 /// Helps parse the content of elements.
@@ -86,6 +86,7 @@ public class Parser
             }
 
             context.WidthSinceSpace += size;
+            context.LineHasAnyChars = true;
             if (context.Size > context.BiggestCharSize)
             {
                 context.BiggestCharSize = context.Size;
@@ -139,9 +140,19 @@ public class Parser
     /// Generates the effects of a linebreak for a parser.
     /// </summary>
     /// <param name="context">The context of the parser.</param>
-    public static void CreateLineBreak(ParserContext context)
+    /// <param name="isOverflow">Whether or not the line break was caused by an overflow.</param>
+    public static void CreateLineBreak(ParserContext context, bool isOverflow = false)
     {
-        if (context.WidthSinceSpace > Constants.DISPLAYAREAWIDTH)
+        if (context.LineHasAnyChars)
+        {
+            context.NewOffset += CalculateSizeOffset(context.BiggestCharSize);
+        }
+        else
+        {
+            context.NewOffset += CalculateSizeOffset(Constants.DEFAULTSIZE);
+        }
+
+        if (context.WidthSinceSpace > context.DisplayAreaWidth)
         {
             context.CurrentLineWidth = 0;
         }
@@ -150,14 +161,16 @@ public class Parser
             context.CurrentLineWidth = context.WidthSinceSpace;
         }
 
-        if (context.WidthSinceSpace > 0 || context.CurrentLineWidth > 0)
-        {
-            context.NewOffset += ((context.BiggestCharSize / Constants.DEFAULTSIZE * Constants.DEFAULTHEIGHT) - Constants.DEFAULTHEIGHT) / 2;
-        }
-
         context.BiggestCharSize = 0;
+        context.LineHasAnyChars = false;
         context.NewOffset += context.CurrentLineHeight;
-        context.CurrentLineWidth += context.Indent;
+        //context.CurrentLineWidth += context.Indent + context.Margin + Math.Abs(context.LeftMargin - context.RightMargin);
+
+        if (!isOverflow)
+        {
+            context.CurrentLineWidth += context.LineIndent;
+            context.WidthSinceSpace = 0f;
+        }
     }
 
     /// <summary>
@@ -245,17 +258,62 @@ public class Parser
             tagBufferSize = 0;
         }
 
-        foreach (char ch in text)
+        char[] chars = text.ToCharArray();
+        for (int i = 0; i < chars.Length; i++)
         {
-            if (ch == '<')
+            char ch = chars[i];
+
+            if (ch == '\\')
             {
+                int original = i;
+                int length = chars.Length;
+                for (; i < length && chars[i + 1] == '\\'; i++)
+                {
+                    context.ResultBuilder.Append(chars[i]);
+                }
+
+                if ((i - original) % 3 == 0)
+                {
+                    switch (chars[i])
+                    {
+                        case 'n':
+                            CreateLineBreak(context);
+                            original += 2;
+                            i++;
+                            break;
+                        case 'r':
+                            context.CurrentLineWidth = 0;
+                            original += 2;
+                            i++;
+                            break;
+                        case 'u':
+                            context.ResultBuilder.Append('\\'); // TODO: add support for unicode literals
+                            break;
+                        default:
+                            break;
+                    }
+                }
+
+                int matcher = i - original;
+                int times = matcher - (int)Math.Ceiling(matcher / 3d);
+                for (int newIndex = 0; newIndex < times; newIndex++)
+                {
+                    AddCharacter(context, chars[i + newIndex]);
+                }
+            }
+            else if (ch == '<')
+            {
+                if (currentState != ParserState.CollectingTags)
+                {
+                    FailTagMatch();
+                }
+
                 currentState = ParserState.DescendingTag;
                 continue; // do NOT add as a character
             }
             else if (ch == '\n')
             {
                 context.ResultBuilder.Append('\n');
-                context.WidthSinceSpace = 0;
                 CreateLineBreak(context);
                 if (currentState != ParserState.CollectingTags)
                 {
@@ -266,7 +324,7 @@ public class Parser
             }
             else if (currentState == ParserState.DescendingTag)
             {
-                if ((ch > '\u0060' && ch < '\u007B') || ch == '-' || ch == '\\')
+                if ((ch > '\u0060' && ch < '\u007B') || ch == '-' || ch == '/')
                 {
                     if (tagBufferSize > Constants.MAXTAGNAMESIZE)
                     {
@@ -280,8 +338,15 @@ public class Parser
                 {
                     if (TryGetBestMatch(tagBuffer.ToString(), TagStyle.NoParams, out RichTextTag? tag))
                     {
-                        tag!.HandleTag(context, string.Empty);
-                        continue;
+                        if (context.ShouldParse || tag is CloseNoparse)
+                        {
+                            tag!.HandleTag(context, string.Empty);
+                            continue;
+                        }
+                        else
+                        {
+                            FailTagMatch();
+                        }
                     }
                     else
                     {
@@ -290,20 +355,27 @@ public class Parser
                 }
                 else if (ch == ' ' || ch == '=')
                 {
-                    TagStyle style = ch switch
+                    if (context.ShouldParse)
                     {
-                        ' ' => TagStyle.Attributes,
-                        '=' => TagStyle.ValueParam,
-                        _ => throw new ArgumentOutOfRangeException(nameof(ch)),
-                    };
+                        TagStyle style = ch switch
+                        {
+                            ' ' => TagStyle.Attributes,
+                            '=' => TagStyle.ValueParam,
+                            _ => throw new ArgumentOutOfRangeException(nameof(ch)),
+                        };
 
-                    if (TryGetBestMatch(tagBuffer.ToString(), style, out RichTextTag? tag))
-                    {
-                        currentTag = tag;
-                        delimiter = ch;
+                        if (TryGetBestMatch(tagBuffer.ToString(), style, out RichTextTag? tag))
+                        {
+                            currentTag = tag;
+                            delimiter = ch;
 
-                        currentState = ParserState.CollectingParams;
-                        continue;
+                            currentState = ParserState.CollectingParams;
+                            continue;
+                        }
+                        else
+                        {
+                            FailTagMatch();
+                        }
                     }
                     else
                     {
@@ -345,7 +417,7 @@ public class Parser
         context.ApplyClosingTags();
         if (context.WidthSinceSpace > 0 || context.CurrentLineWidth > 0)
         {
-            context.NewOffset += context.BiggestCharSize - Constants.DEFAULTSIZE;
+            context.NewOffset += CalculateSizeOffset(context.BiggestCharSize);
         }
 
         StringBuilderPool.Shared.Return(tagBuffer);
@@ -358,6 +430,8 @@ public class Parser
     /// </summary>
     /// <param name="builder">The builder to export the tags to.</param>
     internal void ExportTo(ParserBuilder builder) => builder.AddTags(Tags.SelectMany(x => x.Value).Distinct());
+
+    private static float CalculateSizeOffset(float biggestChar) => (((biggestChar / Constants.DEFAULTSIZE * 0.2f) + 0.8f) * Constants.DEFAULTHEIGHT) - Constants.DEFAULTHEIGHT;
 
     /// <summary>
     /// Avoids the client TMP matching a tag.

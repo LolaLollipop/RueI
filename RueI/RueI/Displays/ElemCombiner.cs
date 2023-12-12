@@ -60,6 +60,7 @@ public static class ElemCombiner
 
         ListPool<Element>.Shared.Return(elements);
         sb.Insert(0, $"<line-height={totalOffset}px>\n");
+        sb.Append("<size=0>.");
         return StringBuilderPool.Shared.ToStringReturn(sb);
     }
 

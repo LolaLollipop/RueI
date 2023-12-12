@@ -13,7 +13,7 @@ public static class Constants
     /// Gets the default height if a line-height is not provided.
     /// </summary>
     /// <remarks>Approximate.</remarks>
-    public const float DEFAULTHEIGHT = 40.665f; // in pixels. this is barely approximate
+    public const float DEFAULTHEIGHT = 40.67f; // in pixels. this is barely approximate
 
     /// <summary>
     /// Gets the default size (in pixels) if a size is not provided.

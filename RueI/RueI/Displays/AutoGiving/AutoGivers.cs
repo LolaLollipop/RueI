@@ -22,51 +22,21 @@ public record ElemRefResolver<T>(IElemReference<T> elemRef, Func<T> creator)
 }
 
 /// <summary>
-/// Represents the base class for all automatic element givers.
-/// </summary>
-public abstract class AutoGiverBase
-{
-    private static readonly Dictionary<RoleTypeId, List<AutoGiverBase>> AutoElements = new();
-
-    static AutoGiverBase()
-    {
-        PlayerRoleManager.OnRoleChanged += OnRoleChanged;
-    }
-
-    /// <summary>
-    /// Gets a list of all active instances of <see cref="AutoGiverBase"/>s.
-    /// </summary>
-    protected static List<WeakReference<AutoGiverBase>> AutoGivers { get; } = new();
-
-    /// <summary>
-    /// Gives this <see cref="AutoElement"/> to a <see cref="DisplayCore"/>.
-    /// </summary>
-    /// <param name="core">The core to give this to.</param>
-    protected abstract void GiveTo(DisplayCore core);
-
-    private static void OnRoleChanged(ReferenceHub hub, PlayerRoleBase prevRole, PlayerRoleBase newRole)
-    {
-        if (prevRole.RoleTypeId != newRole.RoleTypeId && AutoElements.TryGetValue(newRole.RoleTypeId, out List<AutoGiverBase> list))
-        {
-            DisplayCore core = DisplayCore.Get(hub);
-
-            foreach (AutoGiverBase autoElement in list)
-            {
-                autoElement.GiveTo(core);
-            }
-        }
-    }
-}
-
-/// <summary>
 /// Manages and automatically assigns elements to <see cref="ReferenceHub"/>s meeting a criteria.
 /// </summary>
-public class AutoElement : AutoGiverBase
+public class AutoElement
 {
+    private static readonly List<AutoElement> AutoGivers = new();
+
     private readonly Element? element;
 
     private readonly Func<DisplayCore, Element>? creator;
     private readonly IElemReference<Element>? reference;
+
+    static AutoElement()
+    {
+        PlayerRoleManager.OnRoleChanged += OnRoleChanged;
+    }
 
     /// <summary>
     /// Initializes a new instance of the <see cref="AutoElement"/> class.
@@ -80,7 +50,7 @@ public class AutoElement : AutoGiverBase
         this.creator = creator;
         Roles = roles;
 
-        AutoGivers.Add(new(this));
+        AutoGivers.Add(this);
     }
 
     /// <summary>
@@ -93,7 +63,7 @@ public class AutoElement : AutoGiverBase
         this.element = element;
         Roles = roles;
 
-        AutoGivers.Add(new(this));
+        AutoGivers.Add(this);
     }
 
     /// <summary>
@@ -115,11 +85,11 @@ public class AutoElement : AutoGiverBase
     }
 
     /// <summary>
-    /// Creates a new <see cref="AutoElement"/> using a <see cref="ElemReference{T}"/>.
+    /// Creates a new <see cref="AutoElement"/> using a <see cref="IElemReference{T}"/>.
     /// </summary>
     /// <typeparam name="T">The type of the <see cref="Element"/>.</typeparam>
     /// <param name="roles">The <see cref="Roles"/> to use for the <see cref="AutoElement"/>.</param>
-    /// <param name="reference">The <see cref="ElemReference{T}"/> to use.</param>
+    /// <param name="reference">The <see cref="IElemReference{T}"/> to use.</param>
     /// <param name="creator">A <see cref="Func{T, TResult}"/> that creates the elements.</param>
     /// <returns>A new <see cref="AutoElement"/>.</returns>
     public static AutoElement Create<T>(Roles roles, IElemReference<T> reference, Func<DisplayCore, T> creator)
@@ -128,8 +98,19 @@ public class AutoElement : AutoGiverBase
         return new AutoElement(roles, reference, (core) => creator(core));
     }
 
-    /// <inheritdoc/>
-    protected override void GiveTo(DisplayCore core)
+    /// <summary>
+    /// Disables this <see cref="AutoElement"/>.
+    /// </summary>
+    public virtual void Disable()
+    {
+        AutoGivers.Remove(this);
+    }
+
+    /// <summary>
+    /// Gives this <see cref="AutoElement"/> to a <see cref="DisplayCore"/>.
+    /// </summary>
+    /// <param name="core">The <see cref="DisplayCore"/> to give to.</param>
+    protected virtual void GiveTo(DisplayCore core)
     {
         if (element != null)
         {
@@ -141,6 +122,26 @@ public class AutoElement : AutoGiverBase
         else
         {
             core.AddAsReference(reference!, creator!(core));
+        }
+    }
+
+    private static void OnRoleChanged(ReferenceHub hub, PlayerRoleBase prevRole, PlayerRoleBase newRole)
+    {
+        if (prevRole.RoleTypeId != newRole.RoleTypeId)
+        {
+            DisplayCore core = DisplayCore.Get(hub);
+
+            foreach (AutoElement autoElement in AutoGivers)
+            {
+                if (autoElement.Roles.HasFlagFast(newRole.RoleTypeId))
+                {
+                    autoElement.GiveTo(core);
+                }
+                else
+                {
+
+                }
+            }
         }
     }
 }

@@ -14,7 +14,7 @@ public class CloseSizeTag : NoParamsTag
     /// <inheritdoc/>
     public override bool HandleTag(ParserContext context)
     {
-        if (context.SizeTags.Any())
+        if (context.SizeTags.Count > 0)
         {
             context.Size = context.SizeTags.Pop();
         }

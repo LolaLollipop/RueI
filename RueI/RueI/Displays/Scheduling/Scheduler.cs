@@ -92,7 +92,7 @@ public class Scheduler
 
         foreach (ScheduledJob job in jobs)
         {
-            currentSum += job.FinishAt.ToUnixTimeMilliseconds();
+            currentSum += job.FinishAt.ToUnixTimeMilliseconds() * job.Priority;
             prioritySum += job.Priority;
         }
 

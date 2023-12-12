@@ -30,6 +30,10 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Optimize>True</Optimize>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="RueI\Displays\Interfaces\Roles.cs" />
+  </ItemGroup>
 	
   <ItemGroup>
     <None Remove="RueI\Constants.cs~RF13edd36.TMP" />
@@ -65,6 +69,9 @@
     <Reference Include="UnityEngine.CoreModule">
       <HintPath>../References/UnityEngine.CoreModule.dll</HintPath>
     </Reference>
+	  <Reference Include="System.Collections.Immutable">
+		  <HintPath>../References/System.Collections.Immutable.dll</HintPath>
+	  </Reference>
   </ItemGroup>
 
   <ItemGroup>
