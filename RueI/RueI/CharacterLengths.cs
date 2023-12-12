@@ -1,7 +1,8 @@
-﻿using System.Collections.ObjectModel;
+﻿namespace RueI;
+
+using System.Collections.ObjectModel;
 using System.Runtime.CompilerServices;
 
-namespace RueI;
 /// <summary>
 /// Provides a variety of constant values.
 /// </summary>
@@ -466,6 +467,6 @@ public static class CharacterLengths
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    private static IReadOnlyDictionary<char, float> LoadFrozenDictionary(Dictionary<char, float> sizes) => System.Collections.Frozen.FrozenDictionary.ToFrozenDictionary(sizes);
+    private static IReadOnlyDictionary<char, float> LoadFrozenDictionary(Dictionary<char, float> sizes) => sizes;
 
 }

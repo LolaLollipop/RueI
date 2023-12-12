@@ -163,8 +163,7 @@ public class Parser
 
         context.BiggestCharSize = 0;
         context.LineHasAnyChars = false;
-        context.NewOffset += context.CurrentLineHeight;
-        //context.CurrentLineWidth += context.Indent + context.Margin + Math.Abs(context.LeftMargin - context.RightMargin);
+        context.NewOffset += context.CurrentLineHeight; // TODO: support margins    
 
         if (!isOverflow)
         {
