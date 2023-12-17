@@ -1,6 +1,3 @@
-using RueI.Displays.Scheduling;
-using RueI.Displays;
-using RueI.Elements;
 using RueI.Extensions;
 
 namespace RueITest;

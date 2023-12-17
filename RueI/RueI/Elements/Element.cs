@@ -1,5 +1,6 @@
 namespace RueI.Elements;
 
+using RueI.Elements.Enums;
 using RueI.Parsing;
 using RueI.Parsing.Records;
 
@@ -15,6 +16,7 @@ public abstract class Element
     public Element(float position)
     {
         Position = position;
+        ParsedData = new(string.Empty, 0);
     }
 
     /// <summary>
@@ -37,6 +39,11 @@ public abstract class Element
     /// </summary>
     /// <remarks>Implementations should default this to <see cref="Parser.DefaultParser"/>.</remarks>
     public Parser Parser { get; set; } = Parser.DefaultParser;
+
+    /// <summary>
+    /// Gets or sets the options for this element.
+    /// </summary>
+    public ElementOptions Options { get; set; } = ElementOptions.Default;
 
     /// <summary>
     /// Gets or sets the data used for parsing.

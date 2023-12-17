@@ -18,7 +18,7 @@ public static class ElemCombiner
     /// <returns>A <see cref="string"/> with all of the combined <see cref="Element"/>s.</returns>
     public static string Combine(IEnumerable<Element> enumElems)
     {
-        List<Element> elements = enumElems.ToPooledList();
+        List<Element> elements = ListPool<Element>.Shared.Rent(enumElems);
 
         if (!elements.Any())
         {
@@ -39,6 +39,10 @@ public static class ElemCombiner
 
             ParsedData parsedData = curElement.ParsedData;
             float funcPos = curElement.GetFunctionalPosition();
+            if (curElement.Options.HasFlagFast(Elements.Enums.ElementOptions.PreserveSpacing))
+            {
+                funcPos -= parsedData.Offset;
+            }
 
             if (i != 0)
             {
@@ -59,8 +63,8 @@ public static class ElemCombiner
         }
 
         ListPool<Element>.Shared.Return(elements);
-        sb.Insert(0, $"<line-height={totalOffset}px>\n");
-        sb.Append("<size=0>.");
+        sb.Insert(0, $"<line-height={totalOffset}px>\n</line-height>");
+        sb.Append(Constants.ZeroWidthSpace);
         return StringBuilderPool.Shared.ToStringReturn(sb);
     }
 

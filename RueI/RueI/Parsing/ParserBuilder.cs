@@ -1,7 +1,6 @@
 ﻿namespace RueI.Parsing;
 
 using NorthwoodLib.Pools;
-using RueI.Parsing;
 using RueI.Parsing.Tags;
 using System.Reflection;
 
@@ -11,6 +10,7 @@ using System.Reflection;
 public sealed class ParserBuilder
 {
     private readonly List<RichTextTag> currentTags = ListPool<RichTextTag>.Shared.Rent(10);
+    private readonly List<Parser> backups = ListPool<Parser>.Shared.Rent(2);
 
     /// <summary>
     /// Initializes a new instance of the <see cref="ParserBuilder"/> class.
@@ -66,7 +66,7 @@ public sealed class ParserBuilder
     /// <returns>A reference to this <see cref="ParserBuilder"/>.</returns>
     public ParserBuilder ImportFrom(Parser parser)
     {
-        parser.ExportTo(this);
+        backups.Add(parser);
         return this;
     }
 
@@ -74,7 +74,7 @@ public sealed class ParserBuilder
     /// Builds this <see cref="ParserBuilder"/> into a <see cref="Parser"/>.
     /// </summary>
     /// <returns>The built <see cref="Parser"/>.</returns>
-    public Parser Build() => new(currentTags);
+    public Parser Build() => new(currentTags, backups);
 
     /// <summary>
     /// Adds all of the tags from an <see cref="IEnumerable{RichTextTag}"/>.

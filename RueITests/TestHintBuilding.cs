@@ -1,9 +1,4 @@
-using RueI;
 using RueI.Extensions.HintBuilding;
-using RueI.Parsing;
-using RueI.Parsing.Enums;
-using RueI.Parsing.Records;
-using RueI.Parsing.Tags;
 using System.Drawing;
 
 namespace RueITest;

@@ -1,7 +1,4 @@
 ﻿namespace RueI.Elements.Interfaces;
-
-using RueI.Elements;
-
 /// <summary>
 /// Defines an element that can be set.
 /// </summary>

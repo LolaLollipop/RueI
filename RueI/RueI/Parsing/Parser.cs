@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 using NorthwoodLib.Pools;
+using RueI.Elements.Enums;
+using RueI.Extensions;
 using RueI.Parsing.Enums;
 using RueI.Parsing.Records;
 using RueI.Parsing.Tags.ConcreteTags;
@@ -18,29 +20,12 @@ public class Parser
     /// Initializes a new instance of the <see cref="Parser"/> class.
     /// </summary>
     /// <param name="tags">The list of tags to initialize with.</param>
-    internal Parser(IEnumerable<RichTextTag> tags)
+    /// <param name="backups">The list of parsers to use as a backup.</param>
+    internal Parser(IEnumerable<RichTextTag> tags, IEnumerable<Parser> backups)
     {
-        Dictionary<string, List<RichTextTag>> tagBuffer = new();
-
-        foreach (RichTextTag tag in tags)
-        {
-            foreach (string name in tag.Names)
-            {
-                if (tagBuffer.TryGetValue(name, out List<RichTextTag> tagsOfName))
-                {
-                    tagsOfName.Add(tag);
-                }
-                else
-                {
-                    List<RichTextTag> richTextTags = new();
-                    tagBuffer.Add(name, richTextTags);
-                    richTextTags.Add(tag);
-                }
-            }
-        }
-
-        Dictionary<string, ReadOnlyCollection<RichTextTag>> dictionary = tagBuffer.ToDictionary(kv => kv.Key, kv => new ReadOnlyCollection<RichTextTag>(kv.Value));
-        Tags = new(dictionary);
+        IEnumerable<ValueTuple<string, RichTextTag>> tuplePairs = tags.SelectMany(x => x.Names.Select(y => (y, x)));
+        Tags = (Lookup<string, RichTextTag>)tuplePairs.ToLookup(x => x.Item1, x => x.Item2);
+        TagBackups = new(backups.ToList());
     }
 
     /// <summary>
@@ -54,7 +39,12 @@ public class Parser
     /// <remarks>
     /// Multiple tags can share the same name.
     /// </remarks>
-    public ReadOnlyDictionary<string, ReadOnlyCollection<RichTextTag>> Tags { get; }
+    public Lookup<string, RichTextTag> Tags { get; }
+
+    /// <summary>
+    /// Gets a list of <see cref="Parser"/>s which this <see cref="Parser"/> will include the tags for.
+    /// </summary>
+    public ReadOnlyCollection<Parser> TagBackups { get; }
 
     /// <summary>
     /// Adds a character to a parser context.
@@ -64,8 +54,6 @@ public class Parser
     public static void AddCharacter(ParserContext context, char ch)
     {
         float size = CalculateCharacterLength(context, ch);
-
-        context.ResultBuilder.Append(ch);
 
         // TODO: any chars
         if (ch == ' ' || ch == '​') // zero width space
@@ -80,7 +68,7 @@ public class Parser
         }
         else
         {
-            if (context.CurrentLineWidth + context.WidthSinceSpace > context.DisplayAreaWidth)
+            if (context.CurrentLineWidth + context.WidthSinceSpace > context.FunctionalWidth)
             {
                 CreateLineBreak(context);
             }
@@ -152,7 +140,7 @@ public class Parser
             context.NewOffset += CalculateSizeOffset(Constants.DEFAULTSIZE);
         }
 
-        if (context.WidthSinceSpace > context.DisplayAreaWidth)
+        if (context.WidthSinceSpace > context.FunctionalWidth)
         {
             context.CurrentLineWidth = 0;
         }
@@ -163,7 +151,7 @@ public class Parser
 
         context.BiggestCharSize = 0;
         context.LineHasAnyChars = false;
-        context.NewOffset += context.CurrentLineHeight; // TODO: support margins    
+        context.NewOffset += context.CurrentLineHeight; // TODO: support margins
 
         if (!isOverflow)
         {
@@ -271,18 +259,19 @@ public class Parser
                     context.ResultBuilder.Append(chars[i]);
                 }
 
+                int matcher = i - original;
+                int times = matcher - (int)Math.Floor(matcher / 3d);
+
                 if ((i - original) % 3 == 0)
                 {
                     switch (chars[i])
                     {
                         case 'n':
                             CreateLineBreak(context);
-                            original += 2;
                             i++;
                             break;
                         case 'r':
                             context.CurrentLineWidth = 0;
-                            original += 2;
                             i++;
                             break;
                         case 'u':
@@ -293,8 +282,6 @@ public class Parser
                     }
                 }
 
-                int matcher = i - original;
-                int times = matcher - (int)Math.Ceiling(matcher / 3d);
                 for (int newIndex = 0; newIndex < times; newIndex++)
                 {
                     AddCharacter(context, chars[i + newIndex]);
@@ -425,12 +412,189 @@ public class Parser
     }
 
     /// <summary>
-    /// Exports this parser's <see cref="RichTextTag"/>s to a <see cref="ParserBuilder"/>.
+    /// Parses a rich text string.
     /// </summary>
-    /// <param name="builder">The builder to export the tags to.</param>
-    internal void ExportTo(ParserBuilder builder) => builder.AddTags(Tags.SelectMany(x => x.Value).Distinct());
+    /// <param name="text">The string to parse.</param>
+    /// <param name="options">The options for the elment.</param>
+    /// <returns>A <see cref="ParsedData"/> containing information about the string.</returns>
+    public ParsedData ParseFast(string text, ElementOptions options = ElementOptions.Default)
+    {
+        using ParserContext context = new();
+
+        int length = text.Length;
+        bool noparseIgnoresEscape = options.HasFlagFast(ElementOptions.NoparseIgnoresEscape);
+
+        for (int i = 0; i < length; i++)
+        {
+            char ch = text[i];
+
+            if (ch == '\\')
+            {
+                int original = i;
+                for (; i < length && text[i + 1] == '\\'; i++)
+                {
+                    context.ResultBuilder.Append(text[i]);
+                }
+
+                int matcher = i - original;
+                int times = matcher - (int)Math.Floor(matcher / 3d);
+
+                if ((i - original) % 3 == 0)
+                {
+                    if (context.ShouldParse || noparseIgnoresEscape)
+                    {
+                        switch (text[i])
+                        {
+                            case 'n':
+                                CreateLineBreak(context);
+                                i++;
+                                break;
+                            case 'r':
+                                context.CurrentLineWidth = 0;
+                                i++;
+                                break;
+                            case 'u':
+                                context.ResultBuilder.Append('\\'); // TODO: add support for unicode literals
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        context.ResultBuilder.Append('\\');
+                    }
+                }
+
+                for (int newIndex = 0; newIndex < times; newIndex++)
+                {
+                    char newCh = text[i + newIndex];
+                    AddCharacter(context, newCh);
+                }
+            }
+            else if (ch == '<')
+            {
+                HandleTagFast(context, text, ref i);
+                continue; // do NOT add as a character
+            }
+            else if (ch == '\n')
+            {
+                context.ResultBuilder.Append('\n');
+                CreateLineBreak(context);
+
+                continue; // do NOT add as a character
+            }
+
+            AddCharacter(context, ch);
+        } // foreach
+
+        context.ApplyClosingTags();
+        if (context.WidthSinceSpace > 0 || context.CurrentLineWidth > 0)
+        {
+            context.NewOffset += CalculateSizeOffset(context.BiggestCharSize);
+        }
+
+        return new ParsedData(context.ResultBuilder.ToString(), context.NewOffset);
+    }
+
+    private void HandleTagFast(ParserContext context, string text, ref int index)
+    {
+        int length = text.Length;
+        if ((index + 1) >= length)
+        {
+            return;
+        }
+
+        int start = index + 1;
+        char ch = text[start];
+        while ((index + 2) < length)
+        {
+            if (!IsValidTagChar(ch) || (index - start) == Constants.MAXTAGNAMESIZE)
+            {
+                break;
+            }
+
+            index++;
+            ch = text[index + 1];
+        }
+
+        if (ch == '>')
+        {
+            string name = text.Substring(start, index - start + 1);
+            if (TryGetBestMatch(name, TagStyle.NoParams, out RichTextTag? tag))
+            {
+                if (context.ShouldParse || tag is CloseNoparse)
+                {
+                    tag!.HandleTag(context, string.Empty);
+                    index++;
+                    return;
+                }
+            }
+        }
+        else if (context.ShouldParse)
+        {
+            RichTextTag? tag = ch switch
+            {
+                ' ' => GetBestMatch(text.Substring(start, index - start + 1), TagStyle.Attributes),
+                '=' => GetBestMatch(text.Substring(start, index - start + 1), TagStyle.ValueParam),
+                _ => null
+            };
+
+            if (tag != null)
+            {
+                index += 2;
+                int delimiter = index;
+
+                while ((index + 2) < length)
+                {
+                    if (ch == '>' || (index - start) > 127)
+                    {
+                        break;
+                    }
+
+                    index++;
+                    ch = text[index + 1];
+                }
+
+                if (((index - start) < 127) && (index + 2) < length)
+                {
+                    string parameters = text.Substring(delimiter, index - delimiter + 1);
+                    bool wasSuccessful = tag.HandleTag(context, parameters);
+
+                    if (wasSuccessful)
+                    {
+                        index++;
+                        return;
+                    }
+                }
+
+                index -= 2;
+            }
+        }
+
+        context.ResultBuilder.Append('<');
+        AddCharacter(context, '<');
+        AvoidMatch(context);
+        for (int i = start; i < (index + 1); i++)
+        {
+            char current = text[i];
+            context.ResultBuilder.Append(current);
+            AddCharacter(context, current);
+        }
+    }
+
+    private static void FailBuffer(ParserContext context, string buffer)
+    {
+        foreach (char addChar in buffer)
+        {
+            AddCharacter(context, addChar);
+            context.ResultBuilder.Append(addChar);
+        }
+    }
 
     private static float CalculateSizeOffset(float biggestChar) => (((biggestChar / Constants.DEFAULTSIZE * 0.2f) + 0.8f) * Constants.DEFAULTHEIGHT) - Constants.DEFAULTHEIGHT;
+
+    private static bool IsValidTagChar(char ch) => (ch > '\u0060' && ch < '\u007B') || ch == '-' || ch == '/';
 
     /// <summary>
     /// Avoids the client TMP matching a tag.
@@ -456,24 +620,7 @@ public class Parser
     {
         tag = null;
 
-        if (Tags.TryGetValue(name, out ReadOnlyCollection<RichTextTag> filteredTags))
-        {
-            RichTextTag? chosenTag = filteredTags.FirstOrDefault(x => x.TagStyle == style);
-            if (chosenTag != null)
-            {
-                tag = chosenTag;
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    private bool TryGetBestMatch(IEnumerable<RichTextTag> tags, TagStyle style, out RichTextTag? tag)
-    {
-        tag = null;
-
-        RichTextTag? chosenTag = tags.FirstOrDefault(x => x.TagStyle == style);
+        RichTextTag? chosenTag = Tags[name].FirstOrDefault(x => x.TagStyle == style);
         if (chosenTag != null)
         {
             tag = chosenTag;
@@ -481,5 +628,33 @@ public class Parser
         }
 
         return false;
+    }
+
+    private RichTextTag? GetBestMatch(string name, TagStyle style)
+    {
+        foreach (Parser parser in TagBackups)
+        {
+            RichTextTag? tag = Tags[name].FirstOrDefault(x => x.TagStyle == style);
+            if (tag != null)
+            {
+                return tag;
+            }
+        }
+
+        return Tags[name].FirstOrDefault(x => x.TagStyle == style) ?? GetTagBackups(name, style);
+    }
+
+    private RichTextTag? GetTagBackups(string name, TagStyle style)
+    {
+        foreach (Parser parser in TagBackups)
+        {
+            RichTextTag? tag = Tags[name].FirstOrDefault(x => x.TagStyle == style);
+            if (tag != null)
+            {
+                return tag;
+            }
+        }
+
+        return null;
     }
 }

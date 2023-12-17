@@ -1,4 +1,3 @@
-using RueI;
 using RueI.Parsing;
 using RueI.Parsing.Enums;
 using RueI.Parsing.Records;
@@ -56,6 +55,8 @@ public class TestTags
     [DataRow("A VERY VERY VERY VERY A VERY VERY VERY VERY A VERY VERY VERY VERY A VERY VERY VERY VERY A VERY VERY VERY VERY A VERY VERY VERY VERY A VERY VERY VERY VERY A VERY VERY VERY VERY A VERY VERY VERY VERY A VERY VERY VERY VERY A VERY VERY VERY VERY LONG WORLD", 121.995f)]
     [DataRow("A VERY VERY VERY VERY A VERY VERY VERY VERY A VERY VERY VERY VERY A VERY VERY VERY VERY A VERY VERY VERY VERY A VERY VERY VERY VERY A VERY VERY VERY VERY A VERY VERY VERY VERY A VERY VERY VERY VERY A VERY", 121.995f)]
     [DataRow("A VERY VERY\n\n\nVERY VERY", 121.995f)]
+    [DataRow("<line-height=300%>A VERY VERY\nVERY VERY", 121.995f)]
+    [DataRow("<line-height<", 0f)]
     public void TestParser(string text, float expectedOffset)
     {
         (_, float offset) = Parser.DefaultParser.Parse(text);
@@ -81,7 +82,7 @@ public class TestTags
         Parser parser = builder.Build();
 
         Assert.AreEqual(2, parser.Tags.Count);
-        Assert.IsTrue(parser.Tags.Values.Any(x => x.Contains(SharedTag<RealTag>.Singleton)));
+        Assert.IsTrue(parser.Tags.Any(x => x.Contains(SharedTag<RealTag>.Singleton)));
     }
 
     [TestMethod]

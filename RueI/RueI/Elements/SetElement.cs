@@ -21,6 +21,9 @@ public class SetElement : Element, ISettable
         ParsedData = Parser.Parse(content);
     }
 
+    /// <inheritdoc/>
+    protected internal override ParsedData ParsedData { get; protected set; }
+
     /// <summary>
     /// Sets the content of this element.
     /// </summary>

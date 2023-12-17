@@ -2,6 +2,7 @@
 
 using PlayerRoles;
 using RueI.Displays;
+using RueI.Elements.Enums;
 
 /// <summary>
 /// Provides extensions for working with RueI <see cref="Enum"/>s.
@@ -15,6 +16,14 @@ public static class EnumExtensions
     /// <param name="second">The other <see cref="Roles"/>.</param>
     /// <returns>A value indicating whether or not the first has all of the flags of the second.</returns>
     public static bool HasFlagFast(this Roles first, Roles second) => (first & second) == second;
+
+    /// <summary>
+    /// Quickly determines if an <see cref="ElementOptions"/> has another <see cref="ElementOptions"/>.
+    /// </summary>
+    /// <param name="first">The first <see cref="ElementOptions"/>.</param>
+    /// <param name="second">The other <see cref="ElementOptions"/>.</param>
+    /// <returns>A value indicating whether or not the first has all of the flags of the second.</returns>
+    public static bool HasFlagFast(this ElementOptions first, ElementOptions second) => (first & second) == second;
 
     /// <summary>
     /// Quickly determines if a <see cref="Roles"/> has a <see cref="RoleTypeId"/>.

@@ -468,5 +468,4 @@ public static class CharacterLengths
 
     [MethodImpl(MethodImplOptions.NoInlining)]
     private static IReadOnlyDictionary<char, float> LoadFrozenDictionary(Dictionary<char, float> sizes) => sizes;
-
 }

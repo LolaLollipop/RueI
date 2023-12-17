@@ -13,7 +13,7 @@ public static class Constants
     /// Gets the default height if a line-height is not provided.
     /// </summary>
     /// <remarks>Approximate.</remarks>
-    public const float DEFAULTHEIGHT = 40.67f; // in pixels. this is barely approximate
+    public const float DEFAULTHEIGHT = 40.665f; // in pixels. this is barely approximate
 
     /// <summary>
     /// Gets the default size (in pixels) if a size is not provided.
@@ -42,9 +42,19 @@ public static class Constants
     public const float EMSTOPIXELS = 34.7f;
 
     /// <summary>
+    /// Gets the zero width space.
+    /// </summary>
+    public const char ZeroWidthSpace = '​';
+
+    /// <summary>
     /// Gets the maximum name size allowed for a tag.
     /// </summary>
     public const int MAXTAGNAMESIZE = 13;
+
+    /// <summary>
+    /// Gets the limit on measurement values.
+    /// </summary>
+    public const int MEASUREMENTVALUELIMIT = 32768;
 
     /// <summary>
     /// Gets the ratelimit used for displaying hints.

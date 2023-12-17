@@ -1,7 +1,6 @@
 ﻿namespace RueI.Displays;
 
 using RueI.Elements;
-using Hints;
 using RueI.Displays.Scheduling;
 using RueI.Extensions;
 

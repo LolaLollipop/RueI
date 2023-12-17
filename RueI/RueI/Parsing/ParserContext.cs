@@ -3,7 +3,6 @@ namespace RueI.Parsing;
 using System.Text;
 using NorthwoodLib.Pools;
 using RueI.Parsing.Tags;
-using RueI.Parsing.Tags.ConcreteTags;
 
 /// <summary>
 /// Describes the state of a parser at a time.
@@ -34,6 +33,11 @@ public class ParserContext : TextInfo, IDisposable
     /// Gets or sets the current width of the text.
     /// </summary>
     public float DisplayAreaWidth { get; set; } = Constants.DISPLAYAREAWIDTH;
+
+    /// <summary>
+    /// Gets the current functional width of the text.
+    /// </summary>
+    public float FunctionalWidth => DisplayAreaWidth - this.LeftMargin - this.RightMargin;
 
     /// <summary>
     /// Gets a stack containing all of the nested sizes.
@@ -94,11 +98,6 @@ public class ParserContext : TextInfo, IDisposable
     /// Gets or sets the left margin of the line.
     /// </summary>
     public float LeftMargin { get; set; } = 0;
-
-    /// <summary>
-    /// Gets or sets the total margin of the line.
-    /// </summary>
-    public float Margin { get; set; } = 0;
 
     /// <summary>
     /// Gets or sets a value indicating whether or not the current line has any characters.

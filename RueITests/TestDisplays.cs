@@ -1,4 +1,3 @@
-using RueI;
 using RueI.Displays;
 using RueI.Elements;
 using System.Diagnostics;
@@ -43,17 +42,32 @@ public class TestDisplayCore
     {
         List<SetElement> elements = new()
         {
-            new(500, "hello world")
+            new(500, "he\nllo world")
             {
                 ZIndex = 5
             },
-            new(200, "goodbye world")
+            new(200, "he\nllo world")
             {
-                ZIndex = 10
-            }
+                ZIndex = 5
+            },
         };
 
-        ElemCombiner.Combine(elements);
+        List<SetElement> elementsTwo = new()
+        {
+            new(500, "he\nllo world")
+            {
+                ZIndex = 5,
+                Options = RueI.Elements.Enums.ElementOptions.PreserveSpacing
+            },
+            new(200, "he\nllo world")
+            {
+                ZIndex = 5,
+                Options = RueI.Elements.Enums.ElementOptions.PreserveSpacing
+            },
+        };
+
+        Console.WriteLine(ElemCombiner.Combine(elements).Replace("\n", "<br>"));
+        Console.WriteLine(ElemCombiner.Combine(elementsTwo).Replace("\n", "<br>"));
     }
 
     [TestMethod]

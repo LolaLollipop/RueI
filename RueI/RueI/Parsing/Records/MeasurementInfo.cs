@@ -60,7 +60,7 @@ public record struct MeasurementInfo(float Value, MeasurementUnit Style)
         }
 
         string bufferString = StringBuilderPool.Shared.ToStringReturn(paramBuffer);
-        if (float.TryParse(bufferString, out float result))
+        if (float.TryParse(bufferString, out float result) && result < Constants.MEASUREMENTVALUELIMIT)
         {
             info = new(result, style);
             return true;

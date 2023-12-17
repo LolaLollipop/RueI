@@ -4,7 +4,6 @@ using Hints;
 using MEC;
 using RueI.Extensions;
 using UnityEngine;
-using static System.Net.Mime.MediaTypeNames;
 
 /// <summary>
 /// Defines the base class for a provider of methods that may or may not use Unity.
