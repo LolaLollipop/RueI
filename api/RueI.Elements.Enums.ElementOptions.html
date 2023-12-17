@@ -2,10 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Interface UnityAlternative.IAsyncOperation
+      <title>Enum ElementOptions
  | RueI </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Interface UnityAlternative.IAsyncOperation
+      <meta name="title" content="Enum ElementOptions
  | RueI ">
       
       <link rel="icon" href="../favicon.ico">
@@ -17,7 +17,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/Ruemena/RueI/new/master/apiSpec/new?filename=RueI_UnityAlternative_IAsyncOperation.md&amp;value=---%0Auid%3A%20RueI.UnityAlternative.IAsyncOperation%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/Ruemena/RueI/new/master/apiSpec/new?filename=RueI_Elements_Enums_ElementOptions.md&amp;value=---%0Auid%3A%20RueI.Elements.Enums.ElementOptions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -85,26 +85,28 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="RueI.UnityAlternative.IAsyncOperation">
+        <article data-uid="RueI.Elements.Enums.ElementOptions">
 
 
 
-  <h1 id="RueI_UnityAlternative_IAsyncOperation" data-uid="RueI.UnityAlternative.IAsyncOperation" class="text-break">
-    Interface UnityAlternative.IAsyncOperation
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/UnityAlternative.cs/#L16"><i class="bi bi-code-slash"></i></a>
+
+  <h1 id="RueI_Elements_Enums_ElementOptions" data-uid="RueI.Elements.Enums.ElementOptions" class="text-break">
+    Enum ElementOptions
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements/Enums/ElementOptions.cs/#L6"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
-    <dl><dt>Namespace</dt><dd><a class="xref" href="RueI.html">RueI</a></dd></dl>
+    <dl><dt>Namespace</dt><dd><a class="xref" href="RueI.html">RueI</a>.<a class="xref" href="RueI.Elements.html">Elements</a>.<a class="xref" href="RueI.Elements.Enums.html">Enums</a></dd></dl>
   <dl><dt>Assembly</dt><dd>RueI.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Represents a generalized handler for an async operation.</p>
+  <div class="markdown summary"><p>Provides options for elements.</p>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface UnityAlternative.IAsyncOperation : IDisposable</code></pre>
+    <pre><code class="lang-csharp hljs">[Flags]
+public enum ElementOptions</code></pre>
   </div>
 
 
@@ -113,98 +115,38 @@
 
 
 
-  <dl class="typelist derived">
-    <dt>Inherited Members</dt>
-    <dd>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable.dispose">IDisposable.Dispose()</a>
-    </div>
-  </dd></dl>
 
   <dl class="typelist extensionMethods">
     <dt>Extension Methods</dt>
     <dd>
   <div>
-      <a class="xref" href="RueI.Extensions.UniversalExtensions.html#RueI_Extensions_UniversalExtensions_AddTo__1___0_System_Collections_Generic_ICollection___0__">UniversalExtensions.AddTo&lt;T&gt;(T, ICollection&lt;T&gt;)</a>
+      <a class="xref" href="RueI.Extensions.EnumExtensions.html#RueI_Extensions_EnumExtensions_HasFlagFast_RueI_Elements_Enums_ElementOptions_RueI_Elements_Enums_ElementOptions_">EnumExtensions.HasFlagFast(ElementOptions, ElementOptions)</a>
   </div>
   </dd></dl>
 
-
-
-
-
-  <h2 class="section" id="properties">Properties
+  <h2 id="fields">Fields
 </h2>
-
-
-  <a id="RueI_UnityAlternative_IAsyncOperation_IsRunning_" data-uid="RueI.UnityAlternative.IAsyncOperation.IsRunning*"></a>
-
-  <h3 id="RueI_UnityAlternative_IAsyncOperation_IsRunning" data-uid="RueI.UnityAlternative.IAsyncOperation.IsRunning">
-  IsRunning
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/UnityAlternative.cs/#L21"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Gets a value indicating whether or not this operation is handling.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool IsRunning { get; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dt id="RueI_Elements_Enums_ElementOptions_Default"><code>Default = 1</code></dt>
+    <dd><p>Gets the default element settings.</p>
+</dd>
+    <dt id="RueI_Elements_Enums_ElementOptions_NoparseIgnoresEscape"><code>NoparseIgnoresEscape = 1</code></dt>
+    <dd><p>Indicates whether or not noparse ignores escape sequences like \r, \u, and \n.</p>
+</dd>
+    <dt id="RueI_Elements_Enums_ElementOptions_PreserveSpacing"><code>PreserveSpacing = 2</code></dt>
+    <dd><p>Indicates whether or not the vertical spacing of an element affects the baseline.</p>
+</dd>
+    <dt id="RueI_Elements_Enums_ElementOptions_Vanilla"><code>Vanilla = 2</code></dt>
+    <dd><p>Gets the vanilla options for hints.</p>
+</dd>
   </dl>
-
-
-
-
-
-
-
-
-  <h2 class="section" id="methods">Methods
-</h2>
-
-
-  <a id="RueI_UnityAlternative_IAsyncOperation_Cancel_" data-uid="RueI.UnityAlternative.IAsyncOperation.Cancel*"></a>
-
-  <h3 id="RueI_UnityAlternative_IAsyncOperation_Cancel" data-uid="RueI.UnityAlternative.IAsyncOperation.Cancel">
-  Cancel()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/UnityAlternative.cs/#L26"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Cancels this operation.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void Cancel()</code></pre>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
 
 
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/Ruemena/RueI/blob/master/RueI/UnityAlternative.cs/#L16" class="edit-link">Edit this page</a>
+          <a href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements/Enums/ElementOptions.cs/#L6" class="edit-link">Edit this page</a>
         </div>
 
 
