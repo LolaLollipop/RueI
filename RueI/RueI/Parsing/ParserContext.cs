@@ -1,7 +1,9 @@
 namespace RueI.Parsing;
 
 using System.Text;
+
 using NorthwoodLib.Pools;
+
 using RueI.Parsing.Tags;
 
 /// <summary>
@@ -50,9 +52,19 @@ public class ParserContext : TextInfo, IDisposable
     public float CurrentLineWidth { get; set; } = 0;
 
     /// <summary>
+    /// Gets or sets the current space buffer of the parser.
+    /// </summary>
+    public float SpaceBuffer { get; set; } = 0;
+
+    /// <summary>
     /// Gets or sets the current indent of the parser.
     /// </summary>
     public float Indent { get; set; } = 0;
+
+    /// <summary>
+    /// Gets or sets the current voffset of the parser.
+    /// </summary>
+    public float VOffset { get; set; } = 0;
 
     /// <summary>
     /// Gets or sets the current line indent of the parser.

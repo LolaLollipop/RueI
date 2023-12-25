@@ -1,21 +1,34 @@
 ﻿namespace RueI.Events;
 
+using RueI.Displays;
+using RueI.Displays.Scheduling;
+
 /// <summary>
-/// Contains all information after a player's hint rate limit is finished.
+/// Contains all information after a player's <see cref="Displays.DisplayCore"/> is updated.
 /// </summary>
-public class RateLimitFinishedEventArgs : EventArgs
+public class DisplayUpdatedEventArgs : EventArgs
 {
     /// <summary>
-    /// Initializes a new instance of the <see cref="RateLimitFinishedEventArgs"/> class.
+    /// Initializes a new instance of the <see cref="DisplayUpdatedEventArgs"/> class.
     /// </summary>
-    /// <param name="referenceHub">The hub that the rate limit is finished for.</param>
-    public RateLimitFinishedEventArgs(ReferenceHub referenceHub)
+    /// <param name="core">The <see cref="Displays.DisplayCore"/> that has been updated.</param>
+    public DisplayUpdatedEventArgs(DisplayCore core)
     {
-        ReferenceHub = referenceHub;
+        DisplayCore = core;
     }
 
     /// <summary>
-    /// Gets the ReferenceHub that the hint rate limit is finished for.
+    /// Gets the updated <see cref="Displays.DisplayCore"/>.
     /// </summary>
-    public ReferenceHub ReferenceHub { get; }
+    public DisplayCore DisplayCore { get; }
+
+    /// <summary>
+    /// Gets the <see cref="ReferenceHub"/> of the updated core.
+    /// </summary>
+    public ReferenceHub Hub => DisplayCore.Hub;
+
+    /// <summary>
+    /// Gets the <see cref="Displays.Scheduling.Scheduler"/> of the updated core.
+    /// </summary>
+    public Scheduler Scheduler => DisplayCore.Scheduler;
 }

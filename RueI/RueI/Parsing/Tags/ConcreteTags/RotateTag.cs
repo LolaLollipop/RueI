@@ -7,16 +7,16 @@ using RueI.Parsing.Records;
 /// Provides a way to handle indent tags.
 /// </summary>
 [RichTextTag]
-public class IndentTag : MeasurementTag
+public class RotateTag : MeasurementTag
 {
     /// <inheritdoc/>
-    public override string[] Names { get; } = { "indent" };
+    public override string[] Names { get; } = { "rotate" };
 
     /// <inheritdoc/>
     public override bool HandleTag(ParserContext context, MeasurementInfo info)
     {
         context.ResultBuilder.Append($"<rotate={info}>");
-        context.AddEndingTag<CloseIndentTag>();
+        context.AddEndingTag<CloseRotateTag>();
 
         return true;
     }

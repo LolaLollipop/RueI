@@ -54,7 +54,19 @@ public static class IEnumerableExtensions
     public static bool Only<T>(this IEnumerable<T> enumerable, Func<T, bool> filter)
     {
         using IEnumerator<T> enumerator = enumerable.GetEnumerator();
-        return !enumerator.MoveNext() || !filter(enumerator.Current) || enumerator.MoveNext();
+        return enumerator.MoveNext() && !filter(enumerator.Current) && !enumerator.MoveNext();
+    }
+
+    /// <summary>
+    /// Determines if a <see cref="IEnumerable{T}"/> has only one element.
+    /// </summary>
+    /// <typeparam name="T">The inner type of the <see cref="IEnumerable{T}"/>.</typeparam>
+    /// <param name="enumerable">The <see cref="IEnumerable{T}"/> to check.</param>
+    /// <returns>true if there is only one element in the <see cref="IEnumerable{T}"/>.</returns>
+    public static bool Only<T>(this IEnumerable<T> enumerable)
+    {
+        using IEnumerator<T> enumerator = enumerable.GetEnumerator();
+        return enumerator.MoveNext() && !enumerator.MoveNext();
     }
 
     /// <summary>

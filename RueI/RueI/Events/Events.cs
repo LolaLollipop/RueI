@@ -14,23 +14,9 @@ public static class Events
         where T : EventArgs;
 
     /// <summary>
-    /// Called after the rate limit is finished for a player.
-    /// </summary>
-    public static event RueIEvent<RateLimitFinishedEventArgs>? RateLimitFinished;
-
-    /// <summary>
     /// Called after a player's <see cref="Displays.DisplayCore"/> is updated.
     /// </summary>
     public static event RueIEvent<DisplayUpdatedEventArgs>? DisplayUpdated;
-
-    /// <summary>
-    /// Calls <see cref="RateLimitFinished"/> after the rate limit is finished.
-    /// </summary>
-    /// <param name="ev">The event args to use.</param>
-    internal static void OnRateLimitFinished(RateLimitFinishedEventArgs ev)
-    {
-        RateLimitFinished?.Invoke(ev);
-    }
 
     /// <summary>
     /// Calls <see cref="DisplayUpdated"/> after a display is updated.

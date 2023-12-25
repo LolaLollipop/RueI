@@ -1,11 +1,13 @@
 ﻿namespace RueI.Displays.Scheduling;
 
 using System.Diagnostics;
-using eMEC;
+
 using NorthwoodLib.Pools;
+using Utils.NonAllocLINQ;
+
+using eMEC;
 using RueI.Displays.Scheduling.Records;
 using RueI.Extensions;
-using Utils.NonAllocLINQ;
 
 /// <summary>
 /// Provides a means of doing batch operations.

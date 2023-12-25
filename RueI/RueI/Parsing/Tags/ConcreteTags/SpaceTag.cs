@@ -26,7 +26,7 @@ public class SpaceTag : MeasurementTag
             _ => value
         };
 
-        if (context.WidthSinceSpace > 0.0001 && (context.WidthSinceSpace + convertedValue) > context.DisplayAreaWidth)
+        if (context.WidthSinceSpace > 0.0001 && (context.WidthSinceSpace + convertedValue) > context.FunctionalWidth)
         {
             Parser.CreateLineBreak(context, true);
         }

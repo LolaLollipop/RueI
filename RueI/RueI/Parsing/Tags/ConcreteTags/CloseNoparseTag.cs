@@ -4,7 +4,7 @@
 /// Provides a way to handle closing line-height tags.
 /// </summary>
 [RichTextTag]
-public class CloseNoparse : ClosingTag<CloseNoparse>
+public class CloseNoparseTag : ClosingTag<CloseNoparseTag>
 {
     /// <inheritdoc/>
     public override string Name { get; } = "/noparse";

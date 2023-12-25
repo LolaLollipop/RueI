@@ -9,6 +9,8 @@ using RueI.Parsing.Records;
 /// </summary>
 public class SetElement : Element, ISettable
 {
+    private ParsedData data;
+
     /// <summary>
     /// Initializes a new instance of the <see cref="SetElement"/> class.
     /// </summary>
@@ -18,11 +20,8 @@ public class SetElement : Element, ISettable
         : base(position)
     {
         Position = position;
-        ParsedData = Parser.Parse(content);
+        data = Parser.Parse(content);
     }
-
-    /// <inheritdoc/>
-    protected internal override ParsedData ParsedData { get; protected set; }
 
     /// <summary>
     /// Sets the content of this element.
@@ -30,6 +29,9 @@ public class SetElement : Element, ISettable
     /// <param name="content">The text to set the content to (will be parsed).</param>
     public virtual void Set(string content)
     {
-        ParsedData = Parser.Parse(content);
+        data = Parser.Parse(content);
     }
+
+    /// <inheritdoc/>
+    protected internal override ParsedData GetParsedData() => data;
 }

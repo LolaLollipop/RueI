@@ -1,12 +1,14 @@
 ﻿namespace RueI.Patches;
 
+using System.Reflection;
+using System.Reflection.Emit;
+
 using HarmonyLib;
+using static HarmonyLib.AccessTools;
+
 using Hints;
 using Mirror;
 using NorthwoodLib.Pools;
-using System.Reflection;
-using System.Reflection.Emit;
-using static HarmonyLib.AccessTools;
 
 /// <summary>
 /// Patches <see cref="HintDisplay.Show"/> to detect when hints are shown.

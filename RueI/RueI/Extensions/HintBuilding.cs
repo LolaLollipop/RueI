@@ -2,6 +2,7 @@ namespace RueI.Extensions.HintBuilding;
 
 using System.Drawing;
 using System.Text;
+
 using RueI.Parsing.Enums;
 
 /// <summary>

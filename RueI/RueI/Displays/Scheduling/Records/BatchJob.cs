@@ -14,7 +14,7 @@ internal class BatchJob
     /// <param name="performAt">When the jobs should be performed.</param>
     public BatchJob(List<ScheduledJob> jobs, DateTimeOffset performAt)
     {
-        Jobs = jobs;
+        Jobs = jobs ?? throw new ArgumentNullException(nameof(jobs));
         PerformAt = performAt;
     }
 

@@ -1,8 +1,10 @@
 ﻿namespace RueI.Parsing;
 
-using NorthwoodLib.Pools;
-using RueI.Parsing.Tags;
 using System.Reflection;
+
+using NorthwoodLib.Pools;
+
+using RueI.Parsing.Tags;
 
 /// <summary>
 /// Builds <see cref="Parser"/>s.

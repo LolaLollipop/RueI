@@ -144,9 +144,14 @@ public enum Roles
     MilitaryRoles = NtfRoles | ChaosRoles | Tutorial,
 
     /// <summary>
+    /// Gets all of the civilian role ids.
+    /// </summary>
+    CivilianRoles = ClassD | Scientist,
+
+    /// <summary>
     /// Gets all of the human role ids.
     /// </summary>
-    HumanRoles = MilitaryRoles | ClassD | Scientist,
+    HumanRoles = MilitaryRoles | CivilianRoles,
 
     /// <summary>
     /// Gets all of the SCP role ids, excluding SCP-049-2.

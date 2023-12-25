@@ -1,17 +1,17 @@
 ﻿namespace RueI.Parsing.Tags.ConcreteTags;
 
 /// <summary>
-/// Provides a way to handle closing cspace tags.
+/// Provides a way to handle closing subscript tags.
 /// </summary>
 [RichTextTag]
-public class CloseCSpaceTag : ClosingTag<CloseCSpaceTag>
+public class CloseSubscriptTag : ClosingTag<CloseSubscriptTag>
 {
     /// <inheritdoc/>
-    public override string Name { get; } = "/cspace";
+    public override string Name { get; } = "/sub";
 
     /// <inheritdoc/>
     protected override void ApplyTo(ParserContext context)
     {
-        context.CurrentCSpace = 0;
+        context.IsSubscript = false;
     }
 }

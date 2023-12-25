@@ -1,6 +1,7 @@
 ﻿namespace RueI.Extensions;
 
 using PlayerRoles;
+
 using RueI.Displays;
 using RueI.Elements;
 
@@ -122,6 +123,22 @@ public class AutoElement
         else
         {
             core.AddAsReference(reference!, creator!(core));
+        }
+    }
+
+    /// <summary>
+    /// Removes this <see cref="AutoElement"/> from a <see cref="DisplayCore"/>.
+    /// </summary>
+    /// <param name="core">The <see cref="DisplayCore"/> to give to.</param>
+    protected virtual void RemoveFrom(DisplayCore core)
+    {
+        if (element != null)
+        {
+            core.AnonymousDisplay.Elements.Remove(element);
+        }
+        else
+        {
+            core.RemoveReference(reference!);
         }
     }
 

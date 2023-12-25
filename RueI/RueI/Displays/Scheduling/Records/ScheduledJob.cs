@@ -1,6 +1,6 @@
-﻿using RueI.Extensions;
+﻿namespace RueI.Displays.Scheduling.Records;
 
-namespace RueI.Displays.Scheduling.Records;
+using RueI.Extensions;
 
 /// <summary>
 /// Defines a scheduled job for a <see cref="Scheduler"/>.
@@ -17,7 +17,7 @@ public class ScheduledJob : IComparable<ScheduledJob>
     internal ScheduledJob(DateTimeOffset finishAt, Action action, int priority, JobToken? token = null)
     {
         FinishAt = finishAt;
-        Action = action;
+        Action = action ?? throw new ArgumentNullException(nameof(action));
         Priority = priority.Max(1);
         Token = token;
     }

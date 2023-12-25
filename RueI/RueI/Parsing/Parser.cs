@@ -3,9 +3,9 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+
 using NorthwoodLib.Pools;
-using RueI.Elements.Enums;
-using RueI.Extensions;
+
 using RueI.Parsing.Enums;
 using RueI.Parsing.Records;
 using RueI.Parsing.Tags.ConcreteTags;
@@ -58,7 +58,7 @@ public class Parser
         // TODO: any chars
         if (ch == ' ' || ch == '​') // zero width space
         {
-            context.CurrentLineWidth += size;
+            context.SpaceBuffer += size;
 
             if (!context.NoBreak)
             {
@@ -83,24 +83,24 @@ public class Parser
     }
 
     /// <summary>
-    /// Calculates the length of an <see cref="char"/> with a context.
+    /// Calculates the length of a <see cref="char"/> with a context.
     /// </summary>
     /// <param name="context">The context to parse the char under.</param>
     /// <param name="ch">The char to calculate the length for.</param>
     /// <returns>A float indicating the total length of the char.</returns>
     public static float CalculateCharacterLength(TextInfo context, char ch)
     {
+        if (context.IsMonospace)
+        {
+            return context.Monospacing + context.CurrentCSpace;
+        }
+
         char functionalCase = context.CurrentCase switch
         {
             CaseStyle.Smallcaps or CaseStyle.Uppercase => char.ToUpper(ch),
             CaseStyle.Lowercase => char.ToLower(ch),
             _ => ch
         };
-
-        if (context.IsMonospace)
-        {
-            return context.Monospacing + context.CurrentCSpace;
-        }
 
         if (CharacterLengths.Lengths.TryGetValue(functionalCase, out float chSize))
         {
@@ -110,7 +110,13 @@ public class Parser
                 multiplier *= 0.8f;
             }
 
-            if (context.IsSuperOrSubScript)
+            if (context.IsSuperscript)
+            {
+                multiplier *= 0.5f;
+            }
+
+            // for some reason, tmp allows the text to be in both subscript and superscript
+            if (context.IsSubscript)
             {
                 multiplier *= 0.5f;
             }
@@ -262,6 +268,7 @@ public class Parser
                 int matcher = i - original;
                 int times = matcher - (int)Math.Floor(matcher / 3d);
 
+                // detect if an escape sequence is escaped by backslashes
                 if ((i - original) % 3 == 0)
                 {
                     switch (chars[i])
@@ -287,7 +294,7 @@ public class Parser
                     AddCharacter(context, chars[i + newIndex]);
                 }
             }
-            else if (ch == '<')
+            else if (ch == '<') // indicates start of tag
             {
                 if (currentState != ParserState.CollectingTags)
                 {
@@ -295,7 +302,7 @@ public class Parser
                 }
 
                 currentState = ParserState.DescendingTag;
-                continue; // do NOT add as a character
+                continue;
             }
             else if (ch == '\n')
             {
@@ -306,11 +313,11 @@ public class Parser
                     FailTagMatch();
                 }
 
-                continue; // do NOT add as a character
+                continue;
             }
             else if (currentState == ParserState.DescendingTag)
             {
-                if ((ch > '\u0060' && ch < '\u007B') || ch == '-' || ch == '/')
+                if ((ch > '\u0060' && ch < '\u007B') || ch == '-' || ch == '/') // detects if a character is a-z, -, or /
                 {
                     if (tagBufferSize > Constants.MAXTAGNAMESIZE)
                     {
@@ -318,13 +325,13 @@ public class Parser
                     }
 
                     tagBuffer.Append(ch);
-                    continue; // do NOT add as a character
+                    continue;
                 }
                 else if (ch == '>')
                 {
                     if (TryGetBestMatch(tagBuffer.ToString(), TagStyle.NoParams, out RichTextTag? tag))
                     {
-                        if (context.ShouldParse || tag is CloseNoparse)
+                        if (context.ShouldParse || tag is CloseNoparseTag)
                         {
                             tag!.HandleTag(context, string.Empty);
                             continue;
@@ -412,186 +419,10 @@ public class Parser
     }
 
     /// <summary>
-    /// Parses a rich text string.
+    /// Calculates the size offset that should applied to the parser for a given line.
     /// </summary>
-    /// <param name="text">The string to parse.</param>
-    /// <param name="options">The options for the elment.</param>
-    /// <returns>A <see cref="ParsedData"/> containing information about the string.</returns>
-    public ParsedData ParseFast(string text, ElementOptions options = ElementOptions.Default)
-    {
-        using ParserContext context = new();
-
-        int length = text.Length;
-        bool noparseIgnoresEscape = options.HasFlagFast(ElementOptions.NoparseIgnoresEscape);
-
-        for (int i = 0; i < length; i++)
-        {
-            char ch = text[i];
-
-            if (ch == '\\')
-            {
-                int original = i;
-                for (; i < length && text[i + 1] == '\\'; i++)
-                {
-                    context.ResultBuilder.Append(text[i]);
-                }
-
-                int matcher = i - original;
-                int times = matcher - (int)Math.Floor(matcher / 3d);
-
-                if ((i - original) % 3 == 0)
-                {
-                    if (context.ShouldParse || noparseIgnoresEscape)
-                    {
-                        switch (text[i])
-                        {
-                            case 'n':
-                                CreateLineBreak(context);
-                                i++;
-                                break;
-                            case 'r':
-                                context.CurrentLineWidth = 0;
-                                i++;
-                                break;
-                            case 'u':
-                                context.ResultBuilder.Append('\\'); // TODO: add support for unicode literals
-                                break;
-                            default:
-                                break;
-                        }
-                    }
-                    else
-                    {
-                        context.ResultBuilder.Append('\\');
-                    }
-                }
-
-                for (int newIndex = 0; newIndex < times; newIndex++)
-                {
-                    char newCh = text[i + newIndex];
-                    AddCharacter(context, newCh);
-                }
-            }
-            else if (ch == '<')
-            {
-                HandleTagFast(context, text, ref i);
-                continue; // do NOT add as a character
-            }
-            else if (ch == '\n')
-            {
-                context.ResultBuilder.Append('\n');
-                CreateLineBreak(context);
-
-                continue; // do NOT add as a character
-            }
-
-            AddCharacter(context, ch);
-        } // foreach
-
-        context.ApplyClosingTags();
-        if (context.WidthSinceSpace > 0 || context.CurrentLineWidth > 0)
-        {
-            context.NewOffset += CalculateSizeOffset(context.BiggestCharSize);
-        }
-
-        return new ParsedData(context.ResultBuilder.ToString(), context.NewOffset);
-    }
-
-    private void HandleTagFast(ParserContext context, string text, ref int index)
-    {
-        int length = text.Length;
-        if ((index + 1) >= length)
-        {
-            return;
-        }
-
-        int start = index + 1;
-        char ch = text[start];
-        while ((index + 2) < length)
-        {
-            if (!IsValidTagChar(ch) || (index - start) == Constants.MAXTAGNAMESIZE)
-            {
-                break;
-            }
-
-            index++;
-            ch = text[index + 1];
-        }
-
-        if (ch == '>')
-        {
-            string name = text.Substring(start, index - start + 1);
-            if (TryGetBestMatch(name, TagStyle.NoParams, out RichTextTag? tag))
-            {
-                if (context.ShouldParse || tag is CloseNoparse)
-                {
-                    tag!.HandleTag(context, string.Empty);
-                    index++;
-                    return;
-                }
-            }
-        }
-        else if (context.ShouldParse)
-        {
-            RichTextTag? tag = ch switch
-            {
-                ' ' => GetBestMatch(text.Substring(start, index - start + 1), TagStyle.Attributes),
-                '=' => GetBestMatch(text.Substring(start, index - start + 1), TagStyle.ValueParam),
-                _ => null
-            };
-
-            if (tag != null)
-            {
-                index += 2;
-                int delimiter = index;
-
-                while ((index + 2) < length)
-                {
-                    if (ch == '>' || (index - start) > 127)
-                    {
-                        break;
-                    }
-
-                    index++;
-                    ch = text[index + 1];
-                }
-
-                if (((index - start) < 127) && (index + 2) < length)
-                {
-                    string parameters = text.Substring(delimiter, index - delimiter + 1);
-                    bool wasSuccessful = tag.HandleTag(context, parameters);
-
-                    if (wasSuccessful)
-                    {
-                        index++;
-                        return;
-                    }
-                }
-
-                index -= 2;
-            }
-        }
-
-        context.ResultBuilder.Append('<');
-        AddCharacter(context, '<');
-        AvoidMatch(context);
-        for (int i = start; i < (index + 1); i++)
-        {
-            char current = text[i];
-            context.ResultBuilder.Append(current);
-            AddCharacter(context, current);
-        }
-    }
-
-    private static void FailBuffer(ParserContext context, string buffer)
-    {
-        foreach (char addChar in buffer)
-        {
-            AddCharacter(context, addChar);
-            context.ResultBuilder.Append(addChar);
-        }
-    }
-
+    /// <param name="biggestChar">The size of the biggest char within the line.</param>
+    /// <returns>An offset that should be added to the parser.</returns>
     private static float CalculateSizeOffset(float biggestChar) => (((biggestChar / Constants.DEFAULTSIZE * 0.2f) + 0.8f) * Constants.DEFAULTHEIGHT) - Constants.DEFAULTHEIGHT;
 
     private static bool IsValidTagChar(char ch) => (ch > '\u0060' && ch < '\u007B') || ch == '-' || ch == '/';
@@ -600,34 +431,32 @@ public class Parser
     /// Avoids the client TMP matching a tag.
     /// </summary>
     /// <param name="context">The context of the parser.</param>
-    private static void AvoidMatch(ParserContext context)
-    {
-        if (!context.IsMonospace && context.CurrentCSpace == 0)
-        {
-            context.ResultBuilder.Append('​'); // zero width space
-        }
-        else if (context.IsBold)
-        {
-            context.ResultBuilder.Append("<b>");
-        }
-        else
-        {
-            context.ResultBuilder.Append("</b>");
-        }
-    }
+    private static void AvoidMatch(ParserContext context) => context.ResultBuilder.Append("</a>");
 
+    /// <summary>
+    /// Tries to get a <see cref="RichTextTag"/> for the given name and <see cref="TagStyle"/>.
+    /// </summary>
+    /// <param name="name">The name of the tag.</param>
+    /// <param name="style">The style of the tag.</param>
+    /// <param name="tag">The returned tag, if it exists.</param>
+    /// <returns>A value indicating whether or not a tag was found.</returns>
     private bool TryGetBestMatch(string name, TagStyle style, out RichTextTag? tag)
     {
-        tag = null;
-
-        RichTextTag? chosenTag = Tags[name].FirstOrDefault(x => x.TagStyle == style);
-        if (chosenTag != null)
+        tag = Tags[name].FirstOrDefault(x => x.TagStyle == style);
+        if (tag == null)
         {
-            tag = chosenTag;
-            return true;
+            foreach (Parser parser in TagBackups)
+            {
+                tag = Tags[name].FirstOrDefault(x => x.TagStyle == style);
+
+                if (tag != null)
+                {
+                    break;
+                }
+            }
         }
 
-        return false;
+        return tag != null;
     }
 
     private RichTextTag? GetBestMatch(string name, TagStyle style)

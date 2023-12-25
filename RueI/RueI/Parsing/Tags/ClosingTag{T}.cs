@@ -5,7 +5,7 @@
 /// </summary>
 /// <typeparam name="T">The type of the closing tag.</typeparam>
 public abstract class ClosingTag<T> : NoParamsTag
-    where T : NoParamsTag, new()
+    where T : ClosingTag<T>, new()
 {
     /// <summary>
     /// Gets the only name of this <see cref="ClosingTag{T}"/>.

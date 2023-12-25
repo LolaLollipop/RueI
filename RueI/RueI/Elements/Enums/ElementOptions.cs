@@ -17,6 +17,11 @@ public enum ElementOptions
     PreserveSpacing = 1 << 1,
 
     /// <summary>
+    /// Indicates whether or not to automatically use functional positioning for the element.
+    /// </summary>
+    UseFunctionalPosition = 1 << 2,
+
+    /// <summary>
     /// Gets the default element settings.
     /// </summary>
     Default = NoparseIgnoresEscape,

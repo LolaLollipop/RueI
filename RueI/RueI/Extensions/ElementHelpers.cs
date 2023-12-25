@@ -33,6 +33,16 @@ public static class ElementHelpers
     /// Gets the functional (un-scaled) position of an element.
     /// </summary>
     /// <param name="element">The element to get the position for.</param>
-    /// <returns>The un-scaled position..</returns>
-    public static float GetFunctionalPosition(this Element element) => Ruetility.ScaledPositionToFunctional(element.Position);
+    /// <returns>The un-scaled position.</returns>
+    public static float GetFunctionalPosition(this Element element)
+    {
+        if (element.Options.HasFlagFast(Elements.Enums.ElementOptions.UseFunctionalPosition))
+        {
+            return element.Position;
+        }
+        else
+        {
+            return Ruetility.ScaledPositionToFunctional(element.Position);
+        }
+    }
 }

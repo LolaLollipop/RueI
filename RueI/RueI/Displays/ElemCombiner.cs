@@ -1,7 +1,9 @@
 ﻿namespace RueI.Displays;
 
 using System.Text;
+
 using NorthwoodLib.Pools;
+
 using RueI.Extensions;
 using RueI.Elements;
 using RueI.Parsing.Records;
@@ -37,7 +39,7 @@ public static class ElemCombiner
         {
             Element curElement = elements[i];
 
-            ParsedData parsedData = curElement.ParsedData;
+            ParsedData parsedData = curElement.GetParsedData();
             float funcPos = curElement.GetFunctionalPosition();
             if (curElement.Options.HasFlagFast(Elements.Enums.ElementOptions.PreserveSpacing))
             {

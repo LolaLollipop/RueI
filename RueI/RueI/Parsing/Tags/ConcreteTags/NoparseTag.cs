@@ -14,7 +14,7 @@ public class NoparseTag : NoParamsTag
     {
         context.ShouldParse = true;
 
-        context.AddEndingTag<CloseNoparse>();
+        context.AddEndingTag<CloseNoparseTag>();
         context.ResultBuilder.Append("<noparse>");
 
         return true;

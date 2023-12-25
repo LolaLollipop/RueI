@@ -71,4 +71,18 @@ public record struct MeasurementInfo(float Value, MeasurementUnit Style)
             return false;
         }
     }
+
+    /// <summary>
+    /// Gets a string representation of this <see cref="MeasurementInfo"/>.
+    /// </summary>
+    /// <returns>A new value.</returns>
+    public override readonly string ToString()
+    {
+        return Value.ToString() + Style switch
+        {
+            MeasurementUnit.Ems => "e",
+            MeasurementUnit.Percentage => "%",
+            _ => string.Empty,
+        };
+    }
 }

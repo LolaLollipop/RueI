@@ -1,7 +1,7 @@
 ﻿namespace RueI;
 
 using System.Reflection;
-using static UnityAlternative;
+using System.Runtime.CompilerServices;
 
 /*********\
 *  /\_/\  *
@@ -9,7 +9,7 @@ using static UnityAlternative;
 *  > ^ <  *
 \*********/
 
-using System.Runtime.CompilerServices;
+using static UnityAlternative;
 
 /// <summary>
 /// Represents the main class for RueI.

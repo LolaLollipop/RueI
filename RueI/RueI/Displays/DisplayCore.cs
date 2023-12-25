@@ -16,6 +16,7 @@ public class DisplayCore
     static DisplayCore()
     {
         RoundRestarting.RoundRestart.OnRestartTriggered += OnRestart;
+        ReferenceHub.OnPlayerRemoved += OnPlayerRemoved;
     }
 
     /// <summary>
@@ -195,6 +196,7 @@ public class DisplayCore
     {
         string text = ElemCombiner.Combine(GetAllElements());
         UnityAlternative.Provider.ShowHint(Hub, text);
+        Events.Events.OnDisplayUpdated(new(this));
     }
 
     /// <summary>
@@ -215,6 +217,11 @@ public class DisplayCore
     private static void OnRestart()
     {
         DisplayCores.Clear();
+    }
+
+    private static void OnPlayerRemoved(ReferenceHub hub)
+    {
+        DisplayCores.Remove(hub);
     }
 
     private IEnumerable<Element> GetAllElements() => displays.SelectMany(x => x.GetAllElements())

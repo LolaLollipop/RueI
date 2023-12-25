@@ -16,7 +16,6 @@ public abstract class Element
     public Element(float position)
     {
         Position = position;
-        ParsedData = new(string.Empty, 0);
     }
 
     /// <summary>
@@ -46,8 +45,9 @@ public abstract class Element
     public ElementOptions Options { get; set; } = ElementOptions.Default;
 
     /// <summary>
-    /// Gets or sets the data used for parsing.
+    /// Gets the data used for parsing.
     /// </summary>
     /// <remarks>This contains information used to ensure that multiple elements can be displayed at once. To obtain this, you should almost always use <see cref="Parser.Parse"/>.</remarks>
-    protected internal virtual ParsedData ParsedData { get; protected set; }
+    /// <returns>The <see cref="ParsedData"/> for the element.</returns>
+    protected internal abstract ParsedData GetParsedData();
 }

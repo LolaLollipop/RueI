@@ -44,9 +44,14 @@ public class TextInfo
     public float Scale { get; set; } = 1;
 
     /// <summary>
-    /// Gets or sets a value indicating whether or not the parser is in subscript/superscript.
+    /// Gets or sets a value indicating whether or not the parser is in subscript.
     /// </summary>
-    public bool IsSuperOrSubScript { get; set; } = false;
+    public bool IsSubscript { get; set; } = false;
+
+    /// <summary>
+    /// Gets or sets a value indicating whether or not the parser is in superscript.
+    /// </summary>
+    public bool IsSuperscript { get; set; } = false;
 
     /// <summary>
     /// Gets or sets the current case of the parser.
