@@ -91,7 +91,7 @@
 
   <h1 id="RueI_Events_DisplayUpdatedEventArgs" data-uid="RueI.Events.DisplayUpdatedEventArgs" class="text-break">
     Class DisplayUpdatedEventArgs
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Events/EventArgs/RateLimitFinishedEventArgs.cs/#L8"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Events/EventArgs/DisplayUpdatedEventArgs.cs/#L9"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -99,7 +99,7 @@
   <dl><dt>Assembly</dt><dd>RueI.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Contains all information after a player's <a class="xref" href="RueI.Events.DisplayUpdatedEventArgs.html#RueI_Events_DisplayUpdatedEventArgs_DisplayCore">DisplayCore</a> is updated.</p>
+  <div class="markdown summary"><p>Contains all information after a player's <a class="xref" href="RueI.Displays.DisplayCore.html">DisplayCore</a> is updated.</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -168,9 +168,9 @@
 
   <a id="RueI_Events_DisplayUpdatedEventArgs__ctor_" data-uid="RueI.Events.DisplayUpdatedEventArgs.#ctor*"></a>
 
-  <h3 id="RueI_Events_DisplayUpdatedEventArgs__ctor_ReferenceHub_RueI_Displays_DisplayCore_" data-uid="RueI.Events.DisplayUpdatedEventArgs.#ctor(ReferenceHub,RueI.Displays.DisplayCore)">
-  DisplayUpdatedEventArgs(ReferenceHub, DisplayCore)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Events/EventArgs/RateLimitFinishedEventArgs.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  <h3 id="RueI_Events_DisplayUpdatedEventArgs__ctor_RueI_Displays_DisplayCore_" data-uid="RueI.Events.DisplayUpdatedEventArgs.#ctor(RueI.Displays.DisplayCore)">
+  DisplayUpdatedEventArgs(DisplayCore)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Events/EventArgs/DisplayUpdatedEventArgs.cs/#L15"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="RueI.Events.DisplayUpdatedEventArgs.html">DisplayUpdatedEventArgs</a> class.</p>
@@ -178,16 +178,13 @@
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public DisplayUpdatedEventArgs(ReferenceHub referenceHub, DisplayCore displayCord)</code></pre>
+    <pre><code class="lang-csharp hljs">public DisplayUpdatedEventArgs(DisplayCore core)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>referenceHub</code> <span class="xref">ReferenceHub</span></dt>
-    <dd><p>The hub of the player.</p>
-</dd>
-    <dt><code>displayCord</code> <a class="xref" href="RueI.Displays.DisplayCore.html">DisplayCore</a></dt>
-    <dd><p>The <a class="xref" href="RueI.Events.DisplayUpdatedEventArgs.html#RueI_Events_DisplayUpdatedEventArgs_DisplayCore">DisplayCore</a> to use..</p>
+    <dt><code>core</code> <a class="xref" href="RueI.Displays.DisplayCore.html">DisplayCore</a></dt>
+    <dd><p>The <a class="xref" href="RueI.Displays.DisplayCore.html">DisplayCore</a> that has been updated.</p>
 </dd>
   </dl>
 
@@ -210,10 +207,10 @@
 
   <h3 id="RueI_Events_DisplayUpdatedEventArgs_DisplayCore" data-uid="RueI.Events.DisplayUpdatedEventArgs.DisplayCore">
   DisplayCore
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Events/EventArgs/RateLimitFinishedEventArgs.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Events/EventArgs/DisplayUpdatedEventArgs.cs/#L23"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Gets the DisplayCore of the player.</p>
+  <div class="markdown level1 summary"><p>Gets the updated <a class="xref" href="RueI.Displays.DisplayCore.html">DisplayCore</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -238,19 +235,19 @@
 
 
 
-  <a id="RueI_Events_DisplayUpdatedEventArgs_ReferenceHub_" data-uid="RueI.Events.DisplayUpdatedEventArgs.ReferenceHub*"></a>
+  <a id="RueI_Events_DisplayUpdatedEventArgs_Hub_" data-uid="RueI.Events.DisplayUpdatedEventArgs.Hub*"></a>
 
-  <h3 id="RueI_Events_DisplayUpdatedEventArgs_ReferenceHub" data-uid="RueI.Events.DisplayUpdatedEventArgs.ReferenceHub">
-  ReferenceHub
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Events/EventArgs/RateLimitFinishedEventArgs.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  <h3 id="RueI_Events_DisplayUpdatedEventArgs_Hub" data-uid="RueI.Events.DisplayUpdatedEventArgs.Hub">
+  Hub
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Events/EventArgs/DisplayUpdatedEventArgs.cs/#L28"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Gets the ReferenceHub of the player.</p>
+  <div class="markdown level1 summary"><p>Gets the ReferenceHub of the updated core.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ReferenceHub ReferenceHub { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public ReferenceHub Hub { get; }</code></pre>
   </div>
 
 
@@ -270,11 +267,43 @@
 
 
 
+  <a id="RueI_Events_DisplayUpdatedEventArgs_Scheduler_" data-uid="RueI.Events.DisplayUpdatedEventArgs.Scheduler*"></a>
+
+  <h3 id="RueI_Events_DisplayUpdatedEventArgs_Scheduler" data-uid="RueI.Events.DisplayUpdatedEventArgs.Scheduler">
+  Scheduler
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Events/EventArgs/DisplayUpdatedEventArgs.cs/#L33"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the <a class="xref" href="RueI.Displays.Scheduling.Scheduler.html">Scheduler</a> of the updated core.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Scheduler Scheduler { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="RueI.Displays.Scheduling.Scheduler.html">Scheduler</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Events/EventArgs/RateLimitFinishedEventArgs.cs/#L8" class="edit-link">Edit this page</a>
+          <a href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Events/EventArgs/DisplayUpdatedEventArgs.cs/#L9" class="edit-link">Edit this page</a>
         </div>
 
 

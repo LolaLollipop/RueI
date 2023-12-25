@@ -159,7 +159,7 @@
 
   <h3 id="RueI_Extensions_IEnumerableExtensions_GetMultiple__2_System_Collections_Generic_IDictionary___0_System_Collections_Generic_IEnumerable___1_____0_" data-uid="RueI.Extensions.IEnumerableExtensions.GetMultiple``2(System.Collections.Generic.IDictionary{``0,System.Collections.Generic.IEnumerable{``1}},``0)">
   GetMultiple&lt;TKey, TValue&gt;(IDictionary&lt;TKey, IEnumerable&lt;TValue&gt;&gt;, TKey)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Extensions/IEnumerableExtensions.cs/#L68"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Extensions/IEnumerableExtensions.cs/#L80"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable&lt;T&gt;</a> of values from a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary&lt;TKey, TValue&gt;</a> using the key.</p>
@@ -194,6 +194,51 @@
 </dd>
     <dt><code>TValue</code></dt>
     <dd><p>The type of the dictionary's value.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="RueI_Extensions_IEnumerableExtensions_Only_" data-uid="RueI.Extensions.IEnumerableExtensions.Only*"></a>
+
+  <h3 id="RueI_Extensions_IEnumerableExtensions_Only__1_System_Collections_Generic_IEnumerable___0__" data-uid="RueI.Extensions.IEnumerableExtensions.Only``1(System.Collections.Generic.IEnumerable{``0})">
+  Only&lt;T&gt;(IEnumerable&lt;T&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Extensions/IEnumerableExtensions.cs/#L66"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Determines if a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable&lt;T&gt;</a> has only one element.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool Only&lt;T&gt;(this IEnumerable&lt;T&gt; enumerable)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>enumerable</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;T&gt;</dt>
+    <dd><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable&lt;T&gt;</a> to check.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true if there is only one element in the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable&lt;T&gt;</a>.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd><p>The inner type of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable&lt;T&gt;</a>.</p>
 </dd>
   </dl>
 
