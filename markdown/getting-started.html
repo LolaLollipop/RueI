@@ -87,12 +87,13 @@
 <h1 id="getting-started">Getting Started</h1>
 
 <p>this guide assumes that you have a basic level of knowledge with c#.</p>
-<p>there are two main ways of using RueI: through a normal dependency or through reflection.</p>
+<p>there are two main ways of using RueI: as a 'hard' dependency, as a 'soft' dependency, or through reflection.</p>
 <ul>
-<li>with a normal dependency, you include RueI as a dependency in your project. the advantages of this are that it gives you type safety, it is significantly faster, and it is just overall much easier to use. however, if someone does <em>not</em> have RueI installed, then your plugin will stop working. this makes it ideal for plugins that rely on RueI heavily, or if you're creating a plugin for your own use.</li>
-<li>with reflection, you can dynamically add support for RueI, meaning that your plugin works even if someone doesn't have RueI installed.</li>
+<li>with a hard dependency, you directly referencr RueI and use it in place of hints. the advantages of this are that it gives you type safety, it is significantly faster, and it is just overall much easier to use. however, if someone does <em>not</em> have RueI installed, then your plugin will stop working. this makes it ideal for plugins that rely on RueI heavily, or if you're creating a plugin for your own use.</li>
+<li>a soft dependency still means that you have to reference RueI, but you also provide alternatives using hints and switch to those alternatives if RueI isn't detected, ideally using a dependency injection model.</li>
+<li>using reflection, you can dynamically add support for RueI, meaning that you don't have it reference it at all. reflection, however, is slow and does not provide any of the compile-time guarantees of the first two options, making it much harder to work with.
+this guide will cover how to use RueI using the first option, as a normal hard dependency.</li>
 </ul>
-<p>this guide will cover how to use RueI using the first option, as a normal dependency.</p>
 <h3 id="installing-ruei">installing RueI</h3>
 
 </article>
