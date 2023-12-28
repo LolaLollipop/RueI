@@ -23,9 +23,9 @@ public class DisplayUpdatedEventArgs : EventArgs
     public DisplayCore DisplayCore { get; }
 
     /// <summary>
-    /// Gets the <see cref="ReferenceHub"/> of the updated core.
+    /// Gets the <see cref="global::ReferenceHub"/> of the updated core.
     /// </summary>
-    public ReferenceHub Hub => DisplayCore.Hub;
+    public ReferenceHub ReferenceHub => DisplayCore.Hub;
 
     /// <summary>
     /// Gets the <see cref="Displays.Scheduling.Scheduler"/> of the updated core.

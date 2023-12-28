@@ -20,7 +20,7 @@ public class MarginTag : MeasurementTag
         float convertedValue = style switch
         {
             MeasurementUnit.Ems => value * Constants.EMSTOPIXELS,
-            MeasurementUnit.Percentage => info.Value / 100 * Constants.DISPLAYAREAWIDTH,
+            MeasurementUnit.Percentage => info.value / 100 * Constants.DISPLAYAREAWIDTH,
             _ => value
         };
 
@@ -59,7 +59,7 @@ public class MarginLeft : MeasurementTag
         float convertedValue = style switch
         {
             MeasurementUnit.Ems => value * Constants.EMSTOPIXELS,
-            MeasurementUnit.Percentage => info.Value / 100 * Constants.DISPLAYAREAWIDTH,
+            MeasurementUnit.Percentage => info.value / 100 * Constants.DISPLAYAREAWIDTH,
             _ => value
         };
 
@@ -97,7 +97,7 @@ public class MarginRight : MeasurementTag
         float convertedValue = style switch
         {
             MeasurementUnit.Ems => value * Constants.EMSTOPIXELS,
-            MeasurementUnit.Percentage => info.Value / 100 * Constants.DISPLAYAREAWIDTH,
+            MeasurementUnit.Percentage => info.value / 100 * Constants.DISPLAYAREAWIDTH,
             _ => value
         };
 

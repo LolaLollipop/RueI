@@ -12,7 +12,7 @@ public class Intersection<T, TOther>
     private Intersection(T value)
     {
         Class = value;
-        Interface = (value as TOther)!;
+        Interface = (value as TOther) !;
     }
 
     /// <summary>
@@ -25,8 +25,16 @@ public class Intersection<T, TOther>
     /// </summary>
     public TOther Interface { get; }
 
+    /// <summary>
+    /// Implicitly casts an intersection to <typeparamref name="T"/>.
+    /// </summary>
+    /// <param name="intersection">The intersection to cast.</param>
     public static implicit operator T(Intersection<T, TOther> intersection) => intersection.Class;
 
+    /// <summary>
+    /// Implicitly casts an intersection to <typeparamref name="TOther"/>.
+    /// </summary>
+    /// <param name="intersection">The intersection to cast.</param>
     public static implicit operator TOther(Intersection<T, TOther> intersection) => intersection.Interface;
 
     /// <summary>

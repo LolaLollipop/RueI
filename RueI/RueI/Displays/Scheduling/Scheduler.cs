@@ -1,7 +1,5 @@
 ﻿namespace RueI.Displays.Scheduling;
 
-using System.Diagnostics;
-
 using NorthwoodLib.Pools;
 using Utils.NonAllocLINQ;
 
@@ -14,42 +12,6 @@ using RueI.Extensions;
 /// </summary>
 public class Scheduler
 {
-    public class RateLimiter
-    {
-        private Stopwatch consumer = new();
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RateLimiter"/> class.
-        /// </summary>
-        /// <param name="tokenLimit">The maximum number of tokens and the default number of tokens.</param>
-        /// <param name="regenRate">How quickly tokens are regenerated after they have been consumed.</param>
-        public RateLimiter(int tokenLimit, TimeSpan regenRate)
-        {
-            Tokens = tokenLimit;
-            RegenRate = regenRate;
-        }
-
-        public TimeSpan RegenRate { get; set; }
-
-        public int Tokens { get; private set; }
-
-        public bool HasTokens => Tokens > 0;
-
-        public void Consume()
-        {
-            if (Tokens > 0)
-            {
-                Tokens--;
-                consumer.Stop();
-            }
-        }
-
-        public void CalculateNewTokens()
-        {
-            Tokens = (int)((consumer.ElapsedMilliseconds / RegenRate.Ticks) - 0.5);
-            consumer.Stop();
-        }
-    }
 
     private static readonly TimeSpan MinimumBatch = TimeSpan.FromMilliseconds(625);
 
@@ -108,6 +70,17 @@ public class Scheduler
     public void Schedule(ScheduledJob job)
     {
         jobs.Add(job);
+        UpdateBatches();
+    }
+
+    /// <summary>
+    /// Schedules an uncancellable update job.
+    /// </summary>
+    /// <param name="time">How long into the future to update at.</param>
+    /// <param name="priority">The priority of the job, giving it additional weight when calculating.</param>
+    public void ScheduleUpdate(TimeSpan time, int priority)
+    {
+        jobs.Add(new(Now + time, () => { }, priority));
         UpdateBatches();
     }
 

@@ -23,7 +23,7 @@ public class ScreenDisplay : DisplayBase
     /// Initializes a new instance of the <see cref="ScreenDisplay"/> class.
     /// </summary>
     /// <param name="coordinator">The <see cref="DisplayCore"/> to assign the display to.</param>
-    /// <param name="screen">The default <see cref="Screen"/> to use for this <see cref="ScreenDisplay"/>.</param>
+    /// <param name="screen">The default <see cref="Screen"/> to use for this <see cref="ScreenDisplay"/>.</param>w
     public ScreenDisplay(DisplayCore coordinator, Screen screen)
         : base(coordinator)
     {

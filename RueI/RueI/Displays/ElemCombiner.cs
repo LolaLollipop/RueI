@@ -43,7 +43,7 @@ public static class ElemCombiner
             float funcPos = curElement.GetFunctionalPosition();
             if (curElement.Options.HasFlagFast(Elements.Enums.ElementOptions.PreserveSpacing))
             {
-                funcPos -= parsedData.Offset;
+                funcPos -= parsedData.offset;
             }
 
             if (i != 0)
@@ -57,11 +57,11 @@ public static class ElemCombiner
                 totalOffset += funcPos;
             }
 
-            sb.Append(parsedData.Content);
+            sb.Append(parsedData.content);
 
-            totalOffset += parsedData.Offset;
+            totalOffset += parsedData.offset;
             lastPosition = funcPos;
-            lastOffset = parsedData.Offset;
+            lastOffset = parsedData.offset;
         }
 
         ListPool<Element>.Shared.Return(elements);

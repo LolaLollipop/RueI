@@ -58,7 +58,7 @@ public class AutoElement
     /// Initializes a new instance of the <see cref="AutoElement"/> class.
     /// </summary>
     /// <param name="roles">The <see cref="Roles"/> to use for the <see cref="AutoElement"/>.</param>
-    /// <param name="element">The <typeparamref name="T"/> to automatically give.</param>
+    /// <param name="element">The element to automatically give.</param>
     private AutoElement(Roles roles, Element element)
     {
         this.element = element;

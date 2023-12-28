@@ -9,7 +9,7 @@ public class TestGeneral
     [TestMethod]
     public void TestMain()
     {
-        RueI.Main.EnsureInit();
+        RueI.RueIMain.EnsureInit();
     }
 
     [TestMethod]

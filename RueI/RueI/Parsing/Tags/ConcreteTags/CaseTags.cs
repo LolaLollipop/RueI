@@ -74,7 +74,7 @@ public class CloseAllcapsTag : NoParamsTag
     {
         if (context.CurrentCase == CaseStyle.Uppercase)
         {
-            SharedTag<SmallcapsTag>.Singleton.HandleTag(context); // equivalent
+            SharedTag<SmallcapsTag>.Singleton.HandleTag(context);
         }
 
         return true;

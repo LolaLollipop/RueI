@@ -92,7 +92,7 @@ public class UpdateTask : TaskBase
     [MemberNotNullWhen(returnValue: true, nameof(ElapsedTime))]
     [MemberNotNullWhen(returnValue: true, nameof(Action))]
     [MemberNotNullWhen(returnValue: true, nameof(Length))]
-    public override bool IsRunning => isPaused || (operation?.IsRunning ?? false);
+    public override bool IsRunning => isPaused || (Operation?.IsRunning ?? false);
 
     /// <summary>
     /// Starts the task.
@@ -105,7 +105,7 @@ public class UpdateTask : TaskBase
         Action = action;
         Length = length;
         stopwatch.Start();
-        operation = Provider.PerformAsync(length, () =>
+        Operation = Provider.PerformAsync(length, () =>
         {
             Action();
             ResetState();
@@ -158,7 +158,7 @@ public class UpdateTask : TaskBase
 
             if (newTime > TimeSpan.Zero)
             {
-                operation.Cancel();
+                Operation.Cancel();
                 Start(newTime, Action);
             }
             else
@@ -178,7 +178,7 @@ public class UpdateTask : TaskBase
         {
             storedTimeLeft = TimeLeft;
             isPaused = true;
-            operation?.Cancel();
+            Operation?.Cancel();
             stopwatch.Stop();
         }
     }
@@ -190,7 +190,7 @@ public class UpdateTask : TaskBase
     {
         if (IsRunning && isPaused && storedTimeLeft != null)
         {
-            operation = Provider.PerformAsync(storedTimeLeft.Value, () =>
+            Operation = Provider.PerformAsync(storedTimeLeft.Value, () =>
             {
                 Action();
                 ResetState();
@@ -215,8 +215,6 @@ public class UpdateTask : TaskBase
 /// </summary>
 public abstract class TaskBase : ITaskable
 {
-    protected IAsyncOperation? operation;
-
     /// <summary>
     /// Initializes a new instance of the <see cref="TaskBase"/> class.
     /// </summary>
@@ -244,8 +242,13 @@ public abstract class TaskBase : ITaskable
     /// <summary>
     /// Gets a value indicating whether or not this task is currently running.
     /// </summary>
-    [MemberNotNullWhen(returnValue: true, nameof(operation))]
+    [MemberNotNullWhen(returnValue: true, nameof(Operation))]
     public abstract bool IsRunning { get; }
+
+    /// <summary>
+    /// Gets or sets the <see cref="IAsyncOperation"/> for this task, if it exists.
+    /// </summary>
+    protected IAsyncOperation? Operation { get; set; }
 
     /// <inheritdoc/>
     public void CleanUp() => End();
@@ -255,7 +258,7 @@ public abstract class TaskBase : ITaskable
     /// </summary>
     public virtual void End()
     {
-        operation?.Cancel();
+        Operation?.Cancel();
         ResetState();
     }
 
@@ -265,10 +268,13 @@ public abstract class TaskBase : ITaskable
     /// <param name="action">The method to perform.</param>
     public void DescendOrPerform(Action<TaskBase> action) => action(this);
 
+    /// <summary>
+    /// Resets the state for this <see cref="TaskBase"/>.
+    /// </summary>
     protected virtual void ResetState()
     {
-        operation?.Dispose();
-        operation = null;
+        Operation?.Dispose();
+        Operation = null;
     }
 }
 
@@ -282,6 +288,9 @@ public class TaskPool : Collection<ITaskable>, ITaskable
     /// </summary>
     ~TaskPool() => CleanUp();
 
+    /// <summary>
+    /// Cleans up all of the <see cref="ITaskable"/>s in this <see cref="TaskPool"/>.
+    /// </summary>
     public void CleanUp()
     {
         foreach (ITaskable killable in this)
@@ -290,6 +299,10 @@ public class TaskPool : Collection<ITaskable>, ITaskable
         }
     }
 
+    /// <summary>
+    /// Recursively performs an action on every <see cref="ITaskable"/> within this <see cref="TaskPool"/>.
+    /// </summary>
+    /// <param name="action">The action to perform.</param>
     public void DescendOrPerform(Action<TaskBase> action)
     {
         foreach (ITaskable taskable in this)
@@ -304,7 +317,7 @@ public class TaskPool : Collection<ITaskable>, ITaskable
 /// </summary>
 public class Cooldown
 {
-    private Stopwatch stopwatch = new();
+    private readonly Stopwatch stopwatch = new();
 
     /// <summary>
     /// Gets or sets the current length of the cooldown.

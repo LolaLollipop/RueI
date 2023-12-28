@@ -68,6 +68,9 @@ public class Parser
         }
         else
         {
+            context.CurrentLineWidth += context.SpaceBuffer;
+            context.SpaceBuffer = 0;
+
             if (context.CurrentLineWidth + context.WidthSinceSpace > context.FunctionalWidth)
             {
                 CreateLineBreak(context);
@@ -180,7 +183,7 @@ public class Parser
                            : new string[] { element })
                         .SelectMany(element => element);
 
-        Dictionary<string, string> attributePairs = new();
+        Dictionary<string, string> attributePairs = new(3);
         attributes = attributePairs;
 
         foreach (string possiblePair in result)

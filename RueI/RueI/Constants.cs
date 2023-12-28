@@ -38,7 +38,7 @@ public static class Constants
     public const float DISPLAYAREAWIDTH = 1200;
 
     /// <summary>
-    /// Gets an approximation of how many pixels are an in an em.
+    /// Gets how many pixels are in an em.
     /// </summary>
     public const float EMSTOPIXELS = 34.7f;
 
@@ -60,7 +60,7 @@ public static class Constants
     /// <summary>
     /// Gets the ratelimit used for displaying hints.
     /// </summary>
-    public static TimeSpan HintRateLimit { get; } = TimeSpan.FromMilliseconds(525);
+    public static readonly TimeSpan HintRateLimit = TimeSpan.FromMilliseconds(525);
 
     /// <summary>
     /// Gets a list of allowed sizes of color param tags, ignoring the hashtag.

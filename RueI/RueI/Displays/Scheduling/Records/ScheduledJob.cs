@@ -17,8 +17,8 @@ public class ScheduledJob : IComparable<ScheduledJob>
     internal ScheduledJob(DateTimeOffset finishAt, Action action, int priority, JobToken? token = null)
     {
         FinishAt = finishAt;
-        Action = action ?? throw new ArgumentNullException(nameof(action));
-        Priority = priority.Max(1);
+        Action = action;
+        Priority = priority.Max(1); // avoid division by 0 errors
         Token = token;
     }
 
@@ -47,5 +47,5 @@ public class ScheduledJob : IComparable<ScheduledJob>
     /// </summary>
     /// <param name="other">The other <see cref="ScheduledJob"/>.</param>
     /// <returns>An int indicating whether or not the <see cref="DateTimeOffset"/> of this job comes before or after the other.</returns>
-    public int CompareTo(ScheduledJob other) => this.FinishAt.CompareTo(other.FinishAt);
+    public int CompareTo(ScheduledJob other) => FinishAt.CompareTo(other.FinishAt);
 }

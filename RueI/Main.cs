@@ -14,35 +14,31 @@ using static UnityAlternative;
 /// <summary>
 /// Represents the main class for RueI.
 /// </summary>
-public static class Main
+public static class RueIMain
 {
+    /// <summary>
+    /// Gets the <see cref="HarmonyLib.Harmony"/> id for RueI.
+    /// </summary>
+    public const string HARMONYID = "RueI_Hint_Dependency";
+
     /// <summary>
     /// Gets the current version of RueI.
     /// </summary>
-    public static readonly Version Version = Assembly.GetAssembly(typeof(Main)).GetName().Version;
+    public static readonly Version Version = typeof(RueIMain).Assembly.GetName().Version;
 
     private static bool isInit = false;
 
-    static Main()
+    static RueIMain()
     {
         isInit = true;
-
-        RoundRestarting.RoundRestart.OnRestartTriggered += EventHandler.OnRestart;
-        PlayerRoles.PlayerRoleManager.OnServerRoleSet += EventHandler.OnServerRoleSet;
 
         if (!StartupArgs.Args.Contains("-noRMsg", StringComparison.OrdinalIgnoreCase)) // TODO: make this work
         {
             Provider.Log($"[Info] [RueI] Thank you for using RueI! Running v{Version.ToString(3)}");
         }
 
-        try
-        {
-            var harmony = new HarmonyLib.Harmony("com.example.patch");
-        }
-        catch(Exception)
-        {
-            Provider.Log("[Warn] [RueI] Could not load Harmony patches.");
-        }
+        HarmonyLib.Harmony harmony = new(HARMONYID);
+        Provider.PatchAll(harmony);
 
         _ = CharacterLengths.Lengths.Count; // force static initializer
     }
@@ -54,7 +50,7 @@ public static class Main
     {
         if (!isInit)
         {
-            RuntimeHelpers.RunClassConstructor(typeof(Main).TypeHandle);
+            RuntimeHelpers.RunClassConstructor(typeof(RueIMain).TypeHandle);
         }
     }
 }

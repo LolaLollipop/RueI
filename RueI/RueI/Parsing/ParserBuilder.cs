@@ -37,10 +37,17 @@ public sealed class ParserBuilder
 
         foreach (Type type in assembly.GetTypes())
         {
-            if (type.GetCustomAttributes(typeof(RichTextTagAttribute), true).Any() && type.IsSubclassOf(typeof(RichTextTag)))
+            if (type.GetCustomAttributes(typeof(RichTextTagAttribute), true).Any())
             {
-                MethodInfo generic = addTag.MakeGenericMethod(type);
-                generic.Invoke(this, Array.Empty<object>());
+                if (type.IsSubclassOf(typeof(RichTextTag)))
+                {
+                    MethodInfo generic = addTag.MakeGenericMethod(type);
+                    generic.Invoke(this, Array.Empty<object>());
+                }
+                else
+                {
+                    UnityAlternative.Provider.LogWarn($"[Warn] [RueI] Could not add {type.Name} as a RichTextTag because it did not implement the class. This is a developer issue.");
+                }
             }
         }
 

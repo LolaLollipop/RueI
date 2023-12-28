@@ -18,11 +18,11 @@ public class SizeTag : MeasurementTag
     public override bool HandleTag(ParserContext context, MeasurementInfo info)
     {
         context.SizeTags.Push(context.Size);
-        float value = info.Style switch
+        float value = info.style switch
         {
-            MeasurementUnit.Percentage => info.Value / 100 * Constants.DEFAULTSIZE,
-            MeasurementUnit.Ems => info.Value * Constants.EMSTOPIXELS,
-            _ => info.Value
+            MeasurementUnit.Percentage => info.value / 100 * Constants.DEFAULTSIZE,
+            MeasurementUnit.Ems => info.value * Constants.EMSTOPIXELS,
+            _ => info.value
         };
 
         context.Size = value;

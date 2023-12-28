@@ -66,6 +66,7 @@ public class DisplayCore
     /// </summary>
     /// <param name="hub">The hub to get the display for.</param>
     /// <returns>The DisplayCore.</returns>
+    /// <remarks>This method will never fail nor return null.</remarks>
     public static DisplayCore Get(ReferenceHub hub)
     {
         if (DisplayCores.TryGetValue(hub, out DisplayCore value))
@@ -165,28 +166,6 @@ public class DisplayCore
         where T : Element
     {
         referencedElements.Remove(reference);
-    }
-
-    /// <summary>
-    /// Sets the content of a <see cref="SetElement"/> <see cref="IElemReference{T}"/>, or creates it.
-    /// </summary>
-    /// <param name="reference">The <see cref="IElemReference{T}"/> to use.</param>
-    /// <param name="content">The new content of the <see cref="SetElement"/>.</param>
-    /// <param name="position">The position of the <see cref="SetElement"/> if it needs to be created.</param>
-    public void SetElementOrNew(IElemReference<SetElement> reference, string content, float position)
-    {
-        if (referencedElements.TryGetValue(reference, out Element value))
-        {
-            if (value is SetElement element)
-            {
-                element.Set(content);
-            }
-        }
-        else
-        {
-            SetElement element = new(position, content);
-            referencedElements.Add(reference, element);
-        }
     }
 
     /// <summary>

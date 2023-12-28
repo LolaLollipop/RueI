@@ -19,7 +19,7 @@ public abstract class MeasurementTag : RichTextTag
     /// <inheritdoc/>
     public sealed override bool HandleTag(ParserContext context, string content)
     {
-        if (MeasurementInfo.TryParse(content, out MeasurementInfo info) && (info.Style != MeasurementUnit.Percentage || AllowPercentages))
+        if (MeasurementInfo.TryParse(content, out MeasurementInfo info) && (info.style != MeasurementUnit.Percentage || AllowPercentages))
         {
             return HandleTag(context, info);
         }

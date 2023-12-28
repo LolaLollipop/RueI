@@ -129,6 +129,21 @@ public enum Roles
     Scp3114 = 1 << RoleTypeId.Scp3114,
 
     /// <summary>
+    /// Gets the Flamingo role id.
+    /// </summary>
+    Flamingo = 1 << RoleTypeId.Flamingo,
+
+    /// <summary>
+    /// Gets the Alpha Flamingo role id.
+    /// </summary>
+    AlphaFlamingo = 1 << RoleTypeId.AlphaFlamingo,
+
+    /// <summary>
+    /// Gets the Zombie Flamingo role id.
+    /// </summary>
+    ZombieFlamingo = 1 << RoleTypeId.ZombieFlamingo,
+
+    /// <summary>
     /// Gets all of the NTF role ids, including Facility Guards.
     /// </summary>
     NtfRoles = NtfPrivate | NtfSergeant | NtfSpecialist | NtfCaptain | FacilityGuard,
@@ -154,12 +169,17 @@ public enum Roles
     HumanRoles = MilitaryRoles | CivilianRoles,
 
     /// <summary>
-    /// Gets all of the SCP role ids, excluding SCP-049-2.
+    /// Gets all of the flamingo role ids.
+    /// </summary>
+    FlamingoSide = Flamingo | AlphaFlamingo,
+
+    /// <summary>
+    /// Gets all of the SCP role ids, excluding SCP-049-2 and Zombie Flamingos.
     /// </summary>
     ScpsNo0492 = Scp173 | Scp106 | Scp049 | Scp079 | Scp096 | Scp939 | Scp3114,
 
     /// <summary>
-    /// Gets all of the SCP role ids, including SCP-049-2.
+    /// Gets all of the SCP role ids, including SCP-049-2 and Zombie Flamingos.
     /// </summary>
-    Scps = ScpsNo0492 | Scp0492,
+    Scps = ScpsNo0492 | Scp0492 | ZombieFlamingo,
 }

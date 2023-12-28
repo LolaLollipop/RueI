@@ -5,8 +5,6 @@
 /// </summary>
 internal class BatchJob
 {
-    // TODO: make this not suck
-
     /// <summary>
     /// Initializes a new instance of the <see cref="BatchJob"/> class.
     /// </summary>
@@ -14,7 +12,7 @@ internal class BatchJob
     /// <param name="performAt">When the jobs should be performed.</param>
     public BatchJob(List<ScheduledJob> jobs, DateTimeOffset performAt)
     {
-        Jobs = jobs ?? throw new ArgumentNullException(nameof(jobs));
+        Jobs = jobs;
         PerformAt = performAt;
     }
 

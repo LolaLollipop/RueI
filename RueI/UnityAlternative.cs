@@ -1,9 +1,11 @@
 ﻿namespace RueI;
 
+using UnityEngine;
 using Hints;
 using MEC;
+
 using RueI.Extensions;
-using UnityEngine;
+using HarmonyLib;
 
 /// <summary>
 /// Defines the base class for a provider of methods that may or may not use Unity.
@@ -36,6 +38,18 @@ public abstract class UnityAlternative
     /// </summary>
     /// <param name="message">The message to log.</param>
     public abstract void Log(string message);
+
+    /// <summary>
+    /// Logs a warning message to the console.
+    /// </summary>
+    /// <param name="message">The warn message to log.</param>
+    public abstract void LogWarn(string message);
+
+    /// <summary>
+    /// Loads all patches.
+    /// </summary>
+    /// <param name="harmony">The <see cref="Harmony"/> instance to use.</param>
+    public abstract void PatchAll(Harmony harmony);
 
     /// <summary>
     /// Performs an async operation.
@@ -73,6 +87,12 @@ public class NonUnityProvider : UnityAlternative
 {
     /// <inheritdoc/>
     public override void Log(string message) => Console.WriteLine(message);
+
+    /// <inheritdoc/>
+    public override void LogWarn(string message) => Console.WriteLine($"WARN: {message}");
+
+    /// <inheritdoc/>
+    public override void PatchAll(Harmony harmony) => Console.WriteLine("Faux loading patches");
 
     /// <inheritdoc/>
     public override IAsyncOperation PerformAsync(TimeSpan span, Action action) => new TaskAsyncOperation(span, action);
@@ -127,6 +147,12 @@ public class UnityProvider : UnityAlternative
 {
     /// <inheritdoc/>
     public override void Log(string message) => ServerConsole.AddLog(message, ConsoleColor.Yellow);
+
+    /// <inheritdoc/>
+    public override void LogWarn(string message) => ServerConsole.AddLog(message, ConsoleColor.Red);
+
+    /// <inheritdoc/>
+    public override void PatchAll(Harmony harmony) => harmony.PatchAll(typeof(RueIMain).Assembly);
 
     /// <inheritdoc/>
     public override IAsyncOperation PerformAsync(TimeSpan span, Action action) => new MECAsyncOperation(span, action);

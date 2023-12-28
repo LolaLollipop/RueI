@@ -69,8 +69,8 @@ public class TestTags
     public void CreateMeasurementInfo_ShouldSucceed()
     {
         Assert.IsTrue(MeasurementInfo.TryParse("50.5px", out MeasurementInfo info));
-        Assert.AreEqual(50.5, info.Value, 0.001);
-        Assert.AreEqual(MeasurementUnit.Pixels, info.Style);
+        Assert.AreEqual(50.5, info.value, 0.001);
+        Assert.AreEqual(MeasurementUnit.Pixels, info.style);
     }
 
     [TestMethod]

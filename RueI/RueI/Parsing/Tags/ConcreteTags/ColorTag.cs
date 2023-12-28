@@ -34,7 +34,7 @@ public class ColorTag : RichTextTag
         }
 
         context.ResultBuilder.Append($"<color={content}>");
-        context.AddEndingTag<CloseSizeTag>(allowDuplicates: true);
+        context.AddEndingTag<CloseColorTag>(allowDuplicates: true);
         return true;
     }
 }
