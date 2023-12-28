@@ -1,7 +1,7 @@
 # Basic Concepts
 this serves as a basic introduction to RueI concepts and functionality.
 
-the most basic components of RueI are [Elements](../api/RueI.Elements.Element.html), which act like individual hints with their own content. elements are contained within [DisplayBases](../api/RueI.Displays.DisplayBases.html). elements are not tied to a player (so you can have an instance of an element in multiple displays at once), but displays are. 
+the most basic components of RueI are [Elements](../api/RueI.Elements.Element.html), which act like individual hints with their own content. elements are contained within [DisplayBases](../api/RueI.Displays.DisplayBase.html). elements are not tied to a player (so you can have an instance of an element in multiple displays at once), but displays are. 
 
 finally, every ReferenceHub (player) in RueI has an associated [DisplayCore](../api/RueI.Displays.DisplayCore.html), which manages all of the displays for a player and combines the elements in them to one hint. every DisplayCore also has a [Scheduler](../api/RueI.Displays.Scheduling.Scheduler), enabling synchronized delayed updates.
 
