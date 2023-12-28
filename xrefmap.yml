@@ -1,6 +1,97 @@
 ### YamlMime:XRefMap
 sorted: true
 references:
+- uid: Example
+  name: Example
+  href: api/Example.html
+  commentId: N:Example
+  fullName: Example
+  nameWithType: Example
+- uid: Example.HintProvider
+  name: HintProvider
+  href: api/Example.HintProvider.html
+  commentId: T:Example.HintProvider
+  fullName: Example.HintProvider
+  nameWithType: HintProvider
+- uid: Example.HintProvider.Provider
+  name: Provider
+  href: api/Example.HintProvider.html#Example_HintProvider_Provider
+  commentId: P:Example.HintProvider.Provider
+  fullName: Example.HintProvider.Provider
+  nameWithType: HintProvider.Provider
+- uid: Example.HintProvider.Provider*
+  name: Provider
+  href: api/Example.HintProvider.html#Example_HintProvider_Provider_
+  commentId: Overload:Example.HintProvider.Provider
+  isSpec: "True"
+  fullName: Example.HintProvider.Provider
+  nameWithType: HintProvider.Provider
+- uid: Example.IHintProvider
+  name: IHintProvider
+  href: api/Example.IHintProvider.html
+  commentId: T:Example.IHintProvider
+  fullName: Example.IHintProvider
+  nameWithType: IHintProvider
+- uid: Example.IHintProvider.ShowString(ReferenceHub,System.TimeSpan,System.String)
+  name: ShowString(ReferenceHub, TimeSpan, string)
+  href: api/Example.IHintProvider.html#Example_IHintProvider_ShowString_ReferenceHub_System_TimeSpan_System_String_
+  commentId: M:Example.IHintProvider.ShowString(ReferenceHub,System.TimeSpan,System.String)
+  name.vb: ShowString(ReferenceHub, TimeSpan, String)
+  fullName: Example.IHintProvider.ShowString(ReferenceHub, System.TimeSpan, string)
+  fullName.vb: Example.IHintProvider.ShowString(ReferenceHub, System.TimeSpan, String)
+  nameWithType: IHintProvider.ShowString(ReferenceHub, TimeSpan, string)
+  nameWithType.vb: IHintProvider.ShowString(ReferenceHub, TimeSpan, String)
+- uid: Example.IHintProvider.ShowString*
+  name: ShowString
+  href: api/Example.IHintProvider.html#Example_IHintProvider_ShowString_
+  commentId: Overload:Example.IHintProvider.ShowString
+  isSpec: "True"
+  fullName: Example.IHintProvider.ShowString
+  nameWithType: IHintProvider.ShowString
+- uid: Example.RueIHintProvider
+  name: RueIHintProvider
+  href: api/Example.RueIHintProvider.html
+  commentId: T:Example.RueIHintProvider
+  fullName: Example.RueIHintProvider
+  nameWithType: RueIHintProvider
+- uid: Example.RueIHintProvider.ShowString(ReferenceHub,System.TimeSpan,System.String)
+  name: ShowString(ReferenceHub, TimeSpan, string)
+  href: api/Example.RueIHintProvider.html#Example_RueIHintProvider_ShowString_ReferenceHub_System_TimeSpan_System_String_
+  commentId: M:Example.RueIHintProvider.ShowString(ReferenceHub,System.TimeSpan,System.String)
+  name.vb: ShowString(ReferenceHub, TimeSpan, String)
+  fullName: Example.RueIHintProvider.ShowString(ReferenceHub, System.TimeSpan, string)
+  fullName.vb: Example.RueIHintProvider.ShowString(ReferenceHub, System.TimeSpan, String)
+  nameWithType: RueIHintProvider.ShowString(ReferenceHub, TimeSpan, string)
+  nameWithType.vb: RueIHintProvider.ShowString(ReferenceHub, TimeSpan, String)
+- uid: Example.RueIHintProvider.ShowString*
+  name: ShowString
+  href: api/Example.RueIHintProvider.html#Example_RueIHintProvider_ShowString_
+  commentId: Overload:Example.RueIHintProvider.ShowString
+  isSpec: "True"
+  fullName: Example.RueIHintProvider.ShowString
+  nameWithType: RueIHintProvider.ShowString
+- uid: Example.VanillaHintProvider
+  name: VanillaHintProvider
+  href: api/Example.VanillaHintProvider.html
+  commentId: T:Example.VanillaHintProvider
+  fullName: Example.VanillaHintProvider
+  nameWithType: VanillaHintProvider
+- uid: Example.VanillaHintProvider.ShowString(ReferenceHub,System.TimeSpan,System.String)
+  name: ShowString(ReferenceHub, TimeSpan, string)
+  href: api/Example.VanillaHintProvider.html#Example_VanillaHintProvider_ShowString_ReferenceHub_System_TimeSpan_System_String_
+  commentId: M:Example.VanillaHintProvider.ShowString(ReferenceHub,System.TimeSpan,System.String)
+  name.vb: ShowString(ReferenceHub, TimeSpan, String)
+  fullName: Example.VanillaHintProvider.ShowString(ReferenceHub, System.TimeSpan, string)
+  fullName.vb: Example.VanillaHintProvider.ShowString(ReferenceHub, System.TimeSpan, String)
+  nameWithType: VanillaHintProvider.ShowString(ReferenceHub, TimeSpan, string)
+  nameWithType.vb: VanillaHintProvider.ShowString(ReferenceHub, TimeSpan, String)
+- uid: Example.VanillaHintProvider.ShowString*
+  name: ShowString
+  href: api/Example.VanillaHintProvider.html#Example_VanillaHintProvider_ShowString_
+  commentId: Overload:Example.VanillaHintProvider.ShowString
+  isSpec: "True"
+  fullName: Example.VanillaHintProvider.ShowString
+  nameWithType: VanillaHintProvider.ShowString
 - uid: RueI
   name: RueI
   href: api/RueI.html
@@ -97,14 +188,7 @@ references:
 - uid: RueI.Constants.HintRateLimit
   name: HintRateLimit
   href: api/RueI.Constants.html#RueI_Constants_HintRateLimit
-  commentId: P:RueI.Constants.HintRateLimit
-  fullName: RueI.Constants.HintRateLimit
-  nameWithType: Constants.HintRateLimit
-- uid: RueI.Constants.HintRateLimit*
-  name: HintRateLimit
-  href: api/RueI.Constants.html#RueI_Constants_HintRateLimit_
-  commentId: Overload:RueI.Constants.HintRateLimit
-  isSpec: "True"
+  commentId: F:RueI.Constants.HintRateLimit
   fullName: RueI.Constants.HintRateLimit
   nameWithType: Constants.HintRateLimit
 - uid: RueI.Constants.MAXTAGNAMESIZE
@@ -447,22 +531,6 @@ references:
   isSpec: "True"
   fullName: RueI.Displays.DisplayCore.Scheduler
   nameWithType: DisplayCore.Scheduler
-- uid: RueI.Displays.DisplayCore.SetElementOrNew(RueI.Displays.IElemReference{RueI.Elements.SetElement},System.String,System.Single)
-  name: SetElementOrNew(IElemReference<SetElement>, string, float)
-  href: api/RueI.Displays.DisplayCore.html#RueI_Displays_DisplayCore_SetElementOrNew_RueI_Displays_IElemReference_RueI_Elements_SetElement__System_String_System_Single_
-  commentId: M:RueI.Displays.DisplayCore.SetElementOrNew(RueI.Displays.IElemReference{RueI.Elements.SetElement},System.String,System.Single)
-  name.vb: SetElementOrNew(IElemReference(Of SetElement), String, Single)
-  fullName: RueI.Displays.DisplayCore.SetElementOrNew(RueI.Displays.IElemReference<RueI.Elements.SetElement>, string, float)
-  fullName.vb: RueI.Displays.DisplayCore.SetElementOrNew(RueI.Displays.IElemReference(Of RueI.Elements.SetElement), String, Single)
-  nameWithType: DisplayCore.SetElementOrNew(IElemReference<SetElement>, string, float)
-  nameWithType.vb: DisplayCore.SetElementOrNew(IElemReference(Of SetElement), String, Single)
-- uid: RueI.Displays.DisplayCore.SetElementOrNew*
-  name: SetElementOrNew
-  href: api/RueI.Displays.DisplayCore.html#RueI_Displays_DisplayCore_SetElementOrNew_
-  commentId: Overload:RueI.Displays.DisplayCore.SetElementOrNew
-  isSpec: "True"
-  fullName: RueI.Displays.DisplayCore.SetElementOrNew
-  nameWithType: DisplayCore.SetElementOrNew
 - uid: RueI.Displays.DisplayCore.Update(System.Int32)
   name: Update(int)
   href: api/RueI.Displays.DisplayCore.html#RueI_Displays_DisplayCore_Update_System_Int32_
@@ -563,6 +631,12 @@ references:
   commentId: T:RueI.Displays.Roles
   fullName: RueI.Displays.Roles
   nameWithType: Roles
+- uid: RueI.Displays.Roles.AlphaFlamingo
+  name: AlphaFlamingo
+  href: api/RueI.Displays.Roles.html#RueI_Displays_Roles_AlphaFlamingo
+  commentId: F:RueI.Displays.Roles.AlphaFlamingo
+  fullName: RueI.Displays.Roles.AlphaFlamingo
+  nameWithType: Roles.AlphaFlamingo
 - uid: RueI.Displays.Roles.ChaosConscript
   name: ChaosConscript
   href: api/RueI.Displays.Roles.html#RueI_Displays_Roles_ChaosConscript
@@ -623,6 +697,18 @@ references:
   commentId: F:RueI.Displays.Roles.Filmmaker
   fullName: RueI.Displays.Roles.Filmmaker
   nameWithType: Roles.Filmmaker
+- uid: RueI.Displays.Roles.Flamingo
+  name: Flamingo
+  href: api/RueI.Displays.Roles.html#RueI_Displays_Roles_Flamingo
+  commentId: F:RueI.Displays.Roles.Flamingo
+  fullName: RueI.Displays.Roles.Flamingo
+  nameWithType: Roles.Flamingo
+- uid: RueI.Displays.Roles.FlamingoSide
+  name: FlamingoSide
+  href: api/RueI.Displays.Roles.html#RueI_Displays_Roles_FlamingoSide
+  commentId: F:RueI.Displays.Roles.FlamingoSide
+  fullName: RueI.Displays.Roles.FlamingoSide
+  nameWithType: Roles.FlamingoSide
 - uid: RueI.Displays.Roles.HumanRoles
   name: HumanRoles
   href: api/RueI.Displays.Roles.html#RueI_Displays_Roles_HumanRoles
@@ -749,6 +835,12 @@ references:
   commentId: F:RueI.Displays.Roles.Tutorial
   fullName: RueI.Displays.Roles.Tutorial
   nameWithType: Roles.Tutorial
+- uid: RueI.Displays.Roles.ZombieFlamingo
+  name: ZombieFlamingo
+  href: api/RueI.Displays.Roles.html#RueI_Displays_Roles_ZombieFlamingo
+  commentId: F:RueI.Displays.Roles.ZombieFlamingo
+  fullName: RueI.Displays.Roles.ZombieFlamingo
+  nameWithType: Roles.ZombieFlamingo
 - uid: RueI.Displays.Scheduling
   name: RueI.Displays.Scheduling
   href: api/RueI.Displays.Scheduling.html
@@ -780,6 +872,109 @@ references:
   fullName.vb: RueI.Displays.Scheduling.JobToken.New
   nameWithType: JobToken.JobToken
   nameWithType.vb: JobToken.New
+- uid: RueI.Displays.Scheduling.RateLimiter
+  name: RateLimiter
+  href: api/RueI.Displays.Scheduling.RateLimiter.html
+  commentId: T:RueI.Displays.Scheduling.RateLimiter
+  fullName: RueI.Displays.Scheduling.RateLimiter
+  nameWithType: RateLimiter
+- uid: RueI.Displays.Scheduling.RateLimiter.#ctor(System.Int32,System.TimeSpan)
+  name: RateLimiter(int, TimeSpan)
+  href: api/RueI.Displays.Scheduling.RateLimiter.html#RueI_Displays_Scheduling_RateLimiter__ctor_System_Int32_System_TimeSpan_
+  commentId: M:RueI.Displays.Scheduling.RateLimiter.#ctor(System.Int32,System.TimeSpan)
+  name.vb: New(Integer, TimeSpan)
+  fullName: RueI.Displays.Scheduling.RateLimiter.RateLimiter(int, System.TimeSpan)
+  fullName.vb: RueI.Displays.Scheduling.RateLimiter.New(Integer, System.TimeSpan)
+  nameWithType: RateLimiter.RateLimiter(int, TimeSpan)
+  nameWithType.vb: RateLimiter.New(Integer, TimeSpan)
+- uid: RueI.Displays.Scheduling.RateLimiter.#ctor*
+  name: RateLimiter
+  href: api/RueI.Displays.Scheduling.RateLimiter.html#RueI_Displays_Scheduling_RateLimiter__ctor_
+  commentId: Overload:RueI.Displays.Scheduling.RateLimiter.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: RueI.Displays.Scheduling.RateLimiter.RateLimiter
+  fullName.vb: RueI.Displays.Scheduling.RateLimiter.New
+  nameWithType: RateLimiter.RateLimiter
+  nameWithType.vb: RateLimiter.New
+- uid: RueI.Displays.Scheduling.RateLimiter.CalculateNewTokens
+  name: CalculateNewTokens()
+  href: api/RueI.Displays.Scheduling.RateLimiter.html#RueI_Displays_Scheduling_RateLimiter_CalculateNewTokens
+  commentId: M:RueI.Displays.Scheduling.RateLimiter.CalculateNewTokens
+  fullName: RueI.Displays.Scheduling.RateLimiter.CalculateNewTokens()
+  nameWithType: RateLimiter.CalculateNewTokens()
+- uid: RueI.Displays.Scheduling.RateLimiter.CalculateNewTokens*
+  name: CalculateNewTokens
+  href: api/RueI.Displays.Scheduling.RateLimiter.html#RueI_Displays_Scheduling_RateLimiter_CalculateNewTokens_
+  commentId: Overload:RueI.Displays.Scheduling.RateLimiter.CalculateNewTokens
+  isSpec: "True"
+  fullName: RueI.Displays.Scheduling.RateLimiter.CalculateNewTokens
+  nameWithType: RateLimiter.CalculateNewTokens
+- uid: RueI.Displays.Scheduling.RateLimiter.Consume
+  name: Consume()
+  href: api/RueI.Displays.Scheduling.RateLimiter.html#RueI_Displays_Scheduling_RateLimiter_Consume
+  commentId: M:RueI.Displays.Scheduling.RateLimiter.Consume
+  fullName: RueI.Displays.Scheduling.RateLimiter.Consume()
+  nameWithType: RateLimiter.Consume()
+- uid: RueI.Displays.Scheduling.RateLimiter.Consume*
+  name: Consume
+  href: api/RueI.Displays.Scheduling.RateLimiter.html#RueI_Displays_Scheduling_RateLimiter_Consume_
+  commentId: Overload:RueI.Displays.Scheduling.RateLimiter.Consume
+  isSpec: "True"
+  fullName: RueI.Displays.Scheduling.RateLimiter.Consume
+  nameWithType: RateLimiter.Consume
+- uid: RueI.Displays.Scheduling.RateLimiter.HasTokens
+  name: HasTokens
+  href: api/RueI.Displays.Scheduling.RateLimiter.html#RueI_Displays_Scheduling_RateLimiter_HasTokens
+  commentId: P:RueI.Displays.Scheduling.RateLimiter.HasTokens
+  fullName: RueI.Displays.Scheduling.RateLimiter.HasTokens
+  nameWithType: RateLimiter.HasTokens
+- uid: RueI.Displays.Scheduling.RateLimiter.HasTokens*
+  name: HasTokens
+  href: api/RueI.Displays.Scheduling.RateLimiter.html#RueI_Displays_Scheduling_RateLimiter_HasTokens_
+  commentId: Overload:RueI.Displays.Scheduling.RateLimiter.HasTokens
+  isSpec: "True"
+  fullName: RueI.Displays.Scheduling.RateLimiter.HasTokens
+  nameWithType: RateLimiter.HasTokens
+- uid: RueI.Displays.Scheduling.RateLimiter.RegenRate
+  name: RegenRate
+  href: api/RueI.Displays.Scheduling.RateLimiter.html#RueI_Displays_Scheduling_RateLimiter_RegenRate
+  commentId: P:RueI.Displays.Scheduling.RateLimiter.RegenRate
+  fullName: RueI.Displays.Scheduling.RateLimiter.RegenRate
+  nameWithType: RateLimiter.RegenRate
+- uid: RueI.Displays.Scheduling.RateLimiter.RegenRate*
+  name: RegenRate
+  href: api/RueI.Displays.Scheduling.RateLimiter.html#RueI_Displays_Scheduling_RateLimiter_RegenRate_
+  commentId: Overload:RueI.Displays.Scheduling.RateLimiter.RegenRate
+  isSpec: "True"
+  fullName: RueI.Displays.Scheduling.RateLimiter.RegenRate
+  nameWithType: RateLimiter.RegenRate
+- uid: RueI.Displays.Scheduling.RateLimiter.TokenLimit
+  name: TokenLimit
+  href: api/RueI.Displays.Scheduling.RateLimiter.html#RueI_Displays_Scheduling_RateLimiter_TokenLimit
+  commentId: P:RueI.Displays.Scheduling.RateLimiter.TokenLimit
+  fullName: RueI.Displays.Scheduling.RateLimiter.TokenLimit
+  nameWithType: RateLimiter.TokenLimit
+- uid: RueI.Displays.Scheduling.RateLimiter.TokenLimit*
+  name: TokenLimit
+  href: api/RueI.Displays.Scheduling.RateLimiter.html#RueI_Displays_Scheduling_RateLimiter_TokenLimit_
+  commentId: Overload:RueI.Displays.Scheduling.RateLimiter.TokenLimit
+  isSpec: "True"
+  fullName: RueI.Displays.Scheduling.RateLimiter.TokenLimit
+  nameWithType: RateLimiter.TokenLimit
+- uid: RueI.Displays.Scheduling.RateLimiter.Tokens
+  name: Tokens
+  href: api/RueI.Displays.Scheduling.RateLimiter.html#RueI_Displays_Scheduling_RateLimiter_Tokens
+  commentId: P:RueI.Displays.Scheduling.RateLimiter.Tokens
+  fullName: RueI.Displays.Scheduling.RateLimiter.Tokens
+  nameWithType: RateLimiter.Tokens
+- uid: RueI.Displays.Scheduling.RateLimiter.Tokens*
+  name: Tokens
+  href: api/RueI.Displays.Scheduling.RateLimiter.html#RueI_Displays_Scheduling_RateLimiter_Tokens_
+  commentId: Overload:RueI.Displays.Scheduling.RateLimiter.Tokens
+  isSpec: "True"
+  fullName: RueI.Displays.Scheduling.RateLimiter.Tokens
+  nameWithType: RateLimiter.Tokens
 - uid: RueI.Displays.Scheduling.Records
   name: RueI.Displays.Scheduling.Records
   href: api/RueI.Displays.Scheduling.Records.html
@@ -872,96 +1067,6 @@ references:
   isSpec: "True"
   fullName: RueI.Displays.Scheduling.Scheduler.KillMultiple
   nameWithType: Scheduler.KillMultiple
-- uid: RueI.Displays.Scheduling.Scheduler.RateLimiter
-  name: Scheduler.RateLimiter
-  href: api/RueI.Displays.Scheduling.Scheduler.RateLimiter.html
-  commentId: T:RueI.Displays.Scheduling.Scheduler.RateLimiter
-  fullName: RueI.Displays.Scheduling.Scheduler.RateLimiter
-  nameWithType: Scheduler.RateLimiter
-- uid: RueI.Displays.Scheduling.Scheduler.RateLimiter.#ctor(System.Int32,System.TimeSpan)
-  name: RateLimiter(int, TimeSpan)
-  href: api/RueI.Displays.Scheduling.Scheduler.RateLimiter.html#RueI_Displays_Scheduling_Scheduler_RateLimiter__ctor_System_Int32_System_TimeSpan_
-  commentId: M:RueI.Displays.Scheduling.Scheduler.RateLimiter.#ctor(System.Int32,System.TimeSpan)
-  name.vb: New(Integer, TimeSpan)
-  fullName: RueI.Displays.Scheduling.Scheduler.RateLimiter.RateLimiter(int, System.TimeSpan)
-  fullName.vb: RueI.Displays.Scheduling.Scheduler.RateLimiter.New(Integer, System.TimeSpan)
-  nameWithType: Scheduler.RateLimiter.RateLimiter(int, TimeSpan)
-  nameWithType.vb: Scheduler.RateLimiter.New(Integer, TimeSpan)
-- uid: RueI.Displays.Scheduling.Scheduler.RateLimiter.#ctor*
-  name: RateLimiter
-  href: api/RueI.Displays.Scheduling.Scheduler.RateLimiter.html#RueI_Displays_Scheduling_Scheduler_RateLimiter__ctor_
-  commentId: Overload:RueI.Displays.Scheduling.Scheduler.RateLimiter.#ctor
-  isSpec: "True"
-  name.vb: New
-  fullName: RueI.Displays.Scheduling.Scheduler.RateLimiter.RateLimiter
-  fullName.vb: RueI.Displays.Scheduling.Scheduler.RateLimiter.New
-  nameWithType: Scheduler.RateLimiter.RateLimiter
-  nameWithType.vb: Scheduler.RateLimiter.New
-- uid: RueI.Displays.Scheduling.Scheduler.RateLimiter.CalculateNewTokens
-  name: CalculateNewTokens()
-  href: api/RueI.Displays.Scheduling.Scheduler.RateLimiter.html#RueI_Displays_Scheduling_Scheduler_RateLimiter_CalculateNewTokens
-  commentId: M:RueI.Displays.Scheduling.Scheduler.RateLimiter.CalculateNewTokens
-  fullName: RueI.Displays.Scheduling.Scheduler.RateLimiter.CalculateNewTokens()
-  nameWithType: Scheduler.RateLimiter.CalculateNewTokens()
-- uid: RueI.Displays.Scheduling.Scheduler.RateLimiter.CalculateNewTokens*
-  name: CalculateNewTokens
-  href: api/RueI.Displays.Scheduling.Scheduler.RateLimiter.html#RueI_Displays_Scheduling_Scheduler_RateLimiter_CalculateNewTokens_
-  commentId: Overload:RueI.Displays.Scheduling.Scheduler.RateLimiter.CalculateNewTokens
-  isSpec: "True"
-  fullName: RueI.Displays.Scheduling.Scheduler.RateLimiter.CalculateNewTokens
-  nameWithType: Scheduler.RateLimiter.CalculateNewTokens
-- uid: RueI.Displays.Scheduling.Scheduler.RateLimiter.Consume
-  name: Consume()
-  href: api/RueI.Displays.Scheduling.Scheduler.RateLimiter.html#RueI_Displays_Scheduling_Scheduler_RateLimiter_Consume
-  commentId: M:RueI.Displays.Scheduling.Scheduler.RateLimiter.Consume
-  fullName: RueI.Displays.Scheduling.Scheduler.RateLimiter.Consume()
-  nameWithType: Scheduler.RateLimiter.Consume()
-- uid: RueI.Displays.Scheduling.Scheduler.RateLimiter.Consume*
-  name: Consume
-  href: api/RueI.Displays.Scheduling.Scheduler.RateLimiter.html#RueI_Displays_Scheduling_Scheduler_RateLimiter_Consume_
-  commentId: Overload:RueI.Displays.Scheduling.Scheduler.RateLimiter.Consume
-  isSpec: "True"
-  fullName: RueI.Displays.Scheduling.Scheduler.RateLimiter.Consume
-  nameWithType: Scheduler.RateLimiter.Consume
-- uid: RueI.Displays.Scheduling.Scheduler.RateLimiter.HasTokens
-  name: HasTokens
-  href: api/RueI.Displays.Scheduling.Scheduler.RateLimiter.html#RueI_Displays_Scheduling_Scheduler_RateLimiter_HasTokens
-  commentId: P:RueI.Displays.Scheduling.Scheduler.RateLimiter.HasTokens
-  fullName: RueI.Displays.Scheduling.Scheduler.RateLimiter.HasTokens
-  nameWithType: Scheduler.RateLimiter.HasTokens
-- uid: RueI.Displays.Scheduling.Scheduler.RateLimiter.HasTokens*
-  name: HasTokens
-  href: api/RueI.Displays.Scheduling.Scheduler.RateLimiter.html#RueI_Displays_Scheduling_Scheduler_RateLimiter_HasTokens_
-  commentId: Overload:RueI.Displays.Scheduling.Scheduler.RateLimiter.HasTokens
-  isSpec: "True"
-  fullName: RueI.Displays.Scheduling.Scheduler.RateLimiter.HasTokens
-  nameWithType: Scheduler.RateLimiter.HasTokens
-- uid: RueI.Displays.Scheduling.Scheduler.RateLimiter.RegenRate
-  name: RegenRate
-  href: api/RueI.Displays.Scheduling.Scheduler.RateLimiter.html#RueI_Displays_Scheduling_Scheduler_RateLimiter_RegenRate
-  commentId: P:RueI.Displays.Scheduling.Scheduler.RateLimiter.RegenRate
-  fullName: RueI.Displays.Scheduling.Scheduler.RateLimiter.RegenRate
-  nameWithType: Scheduler.RateLimiter.RegenRate
-- uid: RueI.Displays.Scheduling.Scheduler.RateLimiter.RegenRate*
-  name: RegenRate
-  href: api/RueI.Displays.Scheduling.Scheduler.RateLimiter.html#RueI_Displays_Scheduling_Scheduler_RateLimiter_RegenRate_
-  commentId: Overload:RueI.Displays.Scheduling.Scheduler.RateLimiter.RegenRate
-  isSpec: "True"
-  fullName: RueI.Displays.Scheduling.Scheduler.RateLimiter.RegenRate
-  nameWithType: Scheduler.RateLimiter.RegenRate
-- uid: RueI.Displays.Scheduling.Scheduler.RateLimiter.Tokens
-  name: Tokens
-  href: api/RueI.Displays.Scheduling.Scheduler.RateLimiter.html#RueI_Displays_Scheduling_Scheduler_RateLimiter_Tokens
-  commentId: P:RueI.Displays.Scheduling.Scheduler.RateLimiter.Tokens
-  fullName: RueI.Displays.Scheduling.Scheduler.RateLimiter.Tokens
-  nameWithType: Scheduler.RateLimiter.Tokens
-- uid: RueI.Displays.Scheduling.Scheduler.RateLimiter.Tokens*
-  name: Tokens
-  href: api/RueI.Displays.Scheduling.Scheduler.RateLimiter.html#RueI_Displays_Scheduling_Scheduler_RateLimiter_Tokens_
-  commentId: Overload:RueI.Displays.Scheduling.Scheduler.RateLimiter.Tokens
-  isSpec: "True"
-  fullName: RueI.Displays.Scheduling.Scheduler.RateLimiter.Tokens
-  nameWithType: Scheduler.RateLimiter.Tokens
 - uid: RueI.Displays.Scheduling.Scheduler.Schedule(RueI.Displays.Scheduling.Records.ScheduledJob)
   name: Schedule(ScheduledJob)
   href: api/RueI.Displays.Scheduling.Scheduler.html#RueI_Displays_Scheduling_Scheduler_Schedule_RueI_Displays_Scheduling_Records_ScheduledJob_
@@ -1002,6 +1107,48 @@ references:
   isSpec: "True"
   fullName: RueI.Displays.Scheduling.Scheduler.Schedule
   nameWithType: Scheduler.Schedule
+- uid: RueI.Displays.Scheduling.Scheduler.ScheduleUpdate(System.TimeSpan,System.Int32)
+  name: ScheduleUpdate(TimeSpan, int)
+  href: api/RueI.Displays.Scheduling.Scheduler.html#RueI_Displays_Scheduling_Scheduler_ScheduleUpdate_System_TimeSpan_System_Int32_
+  commentId: M:RueI.Displays.Scheduling.Scheduler.ScheduleUpdate(System.TimeSpan,System.Int32)
+  name.vb: ScheduleUpdate(TimeSpan, Integer)
+  fullName: RueI.Displays.Scheduling.Scheduler.ScheduleUpdate(System.TimeSpan, int)
+  fullName.vb: RueI.Displays.Scheduling.Scheduler.ScheduleUpdate(System.TimeSpan, Integer)
+  nameWithType: Scheduler.ScheduleUpdate(TimeSpan, int)
+  nameWithType.vb: Scheduler.ScheduleUpdate(TimeSpan, Integer)
+- uid: RueI.Displays.Scheduling.Scheduler.ScheduleUpdate*
+  name: ScheduleUpdate
+  href: api/RueI.Displays.Scheduling.Scheduler.html#RueI_Displays_Scheduling_Scheduler_ScheduleUpdate_
+  commentId: Overload:RueI.Displays.Scheduling.Scheduler.ScheduleUpdate
+  isSpec: "True"
+  fullName: RueI.Displays.Scheduling.Scheduler.ScheduleUpdate
+  nameWithType: Scheduler.ScheduleUpdate
+- uid: RueI.Displays.Scheduling.TimedElemRef`1
+  name: TimedElemRef<T>
+  href: api/RueI.Displays.Scheduling.TimedElemRef-1.html
+  commentId: T:RueI.Displays.Scheduling.TimedElemRef`1
+  name.vb: TimedElemRef(Of T)
+  fullName: RueI.Displays.Scheduling.TimedElemRef<T>
+  fullName.vb: RueI.Displays.Scheduling.TimedElemRef(Of T)
+  nameWithType: TimedElemRef<T>
+  nameWithType.vb: TimedElemRef(Of T)
+- uid: RueI.Displays.Scheduling.TimedElemRef`1.JobToken
+  name: JobToken
+  href: api/RueI.Displays.Scheduling.TimedElemRef-1.html#RueI_Displays_Scheduling_TimedElemRef_1_JobToken
+  commentId: P:RueI.Displays.Scheduling.TimedElemRef`1.JobToken
+  fullName: RueI.Displays.Scheduling.TimedElemRef<T>.JobToken
+  fullName.vb: RueI.Displays.Scheduling.TimedElemRef(Of T).JobToken
+  nameWithType: TimedElemRef<T>.JobToken
+  nameWithType.vb: TimedElemRef(Of T).JobToken
+- uid: RueI.Displays.Scheduling.TimedElemRef`1.JobToken*
+  name: JobToken
+  href: api/RueI.Displays.Scheduling.TimedElemRef-1.html#RueI_Displays_Scheduling_TimedElemRef_1_JobToken_
+  commentId: Overload:RueI.Displays.Scheduling.TimedElemRef`1.JobToken
+  isSpec: "True"
+  fullName: RueI.Displays.Scheduling.TimedElemRef<T>.JobToken
+  fullName.vb: RueI.Displays.Scheduling.TimedElemRef(Of T).JobToken
+  nameWithType: TimedElemRef<T>.JobToken
+  nameWithType.vb: TimedElemRef(Of T).JobToken
 - uid: RueI.Displays.Screen
   name: Screen
   href: api/RueI.Displays.Screen.html
@@ -1444,51 +1591,6 @@ references:
   isSpec: "True"
   fullName: RueI.Elements.SetElement.Set
   nameWithType: SetElement.Set
-- uid: RueI.EventHandler
-  name: EventHandler
-  href: api/RueI.EventHandler.html
-  commentId: T:RueI.EventHandler
-  fullName: RueI.EventHandler
-  nameWithType: EventHandler
-- uid: RueI.EventHandler.OnPlayerRemoved(ReferenceHub)
-  name: OnPlayerRemoved(ReferenceHub)
-  href: api/RueI.EventHandler.html#RueI_EventHandler_OnPlayerRemoved_ReferenceHub_
-  commentId: M:RueI.EventHandler.OnPlayerRemoved(ReferenceHub)
-  fullName: RueI.EventHandler.OnPlayerRemoved(ReferenceHub)
-  nameWithType: EventHandler.OnPlayerRemoved(ReferenceHub)
-- uid: RueI.EventHandler.OnPlayerRemoved*
-  name: OnPlayerRemoved
-  href: api/RueI.EventHandler.html#RueI_EventHandler_OnPlayerRemoved_
-  commentId: Overload:RueI.EventHandler.OnPlayerRemoved
-  isSpec: "True"
-  fullName: RueI.EventHandler.OnPlayerRemoved
-  nameWithType: EventHandler.OnPlayerRemoved
-- uid: RueI.EventHandler.OnRestart
-  name: OnRestart()
-  href: api/RueI.EventHandler.html#RueI_EventHandler_OnRestart
-  commentId: M:RueI.EventHandler.OnRestart
-  fullName: RueI.EventHandler.OnRestart()
-  nameWithType: EventHandler.OnRestart()
-- uid: RueI.EventHandler.OnRestart*
-  name: OnRestart
-  href: api/RueI.EventHandler.html#RueI_EventHandler_OnRestart_
-  commentId: Overload:RueI.EventHandler.OnRestart
-  isSpec: "True"
-  fullName: RueI.EventHandler.OnRestart
-  nameWithType: EventHandler.OnRestart
-- uid: RueI.EventHandler.OnServerRoleSet(ReferenceHub,RoleTypeId,RoleChangeReason)
-  name: OnServerRoleSet(ReferenceHub, RoleTypeId, RoleChangeReason)
-  href: api/RueI.EventHandler.html#RueI_EventHandler_OnServerRoleSet_ReferenceHub_RoleTypeId_RoleChangeReason_
-  commentId: M:RueI.EventHandler.OnServerRoleSet(ReferenceHub,RoleTypeId,RoleChangeReason)
-  fullName: RueI.EventHandler.OnServerRoleSet(ReferenceHub, RoleTypeId, RoleChangeReason)
-  nameWithType: EventHandler.OnServerRoleSet(ReferenceHub, RoleTypeId, RoleChangeReason)
-- uid: RueI.EventHandler.OnServerRoleSet*
-  name: OnServerRoleSet
-  href: api/RueI.EventHandler.html#RueI_EventHandler_OnServerRoleSet_
-  commentId: Overload:RueI.EventHandler.OnServerRoleSet
-  isSpec: "True"
-  fullName: RueI.EventHandler.OnServerRoleSet
-  nameWithType: EventHandler.OnServerRoleSet
 - uid: RueI.Events
   name: RueI.Events
   href: api/RueI.Events.html
@@ -1533,19 +1635,19 @@ references:
   isSpec: "True"
   fullName: RueI.Events.DisplayUpdatedEventArgs.DisplayCore
   nameWithType: DisplayUpdatedEventArgs.DisplayCore
-- uid: RueI.Events.DisplayUpdatedEventArgs.Hub
-  name: Hub
-  href: api/RueI.Events.DisplayUpdatedEventArgs.html#RueI_Events_DisplayUpdatedEventArgs_Hub
-  commentId: P:RueI.Events.DisplayUpdatedEventArgs.Hub
-  fullName: RueI.Events.DisplayUpdatedEventArgs.Hub
-  nameWithType: DisplayUpdatedEventArgs.Hub
-- uid: RueI.Events.DisplayUpdatedEventArgs.Hub*
-  name: Hub
-  href: api/RueI.Events.DisplayUpdatedEventArgs.html#RueI_Events_DisplayUpdatedEventArgs_Hub_
-  commentId: Overload:RueI.Events.DisplayUpdatedEventArgs.Hub
+- uid: RueI.Events.DisplayUpdatedEventArgs.ReferenceHub
+  name: ReferenceHub
+  href: api/RueI.Events.DisplayUpdatedEventArgs.html#RueI_Events_DisplayUpdatedEventArgs_ReferenceHub
+  commentId: P:RueI.Events.DisplayUpdatedEventArgs.ReferenceHub
+  fullName: RueI.Events.DisplayUpdatedEventArgs.ReferenceHub
+  nameWithType: DisplayUpdatedEventArgs.ReferenceHub
+- uid: RueI.Events.DisplayUpdatedEventArgs.ReferenceHub*
+  name: ReferenceHub
+  href: api/RueI.Events.DisplayUpdatedEventArgs.html#RueI_Events_DisplayUpdatedEventArgs_ReferenceHub_
+  commentId: Overload:RueI.Events.DisplayUpdatedEventArgs.ReferenceHub
   isSpec: "True"
-  fullName: RueI.Events.DisplayUpdatedEventArgs.Hub
-  nameWithType: DisplayUpdatedEventArgs.Hub
+  fullName: RueI.Events.DisplayUpdatedEventArgs.ReferenceHub
+  nameWithType: DisplayUpdatedEventArgs.ReferenceHub
 - uid: RueI.Events.DisplayUpdatedEventArgs.Scheduler
   name: Scheduler
   href: api/RueI.Events.DisplayUpdatedEventArgs.html#RueI_Events_DisplayUpdatedEventArgs_Scheduler
@@ -1691,6 +1793,60 @@ references:
   fullName.vb: RueI.Extensions.CollectionExtensions.Add(Of T)(System.Collections.Generic.ICollection(Of T), ParamArray T())
   nameWithType: CollectionExtensions.Add<T>(ICollection<T>, params T[])
   nameWithType.vb: CollectionExtensions.Add(Of T)(ICollection(Of T), ParamArray T())
+- uid: RueI.Extensions.DisplayCoreExtensions
+  name: DisplayCoreExtensions
+  href: api/RueI.Extensions.DisplayCoreExtensions.html
+  commentId: T:RueI.Extensions.DisplayCoreExtensions
+  fullName: RueI.Extensions.DisplayCoreExtensions
+  nameWithType: DisplayCoreExtensions
+- uid: RueI.Extensions.DisplayCoreExtensions.AddTemp*
+  name: AddTemp
+  href: api/RueI.Extensions.DisplayCoreExtensions.html#RueI_Extensions_DisplayCoreExtensions_AddTemp_
+  commentId: Overload:RueI.Extensions.DisplayCoreExtensions.AddTemp
+  isSpec: "True"
+  fullName: RueI.Extensions.DisplayCoreExtensions.AddTemp
+  nameWithType: DisplayCoreExtensions.AddTemp
+- uid: RueI.Extensions.DisplayCoreExtensions.AddTemp``1(RueI.Displays.DisplayCore,``0,System.TimeSpan,RueI.Displays.Scheduling.TimedElemRef{``0})
+  name: AddTemp<T>(DisplayCore, T, TimeSpan, TimedElemRef<T>)
+  href: api/RueI.Extensions.DisplayCoreExtensions.html#RueI_Extensions_DisplayCoreExtensions_AddTemp__1_RueI_Displays_DisplayCore___0_System_TimeSpan_RueI_Displays_Scheduling_TimedElemRef___0__
+  commentId: M:RueI.Extensions.DisplayCoreExtensions.AddTemp``1(RueI.Displays.DisplayCore,``0,System.TimeSpan,RueI.Displays.Scheduling.TimedElemRef{``0})
+  name.vb: AddTemp(Of T)(DisplayCore, T, TimeSpan, TimedElemRef(Of T))
+  fullName: RueI.Extensions.DisplayCoreExtensions.AddTemp<T>(RueI.Displays.DisplayCore, T, System.TimeSpan, RueI.Displays.Scheduling.TimedElemRef<T>)
+  fullName.vb: RueI.Extensions.DisplayCoreExtensions.AddTemp(Of T)(RueI.Displays.DisplayCore, T, System.TimeSpan, RueI.Displays.Scheduling.TimedElemRef(Of T))
+  nameWithType: DisplayCoreExtensions.AddTemp<T>(DisplayCore, T, TimeSpan, TimedElemRef<T>)
+  nameWithType.vb: DisplayCoreExtensions.AddTemp(Of T)(DisplayCore, T, TimeSpan, TimedElemRef(Of T))
+- uid: RueI.Extensions.DisplayCoreExtensions.SetElementOrNew(RueI.Displays.DisplayCore,RueI.Displays.IElemReference{RueI.Elements.SetElement},System.String,System.Single)
+  name: SetElementOrNew(DisplayCore, IElemReference<SetElement>, string, float)
+  href: api/RueI.Extensions.DisplayCoreExtensions.html#RueI_Extensions_DisplayCoreExtensions_SetElementOrNew_RueI_Displays_DisplayCore_RueI_Displays_IElemReference_RueI_Elements_SetElement__System_String_System_Single_
+  commentId: M:RueI.Extensions.DisplayCoreExtensions.SetElementOrNew(RueI.Displays.DisplayCore,RueI.Displays.IElemReference{RueI.Elements.SetElement},System.String,System.Single)
+  name.vb: SetElementOrNew(DisplayCore, IElemReference(Of SetElement), String, Single)
+  fullName: RueI.Extensions.DisplayCoreExtensions.SetElementOrNew(RueI.Displays.DisplayCore, RueI.Displays.IElemReference<RueI.Elements.SetElement>, string, float)
+  fullName.vb: RueI.Extensions.DisplayCoreExtensions.SetElementOrNew(RueI.Displays.DisplayCore, RueI.Displays.IElemReference(Of RueI.Elements.SetElement), String, Single)
+  nameWithType: DisplayCoreExtensions.SetElementOrNew(DisplayCore, IElemReference<SetElement>, string, float)
+  nameWithType.vb: DisplayCoreExtensions.SetElementOrNew(DisplayCore, IElemReference(Of SetElement), String, Single)
+- uid: RueI.Extensions.DisplayCoreExtensions.SetElementOrNew*
+  name: SetElementOrNew
+  href: api/RueI.Extensions.DisplayCoreExtensions.html#RueI_Extensions_DisplayCoreExtensions_SetElementOrNew_
+  commentId: Overload:RueI.Extensions.DisplayCoreExtensions.SetElementOrNew
+  isSpec: "True"
+  fullName: RueI.Extensions.DisplayCoreExtensions.SetElementOrNew
+  nameWithType: DisplayCoreExtensions.SetElementOrNew
+- uid: RueI.Extensions.DisplayCoreExtensions.ShowTemp(RueI.Displays.DisplayCore,System.String,System.Single,System.TimeSpan,RueI.Displays.Scheduling.TimedElemRef{RueI.Elements.SetElement})
+  name: ShowTemp(DisplayCore, string, float, TimeSpan, TimedElemRef<SetElement>)
+  href: api/RueI.Extensions.DisplayCoreExtensions.html#RueI_Extensions_DisplayCoreExtensions_ShowTemp_RueI_Displays_DisplayCore_System_String_System_Single_System_TimeSpan_RueI_Displays_Scheduling_TimedElemRef_RueI_Elements_SetElement__
+  commentId: M:RueI.Extensions.DisplayCoreExtensions.ShowTemp(RueI.Displays.DisplayCore,System.String,System.Single,System.TimeSpan,RueI.Displays.Scheduling.TimedElemRef{RueI.Elements.SetElement})
+  name.vb: ShowTemp(DisplayCore, String, Single, TimeSpan, TimedElemRef(Of SetElement))
+  fullName: RueI.Extensions.DisplayCoreExtensions.ShowTemp(RueI.Displays.DisplayCore, string, float, System.TimeSpan, RueI.Displays.Scheduling.TimedElemRef<RueI.Elements.SetElement>)
+  fullName.vb: RueI.Extensions.DisplayCoreExtensions.ShowTemp(RueI.Displays.DisplayCore, String, Single, System.TimeSpan, RueI.Displays.Scheduling.TimedElemRef(Of RueI.Elements.SetElement))
+  nameWithType: DisplayCoreExtensions.ShowTemp(DisplayCore, string, float, TimeSpan, TimedElemRef<SetElement>)
+  nameWithType.vb: DisplayCoreExtensions.ShowTemp(DisplayCore, String, Single, TimeSpan, TimedElemRef(Of SetElement))
+- uid: RueI.Extensions.DisplayCoreExtensions.ShowTemp*
+  name: ShowTemp
+  href: api/RueI.Extensions.DisplayCoreExtensions.html#RueI_Extensions_DisplayCoreExtensions_ShowTemp_
+  commentId: Overload:RueI.Extensions.DisplayCoreExtensions.ShowTemp
+  isSpec: "True"
+  fullName: RueI.Extensions.DisplayCoreExtensions.ShowTemp
+  nameWithType: DisplayCoreExtensions.ShowTemp
 - uid: RueI.Extensions.ElemRefResolver`1
   name: ElemRefResolver<T>
   href: api/RueI.Extensions.ElemRefResolver-1.html
@@ -2776,31 +2932,6 @@ references:
   fullName.vb: RueI.Extensions.UniversalExtensions.AddTo(Of T)(T, System.Collections.Generic.ICollection(Of T))
   nameWithType: UniversalExtensions.AddTo<T>(T, ICollection<T>)
   nameWithType.vb: UniversalExtensions.AddTo(Of T)(T, ICollection(Of T))
-- uid: RueI.Main
-  name: Main
-  href: api/RueI.Main.html
-  commentId: T:RueI.Main
-  fullName: RueI.Main
-  nameWithType: Main
-- uid: RueI.Main.EnsureInit
-  name: EnsureInit()
-  href: api/RueI.Main.html#RueI_Main_EnsureInit
-  commentId: M:RueI.Main.EnsureInit
-  fullName: RueI.Main.EnsureInit()
-  nameWithType: Main.EnsureInit()
-- uid: RueI.Main.EnsureInit*
-  name: EnsureInit
-  href: api/RueI.Main.html#RueI_Main_EnsureInit_
-  commentId: Overload:RueI.Main.EnsureInit
-  isSpec: "True"
-  fullName: RueI.Main.EnsureInit
-  nameWithType: Main.EnsureInit
-- uid: RueI.Main.Version
-  name: Version
-  href: api/RueI.Main.html#RueI_Main_Version
-  commentId: F:RueI.Main.Version
-  fullName: RueI.Main.Version
-  nameWithType: Main.Version
 - uid: RueI.NonUnityProvider
   name: NonUnityProvider
   href: api/RueI.NonUnityProvider.html
@@ -2823,6 +2954,35 @@ references:
   isSpec: "True"
   fullName: RueI.NonUnityProvider.Log
   nameWithType: NonUnityProvider.Log
+- uid: RueI.NonUnityProvider.LogWarn(System.String)
+  name: LogWarn(string)
+  href: api/RueI.NonUnityProvider.html#RueI_NonUnityProvider_LogWarn_System_String_
+  commentId: M:RueI.NonUnityProvider.LogWarn(System.String)
+  name.vb: LogWarn(String)
+  fullName: RueI.NonUnityProvider.LogWarn(string)
+  fullName.vb: RueI.NonUnityProvider.LogWarn(String)
+  nameWithType: NonUnityProvider.LogWarn(string)
+  nameWithType.vb: NonUnityProvider.LogWarn(String)
+- uid: RueI.NonUnityProvider.LogWarn*
+  name: LogWarn
+  href: api/RueI.NonUnityProvider.html#RueI_NonUnityProvider_LogWarn_
+  commentId: Overload:RueI.NonUnityProvider.LogWarn
+  isSpec: "True"
+  fullName: RueI.NonUnityProvider.LogWarn
+  nameWithType: NonUnityProvider.LogWarn
+- uid: RueI.NonUnityProvider.PatchAll(HarmonyLib.Harmony)
+  name: PatchAll(Harmony)
+  href: api/RueI.NonUnityProvider.html#RueI_NonUnityProvider_PatchAll_HarmonyLib_Harmony_
+  commentId: M:RueI.NonUnityProvider.PatchAll(HarmonyLib.Harmony)
+  fullName: RueI.NonUnityProvider.PatchAll(HarmonyLib.Harmony)
+  nameWithType: NonUnityProvider.PatchAll(Harmony)
+- uid: RueI.NonUnityProvider.PatchAll*
+  name: PatchAll
+  href: api/RueI.NonUnityProvider.html#RueI_NonUnityProvider_PatchAll_
+  commentId: Overload:RueI.NonUnityProvider.PatchAll
+  isSpec: "True"
+  fullName: RueI.NonUnityProvider.PatchAll
+  nameWithType: NonUnityProvider.PatchAll
 - uid: RueI.NonUnityProvider.PerformAsync(System.TimeSpan,System.Action)
   name: PerformAsync(TimeSpan, Action)
   href: api/RueI.NonUnityProvider.html#RueI_NonUnityProvider_PerformAsync_System_TimeSpan_System_Action_
@@ -3680,19 +3840,6 @@ references:
   fullName.vb: RueI.Parsing.Records.MeasurementInfo.New
   nameWithType: MeasurementInfo.MeasurementInfo
   nameWithType.vb: MeasurementInfo.New
-- uid: RueI.Parsing.Records.MeasurementInfo.Style
-  name: Style
-  href: api/RueI.Parsing.Records.MeasurementInfo.html#RueI_Parsing_Records_MeasurementInfo_Style
-  commentId: P:RueI.Parsing.Records.MeasurementInfo.Style
-  fullName: RueI.Parsing.Records.MeasurementInfo.Style
-  nameWithType: MeasurementInfo.Style
-- uid: RueI.Parsing.Records.MeasurementInfo.Style*
-  name: Style
-  href: api/RueI.Parsing.Records.MeasurementInfo.html#RueI_Parsing_Records_MeasurementInfo_Style_
-  commentId: Overload:RueI.Parsing.Records.MeasurementInfo.Style
-  isSpec: "True"
-  fullName: RueI.Parsing.Records.MeasurementInfo.Style
-  nameWithType: MeasurementInfo.Style
 - uid: RueI.Parsing.Records.MeasurementInfo.ToString
   name: ToString()
   href: api/RueI.Parsing.Records.MeasurementInfo.html#RueI_Parsing_Records_MeasurementInfo_ToString
@@ -3722,19 +3869,32 @@ references:
   isSpec: "True"
   fullName: RueI.Parsing.Records.MeasurementInfo.TryParse
   nameWithType: MeasurementInfo.TryParse
-- uid: RueI.Parsing.Records.MeasurementInfo.Value
-  name: Value
-  href: api/RueI.Parsing.Records.MeasurementInfo.html#RueI_Parsing_Records_MeasurementInfo_Value
-  commentId: P:RueI.Parsing.Records.MeasurementInfo.Value
-  fullName: RueI.Parsing.Records.MeasurementInfo.Value
-  nameWithType: MeasurementInfo.Value
-- uid: RueI.Parsing.Records.MeasurementInfo.Value*
-  name: Value
-  href: api/RueI.Parsing.Records.MeasurementInfo.html#RueI_Parsing_Records_MeasurementInfo_Value_
-  commentId: Overload:RueI.Parsing.Records.MeasurementInfo.Value
+- uid: RueI.Parsing.Records.MeasurementInfo.style
+  name: style
+  href: api/RueI.Parsing.Records.MeasurementInfo.html#RueI_Parsing_Records_MeasurementInfo_style
+  commentId: P:RueI.Parsing.Records.MeasurementInfo.style
+  fullName: RueI.Parsing.Records.MeasurementInfo.style
+  nameWithType: MeasurementInfo.style
+- uid: RueI.Parsing.Records.MeasurementInfo.style*
+  name: style
+  href: api/RueI.Parsing.Records.MeasurementInfo.html#RueI_Parsing_Records_MeasurementInfo_style_
+  commentId: Overload:RueI.Parsing.Records.MeasurementInfo.style
   isSpec: "True"
-  fullName: RueI.Parsing.Records.MeasurementInfo.Value
-  nameWithType: MeasurementInfo.Value
+  fullName: RueI.Parsing.Records.MeasurementInfo.style
+  nameWithType: MeasurementInfo.style
+- uid: RueI.Parsing.Records.MeasurementInfo.value
+  name: value
+  href: api/RueI.Parsing.Records.MeasurementInfo.html#RueI_Parsing_Records_MeasurementInfo_value
+  commentId: P:RueI.Parsing.Records.MeasurementInfo.value
+  fullName: RueI.Parsing.Records.MeasurementInfo.value
+  nameWithType: MeasurementInfo.value
+- uid: RueI.Parsing.Records.MeasurementInfo.value*
+  name: value
+  href: api/RueI.Parsing.Records.MeasurementInfo.html#RueI_Parsing_Records_MeasurementInfo_value_
+  commentId: Overload:RueI.Parsing.Records.MeasurementInfo.value
+  isSpec: "True"
+  fullName: RueI.Parsing.Records.MeasurementInfo.value
+  nameWithType: MeasurementInfo.value
 - uid: RueI.Parsing.Records.ParsedData
   name: ParsedData
   href: api/RueI.Parsing.Records.ParsedData.html
@@ -3760,32 +3920,32 @@ references:
   fullName.vb: RueI.Parsing.Records.ParsedData.New
   nameWithType: ParsedData.ParsedData
   nameWithType.vb: ParsedData.New
-- uid: RueI.Parsing.Records.ParsedData.Content
-  name: Content
-  href: api/RueI.Parsing.Records.ParsedData.html#RueI_Parsing_Records_ParsedData_Content
-  commentId: P:RueI.Parsing.Records.ParsedData.Content
-  fullName: RueI.Parsing.Records.ParsedData.Content
-  nameWithType: ParsedData.Content
-- uid: RueI.Parsing.Records.ParsedData.Content*
-  name: Content
-  href: api/RueI.Parsing.Records.ParsedData.html#RueI_Parsing_Records_ParsedData_Content_
-  commentId: Overload:RueI.Parsing.Records.ParsedData.Content
+- uid: RueI.Parsing.Records.ParsedData.content
+  name: content
+  href: api/RueI.Parsing.Records.ParsedData.html#RueI_Parsing_Records_ParsedData_content
+  commentId: P:RueI.Parsing.Records.ParsedData.content
+  fullName: RueI.Parsing.Records.ParsedData.content
+  nameWithType: ParsedData.content
+- uid: RueI.Parsing.Records.ParsedData.content*
+  name: content
+  href: api/RueI.Parsing.Records.ParsedData.html#RueI_Parsing_Records_ParsedData_content_
+  commentId: Overload:RueI.Parsing.Records.ParsedData.content
   isSpec: "True"
-  fullName: RueI.Parsing.Records.ParsedData.Content
-  nameWithType: ParsedData.Content
-- uid: RueI.Parsing.Records.ParsedData.Offset
-  name: Offset
-  href: api/RueI.Parsing.Records.ParsedData.html#RueI_Parsing_Records_ParsedData_Offset
-  commentId: P:RueI.Parsing.Records.ParsedData.Offset
-  fullName: RueI.Parsing.Records.ParsedData.Offset
-  nameWithType: ParsedData.Offset
-- uid: RueI.Parsing.Records.ParsedData.Offset*
-  name: Offset
-  href: api/RueI.Parsing.Records.ParsedData.html#RueI_Parsing_Records_ParsedData_Offset_
-  commentId: Overload:RueI.Parsing.Records.ParsedData.Offset
+  fullName: RueI.Parsing.Records.ParsedData.content
+  nameWithType: ParsedData.content
+- uid: RueI.Parsing.Records.ParsedData.offset
+  name: offset
+  href: api/RueI.Parsing.Records.ParsedData.html#RueI_Parsing_Records_ParsedData_offset
+  commentId: P:RueI.Parsing.Records.ParsedData.offset
+  fullName: RueI.Parsing.Records.ParsedData.offset
+  nameWithType: ParsedData.offset
+- uid: RueI.Parsing.Records.ParsedData.offset*
+  name: offset
+  href: api/RueI.Parsing.Records.ParsedData.html#RueI_Parsing_Records_ParsedData_offset_
+  commentId: Overload:RueI.Parsing.Records.ParsedData.offset
   isSpec: "True"
-  fullName: RueI.Parsing.Records.ParsedData.Offset
-  nameWithType: ParsedData.Offset
+  fullName: RueI.Parsing.Records.ParsedData.offset
+  nameWithType: ParsedData.offset
 - uid: RueI.Parsing.RichTextTag
   name: RichTextTag
   href: api/RueI.Parsing.RichTextTag.html
@@ -5816,19 +5976,6 @@ references:
   commentId: T:RueI.Patches.HintPatch
   fullName: RueI.Patches.HintPatch
   nameWithType: HintPatch
-- uid: RueI.Patches.HintPatch.HandleAnonymousHint(NetworkConnection,Hint)
-  name: HandleAnonymousHint(NetworkConnection, Hint)
-  href: api/RueI.Patches.HintPatch.html#RueI_Patches_HintPatch_HandleAnonymousHint_NetworkConnection_Hint_
-  commentId: M:RueI.Patches.HintPatch.HandleAnonymousHint(NetworkConnection,Hint)
-  fullName: RueI.Patches.HintPatch.HandleAnonymousHint(NetworkConnection, Hint)
-  nameWithType: HintPatch.HandleAnonymousHint(NetworkConnection, Hint)
-- uid: RueI.Patches.HintPatch.HandleAnonymousHint*
-  name: HandleAnonymousHint
-  href: api/RueI.Patches.HintPatch.html#RueI_Patches_HintPatch_HandleAnonymousHint_
-  commentId: Overload:RueI.Patches.HintPatch.HandleAnonymousHint
-  isSpec: "True"
-  fullName: RueI.Patches.HintPatch.HandleAnonymousHint
-  nameWithType: HintPatch.HandleAnonymousHint
 - uid: RueI.Patches.HintPatch.Transpiler(System.Collections.Generic.IEnumerable{HarmonyLib.CodeInstruction},System.Reflection.Emit.ILGenerator)
   name: Transpiler(IEnumerable<CodeInstruction>, ILGenerator)
   href: api/RueI.Patches.HintPatch.html#RueI_Patches_HintPatch_Transpiler_System_Collections_Generic_IEnumerable_HarmonyLib_CodeInstruction__System_Reflection_Emit_ILGenerator_
@@ -5845,6 +5992,59 @@ references:
   isSpec: "True"
   fullName: RueI.Patches.HintPatch.Transpiler
   nameWithType: HintPatch.Transpiler
+- uid: RueI.Patches.PatchHelper
+  name: PatchHelper
+  href: api/RueI.Patches.PatchHelper.html
+  commentId: T:RueI.Patches.PatchHelper
+  fullName: RueI.Patches.PatchHelper
+  nameWithType: PatchHelper
+- uid: RueI.Patches.PatchHelper.DelegeteMatch*
+  name: DelegeteMatch
+  href: api/RueI.Patches.PatchHelper.html#RueI_Patches_PatchHelper_DelegeteMatch_
+  commentId: Overload:RueI.Patches.PatchHelper.DelegeteMatch
+  isSpec: "True"
+  fullName: RueI.Patches.PatchHelper.DelegeteMatch
+  nameWithType: PatchHelper.DelegeteMatch
+- uid: RueI.Patches.PatchHelper.DelegeteMatch``1(System.Type,System.String)
+  name: DelegeteMatch<T>(Type, string)
+  href: api/RueI.Patches.PatchHelper.html#RueI_Patches_PatchHelper_DelegeteMatch__1_System_Type_System_String_
+  commentId: M:RueI.Patches.PatchHelper.DelegeteMatch``1(System.Type,System.String)
+  name.vb: DelegeteMatch(Of T)(Type, String)
+  fullName: RueI.Patches.PatchHelper.DelegeteMatch<T>(System.Type, string)
+  fullName.vb: RueI.Patches.PatchHelper.DelegeteMatch(Of T)(System.Type, String)
+  nameWithType: PatchHelper.DelegeteMatch<T>(Type, string)
+  nameWithType.vb: PatchHelper.DelegeteMatch(Of T)(Type, String)
+- uid: RueI.RueIMain
+  name: RueIMain
+  href: api/RueI.RueIMain.html
+  commentId: T:RueI.RueIMain
+  fullName: RueI.RueIMain
+  nameWithType: RueIMain
+- uid: RueI.RueIMain.EnsureInit
+  name: EnsureInit()
+  href: api/RueI.RueIMain.html#RueI_RueIMain_EnsureInit
+  commentId: M:RueI.RueIMain.EnsureInit
+  fullName: RueI.RueIMain.EnsureInit()
+  nameWithType: RueIMain.EnsureInit()
+- uid: RueI.RueIMain.EnsureInit*
+  name: EnsureInit
+  href: api/RueI.RueIMain.html#RueI_RueIMain_EnsureInit_
+  commentId: Overload:RueI.RueIMain.EnsureInit
+  isSpec: "True"
+  fullName: RueI.RueIMain.EnsureInit
+  nameWithType: RueIMain.EnsureInit
+- uid: RueI.RueIMain.HARMONYID
+  name: HARMONYID
+  href: api/RueI.RueIMain.html#RueI_RueIMain_HARMONYID
+  commentId: F:RueI.RueIMain.HARMONYID
+  fullName: RueI.RueIMain.HARMONYID
+  nameWithType: RueIMain.HARMONYID
+- uid: RueI.RueIMain.Version
+  name: Version
+  href: api/RueI.RueIMain.html#RueI_RueIMain_Version
+  commentId: F:RueI.RueIMain.Version
+  fullName: RueI.RueIMain.Version
+  nameWithType: RueIMain.Version
 - uid: RueI.Ruetility
   name: Ruetility
   href: api/RueI.Ruetility.html
@@ -5953,6 +6153,35 @@ references:
   isSpec: "True"
   fullName: RueI.UnityAlternative.Log
   nameWithType: UnityAlternative.Log
+- uid: RueI.UnityAlternative.LogWarn(System.String)
+  name: LogWarn(string)
+  href: api/RueI.UnityAlternative.html#RueI_UnityAlternative_LogWarn_System_String_
+  commentId: M:RueI.UnityAlternative.LogWarn(System.String)
+  name.vb: LogWarn(String)
+  fullName: RueI.UnityAlternative.LogWarn(string)
+  fullName.vb: RueI.UnityAlternative.LogWarn(String)
+  nameWithType: UnityAlternative.LogWarn(string)
+  nameWithType.vb: UnityAlternative.LogWarn(String)
+- uid: RueI.UnityAlternative.LogWarn*
+  name: LogWarn
+  href: api/RueI.UnityAlternative.html#RueI_UnityAlternative_LogWarn_
+  commentId: Overload:RueI.UnityAlternative.LogWarn
+  isSpec: "True"
+  fullName: RueI.UnityAlternative.LogWarn
+  nameWithType: UnityAlternative.LogWarn
+- uid: RueI.UnityAlternative.PatchAll(HarmonyLib.Harmony)
+  name: PatchAll(Harmony)
+  href: api/RueI.UnityAlternative.html#RueI_UnityAlternative_PatchAll_HarmonyLib_Harmony_
+  commentId: M:RueI.UnityAlternative.PatchAll(HarmonyLib.Harmony)
+  fullName: RueI.UnityAlternative.PatchAll(HarmonyLib.Harmony)
+  nameWithType: UnityAlternative.PatchAll(Harmony)
+- uid: RueI.UnityAlternative.PatchAll*
+  name: PatchAll
+  href: api/RueI.UnityAlternative.html#RueI_UnityAlternative_PatchAll_
+  commentId: Overload:RueI.UnityAlternative.PatchAll
+  isSpec: "True"
+  fullName: RueI.UnityAlternative.PatchAll
+  nameWithType: UnityAlternative.PatchAll
 - uid: RueI.UnityAlternative.PerformAsync(System.TimeSpan,System.Action)
   name: PerformAsync(TimeSpan, Action)
   href: api/RueI.UnityAlternative.html#RueI_UnityAlternative_PerformAsync_System_TimeSpan_System_Action_
@@ -6001,6 +6230,22 @@ references:
   isSpec: "True"
   fullName: RueI.UnityProvider.Log
   nameWithType: UnityProvider.Log
+- uid: RueI.UnityProvider.LogWarn(System.String)
+  name: LogWarn(string)
+  href: api/RueI.UnityProvider.html#RueI_UnityProvider_LogWarn_System_String_
+  commentId: M:RueI.UnityProvider.LogWarn(System.String)
+  name.vb: LogWarn(String)
+  fullName: RueI.UnityProvider.LogWarn(string)
+  fullName.vb: RueI.UnityProvider.LogWarn(String)
+  nameWithType: UnityProvider.LogWarn(string)
+  nameWithType.vb: UnityProvider.LogWarn(String)
+- uid: RueI.UnityProvider.LogWarn*
+  name: LogWarn
+  href: api/RueI.UnityProvider.html#RueI_UnityProvider_LogWarn_
+  commentId: Overload:RueI.UnityProvider.LogWarn
+  isSpec: "True"
+  fullName: RueI.UnityProvider.LogWarn
+  nameWithType: UnityProvider.LogWarn
 - uid: RueI.UnityProvider.MECAsyncOperation
   name: UnityProvider.MECAsyncOperation
   href: api/RueI.UnityProvider.MECAsyncOperation.html
@@ -6065,6 +6310,19 @@ references:
   isSpec: "True"
   fullName: RueI.UnityProvider.MECAsyncOperation.IsRunning
   nameWithType: UnityProvider.MECAsyncOperation.IsRunning
+- uid: RueI.UnityProvider.PatchAll(HarmonyLib.Harmony)
+  name: PatchAll(Harmony)
+  href: api/RueI.UnityProvider.html#RueI_UnityProvider_PatchAll_HarmonyLib_Harmony_
+  commentId: M:RueI.UnityProvider.PatchAll(HarmonyLib.Harmony)
+  fullName: RueI.UnityProvider.PatchAll(HarmonyLib.Harmony)
+  nameWithType: UnityProvider.PatchAll(Harmony)
+- uid: RueI.UnityProvider.PatchAll*
+  name: PatchAll
+  href: api/RueI.UnityProvider.html#RueI_UnityProvider_PatchAll_
+  commentId: Overload:RueI.UnityProvider.PatchAll
+  isSpec: "True"
+  fullName: RueI.UnityProvider.PatchAll
+  nameWithType: UnityProvider.PatchAll
 - uid: RueI.UnityProvider.PerformAsync(System.TimeSpan,System.Action)
   name: PerformAsync(TimeSpan, Action)
   href: api/RueI.UnityProvider.html#RueI_UnityProvider_PerformAsync_System_TimeSpan_System_Action_
@@ -6362,6 +6620,19 @@ references:
   isSpec: "True"
   fullName: eMEC.TaskBase.IsRunning
   nameWithType: TaskBase.IsRunning
+- uid: eMEC.TaskBase.Operation
+  name: Operation
+  href: api/eMEC.TaskBase.html#eMEC_TaskBase_Operation
+  commentId: P:eMEC.TaskBase.Operation
+  fullName: eMEC.TaskBase.Operation
+  nameWithType: TaskBase.Operation
+- uid: eMEC.TaskBase.Operation*
+  name: Operation
+  href: api/eMEC.TaskBase.html#eMEC_TaskBase_Operation_
+  commentId: Overload:eMEC.TaskBase.Operation
+  isSpec: "True"
+  fullName: eMEC.TaskBase.Operation
+  nameWithType: TaskBase.Operation
 - uid: eMEC.TaskBase.ResetState
   name: ResetState()
   href: api/eMEC.TaskBase.html#eMEC_TaskBase_ResetState
@@ -6375,12 +6646,6 @@ references:
   isSpec: "True"
   fullName: eMEC.TaskBase.ResetState
   nameWithType: TaskBase.ResetState
-- uid: eMEC.TaskBase.operation
-  name: operation
-  href: api/eMEC.TaskBase.html#eMEC_TaskBase_operation
-  commentId: F:eMEC.TaskBase.operation
-  fullName: eMEC.TaskBase.operation
-  nameWithType: TaskBase.operation
 - uid: eMEC.TaskPool
   name: TaskPool
   href: api/eMEC.TaskPool.html

@@ -2,10 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class HintPatch
+      <title>Class TimedElemRef&lt;T&gt;
  | RueI </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class HintPatch
+      <meta name="title" content="Class TimedElemRef&lt;T&gt;
  | RueI ">
       
       <link rel="icon" href="../favicon.ico">
@@ -17,7 +17,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/Ruemena/RueI/new/master/apiSpec/new?filename=RueI_Patches_HintPatch.md&amp;value=---%0Auid%3A%20RueI.Patches.HintPatch%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/Ruemena/RueI/new/master/apiSpec/new?filename=RueI_Displays_Scheduling_TimedElemRef_1.md&amp;value=---%0Auid%3A%20RueI.Displays.Scheduling.TimedElemRef%601%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -85,40 +85,51 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="RueI.Patches.HintPatch">
+        <article data-uid="RueI.Displays.Scheduling.TimedElemRef`1">
 
 
 
-  <h1 id="RueI_Patches_HintPatch" data-uid="RueI.Patches.HintPatch" class="text-break">
-    Class HintPatch
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Patches/HintPatch.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  <h1 id="RueI_Displays_Scheduling_TimedElemRef_1" data-uid="RueI.Displays.Scheduling.TimedElemRef`1" class="text-break">
+    Class TimedElemRef&lt;T&gt;
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/Scheduling/TimeElemRef.cs/#L9"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
-    <dl><dt>Namespace</dt><dd><a class="xref" href="RueI.html">RueI</a>.<a class="xref" href="RueI.Patches.html">Patches</a></dd></dl>
+    <dl><dt>Namespace</dt><dd><a class="xref" href="RueI.html">RueI</a>.<a class="xref" href="RueI.Displays.html">Displays</a>.<a class="xref" href="RueI.Displays.Scheduling.html">Scheduling</a></dd></dl>
   <dl><dt>Assembly</dt><dd>RueI.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Patches HintDisplay.Show to detect when hints are shown.</p>
+  <div class="markdown summary"><p>Represents a <a class="xref" href="RueI.Displays.IElemReference-1.html">IElemReference&lt;T&gt;</a> with an associated <a class="xref" href="RueI.Displays.Scheduling.JobToken.html">JobToken</a>.</p>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[HarmonyPatch(typeof(HintDisplay), &quot;Show&quot;)]
-public static class HintPatch</code></pre>
+    <pre><code class="lang-csharp hljs">public class TimedElemRef&lt;T&gt; : IElemReference&lt;T&gt; where T : Element</code></pre>
   </div>
 
 
 
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd><p>The type of the element.</p>
+</dd>
+  </dl>
 
   <dl class="typelist inheritance">
     <dt>Inheritance</dt>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-      <div><span class="xref">HintPatch</span></div>
+      <div><span class="xref">TimedElemRef&lt;T&gt;</span></div>
     </dd>
   </dl>
 
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="RueI.Displays.IElemReference-1.html">IElemReference</a>&lt;T&gt;</div>
+    </dd>
+  </dl>
 
 
   <dl class="typelist derived">
@@ -147,50 +158,46 @@ public static class HintPatch</code></pre>
     </div>
   </dd></dl>
 
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="RueI.Extensions.UniversalExtensions.html#RueI_Extensions_UniversalExtensions_AddTo__1___0_System_Collections_Generic_ICollection___0__">UniversalExtensions.AddTo&lt;T&gt;(T, ICollection&lt;T&gt;)</a>
+  </div>
+  </dd></dl>
 
 
 
 
 
-  <h2 class="section" id="methods">Methods
+  <h2 class="section" id="properties">Properties
 </h2>
 
 
-  <a id="RueI_Patches_HintPatch_Transpiler_" data-uid="RueI.Patches.HintPatch.Transpiler*"></a>
+  <a id="RueI_Displays_Scheduling_TimedElemRef_1_JobToken_" data-uid="RueI.Displays.Scheduling.TimedElemRef`1.JobToken*"></a>
 
-  <h3 id="RueI_Patches_HintPatch_Transpiler_System_Collections_Generic_IEnumerable_HarmonyLib_CodeInstruction__System_Reflection_Emit_ILGenerator_" data-uid="RueI.Patches.HintPatch.Transpiler(System.Collections.Generic.IEnumerable{HarmonyLib.CodeInstruction},System.Reflection.Emit.ILGenerator)">
-  Transpiler(IEnumerable&lt;CodeInstruction&gt;, ILGenerator)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Patches/HintPatch.cs/#L35"><i class="bi bi-code-slash"></i></a>
+  <h3 id="RueI_Displays_Scheduling_TimedElemRef_1_JobToken" data-uid="RueI.Displays.Scheduling.TimedElemRef`1.JobToken">
+  JobToken
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/Scheduling/TimeElemRef.cs/#L15"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Patches HintDisplay.Show to detect when hints are shown.</p>
+  <div class="markdown level1 summary"><p>Gets the <a class="xref" href="RueI.Displays.Scheduling.JobToken.html">JobToken</a> for this element reference.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[HarmonyTranspiler]
-public static IEnumerable&lt;CodeInstruction&gt; Transpiler(IEnumerable&lt;CodeInstruction&gt; instructions, ILGenerator generator)</code></pre>
+    <pre><code class="lang-csharp hljs">public JobToken JobToken { get; }</code></pre>
   </div>
 
-  <h4 class="section">Parameters</h4>
+
+
+
+
+  <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><code>instructions</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<span class="xref">CodeInstruction</span>&gt;</dt>
-    <dd><p>The original instructions.</p>
-</dd>
-    <dt><code>generator</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.reflection.emit.ilgenerator">ILGenerator</a></dt>
-    <dd><p>An <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.reflection.emit.ilgenerator">ILGenerator</a> to use.</p>
-</dd>
+    <dt><a class="xref" href="RueI.Displays.Scheduling.JobToken.html">JobToken</a></dt>
+    <dd></dd>
   </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<span class="xref">CodeInstruction</span>&gt;</dt>
-    <dd><p>The new instructions.</p>
-</dd>
-  </dl>
-
-
-
 
 
 
@@ -203,7 +210,7 @@ public static IEnumerable&lt;CodeInstruction&gt; Transpiler(IEnumerable&lt;CodeI
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Patches/HintPatch.cs/#L22" class="edit-link">Edit this page</a>
+          <a href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/Scheduling/TimeElemRef.cs/#L9" class="edit-link">Edit this page</a>
         </div>
 
 

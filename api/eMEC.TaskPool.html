@@ -91,7 +91,7 @@
 
   <h1 id="eMEC_TaskPool" data-uid="eMEC.TaskPool" class="text-break">
     Class TaskPool
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/eMEC.cs/#L278"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/eMEC.cs/#L284"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -244,10 +244,10 @@
 
   <h3 id="eMEC_TaskPool_CleanUp" data-uid="eMEC.TaskPool.CleanUp">
   CleanUp()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/eMEC.cs/#L285"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/eMEC.cs/#L294"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Recursvely cleans up this <a class="xref" href="eMEC.ITaskable.html">ITaskable</a>.</p>
+  <div class="markdown level1 summary"><p>Cleans up all of the <a class="xref" href="eMEC.ITaskable.html">ITaskable</a>s in this <a class="xref" href="eMEC.TaskPool.html">TaskPool</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -271,10 +271,10 @@
 
   <h3 id="eMEC_TaskPool_DescendOrPerform_System_Action_eMEC_TaskBase__" data-uid="eMEC.TaskPool.DescendOrPerform(System.Action{eMEC.TaskBase})">
   DescendOrPerform(Action&lt;TaskBase&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/eMEC.cs/#L293"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/eMEC.cs/#L306"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Recursively loops through the pool, or performs the action if this is a Task.</p>
+  <div class="markdown level1 summary"><p>Recursively performs an action on every <a class="xref" href="eMEC.ITaskable.html">ITaskable</a> within this <a class="xref" href="eMEC.TaskPool.html">TaskPool</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -285,7 +285,7 @@
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>action</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="eMEC.TaskBase.html">TaskBase</a>&gt;</dt>
-    <dd><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action&lt;T&gt;</a> to perform.</p>
+    <dd><p>The action to perform.</p>
 </dd>
   </dl>
 
@@ -304,7 +304,7 @@
 
   <h3 id="eMEC_TaskPool_Finalize" data-uid="eMEC.TaskPool.Finalize">
   ~TaskPool()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/eMEC.cs/#L283"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/eMEC.cs/#L289"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Finalizes an instance of the <a class="xref" href="eMEC.TaskPool.html">TaskPool</a> class.</p>
@@ -331,7 +331,7 @@
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/Ruemena/RueI/blob/master/RueI/eMEC.cs/#L278" class="edit-link">Edit this page</a>
+          <a href="https://github.com/Ruemena/RueI/blob/master/RueI/eMEC.cs/#L284" class="edit-link">Edit this page</a>
         </div>
 
 

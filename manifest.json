@@ -22,6 +22,56 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Example.HintProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Example.HintProvider.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Example.IHintProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Example.IHintProvider.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Example.RueIHintProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Example.RueIHintProvider.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Example.VanillaHintProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Example.VanillaHintProvider.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Example.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Example.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/RueI.CharacterLengths.yml",
       "output": {
         ".html": {
@@ -142,6 +192,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Displays.Scheduling.RateLimiter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Displays.Scheduling.RateLimiter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/RueI.Displays.Scheduling.Records.ScheduledJob.yml",
       "output": {
         ".html": {
@@ -162,20 +222,20 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RueI.Displays.Scheduling.Scheduler.RateLimiter.yml",
+      "source_relative_path": "api/RueI.Displays.Scheduling.Scheduler.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RueI.Displays.Scheduling.Scheduler.RateLimiter.html"
+          "relative_path": "api/RueI.Displays.Scheduling.Scheduler.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RueI.Displays.Scheduling.Scheduler.yml",
+      "source_relative_path": "api/RueI.Displays.Scheduling.TimedElemRef-1.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RueI.Displays.Scheduling.Scheduler.html"
+          "relative_path": "api/RueI.Displays.Scheduling.TimedElemRef-1.html"
         }
       },
       "version": ""
@@ -322,16 +382,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RueI.EventHandler.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/RueI.EventHandler.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/RueI.Events.DisplayUpdatedEventArgs.yml",
       "output": {
         ".html": {
@@ -386,6 +436,16 @@
       "output": {
         ".html": {
           "relative_path": "api/RueI.Extensions.CollectionExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Extensions.DisplayCoreExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Extensions.DisplayCoreExtensions.html"
         }
       },
       "version": ""
@@ -486,16 +546,6 @@
       "output": {
         ".html": {
           "relative_path": "api/RueI.Extensions.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/RueI.Main.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/RueI.Main.html"
         }
       },
       "version": ""
@@ -1282,10 +1332,30 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Patches.PatchHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Patches.PatchHelper.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/RueI.Patches.yml",
       "output": {
         ".html": {
           "relative_path": "api/RueI.Patches.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RueI.RueIMain.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.RueIMain.html"
         }
       },
       "version": ""

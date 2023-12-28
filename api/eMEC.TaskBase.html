@@ -178,7 +178,7 @@
 
   <h3 id="eMEC_TaskBase__ctor" data-uid="eMEC.TaskBase.#ctor">
   TaskBase()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/eMEC.cs/#L232"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/eMEC.cs/#L230"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="eMEC.TaskBase.html">TaskBase</a> class.</p>
@@ -205,7 +205,7 @@
 
   <h3 id="eMEC_TaskBase__ctor_eMEC_TaskPool_" data-uid="eMEC.TaskBase.#ctor(eMEC.TaskPool)">
   TaskBase(TaskPool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/eMEC.cs/#L224"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/eMEC.cs/#L222"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="eMEC.TaskBase.html">TaskBase</a> class.</p>
@@ -234,40 +234,6 @@
 
 
 
-  <h2 class="section" id="fields">Fields
-</h2>
-
-
-
-  <h3 id="eMEC_TaskBase_operation" data-uid="eMEC.TaskBase.operation">
-  operation
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/eMEC.cs/#L218"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected UnityAlternative.IAsyncOperation? operation</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="RueI.UnityAlternative.html">UnityAlternative</a>.<a class="xref" href="RueI.UnityAlternative.IAsyncOperation.html">IAsyncOperation</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
   <h2 class="section" id="properties">Properties
 </h2>
 
@@ -276,7 +242,7 @@
 
   <h3 id="eMEC_TaskBase_IsRunning" data-uid="eMEC.TaskBase.IsRunning">
   IsRunning
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/eMEC.cs/#L247"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/eMEC.cs/#L245"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets a value indicating whether or not this task is currently running.</p>
@@ -304,6 +270,38 @@
 
 
 
+  <a id="eMEC_TaskBase_Operation_" data-uid="eMEC.TaskBase.Operation*"></a>
+
+  <h3 id="eMEC_TaskBase_Operation" data-uid="eMEC.TaskBase.Operation">
+  Operation
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/eMEC.cs/#L251"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the <a class="xref" href="RueI.UnityAlternative.IAsyncOperation.html">UnityAlternative.IAsyncOperation</a> for this task, if it exists.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected UnityAlternative.IAsyncOperation? Operation { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="RueI.UnityAlternative.html">UnityAlternative</a>.<a class="xref" href="RueI.UnityAlternative.IAsyncOperation.html">IAsyncOperation</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <h2 class="section" id="methods">Methods
 </h2>
 
@@ -312,7 +310,7 @@
 
   <h3 id="eMEC_TaskBase_CleanUp" data-uid="eMEC.TaskBase.CleanUp">
   CleanUp()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/eMEC.cs/#L251"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/eMEC.cs/#L254"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Recursvely cleans up this <a class="xref" href="eMEC.ITaskable.html">ITaskable</a>.</p>
@@ -339,7 +337,7 @@
 
   <h3 id="eMEC_TaskBase_DescendOrPerform_System_Action_eMEC_TaskBase__" data-uid="eMEC.TaskBase.DescendOrPerform(System.Action{eMEC.TaskBase})">
   DescendOrPerform(Action&lt;TaskBase&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/eMEC.cs/#L266"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/eMEC.cs/#L269"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Performs an action on this task.</p>
@@ -372,7 +370,7 @@
 
   <h3 id="eMEC_TaskBase_End" data-uid="eMEC.TaskBase.End">
   End()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/eMEC.cs/#L256"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/eMEC.cs/#L259"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Ends the task, without calling the method.</p>
@@ -399,7 +397,7 @@
 
   <h3 id="eMEC_TaskBase_Finalize" data-uid="eMEC.TaskBase.Finalize">
   ~TaskBase()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/eMEC.cs/#L239"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/eMEC.cs/#L237"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Finalizes an instance of the <a class="xref" href="eMEC.TaskBase.html">TaskBase</a> class.</p>
@@ -426,10 +424,11 @@
 
   <h3 id="eMEC_TaskBase_ResetState" data-uid="eMEC.TaskBase.ResetState">
   ResetState()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/eMEC.cs/#L268"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/eMEC.cs/#L274"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Resets the state for this <a class="xref" href="eMEC.TaskBase.html">TaskBase</a>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">

@@ -2,10 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Namespace RueI
+      <title>Interface IHintProvider
  | RueI </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Namespace RueI
+      <meta name="title" content="Interface IHintProvider
  | RueI ">
       
       <link rel="icon" href="../favicon.ico">
@@ -17,7 +17,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      
+      <meta name="docfx:docurl" content="https://github.com/Ruemena/RueI/new/master/apiSpec/new?filename=Example_IHintProvider.md&amp;value=---%0Auid%3A%20Example.IHintProvider%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -85,75 +85,95 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="RueI">
+        <article data-uid="Example.IHintProvider">
 
-  <h1 id="RueI" data-uid="RueI" class="text-break">Namespace RueI
-</h1>
-  <div class="markdown level0 summary"></div>
-  <div class="markdown level0 conceptual"></div>
-  <div class="markdown level0 remarks"></div>
 
-    <h3 id="classes">
-Classes
-</h3>
-    <dl class="jumplist">
-      <dt><a class="xref" href="RueI.CharacterLengths.html">CharacterLengths</a></dt>
-      <dd><p>Provides a variety of constant values.</p>
+
+  <h1 id="Example_IHintProvider" data-uid="Example.IHintProvider" class="text-break">
+    Interface IHintProvider
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Testing.cs/#L43"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Example.html">Example</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>RueI.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Defines a contract for a class that provides hint utility.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IHintProvider</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="RueI.Extensions.UniversalExtensions.html#RueI_Extensions_UniversalExtensions_AddTo__1___0_System_Collections_Generic_ICollection___0__">UniversalExtensions.AddTo&lt;T&gt;(T, ICollection&lt;T&gt;)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Example_IHintProvider_ShowString_" data-uid="Example.IHintProvider.ShowString*"></a>
+
+  <h3 id="Example_IHintProvider_ShowString_ReferenceHub_System_TimeSpan_System_String_" data-uid="Example.IHintProvider.ShowString(ReferenceHub,System.TimeSpan,System.String)">
+  ShowString(ReferenceHub, TimeSpan, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Testing.cs/#L51"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Shows a string to the given ReferenceHub using hints for the specified duration.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void ShowString(ReferenceHub hub, TimeSpan duration, string content)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>hub</code> <span class="xref">ReferenceHub</span></dt>
+    <dd><p>The ReferenceHub to show to.</p>
 </dd>
-    </dl>
-    <dl class="jumplist">
-      <dt><a class="xref" href="RueI.Constants.html">Constants</a></dt>
-      <dd><p>Provides a variety of constant values.</p>
+    <dt><code>duration</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timespan">TimeSpan</a></dt>
+    <dd><p>How long to show the content for.</p>
 </dd>
-    </dl>
-    <dl class="jumplist">
-      <dt><a class="xref" href="RueI.NonUnityProvider.html">NonUnityProvider</a></dt>
-      <dd><p>Provides non-Unity alternatives for the <a class="xref" href="RueI.UnityProvider.html">UnityProvider</a> of the application.</p>
+    <dt><code>content</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The string to show to the ReferenceHub.</p>
 </dd>
-    </dl>
-    <dl class="jumplist">
-      <dt><a class="xref" href="RueI.NonUnityProvider.TaskAsyncOperation.html">NonUnityProvider.TaskAsyncOperation</a></dt>
-      <dd><p>Represents an async operation using a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a>.</p>
-</dd>
-    </dl>
-    <dl class="jumplist">
-      <dt><a class="xref" href="RueI.RueIMain.html">RueIMain</a></dt>
-      <dd><p>Represents the main class for RueI.</p>
-</dd>
-    </dl>
-    <dl class="jumplist">
-      <dt><a class="xref" href="RueI.Ruetility.html">Ruetility</a></dt>
-      <dd><p>Provides helpful functions for dealing with elements and hints.</p>
-</dd>
-    </dl>
-    <dl class="jumplist">
-      <dt><a class="xref" href="RueI.UnityAlternative.html">UnityAlternative</a></dt>
-      <dd><p>Defines the base class for a provider of methods that may or may not use Unity.</p>
-</dd>
-    </dl>
-    <dl class="jumplist">
-      <dt><a class="xref" href="RueI.UnityProvider.html">UnityProvider</a></dt>
-      <dd><p>Provides Unity methods for the application.</p>
-</dd>
-    </dl>
-    <dl class="jumplist">
-      <dt><a class="xref" href="RueI.UnityProvider.MECAsyncOperation.html">UnityProvider.MECAsyncOperation</a></dt>
-      <dd><p>Represents an async operation using a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a>.</p>
-</dd>
-    </dl>
-    <h3 id="interfaces">
-Interfaces
-</h3>
-    <dl class="jumplist">
-      <dt><a class="xref" href="RueI.UnityAlternative.IAsyncOperation.html">UnityAlternative.IAsyncOperation</a></dt>
-      <dd><p>Represents a generalized handler for an async operation.</p>
-</dd>
-    </dl>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
 
 
 </article>
 
         <div class="contribution d-print-none">
+          <a href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Testing.cs/#L43" class="edit-link">Edit this page</a>
         </div>
 
 

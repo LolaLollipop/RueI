@@ -2,10 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class HintPatch
+      <title>Class RueIMain
  | RueI </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class HintPatch
+      <meta name="title" content="Class RueIMain
  | RueI ">
       
       <link rel="icon" href="../favicon.ico">
@@ -17,7 +17,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/Ruemena/RueI/new/master/apiSpec/new?filename=RueI_Patches_HintPatch.md&amp;value=---%0Auid%3A%20RueI.Patches.HintPatch%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/Ruemena/RueI/new/master/apiSpec/new?filename=RueI_RueIMain.md&amp;value=---%0Auid%3A%20RueI.RueIMain%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -85,27 +85,26 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="RueI.Patches.HintPatch">
+        <article data-uid="RueI.RueIMain">
 
 
 
-  <h1 id="RueI_Patches_HintPatch" data-uid="RueI.Patches.HintPatch" class="text-break">
-    Class HintPatch
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Patches/HintPatch.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  <h1 id="RueI_RueIMain" data-uid="RueI.RueIMain" class="text-break">
+    Class RueIMain
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/Main.cs/#L17"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
-    <dl><dt>Namespace</dt><dd><a class="xref" href="RueI.html">RueI</a>.<a class="xref" href="RueI.Patches.html">Patches</a></dd></dl>
+    <dl><dt>Namespace</dt><dd><a class="xref" href="RueI.html">RueI</a></dd></dl>
   <dl><dt>Assembly</dt><dd>RueI.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Patches HintDisplay.Show to detect when hints are shown.</p>
+  <div class="markdown summary"><p>Represents the main class for RueI.</p>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[HarmonyPatch(typeof(HintDisplay), &quot;Show&quot;)]
-public static class HintPatch</code></pre>
+    <pre><code class="lang-csharp hljs">public static class RueIMain</code></pre>
   </div>
 
 
@@ -115,7 +114,7 @@ public static class HintPatch</code></pre>
     <dt>Inheritance</dt>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-      <div><span class="xref">HintPatch</span></div>
+      <div><span class="xref">RueIMain</span></div>
     </dd>
   </dl>
 
@@ -152,42 +151,92 @@ public static class HintPatch</code></pre>
 
 
 
-  <h2 class="section" id="methods">Methods
+  <h2 class="section" id="fields">Fields
 </h2>
 
 
-  <a id="RueI_Patches_HintPatch_Transpiler_" data-uid="RueI.Patches.HintPatch.Transpiler*"></a>
 
-  <h3 id="RueI_Patches_HintPatch_Transpiler_System_Collections_Generic_IEnumerable_HarmonyLib_CodeInstruction__System_Reflection_Emit_ILGenerator_" data-uid="RueI.Patches.HintPatch.Transpiler(System.Collections.Generic.IEnumerable{HarmonyLib.CodeInstruction},System.Reflection.Emit.ILGenerator)">
-  Transpiler(IEnumerable&lt;CodeInstruction&gt;, ILGenerator)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Patches/HintPatch.cs/#L35"><i class="bi bi-code-slash"></i></a>
+  <h3 id="RueI_RueIMain_HARMONYID" data-uid="RueI.RueIMain.HARMONYID">
+  HARMONYID
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/Main.cs/#L22"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Patches HintDisplay.Show to detect when hints are shown.</p>
+  <div class="markdown level1 summary"><p>Gets the <span class="xref">HarmonyLib.Harmony</span> id for RueI.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[HarmonyTranspiler]
-public static IEnumerable&lt;CodeInstruction&gt; Transpiler(IEnumerable&lt;CodeInstruction&gt; instructions, ILGenerator generator)</code></pre>
+    <pre><code class="lang-csharp hljs">public const string HARMONYID = &quot;RueI_Hint_Dependency&quot;</code></pre>
   </div>
 
-  <h4 class="section">Parameters</h4>
+
+
+
+  <h4 class="section">Field Value</h4>
   <dl class="parameters">
-    <dt><code>instructions</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<span class="xref">CodeInstruction</span>&gt;</dt>
-    <dd><p>The original instructions.</p>
-</dd>
-    <dt><code>generator</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.reflection.emit.ilgenerator">ILGenerator</a></dt>
-    <dd><p>An <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.reflection.emit.ilgenerator">ILGenerator</a> to use.</p>
-</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
   </dl>
 
-  <h4 class="section">Returns</h4>
+
+
+
+
+
+
+
+
+
+  <h3 id="RueI_RueIMain_Version" data-uid="RueI.RueIMain.Version">
+  Version
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/Main.cs/#L27"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the current version of RueI.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Version Version</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<span class="xref">CodeInstruction</span>&gt;</dt>
-    <dd><p>The new instructions.</p>
-</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.version">Version</a></dt>
+    <dd></dd>
   </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="RueI_RueIMain_EnsureInit_" data-uid="RueI.RueIMain.EnsureInit*"></a>
+
+  <h3 id="RueI_RueIMain_EnsureInit" data-uid="RueI.RueIMain.EnsureInit">
+  EnsureInit()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/Main.cs/#L49"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Ensures that RueI is properly initialized.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void EnsureInit()</code></pre>
+  </div>
+
+
 
 
 
@@ -203,7 +252,7 @@ public static IEnumerable&lt;CodeInstruction&gt; Transpiler(IEnumerable&lt;CodeI
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Patches/HintPatch.cs/#L22" class="edit-link">Edit this page</a>
+          <a href="https://github.com/Ruemena/RueI/blob/master/RueI/Main.cs/#L17" class="edit-link">Edit this page</a>
         </div>
 
 
