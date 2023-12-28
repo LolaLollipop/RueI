@@ -1,7 +1,7 @@
 # RueI
 [![build and unit tests](https://github.com/Ruemena/RueI/actions/workflows/main.yml/badge.svg)](https://github.com/Ruemena/RueI/actions/workflows/main.yml)
 
-RueI is a hint framework for scp:sl
+RueI is a hint framework, designed to be the definitive way to display multiple hints at once
 
 docs are available [here](https://ruemena.github.io/RueI/).
 
