@@ -1465,6 +1465,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "markdown/basic-concepts.md",
+      "output": {
+        ".html": {
+          "relative_path": "markdown/basic-concepts.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "markdown/customtags.md",
       "output": {
         ".html": {

@@ -719,6 +719,11 @@
     "title": "RueI | RueI",
     "keywords": "RueI RueI is a hint framework for scp:sl. it provides the ability to show multiple hints at once, along with a lot of other features for server owners installing RueI is easy. download the dll, and move it into your dependencies folder for the plugin framework you are using. note that RueI requires Harmony 2.2.2, you can get that here."
   },
+  "markdown/basic-concepts.html": {
+    "href": "markdown/basic-concepts.html",
+    "title": "Basic Concepts | RueI",
+    "keywords": "Basic Concepts this serves as a basic introduction to RueI concepts and functionality. the most basic components of RueI are Elements, which act like individual hints with their own content. elements are contained within DisplayBases. elements are not tied to a player (so you can have an instance of an element in multiple displays at once), but displays are. finally, every ReferenceHub (player) in RueI has an associated DisplayCore, which manages all of the displays for a player and combines the elements in them to one hint. every DisplayCore also has a Scheduler, enabling synchronized delayed updates. there are two element types that RueI provides out of the box: SetElement: a very simple element with settable content DynamicElement: an element that, when the display is updated/refreshed, gets its content by calling a function. every time you update something in RueI, such as the content of an element, you must update the DisplayCore by calling DisplayCore.Update(). you can get the DisplayCore for a player by calling DisplayCore.Get(ReferenceHub). while it's easy to forget to do this, this is unfortunately necessary."
+  },
   "markdown/customtags.html": {
     "href": "markdown/customtags.html",
     "title": "Creating Custom Tags | RueI",
