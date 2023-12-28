@@ -4,31 +4,6 @@
     "title": "RueI | RueI",
     "keywords": "RueI RueI is a hint framework for scp:sl docs are available here. Features support for displaying multiple hints at once without them interfering with eachother cross-plugin compatibility custom tags and other utility scheduler system, which makes dealing with the hint ratelimit easier RueI is not a grid-based or line-based system, it calculates the offset necessary to put a hint at the same position no matter what"
   },
-  "api/Example.HintProvider.html": {
-    "href": "api/Example.HintProvider.html",
-    "title": "Class HintProvider | RueI",
-    "keywords": "Class HintProvider Namespace Example Assembly RueI.dll Provides a IHintProvider for the plugin. public static class HintProvider Inheritance object HintProvider Inherited Members object.ToString() object.Equals(object) object.Equals(object, object) object.ReferenceEquals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() Properties Provider Gets the IHintProvider for the plugin. public static IHintProvider Provider { get; } Property Value IHintProvider"
-  },
-  "api/Example.IHintProvider.html": {
-    "href": "api/Example.IHintProvider.html",
-    "title": "Interface IHintProvider | RueI",
-    "keywords": "Interface IHintProvider Namespace Example Assembly RueI.dll Defines a contract for a class that provides hint utility. public interface IHintProvider Extension Methods UniversalExtensions.AddTo<T>(T, ICollection<T>) Methods ShowString(ReferenceHub, TimeSpan, string) Shows a string to the given ReferenceHub using hints for the specified duration. void ShowString(ReferenceHub hub, TimeSpan duration, string content) Parameters hub ReferenceHub The ReferenceHub to show to. duration TimeSpan How long to show the content for. content string The string to show to the ReferenceHub."
-  },
-  "api/Example.RueIHintProvider.html": {
-    "href": "api/Example.RueIHintProvider.html",
-    "title": "Class RueIHintProvider | RueI",
-    "keywords": "Class RueIHintProvider Namespace Example Assembly RueI.dll Implements IHintProvider by utilizing Ruei. public class RueIHintProvider : IHintProvider Inheritance object RueIHintProvider Implements IHintProvider Inherited Members object.ToString() object.Equals(object) object.Equals(object, object) object.ReferenceEquals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() Extension Methods UniversalExtensions.AddTo<T>(T, ICollection<T>) Methods ShowString(ReferenceHub, TimeSpan, string) Shows a string to the given ReferenceHub using RueI elements for the specified duration. public void ShowString(ReferenceHub hub, TimeSpan duration, string content) Parameters hub ReferenceHub The ReferenceHub to show to. duration TimeSpan How long to show the element for. content string The content of the element."
-  },
-  "api/Example.VanillaHintProvider.html": {
-    "href": "api/Example.VanillaHintProvider.html",
-    "title": "Class VanillaHintProvider | RueI",
-    "keywords": "Class VanillaHintProvider Namespace Example Assembly RueI.dll Implements IHintProvider by providing base-game, vanilla hint functionality. public class VanillaHintProvider : IHintProvider Inheritance object VanillaHintProvider Implements IHintProvider Inherited Members object.ToString() object.Equals(object) object.Equals(object, object) object.ReferenceEquals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() Extension Methods UniversalExtensions.AddTo<T>(T, ICollection<T>) Methods ShowString(ReferenceHub, TimeSpan, string) Shows a string to the given ReferenceHub using hints for the specified duration. public void ShowString(ReferenceHub hub, TimeSpan duration, string content) Parameters hub ReferenceHub The ReferenceHub to show to. duration TimeSpan How long to show the hint for. content string The content to show to the ReferenceHub."
-  },
-  "api/Example.html": {
-    "href": "api/Example.html",
-    "title": "Namespace Example | RueI",
-    "keywords": "Namespace Example Classes HintProvider Provides a IHintProvider for the plugin. RueIHintProvider Implements IHintProvider by utilizing Ruei. VanillaHintProvider Implements IHintProvider by providing base-game, vanilla hint functionality. Interfaces IHintProvider Defines a contract for a class that provides hint utility."
-  },
   "api/RueI.CharacterLengths.html": {
     "href": "api/RueI.CharacterLengths.html",
     "title": "Class CharacterLengths | RueI",

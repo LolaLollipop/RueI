@@ -22,56 +22,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Example.HintProvider.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Example.HintProvider.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Example.IHintProvider.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Example.IHintProvider.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Example.RueIHintProvider.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Example.RueIHintProvider.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Example.VanillaHintProvider.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Example.VanillaHintProvider.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Example.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Example.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/RueI.CharacterLengths.yml",
       "output": {
         ".html": {
