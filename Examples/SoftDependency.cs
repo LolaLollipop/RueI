@@ -1,5 +1,9 @@
 namespace Example
 {
+    /*
+    This demonstrates using RueI as a 'soft dependency', where you provide both hint functionality and RueI functionality. 
+    Like all RueI code, this can be freely used and embedded in your own applications.
+    */
     using System.Runtime.CompilerServices;
 
     using Hints;
