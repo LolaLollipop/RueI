@@ -8,28 +8,38 @@
 	<Platforms>AnyCPU;x64</Platforms>
 	<Title>RueI</Title>
 	<Copyright>CC0 1.0</Copyright>
-	
 	<Version>2.0.2</Version>
 	<Authors>Rue &lt;3, Override (some help)</Authors>
 	<GenerateDocumentationFile>True</GenerateDocumentationFile>
 	<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-	<Description>hint framework for scp:sl</Description>
+	<Description>universal hint framework for scp:sl</Description>
 	<RepositoryUrl>https://github.com/Ruemena/RueI</RepositoryUrl>
 	<PackageProjectUrl>https://github.com/Ruemena/RueI</PackageProjectUrl>
-	<PackageTags>scpsl</PackageTags>
+	<PackageTags>scpsl;hints;scp;exiled;nwapi</PackageTags>
 	<AssemblyVersion>2.0.2</AssemblyVersion>
 	<FileVersion>2.0.2</FileVersion>
 	<PackageReadmeFile>README.md</PackageReadmeFile>
 	<PackageLicenseFile>LICENSE</PackageLicenseFile>
 	<PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
+	<PackageReleaseNotes>stable(?) release</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <Optimize>True</Optimize>
+    <DebugType>portable</DebugType>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Optimize>True</Optimize>
+    <DebugType>portable</DebugType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebugType>portable</DebugType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <DebugType>portable</DebugType>
   </PropertyGroup>
 
   <ItemGroup>
