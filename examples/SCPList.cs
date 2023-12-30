@@ -29,7 +29,7 @@ namespace SCPList
     {
         public override string Name => "SCPList";
 
-        public static DynamicElement MyElement { get; set; } = new(GetContent, 900);
+        public static DynamicElement MyElement { get; } = new(GetContent, 900);
         
         public static AutoElement AutoElement { get; } = AutoElement.Create(Roles.Scps, MyElement).UpdateEvery(TimeSpan.FromSeconds(0.7));
 
