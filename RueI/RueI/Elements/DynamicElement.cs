@@ -29,5 +29,5 @@ public class DynamicElement : Element
     public GetContent ContentGetter { get; set; }
 
     /// <inheritdoc/>
-    protected internal override ParsedData GetParsedData() => Parser.Parse(ContentGetter());
+    protected internal override ParsedData GetParsedData() => Parser.Parse(ContentGetter(), Options);
 }

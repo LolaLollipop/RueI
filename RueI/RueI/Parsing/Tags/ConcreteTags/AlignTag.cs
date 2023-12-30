@@ -9,7 +9,7 @@ using RueI.Parsing.Enums;
 public class AlignTag : RichTextTag
 {
     /// <inheritdoc/>
-    public override string[] Names { get; } = { "scale" };
+    public override string[] Names { get; } = { "align" };
 
     /// <inheritdoc/>
     public override TagStyle TagStyle { get; } = TagStyle.ValueParam;

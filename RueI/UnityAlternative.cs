@@ -158,7 +158,21 @@ public class UnityProvider : UnityAlternative
     public override IAsyncOperation PerformAsync(TimeSpan span, Action action) => new MECAsyncOperation(span, action);
 
     /// <inheritdoc/>
-    internal override void ShowHint(ReferenceHub hub, string message) => hub.connectionToClient.Send(new HintMessage(new TextHint(message, new HintParameter[] { new StringHintParameter(message) }, new HintEffect[] { HintEffectPresets.FadeIn(0, 0, 1) }, 99999)));
+    internal override void ShowHint(ReferenceHub hub, string message)
+    {
+        ServerConsole.AddLog("Showing");
+
+        string docPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+
+        // Append text to an existing file named "WriteLines.txt".
+        using (StreamWriter outputFile = new(Path.Combine(docPath, "hello.txt"), true))
+        {
+            outputFile.WriteLine(message);
+        }
+
+        hub.connectionToClient.Send(new HintMessage(new TextHint(message, new HintParameter[] { new StringHintParameter(message) }, null, 99999)));
+        Log(message);
+    } // HintEffectPresets.FadeIn(0, 0, 1)
 
     /// <summary>
     /// Represents an async operation using a <see cref="Task"/>.

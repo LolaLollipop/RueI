@@ -7,9 +7,9 @@
 public enum ElementOptions
 {
     /// <summary>
-    /// Indicates whether or not noparse ignores escape sequences like \r, \u, and \n.
+    /// Indicates whether or not noparse parses escape sequences like \r, \u, and \n.
     /// </summary>
-    NoparseIgnoresEscape = 1 << 0,
+    NoparseParsesEscape = 1 << 0,
 
     /// <summary>
     /// Indicates whether or not the vertical spacing of an element affects the baseline.
@@ -24,10 +24,10 @@ public enum ElementOptions
     /// <summary>
     /// Gets the default element settings.
     /// </summary>
-    Default = NoparseIgnoresEscape,
+    Default = 0,
 
     /// <summary>
     /// Gets the vanilla options for hints.
     /// </summary>
-    Vanilla = PreserveSpacing,
+    Vanilla = PreserveSpacing | UseFunctionalPosition | NoparseParsesEscape,
 }

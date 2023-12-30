@@ -11,7 +11,7 @@ public abstract class NoParamsTag : RichTextTag
     public sealed override TagStyle TagStyle { get; } = TagStyle.NoParams;
 
     /// <inheritdoc/>
-    public sealed override bool HandleTag(ParserContext context, string parameters) => HandleTag(context, string.Empty);
+    public sealed override bool HandleTag(ParserContext context, string parameters) => HandleTag(context);
 
     /// <summary>
     /// Applies this tag (without parameters) to a <see cref="ParserContext"/>.

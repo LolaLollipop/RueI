@@ -19,7 +19,6 @@ public abstract class ClosingTag<T> : NoParamsTag
     public sealed override bool HandleTag(ParserContext context)
     {
         ApplyTo(context);
-
         context.ResultBuilder.Append($"<{Name}>");
         context.RemoveEndingTag<T>();
         return true;

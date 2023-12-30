@@ -5,6 +5,11 @@ using PlayerRoles;
 /// <summary>
 /// Provides a means for describing multiple <see cref="RoleTypeId"/>s.
 /// </summary>
+/// <remarks>
+/// The purpose of the <see cref="Roles"/> enum is to enable roles to be treated like a <see cref="FlagsAttribute"/> enum. Normally,
+/// <see cref="RoleTypeId"/> cannot be treated like bit flags, so this acts as a fast and convenient way to do so.
+/// </remarks>
+/// <include file='docs.xml' path='docs/displays/members[@name="roles"]/Roles/*'/>
 [Flags]
 public enum Roles
 {

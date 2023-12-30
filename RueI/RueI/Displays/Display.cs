@@ -5,9 +5,9 @@ using RueI.Elements;
 using RueI.Displays.Interfaces;
 
 /// <summary>
-/// Represents a display attached to a <see cref="DisplayCore"/>.
+/// Represents a basic display attached to a <see cref="DisplayCore"/>.
 /// </summary>
-/// <include file='docs.xml' path='docs/members[@name="display"]/Display/*'/>
+/// <include file='docs.xml' path='docs/displays/members[@name="display"]/Display/*'/>
 public class Display : DisplayBase, IElementContainer
 {
     /// <summary>

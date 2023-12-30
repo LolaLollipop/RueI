@@ -1,6 +1,5 @@
 ﻿namespace RueI.Displays.Scheduling;
 
-using NorthwoodLib.Pools;
 using Utils.NonAllocLINQ;
 
 using eMEC;
@@ -10,9 +9,11 @@ using RueI.Extensions;
 /// <summary>
 /// Provides a means of doing batch operations.
 /// </summary>
+/// <remarks>
+/// The <see cref="Scheduler"/> is a powerful class that enables "batch operations". This means that multiple updates to a display can happen at once, helping to avoid the hint ratelimit.
+/// </remarks>
 public class Scheduler
 {
-
     private static readonly TimeSpan MinimumBatch = TimeSpan.FromMilliseconds(625);
 
     private readonly Cooldown rateLimiter = new();
@@ -69,8 +70,11 @@ public class Scheduler
     /// <param name="job">The job to schedule.</param>
     public void Schedule(ScheduledJob job)
     {
-        jobs.Add(job);
-        UpdateBatches();
+        if (job.Token == null || !jobs.Any(x => x.Token == job.Token))
+        {
+            jobs.Add(job);
+            UpdateBatches();
+        }
     }
 
     /// <summary>
@@ -157,7 +161,7 @@ public class Scheduler
         jobs.Sort();
         currentBatches.Clear();
 
-        List<ScheduledJob> currentBatch = ListPool<ScheduledJob>.Shared.Rent(10);
+        List<ScheduledJob> currentBatch = new();
         DateTimeOffset currentBatchTime = jobs.First().FinishAt + MinimumBatch;
 
         foreach (ScheduledJob job in jobs)
@@ -170,9 +174,10 @@ public class Scheduler
             {
                 BatchJob finishedBatch = new(currentBatch, CalculateWeighted(currentBatch));
                 currentBatches.Add(finishedBatch);
-                currentBatch = ListPool<ScheduledJob>.Shared.Rent(10);
-
-                currentBatch.Add(job);
+                currentBatch = new()
+                {
+                    job,
+                };
             }
         }
 
@@ -184,7 +189,7 @@ public class Scheduler
         }
 
         TimeSpan performAt = (currentBatches.First().PerformAt - Now).MaxIf(rateLimiter.Active, rateLimiter.TimeLeft);
-
+        ServerConsole.AddLog("Starting");
         performTask.Start(performAt, PerformFirstBatch);
     }
 
@@ -202,7 +207,6 @@ public class Scheduler
         }
 
         coordinator.IgnoreUpdate = false;
-        ListPool<ScheduledJob>.Shared.Return(batchJob.Jobs);
 
         currentBatches.RemoveAt(0);
         rateLimiter.Start(Constants.HintRateLimit);

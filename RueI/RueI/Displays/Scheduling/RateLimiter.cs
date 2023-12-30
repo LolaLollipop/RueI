@@ -1,10 +1,9 @@
-﻿using System.Diagnostics;
-
-namespace RueI.Displays.Scheduling;
+﻿namespace RueI.Displays.Scheduling;
 
 /// <summary>
 /// Provides a way to ratelimit actions or detect ratelimits.
 /// </summary>
+/// <seealso cref="Scheduler"/>
 public class RateLimiter
 {
     private DateTimeOffset lastConsumed = DateTime.UtcNow;

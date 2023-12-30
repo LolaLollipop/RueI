@@ -5,6 +5,8 @@ using RueI.Extensions;
 /// <summary>
 /// Defines a scheduled job for a <see cref="Scheduler"/>.
 /// </summary>
+/// <seealso cref="Scheduler"/>
+/// <seealso cref="JobToken"/>
 public class ScheduledJob : IComparable<ScheduledJob>
 {
     /// <summary>

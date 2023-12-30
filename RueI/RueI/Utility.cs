@@ -12,7 +12,7 @@ public static class Ruetility
     /// <returns>The cleaned string.</returns>
     public static string GetCleanText(string text)
     {
-        string cleanText = text.Replace("</noparse>", "</nopa​rse>"); // zero width space is inserted
+        string cleanText = text.Replace("</noparse>", "</nopa</a>rse>");
         return $"<noparse>{cleanText}</noparse>";
     }
 

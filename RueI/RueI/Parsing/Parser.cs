@@ -5,16 +5,23 @@ using System.Collections.ObjectModel;
 using System.Text;
 
 using NorthwoodLib.Pools;
-
+using RueI.Elements.Enums;
+using RueI.Extensions;
 using RueI.Parsing.Enums;
 using RueI.Parsing.Records;
 using RueI.Parsing.Tags.ConcreteTags;
 
 /// <summary>
-/// Helps parse the content of elements.
+/// Helps parse the content of elements. This class cannot be inherited.
 /// </summary>
+/// <remarks>
+/// The <see cref="Parser"/> is a sealed, immutable class that provides APIs for parsing (extracting the information of) hints so that
+/// multiple can be displayed at once, along with the ability to add new <see cref="RichTextTag"/>s. In order to create new <see cref="Parser"/>s,
+/// you must use the <see cref="ParserBuilder"/> class.
+/// </remarks>
 /// <include file='docs.xml' path='docs/members[@name="parser"]/Parser/*'/>
-public class Parser
+/// <seealso cref="ParserBuilder"/>
+public sealed class Parser
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="Parser"/> class.
@@ -51,7 +58,8 @@ public class Parser
     /// </summary>
     /// <param name="context">The context of the parser.</param>
     /// <param name="ch">The character to add.</param>
-    public static void AddCharacter(ParserContext context, char ch)
+    /// <param name="append">Whether or not the character should be appended to the <see cref="ParserContext"/>'s <see cref="ParserContext.ResultBuilder"/>.</param>
+    public static void AddCharacter(ParserContext context, char ch, bool append = true)
     {
         float size = CalculateCharacterLength(context, ch);
 
@@ -82,6 +90,11 @@ public class Parser
             {
                 context.BiggestCharSize = context.Size;
             }
+        }
+
+        if (append)
+        {
+            context.ResultBuilder.Append(ch);
         }
     }
 
@@ -210,9 +223,11 @@ public class Parser
     /// Parses a rich text string.
     /// </summary>
     /// <param name="text">The string to parse.</param>
+    /// <param name="options">The options of the element.</param>
     /// <returns>A <see cref="ParsedData"/> containing information about the string.</returns>
-    public ParsedData Parse(string text)
+    public ParsedData Parse(string text, ElementOptions options = ElementOptions.Default)
     {
+        ServerConsole.AddLog("what");
         ParserState currentState = ParserState.CollectingTags;
 
         StringBuilder tagBuffer = StringBuilderPool.Shared.Rent(Constants.MAXTAGNAMESIZE);
@@ -235,15 +250,15 @@ public class Parser
                 AddCharacter(context, ch);
             }
 
-            foreach (char ch in paramBuffer.ToString())
-            {
-                AddCharacter(context, ch);
-            }
-
             if (delimiter != null)
             {
                 AddCharacter(context, delimiter.Value);
                 delimiter = null;
+            }
+
+            foreach (char ch in paramBuffer.ToString())
+            {
+                AddCharacter(context, ch);
             }
 
             tagBuffer.Clear();
@@ -257,6 +272,7 @@ public class Parser
         char[] chars = text.ToCharArray();
         for (int i = 0; i < chars.Length; i++)
         {
+            ServerConsole.AddLog(chars[i].ToString());
             char ch = chars[i];
 
             if (ch == '\\')
@@ -274,27 +290,34 @@ public class Parser
                 // detect if an escape sequence is escaped by backslashes
                 if ((i - original) % 3 == 0)
                 {
-                    switch (chars[i])
+                    if (context.ShouldParse || options.HasFlagFast(ElementOptions.NoparseParsesEscape))
                     {
-                        case 'n':
-                            CreateLineBreak(context);
-                            i++;
-                            break;
-                        case 'r':
-                            context.CurrentLineWidth = 0;
-                            i++;
-                            break;
-                        case 'u':
-                            context.ResultBuilder.Append('\\'); // TODO: add support for unicode literals
-                            break;
-                        default:
-                            break;
+                        switch (chars[i])
+                        {
+                            case 'n':
+                                CreateLineBreak(context);
+                                i++;
+                                break;
+                            case 'r':
+                                context.CurrentLineWidth = 0;
+                                i++;
+                                break;
+                            case 'u':
+                                context.ResultBuilder.Append('\\'); // TODO: add support for unicode literals
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        context.ResultBuilder.Append('\\');
                     }
                 }
 
                 for (int newIndex = 0; newIndex < times; newIndex++)
                 {
-                    AddCharacter(context, chars[i + newIndex]);
+                    AddCharacter(context, chars[i + newIndex], false);
                 }
             }
             else if (ch == '<') // indicates start of tag
@@ -337,6 +360,13 @@ public class Parser
                         if (context.ShouldParse || tag is CloseNoparseTag)
                         {
                             tag!.HandleTag(context, string.Empty);
+
+                            tagBuffer.Clear();
+                            paramBuffer.Clear();
+
+                            currentTag = null;
+                            currentState = ParserState.CollectingTags;
+                            tagBufferSize = 0;
                             continue;
                         }
                         else
@@ -396,6 +426,8 @@ public class Parser
                         delimiter = null;
                         currentState = ParserState.CollectingTags;
                         tagBufferSize = 0;
+
+                        continue;
                     }
                     else
                     {
@@ -434,7 +466,7 @@ public class Parser
     /// Avoids the client TMP matching a tag.
     /// </summary>
     /// <param name="context">The context of the parser.</param>
-    private static void AvoidMatch(ParserContext context) => context.ResultBuilder.Append("</a>");
+    private static void AvoidMatch(ParserContext context) => context.ResultBuilder.Append(context.IsBold ? "<b>" : "</b>");
 
     /// <summary>
     /// Tries to get a <see cref="RichTextTag"/> for the given name and <see cref="TagStyle"/>.

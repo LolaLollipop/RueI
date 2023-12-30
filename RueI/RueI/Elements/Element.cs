@@ -5,7 +5,7 @@ using RueI.Parsing;
 using RueI.Parsing.Records;
 
 /// <summary>
-/// Represents the base interface for all elements.
+/// Represents the base class for all elements, which are individual 'hints' present within an arbitrary number of <see cref="Displays.Display"/>s.
 /// </summary>
 public abstract class Element
 {
@@ -42,7 +42,7 @@ public abstract class Element
     /// <summary>
     /// Gets or sets the options for this element.
     /// </summary>
-    public ElementOptions Options { get; set; } = ElementOptions.Default;
+    public virtual ElementOptions Options { get; set; } = ElementOptions.Default;
 
     /// <summary>
     /// Gets the data used for parsing.

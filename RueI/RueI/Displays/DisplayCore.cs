@@ -5,7 +5,7 @@ using RueI.Displays.Scheduling;
 using RueI.Extensions;
 
 /// <summary>
-/// Is responsible for managing all of the <see cref="DisplayBase"/>s for a <see cref="ReferenceHub"/>.
+/// Manages all of the <see cref="DisplayBase"/>s for a <see cref="ReferenceHub"/>.
 /// </summary>
 public class DisplayCore
 {
@@ -33,7 +33,6 @@ public class DisplayCore
         }
 
         Scheduler = new(this);
-        AnonymousDisplay = new(this);
     }
 
     /// <summary>
@@ -45,11 +44,6 @@ public class DisplayCore
     /// Gets a dictionary containing the DisplayCores for each ReferenceHub.
     /// </summary>
     internal static Dictionary<ReferenceHub, DisplayCore> DisplayCores { get; } = new();
-
-    /// <summary>
-    /// Gets a display of anonymous <see cref="Element"/>s added to this display.
-    /// </summary>
-    internal Display AnonymousDisplay { get; }
 
     /// <summary>
     /// Gets the <see cref="ReferenceHub"/> that this display is for.
@@ -96,6 +90,7 @@ public class DisplayCore
     /// <param name="priority">The priority of the update - defaults to 100.</param>
     public void Update(int priority = 100)
     {
+        ServerConsole.AddLog("updating");
         if (IgnoreUpdate)
         {
             return;
@@ -174,6 +169,7 @@ public class DisplayCore
     internal void InternalUpdate()
     {
         string text = ElemCombiner.Combine(GetAllElements());
+        ServerConsole.AddLog(text);
         UnityAlternative.Provider.ShowHint(Hub, text);
         Events.Events.OnDisplayUpdated(new(this));
     }

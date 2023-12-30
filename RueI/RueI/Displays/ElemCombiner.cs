@@ -20,6 +20,7 @@ public static class ElemCombiner
     /// <returns>A <see cref="string"/> with all of the combined <see cref="Element"/>s.</returns>
     public static string Combine(IEnumerable<Element> enumElems)
     {
+        ServerConsole.AddLog("hello world!!!");
         List<Element> elements = ListPool<Element>.Shared.Rent(enumElems);
 
         if (!elements.Any())
@@ -32,18 +33,19 @@ public static class ElemCombiner
 
         float lastPosition = 0;
         float lastOffset = 0;
-
+        ServerConsole.AddLog("im kind of a big deal");
         elements.Sort(CompareElement);
 
         for (int i = 0; i < elements.Count; i++)
         {
             Element curElement = elements[i];
-
+            ServerConsole.AddLog(curElement.ZIndex.ToString());
             ParsedData parsedData = curElement.GetParsedData();
+            ServerConsole.AddLog(curElement.ZIndex.ToString());
             float funcPos = curElement.GetFunctionalPosition();
             if (curElement.Options.HasFlagFast(Elements.Enums.ElementOptions.PreserveSpacing))
             {
-                funcPos -= parsedData.offset;
+                funcPos -= parsedData.Offset;
             }
 
             if (i != 0)
@@ -57,16 +59,18 @@ public static class ElemCombiner
                 totalOffset += funcPos;
             }
 
-            sb.Append(parsedData.content);
+            sb.Append(parsedData.Content);
 
-            totalOffset += parsedData.offset;
+            totalOffset += parsedData.Offset;
             lastPosition = funcPos;
-            lastOffset = parsedData.offset;
+            lastOffset = parsedData.Offset;
+            ServerConsole.AddLog("What the fuck");
         }
 
         ListPool<Element>.Shared.Return(elements);
         sb.Insert(0, $"<line-height={totalOffset}px>\n</line-height>");
         sb.Append(Constants.ZeroWidthSpace);
+        ServerConsole.AddLog(sb.ToString());
         return StringBuilderPool.Shared.ToStringReturn(sb);
     }
 

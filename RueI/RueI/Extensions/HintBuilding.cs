@@ -11,6 +11,37 @@ using RueI.Parsing.Enums;
 public static class HintBuilding
 {
     /// <summary>
+    /// Represents all of the options for the alignment of a string of text.
+    /// </summary>
+    public enum AlignStyle
+    {
+        /// <summary>
+        /// Indicates that the text should be left-aligned.
+        /// </summary>
+        Left,
+
+        /// <summary>
+        /// Indicates that the text should be center-aligned.
+        /// </summary>
+        Center,
+
+        /// <summary>
+        /// Indicates that the text should be right-aligned.
+        /// </summary>
+        Right,
+
+        /// <summary>
+        /// Indicates that every line should be stretched to fill the display area, excluding the last line.
+        /// </summary>
+        Justified,
+
+        /// <summary>
+        /// Indicates that every line should be stretched to fill the display area. This includes the last line.
+        /// </summary>
+        Flush,
+    }
+
+    /// <summary>
     /// Converts a <see cref="Color"/> to a hex code string.
     /// </summary>
     /// <param name="color">The <see cref="Color"/> to convert.</param>
@@ -32,6 +63,26 @@ public static class HintBuilding
     /// <param name="sb">The <see cref="StringBuilder"/> to use.</param>
     /// <returns>A reference to the original <see cref="StringBuilder"/>.</returns>
     public static StringBuilder AddLinebreak(this StringBuilder sb) => sb.Append('\n');
+
+    /// <summary>
+    /// Adds an alignment tag to a <see cref="StringBuilder"/>.
+    /// </summary>
+    /// <param name="sb">The <see cref="StringBuilder"/> to use.</param>
+    /// <param name="align">The <see cref="AlignStyle"/> to use.</param>
+    /// <returns>A reference to the original <see cref="StringBuilder"/>.</returns>
+    public static StringBuilder SetAlignment(this StringBuilder sb, AlignStyle align)
+    {
+        string alignment = align switch
+        {
+            AlignStyle.Left => "left",
+            AlignStyle.Right => "right",
+            AlignStyle.Justified => "justified",
+            AlignStyle.Flush => "flush",
+            _ => "center",
+        };
+
+        return sb.Append($"<align={alignment}>");
+    }
 
     /// <summary>
     /// Adds a size tag to a <see cref="StringBuilder"/>.
@@ -415,6 +466,13 @@ public static class HintBuilding
     /// <param name="sb">The <see cref="StringBuilder"/> to use.</param>
     /// <returns>A reference to the original <see cref="StringBuilder"/>.</returns>
     public static StringBuilder CloseColor(this StringBuilder sb) => sb.Append("</color>");
+
+    /// <summary>
+    /// Adds a closing align tag to a <see cref="StringBuilder"/>.
+    /// </summary>
+    /// <param name="sb">The <see cref="StringBuilder"/> to use.</param>
+    /// <returns>A reference to the original <see cref="StringBuilder"/>.</returns>
+    public static StringBuilder CloseAlign(this StringBuilder sb) => sb.Append("</align>");
 
     /// <summary>
     /// Adds a closing alpha tag to a <see cref="StringBuilder"/>.

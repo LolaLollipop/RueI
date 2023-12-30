@@ -1,13 +1,12 @@
 ﻿namespace RueI.Elements.Interfaces;
 
 /// <summary>
-/// Defines an element that can be set.
+/// Defines an <see cref="Element"/> that can be set.
 /// </summary>
 public interface ISettable
 {
     /// <summary>
-    /// Sets the content of this element.
+    /// Gets or sets the content of this element.
     /// </summary>
-    /// <param name="text">The new element.</param>
-    public void Set(string text);
+    public string Content { get; set; }
 }

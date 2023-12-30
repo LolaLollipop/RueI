@@ -22,7 +22,7 @@ public static class DisplayCoreExtensions
         SetElement? element = core.GetElement(reference);
         if (element != null)
         {
-            element.Set(content);
+            element.Content = content;
         }
         else
         {

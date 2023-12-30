@@ -39,7 +39,7 @@ public class ParserContext : TextInfo, IDisposable
     /// <summary>
     /// Gets the current functional width of the text.
     /// </summary>
-    public float FunctionalWidth => DisplayAreaWidth - this.LeftMargin - this.RightMargin;
+    public float FunctionalWidth => DisplayAreaWidth - LeftMargin - RightMargin;
 
     /// <summary>
     /// Gets a stack containing all of the nested sizes.
@@ -141,6 +141,7 @@ public class ParserContext : TextInfo, IDisposable
     public void RemoveEndingTag<T>()
         where T : NoParamsTag, new()
     {
+        ServerConsole.AddLog("doing the thing lol");
         endingTags.Remove(SharedTag<T>.Singleton);
     }
 

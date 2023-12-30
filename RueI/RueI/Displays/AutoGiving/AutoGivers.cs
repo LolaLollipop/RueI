@@ -3,6 +3,7 @@
 using PlayerRoles;
 
 using RueI.Displays;
+using RueI.Displays.Scheduling;
 using RueI.Elements;
 
 /// <summary>
@@ -27,12 +28,16 @@ public record ElemRefResolver<T>(IElemReference<T> elemRef, Func<T> creator)
 /// </summary>
 public class AutoElement
 {
+    private record PeriodicUpdate(TimeSpan time, int priority, JobToken token);
+
     private static readonly List<AutoElement> AutoGivers = new();
 
     private readonly Element? element;
 
     private readonly Func<DisplayCore, Element>? creator;
-    private readonly IElemReference<Element>? reference;
+    private readonly IElemReference<Element> reference;
+
+    private PeriodicUpdate? periodicUpdate;
 
     static AutoElement()
     {
@@ -58,10 +63,12 @@ public class AutoElement
     /// Initializes a new instance of the <see cref="AutoElement"/> class.
     /// </summary>
     /// <param name="roles">The <see cref="Roles"/> to use for the <see cref="AutoElement"/>.</param>
+    /// <param name="reference">The <see cref="IElemReference{T}"/> to use.</param>
     /// <param name="element">The element to automatically give.</param>
-    private AutoElement(Roles roles, Element element)
+    private AutoElement(Roles roles, IElemReference<Element> reference, Element element)
     {
         this.element = element;
+        this.reference = reference;
         Roles = roles;
 
         AutoGivers.Add(this);
@@ -82,7 +89,7 @@ public class AutoElement
     public static AutoElement Create<T>(Roles roles, T element)
         where T : Element
     {
-        return new AutoElement(roles, element);
+        return new AutoElement(roles, DisplayCore.GetReference<T>(), element);
     }
 
     /// <summary>
@@ -90,13 +97,12 @@ public class AutoElement
     /// </summary>
     /// <typeparam name="T">The type of the <see cref="Element"/>.</typeparam>
     /// <param name="roles">The <see cref="Roles"/> to use for the <see cref="AutoElement"/>.</param>
-    /// <param name="reference">The <see cref="IElemReference{T}"/> to use.</param>
     /// <param name="creator">A <see cref="Func{T, TResult}"/> that creates the elements.</param>
     /// <returns>A new <see cref="AutoElement"/>.</returns>
-    public static AutoElement Create<T>(Roles roles, IElemReference<T> reference, Func<DisplayCore, T> creator)
+    public static AutoElement Create<T>(Roles roles, Func<DisplayCore, T> creator)
         where T : Element
     {
-        return new AutoElement(roles, reference, (core) => creator(core));
+        return new AutoElement(roles, DisplayCore.GetReference<T>(), (core) => creator(core));
     }
 
     /// <summary>
@@ -108,21 +114,36 @@ public class AutoElement
     }
 
     /// <summary>
+    /// Schedules an update for all players with one of the <see cref="Roles"/> every <paramref name="span"/>.
+    /// </summary>
+    /// <param name="span">How often to schedule an update.</param>
+    /// <param name="priority">The priority of the update.</param>
+    /// <returns>A reference to this <see cref="AutoElement"/>.</returns>
+    public AutoElement UpdateEvery(TimeSpan span, int priority = 35)
+    {
+        periodicUpdate = new(span, priority, new());
+        return this;
+    }
+
+    /// <summary>
     /// Gives this <see cref="AutoElement"/> to a <see cref="DisplayCore"/>.
     /// </summary>
     /// <param name="core">The <see cref="DisplayCore"/> to give to.</param>
     protected virtual void GiveTo(DisplayCore core)
     {
+        ServerConsole.AddLog("Hello");
         if (element != null)
         {
-            if (!core.AnonymousDisplay.Elements.Contains(element))
-            {
-                core.AnonymousDisplay.Elements.Add(element);
-            }
+            core.AddAsReference(reference, element);
         }
         else
         {
-            core.AddAsReference(reference!, creator!(core));
+            core.AddAsReference(reference, creator!(core));
+        }
+
+        if (periodicUpdate != null)
+        {
+            ScheduleUpdate(core, periodicUpdate);
         }
     }
 
@@ -132,13 +153,11 @@ public class AutoElement
     /// <param name="core">The <see cref="DisplayCore"/> to give to.</param>
     protected virtual void RemoveFrom(DisplayCore core)
     {
-        if (element != null)
+        core.RemoveReference(reference);
+
+        if (periodicUpdate != null)
         {
-            core.AnonymousDisplay.Elements.Remove(element);
-        }
-        else
-        {
-            core.RemoveReference(reference!);
+            core.Scheduler.KillJob(periodicUpdate.token);
         }
     }
 
@@ -156,9 +175,16 @@ public class AutoElement
                 }
                 else
                 {
-
+                    autoElement.RemoveFrom(core);
                 }
             }
+
+            core.Update(35);
         }
+    }
+
+    private static void ScheduleUpdate(DisplayCore core, PeriodicUpdate update)
+    {
+        core.Scheduler.Schedule(update.time, () => ScheduleUpdate(core, update), update.token);
     }
 }

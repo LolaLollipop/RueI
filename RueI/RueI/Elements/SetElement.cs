@@ -1,5 +1,6 @@
 namespace RueI.Elements;
 
+using RueI.Elements.Enums;
 using RueI.Elements.Interfaces;
 using RueI.Parsing;
 using RueI.Parsing.Records;
@@ -9,8 +10,6 @@ using RueI.Parsing.Records;
 /// </summary>
 public class SetElement : Element, ISettable
 {
-    private ParsedData data;
-
     /// <summary>
     /// Initializes a new instance of the <see cref="SetElement"/> class.
     /// </summary>
@@ -20,18 +19,14 @@ public class SetElement : Element, ISettable
         : base(position)
     {
         Position = position;
-        data = Parser.Parse(content);
+        Content = content;
     }
 
     /// <summary>
-    /// Sets the content of this element.
+    /// Gets or sets the content of this element.
     /// </summary>
-    /// <param name="content">The text to set the content to (will be parsed).</param>
-    public virtual void Set(string content)
-    {
-        data = Parser.Parse(content);
-    }
+    public virtual string Content { get; set; }
 
     /// <inheritdoc/>
-    protected internal override ParsedData GetParsedData() => data;
+    protected internal override ParsedData GetParsedData() => Parser.Parse(Content, Options);
 }
