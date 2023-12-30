@@ -1,10 +1,10 @@
-﻿namespace RueI;
+namespace RueI;
 
 using System.Collections.ObjectModel;
 using System.Runtime.CompilerServices;
 
 /// <summary>
-/// Provides a variety of constant values.
+/// Provides lengths for characters in hints.
 /// </summary>
 /// <remarks>This class is mosty designed for internal use within RueI. However, they can still be useful for external use.</remarks>
 public static class CharacterLengths
