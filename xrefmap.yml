@@ -456,12 +456,6 @@ references:
   isSpec: "True"
   fullName: RueI.Displays.DisplayCore.Update
   nameWithType: DisplayCore.Update
-- uid: RueI.Displays.EffectApplier
-  name: EffectApplier
-  href: api/RueI.Displays.EffectApplier.html
-  commentId: T:RueI.Displays.EffectApplier
-  fullName: RueI.Displays.EffectApplier
-  nameWithType: EffectApplier
 - uid: RueI.Displays.ElemCombiner
   name: ElemCombiner
   href: api/RueI.Displays.ElemCombiner.html
@@ -1394,12 +1388,12 @@ references:
   commentId: F:RueI.Elements.Enums.ElementOptions.Default
   fullName: RueI.Elements.Enums.ElementOptions.Default
   nameWithType: ElementOptions.Default
-- uid: RueI.Elements.Enums.ElementOptions.NoparseIgnoresEscape
-  name: NoparseIgnoresEscape
-  href: api/RueI.Elements.Enums.ElementOptions.html#RueI_Elements_Enums_ElementOptions_NoparseIgnoresEscape
-  commentId: F:RueI.Elements.Enums.ElementOptions.NoparseIgnoresEscape
-  fullName: RueI.Elements.Enums.ElementOptions.NoparseIgnoresEscape
-  nameWithType: ElementOptions.NoparseIgnoresEscape
+- uid: RueI.Elements.Enums.ElementOptions.NoparseParsesEscape
+  name: NoparseParsesEscape
+  href: api/RueI.Elements.Enums.ElementOptions.html#RueI_Elements_Enums_ElementOptions_NoparseParsesEscape
+  commentId: F:RueI.Elements.Enums.ElementOptions.NoparseParsesEscape
+  fullName: RueI.Elements.Enums.ElementOptions.NoparseParsesEscape
+  nameWithType: ElementOptions.NoparseParsesEscape
 - uid: RueI.Elements.Enums.ElementOptions.PreserveSpacing
   name: PreserveSpacing
   href: api/RueI.Elements.Enums.ElementOptions.html#RueI_Elements_Enums_ElementOptions_PreserveSpacing
@@ -1430,22 +1424,19 @@ references:
   commentId: T:RueI.Elements.Interfaces.ISettable
   fullName: RueI.Elements.Interfaces.ISettable
   nameWithType: ISettable
-- uid: RueI.Elements.Interfaces.ISettable.Set(System.String)
-  name: Set(string)
-  href: api/RueI.Elements.Interfaces.ISettable.html#RueI_Elements_Interfaces_ISettable_Set_System_String_
-  commentId: M:RueI.Elements.Interfaces.ISettable.Set(System.String)
-  name.vb: Set(String)
-  fullName: RueI.Elements.Interfaces.ISettable.Set(string)
-  fullName.vb: RueI.Elements.Interfaces.ISettable.Set(String)
-  nameWithType: ISettable.Set(string)
-  nameWithType.vb: ISettable.Set(String)
-- uid: RueI.Elements.Interfaces.ISettable.Set*
-  name: Set
-  href: api/RueI.Elements.Interfaces.ISettable.html#RueI_Elements_Interfaces_ISettable_Set_
-  commentId: Overload:RueI.Elements.Interfaces.ISettable.Set
+- uid: RueI.Elements.Interfaces.ISettable.Content
+  name: Content
+  href: api/RueI.Elements.Interfaces.ISettable.html#RueI_Elements_Interfaces_ISettable_Content
+  commentId: P:RueI.Elements.Interfaces.ISettable.Content
+  fullName: RueI.Elements.Interfaces.ISettable.Content
+  nameWithType: ISettable.Content
+- uid: RueI.Elements.Interfaces.ISettable.Content*
+  name: Content
+  href: api/RueI.Elements.Interfaces.ISettable.html#RueI_Elements_Interfaces_ISettable_Content_
+  commentId: Overload:RueI.Elements.Interfaces.ISettable.Content
   isSpec: "True"
-  fullName: RueI.Elements.Interfaces.ISettable.Set
-  nameWithType: ISettable.Set
+  fullName: RueI.Elements.Interfaces.ISettable.Content
+  nameWithType: ISettable.Content
 - uid: RueI.Elements.SetElement
   name: SetElement
   href: api/RueI.Elements.SetElement.html
@@ -1471,6 +1462,19 @@ references:
   fullName.vb: RueI.Elements.SetElement.New
   nameWithType: SetElement.SetElement
   nameWithType.vb: SetElement.New
+- uid: RueI.Elements.SetElement.Content
+  name: Content
+  href: api/RueI.Elements.SetElement.html#RueI_Elements_SetElement_Content
+  commentId: P:RueI.Elements.SetElement.Content
+  fullName: RueI.Elements.SetElement.Content
+  nameWithType: SetElement.Content
+- uid: RueI.Elements.SetElement.Content*
+  name: Content
+  href: api/RueI.Elements.SetElement.html#RueI_Elements_SetElement_Content_
+  commentId: Overload:RueI.Elements.SetElement.Content
+  isSpec: "True"
+  fullName: RueI.Elements.SetElement.Content
+  nameWithType: SetElement.Content
 - uid: RueI.Elements.SetElement.GetParsedData
   name: GetParsedData()
   href: api/RueI.Elements.SetElement.html#RueI_Elements_SetElement_GetParsedData
@@ -1484,22 +1488,6 @@ references:
   isSpec: "True"
   fullName: RueI.Elements.SetElement.GetParsedData
   nameWithType: SetElement.GetParsedData
-- uid: RueI.Elements.SetElement.Set(System.String)
-  name: Set(string)
-  href: api/RueI.Elements.SetElement.html#RueI_Elements_SetElement_Set_System_String_
-  commentId: M:RueI.Elements.SetElement.Set(System.String)
-  name.vb: Set(String)
-  fullName: RueI.Elements.SetElement.Set(string)
-  fullName.vb: RueI.Elements.SetElement.Set(String)
-  nameWithType: SetElement.Set(string)
-  nameWithType.vb: SetElement.Set(String)
-- uid: RueI.Elements.SetElement.Set*
-  name: Set
-  href: api/RueI.Elements.SetElement.html#RueI_Elements_SetElement_Set_
-  commentId: Overload:RueI.Elements.SetElement.Set
-  isSpec: "True"
-  fullName: RueI.Elements.SetElement.Set
-  nameWithType: SetElement.Set
 - uid: RueI.Events
   name: RueI.Events
   href: api/RueI.Events.html
@@ -1610,15 +1598,15 @@ references:
   isSpec: "True"
   fullName: RueI.Extensions.AutoElement.Create
   nameWithType: AutoElement.Create
-- uid: RueI.Extensions.AutoElement.Create``1(RueI.Displays.Roles,RueI.Displays.IElemReference{``0},System.Func{RueI.Displays.DisplayCore,``0})
-  name: Create<T>(Roles, IElemReference<T>, Func<DisplayCore, T>)
-  href: api/RueI.Extensions.AutoElement.html#RueI_Extensions_AutoElement_Create__1_RueI_Displays_Roles_RueI_Displays_IElemReference___0__System_Func_RueI_Displays_DisplayCore___0__
-  commentId: M:RueI.Extensions.AutoElement.Create``1(RueI.Displays.Roles,RueI.Displays.IElemReference{``0},System.Func{RueI.Displays.DisplayCore,``0})
-  name.vb: Create(Of T)(Roles, IElemReference(Of T), Func(Of DisplayCore, T))
-  fullName: RueI.Extensions.AutoElement.Create<T>(RueI.Displays.Roles, RueI.Displays.IElemReference<T>, System.Func<RueI.Displays.DisplayCore, T>)
-  fullName.vb: RueI.Extensions.AutoElement.Create(Of T)(RueI.Displays.Roles, RueI.Displays.IElemReference(Of T), System.Func(Of RueI.Displays.DisplayCore, T))
-  nameWithType: AutoElement.Create<T>(Roles, IElemReference<T>, Func<DisplayCore, T>)
-  nameWithType.vb: AutoElement.Create(Of T)(Roles, IElemReference(Of T), Func(Of DisplayCore, T))
+- uid: RueI.Extensions.AutoElement.Create``1(RueI.Displays.Roles,System.Func{RueI.Displays.DisplayCore,``0})
+  name: Create<T>(Roles, Func<DisplayCore, T>)
+  href: api/RueI.Extensions.AutoElement.html#RueI_Extensions_AutoElement_Create__1_RueI_Displays_Roles_System_Func_RueI_Displays_DisplayCore___0__
+  commentId: M:RueI.Extensions.AutoElement.Create``1(RueI.Displays.Roles,System.Func{RueI.Displays.DisplayCore,``0})
+  name.vb: Create(Of T)(Roles, Func(Of DisplayCore, T))
+  fullName: RueI.Extensions.AutoElement.Create<T>(RueI.Displays.Roles, System.Func<RueI.Displays.DisplayCore, T>)
+  fullName.vb: RueI.Extensions.AutoElement.Create(Of T)(RueI.Displays.Roles, System.Func(Of RueI.Displays.DisplayCore, T))
+  nameWithType: AutoElement.Create<T>(Roles, Func<DisplayCore, T>)
+  nameWithType.vb: AutoElement.Create(Of T)(Roles, Func(Of DisplayCore, T))
 - uid: RueI.Extensions.AutoElement.Create``1(RueI.Displays.Roles,``0)
   name: Create<T>(Roles, T)
   href: api/RueI.Extensions.AutoElement.html#RueI_Extensions_AutoElement_Create__1_RueI_Displays_Roles___0_
@@ -1680,6 +1668,22 @@ references:
   isSpec: "True"
   fullName: RueI.Extensions.AutoElement.Roles
   nameWithType: AutoElement.Roles
+- uid: RueI.Extensions.AutoElement.UpdateEvery(System.TimeSpan,System.Int32)
+  name: UpdateEvery(TimeSpan, int)
+  href: api/RueI.Extensions.AutoElement.html#RueI_Extensions_AutoElement_UpdateEvery_System_TimeSpan_System_Int32_
+  commentId: M:RueI.Extensions.AutoElement.UpdateEvery(System.TimeSpan,System.Int32)
+  name.vb: UpdateEvery(TimeSpan, Integer)
+  fullName: RueI.Extensions.AutoElement.UpdateEvery(System.TimeSpan, int)
+  fullName.vb: RueI.Extensions.AutoElement.UpdateEvery(System.TimeSpan, Integer)
+  nameWithType: AutoElement.UpdateEvery(TimeSpan, int)
+  nameWithType.vb: AutoElement.UpdateEvery(TimeSpan, Integer)
+- uid: RueI.Extensions.AutoElement.UpdateEvery*
+  name: UpdateEvery
+  href: api/RueI.Extensions.AutoElement.html#RueI_Extensions_AutoElement_UpdateEvery_
+  commentId: Overload:RueI.Extensions.AutoElement.UpdateEvery
+  isSpec: "True"
+  fullName: RueI.Extensions.AutoElement.UpdateEvery
+  nameWithType: AutoElement.UpdateEvery
 - uid: RueI.Extensions.CollectionExtensions
   name: CollectionExtensions
   href: api/RueI.Extensions.CollectionExtensions.html
@@ -2015,6 +2019,55 @@ references:
   isSpec: "True"
   fullName: RueI.Extensions.HintBuilding.HintBuilding.AddVOffset
   nameWithType: HintBuilding.AddVOffset
+- uid: RueI.Extensions.HintBuilding.HintBuilding.AlignStyle
+  name: HintBuilding.AlignStyle
+  href: api/RueI.Extensions.HintBuilding.HintBuilding.AlignStyle.html
+  commentId: T:RueI.Extensions.HintBuilding.HintBuilding.AlignStyle
+  fullName: RueI.Extensions.HintBuilding.HintBuilding.AlignStyle
+  nameWithType: HintBuilding.AlignStyle
+- uid: RueI.Extensions.HintBuilding.HintBuilding.AlignStyle.Center
+  name: Center
+  href: api/RueI.Extensions.HintBuilding.HintBuilding.AlignStyle.html#RueI_Extensions_HintBuilding_HintBuilding_AlignStyle_Center
+  commentId: F:RueI.Extensions.HintBuilding.HintBuilding.AlignStyle.Center
+  fullName: RueI.Extensions.HintBuilding.HintBuilding.AlignStyle.Center
+  nameWithType: HintBuilding.AlignStyle.Center
+- uid: RueI.Extensions.HintBuilding.HintBuilding.AlignStyle.Flush
+  name: Flush
+  href: api/RueI.Extensions.HintBuilding.HintBuilding.AlignStyle.html#RueI_Extensions_HintBuilding_HintBuilding_AlignStyle_Flush
+  commentId: F:RueI.Extensions.HintBuilding.HintBuilding.AlignStyle.Flush
+  fullName: RueI.Extensions.HintBuilding.HintBuilding.AlignStyle.Flush
+  nameWithType: HintBuilding.AlignStyle.Flush
+- uid: RueI.Extensions.HintBuilding.HintBuilding.AlignStyle.Justified
+  name: Justified
+  href: api/RueI.Extensions.HintBuilding.HintBuilding.AlignStyle.html#RueI_Extensions_HintBuilding_HintBuilding_AlignStyle_Justified
+  commentId: F:RueI.Extensions.HintBuilding.HintBuilding.AlignStyle.Justified
+  fullName: RueI.Extensions.HintBuilding.HintBuilding.AlignStyle.Justified
+  nameWithType: HintBuilding.AlignStyle.Justified
+- uid: RueI.Extensions.HintBuilding.HintBuilding.AlignStyle.Left
+  name: Left
+  href: api/RueI.Extensions.HintBuilding.HintBuilding.AlignStyle.html#RueI_Extensions_HintBuilding_HintBuilding_AlignStyle_Left
+  commentId: F:RueI.Extensions.HintBuilding.HintBuilding.AlignStyle.Left
+  fullName: RueI.Extensions.HintBuilding.HintBuilding.AlignStyle.Left
+  nameWithType: HintBuilding.AlignStyle.Left
+- uid: RueI.Extensions.HintBuilding.HintBuilding.AlignStyle.Right
+  name: Right
+  href: api/RueI.Extensions.HintBuilding.HintBuilding.AlignStyle.html#RueI_Extensions_HintBuilding_HintBuilding_AlignStyle_Right
+  commentId: F:RueI.Extensions.HintBuilding.HintBuilding.AlignStyle.Right
+  fullName: RueI.Extensions.HintBuilding.HintBuilding.AlignStyle.Right
+  nameWithType: HintBuilding.AlignStyle.Right
+- uid: RueI.Extensions.HintBuilding.HintBuilding.CloseAlign(System.Text.StringBuilder)
+  name: CloseAlign(StringBuilder)
+  href: api/RueI.Extensions.HintBuilding.HintBuilding.html#RueI_Extensions_HintBuilding_HintBuilding_CloseAlign_System_Text_StringBuilder_
+  commentId: M:RueI.Extensions.HintBuilding.HintBuilding.CloseAlign(System.Text.StringBuilder)
+  fullName: RueI.Extensions.HintBuilding.HintBuilding.CloseAlign(System.Text.StringBuilder)
+  nameWithType: HintBuilding.CloseAlign(StringBuilder)
+- uid: RueI.Extensions.HintBuilding.HintBuilding.CloseAlign*
+  name: CloseAlign
+  href: api/RueI.Extensions.HintBuilding.HintBuilding.html#RueI_Extensions_HintBuilding_HintBuilding_CloseAlign_
+  commentId: Overload:RueI.Extensions.HintBuilding.HintBuilding.CloseAlign
+  isSpec: "True"
+  fullName: RueI.Extensions.HintBuilding.HintBuilding.CloseAlign
+  nameWithType: HintBuilding.CloseAlign
 - uid: RueI.Extensions.HintBuilding.HintBuilding.CloseAlpha(System.Text.StringBuilder)
   name: CloseAlpha(StringBuilder)
   href: api/RueI.Extensions.HintBuilding.HintBuilding.html#RueI_Extensions_HintBuilding_HintBuilding_CloseAlpha_System_Text_StringBuilder_
@@ -2288,6 +2341,19 @@ references:
   isSpec: "True"
   fullName: RueI.Extensions.HintBuilding.HintBuilding.ConvertToHex
   nameWithType: HintBuilding.ConvertToHex
+- uid: RueI.Extensions.HintBuilding.HintBuilding.SetAlignment(System.Text.StringBuilder,RueI.Extensions.HintBuilding.HintBuilding.AlignStyle)
+  name: SetAlignment(StringBuilder, AlignStyle)
+  href: api/RueI.Extensions.HintBuilding.HintBuilding.html#RueI_Extensions_HintBuilding_HintBuilding_SetAlignment_System_Text_StringBuilder_RueI_Extensions_HintBuilding_HintBuilding_AlignStyle_
+  commentId: M:RueI.Extensions.HintBuilding.HintBuilding.SetAlignment(System.Text.StringBuilder,RueI.Extensions.HintBuilding.HintBuilding.AlignStyle)
+  fullName: RueI.Extensions.HintBuilding.HintBuilding.SetAlignment(System.Text.StringBuilder, RueI.Extensions.HintBuilding.HintBuilding.AlignStyle)
+  nameWithType: HintBuilding.SetAlignment(StringBuilder, HintBuilding.AlignStyle)
+- uid: RueI.Extensions.HintBuilding.HintBuilding.SetAlignment*
+  name: SetAlignment
+  href: api/RueI.Extensions.HintBuilding.HintBuilding.html#RueI_Extensions_HintBuilding_HintBuilding_SetAlignment_
+  commentId: Overload:RueI.Extensions.HintBuilding.HintBuilding.SetAlignment
+  isSpec: "True"
+  fullName: RueI.Extensions.HintBuilding.HintBuilding.SetAlignment
+  nameWithType: HintBuilding.SetAlignment
 - uid: RueI.Extensions.HintBuilding.HintBuilding.SetAlpha(System.Text.StringBuilder,System.Byte)
   name: SetAlpha(StringBuilder, byte)
   href: api/RueI.Extensions.HintBuilding.HintBuilding.html#RueI_Extensions_HintBuilding_HintBuilding_SetAlpha_System_Text_StringBuilder_System_Byte_
@@ -3195,15 +3261,15 @@ references:
   commentId: T:RueI.Parsing.Parser
   fullName: RueI.Parsing.Parser
   nameWithType: Parser
-- uid: RueI.Parsing.Parser.AddCharacter(RueI.Parsing.ParserContext,System.Char)
-  name: AddCharacter(ParserContext, char)
-  href: api/RueI.Parsing.Parser.html#RueI_Parsing_Parser_AddCharacter_RueI_Parsing_ParserContext_System_Char_
-  commentId: M:RueI.Parsing.Parser.AddCharacter(RueI.Parsing.ParserContext,System.Char)
-  name.vb: AddCharacter(ParserContext, Char)
-  fullName: RueI.Parsing.Parser.AddCharacter(RueI.Parsing.ParserContext, char)
-  fullName.vb: RueI.Parsing.Parser.AddCharacter(RueI.Parsing.ParserContext, Char)
-  nameWithType: Parser.AddCharacter(ParserContext, char)
-  nameWithType.vb: Parser.AddCharacter(ParserContext, Char)
+- uid: RueI.Parsing.Parser.AddCharacter(RueI.Parsing.ParserContext,System.Char,System.Boolean)
+  name: AddCharacter(ParserContext, char, bool)
+  href: api/RueI.Parsing.Parser.html#RueI_Parsing_Parser_AddCharacter_RueI_Parsing_ParserContext_System_Char_System_Boolean_
+  commentId: M:RueI.Parsing.Parser.AddCharacter(RueI.Parsing.ParserContext,System.Char,System.Boolean)
+  name.vb: AddCharacter(ParserContext, Char, Boolean)
+  fullName: RueI.Parsing.Parser.AddCharacter(RueI.Parsing.ParserContext, char, bool)
+  fullName.vb: RueI.Parsing.Parser.AddCharacter(RueI.Parsing.ParserContext, Char, Boolean)
+  nameWithType: Parser.AddCharacter(ParserContext, char, bool)
+  nameWithType.vb: Parser.AddCharacter(ParserContext, Char, Boolean)
 - uid: RueI.Parsing.Parser.AddCharacter*
   name: AddCharacter
   href: api/RueI.Parsing.Parser.html#RueI_Parsing_Parser_AddCharacter_
@@ -3272,15 +3338,15 @@ references:
   isSpec: "True"
   fullName: RueI.Parsing.Parser.GetTagAttributes
   nameWithType: Parser.GetTagAttributes
-- uid: RueI.Parsing.Parser.Parse(System.String)
-  name: Parse(string)
-  href: api/RueI.Parsing.Parser.html#RueI_Parsing_Parser_Parse_System_String_
-  commentId: M:RueI.Parsing.Parser.Parse(System.String)
-  name.vb: Parse(String)
-  fullName: RueI.Parsing.Parser.Parse(string)
-  fullName.vb: RueI.Parsing.Parser.Parse(String)
-  nameWithType: Parser.Parse(string)
-  nameWithType.vb: Parser.Parse(String)
+- uid: RueI.Parsing.Parser.Parse(System.String,RueI.Elements.Enums.ElementOptions)
+  name: Parse(string, ElementOptions)
+  href: api/RueI.Parsing.Parser.html#RueI_Parsing_Parser_Parse_System_String_RueI_Elements_Enums_ElementOptions_
+  commentId: M:RueI.Parsing.Parser.Parse(System.String,RueI.Elements.Enums.ElementOptions)
+  name.vb: Parse(String, ElementOptions)
+  fullName: RueI.Parsing.Parser.Parse(string, RueI.Elements.Enums.ElementOptions)
+  fullName.vb: RueI.Parsing.Parser.Parse(String, RueI.Elements.Enums.ElementOptions)
+  nameWithType: Parser.Parse(string, ElementOptions)
+  nameWithType.vb: Parser.Parse(String, ElementOptions)
 - uid: RueI.Parsing.Parser.Parse*
   name: Parse
   href: api/RueI.Parsing.Parser.html#RueI_Parsing_Parser_Parse_
@@ -3810,51 +3876,48 @@ references:
   commentId: T:RueI.Parsing.Records.ParsedData
   fullName: RueI.Parsing.Records.ParsedData
   nameWithType: ParsedData
-- uid: RueI.Parsing.Records.ParsedData.#ctor(System.String,System.Single)
-  name: ParsedData(string, float)
-  href: api/RueI.Parsing.Records.ParsedData.html#RueI_Parsing_Records_ParsedData__ctor_System_String_System_Single_
-  commentId: M:RueI.Parsing.Records.ParsedData.#ctor(System.String,System.Single)
-  name.vb: New(String, Single)
-  fullName: RueI.Parsing.Records.ParsedData.ParsedData(string, float)
-  fullName.vb: RueI.Parsing.Records.ParsedData.New(String, Single)
-  nameWithType: ParsedData.ParsedData(string, float)
-  nameWithType.vb: ParsedData.New(String, Single)
-- uid: RueI.Parsing.Records.ParsedData.#ctor*
-  name: ParsedData
-  href: api/RueI.Parsing.Records.ParsedData.html#RueI_Parsing_Records_ParsedData__ctor_
-  commentId: Overload:RueI.Parsing.Records.ParsedData.#ctor
+- uid: RueI.Parsing.Records.ParsedData.Content
+  name: Content
+  href: api/RueI.Parsing.Records.ParsedData.html#RueI_Parsing_Records_ParsedData_Content
+  commentId: P:RueI.Parsing.Records.ParsedData.Content
+  fullName: RueI.Parsing.Records.ParsedData.Content
+  nameWithType: ParsedData.Content
+- uid: RueI.Parsing.Records.ParsedData.Content*
+  name: Content
+  href: api/RueI.Parsing.Records.ParsedData.html#RueI_Parsing_Records_ParsedData_Content_
+  commentId: Overload:RueI.Parsing.Records.ParsedData.Content
   isSpec: "True"
-  name.vb: New
-  fullName: RueI.Parsing.Records.ParsedData.ParsedData
-  fullName.vb: RueI.Parsing.Records.ParsedData.New
-  nameWithType: ParsedData.ParsedData
-  nameWithType.vb: ParsedData.New
-- uid: RueI.Parsing.Records.ParsedData.content
-  name: content
-  href: api/RueI.Parsing.Records.ParsedData.html#RueI_Parsing_Records_ParsedData_content
-  commentId: P:RueI.Parsing.Records.ParsedData.content
-  fullName: RueI.Parsing.Records.ParsedData.content
-  nameWithType: ParsedData.content
-- uid: RueI.Parsing.Records.ParsedData.content*
-  name: content
-  href: api/RueI.Parsing.Records.ParsedData.html#RueI_Parsing_Records_ParsedData_content_
-  commentId: Overload:RueI.Parsing.Records.ParsedData.content
+  fullName: RueI.Parsing.Records.ParsedData.Content
+  nameWithType: ParsedData.Content
+- uid: RueI.Parsing.Records.ParsedData.Deconstruct(System.String@,System.Single@)
+  name: Deconstruct(out string, out float)
+  href: api/RueI.Parsing.Records.ParsedData.html#RueI_Parsing_Records_ParsedData_Deconstruct_System_String__System_Single__
+  commentId: M:RueI.Parsing.Records.ParsedData.Deconstruct(System.String@,System.Single@)
+  name.vb: Deconstruct(String, Single)
+  fullName: RueI.Parsing.Records.ParsedData.Deconstruct(out string, out float)
+  fullName.vb: RueI.Parsing.Records.ParsedData.Deconstruct(String, Single)
+  nameWithType: ParsedData.Deconstruct(out string, out float)
+  nameWithType.vb: ParsedData.Deconstruct(String, Single)
+- uid: RueI.Parsing.Records.ParsedData.Deconstruct*
+  name: Deconstruct
+  href: api/RueI.Parsing.Records.ParsedData.html#RueI_Parsing_Records_ParsedData_Deconstruct_
+  commentId: Overload:RueI.Parsing.Records.ParsedData.Deconstruct
   isSpec: "True"
-  fullName: RueI.Parsing.Records.ParsedData.content
-  nameWithType: ParsedData.content
-- uid: RueI.Parsing.Records.ParsedData.offset
-  name: offset
-  href: api/RueI.Parsing.Records.ParsedData.html#RueI_Parsing_Records_ParsedData_offset
-  commentId: P:RueI.Parsing.Records.ParsedData.offset
-  fullName: RueI.Parsing.Records.ParsedData.offset
-  nameWithType: ParsedData.offset
-- uid: RueI.Parsing.Records.ParsedData.offset*
-  name: offset
-  href: api/RueI.Parsing.Records.ParsedData.html#RueI_Parsing_Records_ParsedData_offset_
-  commentId: Overload:RueI.Parsing.Records.ParsedData.offset
+  fullName: RueI.Parsing.Records.ParsedData.Deconstruct
+  nameWithType: ParsedData.Deconstruct
+- uid: RueI.Parsing.Records.ParsedData.Offset
+  name: Offset
+  href: api/RueI.Parsing.Records.ParsedData.html#RueI_Parsing_Records_ParsedData_Offset
+  commentId: P:RueI.Parsing.Records.ParsedData.Offset
+  fullName: RueI.Parsing.Records.ParsedData.Offset
+  nameWithType: ParsedData.Offset
+- uid: RueI.Parsing.Records.ParsedData.Offset*
+  name: Offset
+  href: api/RueI.Parsing.Records.ParsedData.html#RueI_Parsing_Records_ParsedData_Offset_
+  commentId: Overload:RueI.Parsing.Records.ParsedData.Offset
   isSpec: "True"
-  fullName: RueI.Parsing.Records.ParsedData.offset
-  nameWithType: ParsedData.offset
+  fullName: RueI.Parsing.Records.ParsedData.Offset
+  nameWithType: ParsedData.Offset
 - uid: RueI.Parsing.RichTextTag
   name: RichTextTag
   href: api/RueI.Parsing.RichTextTag.html

@@ -127,11 +127,11 @@ public enum ElementOptions</code></pre>
   <h2 id="fields">Fields
 </h2>
   <dl class="parameters">
-    <dt id="RueI_Elements_Enums_ElementOptions_Default"><code>Default = 1</code></dt>
+    <dt id="RueI_Elements_Enums_ElementOptions_Default"><code>Default = 0</code></dt>
     <dd><p>Gets the default element settings.</p>
 </dd>
-    <dt id="RueI_Elements_Enums_ElementOptions_NoparseIgnoresEscape"><code>NoparseIgnoresEscape = 1</code></dt>
-    <dd><p>Indicates whether or not noparse ignores escape sequences like \r, \u, and \n.</p>
+    <dt id="RueI_Elements_Enums_ElementOptions_NoparseParsesEscape"><code>NoparseParsesEscape = 1</code></dt>
+    <dd><p>Indicates whether or not noparse parses escape sequences like \r, \u, and \n.</p>
 </dd>
     <dt id="RueI_Elements_Enums_ElementOptions_PreserveSpacing"><code>PreserveSpacing = 2</code></dt>
     <dd><p>Indicates whether or not the vertical spacing of an element affects the baseline.</p>
@@ -139,7 +139,7 @@ public enum ElementOptions</code></pre>
     <dt id="RueI_Elements_Enums_ElementOptions_UseFunctionalPosition"><code>UseFunctionalPosition = 4</code></dt>
     <dd><p>Indicates whether or not to automatically use functional positioning for the element.</p>
 </dd>
-    <dt id="RueI_Elements_Enums_ElementOptions_Vanilla"><code>Vanilla = 2</code></dt>
+    <dt id="RueI_Elements_Enums_ElementOptions_Vanilla"><code>Vanilla = NoparseParsesEscape | PreserveSpacing | UseFunctionalPosition</code></dt>
     <dd><p>Gets the vanilla options for hints.</p>
 </dd>
   </dl>

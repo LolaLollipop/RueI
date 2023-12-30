@@ -92,7 +92,7 @@
 
   <h1 id="RueI_Displays_Roles" data-uid="RueI.Displays.Roles" class="text-break">
     Enum Roles
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/AutoGiving/Roles.cs/#L8"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/AutoGiving/Roles.cs/#L13"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -237,12 +237,27 @@ public enum Roles</code></pre>
 </dd>
   </dl>
 
+  <h2 id="RueI_Displays_Roles_examples">Examples</h2>
+  <p>This example shows how <a class="xref" href="RueI.Displays.Roles.html">Roles</a> can be used to perform bitfield operations with RoleTypeIds.</p>
+<pre><code class="lang-csharp">// the | (pipe) is the bitwise OR operator
+// it combines the bits of all of the provided fields
+// 1010 | 1100 -&gt; 1110
+Roles roles = Roles.CivilianRoles | Roles.FacilityGuard | Roles.ScpsNo0492; // all things that can spawn in at the start of the game
 
+// using RueI.Extensions.HasFlagFast because it is much quicker
+roles.HasFlagFast(Roles.ChaosRifleman); // -&gt; false
+roles.HasFlagFast(Roles.Scientist); // -&gt; true</code></pre>
+
+
+  <h2 id="RueI_Displays_Roles_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>The purpose of the <a class="xref" href="RueI.Displays.Roles.html">Roles</a> enum is to enable roles to be treated like a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.flagsattribute">FlagsAttribute</a> enum. Normally,
+RoleTypeId cannot be treated like bit flags, so this acts as a fast and convenient way to do so.</p>
+</div>
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/AutoGiving/Roles.cs/#L8" class="edit-link">Edit this page</a>
+          <a href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/AutoGiving/Roles.cs/#L13" class="edit-link">Edit this page</a>
         </div>
 
 

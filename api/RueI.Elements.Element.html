@@ -99,7 +99,7 @@
   <dl><dt>Assembly</dt><dd>RueI.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Represents the base interface for all elements.</p>
+  <div class="markdown summary"><p>Represents the base class for all elements, which are individual 'hints' present within an arbitrary number of <a class="xref" href="RueI.Displays.Display.html">Display</a>s.</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -256,7 +256,7 @@
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ElementOptions Options { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual ElementOptions Options { get; set; }</code></pre>
   </div>
 
 
@@ -409,7 +409,7 @@
 
 
   <h4 class="section" id="RueI_Elements_Element_GetParsedData_remarks">Remarks</h4>
-  <div class="markdown level1 remarks"><p>This contains information used to ensure that multiple elements can be displayed at once. To obtain this, you should almost always use <a class="xref" href="RueI.Parsing.Parser.html#RueI_Parsing_Parser_Parse_System_String_">Parse(string)</a>.</p>
+  <div class="markdown level1 remarks"><p>This contains information used to ensure that multiple elements can be displayed at once. To obtain this, you should almost always use <a class="xref" href="RueI.Parsing.Parser.html#RueI_Parsing_Parser_Parse_System_String_RueI_Elements_Enums_ElementOptions_">Parse(string, ElementOptions)</a>.</p>
 </div>
 
 
