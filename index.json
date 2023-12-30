@@ -7,7 +7,7 @@
   "api/RueI.CharacterLengths.html": {
     "href": "api/RueI.CharacterLengths.html",
     "title": "Class CharacterLengths | RueI",
-    "keywords": "Class CharacterLengths Namespace RueI Assembly RueI.dll Provides a variety of constant values. public static class CharacterLengths Inheritance object CharacterLengths Inherited Members object.ToString() object.Equals(object) object.Equals(object, object) object.ReferenceEquals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() Remarks This class is mosty designed for internal use within RueI. However, they can still be useful for external use. Properties Lengths Gets a IReadOnlyDictionary<TKey, TValue> of character sizes. public static IReadOnlyDictionary<char, float> Lengths { get; } Property Value IReadOnlyDictionary<char, float>"
+    "keywords": "Class CharacterLengths Namespace RueI Assembly RueI.dll Provides lengths for characters in hints. public static class CharacterLengths Inheritance object CharacterLengths Inherited Members object.ToString() object.Equals(object) object.Equals(object, object) object.ReferenceEquals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() Remarks This class is mosty designed for internal use within RueI. However, they can still be useful for external use. Properties Lengths Gets a IReadOnlyDictionary<TKey, TValue> of character sizes. public static IReadOnlyDictionary<char, float> Lengths { get; } Property Value IReadOnlyDictionary<char, float>"
   },
   "api/RueI.Constants.html": {
     "href": "api/RueI.Constants.html",
@@ -677,7 +677,7 @@
   "api/RueI.html": {
     "href": "api/RueI.html",
     "title": "Namespace RueI | RueI",
-    "keywords": "Namespace RueI Classes CharacterLengths Provides a variety of constant values. Constants Provides a variety of constant values. NonUnityProvider Provides non-Unity alternatives for the UnityProvider of the application. NonUnityProvider.TaskAsyncOperation Represents an async operation using a Task. RueIMain Represents the main class for RueI. Ruetility Provides helpful functions for dealing with elements and hints. UnityAlternative Defines the base class for a provider of methods that may or may not use Unity. UnityProvider Provides Unity methods for the application. UnityProvider.MECAsyncOperation Represents an async operation using a Task. Interfaces UnityAlternative.IAsyncOperation Represents a generalized handler for an async operation."
+    "keywords": "Namespace RueI Classes CharacterLengths Provides lengths for characters in hints. Constants Provides a variety of constant values. NonUnityProvider Provides non-Unity alternatives for the UnityProvider of the application. NonUnityProvider.TaskAsyncOperation Represents an async operation using a Task. RueIMain Represents the main class for RueI. Ruetility Provides helpful functions for dealing with elements and hints. UnityAlternative Defines the base class for a provider of methods that may or may not use Unity. UnityProvider Provides Unity methods for the application. UnityProvider.MECAsyncOperation Represents an async operation using a Task. Interfaces UnityAlternative.IAsyncOperation Represents a generalized handler for an async operation."
   },
   "api/eMEC.Cooldown.html": {
     "href": "api/eMEC.Cooldown.html",
