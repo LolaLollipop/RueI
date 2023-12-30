@@ -2,6 +2,8 @@
   href: introduction.md
 - name: Getting Started
   href: getting-started.md
+- name: Basic Concepts
+  href: basic-concepts.md
 - name: Using the Scheduler
   href: scheduling.md
 - name: HintBuilding Extensions
