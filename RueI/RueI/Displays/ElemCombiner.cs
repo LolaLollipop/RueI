@@ -11,6 +11,10 @@ using RueI.Parsing.Records;
 /// <summary>
 /// Provides a means of combining <see cref="Element"/>s.
 /// </summary>
+/// <remarks>
+/// The <see cref="ElemCombiner"/> is a helper class that combines all of the <see cref="Element"/>s for a <see cref="DisplayCore"/> into a single string,
+/// to be displayed as a hint.
+/// </remarks>
 public static class ElemCombiner
 {
     /// <summary>
@@ -20,7 +24,6 @@ public static class ElemCombiner
     /// <returns>A <see cref="string"/> with all of the combined <see cref="Element"/>s.</returns>
     public static string Combine(IEnumerable<Element> enumElems)
     {
-        ServerConsole.AddLog("hello world!!!");
         List<Element> elements = ListPool<Element>.Shared.Rent(enumElems);
 
         if (!elements.Any())
@@ -33,15 +36,15 @@ public static class ElemCombiner
 
         float lastPosition = 0;
         float lastOffset = 0;
-        ServerConsole.AddLog("im kind of a big deal");
+
         elements.Sort(CompareElement);
 
         for (int i = 0; i < elements.Count; i++)
         {
             Element curElement = elements[i];
-            ServerConsole.AddLog(curElement.ZIndex.ToString());
+
             ParsedData parsedData = curElement.GetParsedData();
-            ServerConsole.AddLog(curElement.ZIndex.ToString());
+
             float funcPos = curElement.GetFunctionalPosition();
             if (curElement.Options.HasFlagFast(Elements.Enums.ElementOptions.PreserveSpacing))
             {
@@ -64,13 +67,11 @@ public static class ElemCombiner
             totalOffset += parsedData.Offset;
             lastPosition = funcPos;
             lastOffset = parsedData.Offset;
-            ServerConsole.AddLog("What the fuck");
         }
 
         ListPool<Element>.Shared.Return(elements);
         sb.Insert(0, $"<line-height={totalOffset}px>\n</line-height>");
         sb.Append(Constants.ZeroWidthSpace);
-        ServerConsole.AddLog(sb.ToString());
         return StringBuilderPool.Shared.ToStringReturn(sb);
     }
 

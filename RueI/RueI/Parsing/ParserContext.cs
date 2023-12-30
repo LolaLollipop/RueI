@@ -141,7 +141,6 @@ public class ParserContext : TextInfo, IDisposable
     public void RemoveEndingTag<T>()
         where T : NoParamsTag, new()
     {
-        ServerConsole.AddLog("doing the thing lol");
         endingTags.Remove(SharedTag<T>.Singleton);
     }
 

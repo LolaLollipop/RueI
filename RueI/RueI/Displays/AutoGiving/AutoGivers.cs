@@ -131,7 +131,6 @@ public class AutoElement
     /// <param name="core">The <see cref="DisplayCore"/> to give to.</param>
     protected virtual void GiveTo(DisplayCore core)
     {
-        ServerConsole.AddLog("Hello");
         if (element != null)
         {
             core.AddAsReference(reference, element);

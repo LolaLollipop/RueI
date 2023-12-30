@@ -90,7 +90,6 @@ public class DisplayCore
     /// <param name="priority">The priority of the update - defaults to 100.</param>
     public void Update(int priority = 100)
     {
-        ServerConsole.AddLog("updating");
         if (IgnoreUpdate)
         {
             return;
@@ -169,7 +168,6 @@ public class DisplayCore
     internal void InternalUpdate()
     {
         string text = ElemCombiner.Combine(GetAllElements());
-        ServerConsole.AddLog(text);
         UnityAlternative.Provider.ShowHint(Hub, text);
         Events.Events.OnDisplayUpdated(new(this));
     }

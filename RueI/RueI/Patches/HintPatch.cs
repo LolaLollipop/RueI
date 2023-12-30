@@ -19,6 +19,10 @@ using UnityEngine;
 /// <summary>
 /// Patches <see cref="HintDisplay.Show"/> to detect when hints are shown.
 /// </summary>
+/// <remarks>
+/// RueI patches the <see cref="HintDisplay.Show"/> method so that it can get an accurate state of the player's hint display at any given time.
+/// When a hint outside of RueI is shown, it schedules an update that occurs after 3 seconds.
+/// </remarks>
 [HarmonyPatch(typeof(HintDisplay), nameof(HintDisplay.Show))]
 public static class HintPatch
 {

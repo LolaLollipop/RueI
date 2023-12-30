@@ -189,7 +189,7 @@ public class Scheduler
         }
 
         TimeSpan performAt = (currentBatches.First().PerformAt - Now).MaxIf(rateLimiter.Active, rateLimiter.TimeLeft);
-        ServerConsole.AddLog("Starting");
+
         performTask.Start(performAt, PerformFirstBatch);
     }
 

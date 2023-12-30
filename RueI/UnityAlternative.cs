@@ -10,6 +10,10 @@ using HarmonyLib;
 /// <summary>
 /// Defines the base class for a provider of methods that may or may not use Unity.
 /// </summary>
+/// <remarks>
+/// The <see cref="UnityAlternative"/> class is primarily intended for internal use within RueI. This enables certain features
+/// to work even outside of SCP:SL and Unity, which is utilized primarily for unit-testing.
+/// </remarks>
 public abstract class UnityAlternative
 {
     /// <summary>
@@ -18,7 +22,7 @@ public abstract class UnityAlternative
     public interface IAsyncOperation : IDisposable
     {
         /// <summary>
-        /// Gets a value indicating whether or not this operation is handling.
+        /// Gets a value indicating whether or not this operation is currently running.
         /// </summary>
         public bool IsRunning { get; }
 
@@ -70,7 +74,7 @@ public abstract class UnityAlternative
     {
         try
         {
-            _ = Object.FindObjectOfType<ReferenceHub>();
+            _ = Object.FindObjectOfType<ReferenceHub>(); // errors if not in unity
             return new UnityProvider();
         }
         catch(Exception)
@@ -158,21 +162,7 @@ public class UnityProvider : UnityAlternative
     public override IAsyncOperation PerformAsync(TimeSpan span, Action action) => new MECAsyncOperation(span, action);
 
     /// <inheritdoc/>
-    internal override void ShowHint(ReferenceHub hub, string message)
-    {
-        ServerConsole.AddLog("Showing");
-
-        string docPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-
-        // Append text to an existing file named "WriteLines.txt".
-        using (StreamWriter outputFile = new(Path.Combine(docPath, "hello.txt"), true))
-        {
-            outputFile.WriteLine(message);
-        }
-
-        hub.connectionToClient.Send(new HintMessage(new TextHint(message, new HintParameter[] { new StringHintParameter(message) }, null, 99999)));
-        Log(message);
-    } // HintEffectPresets.FadeIn(0, 0, 1)
+    internal override void ShowHint(ReferenceHub hub, string message) => hub.connectionToClient.Send(new HintMessage(new TextHint(message, new HintParameter[] { new StringHintParameter(message) }, new HintEffect[] { HintEffectPresets.FadeIn(0, 0, 1) }, 99999)));
 
     /// <summary>
     /// Represents an async operation using a <see cref="Task"/>.

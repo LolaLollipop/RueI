@@ -38,9 +38,8 @@
 					<code>
 						Display display = new(referenceHub); // Create a new display from a ReferenceHub
 
-						SetElement helloElem = new(300, zIndex: 10, "hello").AddTo(display);
+						SetElement helloElem = new(300, zIndex: 10, "hello").AddTo(display);	
 						SetElement worldElem = new(250, zIndex: 10, "world").AddTo(display);
-						display.Elements.Add(helloElem, worldElem);
 
 						display.Update(); // Update the display
 					</code>

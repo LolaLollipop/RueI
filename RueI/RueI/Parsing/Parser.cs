@@ -227,7 +227,6 @@ public sealed class Parser
     /// <returns>A <see cref="ParsedData"/> containing information about the string.</returns>
     public ParsedData Parse(string text, ElementOptions options = ElementOptions.Default)
     {
-        ServerConsole.AddLog("what");
         ParserState currentState = ParserState.CollectingTags;
 
         StringBuilder tagBuffer = StringBuilderPool.Shared.Rent(Constants.MAXTAGNAMESIZE);
@@ -272,7 +271,6 @@ public sealed class Parser
         char[] chars = text.ToCharArray();
         for (int i = 0; i < chars.Length; i++)
         {
-            ServerConsole.AddLog(chars[i].ToString());
             char ch = chars[i];
 
             if (ch == '\\')
