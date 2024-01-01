@@ -2,10 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class CharacterLengths
+      <title>Class ReflectionHelpers
  | RueI </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class CharacterLengths
+      <meta name="title" content="Class ReflectionHelpers
  | RueI ">
       
       <link rel="icon" href="../favicon.ico">
@@ -17,7 +17,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/Ruemena/RueI/new/master/apiSpec/new?filename=RueI_CharacterLengths.md&amp;value=---%0Auid%3A%20RueI.CharacterLengths%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/Ruemena/RueI/new/master/apiSpec/new?filename=RueI_Extensions_ReflectionHelpers.md&amp;value=---%0Auid%3A%20RueI.Extensions.ReflectionHelpers%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -85,26 +85,26 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="RueI.CharacterLengths">
+        <article data-uid="RueI.Extensions.ReflectionHelpers">
 
 
 
-  <h1 id="RueI_CharacterLengths" data-uid="RueI.CharacterLengths" class="text-break">
-    Class CharacterLengths
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/CharacterLengths.cs/#L10"><i class="bi bi-code-slash"></i></a>
+  <h1 id="RueI_Extensions_ReflectionHelpers" data-uid="RueI.Extensions.ReflectionHelpers" class="text-break">
+    Class ReflectionHelpers
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Extensions/ReflectionHelpers.cs/#L10"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
-    <dl><dt>Namespace</dt><dd><a class="xref" href="RueI.html">RueI</a></dd></dl>
+    <dl><dt>Namespace</dt><dd><a class="xref" href="RueI.html">RueI</a>.<a class="xref" href="RueI.Extensions.html">Extensions</a></dd></dl>
   <dl><dt>Assembly</dt><dd>RueI.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Provides lengths for characters in hints.</p>
+  <div class="markdown summary"><p>Contains methods designed for use by reflection.</p>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static class CharacterLengths</code></pre>
+    <pre><code class="lang-csharp hljs">public static class ReflectionHelpers</code></pre>
   </div>
 
 
@@ -114,7 +114,7 @@
     <dt>Inheritance</dt>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-      <div><span class="xref">CharacterLengths</span></div>
+      <div><span class="xref">ReflectionHelpers</span></div>
     </dd>
   </dl>
 
@@ -149,38 +149,33 @@
 
 
 
-  <h2 id="RueI_CharacterLengths_remarks">Remarks</h2>
-  <div class="markdown level0 remarks"><p>This class is mosty designed for internal use within RueI. However, they can still be useful for external use.</p>
-</div>
 
 
-  <h2 class="section" id="properties">Properties
+  <h2 class="section" id="methods">Methods
 </h2>
 
 
-  <a id="RueI_CharacterLengths_Lengths_" data-uid="RueI.CharacterLengths.Lengths*"></a>
+  <a id="RueI_Extensions_ReflectionHelpers_GetElementShower_" data-uid="RueI.Extensions.ReflectionHelpers.GetElementShower*"></a>
 
-  <h3 id="RueI_CharacterLengths_Lengths" data-uid="RueI.CharacterLengths.Lengths">
-  Lengths
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/CharacterLengths.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  <h3 id="RueI_Extensions_ReflectionHelpers_GetElementShower" data-uid="RueI.Extensions.ReflectionHelpers.GetElementShower">
+  GetElementShower()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Extensions/ReflectionHelpers.cs/#L19"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Gets a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2">IReadOnlyDictionary&lt;TKey, TValue&gt;</a> of character sizes.</p>
+  <div class="markdown level1 summary"><p>Gets a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-4">Action&lt;T1, T2, T3, T4&gt;</a> that can be used to add an element, with a <a class="xref" href="RueI.Displays.Scheduling.TimedElemRef-1.html">TimedElemRef&lt;T&gt;</a> as a closure.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static IReadOnlyDictionary&lt;char, float&gt; Lengths { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public static Action&lt;ReferenceHub, string, float, TimeSpan&gt; GetElementShower()</code></pre>
   </div>
 
 
-
-
-
-  <h4 class="section">Property Value</h4>
+  <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2">IReadOnlyDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
-    <dd></dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-4">Action</a>&lt;<span class="xref">ReferenceHub</span>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timespan">TimeSpan</a>&gt;</dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-4">Action&lt;T1, T2, T3, T4&gt;</a> that can be used to add an element to a ReferenceHub.</p>
+</dd>
   </dl>
 
 
@@ -189,12 +184,18 @@
 
 
 
+  <h4 class="section" id="RueI_Extensions_ReflectionHelpers_GetElementShower_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method is not intended to be used when using RueI as a direct dependency.</p>
+</div>
+
+
+
 
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/CharacterLengths.cs/#L10" class="edit-link">Edit this page</a>
+          <a href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Extensions/ReflectionHelpers.cs/#L10" class="edit-link">Edit this page</a>
         </div>
 
 

@@ -2,10 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class ElemRefResolver&lt;T&gt;
+      <title>Class VOffsetTag
  | RueI </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class ElemRefResolver&lt;T&gt;
+      <meta name="title" content="Class VOffsetTag
  | RueI ">
       
       <link rel="icon" href="../favicon.ico">
@@ -17,7 +17,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/Ruemena/RueI/new/master/apiSpec/new?filename=RueI_Extensions_ElemRefResolver_1.md&amp;value=---%0Auid%3A%20RueI.Extensions.ElemRefResolver%601%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/Ruemena/RueI/new/master/apiSpec/new?filename=RueI_Parsing_Tags_ConcreteTags_VOffsetTag.md&amp;value=---%0Auid%3A%20RueI.Parsing.Tags.ConcreteTags.VOffsetTag%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -85,56 +85,52 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="RueI.Extensions.ElemRefResolver`1">
+        <article data-uid="RueI.Parsing.Tags.ConcreteTags.VOffsetTag">
 
 
 
-  <h1 id="RueI_Extensions_ElemRefResolver_1" data-uid="RueI.Extensions.ElemRefResolver`1" class="text-break">
-    Class ElemRefResolver&lt;T&gt;
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/AutoGiving/AutoGivers.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  <h1 id="RueI_Parsing_Tags_ConcreteTags_VOffsetTag" data-uid="RueI.Parsing.Tags.ConcreteTags.VOffsetTag" class="text-break">
+    Class VOffsetTag
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/Tags/ConcreteTags/VOffsetTag.cs/#L8"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
-    <dl><dt>Namespace</dt><dd><a class="xref" href="RueI.html">RueI</a>.<a class="xref" href="RueI.Extensions.html">Extensions</a></dd></dl>
+    <dl><dt>Namespace</dt><dd><a class="xref" href="RueI.html">RueI</a>.<a class="xref" href="RueI.Parsing.html">Parsing</a>.<a class="xref" href="RueI.Parsing.Tags.html">Tags</a>.<a class="xref" href="RueI.Parsing.Tags.ConcreteTags.html">ConcreteTags</a></dd></dl>
   <dl><dt>Assembly</dt><dd>RueI.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Represents a <a class="xref" href="RueI.Displays.IElemReference-1.html">IElemReference&lt;T&gt;</a> and its associated creator.</p>
+  <div class="markdown summary"><p>Provides a way to handle voffset tags.</p>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public record ElemRefResolver&lt;T&gt; : IEquatable&lt;ElemRefResolver&lt;T&gt;&gt; where T : Element</code></pre>
+    <pre><code class="lang-csharp hljs">public class VOffsetTag : MeasurementTag</code></pre>
   </div>
 
 
 
-  <h4 class="section">Type Parameters</h4>
-  <dl class="parameters">
-    <dt><code>T</code></dt>
-    <dd><p>The type of the element.</p>
-</dd>
-  </dl>
 
   <dl class="typelist inheritance">
     <dt>Inheritance</dt>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-      <div><span class="xref">ElemRefResolver&lt;T&gt;</span></div>
+      <div><a class="xref" href="RueI.Parsing.RichTextTag.html">RichTextTag</a></div>
+      <div><a class="xref" href="RueI.Parsing.Tags.MeasurementTag.html">MeasurementTag</a></div>
+      <div><span class="xref">VOffsetTag</span></div>
     </dd>
   </dl>
 
-  <dl class="typelist implements">
-    <dt>Implements</dt>
-    <dd>
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="RueI.Extensions.ElemRefResolver-1.html">ElemRefResolver</a>&lt;T&gt;&gt;</div>
-    </dd>
-  </dl>
 
 
   <dl class="typelist derived">
     <dt>Inherited Members</dt>
     <dd>
+    <div>
+      <a class="xref" href="RueI.Parsing.Tags.MeasurementTag.html#RueI_Parsing_Tags_MeasurementTag_TagStyle">MeasurementTag.TagStyle</a>
+    </div>
+    <div>
+      <a class="xref" href="RueI.Parsing.Tags.MeasurementTag.html#RueI_Parsing_Tags_MeasurementTag_HandleTag_RueI_Parsing_ParserContext_System_String_">MeasurementTag.HandleTag(ParserContext, string)</a>
+    </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
     </div>
@@ -170,63 +166,23 @@
 
 
 
-  <h2 class="section" id="constructors">Constructors
-</h2>
-
-
-  <a id="RueI_Extensions_ElemRefResolver_1__ctor_" data-uid="RueI.Extensions.ElemRefResolver`1.#ctor*"></a>
-
-  <h3 id="RueI_Extensions_ElemRefResolver_1__ctor_RueI_Displays_IElemReference__0__System_Func__0__" data-uid="RueI.Extensions.ElemRefResolver`1.#ctor(RueI.Displays.IElemReference{`0},System.Func{`0})">
-  ElemRefResolver(IElemReference&lt;T&gt;, Func&lt;T&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/AutoGiving/AutoGivers.cs/#L15"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Represents a <a class="xref" href="RueI.Displays.IElemReference-1.html">IElemReference&lt;T&gt;</a> and its associated creator.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ElemRefResolver(IElemReference&lt;T&gt; elemRef, Func&lt;T&gt; creator)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>elemRef</code> <a class="xref" href="RueI.Displays.IElemReference-1.html">IElemReference</a>&lt;T&gt;</dt>
-    <dd><p>The <a class="xref" href="RueI.Displays.IElemReference-1.html">IElemReference&lt;T&gt;</a> to use.</p>
-</dd>
-    <dt><code>creator</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-1">Func</a>&lt;T&gt;</dt>
-    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-1">Func&lt;TResult&gt;</a> that creates the element. if it does not exist.</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
   <h2 class="section" id="properties">Properties
 </h2>
 
 
-  <a id="RueI_Extensions_ElemRefResolver_1_creator_" data-uid="RueI.Extensions.ElemRefResolver`1.creator*"></a>
+  <a id="RueI_Parsing_Tags_ConcreteTags_VOffsetTag_AllowPercentages_" data-uid="RueI.Parsing.Tags.ConcreteTags.VOffsetTag.AllowPercentages*"></a>
 
-  <h3 id="RueI_Extensions_ElemRefResolver_1_creator" data-uid="RueI.Extensions.ElemRefResolver`1.creator">
-  creator
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/AutoGiving/AutoGivers.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  <h3 id="RueI_Parsing_Tags_ConcreteTags_VOffsetTag_AllowPercentages" data-uid="RueI.Parsing.Tags.ConcreteTags.VOffsetTag.AllowPercentages">
+  AllowPercentages
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/Tags/ConcreteTags/VOffsetTag.cs/#L12"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-1">Func&lt;TResult&gt;</a> that creates the element. if it does not exist.</p>
+  <div class="markdown level1 summary"><p>Gets a value indicating whether or not this tag allows parentheses.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Func&lt;T&gt; creator { get; init; }</code></pre>
+    <pre><code class="lang-csharp hljs">public override bool AllowPercentages { get; }</code></pre>
   </div>
 
 
@@ -235,7 +191,7 @@
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-1">Func</a>&lt;T&gt;</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
   </dl>
 
@@ -246,19 +202,19 @@
 
 
 
-  <a id="RueI_Extensions_ElemRefResolver_1_elemRef_" data-uid="RueI.Extensions.ElemRefResolver`1.elemRef*"></a>
+  <a id="RueI_Parsing_Tags_ConcreteTags_VOffsetTag_Names_" data-uid="RueI.Parsing.Tags.ConcreteTags.VOffsetTag.Names*"></a>
 
-  <h3 id="RueI_Extensions_ElemRefResolver_1_elemRef" data-uid="RueI.Extensions.ElemRefResolver`1.elemRef">
-  elemRef
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/AutoGiving/AutoGivers.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  <h3 id="RueI_Parsing_Tags_ConcreteTags_VOffsetTag_Names" data-uid="RueI.Parsing.Tags.ConcreteTags.VOffsetTag.Names">
+  Names
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/Tags/ConcreteTags/VOffsetTag.cs/#L15"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>The <a class="xref" href="RueI.Displays.IElemReference-1.html">IElemReference&lt;T&gt;</a> to use.</p>
+  <div class="markdown level1 summary"><p>Gets the names of this tag.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IElemReference&lt;T&gt; elemRef { get; init; }</code></pre>
+    <pre><code class="lang-csharp hljs">public override string[] Names { get; }</code></pre>
   </div>
 
 
@@ -267,7 +223,7 @@
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="RueI.Displays.IElemReference-1.html">IElemReference</a>&lt;T&gt;</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
     <dd></dd>
   </dl>
 
@@ -282,32 +238,35 @@
 </h2>
 
 
-  <a id="RueI_Extensions_ElemRefResolver_1_GetFor_" data-uid="RueI.Extensions.ElemRefResolver`1.GetFor*"></a>
+  <a id="RueI_Parsing_Tags_ConcreteTags_VOffsetTag_HandleTag_" data-uid="RueI.Parsing.Tags.ConcreteTags.VOffsetTag.HandleTag*"></a>
 
-  <h3 id="RueI_Extensions_ElemRefResolver_1_GetFor_RueI_Displays_DisplayCore_" data-uid="RueI.Extensions.ElemRefResolver`1.GetFor(RueI.Displays.DisplayCore)">
-  GetFor(DisplayCore)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/AutoGiving/AutoGivers.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  <h3 id="RueI_Parsing_Tags_ConcreteTags_VOffsetTag_HandleTag_RueI_Parsing_ParserContext_RueI_Parsing_Records_MeasurementInfo_" data-uid="RueI.Parsing.Tags.ConcreteTags.VOffsetTag.HandleTag(RueI.Parsing.ParserContext,RueI.Parsing.Records.MeasurementInfo)">
+  HandleTag(ParserContext, MeasurementInfo)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/Tags/ConcreteTags/VOffsetTag.cs/#L18"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Gets an instance of <code class="typeparamref">T</code> using the <a class="xref" href="RueI.Displays.IElemReference-1.html">IElemReference&lt;T&gt;</a>, or creates it.</p>
+  <div class="markdown level1 summary"><p>Handles an instance of this tag with <a class="xref" href="RueI.Parsing.Records.MeasurementInfo.html">MeasurementInfo</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public T GetFor(DisplayCore core)</code></pre>
+    <pre><code class="lang-csharp hljs">public override bool HandleTag(ParserContext context, MeasurementInfo info)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>core</code> <a class="xref" href="RueI.Displays.DisplayCore.html">DisplayCore</a></dt>
-    <dd><p>The <a class="xref" href="RueI.Displays.DisplayCore.html">DisplayCore</a> to use.</p>
+    <dt><code>context</code> <a class="xref" href="RueI.Parsing.ParserContext.html">ParserContext</a></dt>
+    <dd><p>The context of the parser.</p>
+</dd>
+    <dt><code>info</code> <a class="xref" href="RueI.Parsing.Records.MeasurementInfo.html">MeasurementInfo</a></dt>
+    <dd><p>The information about the measurement.</p>
 </dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><span class="xref">T</span></dt>
-    <dd><p>An instance of <code class="typeparamref">T</code>.</p>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true if the tag is valid, otherwise false.</p>
 </dd>
   </dl>
 
@@ -325,7 +284,7 @@
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/AutoGiving/AutoGivers.cs/#L15" class="edit-link">Edit this page</a>
+          <a href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Parsing/Tags/ConcreteTags/VOffsetTag.cs/#L8" class="edit-link">Edit this page</a>
         </div>
 
 

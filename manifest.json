@@ -22,16 +22,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RueI.CharacterLengths.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/RueI.CharacterLengths.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/RueI.Constants.yml",
       "output": {
         ".html": {
@@ -392,16 +382,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RueI.Extensions.ElemRefResolver-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/RueI.Extensions.ElemRefResolver-1.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/RueI.Extensions.ElementHelpers.yml",
       "output": {
         ".html": {
@@ -482,6 +462,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Extensions.ReflectionHelpers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Extensions.ReflectionHelpers.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/RueI.Extensions.UniversalExtensions.yml",
       "output": {
         ".html": {
@@ -516,6 +506,16 @@
       "output": {
         ".html": {
           "relative_path": "api/RueI.NonUnityProvider.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Parsing.CharacterLengths.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Parsing.CharacterLengths.html"
         }
       },
       "version": ""
@@ -952,6 +952,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Parsing.Tags.ConcreteTags.CloseVOffsetTag.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Parsing.Tags.ConcreteTags.CloseVOffsetTag.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/RueI.Parsing.Tags.ConcreteTags.ColorTag.yml",
       "output": {
         ".html": {
@@ -1186,6 +1196,16 @@
       "output": {
         ".html": {
           "relative_path": "api/RueI.Parsing.Tags.ConcreteTags.UnderlineTag.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Parsing.Tags.ConcreteTags.VOffsetTag.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Parsing.Tags.ConcreteTags.VOffsetTag.html"
         }
       },
       "version": ""
