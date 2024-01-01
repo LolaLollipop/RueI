@@ -5,7 +5,10 @@ using RueI.Parsing.Enums;
 /// <summary>
 /// Provides information about TMP text at a certain point.
 /// </summary>
-/// <remarks>This class provides information necessary for individual character sizes, but does not provide the required information to calculate vertical offsets and total line widths. For that, use the derived class <see cref="ParserContext"/>.</remarks>
+/// <remarks>
+/// This class provides information necessary for individual character sizes, but does not provide the required
+/// information to calculate vertical offsets and total line widths. For that, use the derived class <see cref="ParserContext"/>.
+/// </remarks>
 public class TextInfo
 {
     /// <summary>
@@ -31,6 +34,9 @@ public class TextInfo
     /// <summary>
     /// Gets or sets the monospacing of the text.
     /// </summary>
+    /// <remarks>
+    /// If <see cref="IsMonospace"/> is false, this value will be ignored.
+    /// </remarks>
     public float Monospacing { get; set; } = 0;
 
     /// <summary>

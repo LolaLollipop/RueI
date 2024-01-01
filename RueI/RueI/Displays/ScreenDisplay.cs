@@ -6,6 +6,11 @@ using RueI.Elements;
 /// <summary>
 /// Represents a display attached to a <see cref="DisplayCore"/> with support for <see cref="Screen"/>s.
 /// </summary>
+/// <remarks>
+/// A <see cref="ScreenDisplay"/> is a version of the <see cref="Display"/> that contains a list of <see cref="Screen"/>s.
+/// A <see cref="Screen"/> acts as a container for <see cref="Element"/>s, and only one can be active in a <see cref="ScreenDisplay"/>
+/// at a time.
+/// </remarks>
 public class ScreenDisplay : DisplayBase
 {
     /// <summary>

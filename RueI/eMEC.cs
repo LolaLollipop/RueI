@@ -332,7 +332,7 @@ public class Cooldown
     /// <summary>
     /// Gets a value indicating whether or not the cooldown is active.
     /// </summary>
-    public bool Active => stopwatch.Elapsed >= Length;
+    public bool Active => stopwatch.Elapsed < Length;
 
     /// <summary>
     /// Starts the cooldown.

@@ -28,5 +28,5 @@ public static class Ruetility
     /// </summary>
     /// <param name="position">The position to convert.</param>
     /// <returns>The converted value.</returns>
-    public static float FunctionalToScaledPosition(float position) => (position - 755f) * 2.14f;
+    public static float FunctionalToScaledPosition(float position) => (position - 755f) / 2.14f;
 }

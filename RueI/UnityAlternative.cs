@@ -6,6 +6,7 @@ using MEC;
 
 using RueI.Extensions;
 using HarmonyLib;
+using System.Diagnostics;
 
 /// <summary>
 /// Defines the base class for a provider of methods that may or may not use Unity.
@@ -48,6 +49,13 @@ public abstract class UnityAlternative
     /// </summary>
     /// <param name="message">The warn message to log.</param>
     public abstract void LogWarn(string message);
+
+    /// <summary>
+    /// Logs a debug message to the console.
+    /// </summary>
+    /// <param name="message">The debug message to log.</param>
+    [Conditional("DEBUG")]
+    public abstract void LogDebug(string message);
 
     /// <summary>
     /// Loads all patches.
@@ -96,6 +104,9 @@ public class NonUnityProvider : UnityAlternative
     public override void LogWarn(string message) => Console.WriteLine($"WARN: {message}");
 
     /// <inheritdoc/>
+    public override void LogDebug(string message) => Console.WriteLine($"DEBUG: {message}");
+
+    /// <inheritdoc/>
     public override void PatchAll(Harmony harmony) => Console.WriteLine("Faux loading patches");
 
     /// <inheritdoc/>
@@ -121,21 +132,26 @@ public class NonUnityProvider : UnityAlternative
         {
             CancellationTokenSource newSource = new();
             source = newSource;
-
+            CancellationToken token = newSource.Token;
             task = Task.Run(
                 async () =>
             {
-                await Task.Delay(span);
-                newSource.Token.ThrowIfCancellationRequested();
+                await Task.Delay(span, token);
+                token.ThrowIfCancellationRequested();
                 action();
-            });
+                Dispose();
+            }, token);
         }
 
         /// <inheritdoc/>
         public bool IsRunning => !task.IsCompleted;
 
         /// <inheritdoc/>
-        public void Cancel() => source.Cancel();
+        public void Cancel()
+        {
+            source.Cancel();
+            source.Dispose();
+        }
 
         /// <summary>
         /// Disposes this async operation.
@@ -154,6 +170,9 @@ public class UnityProvider : UnityAlternative
 
     /// <inheritdoc/>
     public override void LogWarn(string message) => ServerConsole.AddLog(message, ConsoleColor.Red);
+
+    /// <inheritdoc/>
+    public override void LogDebug(string message) => ServerConsole.AddLog(message, ConsoleColor.Magenta);
 
     /// <inheritdoc/>
     public override void PatchAll(Harmony harmony) => harmony.PatchAll(typeof(RueIMain).Assembly);

@@ -14,7 +14,7 @@ using static UnityAlternative;
 /// Represents the main class for RueI.
 /// </summary>
 /// <remarks>
-/// The <see cref="RueIMain"/> class is responsible for properly initializing all of RueI. It handles 
+/// The <see cref="RueIMain"/> class is responsible for properly initializing all of RueI.
 /// </remarks>
 public static class RueIMain
 {
@@ -42,7 +42,7 @@ public static class RueIMain
         HarmonyLib.Harmony harmony = new(HARMONYID);
         Provider.PatchAll(harmony);
 
-        _ = CharacterLengths.Lengths.Count; // force static initializer
+        _ = Parsing.CharacterLengths.Lengths.Count; // force static initializer
     }
 
     /// <summary>

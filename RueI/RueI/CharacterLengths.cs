@@ -1,4 +1,4 @@
-﻿namespace RueI;
+﻿namespace RueI.Parsing;
 
 using System.Collections.ObjectModel;
 using System.Runtime.CompilerServices;
@@ -458,10 +458,8 @@ public static class CharacterLengths
         {
             return LoadFrozenDictionary(charSizes);
         }
-        catch(Exception e)
+        catch(Exception)
         {
-            UnityProvider.Provider.Log(e.ToString());
-            UnityProvider.Provider.Log("[Warn] [RueI] Could not find System.Collections.Immutable");
             return new ReadOnlyDictionary<char, float>(charSizes);
         }
     }

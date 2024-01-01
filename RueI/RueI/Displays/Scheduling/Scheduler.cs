@@ -5,6 +5,7 @@ using Utils.NonAllocLINQ;
 using eMEC;
 using RueI.Displays.Scheduling.Records;
 using RueI.Extensions;
+using UnityEngine;
 
 /// <summary>
 /// Provides a means of doing batch operations.
@@ -21,7 +22,7 @@ public class Scheduler
 
     private readonly UpdateTask performTask = new();
 
-    private readonly List<BatchJob> currentBatches = new(10);
+    private readonly Queue<BatchJob> currentBatches = new(4);
     private readonly DisplayCore coordinator;
 
     /// <summary>
@@ -70,11 +71,25 @@ public class Scheduler
     /// <param name="job">The job to schedule.</param>
     public void Schedule(ScheduledJob job)
     {
-        if (job.Token == null || !jobs.Any(x => x.Token == job.Token))
+        ScheduleNoUpdate(job);
+        UpdateBatches();
+    }
+
+    /// <summary>
+    /// Schedules multiple jobs.
+    /// </summary>
+    /// <param name="job">The first job to schedule.</param>
+    /// <param name="jobs">The rest of the jobs to schedule.</param>
+    public void Schedule(ScheduledJob job, params ScheduledJob[] jobs)
+    {
+        ScheduleNoUpdate(job);
+
+        foreach (ScheduledJob newJob in jobs)
         {
-            jobs.Add(job);
-            UpdateBatches();
+            ScheduleNoUpdate(newJob);
         }
+
+        UpdateBatches();
     }
 
     /// <summary>
@@ -124,7 +139,7 @@ public class Scheduler
     }
 
     /// <summary>
-    /// Attempts to kill a single job using the <see cref="JobToken"/>.
+    /// Attempts to kill the job with the <see cref="JobToken"/>.
     /// </summary>
     /// <param name="token">The <see cref="JobToken"/> to use as a reference.</param>
     public void KillJob(JobToken token)
@@ -135,12 +150,6 @@ public class Scheduler
             jobs.RemoveAt(index);
         }
     }
-
-    /// <summary>
-    /// Attempts to kill all jobs that have the <see cref="JobToken"/>.
-    /// </summary>
-    /// <param name="token">The <see cref="JobToken"/> to use as a reference.</param>
-    public void KillMultiple(JobToken token) => jobs.RemoveAll(x => x.Token == token);
 
     /// <summary>
     /// Delays any updates from occuring for a certain period of time.
@@ -161,7 +170,7 @@ public class Scheduler
         jobs.Sort();
         currentBatches.Clear();
 
-        List<ScheduledJob> currentBatch = new();
+        List<ScheduledJob> currentBatch = new(2);
         DateTimeOffset currentBatchTime = jobs.First().FinishAt + MinimumBatch;
 
         foreach (ScheduledJob job in jobs)
@@ -173,7 +182,7 @@ public class Scheduler
             else
             {
                 BatchJob finishedBatch = new(currentBatch, CalculateWeighted(currentBatch));
-                currentBatches.Add(finishedBatch);
+                currentBatches.Enqueue(finishedBatch);
                 currentBatch = new()
                 {
                     job,
@@ -185,10 +194,10 @@ public class Scheduler
         {
             BatchJob finishedBatch = new(currentBatch, CalculateWeighted(currentBatch));
 
-            currentBatches.Add(finishedBatch);
+            currentBatches.Enqueue(finishedBatch);
         }
 
-        TimeSpan performAt = (currentBatches.First().PerformAt - Now).MaxIf(rateLimiter.Active, rateLimiter.TimeLeft);
+        TimeSpan performAt = (currentBatches.Peek().PerformAt - Now).MaxIf(rateLimiter.Active, rateLimiter.TimeLeft);
 
         performTask.Start(performAt, PerformFirstBatch);
     }
@@ -198,19 +207,28 @@ public class Scheduler
     /// </summary>
     private void PerformFirstBatch()
     {
-        BatchJob batchJob = currentBatches.First();
+        BatchJob batchJob = currentBatches.Dequeue();
 
         coordinator.IgnoreUpdate = true;
         foreach (ScheduledJob job in batchJob.Jobs)
         {
+            jobs.Remove(job);
             job.Action();
         }
 
         coordinator.IgnoreUpdate = false;
 
-        currentBatches.RemoveAt(0);
         rateLimiter.Start(Constants.HintRateLimit);
 
         coordinator.InternalUpdate();
+        UpdateBatches();
+    }
+
+    private void ScheduleNoUpdate(ScheduledJob job)
+    {
+        if (job.Token == null || !jobs.Any(x => x.Token == job.Token))
+        {
+            jobs.Add(job);
+        }
     }
 }

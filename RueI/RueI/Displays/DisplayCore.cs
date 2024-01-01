@@ -159,7 +159,7 @@ public class DisplayCore
     public void RemoveReference<T>(IElemReference<T> reference)
         where T : Element
     {
-        referencedElements.Remove(reference);
+        _ = referencedElements.Remove(reference);
     }
 
     /// <summary>

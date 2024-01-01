@@ -85,15 +85,22 @@ public class TestDisplayCore
     [TestMethod]
     public async Task TestScheduling()
     {
+        const double TIMEONE = 200;
+        const double TIMETWO = 300;
+        const double TIMETHREE = 400;
+        const double AVERAGE = (TIMEONE + TIMETWO + TIMETHREE) / 3;
+
+        const double DELTA = 50;
+
         Stopwatch stopwatchOne = new();
         Stopwatch stopwatchTwo = new();
         Stopwatch stopwatchThree = new();
 
         MockDisplayCore core = new();
 
-        core.Scheduler.Schedule(TimeSpan.FromMilliseconds(200), stopwatchOne.Stop);
-        core.Scheduler.Schedule(TimeSpan.FromMilliseconds(300), stopwatchTwo.Stop);
-        core.Scheduler.Schedule(TimeSpan.FromMilliseconds(400), stopwatchThree.Stop);
+        core.Scheduler.Schedule(TimeSpan.FromMilliseconds(TIMEONE), stopwatchOne.Stop);
+        core.Scheduler.Schedule(TimeSpan.FromMilliseconds(TIMETWO), stopwatchTwo.Stop);
+        core.Scheduler.Schedule(TimeSpan.FromMilliseconds(TIMETHREE), stopwatchThree.Stop);
 
         stopwatchOne.Start();
         stopwatchTwo.Start();
@@ -101,6 +108,36 @@ public class TestDisplayCore
 
         await Task.Delay(600);
 
-        Assert.AreEqual(300, (stopwatchOne.ElapsedMilliseconds + stopwatchTwo.ElapsedMilliseconds + stopwatchThree.ElapsedMilliseconds) / 3, 50);
+        Assert.AreEqual(AVERAGE, (stopwatchOne.ElapsedMilliseconds + stopwatchTwo.ElapsedMilliseconds + stopwatchThree.ElapsedMilliseconds) / 3, DELTA);
+    }
+
+    [TestMethod]
+    public async Task TestScheduling_2()
+    {
+        const double TIMEONE = 200;
+        const double TIMETWO = 1500;
+        const double TIMETHREE = 2500;
+
+        const double DELTA = 75;
+
+        Stopwatch stopwatchOne = new();
+        Stopwatch stopwatchTwo = new();
+        Stopwatch stopwatchThree = new();
+
+        MockDisplayCore core = new();
+
+        core.Scheduler.Schedule(TimeSpan.FromMilliseconds(TIMEONE), stopwatchOne.Stop);
+        core.Scheduler.Schedule(TimeSpan.FromMilliseconds(TIMETWO), stopwatchTwo.Stop);
+        core.Scheduler.Schedule(TimeSpan.FromMilliseconds(TIMETHREE), stopwatchThree.Stop);
+
+        stopwatchOne.Start();
+        stopwatchTwo.Start();
+        stopwatchThree.Start();
+
+        await Task.Delay(4000);
+
+        Assert.AreEqual(TIMEONE, stopwatchOne.ElapsedMilliseconds, DELTA);
+        Assert.AreEqual(TIMETWO, stopwatchTwo.ElapsedMilliseconds, DELTA);
+        Assert.AreEqual(TIMETHREE, stopwatchThree.ElapsedMilliseconds, DELTA);
     }
 }

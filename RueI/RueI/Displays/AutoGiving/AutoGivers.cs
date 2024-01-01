@@ -7,23 +7,6 @@ using RueI.Displays.Scheduling;
 using RueI.Elements;
 
 /// <summary>
-/// Represents a <see cref="IElemReference{T}"/> and its associated creator.
-/// </summary>
-/// <typeparam name="T">The type of the element.</typeparam>
-/// <param name="elemRef">The <see cref="IElemReference{T}"/> to use.</param>
-/// <param name="creator">A <see cref="Func{TResult}"/> that creates the element. if it does not exist.</param>
-public record ElemRefResolver<T>(IElemReference<T> elemRef, Func<T> creator)
-    where T : Element
-{
-    /// <summary>
-    /// Gets an instance of <typeparamref name="T"/> using the <see cref="IElemReference{T}"/>, or creates it.
-    /// </summary>
-    /// <param name="core">The <see cref="DisplayCore"/> to use.</param>
-    /// <returns>An instance of <typeparamref name="T"/>.</returns>
-    public T GetFor(DisplayCore core) => core.GetElementOrNew(elemRef, creator);
-}
-
-/// <summary>
 /// Manages and automatically assigns elements to <see cref="ReferenceHub"/>s meeting a criteria.
 /// </summary>
 public class AutoElement

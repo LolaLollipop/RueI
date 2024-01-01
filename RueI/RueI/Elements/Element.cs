@@ -7,6 +7,11 @@ using RueI.Parsing.Records;
 /// <summary>
 /// Represents the base class for all elements, which are individual 'hints' present within an arbitrary number of <see cref="Displays.Display"/>s.
 /// </summary>
+/// <remarks>
+/// An <see cref="Element"/> is how text is displayed within RueI. Each <see cref="Element"/>
+/// acts like an individual <see cref="Hints.Hint"/>, and cannot influence other <see cref="Element"/>s.
+/// 
+/// </remarks>
 public abstract class Element
 {
     /// <summary>
@@ -36,7 +41,9 @@ public abstract class Element
     /// <summary>
     /// Gets or sets the <see cref="Parser"/> currently in use by this <see cref="Element"/>.
     /// </summary>
-    /// <remarks>Implementations should default this to <see cref="Parser.DefaultParser"/>.</remarks>
+    /// <remarks>
+    /// Implementations should default this to <see cref="Parser.DefaultParser"/>.
+    /// </remarks>
     public Parser Parser { get; set; } = Parser.DefaultParser;
 
     /// <summary>
@@ -47,7 +54,9 @@ public abstract class Element
     /// <summary>
     /// Gets the data used for parsing.
     /// </summary>
-    /// <remarks>This contains information used to ensure that multiple elements can be displayed at once. To obtain this, you should almost always use <see cref="Parser.Parse"/>.</remarks>
     /// <returns>The <see cref="ParsedData"/> for the element.</returns>
+    /// <remarks>
+    /// This contains information used to ensure that multiple elements can be displayed at once. To obtain this, you must use <see cref="Parser.Parse"/>.
+    /// </remarks>
     protected internal abstract ParsedData GetParsedData();
 }

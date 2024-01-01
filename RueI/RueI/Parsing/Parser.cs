@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using System.Text;
 
 using NorthwoodLib.Pools;
+
 using RueI.Elements.Enums;
 using RueI.Extensions;
 using RueI.Parsing.Enums;
@@ -63,7 +64,7 @@ public sealed class Parser
     {
         float size = CalculateCharacterLength(context, ch);
 
-        // TODO: any chars
+        // TODO: support for surrogate pairs and CJK
         if (ch == ' ' || ch == '​') // zero width space
         {
             context.SpaceBuffer += size;
@@ -310,6 +311,7 @@ public sealed class Parser
                     else
                     {
                         context.ResultBuilder.Append('\\');
+                        i++;
                     }
                 }
 
@@ -441,7 +443,7 @@ public sealed class Parser
         } // foreach
 
         context.ApplyClosingTags();
-        if (context.WidthSinceSpace > 0 || context.CurrentLineWidth > 0)
+        if (context.WidthSinceSpace > 0 || context.CurrentLineWidth > 0) // acount for the last line's size offset
         {
             context.NewOffset += CalculateSizeOffset(context.BiggestCharSize);
         }
@@ -475,6 +477,8 @@ public sealed class Parser
     /// <returns>A value indicating whether or not a tag was found.</returns>
     private bool TryGetBestMatch(string name, TagStyle style, out RichTextTag? tag)
     {
+        // lookups return an empty ienumerable if theres no value with the key
+        // so this is perfectly safe :3
         tag = Tags[name].FirstOrDefault(x => x.TagStyle == style);
         if (tag == null)
         {

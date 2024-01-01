@@ -49,7 +49,7 @@ public static class DisplayCoreExtensions
     }
 
     /// <summary>
-    /// Temporarily adds a <see cref="SetElement"/> using the provided string or position, or sets it if it already exists.
+    /// Temporarily adds a <see cref="SetElement"/> using the provided string and position, or sets it if it already exists.
     /// </summary>
     /// <param name="core">The <see cref="DisplayCore"/> to add the element to.</param>
     /// <param name="content">The content of the element.</param>
@@ -59,6 +59,24 @@ public static class DisplayCoreExtensions
     public static void ShowTemp(this DisplayCore core, string content, float position, TimeSpan time, TimedElemRef<SetElement> elemRef)
     {
         core.SetElementOrNew(elemRef, content, position);
+        core.Update();
+
+        core.Scheduler.KillJob(elemRef.JobToken);
+        core.Scheduler.Schedule(time, () => core.RemoveReference(elemRef), elemRef.JobToken);
+    }
+
+    /// <summary>
+    /// Temporarily adds a <see cref="SetElement"/> using the provided string and functional position, or sets it if it already exists.
+    /// </summary>
+    /// <param name="core">The <see cref="DisplayCore"/> to add the element to.</param>
+    /// <param name="content">The content of the element.</param>
+    /// <param name="position">The position of the element.</param>
+    /// <param name="time">How long to keep the element in the <see cref="DisplayCore"/> for.</param>
+    /// <param name="elemRef">The <see cref="TimedElemRef{T}"/> to use.</param>
+    public static void ShowTempFunctional(this DisplayCore core, string content, float position, TimeSpan time, TimedElemRef<SetElement> elemRef)
+    {
+        core.SetElementOrNew(elemRef, content, Ruetility.FunctionalToScaledPosition(position));
+        core.Update();
 
         core.Scheduler.KillJob(elemRef.JobToken);
         core.Scheduler.Schedule(time, () => core.RemoveReference(elemRef), elemRef.JobToken);
