@@ -58,7 +58,7 @@ public abstract class DisplayBase
     public void Update() => DisplayCore.Get(ReferenceHub).Update();
 
     /// <summary>
-    /// Deletes this display, removing it from the player's coordinator.
+    /// Deletes this display, removing it from the player's core.
     /// </summary>
     public void Delete()
     {

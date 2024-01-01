@@ -23,7 +23,7 @@ public class Scheduler
     private readonly UpdateTask performTask = new();
 
     private readonly Queue<BatchJob> currentBatches = new(4);
-    private readonly DisplayCore coordinator;
+    private readonly DisplayCore core;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="Scheduler"/> class.
@@ -31,7 +31,7 @@ public class Scheduler
     /// <param name="coordinator">The <see cref="DisplayCore"/> to use.</param>
     public Scheduler(DisplayCore coordinator)
     {
-        this.coordinator = coordinator;
+        this.core = coordinator;
     }
 
     /// <summary>
@@ -209,18 +209,18 @@ public class Scheduler
     {
         BatchJob batchJob = currentBatches.Dequeue();
 
-        coordinator.IgnoreUpdate = true;
+        core.IgnoreUpdate = true;
         foreach (ScheduledJob job in batchJob.Jobs)
         {
             jobs.Remove(job);
             job.Action();
         }
 
-        coordinator.IgnoreUpdate = false;
+        core.IgnoreUpdate = false;
 
         rateLimiter.Start(Constants.HintRateLimit);
 
-        coordinator.InternalUpdate();
+        core.InternalUpdate();
         UpdateBatches();
     }
 
