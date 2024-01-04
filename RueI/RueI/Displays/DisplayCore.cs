@@ -87,15 +87,15 @@ public class DisplayCore
     /// <summary>
     /// Updates this <see cref="DisplayCore"/>.
     /// </summary>
-    /// <param name="priority">The priority of the update - defaults to 100.</param>
-    public void Update(int priority = 100)
+    /// <param name="priority">The priority of the update - defaults to 10.</param>
+    public void Update(int priority = 10)
     {
         if (IgnoreUpdate)
         {
             return;
         }
 
-        Scheduler.Schedule(TimeSpan.Zero, () => { }, priority);
+        Scheduler.ScheduleUpdate(TimeSpan.Zero, priority);
     }
 
     /// <summary>
@@ -113,7 +113,7 @@ public class DisplayCore
         }
         else
         {
-            return default;
+            return null;
         }
     }
 

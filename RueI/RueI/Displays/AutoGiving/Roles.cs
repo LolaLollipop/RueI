@@ -91,7 +91,7 @@ public enum Roles
     /// <summary>
     /// Gets the Facility Guard role id.
     /// </summary>
-    FacilityGuard = 1 << RoleTypeId.Tutorial,
+    FacilityGuard = 1 << RoleTypeId.FacilityGuard,
 
     /// <summary>
     /// Gets the SCP-939 role id.

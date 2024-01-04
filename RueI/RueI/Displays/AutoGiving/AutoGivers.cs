@@ -7,11 +7,13 @@ using RueI.Displays.Scheduling;
 using RueI.Elements;
 
 /// <summary>
-/// Manages and automatically assigns elements to <see cref="ReferenceHub"/>s meeting a criteria.
+/// Manages and automatically assigns elements to <see cref="DisplayCore"/> instances meeting a criteria.
 /// </summary>
 public class AutoElement
 {
     private record PeriodicUpdate(TimeSpan time, int priority, JobToken token);
+
+    private const int AUTOUPDATEPRIORITY = 5;
 
     private static readonly List<AutoElement> AutoGivers = new();
 
@@ -161,7 +163,7 @@ public class AutoElement
                 }
             }
 
-            core.Update(35);
+            core.Update(AUTOUPDATEPRIORITY);
         }
     }
 

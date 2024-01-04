@@ -10,7 +10,6 @@ using RueI.Parsing.Records;
 /// <remarks>
 /// An <see cref="Element"/> is how text is displayed within RueI. Each <see cref="Element"/>
 /// acts like an individual <see cref="Hints.Hint"/>, and cannot influence other <see cref="Element"/>s.
-/// 
 /// </remarks>
 public abstract class Element
 {

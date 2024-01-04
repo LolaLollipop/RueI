@@ -5,46 +5,49 @@ using Utils.NonAllocLINQ;
 using eMEC;
 using RueI.Displays.Scheduling.Records;
 using RueI.Extensions;
-using UnityEngine;
 
 /// <summary>
 /// Provides a means of doing batch operations.
 /// </summary>
 /// <remarks>
 /// The <see cref="Scheduler"/> is a powerful class that enables "batch operations". This means that multiple updates to a display can happen at once, helping to avoid the hint ratelimit.
+/// More detailed information is available at <see href="https://ruemena.github.io/RueI/markdown/scheduling.html">Using the Scheduler</see>.
 /// </remarks>
 public class Scheduler
 {
     private static readonly TimeSpan MinimumBatch = TimeSpan.FromMilliseconds(625);
 
-    private readonly Cooldown rateLimiter = new();
+    private readonly Cooldown hintRateLimit = new();
     private readonly List<ScheduledJob> jobs = new();
 
     private readonly UpdateTask performTask = new();
-
-    private readonly Queue<BatchJob> currentBatches = new(4);
     private readonly DisplayCore core;
+
+    private BatchJob? nextBatch;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="Scheduler"/> class.
     /// </summary>
-    /// <param name="coordinator">The <see cref="DisplayCore"/> to use.</param>
-    public Scheduler(DisplayCore coordinator)
+    /// <param name="core">The <see cref="DisplayCore"/> to use.</param>
+    public Scheduler(DisplayCore core)
     {
-        this.core = coordinator;
+        this.core = core;
     }
 
     /// <summary>
     /// Gets a value indicating whether or not the rate limit is currently active.
     /// </summary>
-    internal bool RateLimitActive => rateLimiter.Active;
+    internal bool RateLimitActive => hintRateLimit.Active;
 
+    /// <summary>
+    /// Gets the <see cref="DateTimeOffset"/> used by <see cref="Scheduler"/> classes for the current timeSChedued.
+    /// </summary>
     private static DateTimeOffset Now => DateTimeOffset.UtcNow;
 
     /// <summary>
     /// Calculates the weighted time for a list of jobs to be performed.
     /// </summary>
-    /// <param name="jobs">The jobs.</param>
+    /// <param name="jobs">The <see cref="ScheduledJob"/> operations to schedule.</param>
     /// <returns>The weighted <see cref="DateTimeOffset"/> of all of the jobs.</returns>
     public static DateTimeOffset CalculateWeighted(IEnumerable<ScheduledJob> jobs)
     {
@@ -66,7 +69,7 @@ public class Scheduler
     }
 
     /// <summary>
-    /// Schedules a job.
+    /// Schedules a <see cref="ScheduledJob"/>.
     /// </summary>
     /// <param name="job">The job to schedule.</param>
     public void Schedule(ScheduledJob job)
@@ -76,27 +79,43 @@ public class Scheduler
     }
 
     /// <summary>
-    /// Schedules multiple jobs.
+    /// Schedules multiple <see cref="ScheduledJob"/> operations.
     /// </summary>
-    /// <param name="job">The first job to schedule.</param>
-    /// <param name="jobs">The rest of the jobs to schedule.</param>
-    public void Schedule(ScheduledJob job, params ScheduledJob[] jobs)
+    /// <param name="jobs">The jobs to schedule.</param>
+    /// <remarks>
+    /// When scheduling multiple jobs at a time, this method is preferred to calling <see cref="Schedule(ScheduledJob)"/> several
+    /// times since it only recalculates the batches once.
+    /// </remarks>
+    public void Schedule(IEnumerable<ScheduledJob> jobs)
     {
-        ScheduleNoUpdate(job);
-
-        foreach (ScheduledJob newJob in jobs)
+        // since we must check every job for duplicates using the JobToken,
+        // AddRange or similar can't be used
+        foreach (ScheduledJob job in jobs)
         {
-            ScheduleNoUpdate(newJob);
+            ScheduleNoUpdate(job);
         }
 
         UpdateBatches();
     }
 
     /// <summary>
-    /// Schedules an uncancellable update job.
+    /// Schedules multiple <see cref="ScheduledJob"/> operations.
+    /// </summary>
+    /// <param name="job">The first <see cref="ScheduledJob"/> to schedule.</param>
+    /// <param name="jobs">The rest of the <see cref="ScheduledJob"/> operations to schedule.</param>
+    /// <inheritdoc cref="Schedule(IEnumerable{ScheduledJob})" path="/remarks"/>
+    public void Schedule(ScheduledJob job, params ScheduledJob[] jobs)
+    {
+        ScheduleNoUpdate(job);
+
+        Schedule(jobs); // unnecessary to call UpdateBatches, since this already does it
+    }
+
+    /// <summary>
+    /// Schedules an uncancellable update <see cref="ScheduledJob"/>.
     /// </summary>
     /// <param name="time">How long into the future to update at.</param>
-    /// <param name="priority">The priority of the job, giving it additional weight when calculating.</param>
+    /// <param name="priority">The priority of the <see cref="ScheduledJob"/>, giving it additional weight when calculating.</param>
     public void ScheduleUpdate(TimeSpan time, int priority)
     {
         jobs.Add(new(Now + time, () => { }, priority));
@@ -104,7 +123,7 @@ public class Scheduler
     }
 
     /// <summary>
-    /// Schedules a job.
+    /// Schedules a new <see cref="ScheduledJob"/>.
     /// </summary>
     /// <param name="time">How long into the future to run the action at.</param>
     /// <param name="action">The <see cref="Action"/> to run.</param>
@@ -116,19 +135,7 @@ public class Scheduler
     }
 
     /// <summary>
-    /// Schedules a job.
-    /// </summary>
-    /// <param name="action">The <see cref="Action"/> to run.</param>
-    /// <param name="time">How long into the future to run the action at.</param>
-    /// <param name="priority">The priority of the job, giving it additional weight when calculating.</param>
-    /// <param name="token">An optional token to assign to the <see cref="ScheduledJob"/>.</param>
-    public void Schedule(Action action, TimeSpan time, int priority, JobToken? token = null)
-    {
-        Schedule(new ScheduledJob(Now + time, action, priority, token));
-    }
-
-    /// <summary>
-    /// Schedules a job with a priority of 1.
+    /// Schedules a <see cref="ScheduledJob"/> with a priority of 1.
     /// </summary>
     /// <param name="time">How long into the future to run the action at.</param>
     /// <param name="action">The <see cref="Action"/> to run.</param>
@@ -139,7 +146,7 @@ public class Scheduler
     }
 
     /// <summary>
-    /// Attempts to kill the job with the <see cref="JobToken"/>.
+    /// Attempts to kill the <see cref="ScheduledJob"/> with the <see cref="JobToken"/>.
     /// </summary>
     /// <param name="token">The <see cref="JobToken"/> to use as a reference.</param>
     public void KillJob(JobToken token)
@@ -157,9 +164,12 @@ public class Scheduler
     /// <param name="time">The amount of time to delay for.</param>
     internal void Delay(TimeSpan time)
     {
-        rateLimiter.Start(time.Max(MinimumBatch));
+        hintRateLimit.Start(time.Max(MinimumBatch));
     }
 
+    /// <summary>
+    /// Recalculates the next <see cref="BatchJob"/> for this <see cref="Scheduler"/>, and potentially starts it.
+    /// </summary>
     private void UpdateBatches()
     {
         if (!jobs.Any())
@@ -168,7 +178,7 @@ public class Scheduler
         }
 
         jobs.Sort();
-        currentBatches.Clear();
+        nextBatch = null;
 
         List<ScheduledJob> currentBatch = new(2);
         DateTimeOffset currentBatchTime = jobs.First().FinishAt + MinimumBatch;
@@ -181,36 +191,39 @@ public class Scheduler
             }
             else
             {
-                BatchJob finishedBatch = new(currentBatch, CalculateWeighted(currentBatch));
-                currentBatches.Enqueue(finishedBatch);
-                currentBatch = new()
-                {
-                    job,
-                };
+                break;
             }
         }
 
-        if (currentBatch.Count != 0)
+        if (currentBatch.Count == 0)
         {
-            BatchJob finishedBatch = new(currentBatch, CalculateWeighted(currentBatch));
-
-            currentBatches.Enqueue(finishedBatch);
+            // handle cases where a scheduledjob being removed
+            // results in nothing to do
+            performTask.End();
         }
+        else
+        {
+            DateTimeOffset dateTimePerform = CalculateWeighted(currentBatch);
+            nextBatch = new(currentBatch, dateTimePerform);
 
-        TimeSpan performAt = (currentBatches.Peek().PerformAt - Now).MaxIf(rateLimiter.Active, rateLimiter.TimeLeft);
+            TimeSpan performAt = (dateTimePerform - Now).MaxIf(hintRateLimit.Active, hintRateLimit.TimeLeft);
 
-        performTask.Start(performAt, PerformFirstBatch);
+            performTask.Start(performAt, PerformFirstBatch);
+        }
     }
 
     /// <summary>
-    /// Immediately performs the first batch job.
+    /// Immediately performs the first <see cref="BatchJob"/>.
     /// </summary>
     private void PerformFirstBatch()
     {
-        BatchJob batchJob = currentBatches.Dequeue();
+        if (nextBatch == null)
+        {
+            return;
+        }
 
         core.IgnoreUpdate = true;
-        foreach (ScheduledJob job in batchJob.Jobs)
+        foreach (ScheduledJob job in nextBatch.Jobs)
         {
             jobs.Remove(job);
             job.Action();
@@ -218,12 +231,16 @@ public class Scheduler
 
         core.IgnoreUpdate = false;
 
-        rateLimiter.Start(Constants.HintRateLimit);
+        hintRateLimit.Start(Constants.HintRateLimit);
 
         core.InternalUpdate();
         UpdateBatches();
     }
 
+    /// <summary>
+    /// Schedules a job without recalculating the batches.
+    /// </summary>
+    /// <param name="job">The <see cref="ScheduledJob"/> to schedule.</param>
     private void ScheduleNoUpdate(ScheduledJob job)
     {
         if (job.Token == null || !jobs.Any(x => x.Token == job.Token))

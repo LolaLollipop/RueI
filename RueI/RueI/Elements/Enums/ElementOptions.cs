@@ -24,7 +24,7 @@ public enum ElementOptions
     /// <summary>
     /// Indicates whether or not to automatically use functional positioning for the element.
     /// </summary>
-    /// <see cref="Ruetility.FunctionalToScaledPosition(float)"/>
+    /// <seealso cref="Ruetility.FunctionalToScaledPosition(float)"/>
     UseFunctionalPosition = 1 << 2,
 
     /// <summary>

@@ -27,6 +27,7 @@ using UnityEngine;
 public static class HintPatch
 {
     private const float MAXANONYMOUSHINTTIME = 3;
+    private const int UPDATEPRIORITY = 10;
 
     private delegate bool TryGetHub(GameObject player, out ReferenceHub hub);
 
@@ -100,7 +101,7 @@ public static class HintPatch
                 // core.Scheduler.ScheduleUpdate(TimeSpan.FromSeconds(time), 250);
                 new(OpCodes.Conv_R8),
                 new(OpCodes.Call, Method(typeof(TimeSpan), nameof(TimeSpan.FromSeconds))),
-                new(OpCodes.Ldc_I4, 250),
+                new(OpCodes.Ldc_I4, UPDATEPRIORITY),
                 new(OpCodes.Callvirt, Method(typeof(Scheduler), nameof(Scheduler.ScheduleUpdate))),
 
                 // }

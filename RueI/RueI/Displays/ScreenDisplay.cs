@@ -70,14 +70,6 @@ public class ScreenDisplay : DisplayBase
     /// <inheritdoc/>
     public override IEnumerable<Element> GetAllElements()
     {
-        foreach (Element element in CurrentScreen.Elements.FilterDisabled())
-        {
-            yield return element;
-        }
-
-        foreach (Element element in GlobalElements.FilterDisabled())
-        {
-            yield return element;
-        }
+        return CurrentScreen.Elements.FilterDisabled().Concat(GlobalElements.FilterDisabled());
     }
 }
