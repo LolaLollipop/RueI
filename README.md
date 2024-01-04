@@ -12,3 +12,5 @@ docs are available [here](https://ruemena.github.io/RueI/).
 - scheduler system, which makes dealing with the hint ratelimit easier
 
 RueI is not a grid-based or line-based system, it calculates the offset necessary to put a hint at the same position no matter what
+## Comments
+if you've encountered any bugs please [make an issue](https://github.com/Ruemena/RueI/issues) (it helps me out a ton)
