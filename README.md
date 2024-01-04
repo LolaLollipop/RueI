@@ -5,6 +5,8 @@ RueI is a hint framework, designed to be the definitive way to display multiple 
 
 docs are available [here](https://ruemena.github.io/RueI/).
 
+if you want to develop using RueI, make sure you install the [nuget package](https://www.nuget.org/packages/RueI)
+
 ### Features
 - support for displaying multiple hints at once without them interfering with eachother
 - cross-plugin compatibility 
