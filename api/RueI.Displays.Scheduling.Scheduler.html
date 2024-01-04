@@ -157,7 +157,8 @@
 
 
   <h2 id="RueI_Displays_Scheduling_Scheduler_remarks">Remarks</h2>
-  <div class="markdown level0 remarks"><p>The <a class="xref" href="RueI.Displays.Scheduling.Scheduler.html">Scheduler</a> is a powerful class that enables &quot;batch operations&quot;. This means that multiple updates to a display can happen at once, helping to avoid the hint ratelimit.</p>
+  <div class="markdown level0 remarks"><p>The <a class="xref" href="RueI.Displays.Scheduling.Scheduler.html">Scheduler</a> is a powerful class that enables &quot;batch operations&quot;. This means that multiple updates to a display can happen at once, helping to avoid the hint ratelimit.
+More detailed information is available at <a href="https://ruemena.github.io/RueI/markdown/scheduling.html">Using the Scheduler</a>.</p>
 </div>
 
 
@@ -177,12 +178,12 @@
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Scheduler(DisplayCore coordinator)</code></pre>
+    <pre><code class="lang-csharp hljs">public Scheduler(DisplayCore core)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>coordinator</code> <a class="xref" href="RueI.Displays.DisplayCore.html">DisplayCore</a></dt>
+    <dt><code>core</code> <a class="xref" href="RueI.Displays.DisplayCore.html">DisplayCore</a></dt>
     <dd><p>The <a class="xref" href="RueI.Displays.DisplayCore.html">DisplayCore</a> to use.</p>
 </dd>
   </dl>
@@ -206,7 +207,7 @@
 
   <h3 id="RueI_Displays_Scheduling_Scheduler_CalculateWeighted_System_Collections_Generic_IEnumerable_RueI_Displays_Scheduling_Records_ScheduledJob__" data-uid="RueI.Displays.Scheduling.Scheduler.CalculateWeighted(System.Collections.Generic.IEnumerable{RueI.Displays.Scheduling.Records.ScheduledJob})">
   CalculateWeighted(IEnumerable&lt;ScheduledJob&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/Scheduling/Scheduler.cs/#L49"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/Scheduling/Scheduler.cs/#L52"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Calculates the weighted time for a list of jobs to be performed.</p>
@@ -220,7 +221,7 @@
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>jobs</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="RueI.Displays.Scheduling.Records.ScheduledJob.html">ScheduledJob</a>&gt;</dt>
-    <dd><p>The jobs.</p>
+    <dd><p>The <a class="xref" href="RueI.Displays.Scheduling.Records.ScheduledJob.html">ScheduledJob</a> operations to schedule.</p>
 </dd>
   </dl>
 
@@ -245,10 +246,10 @@
 
   <h3 id="RueI_Displays_Scheduling_Scheduler_KillJob_RueI_Displays_Scheduling_JobToken_" data-uid="RueI.Displays.Scheduling.Scheduler.KillJob(RueI.Displays.Scheduling.JobToken)">
   KillJob(JobToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/Scheduling/Scheduler.cs/#L145"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/Scheduling/Scheduler.cs/#L152"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Attempts to kill the job with the <a class="xref" href="RueI.Displays.Scheduling.JobToken.html">JobToken</a>.</p>
+  <div class="markdown level1 summary"><p>Attempts to kill the <a class="xref" href="RueI.Displays.Scheduling.Records.ScheduledJob.html">ScheduledJob</a> with the <a class="xref" href="RueI.Displays.Scheduling.JobToken.html">JobToken</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -278,10 +279,10 @@
 
   <h3 id="RueI_Displays_Scheduling_Scheduler_Schedule_RueI_Displays_Scheduling_Records_ScheduledJob_" data-uid="RueI.Displays.Scheduling.Scheduler.Schedule(RueI.Displays.Scheduling.Records.ScheduledJob)">
   Schedule(ScheduledJob)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/Scheduling/Scheduler.cs/#L72"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/Scheduling/Scheduler.cs/#L75"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Schedules a job.</p>
+  <div class="markdown level1 summary"><p>Schedules a <a class="xref" href="RueI.Displays.Scheduling.Records.ScheduledJob.html">ScheduledJob</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -311,10 +312,10 @@
 
   <h3 id="RueI_Displays_Scheduling_Scheduler_Schedule_RueI_Displays_Scheduling_Records_ScheduledJob_RueI_Displays_Scheduling_Records_ScheduledJob___" data-uid="RueI.Displays.Scheduling.Scheduler.Schedule(RueI.Displays.Scheduling.Records.ScheduledJob,RueI.Displays.Scheduling.Records.ScheduledJob[])">
   Schedule(ScheduledJob, params ScheduledJob[])
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/Scheduling/Scheduler.cs/#L83"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/Scheduling/Scheduler.cs/#L107"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Schedules multiple jobs.</p>
+  <div class="markdown level1 summary"><p>Schedules multiple <a class="xref" href="RueI.Displays.Scheduling.Records.ScheduledJob.html">ScheduledJob</a> operations.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -325,10 +326,10 @@
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>job</code> <a class="xref" href="RueI.Displays.Scheduling.Records.ScheduledJob.html">ScheduledJob</a></dt>
-    <dd><p>The first job to schedule.</p>
+    <dd><p>The first <a class="xref" href="RueI.Displays.Scheduling.Records.ScheduledJob.html">ScheduledJob</a> to schedule.</p>
 </dd>
     <dt><code>jobs</code> <a class="xref" href="RueI.Displays.Scheduling.Records.ScheduledJob.html">ScheduledJob</a>[]</dt>
-    <dd><p>The rest of the jobs to schedule.</p>
+    <dd><p>The rest of the <a class="xref" href="RueI.Displays.Scheduling.Records.ScheduledJob.html">ScheduledJob</a> operations to schedule.</p>
 </dd>
   </dl>
 
@@ -339,38 +340,33 @@
 
 
 
+  <h4 class="section" id="RueI_Displays_Scheduling_Scheduler_Schedule_RueI_Displays_Scheduling_Records_ScheduledJob_RueI_Displays_Scheduling_Records_ScheduledJob____remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>When scheduling multiple jobs at a time, this method is preferred to calling <a class="xref" href="RueI.Displays.Scheduling.Scheduler.html#RueI_Displays_Scheduling_Scheduler_Schedule_RueI_Displays_Scheduling_Records_ScheduledJob_">Schedule(ScheduledJob)</a> several
+times since it only recalculates the batches once.</p>
+</div>
 
 
 
 
   <a id="RueI_Displays_Scheduling_Scheduler_Schedule_" data-uid="RueI.Displays.Scheduling.Scheduler.Schedule*"></a>
 
-  <h3 id="RueI_Displays_Scheduling_Scheduler_Schedule_System_Action_System_TimeSpan_System_Int32_RueI_Displays_Scheduling_JobToken_" data-uid="RueI.Displays.Scheduling.Scheduler.Schedule(System.Action,System.TimeSpan,System.Int32,RueI.Displays.Scheduling.JobToken)">
-  Schedule(Action, TimeSpan, int, JobToken?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/Scheduling/Scheduler.cs/#L125"><i class="bi bi-code-slash"></i></a>
+  <h3 id="RueI_Displays_Scheduling_Scheduler_Schedule_System_Collections_Generic_IEnumerable_RueI_Displays_Scheduling_Records_ScheduledJob__" data-uid="RueI.Displays.Scheduling.Scheduler.Schedule(System.Collections.Generic.IEnumerable{RueI.Displays.Scheduling.Records.ScheduledJob})">
+  Schedule(IEnumerable&lt;ScheduledJob&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/Scheduling/Scheduler.cs/#L89"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Schedules a job.</p>
+  <div class="markdown level1 summary"><p>Schedules multiple <a class="xref" href="RueI.Displays.Scheduling.Records.ScheduledJob.html">ScheduledJob</a> operations.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Schedule(Action action, TimeSpan time, int priority, JobToken? token = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Schedule(IEnumerable&lt;ScheduledJob&gt; jobs)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>action</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action">Action</a></dt>
-    <dd><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action">Action</a> to run.</p>
-</dd>
-    <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timespan">TimeSpan</a></dt>
-    <dd><p>How long into the future to run the action at.</p>
-</dd>
-    <dt><code>priority</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd><p>The priority of the job, giving it additional weight when calculating.</p>
-</dd>
-    <dt><code>token</code> <a class="xref" href="RueI.Displays.Scheduling.JobToken.html">JobToken</a></dt>
-    <dd><p>An optional token to assign to the <a class="xref" href="RueI.Displays.Scheduling.Records.ScheduledJob.html">ScheduledJob</a>.</p>
+    <dt><code>jobs</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="RueI.Displays.Scheduling.Records.ScheduledJob.html">ScheduledJob</a>&gt;</dt>
+    <dd><p>The jobs to schedule.</p>
 </dd>
   </dl>
 
@@ -381,6 +377,10 @@
 
 
 
+  <h4 class="section" id="RueI_Displays_Scheduling_Scheduler_Schedule_System_Collections_Generic_IEnumerable_RueI_Displays_Scheduling_Records_ScheduledJob___remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>When scheduling multiple jobs at a time, this method is preferred to calling <a class="xref" href="RueI.Displays.Scheduling.Scheduler.html#RueI_Displays_Scheduling_Scheduler_Schedule_RueI_Displays_Scheduling_Records_ScheduledJob_">Schedule(ScheduledJob)</a> several
+times since it only recalculates the batches once.</p>
+</div>
 
 
 
@@ -389,10 +389,10 @@
 
   <h3 id="RueI_Displays_Scheduling_Scheduler_Schedule_System_TimeSpan_System_Action_RueI_Displays_Scheduling_JobToken_" data-uid="RueI.Displays.Scheduling.Scheduler.Schedule(System.TimeSpan,System.Action,RueI.Displays.Scheduling.JobToken)">
   Schedule(TimeSpan, Action, JobToken?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/Scheduling/Scheduler.cs/#L136"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/Scheduling/Scheduler.cs/#L143"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Schedules a job with a priority of 1.</p>
+  <div class="markdown level1 summary"><p>Schedules a <a class="xref" href="RueI.Displays.Scheduling.Records.ScheduledJob.html">ScheduledJob</a> with a priority of 1.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -428,10 +428,10 @@
 
   <h3 id="RueI_Displays_Scheduling_Scheduler_Schedule_System_TimeSpan_System_Action_System_Int32_RueI_Displays_Scheduling_JobToken_" data-uid="RueI.Displays.Scheduling.Scheduler.Schedule(System.TimeSpan,System.Action,System.Int32,RueI.Displays.Scheduling.JobToken)">
   Schedule(TimeSpan, Action, int, JobToken?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/Scheduling/Scheduler.cs/#L113"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/Scheduling/Scheduler.cs/#L132"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Schedules a job.</p>
+  <div class="markdown level1 summary"><p>Schedules a new <a class="xref" href="RueI.Displays.Scheduling.Records.ScheduledJob.html">ScheduledJob</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -470,10 +470,10 @@
 
   <h3 id="RueI_Displays_Scheduling_Scheduler_ScheduleUpdate_System_TimeSpan_System_Int32_" data-uid="RueI.Displays.Scheduling.Scheduler.ScheduleUpdate(System.TimeSpan,System.Int32)">
   ScheduleUpdate(TimeSpan, int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/Scheduling/Scheduler.cs/#L100"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/Scheduling/Scheduler.cs/#L119"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Schedules an uncancellable update job.</p>
+  <div class="markdown level1 summary"><p>Schedules an uncancellable update <a class="xref" href="RueI.Displays.Scheduling.Records.ScheduledJob.html">ScheduledJob</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -487,7 +487,7 @@
     <dd><p>How long into the future to update at.</p>
 </dd>
     <dt><code>priority</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd><p>The priority of the job, giving it additional weight when calculating.</p>
+    <dd><p>The priority of the <a class="xref" href="RueI.Displays.Scheduling.Records.ScheduledJob.html">ScheduledJob</a>, giving it additional weight when calculating.</p>
 </dd>
   </dl>
 
