@@ -45,10 +45,11 @@ jobs:
       with:
         dotnet-version: 7.x
 
+    - run: dotnet tool update -g docfx
+    
     - name: List contents of folder
       run: ls -R -a /home/runner/.dotnet/tools/.store/docfx/
-
-    - run: dotnet tool update -g docfx
+      
     - run: docfx docfx.json
         
     - name: Deploy
