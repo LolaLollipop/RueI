@@ -1545,36 +1545,6 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "markdown/namespaces/RueI.Extensions.md",
-      "output": {
-        ".html": {
-          "relative_path": "markdown/namespaces/RueI.Extensions.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "markdown/namespaces/RueI.Parsing.md",
-      "output": {
-        ".html": {
-          "relative_path": "markdown/namespaces/RueI.Parsing.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "markdown/namespaces/RueI.md",
-      "output": {
-        ".html": {
-          "relative_path": "markdown/namespaces/RueI.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
       "source_relative_path": "markdown/scheduling.md",
       "output": {
         ".html": {
