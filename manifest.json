@@ -32,6 +32,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Displays.AutoElement.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Displays.AutoElement.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/RueI.Displays.Display.yml",
       "output": {
         ".html": {
@@ -352,26 +362,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RueI.Extensions.AutoElement.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/RueI.Extensions.AutoElement.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/RueI.Extensions.CollectionExtensions.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/RueI.Extensions.CollectionExtensions.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/RueI.Extensions.DisplayCoreExtensions.yml",
       "output": {
         ".html": {
@@ -432,16 +422,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RueI.Extensions.IComparableExtensions.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/RueI.Extensions.IComparableExtensions.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/RueI.Extensions.IEnumerableExtensions.yml",
       "output": {
         ".html": {
@@ -466,16 +446,6 @@
       "output": {
         ".html": {
           "relative_path": "api/RueI.Extensions.ReflectionHelpers.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/RueI.Extensions.UniversalExtensions.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/RueI.Extensions.UniversalExtensions.html"
         }
       },
       "version": ""
@@ -1406,16 +1376,6 @@
       "output": {
         ".html": {
           "relative_path": "api/eMEC.ITaskable.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/eMEC.MECExtensions.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/eMEC.MECExtensions.html"
         }
       },
       "version": ""

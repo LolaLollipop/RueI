@@ -118,6 +118,108 @@ references:
   commentId: N:RueI.Displays
   fullName: RueI.Displays
   nameWithType: RueI.Displays
+- uid: RueI.Displays.AutoElement
+  name: AutoElement
+  href: api/RueI.Displays.AutoElement.html
+  commentId: T:RueI.Displays.AutoElement
+  fullName: RueI.Displays.AutoElement
+  nameWithType: AutoElement
+- uid: RueI.Displays.AutoElement.#ctor(RueI.Displays.Roles,RueI.Elements.Element)
+  name: AutoElement(Roles, Element)
+  href: api/RueI.Displays.AutoElement.html#RueI_Displays_AutoElement__ctor_RueI_Displays_Roles_RueI_Elements_Element_
+  commentId: M:RueI.Displays.AutoElement.#ctor(RueI.Displays.Roles,RueI.Elements.Element)
+  name.vb: New(Roles, Element)
+  fullName: RueI.Displays.AutoElement.AutoElement(RueI.Displays.Roles, RueI.Elements.Element)
+  fullName.vb: RueI.Displays.AutoElement.New(RueI.Displays.Roles, RueI.Elements.Element)
+  nameWithType: AutoElement.AutoElement(Roles, Element)
+  nameWithType.vb: AutoElement.New(Roles, Element)
+- uid: RueI.Displays.AutoElement.#ctor(RueI.Displays.Roles,System.Func{RueI.Displays.DisplayCore,RueI.Elements.Element})
+  name: AutoElement(Roles, Func<DisplayCore, Element>)
+  href: api/RueI.Displays.AutoElement.html#RueI_Displays_AutoElement__ctor_RueI_Displays_Roles_System_Func_RueI_Displays_DisplayCore_RueI_Elements_Element__
+  commentId: M:RueI.Displays.AutoElement.#ctor(RueI.Displays.Roles,System.Func{RueI.Displays.DisplayCore,RueI.Elements.Element})
+  name.vb: New(Roles, Func(Of DisplayCore, Element))
+  fullName: RueI.Displays.AutoElement.AutoElement(RueI.Displays.Roles, System.Func<RueI.Displays.DisplayCore, RueI.Elements.Element>)
+  fullName.vb: RueI.Displays.AutoElement.New(RueI.Displays.Roles, System.Func(Of RueI.Displays.DisplayCore, RueI.Elements.Element))
+  nameWithType: AutoElement.AutoElement(Roles, Func<DisplayCore, Element>)
+  nameWithType.vb: AutoElement.New(Roles, Func(Of DisplayCore, Element))
+- uid: RueI.Displays.AutoElement.#ctor*
+  name: AutoElement
+  href: api/RueI.Displays.AutoElement.html#RueI_Displays_AutoElement__ctor_
+  commentId: Overload:RueI.Displays.AutoElement.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: RueI.Displays.AutoElement.AutoElement
+  fullName.vb: RueI.Displays.AutoElement.New
+  nameWithType: AutoElement.AutoElement
+  nameWithType.vb: AutoElement.New
+- uid: RueI.Displays.AutoElement.Disable
+  name: Disable()
+  href: api/RueI.Displays.AutoElement.html#RueI_Displays_AutoElement_Disable
+  commentId: M:RueI.Displays.AutoElement.Disable
+  fullName: RueI.Displays.AutoElement.Disable()
+  nameWithType: AutoElement.Disable()
+- uid: RueI.Displays.AutoElement.Disable*
+  name: Disable
+  href: api/RueI.Displays.AutoElement.html#RueI_Displays_AutoElement_Disable_
+  commentId: Overload:RueI.Displays.AutoElement.Disable
+  isSpec: "True"
+  fullName: RueI.Displays.AutoElement.Disable
+  nameWithType: AutoElement.Disable
+- uid: RueI.Displays.AutoElement.GiveTo(RueI.Displays.DisplayCore)
+  name: GiveTo(DisplayCore)
+  href: api/RueI.Displays.AutoElement.html#RueI_Displays_AutoElement_GiveTo_RueI_Displays_DisplayCore_
+  commentId: M:RueI.Displays.AutoElement.GiveTo(RueI.Displays.DisplayCore)
+  fullName: RueI.Displays.AutoElement.GiveTo(RueI.Displays.DisplayCore)
+  nameWithType: AutoElement.GiveTo(DisplayCore)
+- uid: RueI.Displays.AutoElement.GiveTo*
+  name: GiveTo
+  href: api/RueI.Displays.AutoElement.html#RueI_Displays_AutoElement_GiveTo_
+  commentId: Overload:RueI.Displays.AutoElement.GiveTo
+  isSpec: "True"
+  fullName: RueI.Displays.AutoElement.GiveTo
+  nameWithType: AutoElement.GiveTo
+- uid: RueI.Displays.AutoElement.RemoveFrom(RueI.Displays.DisplayCore)
+  name: RemoveFrom(DisplayCore)
+  href: api/RueI.Displays.AutoElement.html#RueI_Displays_AutoElement_RemoveFrom_RueI_Displays_DisplayCore_
+  commentId: M:RueI.Displays.AutoElement.RemoveFrom(RueI.Displays.DisplayCore)
+  fullName: RueI.Displays.AutoElement.RemoveFrom(RueI.Displays.DisplayCore)
+  nameWithType: AutoElement.RemoveFrom(DisplayCore)
+- uid: RueI.Displays.AutoElement.RemoveFrom*
+  name: RemoveFrom
+  href: api/RueI.Displays.AutoElement.html#RueI_Displays_AutoElement_RemoveFrom_
+  commentId: Overload:RueI.Displays.AutoElement.RemoveFrom
+  isSpec: "True"
+  fullName: RueI.Displays.AutoElement.RemoveFrom
+  nameWithType: AutoElement.RemoveFrom
+- uid: RueI.Displays.AutoElement.Roles
+  name: Roles
+  href: api/RueI.Displays.AutoElement.html#RueI_Displays_AutoElement_Roles
+  commentId: P:RueI.Displays.AutoElement.Roles
+  fullName: RueI.Displays.AutoElement.Roles
+  nameWithType: AutoElement.Roles
+- uid: RueI.Displays.AutoElement.Roles*
+  name: Roles
+  href: api/RueI.Displays.AutoElement.html#RueI_Displays_AutoElement_Roles_
+  commentId: Overload:RueI.Displays.AutoElement.Roles
+  isSpec: "True"
+  fullName: RueI.Displays.AutoElement.Roles
+  nameWithType: AutoElement.Roles
+- uid: RueI.Displays.AutoElement.UpdateEvery(System.TimeSpan,System.Int32)
+  name: UpdateEvery(TimeSpan, int)
+  href: api/RueI.Displays.AutoElement.html#RueI_Displays_AutoElement_UpdateEvery_System_TimeSpan_System_Int32_
+  commentId: M:RueI.Displays.AutoElement.UpdateEvery(System.TimeSpan,System.Int32)
+  name.vb: UpdateEvery(TimeSpan, Integer)
+  fullName: RueI.Displays.AutoElement.UpdateEvery(System.TimeSpan, int)
+  fullName.vb: RueI.Displays.AutoElement.UpdateEvery(System.TimeSpan, Integer)
+  nameWithType: AutoElement.UpdateEvery(TimeSpan, int)
+  nameWithType.vb: AutoElement.UpdateEvery(TimeSpan, Integer)
+- uid: RueI.Displays.AutoElement.UpdateEvery*
+  name: UpdateEvery
+  href: api/RueI.Displays.AutoElement.html#RueI_Displays_AutoElement_UpdateEvery_
+  commentId: Overload:RueI.Displays.AutoElement.UpdateEvery
+  isSpec: "True"
+  fullName: RueI.Displays.AutoElement.UpdateEvery
+  nameWithType: AutoElement.UpdateEvery
 - uid: RueI.Displays.Display
   name: Display
   href: api/RueI.Displays.Display.html
@@ -1562,127 +1664,6 @@ references:
   commentId: N:RueI.Extensions
   fullName: RueI.Extensions
   nameWithType: RueI.Extensions
-- uid: RueI.Extensions.AutoElement
-  name: AutoElement
-  href: api/RueI.Extensions.AutoElement.html
-  commentId: T:RueI.Extensions.AutoElement
-  fullName: RueI.Extensions.AutoElement
-  nameWithType: AutoElement
-- uid: RueI.Extensions.AutoElement.Create*
-  name: Create
-  href: api/RueI.Extensions.AutoElement.html#RueI_Extensions_AutoElement_Create_
-  commentId: Overload:RueI.Extensions.AutoElement.Create
-  isSpec: "True"
-  fullName: RueI.Extensions.AutoElement.Create
-  nameWithType: AutoElement.Create
-- uid: RueI.Extensions.AutoElement.Create``1(RueI.Displays.Roles,System.Func{RueI.Displays.DisplayCore,``0})
-  name: Create<T>(Roles, Func<DisplayCore, T>)
-  href: api/RueI.Extensions.AutoElement.html#RueI_Extensions_AutoElement_Create__1_RueI_Displays_Roles_System_Func_RueI_Displays_DisplayCore___0__
-  commentId: M:RueI.Extensions.AutoElement.Create``1(RueI.Displays.Roles,System.Func{RueI.Displays.DisplayCore,``0})
-  name.vb: Create(Of T)(Roles, Func(Of DisplayCore, T))
-  fullName: RueI.Extensions.AutoElement.Create<T>(RueI.Displays.Roles, System.Func<RueI.Displays.DisplayCore, T>)
-  fullName.vb: RueI.Extensions.AutoElement.Create(Of T)(RueI.Displays.Roles, System.Func(Of RueI.Displays.DisplayCore, T))
-  nameWithType: AutoElement.Create<T>(Roles, Func<DisplayCore, T>)
-  nameWithType.vb: AutoElement.Create(Of T)(Roles, Func(Of DisplayCore, T))
-- uid: RueI.Extensions.AutoElement.Create``1(RueI.Displays.Roles,``0)
-  name: Create<T>(Roles, T)
-  href: api/RueI.Extensions.AutoElement.html#RueI_Extensions_AutoElement_Create__1_RueI_Displays_Roles___0_
-  commentId: M:RueI.Extensions.AutoElement.Create``1(RueI.Displays.Roles,``0)
-  name.vb: Create(Of T)(Roles, T)
-  fullName: RueI.Extensions.AutoElement.Create<T>(RueI.Displays.Roles, T)
-  fullName.vb: RueI.Extensions.AutoElement.Create(Of T)(RueI.Displays.Roles, T)
-  nameWithType: AutoElement.Create<T>(Roles, T)
-  nameWithType.vb: AutoElement.Create(Of T)(Roles, T)
-- uid: RueI.Extensions.AutoElement.Disable
-  name: Disable()
-  href: api/RueI.Extensions.AutoElement.html#RueI_Extensions_AutoElement_Disable
-  commentId: M:RueI.Extensions.AutoElement.Disable
-  fullName: RueI.Extensions.AutoElement.Disable()
-  nameWithType: AutoElement.Disable()
-- uid: RueI.Extensions.AutoElement.Disable*
-  name: Disable
-  href: api/RueI.Extensions.AutoElement.html#RueI_Extensions_AutoElement_Disable_
-  commentId: Overload:RueI.Extensions.AutoElement.Disable
-  isSpec: "True"
-  fullName: RueI.Extensions.AutoElement.Disable
-  nameWithType: AutoElement.Disable
-- uid: RueI.Extensions.AutoElement.GiveTo(RueI.Displays.DisplayCore)
-  name: GiveTo(DisplayCore)
-  href: api/RueI.Extensions.AutoElement.html#RueI_Extensions_AutoElement_GiveTo_RueI_Displays_DisplayCore_
-  commentId: M:RueI.Extensions.AutoElement.GiveTo(RueI.Displays.DisplayCore)
-  fullName: RueI.Extensions.AutoElement.GiveTo(RueI.Displays.DisplayCore)
-  nameWithType: AutoElement.GiveTo(DisplayCore)
-- uid: RueI.Extensions.AutoElement.GiveTo*
-  name: GiveTo
-  href: api/RueI.Extensions.AutoElement.html#RueI_Extensions_AutoElement_GiveTo_
-  commentId: Overload:RueI.Extensions.AutoElement.GiveTo
-  isSpec: "True"
-  fullName: RueI.Extensions.AutoElement.GiveTo
-  nameWithType: AutoElement.GiveTo
-- uid: RueI.Extensions.AutoElement.RemoveFrom(RueI.Displays.DisplayCore)
-  name: RemoveFrom(DisplayCore)
-  href: api/RueI.Extensions.AutoElement.html#RueI_Extensions_AutoElement_RemoveFrom_RueI_Displays_DisplayCore_
-  commentId: M:RueI.Extensions.AutoElement.RemoveFrom(RueI.Displays.DisplayCore)
-  fullName: RueI.Extensions.AutoElement.RemoveFrom(RueI.Displays.DisplayCore)
-  nameWithType: AutoElement.RemoveFrom(DisplayCore)
-- uid: RueI.Extensions.AutoElement.RemoveFrom*
-  name: RemoveFrom
-  href: api/RueI.Extensions.AutoElement.html#RueI_Extensions_AutoElement_RemoveFrom_
-  commentId: Overload:RueI.Extensions.AutoElement.RemoveFrom
-  isSpec: "True"
-  fullName: RueI.Extensions.AutoElement.RemoveFrom
-  nameWithType: AutoElement.RemoveFrom
-- uid: RueI.Extensions.AutoElement.Roles
-  name: Roles
-  href: api/RueI.Extensions.AutoElement.html#RueI_Extensions_AutoElement_Roles
-  commentId: P:RueI.Extensions.AutoElement.Roles
-  fullName: RueI.Extensions.AutoElement.Roles
-  nameWithType: AutoElement.Roles
-- uid: RueI.Extensions.AutoElement.Roles*
-  name: Roles
-  href: api/RueI.Extensions.AutoElement.html#RueI_Extensions_AutoElement_Roles_
-  commentId: Overload:RueI.Extensions.AutoElement.Roles
-  isSpec: "True"
-  fullName: RueI.Extensions.AutoElement.Roles
-  nameWithType: AutoElement.Roles
-- uid: RueI.Extensions.AutoElement.UpdateEvery(System.TimeSpan,System.Int32)
-  name: UpdateEvery(TimeSpan, int)
-  href: api/RueI.Extensions.AutoElement.html#RueI_Extensions_AutoElement_UpdateEvery_System_TimeSpan_System_Int32_
-  commentId: M:RueI.Extensions.AutoElement.UpdateEvery(System.TimeSpan,System.Int32)
-  name.vb: UpdateEvery(TimeSpan, Integer)
-  fullName: RueI.Extensions.AutoElement.UpdateEvery(System.TimeSpan, int)
-  fullName.vb: RueI.Extensions.AutoElement.UpdateEvery(System.TimeSpan, Integer)
-  nameWithType: AutoElement.UpdateEvery(TimeSpan, int)
-  nameWithType.vb: AutoElement.UpdateEvery(TimeSpan, Integer)
-- uid: RueI.Extensions.AutoElement.UpdateEvery*
-  name: UpdateEvery
-  href: api/RueI.Extensions.AutoElement.html#RueI_Extensions_AutoElement_UpdateEvery_
-  commentId: Overload:RueI.Extensions.AutoElement.UpdateEvery
-  isSpec: "True"
-  fullName: RueI.Extensions.AutoElement.UpdateEvery
-  nameWithType: AutoElement.UpdateEvery
-- uid: RueI.Extensions.CollectionExtensions
-  name: CollectionExtensions
-  href: api/RueI.Extensions.CollectionExtensions.html
-  commentId: T:RueI.Extensions.CollectionExtensions
-  fullName: RueI.Extensions.CollectionExtensions
-  nameWithType: CollectionExtensions
-- uid: RueI.Extensions.CollectionExtensions.Add*
-  name: Add
-  href: api/RueI.Extensions.CollectionExtensions.html#RueI_Extensions_CollectionExtensions_Add_
-  commentId: Overload:RueI.Extensions.CollectionExtensions.Add
-  isSpec: "True"
-  fullName: RueI.Extensions.CollectionExtensions.Add
-  nameWithType: CollectionExtensions.Add
-- uid: RueI.Extensions.CollectionExtensions.Add``1(System.Collections.Generic.ICollection{``0},``0[])
-  name: Add<T>(ICollection<T>, params T[])
-  href: api/RueI.Extensions.CollectionExtensions.html#RueI_Extensions_CollectionExtensions_Add__1_System_Collections_Generic_ICollection___0____0___
-  commentId: M:RueI.Extensions.CollectionExtensions.Add``1(System.Collections.Generic.ICollection{``0},``0[])
-  name.vb: Add(Of T)(ICollection(Of T), ParamArray T())
-  fullName: RueI.Extensions.CollectionExtensions.Add<T>(System.Collections.Generic.ICollection<T>, params T[])
-  fullName.vb: RueI.Extensions.CollectionExtensions.Add(Of T)(System.Collections.Generic.ICollection(Of T), ParamArray T())
-  nameWithType: CollectionExtensions.Add<T>(ICollection<T>, params T[])
-  nameWithType.vb: CollectionExtensions.Add(Of T)(ICollection(Of T), ParamArray T())
 - uid: RueI.Extensions.DisplayCoreExtensions
   name: DisplayCoreExtensions
   href: api/RueI.Extensions.DisplayCoreExtensions.html
@@ -2600,44 +2581,6 @@ references:
   isSpec: "True"
   fullName: RueI.Extensions.HintBuilding.HintBuilding.SetWidth
   nameWithType: HintBuilding.SetWidth
-- uid: RueI.Extensions.IComparableExtensions
-  name: IComparableExtensions
-  href: api/RueI.Extensions.IComparableExtensions.html
-  commentId: T:RueI.Extensions.IComparableExtensions
-  fullName: RueI.Extensions.IComparableExtensions
-  nameWithType: IComparableExtensions
-- uid: RueI.Extensions.IComparableExtensions.Max*
-  name: Max
-  href: api/RueI.Extensions.IComparableExtensions.html#RueI_Extensions_IComparableExtensions_Max_
-  commentId: Overload:RueI.Extensions.IComparableExtensions.Max
-  isSpec: "True"
-  fullName: RueI.Extensions.IComparableExtensions.Max
-  nameWithType: IComparableExtensions.Max
-- uid: RueI.Extensions.IComparableExtensions.MaxIf*
-  name: MaxIf
-  href: api/RueI.Extensions.IComparableExtensions.html#RueI_Extensions_IComparableExtensions_MaxIf_
-  commentId: Overload:RueI.Extensions.IComparableExtensions.MaxIf
-  isSpec: "True"
-  fullName: RueI.Extensions.IComparableExtensions.MaxIf
-  nameWithType: IComparableExtensions.MaxIf
-- uid: RueI.Extensions.IComparableExtensions.MaxIf``1(``0,System.Boolean,``0)
-  name: MaxIf<T>(T, bool, T)
-  href: api/RueI.Extensions.IComparableExtensions.html#RueI_Extensions_IComparableExtensions_MaxIf__1___0_System_Boolean___0_
-  commentId: M:RueI.Extensions.IComparableExtensions.MaxIf``1(``0,System.Boolean,``0)
-  name.vb: MaxIf(Of T)(T, Boolean, T)
-  fullName: RueI.Extensions.IComparableExtensions.MaxIf<T>(T, bool, T)
-  fullName.vb: RueI.Extensions.IComparableExtensions.MaxIf(Of T)(T, Boolean, T)
-  nameWithType: IComparableExtensions.MaxIf<T>(T, bool, T)
-  nameWithType.vb: IComparableExtensions.MaxIf(Of T)(T, Boolean, T)
-- uid: RueI.Extensions.IComparableExtensions.Max``1(``0,``0)
-  name: Max<T>(T, T)
-  href: api/RueI.Extensions.IComparableExtensions.html#RueI_Extensions_IComparableExtensions_Max__1___0___0_
-  commentId: M:RueI.Extensions.IComparableExtensions.Max``1(``0,``0)
-  name.vb: Max(Of T)(T, T)
-  fullName: RueI.Extensions.IComparableExtensions.Max<T>(T, T)
-  fullName.vb: RueI.Extensions.IComparableExtensions.Max(Of T)(T, T)
-  nameWithType: IComparableExtensions.Max<T>(T, T)
-  nameWithType.vb: IComparableExtensions.Max(Of T)(T, T)
 - uid: RueI.Extensions.IEnumerableExtensions
   name: IEnumerableExtensions
   href: api/RueI.Extensions.IEnumerableExtensions.html
@@ -2685,31 +2628,6 @@ references:
   fullName.vb: RueI.Extensions.IEnumerableExtensions.Only(Of T)(System.Collections.Generic.IEnumerable(Of T), System.Func(Of T, Boolean))
   nameWithType: IEnumerableExtensions.Only<T>(IEnumerable<T>, Func<T, bool>)
   nameWithType.vb: IEnumerableExtensions.Only(Of T)(IEnumerable(Of T), Func(Of T, Boolean))
-- uid: RueI.Extensions.IEnumerableExtensions.ToPooledList*
-  name: ToPooledList
-  href: api/RueI.Extensions.IEnumerableExtensions.html#RueI_Extensions_IEnumerableExtensions_ToPooledList_
-  commentId: Overload:RueI.Extensions.IEnumerableExtensions.ToPooledList
-  isSpec: "True"
-  fullName: RueI.Extensions.IEnumerableExtensions.ToPooledList
-  nameWithType: IEnumerableExtensions.ToPooledList
-- uid: RueI.Extensions.IEnumerableExtensions.ToPooledList``1(System.Collections.Generic.IEnumerable{``0})
-  name: ToPooledList<T>(IEnumerable<T>)
-  href: api/RueI.Extensions.IEnumerableExtensions.html#RueI_Extensions_IEnumerableExtensions_ToPooledList__1_System_Collections_Generic_IEnumerable___0__
-  commentId: M:RueI.Extensions.IEnumerableExtensions.ToPooledList``1(System.Collections.Generic.IEnumerable{``0})
-  name.vb: ToPooledList(Of T)(IEnumerable(Of T))
-  fullName: RueI.Extensions.IEnumerableExtensions.ToPooledList<T>(System.Collections.Generic.IEnumerable<T>)
-  fullName.vb: RueI.Extensions.IEnumerableExtensions.ToPooledList(Of T)(System.Collections.Generic.IEnumerable(Of T))
-  nameWithType: IEnumerableExtensions.ToPooledList<T>(IEnumerable<T>)
-  nameWithType.vb: IEnumerableExtensions.ToPooledList(Of T)(IEnumerable(Of T))
-- uid: RueI.Extensions.IEnumerableExtensions.ToPooledList``1(System.Collections.Generic.IEnumerable{``0},System.Int32)
-  name: ToPooledList<T>(IEnumerable<T>, int)
-  href: api/RueI.Extensions.IEnumerableExtensions.html#RueI_Extensions_IEnumerableExtensions_ToPooledList__1_System_Collections_Generic_IEnumerable___0__System_Int32_
-  commentId: M:RueI.Extensions.IEnumerableExtensions.ToPooledList``1(System.Collections.Generic.IEnumerable{``0},System.Int32)
-  name.vb: ToPooledList(Of T)(IEnumerable(Of T), Integer)
-  fullName: RueI.Extensions.IEnumerableExtensions.ToPooledList<T>(System.Collections.Generic.IEnumerable<T>, int)
-  fullName.vb: RueI.Extensions.IEnumerableExtensions.ToPooledList(Of T)(System.Collections.Generic.IEnumerable(Of T), Integer)
-  nameWithType: IEnumerableExtensions.ToPooledList<T>(IEnumerable<T>, int)
-  nameWithType.vb: IEnumerableExtensions.ToPooledList(Of T)(IEnumerable(Of T), Integer)
 - uid: RueI.Extensions.Intersection`2
   name: Intersection<T, TOther>
   href: api/RueI.Extensions.Intersection-2.html
@@ -2818,28 +2736,6 @@ references:
   isSpec: "True"
   fullName: RueI.Extensions.ReflectionHelpers.GetElementShower
   nameWithType: ReflectionHelpers.GetElementShower
-- uid: RueI.Extensions.UniversalExtensions
-  name: UniversalExtensions
-  href: api/RueI.Extensions.UniversalExtensions.html
-  commentId: T:RueI.Extensions.UniversalExtensions
-  fullName: RueI.Extensions.UniversalExtensions
-  nameWithType: UniversalExtensions
-- uid: RueI.Extensions.UniversalExtensions.AddTo*
-  name: AddTo
-  href: api/RueI.Extensions.UniversalExtensions.html#RueI_Extensions_UniversalExtensions_AddTo_
-  commentId: Overload:RueI.Extensions.UniversalExtensions.AddTo
-  isSpec: "True"
-  fullName: RueI.Extensions.UniversalExtensions.AddTo
-  nameWithType: UniversalExtensions.AddTo
-- uid: RueI.Extensions.UniversalExtensions.AddTo``1(``0,System.Collections.Generic.ICollection{``0})
-  name: AddTo<T>(T, ICollection<T>)
-  href: api/RueI.Extensions.UniversalExtensions.html#RueI_Extensions_UniversalExtensions_AddTo__1___0_System_Collections_Generic_ICollection___0__
-  commentId: M:RueI.Extensions.UniversalExtensions.AddTo``1(``0,System.Collections.Generic.ICollection{``0})
-  name.vb: AddTo(Of T)(T, ICollection(Of T))
-  fullName: RueI.Extensions.UniversalExtensions.AddTo<T>(T, System.Collections.Generic.ICollection<T>)
-  fullName.vb: RueI.Extensions.UniversalExtensions.AddTo(Of T)(T, System.Collections.Generic.ICollection(Of T))
-  nameWithType: UniversalExtensions.AddTo<T>(T, ICollection<T>)
-  nameWithType.vb: UniversalExtensions.AddTo(Of T)(T, ICollection(Of T))
 - uid: RueI.NonUnityProvider
   name: NonUnityProvider
   href: api/RueI.NonUnityProvider.html
@@ -6506,51 +6402,6 @@ references:
   isSpec: "True"
   fullName: eMEC.ITaskable.DescendOrPerform
   nameWithType: ITaskable.DescendOrPerform
-- uid: eMEC.MECExtensions
-  name: MECExtensions
-  href: api/eMEC.MECExtensions.html
-  commentId: T:eMEC.MECExtensions
-  fullName: eMEC.MECExtensions
-  nameWithType: MECExtensions
-- uid: eMEC.MECExtensions.IsRunning(CoroutineHandle)
-  name: IsRunning(CoroutineHandle)
-  href: api/eMEC.MECExtensions.html#eMEC_MECExtensions_IsRunning_CoroutineHandle_
-  commentId: M:eMEC.MECExtensions.IsRunning(CoroutineHandle)
-  fullName: eMEC.MECExtensions.IsRunning(CoroutineHandle)
-  nameWithType: MECExtensions.IsRunning(CoroutineHandle)
-- uid: eMEC.MECExtensions.IsRunning*
-  name: IsRunning
-  href: api/eMEC.MECExtensions.html#eMEC_MECExtensions_IsRunning_
-  commentId: Overload:eMEC.MECExtensions.IsRunning
-  isSpec: "True"
-  fullName: eMEC.MECExtensions.IsRunning
-  nameWithType: MECExtensions.IsRunning
-- uid: eMEC.MECExtensions.IsRunningOrPaused(CoroutineHandle)
-  name: IsRunningOrPaused(CoroutineHandle)
-  href: api/eMEC.MECExtensions.html#eMEC_MECExtensions_IsRunningOrPaused_CoroutineHandle_
-  commentId: M:eMEC.MECExtensions.IsRunningOrPaused(CoroutineHandle)
-  fullName: eMEC.MECExtensions.IsRunningOrPaused(CoroutineHandle)
-  nameWithType: MECExtensions.IsRunningOrPaused(CoroutineHandle)
-- uid: eMEC.MECExtensions.IsRunningOrPaused*
-  name: IsRunningOrPaused
-  href: api/eMEC.MECExtensions.html#eMEC_MECExtensions_IsRunningOrPaused_
-  commentId: Overload:eMEC.MECExtensions.IsRunningOrPaused
-  isSpec: "True"
-  fullName: eMEC.MECExtensions.IsRunningOrPaused
-  nameWithType: MECExtensions.IsRunningOrPaused
-- uid: eMEC.MECExtensions.Kill(CoroutineHandle)
-  name: Kill(CoroutineHandle)
-  href: api/eMEC.MECExtensions.html#eMEC_MECExtensions_Kill_CoroutineHandle_
-  commentId: M:eMEC.MECExtensions.Kill(CoroutineHandle)
-  fullName: eMEC.MECExtensions.Kill(CoroutineHandle)
-  nameWithType: MECExtensions.Kill(CoroutineHandle)
-- uid: eMEC.MECExtensions.Kill*
-  name: Kill
-  href: api/eMEC.MECExtensions.html#eMEC_MECExtensions_Kill_
-  commentId: Overload:eMEC.MECExtensions.Kill
-  isSpec: "True"
-  fullName: eMEC.MECExtensions.Kill
-  nameWithType: MECExtensions.Kill
 - uid: eMEC.TaskBase
   name: TaskBase
   href: api/eMEC.TaskBase.html
