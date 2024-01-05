@@ -14,13 +14,22 @@
     }
   ],
   "build": {
+    "postProcessors": ["ExtractSearchIndex", "RueIDocFX"],
+    "overwrite" : [
+      {
+        "files": [
+          "markdown/namespaces/**.md"
+        ]
+      }
+    ],
     "content": [
       {
         "files": [
           "**/*.{md,yml}"
         ],
         "exclude": [
-          "_site/**"
+          "_site/**",
+          "markdown/namespaces/**.md"
         ]
       }
     ],
