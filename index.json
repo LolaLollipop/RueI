@@ -759,6 +759,11 @@
     "title": "Introduction | RueI",
     "keywords": "Introduction RueI is a hint framework for scp:sl. the primary component of RueI is the ability to display multiple hints at once, but it also provides a lot of other features to make working with hints easier and more effective. a quick note: RueI is licensed under CC0 1.0. this means you can do whatever you want with both its compiled versions and its source code. commerical use, modifications, etc, are all okay! :) RueI is a dependency. it is a not a plugin. this means that it does not provide any functionality out of the box. other plugins will not work automatically once you install this if they do not have built-in support for RueI."
   },
+  "markdown/namespaces/RueI.html": {
+    "href": "markdown/namespaces/RueI.html",
+    "title": "| RueI",
+    "keywords": "The RueI namespace contains classes shared across all of RueI. Generally, you shouldn't need to use the classes and interfaces within this namespace. The exception is the RueIMain class that contains the EnsureInit() method, which should be called by any plugin using RueI upon being loaded."
+  },
   "markdown/scheduling.html": {
     "href": "markdown/scheduling.html",
     "title": "Using the Scheduler | RueI",
