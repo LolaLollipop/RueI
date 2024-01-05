@@ -14,6 +14,13 @@
     }
   ],
   "build": {
+    "overwrite" : [
+      {
+        "files": [
+          "markdown/namespaces/**.md"
+        ]
+      }
+    ],
     "content": [
       {
         "files": [
