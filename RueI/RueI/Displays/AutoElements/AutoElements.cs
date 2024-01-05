@@ -1,26 +1,33 @@
-﻿namespace RueI.Extensions;
+﻿namespace RueI.Displays;
 
 using PlayerRoles;
 
-using RueI.Displays;
 using RueI.Displays.Scheduling;
 using RueI.Elements;
+using RueI.Extensions;
 
 /// <summary>
-/// Manages and automatically assigns elements to <see cref="DisplayCore"/> instances meeting a criteria.
+/// Manages and automatically assigns <see cref="Element"/> instances to any <see cref="DisplayCore"/> meeting a criteria.
 /// </summary>
+/// <remarks>
+/// An <see cref="AutoElement"/> puts an <see cref="Element"/> in a <see cref="DisplayCore"/> if they match a
+/// <see cref="Displays.Roles"/>. You can use the <see cref="AutoElement(Roles, Element)"/> constructor for an
+/// <see cref="AutoElement"/> that assigns a single instance of an <see cref="Element"/>. On the other hand,
+/// if you want to create an element for each player, you can use the <see cref="AutoElement(Roles, Func{DisplayCore, Element})"/>
+/// constructor.
+/// </remarks>
 public class AutoElement
 {
     private record PeriodicUpdate(TimeSpan time, int priority, JobToken token);
 
     private const int AUTOUPDATEPRIORITY = 5;
 
-    private static readonly List<AutoElement> AutoGivers = new();
+    private static readonly List<AutoElement> AutoElements = new();
 
     private readonly Element? element;
-
     private readonly Func<DisplayCore, Element>? creator;
-    private readonly IElemReference<Element> reference;
+
+    private readonly IElemReference<Element> reference = DisplayCore.GetReference<Element>();
 
     private PeriodicUpdate? periodicUpdate;
 
@@ -33,30 +40,26 @@ public class AutoElement
     /// Initializes a new instance of the <see cref="AutoElement"/> class.
     /// </summary>
     /// <param name="roles">The <see cref="Roles"/> to use for the <see cref="AutoElement"/>.</param>
-    /// <param name="reference">The <see cref="IElemReference{T}"/> to use.</param>
     /// <param name="creator">A <see cref="Func{T, TResult}"/> that creates the elements.</param>
-    private AutoElement(Roles roles, IElemReference<Element> reference, Func<DisplayCore, Element> creator)
+    public AutoElement(Roles roles, Func<DisplayCore, Element> creator)
     {
-        this.reference = reference;
         this.creator = creator;
         Roles = roles;
 
-        AutoGivers.Add(this);
+        AutoElements.Add(this);
     }
 
     /// <summary>
     /// Initializes a new instance of the <see cref="AutoElement"/> class.
     /// </summary>
     /// <param name="roles">The <see cref="Roles"/> to use for the <see cref="AutoElement"/>.</param>
-    /// <param name="reference">The <see cref="IElemReference{T}"/> to use.</param>
     /// <param name="element">The element to automatically give.</param>
-    private AutoElement(Roles roles, IElemReference<Element> reference, Element element)
+    public AutoElement(Roles roles, Element element)
     {
         this.element = element;
-        this.reference = reference;
         Roles = roles;
 
-        AutoGivers.Add(this);
+        AutoElements.Add(this);
     }
 
     /// <summary>
@@ -65,37 +68,11 @@ public class AutoElement
     public Roles Roles { get; set; }
 
     /// <summary>
-    /// Creates a new <see cref="AutoElement"/> of a shared <see cref="Element"/>.
-    /// </summary>
-    /// <typeparam name="T">The type of the <see cref="Element"/>.</typeparam>
-    /// <param name="roles">The <see cref="Roles"/> to use for the <see cref="AutoElement"/>.</param>
-    /// <param name="element">The <paramref name="element"/> to use.</param>
-    /// <returns>A new <see cref="AutoElement"/>.</returns>
-    public static AutoElement Create<T>(Roles roles, T element)
-        where T : Element
-    {
-        return new AutoElement(roles, DisplayCore.GetReference<T>(), element);
-    }
-
-    /// <summary>
-    /// Creates a new <see cref="AutoElement"/> using a <see cref="IElemReference{T}"/>.
-    /// </summary>
-    /// <typeparam name="T">The type of the <see cref="Element"/>.</typeparam>
-    /// <param name="roles">The <see cref="Roles"/> to use for the <see cref="AutoElement"/>.</param>
-    /// <param name="creator">A <see cref="Func{T, TResult}"/> that creates the elements.</param>
-    /// <returns>A new <see cref="AutoElement"/>.</returns>
-    public static AutoElement Create<T>(Roles roles, Func<DisplayCore, T> creator)
-        where T : Element
-    {
-        return new AutoElement(roles, DisplayCore.GetReference<T>(), (core) => creator(core));
-    }
-
-    /// <summary>
     /// Disables this <see cref="AutoElement"/>.
     /// </summary>
     public virtual void Disable()
     {
-        AutoGivers.Remove(this);
+        AutoElements.Remove(this);
     }
 
     /// <summary>
@@ -151,7 +128,7 @@ public class AutoElement
         {
             DisplayCore core = DisplayCore.Get(hub);
 
-            foreach (AutoElement autoElement in AutoGivers)
+            foreach (AutoElement autoElement in AutoElements)
             {
                 if (autoElement.Roles.HasFlagFast(newRole.RoleTypeId))
                 {

@@ -1,7 +1,7 @@
 ﻿namespace RueI.Parsing.Tags.ConcreteTags;
 
 /// <summary>
-/// Provides a way to handle closing line-height tags.
+/// Provides a way to handle closing noparse tags.
 /// </summary>
 [RichTextTag]
 public class CloseNoparseTag : ClosingTag<CloseNoparseTag>

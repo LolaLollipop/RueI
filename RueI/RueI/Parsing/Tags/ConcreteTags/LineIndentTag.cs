@@ -4,7 +4,7 @@ using RueI.Parsing.Enums;
 using RueI.Parsing.Records;
 
 /// <summary>
-/// Provides a way to handle indent tags.
+/// Provides a way to handle line indent tags.
 /// </summary>
 [RichTextTag]
 public class LineIndentTag : MeasurementTag

@@ -3,7 +3,7 @@
 /// <summary>
 /// Provides extensions for working with all types.
 /// </summary>
-public static class UniversalExtensions
+internal static class UniversalExtensions
 {
     /// <summary>
     /// Adds this instance to an <see cref="ICollection{T}"/>.

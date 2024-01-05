@@ -1,7 +1,7 @@
 ﻿namespace RueI.Parsing.Tags.ConcreteTags;
 
 /// <summary>
-/// Provides a way to handle br tags tags.
+/// Provides a way to handle br tags.
 /// </summary>
 [RichTextTag]
 public class BrTag : NoParamsTag

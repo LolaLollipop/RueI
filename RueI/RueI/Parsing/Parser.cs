@@ -274,53 +274,7 @@ public sealed class Parser
         {
             char ch = chars[i];
 
-            if (ch == '\\')
-            {
-                int original = i;
-                int length = chars.Length;
-                for (; i < length && chars[i + 1] == '\\'; i++)
-                {
-                    context.ResultBuilder.Append(chars[i]);
-                }
-
-                int matcher = i - original;
-                int times = matcher - (int)Math.Floor(matcher / 3d);
-
-                // detect if an escape sequence is escaped by backslashes
-                if ((i - original) % 3 == 0)
-                {
-                    if (context.ShouldParse || options.HasFlagFast(ElementOptions.NoparseParsesEscape))
-                    {
-                        switch (chars[i])
-                        {
-                            case 'n':
-                                CreateLineBreak(context);
-                                i++;
-                                break;
-                            case 'r':
-                                context.CurrentLineWidth = 0;
-                                i++;
-                                break;
-                            case 'u':
-                                context.ResultBuilder.Append('\\'); // TODO: add support for unicode literals
-                                break;
-                            default:
-                                break;
-                        }
-                    }
-                    else
-                    {
-                        context.ResultBuilder.Append('\\');
-                        i++;
-                    }
-                }
-
-                for (int newIndex = 0; newIndex < times; newIndex++)
-                {
-                    AddCharacter(context, chars[i + newIndex], false);
-                }
-            }
-            else if (ch == '<') // indicates start of tag
+            if (ch == '<') // indicates start of tag
             {
                 if (currentState != ParserState.CollectingTags)
                 {
@@ -437,6 +391,53 @@ public sealed class Parser
 
                 paramBuffer.Append(ch);
                 continue; // do NOT add as a character
+            }
+
+            if (ch == '\\')
+            {
+                int original = i;
+                int length = chars.Length;
+                for (; i < length && chars[i + 1] == '\\'; i++)
+                {
+                    context.ResultBuilder.Append(chars[i]);
+                }
+
+                int matcher = i - original;
+                int times = matcher - (int)Math.Floor(matcher / 3d);
+
+                // detect if an escape sequence is escaped by backslashes
+                if ((i - original) % 3 == 0)
+                {
+                    if (context.ShouldParse || options.HasFlagFast(ElementOptions.NoparseParsesEscape))
+                    {
+                        switch (chars[i])
+                        {
+                            case 'n':
+                                CreateLineBreak(context);
+                                i++;
+                                break;
+                            case 'r':
+                                context.CurrentLineWidth = 0;
+                                i++;
+                                break;
+                            case 'u':
+                                context.ResultBuilder.Append('\\'); // TODO: add support for unicode literals
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        context.ResultBuilder.Append('\\');
+                        i++;
+                    }
+                }
+
+                for (int newIndex = 0; newIndex < times; newIndex++)
+                {
+                    AddCharacter(context, chars[i + newIndex], false);
+                }
             }
 
             AddCharacter(context, ch);

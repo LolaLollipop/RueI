@@ -4,7 +4,7 @@ using RueI.Parsing.Enums;
 using RueI.Parsing.Records;
 
 /// <summary>
-/// Defines the base class for all tags that only take in a measurement.
+/// Defines a <see cref="RichTextTag"/> that only takes in a measurement.
 /// </summary>
 public abstract class MeasurementTag : RichTextTag
 {

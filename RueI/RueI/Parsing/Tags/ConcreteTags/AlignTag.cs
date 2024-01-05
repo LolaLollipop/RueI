@@ -3,7 +3,7 @@
 using RueI.Parsing.Enums;
 
 /// <summary>
-/// Provides a way to handle scale tags.
+/// Provides a way to handle align tags.
 /// </summary>
 [RichTextTag]
 public class AlignTag : RichTextTag

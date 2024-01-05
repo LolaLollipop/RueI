@@ -54,6 +54,10 @@ public sealed class ParserBuilder
         return this;
     }
 
+    // instead of using a RichTextTag instance a generic type is used to
+    // ensure that only one canonical instance of a RichTextTag type is in a parser
+    // duplicates of a type may exist, but not different instances
+
     /// <summary>
     /// Gets the <see cref="SharedTag{T}"/> of a <see cref="RichTextTag"/> type and adds it to the builder.
     /// </summary>

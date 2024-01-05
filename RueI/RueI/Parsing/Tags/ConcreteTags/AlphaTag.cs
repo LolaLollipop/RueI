@@ -3,7 +3,7 @@
 using RueI.Parsing.Enums;
 
 /// <summary>
-/// Provides a way to handle line-height tags.
+/// Provides a way to handle alpha tags.
 /// </summary>
 [RichTextTag]
 public class AlphaTag : RichTextTag

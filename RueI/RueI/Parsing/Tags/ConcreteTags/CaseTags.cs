@@ -61,7 +61,7 @@ public class AllcapsTag : NoParamsTag
 }
 
 /// <summary>
-/// Provides a way to handle closing smallcaps tags.
+/// Provides a way to handle closing allcaps tags.
 /// </summary>
 [RichTextTag]
 public class CloseAllcapsTag : NoParamsTag
@@ -105,7 +105,7 @@ public class LowercaseTag : NoParamsTag
 }
 
 /// <summary>
-/// Provides a way to handle closing smallcaps tags.
+/// Provides a way to handle closing lowercase tags.
 /// </summary>
 [RichTextTag]
 public class CloseLowercase : NoParamsTag

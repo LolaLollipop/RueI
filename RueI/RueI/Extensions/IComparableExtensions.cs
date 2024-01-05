@@ -1,9 +1,9 @@
 ﻿namespace RueI.Extensions;
 
 /// <summary>
-/// Provides extensions and helpers for working with elements.
+/// Provides extensions and helpers for working with classes that implement <see cref="IComparable{T}"/>.
 /// </summary>
-public static class IComparableExtensions
+internal static class IComparableExtensions
 {
     /// <summary>
     /// Gets the maximum of two <see cref="IComparable{T}"/>.

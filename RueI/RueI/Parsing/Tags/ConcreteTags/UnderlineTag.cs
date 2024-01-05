@@ -1,7 +1,7 @@
 ﻿namespace RueI.Parsing.Tags.ConcreteTags;
 
 /// <summary>
-/// Provides a way to handle italics tags.
+/// Provides a way to handle underline tags.
 /// </summary>
 [RichTextTag]
 public class UnderlineTag : NoParamsTag

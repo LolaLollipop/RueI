@@ -3,7 +3,7 @@
 using RueI.Parsing.Enums;
 
 /// <summary>
-/// Defines the base class for all rich text tags.
+/// Defines a <see cref="RichTextTag"/> that does not take in parameters.
 /// </summary>
 public abstract class NoParamsTag : RichTextTag
 {

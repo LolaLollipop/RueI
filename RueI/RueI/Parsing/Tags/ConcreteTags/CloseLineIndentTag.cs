@@ -1,7 +1,7 @@
 ﻿namespace RueI.Parsing.Tags.ConcreteTags;
 
 /// <summary>
-/// Provides a way to handle closing indent tags.
+/// Provides a way to handle closing line indent tags.
 /// </summary>
 [RichTextTag]
 public class CloseLineIndentTag : ClosingTag<CloseLineIndentTag>

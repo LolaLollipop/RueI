@@ -3,7 +3,7 @@
 using RueI.Parsing.Enums;
 
 /// <summary>
-/// Provides a way to handle color tags.
+/// Provides a way to handle mark tags.
 /// </summary>
 [RichTextTag]
 public class MarkTag : RichTextTag

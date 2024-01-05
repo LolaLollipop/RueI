@@ -8,7 +8,7 @@ using RueI.Parsing.Tags.ConcreteTags;
 /// Provides a variety of constant values.
 /// </summary>
 /// <remarks>
-/// This class is mosty designed for internal use within RueI. However, they can still be useful for external use.
+/// This class is mosty designed for internal use within RueI. However, it can still be useful for external use.
 /// </remarks>
 public static class Constants
 {

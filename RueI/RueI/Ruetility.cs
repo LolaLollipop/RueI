@@ -3,6 +3,10 @@
 /// <summary>
 /// Provides helpful functions for dealing with elements and hints.
 /// </summary>
+/// <remarks>
+/// <see cref="Ruetility"/> is a helper class that provides methods for handling scaled and functional values,
+/// along with other helpful methods that may not work exclusively with hints.
+/// </remarks>
 public static class Ruetility
 {
     /// <summary>
@@ -12,7 +16,7 @@ public static class Ruetility
     /// <returns>The cleaned string.</returns>
     public static string GetCleanText(string text)
     {
-        string cleanText = text.Replace("</noparse>", "</nopa</a>rse>");
+        string cleanText = text.Replace("</noparse>", "</nopa​rse>"); // zero width space
         return $"<noparse>{cleanText}</noparse>";
     }
 

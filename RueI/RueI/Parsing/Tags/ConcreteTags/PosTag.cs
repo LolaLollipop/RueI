@@ -4,7 +4,7 @@ using RueI.Parsing.Enums;
 using RueI.Parsing.Records;
 
 /// <summary>
-/// Provides a way to handle cspace tags.
+/// Provides a way to handle pos tags.
 /// </summary>
 [RichTextTag]
 public class PosTag : MeasurementTag

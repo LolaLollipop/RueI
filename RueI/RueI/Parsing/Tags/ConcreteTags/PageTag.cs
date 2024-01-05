@@ -1,7 +1,7 @@
 ﻿namespace RueI.Parsing.Tags.ConcreteTags;
 
 /// <summary>
-/// Provides a way to handle line-height tags.
+/// Provides a way to handle page tags.
 /// </summary>
 [RichTextTag]
 public class PageTag : NoParamsTag

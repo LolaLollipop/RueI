@@ -3,7 +3,7 @@
 /// <summary>
 /// Provides extensions for working with collections.
 /// </summary>
-public static class CollectionExtensions
+internal static class CollectionExtensions
 {
     /// <summary>
     /// Adds multiple items to a collection.

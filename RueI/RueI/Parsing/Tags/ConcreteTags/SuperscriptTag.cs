@@ -1,7 +1,7 @@
 ﻿namespace RueI.Parsing.Tags.ConcreteTags;
 
 /// <summary>
-/// Provides a way to handle nobr tags.
+/// Provides a way to handle superscript tags.
 /// </summary>
 [RichTextTag]
 public class SuperscriptTag : NoParamsTag

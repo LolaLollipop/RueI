@@ -2,6 +2,7 @@
 namespace eMEC;
 #pragma warning restore SA1300 // Element should begin with upper-case letter
 
+// TODO: rename eMEC tasks into coruetines
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
@@ -13,7 +14,7 @@ using static RueI.UnityAlternative;
 /// <summary>
 /// Provides extensions for working with MEC. The primary purpose is to provide better nullable functionality.
 /// </summary>
-public static class MECExtensions
+internal static class MECExtensions
 {
     /// <summary>
     /// Kills a coroutine.
