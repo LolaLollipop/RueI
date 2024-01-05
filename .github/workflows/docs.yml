@@ -46,7 +46,7 @@ jobs:
         dotnet-version: 7.x
 
     - name: List contents of folder
-      run: ls -R
+      run: ls -R -a /home/runner
 
     - run: dotnet tool update -g docfx
     - run: docfx docfx.json
