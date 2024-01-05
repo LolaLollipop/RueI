@@ -45,6 +45,10 @@ jobs:
       with:
         dotnet-version: 7.x
 
+    - name: List contents of folder
+      run: |
+        Get-ChildItem -Path ${{ github.workspace }} -Recurse
+
     - run: dotnet tool update -g docfx
     - run: docfx docfx.json
         
