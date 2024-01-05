@@ -49,6 +49,9 @@ jobs:
     
     - name: List contents of folder
       run: ls -R -a /home/runner/.dotnet/tools/.store/docfx/
+
+    - name: Download post processor
+      run: curl https://github.com/Ruemena/RueI/raw/78a731a4023c14d0dac8c03dbe491a4261e91cc8/RueIDocFX.dll -o /home/runner/.dotnet/tools/.store/docfx/2.74.1/docfx/2.74.1/tools/net8.0/any/zRueIDocFX.dll
       
     - run: docfx docfx.json
         
