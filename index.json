@@ -637,7 +637,7 @@
   "api/RueI.Parsing.html": {
     "href": "api/RueI.Parsing.html",
     "title": "Namespace RueI.Parsing | RueI",
-    "keywords": "Namespace RueI.Parsing Classes CharacterLengths Provides lengths for characters in hints. ClosingTag<T> Defines the base class for all rich text tags. NoParamsTag Defines the base class for all rich text tags. Parser Helps parse the content of elements. This class cannot be inherited. ParserBuilder Builds Parsers. ParserContext Describes the state of a parser at a time. RichTextTag Defines the base class for all rich text tags. TextInfo Provides information about TMP text at a certain point."
+    "keywords": "Namespace RueI.Parsing The RueI.Parsing namespace contains a large number of classes mostly used internally by RueI. Notably, classes within this namespace can be used to create custom tags. Additionally, if you want to calculate and parse hints, you can use this namespace. Classes CharacterLengths Provides lengths for characters in hints. ClosingTag<T> Defines the base class for all rich text tags. NoParamsTag Defines the base class for all rich text tags. Parser Helps parse the content of elements. This class cannot be inherited. ParserBuilder Builds Parsers. ParserContext Describes the state of a parser at a time. RichTextTag Defines the base class for all rich text tags. TextInfo Provides information about TMP text at a certain point."
   },
   "api/RueI.Patches.HintPatch.html": {
     "href": "api/RueI.Patches.HintPatch.html",
@@ -758,6 +758,11 @@
     "href": "markdown/introduction.html",
     "title": "Introduction | RueI",
     "keywords": "Introduction RueI is a hint framework for scp:sl. the primary component of RueI is the ability to display multiple hints at once, but it also provides a lot of other features to make working with hints easier and more effective. a quick note: RueI is licensed under CC0 1.0. this means you can do whatever you want with both its compiled versions and its source code. commerical use, modifications, etc, are all okay! :) RueI is a dependency. it is a not a plugin. this means that it does not provide any functionality out of the box. other plugins will not work automatically once you install this if they do not have built-in support for RueI."
+  },
+  "markdown/namespaces/RueI.Parsing.html": {
+    "href": "markdown/namespaces/RueI.Parsing.html",
+    "title": "| RueI",
+    "keywords": "The RueI.Parsing namespace contains a large number of classes mostly used internally by RueI. Notably, classes within this namespace can be used to create custom tags. Additionally, if you want to calculate and parse hints, you can use this namespace."
   },
   "markdown/namespaces/RueI.html": {
     "href": "markdown/namespaces/RueI.html",
