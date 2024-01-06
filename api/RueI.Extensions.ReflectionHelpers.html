@@ -155,14 +155,52 @@
 </h2>
 
 
+  <a id="RueI_Extensions_ReflectionHelpers_GetElemCreator_" data-uid="RueI.Extensions.ReflectionHelpers.GetElemCreator*"></a>
+
+  <h3 id="RueI_Extensions_ReflectionHelpers_GetElemCreator" data-uid="RueI.Extensions.ReflectionHelpers.GetElemCreator">
+  GetElemCreator()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Extensions/ReflectionHelpers.cs/#L35"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-1">Func&lt;TResult&gt;</a> that can be used to easily call <a class="xref" href="RueI.Extensions.ReflectionHelpers.html#RueI_Extensions_ReflectionHelpers_GetElementShower">GetElementShower()</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Func&lt;Action&lt;ReferenceHub, string, float, TimeSpan&gt;&gt; GetElemCreator()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-1">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-4">Action</a>&lt;<span class="xref">ReferenceHub</span>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timespan">TimeSpan</a>&gt;&gt;</dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-1">Func&lt;TResult&gt;</a> that itself returns an <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-4">Action&lt;T1, T2, T3, T4&gt;</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="RueI_Extensions_ReflectionHelpers_GetElemCreator_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-1">Func&lt;TResult&gt;</a> returned by this method is identical to calling <a class="xref" href="RueI.Extensions.ReflectionHelpers.html#RueI_Extensions_ReflectionHelpers_GetElementShower">GetElementShower()</a>.
+This method serves a helper to easily turn GetElementShower into a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-1">Func&lt;TResult&gt;</a>, to make
+reflection easier.</p>
+</div>
+
+
+
+
   <a id="RueI_Extensions_ReflectionHelpers_GetElementShower_" data-uid="RueI.Extensions.ReflectionHelpers.GetElementShower*"></a>
 
   <h3 id="RueI_Extensions_ReflectionHelpers_GetElementShower" data-uid="RueI.Extensions.ReflectionHelpers.GetElementShower">
   GetElementShower()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Extensions/ReflectionHelpers.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Extensions/ReflectionHelpers.cs/#L20"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Gets a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-4">Action&lt;T1, T2, T3, T4&gt;</a> that can be used to add an element, with a <a class="xref" href="RueI.Displays.Scheduling.TimedElemRef-1.html">TimedElemRef&lt;T&gt;</a> as a closure.</p>
+  <div class="markdown level1 summary"><p>Gets an <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-4">Action&lt;T1, T2, T3, T4&gt;</a> that can be used to add an element, with a <a class="xref" href="RueI.Displays.Scheduling.TimedElemRef-1.html">TimedElemRef&lt;T&gt;</a> as a closure.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -174,7 +212,7 @@
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-4">Action</a>&lt;<span class="xref">ReferenceHub</span>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timespan">TimeSpan</a>&gt;</dt>
-    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-4">Action&lt;T1, T2, T3, T4&gt;</a> that can be used to add an element to a ReferenceHub.</p>
+    <dd><p>An <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-4">Action&lt;T1, T2, T3, T4&gt;</a> that can be used to add an element to a ReferenceHub.</p>
 </dd>
   </dl>
 
@@ -185,7 +223,8 @@
 
 
   <h4 class="section" id="RueI_Extensions_ReflectionHelpers_GetElementShower_remarks">Remarks</h4>
-  <div class="markdown level1 remarks"><p>This method is not intended to be used when using RueI as a direct dependency.</p>
+  <div class="markdown level1 remarks"><p>Every time this method is called, it creates a new <a class="xref" href="RueI.Displays.Scheduling.TimedElemRef-1.html">TimedElemRef&lt;T&gt;</a>. Therefore, every delegate returned by this method
+represents a unique 'element'.</p>
 </div>
 
 

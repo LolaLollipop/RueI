@@ -1686,6 +1686,38 @@ references:
   fullName.vb: RueI.Extensions.DisplayCoreExtensions.AddTemp(Of T)(RueI.Displays.DisplayCore, T, System.TimeSpan, RueI.Displays.Scheduling.TimedElemRef(Of T))
   nameWithType: DisplayCoreExtensions.AddTemp<T>(DisplayCore, T, TimeSpan, TimedElemRef<T>)
   nameWithType.vb: DisplayCoreExtensions.AddTemp(Of T)(DisplayCore, T, TimeSpan, TimedElemRef(Of T))
+- uid: RueI.Extensions.DisplayCoreExtensions.SetElemTemp(RueI.Displays.DisplayCore,System.String,System.Single,System.TimeSpan,RueI.Displays.Scheduling.TimedElemRef{RueI.Elements.SetElement})
+  name: SetElemTemp(DisplayCore, string, float, TimeSpan, TimedElemRef<SetElement>)
+  href: api/RueI.Extensions.DisplayCoreExtensions.html#RueI_Extensions_DisplayCoreExtensions_SetElemTemp_RueI_Displays_DisplayCore_System_String_System_Single_System_TimeSpan_RueI_Displays_Scheduling_TimedElemRef_RueI_Elements_SetElement__
+  commentId: M:RueI.Extensions.DisplayCoreExtensions.SetElemTemp(RueI.Displays.DisplayCore,System.String,System.Single,System.TimeSpan,RueI.Displays.Scheduling.TimedElemRef{RueI.Elements.SetElement})
+  name.vb: SetElemTemp(DisplayCore, String, Single, TimeSpan, TimedElemRef(Of SetElement))
+  fullName: RueI.Extensions.DisplayCoreExtensions.SetElemTemp(RueI.Displays.DisplayCore, string, float, System.TimeSpan, RueI.Displays.Scheduling.TimedElemRef<RueI.Elements.SetElement>)
+  fullName.vb: RueI.Extensions.DisplayCoreExtensions.SetElemTemp(RueI.Displays.DisplayCore, String, Single, System.TimeSpan, RueI.Displays.Scheduling.TimedElemRef(Of RueI.Elements.SetElement))
+  nameWithType: DisplayCoreExtensions.SetElemTemp(DisplayCore, string, float, TimeSpan, TimedElemRef<SetElement>)
+  nameWithType.vb: DisplayCoreExtensions.SetElemTemp(DisplayCore, String, Single, TimeSpan, TimedElemRef(Of SetElement))
+- uid: RueI.Extensions.DisplayCoreExtensions.SetElemTemp*
+  name: SetElemTemp
+  href: api/RueI.Extensions.DisplayCoreExtensions.html#RueI_Extensions_DisplayCoreExtensions_SetElemTemp_
+  commentId: Overload:RueI.Extensions.DisplayCoreExtensions.SetElemTemp
+  isSpec: "True"
+  fullName: RueI.Extensions.DisplayCoreExtensions.SetElemTemp
+  nameWithType: DisplayCoreExtensions.SetElemTemp
+- uid: RueI.Extensions.DisplayCoreExtensions.SetElemTempFunctional(RueI.Displays.DisplayCore,System.String,System.Single,System.TimeSpan,RueI.Displays.Scheduling.TimedElemRef{RueI.Elements.SetElement})
+  name: SetElemTempFunctional(DisplayCore, string, float, TimeSpan, TimedElemRef<SetElement>)
+  href: api/RueI.Extensions.DisplayCoreExtensions.html#RueI_Extensions_DisplayCoreExtensions_SetElemTempFunctional_RueI_Displays_DisplayCore_System_String_System_Single_System_TimeSpan_RueI_Displays_Scheduling_TimedElemRef_RueI_Elements_SetElement__
+  commentId: M:RueI.Extensions.DisplayCoreExtensions.SetElemTempFunctional(RueI.Displays.DisplayCore,System.String,System.Single,System.TimeSpan,RueI.Displays.Scheduling.TimedElemRef{RueI.Elements.SetElement})
+  name.vb: SetElemTempFunctional(DisplayCore, String, Single, TimeSpan, TimedElemRef(Of SetElement))
+  fullName: RueI.Extensions.DisplayCoreExtensions.SetElemTempFunctional(RueI.Displays.DisplayCore, string, float, System.TimeSpan, RueI.Displays.Scheduling.TimedElemRef<RueI.Elements.SetElement>)
+  fullName.vb: RueI.Extensions.DisplayCoreExtensions.SetElemTempFunctional(RueI.Displays.DisplayCore, String, Single, System.TimeSpan, RueI.Displays.Scheduling.TimedElemRef(Of RueI.Elements.SetElement))
+  nameWithType: DisplayCoreExtensions.SetElemTempFunctional(DisplayCore, string, float, TimeSpan, TimedElemRef<SetElement>)
+  nameWithType.vb: DisplayCoreExtensions.SetElemTempFunctional(DisplayCore, String, Single, TimeSpan, TimedElemRef(Of SetElement))
+- uid: RueI.Extensions.DisplayCoreExtensions.SetElemTempFunctional*
+  name: SetElemTempFunctional
+  href: api/RueI.Extensions.DisplayCoreExtensions.html#RueI_Extensions_DisplayCoreExtensions_SetElemTempFunctional_
+  commentId: Overload:RueI.Extensions.DisplayCoreExtensions.SetElemTempFunctional
+  isSpec: "True"
+  fullName: RueI.Extensions.DisplayCoreExtensions.SetElemTempFunctional
+  nameWithType: DisplayCoreExtensions.SetElemTempFunctional
 - uid: RueI.Extensions.DisplayCoreExtensions.SetElementOrNew(RueI.Displays.DisplayCore,RueI.Displays.IElemReference{RueI.Elements.SetElement},System.String,System.Single)
   name: SetElementOrNew(DisplayCore, IElemReference<SetElement>, string, float)
   href: api/RueI.Extensions.DisplayCoreExtensions.html#RueI_Extensions_DisplayCoreExtensions_SetElementOrNew_RueI_Displays_DisplayCore_RueI_Displays_IElemReference_RueI_Elements_SetElement__System_String_System_Single_
@@ -1702,60 +1734,12 @@ references:
   isSpec: "True"
   fullName: RueI.Extensions.DisplayCoreExtensions.SetElementOrNew
   nameWithType: DisplayCoreExtensions.SetElementOrNew
-- uid: RueI.Extensions.DisplayCoreExtensions.ShowTemp(RueI.Displays.DisplayCore,System.String,System.Single,System.TimeSpan,RueI.Displays.Scheduling.TimedElemRef{RueI.Elements.SetElement})
-  name: ShowTemp(DisplayCore, string, float, TimeSpan, TimedElemRef<SetElement>)
-  href: api/RueI.Extensions.DisplayCoreExtensions.html#RueI_Extensions_DisplayCoreExtensions_ShowTemp_RueI_Displays_DisplayCore_System_String_System_Single_System_TimeSpan_RueI_Displays_Scheduling_TimedElemRef_RueI_Elements_SetElement__
-  commentId: M:RueI.Extensions.DisplayCoreExtensions.ShowTemp(RueI.Displays.DisplayCore,System.String,System.Single,System.TimeSpan,RueI.Displays.Scheduling.TimedElemRef{RueI.Elements.SetElement})
-  name.vb: ShowTemp(DisplayCore, String, Single, TimeSpan, TimedElemRef(Of SetElement))
-  fullName: RueI.Extensions.DisplayCoreExtensions.ShowTemp(RueI.Displays.DisplayCore, string, float, System.TimeSpan, RueI.Displays.Scheduling.TimedElemRef<RueI.Elements.SetElement>)
-  fullName.vb: RueI.Extensions.DisplayCoreExtensions.ShowTemp(RueI.Displays.DisplayCore, String, Single, System.TimeSpan, RueI.Displays.Scheduling.TimedElemRef(Of RueI.Elements.SetElement))
-  nameWithType: DisplayCoreExtensions.ShowTemp(DisplayCore, string, float, TimeSpan, TimedElemRef<SetElement>)
-  nameWithType.vb: DisplayCoreExtensions.ShowTemp(DisplayCore, String, Single, TimeSpan, TimedElemRef(Of SetElement))
-- uid: RueI.Extensions.DisplayCoreExtensions.ShowTemp*
-  name: ShowTemp
-  href: api/RueI.Extensions.DisplayCoreExtensions.html#RueI_Extensions_DisplayCoreExtensions_ShowTemp_
-  commentId: Overload:RueI.Extensions.DisplayCoreExtensions.ShowTemp
-  isSpec: "True"
-  fullName: RueI.Extensions.DisplayCoreExtensions.ShowTemp
-  nameWithType: DisplayCoreExtensions.ShowTemp
-- uid: RueI.Extensions.DisplayCoreExtensions.ShowTempFunctional(RueI.Displays.DisplayCore,System.String,System.Single,System.TimeSpan,RueI.Displays.Scheduling.TimedElemRef{RueI.Elements.SetElement})
-  name: ShowTempFunctional(DisplayCore, string, float, TimeSpan, TimedElemRef<SetElement>)
-  href: api/RueI.Extensions.DisplayCoreExtensions.html#RueI_Extensions_DisplayCoreExtensions_ShowTempFunctional_RueI_Displays_DisplayCore_System_String_System_Single_System_TimeSpan_RueI_Displays_Scheduling_TimedElemRef_RueI_Elements_SetElement__
-  commentId: M:RueI.Extensions.DisplayCoreExtensions.ShowTempFunctional(RueI.Displays.DisplayCore,System.String,System.Single,System.TimeSpan,RueI.Displays.Scheduling.TimedElemRef{RueI.Elements.SetElement})
-  name.vb: ShowTempFunctional(DisplayCore, String, Single, TimeSpan, TimedElemRef(Of SetElement))
-  fullName: RueI.Extensions.DisplayCoreExtensions.ShowTempFunctional(RueI.Displays.DisplayCore, string, float, System.TimeSpan, RueI.Displays.Scheduling.TimedElemRef<RueI.Elements.SetElement>)
-  fullName.vb: RueI.Extensions.DisplayCoreExtensions.ShowTempFunctional(RueI.Displays.DisplayCore, String, Single, System.TimeSpan, RueI.Displays.Scheduling.TimedElemRef(Of RueI.Elements.SetElement))
-  nameWithType: DisplayCoreExtensions.ShowTempFunctional(DisplayCore, string, float, TimeSpan, TimedElemRef<SetElement>)
-  nameWithType.vb: DisplayCoreExtensions.ShowTempFunctional(DisplayCore, String, Single, TimeSpan, TimedElemRef(Of SetElement))
-- uid: RueI.Extensions.DisplayCoreExtensions.ShowTempFunctional*
-  name: ShowTempFunctional
-  href: api/RueI.Extensions.DisplayCoreExtensions.html#RueI_Extensions_DisplayCoreExtensions_ShowTempFunctional_
-  commentId: Overload:RueI.Extensions.DisplayCoreExtensions.ShowTempFunctional
-  isSpec: "True"
-  fullName: RueI.Extensions.DisplayCoreExtensions.ShowTempFunctional
-  nameWithType: DisplayCoreExtensions.ShowTempFunctional
 - uid: RueI.Extensions.ElementHelpers
   name: ElementHelpers
   href: api/RueI.Extensions.ElementHelpers.html
   commentId: T:RueI.Extensions.ElementHelpers
   fullName: RueI.Extensions.ElementHelpers
   nameWithType: ElementHelpers
-- uid: RueI.Extensions.ElementHelpers.AddTo*
-  name: AddTo
-  href: api/RueI.Extensions.ElementHelpers.html#RueI_Extensions_ElementHelpers_AddTo_
-  commentId: Overload:RueI.Extensions.ElementHelpers.AddTo
-  isSpec: "True"
-  fullName: RueI.Extensions.ElementHelpers.AddTo
-  nameWithType: ElementHelpers.AddTo
-- uid: RueI.Extensions.ElementHelpers.AddTo``1(``0,RueI.Displays.Interfaces.IElementContainer)
-  name: AddTo<T>(T, IElementContainer)
-  href: api/RueI.Extensions.ElementHelpers.html#RueI_Extensions_ElementHelpers_AddTo__1___0_RueI_Displays_Interfaces_IElementContainer_
-  commentId: M:RueI.Extensions.ElementHelpers.AddTo``1(``0,RueI.Displays.Interfaces.IElementContainer)
-  name.vb: AddTo(Of T)(T, IElementContainer)
-  fullName: RueI.Extensions.ElementHelpers.AddTo<T>(T, RueI.Displays.Interfaces.IElementContainer)
-  fullName.vb: RueI.Extensions.ElementHelpers.AddTo(Of T)(T, RueI.Displays.Interfaces.IElementContainer)
-  nameWithType: ElementHelpers.AddTo<T>(T, IElementContainer)
-  nameWithType.vb: ElementHelpers.AddTo(Of T)(T, IElementContainer)
 - uid: RueI.Extensions.ElementHelpers.FilterDisabled(System.Collections.Generic.IEnumerable{RueI.Elements.Element})
   name: FilterDisabled(IEnumerable<Element>)
   href: api/RueI.Extensions.ElementHelpers.html#RueI_Extensions_ElementHelpers_FilterDisabled_System_Collections_Generic_IEnumerable_RueI_Elements_Element__
@@ -2628,101 +2612,25 @@ references:
   fullName.vb: RueI.Extensions.IEnumerableExtensions.Only(Of T)(System.Collections.Generic.IEnumerable(Of T), System.Func(Of T, Boolean))
   nameWithType: IEnumerableExtensions.Only<T>(IEnumerable<T>, Func<T, bool>)
   nameWithType.vb: IEnumerableExtensions.Only(Of T)(IEnumerable(Of T), Func(Of T, Boolean))
-- uid: RueI.Extensions.Intersection`2
-  name: Intersection<T, TOther>
-  href: api/RueI.Extensions.Intersection-2.html
-  commentId: T:RueI.Extensions.Intersection`2
-  name.vb: Intersection(Of T, TOther)
-  fullName: RueI.Extensions.Intersection<T, TOther>
-  fullName.vb: RueI.Extensions.Intersection(Of T, TOther)
-  nameWithType: Intersection<T, TOther>
-  nameWithType.vb: Intersection(Of T, TOther)
-- uid: RueI.Extensions.Intersection`2.Class
-  name: Class
-  href: api/RueI.Extensions.Intersection-2.html#RueI_Extensions_Intersection_2_Class
-  commentId: P:RueI.Extensions.Intersection`2.Class
-  fullName: RueI.Extensions.Intersection<T, TOther>.Class
-  fullName.vb: RueI.Extensions.Intersection(Of T, TOther).Class
-  nameWithType: Intersection<T, TOther>.Class
-  nameWithType.vb: Intersection(Of T, TOther).Class
-- uid: RueI.Extensions.Intersection`2.Class*
-  name: Class
-  href: api/RueI.Extensions.Intersection-2.html#RueI_Extensions_Intersection_2_Class_
-  commentId: Overload:RueI.Extensions.Intersection`2.Class
-  isSpec: "True"
-  fullName: RueI.Extensions.Intersection<T, TOther>.Class
-  fullName.vb: RueI.Extensions.Intersection(Of T, TOther).Class
-  nameWithType: Intersection<T, TOther>.Class
-  nameWithType.vb: Intersection(Of T, TOther).Class
-- uid: RueI.Extensions.Intersection`2.Interface
-  name: Interface
-  href: api/RueI.Extensions.Intersection-2.html#RueI_Extensions_Intersection_2_Interface
-  commentId: P:RueI.Extensions.Intersection`2.Interface
-  fullName: RueI.Extensions.Intersection<T, TOther>.Interface
-  fullName.vb: RueI.Extensions.Intersection(Of T, TOther).Interface
-  nameWithType: Intersection<T, TOther>.Interface
-  nameWithType.vb: Intersection(Of T, TOther).Interface
-- uid: RueI.Extensions.Intersection`2.Interface*
-  name: Interface
-  href: api/RueI.Extensions.Intersection-2.html#RueI_Extensions_Intersection_2_Interface_
-  commentId: Overload:RueI.Extensions.Intersection`2.Interface
-  isSpec: "True"
-  fullName: RueI.Extensions.Intersection<T, TOther>.Interface
-  fullName.vb: RueI.Extensions.Intersection(Of T, TOther).Interface
-  nameWithType: Intersection<T, TOther>.Interface
-  nameWithType.vb: Intersection(Of T, TOther).Interface
-- uid: RueI.Extensions.Intersection`2.New*
-  name: New
-  href: api/RueI.Extensions.Intersection-2.html#RueI_Extensions_Intersection_2_New_
-  commentId: Overload:RueI.Extensions.Intersection`2.New
-  isSpec: "True"
-  fullName: RueI.Extensions.Intersection<T, TOther>.New
-  fullName.vb: RueI.Extensions.Intersection(Of T, TOther).New
-  nameWithType: Intersection<T, TOther>.New
-  nameWithType.vb: Intersection(Of T, TOther).New
-- uid: RueI.Extensions.Intersection`2.New``1(``0)
-  name: New<TClass>(TClass)
-  href: api/RueI.Extensions.Intersection-2.html#RueI_Extensions_Intersection_2_New__1___0_
-  commentId: M:RueI.Extensions.Intersection`2.New``1(``0)
-  name.vb: New(Of TClass)(TClass)
-  fullName: RueI.Extensions.Intersection<T, TOther>.New<TClass>(TClass)
-  fullName.vb: RueI.Extensions.Intersection(Of T, TOther).New(Of TClass)(TClass)
-  nameWithType: Intersection<T, TOther>.New<TClass>(TClass)
-  nameWithType.vb: Intersection(Of T, TOther).New(Of TClass)(TClass)
-- uid: RueI.Extensions.Intersection`2.op_Implicit(RueI.Extensions.Intersection{`0,`1})~`0
-  name: implicit operator T(Intersection<T, TOther>)
-  href: api/RueI.Extensions.Intersection-2.html#RueI_Extensions_Intersection_2_op_Implicit_RueI_Extensions_Intersection__0__1____0
-  commentId: M:RueI.Extensions.Intersection`2.op_Implicit(RueI.Extensions.Intersection{`0,`1})~`0
-  name.vb: CType(Intersection(Of T, TOther))
-  fullName: RueI.Extensions.Intersection<T, TOther>.implicit operator T(RueI.Extensions.Intersection<T, TOther>)
-  fullName.vb: RueI.Extensions.Intersection(Of T, TOther).CType(RueI.Extensions.Intersection(Of T, TOther))
-  nameWithType: Intersection<T, TOther>.implicit operator T(Intersection<T, TOther>)
-  nameWithType.vb: Intersection(Of T, TOther).CType(Intersection(Of T, TOther))
-- uid: RueI.Extensions.Intersection`2.op_Implicit(RueI.Extensions.Intersection{`0,`1})~`1
-  name: implicit operator TOther(Intersection<T, TOther>)
-  href: api/RueI.Extensions.Intersection-2.html#RueI_Extensions_Intersection_2_op_Implicit_RueI_Extensions_Intersection__0__1____1
-  commentId: M:RueI.Extensions.Intersection`2.op_Implicit(RueI.Extensions.Intersection{`0,`1})~`1
-  name.vb: CType(Intersection(Of T, TOther))
-  fullName: RueI.Extensions.Intersection<T, TOther>.implicit operator TOther(RueI.Extensions.Intersection<T, TOther>)
-  fullName.vb: RueI.Extensions.Intersection(Of T, TOther).CType(RueI.Extensions.Intersection(Of T, TOther))
-  nameWithType: Intersection<T, TOther>.implicit operator TOther(Intersection<T, TOther>)
-  nameWithType.vb: Intersection(Of T, TOther).CType(Intersection(Of T, TOther))
-- uid: RueI.Extensions.Intersection`2.op_Implicit*
-  name: implicit operator
-  href: api/RueI.Extensions.Intersection-2.html#RueI_Extensions_Intersection_2_op_Implicit_
-  commentId: Overload:RueI.Extensions.Intersection`2.op_Implicit
-  isSpec: "True"
-  name.vb: CType
-  fullName: RueI.Extensions.Intersection<T, TOther>.implicit operator
-  fullName.vb: RueI.Extensions.Intersection(Of T, TOther).CType
-  nameWithType: Intersection<T, TOther>.implicit operator
-  nameWithType.vb: Intersection(Of T, TOther).CType
 - uid: RueI.Extensions.ReflectionHelpers
   name: ReflectionHelpers
   href: api/RueI.Extensions.ReflectionHelpers.html
   commentId: T:RueI.Extensions.ReflectionHelpers
   fullName: RueI.Extensions.ReflectionHelpers
   nameWithType: ReflectionHelpers
+- uid: RueI.Extensions.ReflectionHelpers.GetElemCreator
+  name: GetElemCreator()
+  href: api/RueI.Extensions.ReflectionHelpers.html#RueI_Extensions_ReflectionHelpers_GetElemCreator
+  commentId: M:RueI.Extensions.ReflectionHelpers.GetElemCreator
+  fullName: RueI.Extensions.ReflectionHelpers.GetElemCreator()
+  nameWithType: ReflectionHelpers.GetElemCreator()
+- uid: RueI.Extensions.ReflectionHelpers.GetElemCreator*
+  name: GetElemCreator
+  href: api/RueI.Extensions.ReflectionHelpers.html#RueI_Extensions_ReflectionHelpers_GetElemCreator_
+  commentId: Overload:RueI.Extensions.ReflectionHelpers.GetElemCreator
+  isSpec: "True"
+  fullName: RueI.Extensions.ReflectionHelpers.GetElemCreator
+  nameWithType: ReflectionHelpers.GetElemCreator
 - uid: RueI.Extensions.ReflectionHelpers.GetElementShower
   name: GetElementShower()
   href: api/RueI.Extensions.ReflectionHelpers.html#RueI_Extensions_ReflectionHelpers_GetElementShower
