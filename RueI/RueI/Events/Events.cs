@@ -1,7 +1,7 @@
 ﻿namespace RueI.Events;
 
 /// <summary>
-/// Provides events for use by other plugins.
+/// Provides events for use by plugins using RueI.
 /// </summary>
 public static class Events
 {

@@ -9,20 +9,6 @@ using RueI.Displays.Interfaces;
 public static class ElementHelpers
 {
     /// <summary>
-    /// Adds an <see cref="Element"/> to a <see cref="IElementContainer"/>.
-    /// </summary>
-    /// <typeparam name="T">The type of the <see cref="Element"/>.</typeparam>
-    /// <param name="element">The element to add.</param>
-    /// <param name="container">The <see cref="IElementContainer"/> to add to.</param>
-    /// <returns>A reference to this element.</returns>
-    public static T AddTo<T>(this T element, IElementContainer container)
-        where T : Element
-    {
-        element.AddTo(container.Elements);
-        return element;
-    }
-
-    /// <summary>
     /// Filters out all of the disabled <see cref="Element"/>s in an <see cref="IEnumerable{T}"/>.
     /// </summary>
     /// <param name="elements">The elements to filter.</param>

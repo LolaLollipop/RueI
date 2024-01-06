@@ -1,7 +1,5 @@
 ﻿namespace RueI.Extensions;
 
-using NorthwoodLib.Pools;
-
 /// <summary>
 /// Provides extensions for working with collections.
 /// </summary>

@@ -8,7 +8,7 @@
 	<Platforms>AnyCPU;x64</Platforms>
 	<Title>RueI</Title>
 	<Copyright>CC0 1.0</Copyright>
-	<Version>2.0.3</Version>
+	<Version>2.0.4</Version>
 	<Authors>Rue &lt;3, Override (some help)</Authors>
 	<GenerateDocumentationFile>True</GenerateDocumentationFile>
 	<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
@@ -16,12 +16,12 @@
 	<RepositoryUrl>https://github.com/Ruemena/RueI</RepositoryUrl>
 	<PackageProjectUrl>https://github.com/Ruemena/RueI</PackageProjectUrl>
 	<PackageTags>scpsl;hints;scp;exiled;nwapi</PackageTags>
-	<AssemblyVersion>2.0.3</AssemblyVersion>
-	<FileVersion>2.0.3</FileVersion>
+	<AssemblyVersion>2.0.4</AssemblyVersion>
+	<FileVersion>2.0.4</FileVersion>
 	<PackageReadmeFile>README.md</PackageReadmeFile>
 	<PackageLicenseFile>LICENSE</PackageLicenseFile>
 	<PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
-	<PackageReleaseNotes>fixes and improvements to documentation</PackageReleaseNotes>
+	<PackageReleaseNotes>various fixes, improvements to docs, new reflection helpers, and general cleanup</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

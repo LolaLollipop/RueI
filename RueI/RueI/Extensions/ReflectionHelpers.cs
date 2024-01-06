@@ -10,21 +10,33 @@ using RueI.Elements;
 public static class ReflectionHelpers
 {
     /// <summary>
-    /// Gets a <see cref="Action{T1, T2, T3, T4}"/> that can be used to add an element, with a <see cref="TimedElemRef{T}"/> as a closure.
+    /// Gets an <see cref="Action{T1, T2, T3, T4}"/> that can be used to add an element, with a <see cref="TimedElemRef{T}"/> as a closure.
     /// </summary>
-    /// <returns>A <see cref="Action{T1, T2, T3, T4}"/> that can be used to add an element to a <see cref="ReferenceHub"/>.</returns>
+    /// <returns>An <see cref="Action{T1, T2, T3, T4}"/> that can be used to add an element to a <see cref="ReferenceHub"/>.</returns>
     /// <remarks>
-    /// This method is not intended to be used when using RueI as a direct dependency.
+    /// Every time this method is called, it creates a new <see cref="TimedElemRef{T}"/>. Therefore, every delegate returned by this method
+    /// represents a unique 'element'.
     /// </remarks>
     public static Action<ReferenceHub, string, float, TimeSpan> GetElementShower()
     {
         TimedElemRef<SetElement> elemRef = new();
-        return (hub, content, name, span) => ShowTempFunctional(hub, content, name, span, elemRef);
+        return (hub, content, name, span) => SetElemTempFunctional(hub, content, name, span, elemRef);
     }
 
-    private static void ShowTempFunctional(ReferenceHub hub, string content, float position, TimeSpan time, object elemRef)
+    /// <summary>
+    /// Gets a <see cref="Func{T}"/> that can be used to easily call <see cref="GetElementShower"/>.
+    /// </summary>
+    /// <returns>A <see cref="Func{T}"/> that itself returns an <see cref="Action{T1, T2, T3, T4}"/>.</returns>
+    /// <remarks>
+    /// The <see cref="Func{T}"/> returned by this method is identical to calling <see cref="GetElementShower"/>.
+    /// This method serves a helper to easily turn GetElementShower into a <see cref="Func{T}"/>, to make
+    /// reflection easier.
+    /// </remarks>
+    public static Func<Action<ReferenceHub, string, float, TimeSpan>> GetElemCreator() => GetElementShower;
+
+    private static void SetElemTempFunctional(ReferenceHub hub, string content, float position, TimeSpan time, TimedElemRef<SetElement> elemRef)
     {
         DisplayCore core = DisplayCore.Get(hub);
-        core.ShowTempFunctional(content, position, time, (TimedElemRef<SetElement>)elemRef);
+        core.SetElemTempFunctional(content, position, time, elemRef);
     }
 }
