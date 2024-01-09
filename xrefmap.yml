@@ -178,6 +178,57 @@ references:
   isSpec: "True"
   fullName: RueI.Displays.AutoElement.GiveTo
   nameWithType: AutoElement.GiveTo
+- uid: RueI.Displays.AutoElement.PeriodicUpdate
+  name: AutoElement.PeriodicUpdate
+  href: api/RueI.Displays.AutoElement.PeriodicUpdate.html
+  commentId: T:RueI.Displays.AutoElement.PeriodicUpdate
+  fullName: RueI.Displays.AutoElement.PeriodicUpdate
+  nameWithType: AutoElement.PeriodicUpdate
+- uid: RueI.Displays.AutoElement.PeriodicUpdate.#ctor(System.TimeSpan,System.Int32)
+  name: PeriodicUpdate(TimeSpan, int)
+  href: api/RueI.Displays.AutoElement.PeriodicUpdate.html#RueI_Displays_AutoElement_PeriodicUpdate__ctor_System_TimeSpan_System_Int32_
+  commentId: M:RueI.Displays.AutoElement.PeriodicUpdate.#ctor(System.TimeSpan,System.Int32)
+  name.vb: New(TimeSpan, Integer)
+  fullName: RueI.Displays.AutoElement.PeriodicUpdate.PeriodicUpdate(System.TimeSpan, int)
+  fullName.vb: RueI.Displays.AutoElement.PeriodicUpdate.New(System.TimeSpan, Integer)
+  nameWithType: AutoElement.PeriodicUpdate.PeriodicUpdate(TimeSpan, int)
+  nameWithType.vb: AutoElement.PeriodicUpdate.New(TimeSpan, Integer)
+- uid: RueI.Displays.AutoElement.PeriodicUpdate.#ctor*
+  name: PeriodicUpdate
+  href: api/RueI.Displays.AutoElement.PeriodicUpdate.html#RueI_Displays_AutoElement_PeriodicUpdate__ctor_
+  commentId: Overload:RueI.Displays.AutoElement.PeriodicUpdate.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: RueI.Displays.AutoElement.PeriodicUpdate.PeriodicUpdate
+  fullName.vb: RueI.Displays.AutoElement.PeriodicUpdate.New
+  nameWithType: AutoElement.PeriodicUpdate.PeriodicUpdate
+  nameWithType.vb: AutoElement.PeriodicUpdate.New
+- uid: RueI.Displays.AutoElement.PeriodicUpdate.priority
+  name: priority
+  href: api/RueI.Displays.AutoElement.PeriodicUpdate.html#RueI_Displays_AutoElement_PeriodicUpdate_priority
+  commentId: P:RueI.Displays.AutoElement.PeriodicUpdate.priority
+  fullName: RueI.Displays.AutoElement.PeriodicUpdate.priority
+  nameWithType: AutoElement.PeriodicUpdate.priority
+- uid: RueI.Displays.AutoElement.PeriodicUpdate.priority*
+  name: priority
+  href: api/RueI.Displays.AutoElement.PeriodicUpdate.html#RueI_Displays_AutoElement_PeriodicUpdate_priority_
+  commentId: Overload:RueI.Displays.AutoElement.PeriodicUpdate.priority
+  isSpec: "True"
+  fullName: RueI.Displays.AutoElement.PeriodicUpdate.priority
+  nameWithType: AutoElement.PeriodicUpdate.priority
+- uid: RueI.Displays.AutoElement.PeriodicUpdate.time
+  name: time
+  href: api/RueI.Displays.AutoElement.PeriodicUpdate.html#RueI_Displays_AutoElement_PeriodicUpdate_time
+  commentId: P:RueI.Displays.AutoElement.PeriodicUpdate.time
+  fullName: RueI.Displays.AutoElement.PeriodicUpdate.time
+  nameWithType: AutoElement.PeriodicUpdate.time
+- uid: RueI.Displays.AutoElement.PeriodicUpdate.time*
+  name: time
+  href: api/RueI.Displays.AutoElement.PeriodicUpdate.html#RueI_Displays_AutoElement_PeriodicUpdate_time_
+  commentId: Overload:RueI.Displays.AutoElement.PeriodicUpdate.time
+  isSpec: "True"
+  fullName: RueI.Displays.AutoElement.PeriodicUpdate.time
+  nameWithType: AutoElement.PeriodicUpdate.time
 - uid: RueI.Displays.AutoElement.RemoveFrom(RueI.Displays.DisplayCore)
   name: RemoveFrom(DisplayCore)
   href: api/RueI.Displays.AutoElement.html#RueI_Displays_AutoElement_RemoveFrom_RueI_Displays_DisplayCore_
@@ -204,15 +255,12 @@ references:
   isSpec: "True"
   fullName: RueI.Displays.AutoElement.Roles
   nameWithType: AutoElement.Roles
-- uid: RueI.Displays.AutoElement.UpdateEvery(System.TimeSpan,System.Int32)
-  name: UpdateEvery(TimeSpan, int)
-  href: api/RueI.Displays.AutoElement.html#RueI_Displays_AutoElement_UpdateEvery_System_TimeSpan_System_Int32_
-  commentId: M:RueI.Displays.AutoElement.UpdateEvery(System.TimeSpan,System.Int32)
-  name.vb: UpdateEvery(TimeSpan, Integer)
-  fullName: RueI.Displays.AutoElement.UpdateEvery(System.TimeSpan, int)
-  fullName.vb: RueI.Displays.AutoElement.UpdateEvery(System.TimeSpan, Integer)
-  nameWithType: AutoElement.UpdateEvery(TimeSpan, int)
-  nameWithType.vb: AutoElement.UpdateEvery(TimeSpan, Integer)
+- uid: RueI.Displays.AutoElement.UpdateEvery
+  name: UpdateEvery
+  href: api/RueI.Displays.AutoElement.html#RueI_Displays_AutoElement_UpdateEvery
+  commentId: P:RueI.Displays.AutoElement.UpdateEvery
+  fullName: RueI.Displays.AutoElement.UpdateEvery
+  nameWithType: AutoElement.UpdateEvery
 - uid: RueI.Displays.AutoElement.UpdateEvery*
   name: UpdateEvery
   href: api/RueI.Displays.AutoElement.html#RueI_Displays_AutoElement_UpdateEvery_
@@ -494,6 +542,19 @@ references:
   fullName.vb: RueI.Displays.DisplayCore.GetReference(Of T)()
   nameWithType: DisplayCore.GetReference<T>()
   nameWithType.vb: DisplayCore.GetReference(Of T)()
+- uid: RueI.Displays.DisplayCore.Hub
+  name: Hub
+  href: api/RueI.Displays.DisplayCore.html#RueI_Displays_DisplayCore_Hub
+  commentId: P:RueI.Displays.DisplayCore.Hub
+  fullName: RueI.Displays.DisplayCore.Hub
+  nameWithType: DisplayCore.Hub
+- uid: RueI.Displays.DisplayCore.Hub*
+  name: Hub
+  href: api/RueI.Displays.DisplayCore.html#RueI_Displays_DisplayCore_Hub_
+  commentId: Overload:RueI.Displays.DisplayCore.Hub
+  isSpec: "True"
+  fullName: RueI.Displays.DisplayCore.Hub
+  nameWithType: DisplayCore.Hub
 - uid: RueI.Displays.DisplayCore.RemoveReference*
   name: RemoveReference
   href: api/RueI.Displays.DisplayCore.html#RueI_Displays_DisplayCore_RemoveReference_
@@ -961,30 +1022,24 @@ references:
   isSpec: "True"
   fullName: RueI.Displays.Scheduling.RateLimiter.TryConsume
   nameWithType: RateLimiter.TryConsume
-- uid: RueI.Displays.Scheduling.Records
-  name: RueI.Displays.Scheduling.Records
-  href: api/RueI.Displays.Scheduling.Records.html
-  commentId: N:RueI.Displays.Scheduling.Records
-  fullName: RueI.Displays.Scheduling.Records
-  nameWithType: RueI.Displays.Scheduling.Records
-- uid: RueI.Displays.Scheduling.Records.ScheduledJob
+- uid: RueI.Displays.Scheduling.ScheduledJob
   name: ScheduledJob
-  href: api/RueI.Displays.Scheduling.Records.ScheduledJob.html
-  commentId: T:RueI.Displays.Scheduling.Records.ScheduledJob
-  fullName: RueI.Displays.Scheduling.Records.ScheduledJob
+  href: api/RueI.Displays.Scheduling.ScheduledJob.html
+  commentId: T:RueI.Displays.Scheduling.ScheduledJob
+  fullName: RueI.Displays.Scheduling.ScheduledJob
   nameWithType: ScheduledJob
-- uid: RueI.Displays.Scheduling.Records.ScheduledJob.CompareTo(RueI.Displays.Scheduling.Records.ScheduledJob)
+- uid: RueI.Displays.Scheduling.ScheduledJob.CompareTo(RueI.Displays.Scheduling.ScheduledJob)
   name: CompareTo(ScheduledJob)
-  href: api/RueI.Displays.Scheduling.Records.ScheduledJob.html#RueI_Displays_Scheduling_Records_ScheduledJob_CompareTo_RueI_Displays_Scheduling_Records_ScheduledJob_
-  commentId: M:RueI.Displays.Scheduling.Records.ScheduledJob.CompareTo(RueI.Displays.Scheduling.Records.ScheduledJob)
-  fullName: RueI.Displays.Scheduling.Records.ScheduledJob.CompareTo(RueI.Displays.Scheduling.Records.ScheduledJob)
+  href: api/RueI.Displays.Scheduling.ScheduledJob.html#RueI_Displays_Scheduling_ScheduledJob_CompareTo_RueI_Displays_Scheduling_ScheduledJob_
+  commentId: M:RueI.Displays.Scheduling.ScheduledJob.CompareTo(RueI.Displays.Scheduling.ScheduledJob)
+  fullName: RueI.Displays.Scheduling.ScheduledJob.CompareTo(RueI.Displays.Scheduling.ScheduledJob)
   nameWithType: ScheduledJob.CompareTo(ScheduledJob)
-- uid: RueI.Displays.Scheduling.Records.ScheduledJob.CompareTo*
+- uid: RueI.Displays.Scheduling.ScheduledJob.CompareTo*
   name: CompareTo
-  href: api/RueI.Displays.Scheduling.Records.ScheduledJob.html#RueI_Displays_Scheduling_Records_ScheduledJob_CompareTo_
-  commentId: Overload:RueI.Displays.Scheduling.Records.ScheduledJob.CompareTo
+  href: api/RueI.Displays.Scheduling.ScheduledJob.html#RueI_Displays_Scheduling_ScheduledJob_CompareTo_
+  commentId: Overload:RueI.Displays.Scheduling.ScheduledJob.CompareTo
   isSpec: "True"
-  fullName: RueI.Displays.Scheduling.Records.ScheduledJob.CompareTo
+  fullName: RueI.Displays.Scheduling.ScheduledJob.CompareTo
   nameWithType: ScheduledJob.CompareTo
 - uid: RueI.Displays.Scheduling.Scheduler
   name: Scheduler
@@ -992,32 +1047,13 @@ references:
   commentId: T:RueI.Displays.Scheduling.Scheduler
   fullName: RueI.Displays.Scheduling.Scheduler
   nameWithType: Scheduler
-- uid: RueI.Displays.Scheduling.Scheduler.#ctor(RueI.Displays.DisplayCore)
-  name: Scheduler(DisplayCore)
-  href: api/RueI.Displays.Scheduling.Scheduler.html#RueI_Displays_Scheduling_Scheduler__ctor_RueI_Displays_DisplayCore_
-  commentId: M:RueI.Displays.Scheduling.Scheduler.#ctor(RueI.Displays.DisplayCore)
-  name.vb: New(DisplayCore)
-  fullName: RueI.Displays.Scheduling.Scheduler.Scheduler(RueI.Displays.DisplayCore)
-  fullName.vb: RueI.Displays.Scheduling.Scheduler.New(RueI.Displays.DisplayCore)
-  nameWithType: Scheduler.Scheduler(DisplayCore)
-  nameWithType.vb: Scheduler.New(DisplayCore)
-- uid: RueI.Displays.Scheduling.Scheduler.#ctor*
-  name: Scheduler
-  href: api/RueI.Displays.Scheduling.Scheduler.html#RueI_Displays_Scheduling_Scheduler__ctor_
-  commentId: Overload:RueI.Displays.Scheduling.Scheduler.#ctor
-  isSpec: "True"
-  name.vb: New
-  fullName: RueI.Displays.Scheduling.Scheduler.Scheduler
-  fullName.vb: RueI.Displays.Scheduling.Scheduler.New
-  nameWithType: Scheduler.Scheduler
-  nameWithType.vb: Scheduler.New
-- uid: RueI.Displays.Scheduling.Scheduler.CalculateWeighted(System.Collections.Generic.IEnumerable{RueI.Displays.Scheduling.Records.ScheduledJob})
+- uid: RueI.Displays.Scheduling.Scheduler.CalculateWeighted(System.Collections.Generic.IEnumerable{RueI.Displays.Scheduling.ScheduledJob})
   name: CalculateWeighted(IEnumerable<ScheduledJob>)
-  href: api/RueI.Displays.Scheduling.Scheduler.html#RueI_Displays_Scheduling_Scheduler_CalculateWeighted_System_Collections_Generic_IEnumerable_RueI_Displays_Scheduling_Records_ScheduledJob__
-  commentId: M:RueI.Displays.Scheduling.Scheduler.CalculateWeighted(System.Collections.Generic.IEnumerable{RueI.Displays.Scheduling.Records.ScheduledJob})
+  href: api/RueI.Displays.Scheduling.Scheduler.html#RueI_Displays_Scheduling_Scheduler_CalculateWeighted_System_Collections_Generic_IEnumerable_RueI_Displays_Scheduling_ScheduledJob__
+  commentId: M:RueI.Displays.Scheduling.Scheduler.CalculateWeighted(System.Collections.Generic.IEnumerable{RueI.Displays.Scheduling.ScheduledJob})
   name.vb: CalculateWeighted(IEnumerable(Of ScheduledJob))
-  fullName: RueI.Displays.Scheduling.Scheduler.CalculateWeighted(System.Collections.Generic.IEnumerable<RueI.Displays.Scheduling.Records.ScheduledJob>)
-  fullName.vb: RueI.Displays.Scheduling.Scheduler.CalculateWeighted(System.Collections.Generic.IEnumerable(Of RueI.Displays.Scheduling.Records.ScheduledJob))
+  fullName: RueI.Displays.Scheduling.Scheduler.CalculateWeighted(System.Collections.Generic.IEnumerable<RueI.Displays.Scheduling.ScheduledJob>)
+  fullName.vb: RueI.Displays.Scheduling.Scheduler.CalculateWeighted(System.Collections.Generic.IEnumerable(Of RueI.Displays.Scheduling.ScheduledJob))
   nameWithType: Scheduler.CalculateWeighted(IEnumerable<ScheduledJob>)
   nameWithType.vb: Scheduler.CalculateWeighted(IEnumerable(Of ScheduledJob))
 - uid: RueI.Displays.Scheduling.Scheduler.CalculateWeighted*
@@ -1040,28 +1076,28 @@ references:
   isSpec: "True"
   fullName: RueI.Displays.Scheduling.Scheduler.KillJob
   nameWithType: Scheduler.KillJob
-- uid: RueI.Displays.Scheduling.Scheduler.Schedule(RueI.Displays.Scheduling.Records.ScheduledJob)
+- uid: RueI.Displays.Scheduling.Scheduler.Schedule(RueI.Displays.Scheduling.ScheduledJob)
   name: Schedule(ScheduledJob)
-  href: api/RueI.Displays.Scheduling.Scheduler.html#RueI_Displays_Scheduling_Scheduler_Schedule_RueI_Displays_Scheduling_Records_ScheduledJob_
-  commentId: M:RueI.Displays.Scheduling.Scheduler.Schedule(RueI.Displays.Scheduling.Records.ScheduledJob)
-  fullName: RueI.Displays.Scheduling.Scheduler.Schedule(RueI.Displays.Scheduling.Records.ScheduledJob)
+  href: api/RueI.Displays.Scheduling.Scheduler.html#RueI_Displays_Scheduling_Scheduler_Schedule_RueI_Displays_Scheduling_ScheduledJob_
+  commentId: M:RueI.Displays.Scheduling.Scheduler.Schedule(RueI.Displays.Scheduling.ScheduledJob)
+  fullName: RueI.Displays.Scheduling.Scheduler.Schedule(RueI.Displays.Scheduling.ScheduledJob)
   nameWithType: Scheduler.Schedule(ScheduledJob)
-- uid: RueI.Displays.Scheduling.Scheduler.Schedule(RueI.Displays.Scheduling.Records.ScheduledJob,RueI.Displays.Scheduling.Records.ScheduledJob[])
+- uid: RueI.Displays.Scheduling.Scheduler.Schedule(RueI.Displays.Scheduling.ScheduledJob,RueI.Displays.Scheduling.ScheduledJob[])
   name: Schedule(ScheduledJob, params ScheduledJob[])
-  href: api/RueI.Displays.Scheduling.Scheduler.html#RueI_Displays_Scheduling_Scheduler_Schedule_RueI_Displays_Scheduling_Records_ScheduledJob_RueI_Displays_Scheduling_Records_ScheduledJob___
-  commentId: M:RueI.Displays.Scheduling.Scheduler.Schedule(RueI.Displays.Scheduling.Records.ScheduledJob,RueI.Displays.Scheduling.Records.ScheduledJob[])
+  href: api/RueI.Displays.Scheduling.Scheduler.html#RueI_Displays_Scheduling_Scheduler_Schedule_RueI_Displays_Scheduling_ScheduledJob_RueI_Displays_Scheduling_ScheduledJob___
+  commentId: M:RueI.Displays.Scheduling.Scheduler.Schedule(RueI.Displays.Scheduling.ScheduledJob,RueI.Displays.Scheduling.ScheduledJob[])
   name.vb: Schedule(ScheduledJob, ParamArray ScheduledJob())
-  fullName: RueI.Displays.Scheduling.Scheduler.Schedule(RueI.Displays.Scheduling.Records.ScheduledJob, params RueI.Displays.Scheduling.Records.ScheduledJob[])
-  fullName.vb: RueI.Displays.Scheduling.Scheduler.Schedule(RueI.Displays.Scheduling.Records.ScheduledJob, ParamArray RueI.Displays.Scheduling.Records.ScheduledJob())
+  fullName: RueI.Displays.Scheduling.Scheduler.Schedule(RueI.Displays.Scheduling.ScheduledJob, params RueI.Displays.Scheduling.ScheduledJob[])
+  fullName.vb: RueI.Displays.Scheduling.Scheduler.Schedule(RueI.Displays.Scheduling.ScheduledJob, ParamArray RueI.Displays.Scheduling.ScheduledJob())
   nameWithType: Scheduler.Schedule(ScheduledJob, params ScheduledJob[])
   nameWithType.vb: Scheduler.Schedule(ScheduledJob, ParamArray ScheduledJob())
-- uid: RueI.Displays.Scheduling.Scheduler.Schedule(System.Collections.Generic.IEnumerable{RueI.Displays.Scheduling.Records.ScheduledJob})
+- uid: RueI.Displays.Scheduling.Scheduler.Schedule(System.Collections.Generic.IEnumerable{RueI.Displays.Scheduling.ScheduledJob})
   name: Schedule(IEnumerable<ScheduledJob>)
-  href: api/RueI.Displays.Scheduling.Scheduler.html#RueI_Displays_Scheduling_Scheduler_Schedule_System_Collections_Generic_IEnumerable_RueI_Displays_Scheduling_Records_ScheduledJob__
-  commentId: M:RueI.Displays.Scheduling.Scheduler.Schedule(System.Collections.Generic.IEnumerable{RueI.Displays.Scheduling.Records.ScheduledJob})
+  href: api/RueI.Displays.Scheduling.Scheduler.html#RueI_Displays_Scheduling_Scheduler_Schedule_System_Collections_Generic_IEnumerable_RueI_Displays_Scheduling_ScheduledJob__
+  commentId: M:RueI.Displays.Scheduling.Scheduler.Schedule(System.Collections.Generic.IEnumerable{RueI.Displays.Scheduling.ScheduledJob})
   name.vb: Schedule(IEnumerable(Of ScheduledJob))
-  fullName: RueI.Displays.Scheduling.Scheduler.Schedule(System.Collections.Generic.IEnumerable<RueI.Displays.Scheduling.Records.ScheduledJob>)
-  fullName.vb: RueI.Displays.Scheduling.Scheduler.Schedule(System.Collections.Generic.IEnumerable(Of RueI.Displays.Scheduling.Records.ScheduledJob))
+  fullName: RueI.Displays.Scheduling.Scheduler.Schedule(System.Collections.Generic.IEnumerable<RueI.Displays.Scheduling.ScheduledJob>)
+  fullName.vb: RueI.Displays.Scheduling.Scheduler.Schedule(System.Collections.Generic.IEnumerable(Of RueI.Displays.Scheduling.ScheduledJob))
   nameWithType: Scheduler.Schedule(IEnumerable<ScheduledJob>)
   nameWithType.vb: Scheduler.Schedule(IEnumerable(Of ScheduledJob))
 - uid: RueI.Displays.Scheduling.Scheduler.Schedule(System.TimeSpan,System.Action,RueI.Displays.Scheduling.JobToken)
@@ -1105,6 +1141,22 @@ references:
   isSpec: "True"
   fullName: RueI.Displays.Scheduling.Scheduler.ScheduleUpdate
   nameWithType: Scheduler.ScheduleUpdate
+- uid: RueI.Displays.Scheduling.Scheduler.ScheduleUpdateToken(System.TimeSpan,System.Int32,RueI.Displays.Scheduling.JobToken)
+  name: ScheduleUpdateToken(TimeSpan, int, JobToken)
+  href: api/RueI.Displays.Scheduling.Scheduler.html#RueI_Displays_Scheduling_Scheduler_ScheduleUpdateToken_System_TimeSpan_System_Int32_RueI_Displays_Scheduling_JobToken_
+  commentId: M:RueI.Displays.Scheduling.Scheduler.ScheduleUpdateToken(System.TimeSpan,System.Int32,RueI.Displays.Scheduling.JobToken)
+  name.vb: ScheduleUpdateToken(TimeSpan, Integer, JobToken)
+  fullName: RueI.Displays.Scheduling.Scheduler.ScheduleUpdateToken(System.TimeSpan, int, RueI.Displays.Scheduling.JobToken)
+  fullName.vb: RueI.Displays.Scheduling.Scheduler.ScheduleUpdateToken(System.TimeSpan, Integer, RueI.Displays.Scheduling.JobToken)
+  nameWithType: Scheduler.ScheduleUpdateToken(TimeSpan, int, JobToken)
+  nameWithType.vb: Scheduler.ScheduleUpdateToken(TimeSpan, Integer, JobToken)
+- uid: RueI.Displays.Scheduling.Scheduler.ScheduleUpdateToken*
+  name: ScheduleUpdateToken
+  href: api/RueI.Displays.Scheduling.Scheduler.html#RueI_Displays_Scheduling_Scheduler_ScheduleUpdateToken_
+  commentId: Overload:RueI.Displays.Scheduling.Scheduler.ScheduleUpdateToken
+  isSpec: "True"
+  fullName: RueI.Displays.Scheduling.Scheduler.ScheduleUpdateToken
+  nameWithType: Scheduler.ScheduleUpdateToken
 - uid: RueI.Displays.Scheduling.TimedElemRef`1
   name: TimedElemRef<T>
   href: api/RueI.Displays.Scheduling.TimedElemRef-1.html
@@ -3423,6 +3475,19 @@ references:
   isSpec: "True"
   fullName: RueI.Parsing.ParserContext.NewOffset
   nameWithType: ParserContext.NewOffset
+- uid: RueI.Parsing.ParserContext.NewlineBuffer
+  name: NewlineBuffer
+  href: api/RueI.Parsing.ParserContext.html#RueI_Parsing_ParserContext_NewlineBuffer
+  commentId: P:RueI.Parsing.ParserContext.NewlineBuffer
+  fullName: RueI.Parsing.ParserContext.NewlineBuffer
+  nameWithType: ParserContext.NewlineBuffer
+- uid: RueI.Parsing.ParserContext.NewlineBuffer*
+  name: NewlineBuffer
+  href: api/RueI.Parsing.ParserContext.html#RueI_Parsing_ParserContext_NewlineBuffer_
+  commentId: Overload:RueI.Parsing.ParserContext.NewlineBuffer
+  isSpec: "True"
+  fullName: RueI.Parsing.ParserContext.NewlineBuffer
+  nameWithType: ParserContext.NewlineBuffer
 - uid: RueI.Parsing.ParserContext.NoBreak
   name: NoBreak
   href: api/RueI.Parsing.ParserContext.html#RueI_Parsing_ParserContext_NoBreak
@@ -4197,32 +4262,32 @@ references:
   commentId: T:RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag
   fullName: RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag
   nameWithType: CloseLineHeightTag
-- uid: RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.ApplyTo(RueI.Parsing.ParserContext)
-  name: ApplyTo(ParserContext)
-  href: api/RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.html#RueI_Parsing_Tags_ConcreteTags_CloseLineHeightTag_ApplyTo_RueI_Parsing_ParserContext_
-  commentId: M:RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.ApplyTo(RueI.Parsing.ParserContext)
-  fullName: RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.ApplyTo(RueI.Parsing.ParserContext)
-  nameWithType: CloseLineHeightTag.ApplyTo(ParserContext)
-- uid: RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.ApplyTo*
-  name: ApplyTo
-  href: api/RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.html#RueI_Parsing_Tags_ConcreteTags_CloseLineHeightTag_ApplyTo_
-  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.ApplyTo
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.HandleTag(RueI.Parsing.ParserContext)
+  name: HandleTag(ParserContext)
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.html#RueI_Parsing_Tags_ConcreteTags_CloseLineHeightTag_HandleTag_RueI_Parsing_ParserContext_
+  commentId: M:RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.HandleTag(RueI.Parsing.ParserContext)
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.HandleTag(RueI.Parsing.ParserContext)
+  nameWithType: CloseLineHeightTag.HandleTag(ParserContext)
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.HandleTag*
+  name: HandleTag
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.html#RueI_Parsing_Tags_ConcreteTags_CloseLineHeightTag_HandleTag_
+  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.HandleTag
   isSpec: "True"
-  fullName: RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.ApplyTo
-  nameWithType: CloseLineHeightTag.ApplyTo
-- uid: RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.Name
-  name: Name
-  href: api/RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.html#RueI_Parsing_Tags_ConcreteTags_CloseLineHeightTag_Name
-  commentId: P:RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.Name
-  fullName: RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.Name
-  nameWithType: CloseLineHeightTag.Name
-- uid: RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.Name*
-  name: Name
-  href: api/RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.html#RueI_Parsing_Tags_ConcreteTags_CloseLineHeightTag_Name_
-  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.Name
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.HandleTag
+  nameWithType: CloseLineHeightTag.HandleTag
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.Names
+  name: Names
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.html#RueI_Parsing_Tags_ConcreteTags_CloseLineHeightTag_Names
+  commentId: P:RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.Names
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.Names
+  nameWithType: CloseLineHeightTag.Names
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.Names*
+  name: Names
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.html#RueI_Parsing_Tags_ConcreteTags_CloseLineHeightTag_Names_
+  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.Names
   isSpec: "True"
-  fullName: RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.Name
-  nameWithType: CloseLineHeightTag.Name
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseLineHeightTag.Names
+  nameWithType: CloseLineHeightTag.Names
 - uid: RueI.Parsing.Tags.ConcreteTags.CloseLineIndentTag
   name: CloseLineIndentTag
   href: api/RueI.Parsing.Tags.ConcreteTags.CloseLineIndentTag.html

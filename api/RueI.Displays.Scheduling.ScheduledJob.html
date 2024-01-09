@@ -2,10 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class JobToken
+      <title>Class ScheduledJob
  | RueI </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class JobToken
+      <meta name="title" content="Class ScheduledJob
  | RueI ">
       
       <link rel="icon" href="../favicon.ico">
@@ -17,7 +17,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/Ruemena/RueI/new/master/apiSpec/new?filename=RueI_Displays_Scheduling_JobToken.md&amp;value=---%0Auid%3A%20RueI.Displays.Scheduling.JobToken%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/Ruemena/RueI/new/master/apiSpec/new?filename=RueI_Displays_Scheduling_ScheduledJob.md&amp;value=---%0Auid%3A%20RueI.Displays.Scheduling.ScheduledJob%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -85,13 +85,13 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="RueI.Displays.Scheduling.JobToken">
+        <article data-uid="RueI.Displays.Scheduling.ScheduledJob">
 
 
 
-  <h1 id="RueI_Displays_Scheduling_JobToken" data-uid="RueI.Displays.Scheduling.JobToken" class="text-break">
-    Class JobToken
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/Scheduling/JobToken.cs/#L12"><i class="bi bi-code-slash"></i></a>
+  <h1 id="RueI_Displays_Scheduling_ScheduledJob" data-uid="RueI.Displays.Scheduling.ScheduledJob" class="text-break">
+    Class ScheduledJob
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/Scheduling/ScheduledJob.cs/#L10"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -99,12 +99,12 @@
   <dl><dt>Assembly</dt><dd>RueI.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Represents a reference to any number of <a class="xref" href="RueI.Displays.Scheduling.ScheduledJob.html">ScheduledJob</a>.</p>
+  <div class="markdown summary"><p>Defines a scheduled job for a <a class="xref" href="RueI.Displays.Scheduling.Scheduler.html">Scheduler</a>.</p>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class JobToken</code></pre>
+    <pre><code class="lang-csharp hljs">public class ScheduledJob : IComparable&lt;ScheduledJob&gt;</code></pre>
   </div>
 
 
@@ -114,10 +114,16 @@
     <dt>Inheritance</dt>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-      <div><span class="xref">JobToken</span></div>
+      <div><span class="xref">ScheduledJob</span></div>
     </dd>
   </dl>
 
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable-1">IComparable</a>&lt;<a class="xref" href="RueI.Displays.Scheduling.ScheduledJob.html">ScheduledJob</a>&gt;</div>
+    </dd>
+  </dl>
 
 
   <dl class="typelist derived">
@@ -149,33 +155,40 @@
 
 
 
-  <h2 id="RueI_Displays_Scheduling_JobToken_remarks">Remarks</h2>
-  <div class="markdown level0 remarks"><p>A <a class="xref" href="RueI.Displays.Scheduling.JobToken.html">JobToken</a> provides a unique identifier for a <a class="xref" href="RueI.Displays.Scheduling.ScheduledJob.html">ScheduledJob</a> within any number of
-<a class="xref" href="RueI.Displays.Scheduling.Scheduler.html">Scheduler</a>s. In other words, a <a class="xref" href="RueI.Displays.Scheduling.JobToken.html">JobToken</a> can reference multiple (or no) jobs,
-but only a single job with the given <a class="xref" href="RueI.Displays.Scheduling.JobToken.html">JobToken</a> can exist in a <a class="xref" href="RueI.Displays.Scheduling.Scheduler.html">Scheduler</a>.</p>
-</div>
 
 
-  <h2 class="section" id="constructors">Constructors
+  <h2 class="section" id="methods">Methods
 </h2>
 
 
-  <a id="RueI_Displays_Scheduling_JobToken__ctor_" data-uid="RueI.Displays.Scheduling.JobToken.#ctor*"></a>
+  <a id="RueI_Displays_Scheduling_ScheduledJob_CompareTo_" data-uid="RueI.Displays.Scheduling.ScheduledJob.CompareTo*"></a>
 
-  <h3 id="RueI_Displays_Scheduling_JobToken__ctor" data-uid="RueI.Displays.Scheduling.JobToken.#ctor">
-  JobToken()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/Scheduling/JobToken.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  <h3 id="RueI_Displays_Scheduling_ScheduledJob_CompareTo_RueI_Displays_Scheduling_ScheduledJob_" data-uid="RueI.Displays.Scheduling.ScheduledJob.CompareTo(RueI.Displays.Scheduling.ScheduledJob)">
+  CompareTo(ScheduledJob)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/Scheduling/ScheduledJob.cs/#L52"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="RueI.Displays.Scheduling.JobToken.html">JobToken</a> class.</p>
+  <div class="markdown level1 summary"><p>Compares this <a class="xref" href="RueI.Displays.Scheduling.ScheduledJob.html">ScheduledJob</a> to another job.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public JobToken()</code></pre>
+    <pre><code class="lang-csharp hljs">public int CompareTo(ScheduledJob other)</code></pre>
   </div>
 
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>other</code> <a class="xref" href="RueI.Displays.Scheduling.ScheduledJob.html">ScheduledJob</a></dt>
+    <dd><p>The other <a class="xref" href="RueI.Displays.Scheduling.ScheduledJob.html">ScheduledJob</a>.</p>
+</dd>
+  </dl>
 
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>An int indicating whether or not the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetimeoffset">DateTimeOffset</a> of this job comes before or after the other.</p>
+</dd>
+  </dl>
 
 
 
@@ -189,13 +202,14 @@ but only a single job with the given <a class="xref" href="RueI.Displays.Schedul
 
   <h2 id="seealso">See Also</h2>
   <div class="seealso">
-      <div><a class="xref" href="RueI.Displays.Scheduling.ScheduledJob.html">ScheduledJob</a></div>
+      <div><a class="xref" href="RueI.Displays.Scheduling.Scheduler.html">Scheduler</a></div>
+      <div><a class="xref" href="RueI.Displays.Scheduling.JobToken.html">JobToken</a></div>
   </div>
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/Scheduling/JobToken.cs/#L12" class="edit-link">Edit this page</a>
+          <a href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/Scheduling/ScheduledJob.cs/#L10" class="edit-link">Edit this page</a>
         </div>
 
 
