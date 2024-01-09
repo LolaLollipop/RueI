@@ -18,7 +18,12 @@ using RueI.Extensions;
 /// </remarks>
 public class AutoElement
 {
-    private record PeriodicUpdate(TimeSpan time, int priority, JobToken token);
+    /// <summary>
+    /// Represents a periodic update for an <see cref="AutoElement"/>.
+    /// </summary>
+    /// <param name="time">How often the <see cref="AutoElement"/> should schedule an auto-update.</param>
+    /// <param name="priority">The priority of the scheduled job.</param>
+    public record PeriodicUpdate(TimeSpan time, int priority = 10);
 
     private const int AUTOUPDATEPRIORITY = 5;
 
@@ -29,7 +34,7 @@ public class AutoElement
 
     private readonly IElemReference<Element> reference = DisplayCore.GetReference<Element>();
 
-    private PeriodicUpdate? periodicUpdate;
+    private (PeriodicUpdate update, JobToken token)? autoUpdate = null;
 
     static AutoElement()
     {
@@ -68,23 +73,32 @@ public class AutoElement
     public Roles Roles { get; set; }
 
     /// <summary>
+    /// Gets or sets a <see cref="PeriodicUpdate"/> indicating how often this <see cref="AutoElement"/> should
+    /// schedule an update for players with the element, or <c>null</c> if it should not auto-update.
+    /// </summary>
+    public PeriodicUpdate? UpdateEvery
+    {
+        get => autoUpdate?.update;
+
+        set
+        {
+            if (value != null)
+            {
+                autoUpdate = (value, new());
+            }
+            else
+            {
+                autoUpdate = null;
+            }
+        }
+    }
+
+    /// <summary>
     /// Disables this <see cref="AutoElement"/>.
     /// </summary>
     public virtual void Disable()
     {
         AutoElements.Remove(this);
-    }
-
-    /// <summary>
-    /// Schedules an update for all players with one of the <see cref="Roles"/> every <paramref name="span"/>.
-    /// </summary>
-    /// <param name="span">How often to schedule an update.</param>
-    /// <param name="priority">The priority of the update.</param>
-    /// <returns>A reference to this <see cref="AutoElement"/>.</returns>
-    public AutoElement UpdateEvery(TimeSpan span, int priority = 35)
-    {
-        periodicUpdate = new(span, priority, new());
-        return this;
     }
 
     /// <summary>
@@ -102,9 +116,9 @@ public class AutoElement
             core.AddAsReference(reference, creator!(core));
         }
 
-        if (periodicUpdate != null)
+        if (autoUpdate != null)
         {
-            ScheduleUpdate(core, periodicUpdate);
+            ScheduleUpdate(core, autoUpdate.Value);
         }
     }
 
@@ -116,9 +130,9 @@ public class AutoElement
     {
         core.RemoveReference(reference);
 
-        if (periodicUpdate != null)
+        if (autoUpdate != null)
         {
-            core.Scheduler.KillJob(periodicUpdate.token);
+            core.Scheduler.KillJob(autoUpdate.Value.token);
         }
     }
 
@@ -144,8 +158,8 @@ public class AutoElement
         }
     }
 
-    private static void ScheduleUpdate(DisplayCore core, PeriodicUpdate update)
+    private static void ScheduleUpdate(DisplayCore core, (PeriodicUpdate update, JobToken token) autoUpdate)
     {
-        core.Scheduler.Schedule(update.time, () => ScheduleUpdate(core, update), update.token);
+        core.Scheduler.Schedule(autoUpdate.update.time, () => ScheduleUpdate(core, autoUpdate), autoUpdate.token);
     }
 }

@@ -57,6 +57,11 @@ public class ParserContext : TextInfo, IDisposable
     public float SpaceBuffer { get; set; } = 0;
 
     /// <summary>
+    /// Gets or sets the newline buffer of the parser.
+    /// </summary>
+    public float NewlineBuffer { get; set; } = 0;
+
+    /// <summary>
     /// Gets or sets the current indent of the parser.
     /// </summary>
     public float Indent { get; set; } = 0;
@@ -72,7 +77,7 @@ public class ParserContext : TextInfo, IDisposable
     public float LineIndent { get; set; } = 0;
 
     /// <summary>
-    /// Gets or sets a value indicating whether the parser should parse tags other than noparse.
+    /// Gets or sets a value indicating whether the parser should parse tags other than <see cref="Tags.ConcreteTags.CloseNoparseTag"/>.
     /// </summary>
     public bool ShouldParse { get; set; } = true;
 

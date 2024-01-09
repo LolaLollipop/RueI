@@ -1,7 +1,7 @@
 ﻿namespace RueI.Displays;
 
-using RueI.Elements;
 using RueI.Displays.Scheduling;
+using RueI.Elements;
 using RueI.Extensions;
 
 /// <summary>
@@ -41,14 +41,14 @@ public class DisplayCore
     public Scheduler Scheduler { get; }
 
     /// <summary>
+    /// Gets the <see cref="ReferenceHub"/> that this display is for.
+    /// </summary>
+    public ReferenceHub Hub { get; }
+
+    /// <summary>
     /// Gets a dictionary containing the DisplayCores for each ReferenceHub.
     /// </summary>
     internal static Dictionary<ReferenceHub, DisplayCore> DisplayCores { get; } = new();
-
-    /// <summary>
-    /// Gets the <see cref="ReferenceHub"/> that this display is for.
-    /// </summary>
-    internal ReferenceHub Hub { get; }
 
     /// <summary>
     /// Gets or sets a value indicating whether or not updates will currently be ignored.

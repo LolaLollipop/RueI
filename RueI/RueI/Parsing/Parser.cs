@@ -154,15 +154,6 @@ public sealed class Parser
     /// <param name="isOverflow">Whether or not the line break was caused by an overflow.</param>
     public static void CreateLineBreak(ParserContext context, bool isOverflow = false)
     {
-        if (context.LineHasAnyChars)
-        {
-            context.NewOffset += CalculateSizeOffset(context.BiggestCharSize);
-        }
-        else
-        {
-            context.NewOffset += CalculateSizeOffset(Constants.DEFAULTSIZE);
-        }
-
         if (context.WidthSinceSpace > context.FunctionalWidth)
         {
             context.CurrentLineWidth = 0;
@@ -444,10 +435,6 @@ public sealed class Parser
         } // foreach
 
         context.ApplyClosingTags();
-        if (context.WidthSinceSpace > 0 || context.CurrentLineWidth > 0) // acount for the last line's size offset
-        {
-            context.NewOffset += CalculateSizeOffset(context.BiggestCharSize);
-        }
 
         StringBuilderPool.Shared.Return(tagBuffer);
         StringBuilderPool.Shared.Return(paramBuffer);
@@ -459,7 +446,7 @@ public sealed class Parser
     /// </summary>
     /// <param name="biggestChar">The size of the biggest char within the line.</param>
     /// <returns>An offset that should be added to the parser.</returns>
-    private static float CalculateSizeOffset(float biggestChar) => (((biggestChar / Constants.DEFAULTSIZE * 0.2f) + 0.8f) * Constants.DEFAULTHEIGHT) - Constants.DEFAULTHEIGHT;
+    private static float CalculateSizeOffset(float biggestChar) => (1 - (biggestChar / Constants.DEFAULTSIZE)) * 8.485f; // (((biggestChar / Constants.DEFAULTSIZE * 0.2f) + 0.8f) * Constants.DEFAULTHEIGHT) - Constants.DEFAULTHEIGHT;
 
     private static bool IsValidTagChar(char ch) => (ch > '\u0060' && ch < '\u007B') || ch == '-' || ch == '/';
 

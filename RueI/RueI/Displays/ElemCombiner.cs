@@ -4,8 +4,8 @@ using System.Text;
 
 using NorthwoodLib.Pools;
 
-using RueI.Extensions;
 using RueI.Elements;
+using RueI.Extensions;
 using RueI.Parsing.Records;
 
 /// <summary>
@@ -32,6 +32,7 @@ public static class ElemCombiner
         }
 
         StringBuilder sb = StringBuilderPool.Shared.Rent();
+
         float totalOffset = 0;
 
         float lastPosition = 0;
@@ -54,7 +55,7 @@ public static class ElemCombiner
             if (i != 0)
             {
                 float calcedOffset = CalculateOffset(lastPosition, lastOffset, funcPos);
-                sb.Append($"<line-height={calcedOffset}px>\n</line-height>");
+                sb.Append($"<line-height={calcedOffset}px>\n<line-height=40.665>");
                 totalOffset += calcedOffset;
             }
             else
@@ -70,8 +71,12 @@ public static class ElemCombiner
         }
 
         ListPool<Element>.Shared.Return(elements);
-        sb.Insert(0, $"<line-height={totalOffset}px>\n</line-height>");
-        sb.Append(Constants.ZeroWidthSpace);
+        sb.Insert(0, $"<line-height={totalOffset}px>\n<line-height=40.665><size=0>.</size>");
+
+        // a zero width space is appended here to ensure that trailing newlines still occur
+        // since this is after all tags have been closed, its guaranteed to not
+        // do anything at all except stop trailing newlines
+        sb.Append("<size=0>.");
         return StringBuilderPool.Shared.ToStringReturn(sb);
     }
 

@@ -29,6 +29,8 @@ public static class HintPatch
     private const float MAXANONYMOUSHINTTIME = 3;
     private const int UPDATEPRIORITY = 10;
 
+    private static readonly JobToken UpdateToken = new();
+
     private delegate bool TryGetHub(GameObject player, out ReferenceHub hub);
 
     /// <summary>
@@ -64,7 +66,8 @@ public static class HintPatch
 
         CodeInstruction[] collection =
         {
-                new CodeInstruction(OpCodes.Ldloc_0), // NetworkConnection
+                // NetworkConnection
+                new(OpCodes.Ldloc_0),
 
                 // connection.identity.gameObject
                 new(OpCodes.Callvirt, PropertyGetter(typeof(NetworkConnection), nameof(NetworkConnection.identity))),
@@ -98,11 +101,12 @@ public static class HintPatch
                 new(OpCodes.Ldc_R4, MAXANONYMOUSHINTTIME),
                 new(OpCodes.Call, Method(typeof(Math), nameof(Math.Min), new Type[] { typeof(float), typeof(float) })),
 
-                // core.Scheduler.ScheduleUpdate(TimeSpan.FromSeconds(time), 250);
+                // core.Scheduler.ScheduleUpdate(TimeSpan.FromSeconds(time), 10, token);
                 new(OpCodes.Conv_R8),
                 new(OpCodes.Call, Method(typeof(TimeSpan), nameof(TimeSpan.FromSeconds))),
                 new(OpCodes.Ldc_I4, UPDATEPRIORITY),
-                new(OpCodes.Callvirt, Method(typeof(Scheduler), nameof(Scheduler.ScheduleUpdate))),
+                new(OpCodes.Ldsfld, Field(typeof(HintPatch), nameof(UpdateToken))),
+                new(OpCodes.Callvirt, Method(typeof(Scheduler), nameof(Scheduler.ScheduleUpdateToken))),
 
                 // }
                 new CodeInstruction(OpCodes.Nop).WithLabels(skipLabel),

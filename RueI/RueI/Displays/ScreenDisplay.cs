@@ -1,7 +1,7 @@
 ﻿namespace RueI.Displays;
 
-using RueI.Extensions;
 using RueI.Elements;
+using RueI.Extensions;
 
 /// <summary>
 /// Represents a display attached to a <see cref="DisplayCore"/> with support for <see cref="Screen"/>s.

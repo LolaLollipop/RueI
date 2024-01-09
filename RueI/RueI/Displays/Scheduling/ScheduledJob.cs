@@ -1,4 +1,4 @@
-﻿namespace RueI.Displays.Scheduling.Records;
+﻿namespace RueI.Displays.Scheduling;
 
 using RueI.Extensions;
 
@@ -37,7 +37,7 @@ public class ScheduledJob : IComparable<ScheduledJob>
     /// <summary>
     /// Gets the priority of the element.
     /// </summary>
-    internal int Priority { get; private set; } = 1;
+    internal int Priority { get; private set; }
 
     /// <summary>
     /// Gets the <see cref="JobToken"/> of this, if it has one.

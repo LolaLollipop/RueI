@@ -1,7 +1,7 @@
 ﻿namespace RueI.Displays;
 
-using RueI.Elements;
 using RueI.Displays.Interfaces;
+using RueI.Elements;
 
 /// <summary>
 /// Represents a <see cref="IElementContainer"/> inside a <see cref="ScreenDisplay"/>.

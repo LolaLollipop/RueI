@@ -1,7 +1,6 @@
 ﻿namespace RueI.Extensions;
 
 using RueI.Elements;
-using RueI.Displays.Interfaces;
 
 /// <summary>
 /// Provides extensions and helpers for working with elements.
@@ -13,7 +12,20 @@ public static class ElementHelpers
     /// </summary>
     /// <param name="elements">The elements to filter.</param>
     /// <returns>The filtered <see cref="IEnumerable{T}"/>.</returns>
-    public static IEnumerable<Element> FilterDisabled(this IEnumerable<Element> elements) => elements.Where(x => x.Enabled);
+    public static IEnumerable<Element> FilterDisabled(this IEnumerable<Element> elements)
+    {
+        using IEnumerator<Element> enumerator = elements.GetEnumerator();
+
+        while (enumerator.MoveNext())
+        {
+            Element element = enumerator.Current;
+
+            if (element.Enabled)
+            {
+                yield return element;
+            }
+        }
+    }
 
     /// <summary>
     /// Gets the functional (un-scaled) position of an element.

@@ -1,99 +1,89 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
-    <TargetFramework>net48</TargetFramework>
-	<LangVersion>latest</LangVersion>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-	<Platforms>AnyCPU;x64</Platforms>
-	<Title>RueI</Title>
-	<Copyright>CC0 1.0</Copyright>
-	<Version>2.0.4</Version>
-	<Authors>Rue &lt;3, Override (some help)</Authors>
-	<GenerateDocumentationFile>True</GenerateDocumentationFile>
-	<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-	<Description>universal hint framework for scp:sl</Description>
-	<RepositoryUrl>https://github.com/Ruemena/RueI</RepositoryUrl>
-	<PackageProjectUrl>https://github.com/Ruemena/RueI</PackageProjectUrl>
-	<PackageTags>scpsl;hints;scp;exiled;nwapi</PackageTags>
-	<AssemblyVersion>2.0.4</AssemblyVersion>
-	<FileVersion>2.0.4</FileVersion>
-	<PackageReadmeFile>README.md</PackageReadmeFile>
-	<PackageLicenseFile>LICENSE</PackageLicenseFile>
-	<PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
-	<PackageReleaseNotes>various fixes, improvements to docs, new reflection helpers, and general cleanup</PackageReleaseNotes>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <Optimize>True</Optimize>
-    <DebugType>portable</DebugType>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <Optimize>True</Optimize>
-    <DebugType>portable</DebugType>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DebugType>portable</DebugType>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <DebugType>portable</DebugType>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Remove="RueI\Displays\Interfaces\Roles.cs" />
-  </ItemGroup>
+	<PropertyGroup>
+		<TargetFramework>net48</TargetFramework>
+		<LangVersion>latest</LangVersion>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<Platforms>AnyCPU;x64</Platforms>
+		<Title>RueI</Title>
+		<Copyright>CC0 1.0</Copyright>
+		<Version>2.0.4</Version>
+		<Authors>Rue &lt;3, Override (some help)</Authors>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<Description>universal hint framework for scp:sl</Description>
+		<RepositoryUrl>https://github.com/Ruemena/RueI</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/Ruemena/RueI</PackageProjectUrl>
+		<PackageTags>scpsl;hints;scp;exiled;nwapi</PackageTags>
+		<AssemblyVersion>2.0.4</AssemblyVersion>
+		<FileVersion>2.0.4</FileVersion>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+		<PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
+		<PackageReleaseNotes>various fixes, improvements to docs, new reflection helpers, and general cleanup</PackageReleaseNotes>
+	</PropertyGroup>
 	
-  <ItemGroup>
-    <None Remove="RueI\Constants.cs~RF13edd36.TMP" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Lib.Harmony" Version="2.2.2" />
-    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-  </ItemGroup>
-
-  <ItemGroup>
-	  <Reference Include="Assembly-CSharp">
-	    <HintPath>../References/Assembly-CSharp.dll</HintPath>
-	  </Reference>
-	  <Reference Include="Assembly-CSharp-firstpass">
-	    <HintPath>../References/Assembly-CSharp-firstpass.dll</HintPath>
-	  </Reference>
-	  <Reference Include="Mirror">
-      <HintPath>../References/Mirror.dll</HintPath>
-    </Reference>
-    <Reference Include="NorthwoodLib">
-      <HintPath>../References/NorthwoodLib.dll</HintPath>
-    </Reference>
-    <Reference Include="PluginAPI">
-      <HintPath>../References/PluginAPI.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine">
-      <HintPath>../References/UnityEngine.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.CoreModule">
-      <HintPath>../References/UnityEngine.CoreModule.dll</HintPath>
-    </Reference>
-	  <Reference Include="System.Collections.Immutable">
-		  <HintPath>../References/System.Collections.Immutable.dll</HintPath>
-	  </Reference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="..\LICENSE">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-    <None Include="..\README.md">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-  </ItemGroup>
-
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<Optimize>True</Optimize>
+		<DebugType>portable</DebugType>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+		<Optimize>True</Optimize>
+		<DebugType>portable</DebugType>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<DebugType>portable</DebugType>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+		<DebugType>portable</DebugType>
+	</PropertyGroup>
+	<ItemGroup>
+		<Compile Remove="RueI\Displays\Interfaces\Roles.cs" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Remove="RueI\Constants.cs~RF13edd36.TMP" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Lib.Harmony" Version="2.2.2" />
+		<PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+	<ItemGroup>
+		<Reference Include="Assembly-CSharp">
+			<HintPath>../References/Assembly-CSharp.dll</HintPath>
+		</Reference>
+		<Reference Include="Assembly-CSharp-firstpass">
+			<HintPath>../References/Assembly-CSharp-firstpass.dll</HintPath>
+		</Reference>
+		<Reference Include="Mirror">
+			<HintPath>../References/Mirror.dll</HintPath>
+		</Reference>
+		<Reference Include="NorthwoodLib">
+			<HintPath>../References/NorthwoodLib.dll</HintPath>
+		</Reference>
+		<Reference Include="PluginAPI">
+			<HintPath>../References/PluginAPI.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine">
+			<HintPath>../References/UnityEngine.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.CoreModule">
+			<HintPath>../References/UnityEngine.CoreModule.dll</HintPath>
+		</Reference>
+		<Reference Include="System.Collections.Immutable">
+			<HintPath>../References/System.Collections.Immutable.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="..\LICENSE">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+		<None Include="..\README.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
 </Project>

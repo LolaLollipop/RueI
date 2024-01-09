@@ -15,13 +15,15 @@ using RueI.Extensions;
 /// </remarks>
 public class Scheduler
 {
+    private static readonly Action EmptyAction = () => { };
     private static readonly TimeSpan MinimumBatch = TimeSpan.FromMilliseconds(625);
+
+    private readonly DisplayCore core;
 
     private readonly Cooldown hintRateLimit = new();
     private readonly List<ScheduledJob> jobs = new();
 
     private readonly UpdateTask performTask = new();
-    private readonly DisplayCore core;
 
     private BatchJob? nextBatch;
 
@@ -29,7 +31,7 @@ public class Scheduler
     /// Initializes a new instance of the <see cref="Scheduler"/> class.
     /// </summary>
     /// <param name="core">The <see cref="DisplayCore"/> to use.</param>
-    public Scheduler(DisplayCore core)
+    internal Scheduler(DisplayCore core)
     {
         this.core = core;
     }
@@ -118,8 +120,19 @@ public class Scheduler
     /// <param name="priority">The priority of the <see cref="ScheduledJob"/>, giving it additional weight when calculating.</param>
     public void ScheduleUpdate(TimeSpan time, int priority)
     {
-        jobs.Add(new(Now + time, () => { }, priority));
+        jobs.Add(new(Now + time, EmptyAction, priority));
         UpdateBatches();
+    }
+
+    /// <summary>
+    /// Schedules an update <see cref="ScheduledJob"/> with the <see cref="JobToken"/>.
+    /// </summary>
+    /// <param name="time">How long into the future to update at.</param>
+    /// <param name="priority">The priority of the <see cref="ScheduledJob"/>, giving it additional weight when calculating.</param>
+    /// <param name="token">A token to assign to the <see cref="ScheduledJob"/>.</param>
+    public void ScheduleUpdateToken(TimeSpan time, int priority, JobToken token)
+    {
+        Schedule(new ScheduledJob(Now + time, EmptyAction, priority, token));
     }
 
     /// <summary>

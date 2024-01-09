@@ -19,7 +19,7 @@ public class ParsedData
     /// <summary>
     /// Gets the content of the element.
     /// </summary>
-    public string Content { get;  }
+    public string Content { get; }
 
     /// <summary>
     /// Gets the offset that should be applied to the element.

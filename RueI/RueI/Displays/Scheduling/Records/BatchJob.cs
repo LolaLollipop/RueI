@@ -3,7 +3,8 @@
 /// <summary>
 /// Defines a number of <see cref="ScheduledJob"/>s that will performed at a certain time.
 /// </summary>
-internal class BatchJob
+///
+internal record BatchJob
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="BatchJob"/> class.

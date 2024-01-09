@@ -19,10 +19,11 @@ public class LineHeightTag : MeasurementTag
     {
         var (value, style) = info;
 
+        // the line height of ems and percentages changes based on the current size
         float convertedValue = style switch
         {
-            MeasurementUnit.Percentage => value / 100 * Constants.DEFAULTHEIGHT,
-            MeasurementUnit.Ems => value * Constants.EMSTOPIXELS,
+            MeasurementUnit.Percentage => value / 100 * Constants.DEFAULTHEIGHT * (context.Size / Constants.DEFAULTSIZE),
+            MeasurementUnit.Ems => value * Constants.EMSTOPIXELS * (context.Size / Constants.DEFAULTSIZE),
             _ => value
         };
 

@@ -30,12 +30,12 @@ internal static class IComparableExtensions
     /// </summary>
     /// <typeparam name="T">The type to use.</typeparam>
     /// <param name="first">The first value.</param>
-    /// <param name="skip">Whether or not to return the first value.</param>
+    /// <param name="check">Whether or not to perform the check.</param>
     /// <param name="second">The second value.</param>
     /// <returns>The maximum of the two, or the first value if the bool is true.</returns>
-    public static T MaxIf<T>(this T first, bool skip, T second)
+    public static T MaxIf<T>(this T first, bool check, T second)
         where T : IComparable<T>
     {
-        return skip ? first : first.Max(second);
+        return check ? first.Max(second) : first;
     }
 }

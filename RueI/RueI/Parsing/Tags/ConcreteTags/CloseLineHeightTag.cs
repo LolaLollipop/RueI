@@ -1,17 +1,22 @@
 ﻿namespace RueI.Parsing.Tags.ConcreteTags;
 
 /// <summary>
-/// Provides a way to handle closing line-height tags.
+/// Provides a way to handle closing size tags.
 /// </summary>
 [RichTextTag]
-public class CloseLineHeightTag : ClosingTag<CloseLineHeightTag>
+public class CloseLineHeightTag : NoParamsTag
 {
-    /// <inheritdoc/>
-    public override string Name { get; } = "/line-height";
+    private const string TAGFORMAT = "<line-height=40.665>";
 
     /// <inheritdoc/>
-    protected override void ApplyTo(ParserContext context)
+    public override string[] Names { get; } = { "/line-height" };
+
+    /// <inheritdoc/>
+    public override bool HandleTag(ParserContext context)
     {
-        context.CurrentLineHeight = 0;
+        context.CurrentLineHeight = Constants.DEFAULTHEIGHT;
+        context.ResultBuilder.Append(TAGFORMAT);
+
+        return true;
     }
 }
