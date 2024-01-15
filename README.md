@@ -1,6 +1,5 @@
 # RueI
-[![build and unit tests](https://github.com/Ruemena/RueI/actions/workflows/main.yml/badge.svg)](https://github.com/Ruemena/RueI/actions/workflows/main.yml) <a href="https://github.com/Ruemena/RueI/releases/latest" alt="Latest release"><img src="https://img.shields.io/github/downloads-pre/Ruemena/RueI/latest/total?label=downloads"/></a> [![CodeFactor](https://www.codefactor.io/repository/github/ruemena/ruei/badge)](https://www.codefactor.io/repository/github/ruemena/ruei) <a href="https://github.com/Ruemena/RueI/releases/latest" alt="Latest release">
-<img src="https://img.shields.io/github/v/release/Ruemena/RueI"/></a>
+![build and unit tests](https://github.com/Ruemena/RueI/actions/workflows/main.yml/badge.svg) [![CodeFactor](https://www.codefactor.io/repository/github/ruemena/ruei/badge)](https://www.codefactor.io/repository/github/ruemena/ruei)
 
 RueI is a hint framework, designed to be the definitive way to display multiple hints at once. you can get the latest release [here](https://github.com/Ruemena/RueI/releases/latest).
 

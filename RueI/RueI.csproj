@@ -7,7 +7,7 @@
 		<Platforms>AnyCPU;x64</Platforms>
 		<Title>RueI</Title>
 		<Copyright>CC0 1.0</Copyright>
-		<Version>2.0.4</Version>
+		<Version>2.0.5</Version>
 		<Authors>Rue &lt;3, Override (some help)</Authors>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
@@ -15,12 +15,12 @@
 		<RepositoryUrl>https://github.com/Ruemena/RueI</RepositoryUrl>
 		<PackageProjectUrl>https://github.com/Ruemena/RueI</PackageProjectUrl>
 		<PackageTags>scpsl;hints;scp;exiled;nwapi</PackageTags>
-		<AssemblyVersion>2.0.4</AssemblyVersion>
-		<FileVersion>2.0.4</FileVersion>
+		<AssemblyVersion>2.0.5</AssemblyVersion>
+		<FileVersion>2.0.5</FileVersion>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 		<PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
-		<PackageReleaseNotes>various fixes, improvements to docs, new reflection helpers, and general cleanup</PackageReleaseNotes>
+		<PackageReleaseNotes>bug fixes and changes to the autoelement + scheduling api</PackageReleaseNotes>
 	</PropertyGroup>
 	
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

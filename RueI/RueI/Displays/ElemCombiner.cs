@@ -33,7 +33,7 @@ public static class ElemCombiner
 
         StringBuilder sb = StringBuilderPool.Shared.Rent();
 
-        float totalOffset = 0;
+        float totalOffset = -8.465f;
 
         float lastPosition = 0;
         float lastOffset = 0;
@@ -71,12 +71,12 @@ public static class ElemCombiner
         }
 
         ListPool<Element>.Shared.Return(elements);
-        sb.Insert(0, $"<line-height={totalOffset}px>\n<line-height=40.665><size=0>.</size>");
+        sb.Insert(0, $"<line-height={totalOffset}px>\n<line-height=0><size=0>.\n</size><line-height=40.665>");
 
         // a zero width space is appended here to ensure that trailing newlines still occur
         // since this is after all tags have been closed, its guaranteed to not
         // do anything at all except stop trailing newlines
-        sb.Append("<size=0>.");
+        sb.Append("<line-height=0>\n<size=0>.");
         return StringBuilderPool.Shared.ToStringReturn(sb);
     }
 

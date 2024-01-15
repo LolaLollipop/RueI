@@ -8,4 +8,3 @@ namespace RueITest;
 public class TestExtensions
 {
 }
-///"\"hello world - - - again\""

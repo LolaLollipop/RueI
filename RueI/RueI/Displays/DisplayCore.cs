@@ -1,5 +1,6 @@
 ﻿namespace RueI.Displays;
 
+using JetBrains.Annotations;
 using RueI.Displays.Scheduling;
 using RueI.Elements;
 using RueI.Extensions;
@@ -33,6 +34,8 @@ public class DisplayCore
         }
 
         Scheduler = new(this);
+
+        UnityAlternative.Provider.LogDebug("Generated new display core for " + (hub?.name ?? "null"));
     }
 
     /// <summary>
@@ -163,12 +166,22 @@ public class DisplayCore
     }
 
     /// <summary>
+    /// Gets the text of this <see cref="DisplayCore"/>.
+    /// </summary>
+    /// <returns>The text that is combined to become a single hint.</returns>
+    public string GetText()
+    {
+        return ElemCombiner.Combine(GetAllElements());
+    }
+
+    /// <summary>
     /// Updates this display, skipping all checks.
     /// </summary>
     internal void InternalUpdate()
     {
         string text = ElemCombiner.Combine(GetAllElements());
         UnityAlternative.Provider.ShowHint(Hub, text);
+        UnityAlternative.Provider.LogDebug($"Updating display for {Hub.name}");
         Events.Events.OnDisplayUpdated(new(this));
     }
 

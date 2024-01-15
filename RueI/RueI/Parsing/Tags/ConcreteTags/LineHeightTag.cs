@@ -9,7 +9,7 @@ using RueI.Parsing.Records;
 [RichTextTag]
 public class LineHeightTag : MeasurementTag
 {
-    private const string TAGFORMAT = "<line-height={0}>";
+    private const string TAGFORMAT = "<line-height={0}p>";
 
     /// <inheritdoc/>
     public override string[] Names { get; } = { "line-height" };

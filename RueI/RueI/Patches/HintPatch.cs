@@ -26,7 +26,7 @@ using UnityEngine;
 [HarmonyPatch(typeof(HintDisplay), nameof(HintDisplay.Show))]
 public static class HintPatch
 {
-    private const float MAXANONYMOUSHINTTIME = 3;
+    private const double MAXANONYMOUSHINTTIME = 3;
     private const int UPDATEPRIORITY = 10;
 
     private static readonly JobToken UpdateToken = new();
@@ -62,6 +62,7 @@ public static class HintPatch
 
         LocalBuilder refHubLocal = generator.DeclareLocal(typeof(ReferenceHub));
         LocalBuilder schedulerLocal = generator.DeclareLocal(typeof(Scheduler));
+
         Label skipLabel = generator.DefineLabel();
 
         CodeInstruction[] collection =
@@ -95,14 +96,8 @@ public static class HintPatch
                 // scheduler
                 new(OpCodes.Ldloc_S, schedulerLocal.LocalIndex),
 
-                // float hintTime = Math.Min(hint.DurationScalar, 3)
-                new(OpCodes.Ldarg_0),
-                new(OpCodes.Callvirt, PropertyGetter(typeof(Hint), nameof(Hint.DurationScalar))),
-                new(OpCodes.Ldc_R4, MAXANONYMOUSHINTTIME),
-                new(OpCodes.Call, Method(typeof(Math), nameof(Math.Min), new Type[] { typeof(float), typeof(float) })),
-
-                // core.Scheduler.ScheduleUpdate(TimeSpan.FromSeconds(time), 10, token);
-                new(OpCodes.Conv_R8),
+                // core.Scheduler.ScheduleUpdate(3, 10, token);
+                new(OpCodes.Ldc_R8, MAXANONYMOUSHINTTIME),
                 new(OpCodes.Call, Method(typeof(TimeSpan), nameof(TimeSpan.FromSeconds))),
                 new(OpCodes.Ldc_I4, UPDATEPRIORITY),
                 new(OpCodes.Ldsfld, Field(typeof(HintPatch), nameof(UpdateToken))),
@@ -121,4 +116,12 @@ public static class HintPatch
 
         ListPool<CodeInstruction>.Shared.Return(newInstructions);
     }
+
+#if DEBUG
+    private static void LogHint(float duration)
+    {
+        UnityAlternative.Provider.LogDebug($"External hint shown, duration is {duration} seconds");
+    }
+#endif
+
 }

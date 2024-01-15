@@ -175,7 +175,7 @@ public sealed class Parser
     }
 
     /// <summary>
-    /// Parses the tag attributes of a string.
+    /// Attempts to parse the tag attributes of a string.
     /// </summary>
     /// <param name="content">The content to parse.</param>
     /// <param name="attributes">The pairs of attributes.</param>
