@@ -1,6 +1,9 @@
 namespace RueI.Elements;
 
+using RueI.Displays;
 using RueI.Elements.Delegates;
+using RueI.Elements.Enums;
+using RueI.Elements.Interfaces;
 using RueI.Parsing;
 using RueI.Parsing.Records;
 
@@ -10,7 +13,7 @@ using RueI.Parsing.Records;
 /// <remarks>
 /// The content of this element is re-evaluated by calling a function every time the display is updated. This makes it suitable for scenarios where you need to have information constantly updated. For example, you may use this to display the health of SCPs in an SCP list.
 /// </remarks>
-public class DynamicElement : Element
+public class DynamicElement : Element, ISettableOptions
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="DynamicElement"/> class.
@@ -24,10 +27,19 @@ public class DynamicElement : Element
     }
 
     /// <summary>
+    /// Gets or sets the options for this element.
+    /// </summary>
+    public new ElementOptions Options
+    {
+        get => base.Options;
+        set => base.Options = value;
+    }
+
+    /// <summary>
     /// Gets or sets a method that returns the new content and is called every time the display is updated.
     /// </summary>
     public GetContent ContentGetter { get; set; }
 
     /// <inheritdoc/>
-    protected internal override ParsedData GetParsedData() => Parser.Parse(ContentGetter(), Options);
+    protected internal override ParsedData GetParsedData(DisplayCore core) => Parser.Parse(ContentGetter(core), Options);
 }

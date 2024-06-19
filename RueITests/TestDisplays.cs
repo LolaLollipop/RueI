@@ -40,6 +40,8 @@ public class TestDisplayCore
     [TestMethod]
     public void TestCombining()
     {
+        MockDisplayCore core = new();
+
         List<SetElement> elements = new()
         {
             new(500, "he\nllo world")
@@ -66,8 +68,8 @@ public class TestDisplayCore
             },
         };
 
-        Console.WriteLine(ElemCombiner.Combine(elements).Replace("\n", "<br>"));
-        Console.WriteLine(ElemCombiner.Combine(elementsTwo).Replace("\n", "<br>"));
+        Console.WriteLine(ElemCombiner.Combine(core, elements).Replace("\n", "<br>"));
+        Console.WriteLine(ElemCombiner.Combine(core, elementsTwo).Replace("\n", "<br>"));
     }
 
     [TestMethod]

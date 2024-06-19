@@ -20,9 +20,10 @@ public static class ElemCombiner
     /// <summary>
     /// Combines multiple <see cref="Element"/>s into a string.
     /// </summary>
+    /// <param name="core">The <see cref="DisplayCore"/> of the player.</param>
     /// <param name="enumElems">The <see cref="IEnumerable{T}"/> of <see cref="Element"/>s to combine.</param>
     /// <returns>A <see cref="string"/> with all of the combined <see cref="Element"/>s.</returns>
-    public static string Combine(IEnumerable<Element> enumElems)
+    public static string Combine(DisplayCore core, IEnumerable<Element> enumElems)
     {
         List<Element> elements = ListPool<Element>.Shared.Rent(enumElems);
 
@@ -40,11 +41,13 @@ public static class ElemCombiner
 
         elements.Sort(CompareElement);
 
+        UnityAlternative.Provider.LogDebug($"Combining {elements.Count} elements");
+
         for (int i = 0; i < elements.Count; i++)
         {
             Element curElement = elements[i];
 
-            ParsedData parsedData = curElement.GetParsedData();
+            ParsedData parsedData = curElement.GetParsedData(core);
 
             float funcPos = curElement.GetFunctionalPosition();
             if (curElement.Options.HasFlagFast(Elements.Enums.ElementOptions.PreserveSpacing))
@@ -73,7 +76,7 @@ public static class ElemCombiner
         ListPool<Element>.Shared.Return(elements);
         sb.Insert(0, $"<line-height={totalOffset}px>\n<line-height=0><size=0>.\n</size><line-height=40.665>");
 
-        // a zero width space is appended here to ensure that trailing newlines still occur
+        // a period with a size of zero is appended here to ensure that trailing newlines still occur
         // since this is after all tags have been closed, its guaranteed to not
         // do anything at all except stop trailing newlines
         sb.Append("<line-height=0>\n<size=0>.");

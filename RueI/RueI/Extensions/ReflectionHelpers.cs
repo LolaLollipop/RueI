@@ -20,7 +20,7 @@ public static class ReflectionHelpers
     public static Action<ReferenceHub, string, float, TimeSpan> GetElementShower()
     {
         TimedElemRef<SetElement> elemRef = new();
-        return (hub, content, name, span) => SetElemTempFunctional(hub, content, name, span, elemRef);
+        return (hub, content, name, span) => DisplayCore.Get(hub).SetElemTempFunctional(content, name, span, elemRef);
     }
 
     /// <summary>
@@ -33,10 +33,4 @@ public static class ReflectionHelpers
     /// reflection easier.
     /// </remarks>
     public static Func<Action<ReferenceHub, string, float, TimeSpan>> GetElemCreator() => GetElementShower;
-
-    private static void SetElemTempFunctional(ReferenceHub hub, string content, float position, TimeSpan time, TimedElemRef<SetElement> elemRef)
-    {
-        DisplayCore core = DisplayCore.Get(hub);
-        core.SetElemTempFunctional(content, position, time, elemRef);
-    }
 }

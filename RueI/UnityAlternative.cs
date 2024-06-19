@@ -1,12 +1,12 @@
 ﻿namespace RueI;
 
-using UnityEngine;
 using Hints;
 using MEC;
 
 using RueI.Extensions;
 using HarmonyLib;
 using System.Diagnostics;
+using System;
 
 /// <summary>
 /// Defines the base class for a provider of methods that may or may not use Unity.
@@ -42,7 +42,8 @@ public abstract class UnityAlternative
     /// Logs a message to the console.
     /// </summary>
     /// <param name="message">The message to log.</param>
-    public abstract void Log(string message);
+    /// <param name="color">The color of the message.</param>
+    public abstract void Log(string message, ConsoleColor color = ConsoleColor.Yellow);
 
     /// <summary>
     /// Logs a warning message to the console.
@@ -82,7 +83,7 @@ public abstract class UnityAlternative
     {
         try
         {
-            _ = Object.FindObjectOfType<ReferenceHub>(); // errors if not in unity
+            _ = UnityEngine.Object.FindObjectOfType<ReferenceHub>(); // errors if not in unity
             return new UnityProvider();
         }
         catch(Exception)
@@ -98,7 +99,7 @@ public abstract class UnityAlternative
 public class NonUnityProvider : UnityAlternative
 {
     /// <inheritdoc/>
-    public override void Log(string message) => Console.WriteLine(message);
+    public override void Log(string message, ConsoleColor color = ConsoleColor.Yellow) => Console.WriteLine(message);
 
     /// <inheritdoc/>
     public override void LogWarn(string message) => Console.WriteLine($"WARN: {message}");
@@ -166,7 +167,7 @@ public class NonUnityProvider : UnityAlternative
 public class UnityProvider : UnityAlternative
 {
     /// <inheritdoc/>
-    public override void Log(string message) => ServerConsole.AddLog(message, ConsoleColor.Yellow);
+    public override void Log(string message, ConsoleColor color = ConsoleColor.Yellow) => ServerConsole.AddLog(message, color);
 
     /// <inheritdoc/>
     public override void LogWarn(string message) => ServerConsole.AddLog(message, ConsoleColor.Red);
@@ -184,7 +185,7 @@ public class UnityProvider : UnityAlternative
     internal override void ShowHint(ReferenceHub hub, string message) => hub.connectionToClient.Send(new HintMessage(new TextHint(message, new HintParameter[] { new StringHintParameter(message) }, null, 99999)));
 
     /// <summary>
-    /// Represents an async operation using a <see cref="Task"/>.
+    /// Represents an async operation using a <see cref="CoroutineHandle"/>.
     /// </summary>
     public class MECAsyncOperation : IAsyncOperation
     {
@@ -197,14 +198,19 @@ public class UnityProvider : UnityAlternative
         /// <param name="action">The action to run when finished.</param>
         public MECAsyncOperation(TimeSpan span, Action action)
         {
-            handle = Timing.CallDelayed(((float)span.TotalSeconds).Max(0f), action);
+            float time = ((float)span.TotalSeconds).Max(0f);
+
+            handle = Timing.CallDelayed(time, action);
         }
 
         /// <inheritdoc/>
         public bool IsRunning => handle.IsRunning;
 
         /// <inheritdoc/>
-        public void Cancel() => Timing.KillCoroutines(handle);
+        public void Cancel()
+        {
+            Timing.KillCoroutines(handle);
+        }
 
         /// <summary>
         /// Disposes this MEC operation.

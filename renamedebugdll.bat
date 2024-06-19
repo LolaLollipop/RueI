@@ -1,0 +1,1 @@
+ren ./RueI/obj/Debug/net48/RueI.dll RueI-DEBUG.dll

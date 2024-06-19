@@ -17,8 +17,8 @@ public class VOffsetTag : MeasurementTag
     /// <inheritdoc/>
     public override bool HandleTag(ParserContext context, MeasurementInfo info)
     {
-        // this is far from how voffsets actually work but this works fine enough lol
-        SharedTag<LineHeightTag>.Singleton.HandleTag(context, info);
+        // this is far from how voffsets actually work but this works fine enough
+        SharedTag<LineHeightTag>.Singleton.HandleTag(context, info with { value = -info.value });
 
         context.ResultBuilder.Append('\n');
         Parser.CreateLineBreak(context);

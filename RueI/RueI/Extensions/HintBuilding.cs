@@ -144,7 +144,7 @@ public static class HintBuilding
     /// <returns>A reference to the original <see cref="StringBuilder"/>.</returns>
     public static StringBuilder SetColor(this StringBuilder sb, int r, int g, int b, int alpha = 255)
     {
-        Color color = Color.FromArgb(r, g, b, alpha);
+        Color color = Color.FromArgb(alpha, r, g, b);
         return sb.SetColor(color);
     }
 
@@ -159,7 +159,7 @@ public static class HintBuilding
     /// <returns>A reference to the original <see cref="StringBuilder"/>.</returns>
     public static StringBuilder SetColor(this StringBuilder sb, byte r, byte g, byte b, byte alpha = 255)
     {
-        Color color = Color.FromArgb(r, g, b, alpha);
+        Color color = Color.FromArgb(alpha, r, g, b);
         return sb.SetColor(color);
     }
 
@@ -185,7 +185,7 @@ public static class HintBuilding
     /// <returns>A reference to the original <see cref="StringBuilder"/>.</returns>
     public static StringBuilder SetMark(this StringBuilder sb, int r, int g, int b, int alpha)
     {
-        Color color = Color.FromArgb(r, g, b, alpha);
+        Color color = Color.FromArgb(alpha, r, g, b);
         return sb.SetMark(color);
     }
 
@@ -200,7 +200,7 @@ public static class HintBuilding
     /// <returns>A reference to the original <see cref="StringBuilder"/>.</returns>
     public static StringBuilder SetMark(this StringBuilder sb, byte r, byte g, byte b, byte alpha)
     {
-        Color color = Color.FromArgb(r, g, b, alpha);
+        Color color = Color.FromArgb(alpha, r, g, b);
         return sb.SetMark(color);
     }
 

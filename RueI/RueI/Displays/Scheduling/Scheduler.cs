@@ -2,7 +2,6 @@
 
 using Utils.NonAllocLINQ;
 
-using eMEC;
 using RueI.Displays.Scheduling.Records;
 using RueI.Extensions;
 
@@ -16,14 +15,14 @@ using RueI.Extensions;
 public class Scheduler
 {
     private static readonly Action EmptyAction = () => { };
-    private static readonly TimeSpan MinimumBatch = TimeSpan.FromMilliseconds(625);
+    private static readonly TimeSpan MinimumBatch = TimeSpan.FromMilliseconds(300);
 
     private readonly DisplayCore core;
 
     private readonly Cooldown hintRateLimit = new();
     private readonly List<ScheduledJob> jobs = new();
 
-    private readonly UpdateTask performTask = new();
+    private RueI.UnityAlternative.IAsyncOperation? performTask;
 
     private BatchJob? nextBatch;
 
@@ -159,6 +158,24 @@ public class Scheduler
     }
 
     /// <summary>
+    /// Replaces the <see cref="ScheduledJob"/> with the <see cref="JobToken"/> with a new job.
+    /// </summary>
+    /// <param name="time">How long into the future to run the action at.</param>
+    /// <param name="action">The <see cref="Action"/> to run.</param>
+    /// <param name="token">An optional token to assign to the <see cref="ScheduledJob"/>.</param>
+    /// <param name="priority">The priority of the job.</param>
+    public void ReplaceJob(TimeSpan time, Action action, JobToken token, int priority = 1)
+    {
+        int index = jobs.FindIndex(x => x.Token == token);
+        if (index != -1)
+        {
+            jobs.RemoveAt(index);
+        }
+
+        Schedule(time, action, priority, token);
+    }
+
+    /// <summary>
     /// Attempts to kill the <see cref="ScheduledJob"/> with the <see cref="JobToken"/>.
     /// </summary>
     /// <param name="token">The <see cref="JobToken"/> to use as a reference.</param>
@@ -169,6 +186,8 @@ public class Scheduler
         {
             jobs.RemoveAt(index);
         }
+
+        UpdateBatches();
     }
 
     /// <summary>
@@ -187,14 +206,29 @@ public class Scheduler
     {
         if (!jobs.Any())
         {
+            performTask?.Cancel();
+            nextBatch = null;
             return;
         }
 
-        jobs.Sort();
-        nextBatch = null;
+        if (core.IgnoreUpdate)
+        {
+            return;
+        }
 
         List<ScheduledJob> currentBatch = new(2);
-        DateTimeOffset currentBatchTime = jobs.First().FinishAt + MinimumBatch;
+
+        DateTimeOffset least = DateTimeOffset.MaxValue;
+        foreach (ScheduledJob job in jobs)
+        {
+            DateTimeOffset finishAt = job.FinishAt;
+            if (finishAt < least)
+            {
+                least = finishAt;
+            }
+        }
+
+        DateTimeOffset currentBatchTime = least + MinimumBatch;
 
         foreach (ScheduledJob job in jobs)
         {
@@ -202,26 +236,24 @@ public class Scheduler
             {
                 currentBatch.Add(job);
             }
-            else
-            {
-                break;
-            }
         }
 
         if (currentBatch.Count == 0)
         {
             // handle cases where a scheduledjob being removed
             // results in nothing to do
-            performTask.End();
+            performTask?.Cancel();
+            nextBatch = null;
         }
         else
         {
             DateTimeOffset dateTimePerform = CalculateWeighted(currentBatch);
             nextBatch = new(currentBatch, dateTimePerform);
 
-            TimeSpan performAt = (dateTimePerform - Now).MaxIf(hintRateLimit.Active, hintRateLimit.TimeLeft);
+            TimeSpan performIn = (dateTimePerform - Now).MaxIf(hintRateLimit.Active, hintRateLimit.TimeLeft);
 
-            performTask.Start(performAt, PerformFirstBatch);
+            performTask?.Cancel();
+            performTask = UnityAlternative.Provider.PerformAsync(performIn, PerformFirstBatch);
         }
     }
 
@@ -230,12 +262,15 @@ public class Scheduler
     /// </summary>
     private void PerformFirstBatch()
     {
-        if (nextBatch == null)
+        if (nextBatch == null || core.IgnoreUpdate)
         {
             return;
         }
 
         core.IgnoreUpdate = true;
+
+        nextBatch.Jobs.Sort();
+
         foreach (ScheduledJob job in nextBatch.Jobs)
         {
             jobs.Remove(job);

@@ -1,5 +1,6 @@
 namespace RueI.Elements;
 
+using RueI.Displays;
 using RueI.Elements.Enums;
 using RueI.Elements.Interfaces;
 using RueI.Parsing;
@@ -10,6 +11,9 @@ using RueI.Parsing.Records;
 /// </summary>
 public class SetElement : Element, ISettable
 {
+    private ParsedData cachedContent;
+    private string content;
+
     /// <summary>
     /// Initializes a new instance of the <see cref="SetElement"/> class.
     /// </summary>
@@ -19,14 +23,39 @@ public class SetElement : Element, ISettable
         : base(position)
     {
         Position = position;
-        Content = content;
+        this.content = content;
+        cachedContent = Parser.Parse(content, Options);
     }
 
     /// <summary>
     /// Gets or sets the content of this element.
     /// </summary>
-    public virtual string Content { get; set; }
+    public virtual string Content
+    {
+        get => content;
+        set
+        {
+            content = value;
+            cachedContent = Parser.Parse(value, Options);
+        }
+    }
+
+    /// <summary>
+    /// Gets or sets the options for this element.
+    /// </summary>
+    // we shadow here so that we can effectively override the getter/setter, which is normally not supported
+    public new ElementOptions Options
+    {
+        get => base.Options;
+        set
+        {
+            base.Options = value;
+            cachedContent = Parser.Parse(content, value);
+        }
+    }
 
     /// <inheritdoc/>
-    protected internal override ParsedData GetParsedData() => Parser.Parse(Content, Options);
+#pragma warning disable SA1313 // Parameter names should begin with lower-case letter
+    protected internal override ParsedData GetParsedData(DisplayCore _) => cachedContent;
+#pragma warning restore SA1313 // Parameter names should begin with lower-case letter
 }

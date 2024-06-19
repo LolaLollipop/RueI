@@ -1,5 +1,6 @@
 namespace RueI.Elements;
 
+using RueI.Displays;
 using RueI.Elements.Enums;
 using RueI.Parsing;
 using RueI.Parsing.Records;
@@ -48,14 +49,15 @@ public abstract class Element
     /// <summary>
     /// Gets or sets the options for this element.
     /// </summary>
-    public virtual ElementOptions Options { get; set; } = ElementOptions.Default;
+    public virtual ElementOptions Options { get; protected set; } = ElementOptions.Default;
 
     /// <summary>
     /// Gets the data used for parsing.
     /// </summary>
+    /// <param name="core">The <see cref="DisplayCore"/> of the player.</param>
     /// <returns>The <see cref="ParsedData"/> for the element.</returns>
     /// <remarks>
     /// This contains information used to ensure that multiple elements can be displayed at once. To obtain this, you must use <see cref="Parser.Parse"/>.
     /// </remarks>
-    protected internal abstract ParsedData GetParsedData();
+    protected internal abstract ParsedData GetParsedData(DisplayCore core);
 }

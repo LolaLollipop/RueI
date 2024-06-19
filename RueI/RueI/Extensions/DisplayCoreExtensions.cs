@@ -23,6 +23,7 @@ public static class DisplayCoreExtensions
         if (element != null)
         {
             element.Content = content;
+            element.Position = position;
         }
         else
         {
@@ -44,10 +45,10 @@ public static class DisplayCoreExtensions
         where T : Element, ISettable
     {
         core.AddAsReference(elemRef, element);
-        core.Update();
 
-        core.Scheduler.KillJob(elemRef.JobToken);
-        core.Scheduler.Schedule(time, () => core.RemoveReference(elemRef), elemRef.JobToken);
+        core.Scheduler.ReplaceJob(time, () => core.RemoveReference(elemRef), elemRef.JobToken);
+
+        core.Update();
     }
 
     /// <summary>
@@ -62,10 +63,10 @@ public static class DisplayCoreExtensions
     public static void SetElemTemp(this DisplayCore core, string content, float position, TimeSpan time, TimedElemRef<SetElement> elemRef)
     {
         core.SetElementOrNew(elemRef, content, position);
-        core.Update();
 
-        core.Scheduler.KillJob(elemRef.JobToken);
-        core.Scheduler.Schedule(time, () => core.RemoveReference(elemRef), elemRef.JobToken);
+        core.Scheduler.ReplaceJob(time, () => core.RemoveReference(elemRef), elemRef.JobToken);
+
+        core.Update();
     }
 
     /// <summary>
@@ -80,9 +81,9 @@ public static class DisplayCoreExtensions
     public static void SetElemTempFunctional(this DisplayCore core, string content, float position, TimeSpan time, TimedElemRef<SetElement> elemRef)
     {
         core.SetElementOrNew(elemRef, content, Ruetility.FunctionalToScaledPosition(position));
-        core.Update();
 
-        core.Scheduler.KillJob(elemRef.JobToken);
-        core.Scheduler.Schedule(time, () => core.RemoveReference(elemRef), elemRef.JobToken);
+        core.Scheduler.ReplaceJob(time, () => core.RemoveReference(elemRef), elemRef.JobToken);
+
+        core.Update();
     }
 }

@@ -98,7 +98,7 @@ public class DisplayCore
             return;
         }
 
-        Scheduler.ScheduleUpdate(TimeSpan.Zero, priority);
+        Scheduler.ScheduleUpdate(TimeSpan.FromMilliseconds(50), priority);
     }
 
     /// <summary>
@@ -110,9 +110,9 @@ public class DisplayCore
     public T? GetElement<T>(IElemReference<T> reference)
         where T : Element
     {
-        if (referencedElements.TryGetValue(reference, out Element value) && value is T casted)
+        if (referencedElements.TryGetValue(reference, out Element value))
         {
-            return casted;
+            return value as T;
         }
         else
         {
@@ -171,7 +171,7 @@ public class DisplayCore
     /// <returns>The text that is combined to become a single hint.</returns>
     public string GetText()
     {
-        return ElemCombiner.Combine(GetAllElements());
+        return ElemCombiner.Combine(this, GetAllElements());
     }
 
     /// <summary>
@@ -179,9 +179,11 @@ public class DisplayCore
     /// </summary>
     internal void InternalUpdate()
     {
-        string text = ElemCombiner.Combine(GetAllElements());
+        string text = ElemCombiner.Combine(this, GetAllElements());
+
         UnityAlternative.Provider.ShowHint(Hub, text);
-        UnityAlternative.Provider.LogDebug($"Updating display for {Hub.name}");
+        UnityAlternative.Provider.LogDebug($"Updating display for {Hub?.name}");
+
         Events.Events.OnDisplayUpdated(new(this));
     }
 
