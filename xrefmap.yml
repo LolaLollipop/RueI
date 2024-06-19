@@ -542,6 +542,19 @@ references:
   fullName.vb: RueI.Displays.DisplayCore.GetReference(Of T)()
   nameWithType: DisplayCore.GetReference<T>()
   nameWithType.vb: DisplayCore.GetReference(Of T)()
+- uid: RueI.Displays.DisplayCore.GetText
+  name: GetText()
+  href: api/RueI.Displays.DisplayCore.html#RueI_Displays_DisplayCore_GetText
+  commentId: M:RueI.Displays.DisplayCore.GetText
+  fullName: RueI.Displays.DisplayCore.GetText()
+  nameWithType: DisplayCore.GetText()
+- uid: RueI.Displays.DisplayCore.GetText*
+  name: GetText
+  href: api/RueI.Displays.DisplayCore.html#RueI_Displays_DisplayCore_GetText_
+  commentId: Overload:RueI.Displays.DisplayCore.GetText
+  isSpec: "True"
+  fullName: RueI.Displays.DisplayCore.GetText
+  nameWithType: DisplayCore.GetText
 - uid: RueI.Displays.DisplayCore.Hub
   name: Hub
   href: api/RueI.Displays.DisplayCore.html#RueI_Displays_DisplayCore_Hub
@@ -622,15 +635,15 @@ references:
   isSpec: "True"
   fullName: RueI.Displays.ElemCombiner.CalculateOffset
   nameWithType: ElemCombiner.CalculateOffset
-- uid: RueI.Displays.ElemCombiner.Combine(System.Collections.Generic.IEnumerable{RueI.Elements.Element})
-  name: Combine(IEnumerable<Element>)
-  href: api/RueI.Displays.ElemCombiner.html#RueI_Displays_ElemCombiner_Combine_System_Collections_Generic_IEnumerable_RueI_Elements_Element__
-  commentId: M:RueI.Displays.ElemCombiner.Combine(System.Collections.Generic.IEnumerable{RueI.Elements.Element})
-  name.vb: Combine(IEnumerable(Of Element))
-  fullName: RueI.Displays.ElemCombiner.Combine(System.Collections.Generic.IEnumerable<RueI.Elements.Element>)
-  fullName.vb: RueI.Displays.ElemCombiner.Combine(System.Collections.Generic.IEnumerable(Of RueI.Elements.Element))
-  nameWithType: ElemCombiner.Combine(IEnumerable<Element>)
-  nameWithType.vb: ElemCombiner.Combine(IEnumerable(Of Element))
+- uid: RueI.Displays.ElemCombiner.Combine(RueI.Displays.DisplayCore,System.Collections.Generic.IEnumerable{RueI.Elements.Element})
+  name: Combine(DisplayCore, IEnumerable<Element>)
+  href: api/RueI.Displays.ElemCombiner.html#RueI_Displays_ElemCombiner_Combine_RueI_Displays_DisplayCore_System_Collections_Generic_IEnumerable_RueI_Elements_Element__
+  commentId: M:RueI.Displays.ElemCombiner.Combine(RueI.Displays.DisplayCore,System.Collections.Generic.IEnumerable{RueI.Elements.Element})
+  name.vb: Combine(DisplayCore, IEnumerable(Of Element))
+  fullName: RueI.Displays.ElemCombiner.Combine(RueI.Displays.DisplayCore, System.Collections.Generic.IEnumerable<RueI.Elements.Element>)
+  fullName.vb: RueI.Displays.ElemCombiner.Combine(RueI.Displays.DisplayCore, System.Collections.Generic.IEnumerable(Of RueI.Elements.Element))
+  nameWithType: ElemCombiner.Combine(DisplayCore, IEnumerable<Element>)
+  nameWithType.vb: ElemCombiner.Combine(DisplayCore, IEnumerable(Of Element))
 - uid: RueI.Displays.ElemCombiner.Combine*
   name: Combine
   href: api/RueI.Displays.ElemCombiner.html#RueI_Displays_ElemCombiner_Combine_
@@ -678,12 +691,18 @@ references:
   commentId: T:RueI.Displays.Roles
   fullName: RueI.Displays.Roles
   nameWithType: Roles
-- uid: RueI.Displays.Roles.AlphaFlamingo
-  name: AlphaFlamingo
-  href: api/RueI.Displays.Roles.html#RueI_Displays_Roles_AlphaFlamingo
-  commentId: F:RueI.Displays.Roles.AlphaFlamingo
-  fullName: RueI.Displays.Roles.AlphaFlamingo
-  nameWithType: Roles.AlphaFlamingo
+- uid: RueI.Displays.Roles.Alive
+  name: Alive
+  href: api/RueI.Displays.Roles.html#RueI_Displays_Roles_Alive
+  commentId: F:RueI.Displays.Roles.Alive
+  fullName: RueI.Displays.Roles.Alive
+  nameWithType: Roles.Alive
+- uid: RueI.Displays.Roles.All
+  name: All
+  href: api/RueI.Displays.Roles.html#RueI_Displays_Roles_All
+  commentId: F:RueI.Displays.Roles.All
+  fullName: RueI.Displays.Roles.All
+  nameWithType: Roles.All
 - uid: RueI.Displays.Roles.ChaosConscript
   name: ChaosConscript
   href: api/RueI.Displays.Roles.html#RueI_Displays_Roles_ChaosConscript
@@ -732,6 +751,12 @@ references:
   commentId: F:RueI.Displays.Roles.CustomRole
   fullName: RueI.Displays.Roles.CustomRole
   nameWithType: Roles.CustomRole
+- uid: RueI.Displays.Roles.Dead
+  name: Dead
+  href: api/RueI.Displays.Roles.html#RueI_Displays_Roles_Dead
+  commentId: F:RueI.Displays.Roles.Dead
+  fullName: RueI.Displays.Roles.Dead
+  nameWithType: Roles.Dead
 - uid: RueI.Displays.Roles.FacilityGuard
   name: FacilityGuard
   href: api/RueI.Displays.Roles.html#RueI_Displays_Roles_FacilityGuard
@@ -744,18 +769,6 @@ references:
   commentId: F:RueI.Displays.Roles.Filmmaker
   fullName: RueI.Displays.Roles.Filmmaker
   nameWithType: Roles.Filmmaker
-- uid: RueI.Displays.Roles.Flamingo
-  name: Flamingo
-  href: api/RueI.Displays.Roles.html#RueI_Displays_Roles_Flamingo
-  commentId: F:RueI.Displays.Roles.Flamingo
-  fullName: RueI.Displays.Roles.Flamingo
-  nameWithType: Roles.Flamingo
-- uid: RueI.Displays.Roles.FlamingoSide
-  name: FlamingoSide
-  href: api/RueI.Displays.Roles.html#RueI_Displays_Roles_FlamingoSide
-  commentId: F:RueI.Displays.Roles.FlamingoSide
-  fullName: RueI.Displays.Roles.FlamingoSide
-  nameWithType: Roles.FlamingoSide
 - uid: RueI.Displays.Roles.HumanRoles
   name: HumanRoles
   href: api/RueI.Displays.Roles.html#RueI_Displays_Roles_HumanRoles
@@ -882,18 +895,105 @@ references:
   commentId: F:RueI.Displays.Roles.Tutorial
   fullName: RueI.Displays.Roles.Tutorial
   nameWithType: Roles.Tutorial
-- uid: RueI.Displays.Roles.ZombieFlamingo
-  name: ZombieFlamingo
-  href: api/RueI.Displays.Roles.html#RueI_Displays_Roles_ZombieFlamingo
-  commentId: F:RueI.Displays.Roles.ZombieFlamingo
-  fullName: RueI.Displays.Roles.ZombieFlamingo
-  nameWithType: Roles.ZombieFlamingo
 - uid: RueI.Displays.Scheduling
   name: RueI.Displays.Scheduling
   href: api/RueI.Displays.Scheduling.html
   commentId: N:RueI.Displays.Scheduling
   fullName: RueI.Displays.Scheduling
   nameWithType: RueI.Displays.Scheduling
+- uid: RueI.Displays.Scheduling.Cooldown
+  name: Cooldown
+  href: api/RueI.Displays.Scheduling.Cooldown.html
+  commentId: T:RueI.Displays.Scheduling.Cooldown
+  fullName: RueI.Displays.Scheduling.Cooldown
+  nameWithType: Cooldown
+- uid: RueI.Displays.Scheduling.Cooldown.Active
+  name: Active
+  href: api/RueI.Displays.Scheduling.Cooldown.html#RueI_Displays_Scheduling_Cooldown_Active
+  commentId: P:RueI.Displays.Scheduling.Cooldown.Active
+  fullName: RueI.Displays.Scheduling.Cooldown.Active
+  nameWithType: Cooldown.Active
+- uid: RueI.Displays.Scheduling.Cooldown.Active*
+  name: Active
+  href: api/RueI.Displays.Scheduling.Cooldown.html#RueI_Displays_Scheduling_Cooldown_Active_
+  commentId: Overload:RueI.Displays.Scheduling.Cooldown.Active
+  isSpec: "True"
+  fullName: RueI.Displays.Scheduling.Cooldown.Active
+  nameWithType: Cooldown.Active
+- uid: RueI.Displays.Scheduling.Cooldown.Length
+  name: Length
+  href: api/RueI.Displays.Scheduling.Cooldown.html#RueI_Displays_Scheduling_Cooldown_Length
+  commentId: P:RueI.Displays.Scheduling.Cooldown.Length
+  fullName: RueI.Displays.Scheduling.Cooldown.Length
+  nameWithType: Cooldown.Length
+- uid: RueI.Displays.Scheduling.Cooldown.Length*
+  name: Length
+  href: api/RueI.Displays.Scheduling.Cooldown.html#RueI_Displays_Scheduling_Cooldown_Length_
+  commentId: Overload:RueI.Displays.Scheduling.Cooldown.Length
+  isSpec: "True"
+  fullName: RueI.Displays.Scheduling.Cooldown.Length
+  nameWithType: Cooldown.Length
+- uid: RueI.Displays.Scheduling.Cooldown.Pause
+  name: Pause()
+  href: api/RueI.Displays.Scheduling.Cooldown.html#RueI_Displays_Scheduling_Cooldown_Pause
+  commentId: M:RueI.Displays.Scheduling.Cooldown.Pause
+  fullName: RueI.Displays.Scheduling.Cooldown.Pause()
+  nameWithType: Cooldown.Pause()
+- uid: RueI.Displays.Scheduling.Cooldown.Pause*
+  name: Pause
+  href: api/RueI.Displays.Scheduling.Cooldown.html#RueI_Displays_Scheduling_Cooldown_Pause_
+  commentId: Overload:RueI.Displays.Scheduling.Cooldown.Pause
+  isSpec: "True"
+  fullName: RueI.Displays.Scheduling.Cooldown.Pause
+  nameWithType: Cooldown.Pause
+- uid: RueI.Displays.Scheduling.Cooldown.Resume
+  name: Resume()
+  href: api/RueI.Displays.Scheduling.Cooldown.html#RueI_Displays_Scheduling_Cooldown_Resume
+  commentId: M:RueI.Displays.Scheduling.Cooldown.Resume
+  fullName: RueI.Displays.Scheduling.Cooldown.Resume()
+  nameWithType: Cooldown.Resume()
+- uid: RueI.Displays.Scheduling.Cooldown.Resume*
+  name: Resume
+  href: api/RueI.Displays.Scheduling.Cooldown.html#RueI_Displays_Scheduling_Cooldown_Resume_
+  commentId: Overload:RueI.Displays.Scheduling.Cooldown.Resume
+  isSpec: "True"
+  fullName: RueI.Displays.Scheduling.Cooldown.Resume
+  nameWithType: Cooldown.Resume
+- uid: RueI.Displays.Scheduling.Cooldown.Start(System.Single)
+  name: Start(float)
+  href: api/RueI.Displays.Scheduling.Cooldown.html#RueI_Displays_Scheduling_Cooldown_Start_System_Single_
+  commentId: M:RueI.Displays.Scheduling.Cooldown.Start(System.Single)
+  name.vb: Start(Single)
+  fullName: RueI.Displays.Scheduling.Cooldown.Start(float)
+  fullName.vb: RueI.Displays.Scheduling.Cooldown.Start(Single)
+  nameWithType: Cooldown.Start(float)
+  nameWithType.vb: Cooldown.Start(Single)
+- uid: RueI.Displays.Scheduling.Cooldown.Start(System.TimeSpan)
+  name: Start(TimeSpan)
+  href: api/RueI.Displays.Scheduling.Cooldown.html#RueI_Displays_Scheduling_Cooldown_Start_System_TimeSpan_
+  commentId: M:RueI.Displays.Scheduling.Cooldown.Start(System.TimeSpan)
+  fullName: RueI.Displays.Scheduling.Cooldown.Start(System.TimeSpan)
+  nameWithType: Cooldown.Start(TimeSpan)
+- uid: RueI.Displays.Scheduling.Cooldown.Start*
+  name: Start
+  href: api/RueI.Displays.Scheduling.Cooldown.html#RueI_Displays_Scheduling_Cooldown_Start_
+  commentId: Overload:RueI.Displays.Scheduling.Cooldown.Start
+  isSpec: "True"
+  fullName: RueI.Displays.Scheduling.Cooldown.Start
+  nameWithType: Cooldown.Start
+- uid: RueI.Displays.Scheduling.Cooldown.TimeLeft
+  name: TimeLeft
+  href: api/RueI.Displays.Scheduling.Cooldown.html#RueI_Displays_Scheduling_Cooldown_TimeLeft
+  commentId: P:RueI.Displays.Scheduling.Cooldown.TimeLeft
+  fullName: RueI.Displays.Scheduling.Cooldown.TimeLeft
+  nameWithType: Cooldown.TimeLeft
+- uid: RueI.Displays.Scheduling.Cooldown.TimeLeft*
+  name: TimeLeft
+  href: api/RueI.Displays.Scheduling.Cooldown.html#RueI_Displays_Scheduling_Cooldown_TimeLeft_
+  commentId: Overload:RueI.Displays.Scheduling.Cooldown.TimeLeft
+  isSpec: "True"
+  fullName: RueI.Displays.Scheduling.Cooldown.TimeLeft
+  nameWithType: Cooldown.TimeLeft
 - uid: RueI.Displays.Scheduling.JobToken
   name: JobToken
   href: api/RueI.Displays.Scheduling.JobToken.html
@@ -1076,6 +1176,22 @@ references:
   isSpec: "True"
   fullName: RueI.Displays.Scheduling.Scheduler.KillJob
   nameWithType: Scheduler.KillJob
+- uid: RueI.Displays.Scheduling.Scheduler.ReplaceJob(System.TimeSpan,System.Action,RueI.Displays.Scheduling.JobToken,System.Int32)
+  name: ReplaceJob(TimeSpan, Action, JobToken, int)
+  href: api/RueI.Displays.Scheduling.Scheduler.html#RueI_Displays_Scheduling_Scheduler_ReplaceJob_System_TimeSpan_System_Action_RueI_Displays_Scheduling_JobToken_System_Int32_
+  commentId: M:RueI.Displays.Scheduling.Scheduler.ReplaceJob(System.TimeSpan,System.Action,RueI.Displays.Scheduling.JobToken,System.Int32)
+  name.vb: ReplaceJob(TimeSpan, Action, JobToken, Integer)
+  fullName: RueI.Displays.Scheduling.Scheduler.ReplaceJob(System.TimeSpan, System.Action, RueI.Displays.Scheduling.JobToken, int)
+  fullName.vb: RueI.Displays.Scheduling.Scheduler.ReplaceJob(System.TimeSpan, System.Action, RueI.Displays.Scheduling.JobToken, Integer)
+  nameWithType: Scheduler.ReplaceJob(TimeSpan, Action, JobToken, int)
+  nameWithType.vb: Scheduler.ReplaceJob(TimeSpan, Action, JobToken, Integer)
+- uid: RueI.Displays.Scheduling.Scheduler.ReplaceJob*
+  name: ReplaceJob
+  href: api/RueI.Displays.Scheduling.Scheduler.html#RueI_Displays_Scheduling_Scheduler_ReplaceJob_
+  commentId: Overload:RueI.Displays.Scheduling.Scheduler.ReplaceJob
+  isSpec: "True"
+  fullName: RueI.Displays.Scheduling.Scheduler.ReplaceJob
+  nameWithType: Scheduler.ReplaceJob
 - uid: RueI.Displays.Scheduling.Scheduler.Schedule(RueI.Displays.Scheduling.ScheduledJob)
   name: Schedule(ScheduledJob)
   href: api/RueI.Displays.Scheduling.Scheduler.html#RueI_Displays_Scheduling_Scheduler_Schedule_RueI_Displays_Scheduling_ScheduledJob_
@@ -1385,12 +1501,12 @@ references:
   isSpec: "True"
   fullName: RueI.Elements.DynamicElement.ContentGetter
   nameWithType: DynamicElement.ContentGetter
-- uid: RueI.Elements.DynamicElement.GetParsedData
-  name: GetParsedData()
-  href: api/RueI.Elements.DynamicElement.html#RueI_Elements_DynamicElement_GetParsedData
-  commentId: M:RueI.Elements.DynamicElement.GetParsedData
-  fullName: RueI.Elements.DynamicElement.GetParsedData()
-  nameWithType: DynamicElement.GetParsedData()
+- uid: RueI.Elements.DynamicElement.GetParsedData(RueI.Displays.DisplayCore)
+  name: GetParsedData(DisplayCore)
+  href: api/RueI.Elements.DynamicElement.html#RueI_Elements_DynamicElement_GetParsedData_RueI_Displays_DisplayCore_
+  commentId: M:RueI.Elements.DynamicElement.GetParsedData(RueI.Displays.DisplayCore)
+  fullName: RueI.Elements.DynamicElement.GetParsedData(RueI.Displays.DisplayCore)
+  nameWithType: DynamicElement.GetParsedData(DisplayCore)
 - uid: RueI.Elements.DynamicElement.GetParsedData*
   name: GetParsedData
   href: api/RueI.Elements.DynamicElement.html#RueI_Elements_DynamicElement_GetParsedData_
@@ -1398,6 +1514,19 @@ references:
   isSpec: "True"
   fullName: RueI.Elements.DynamicElement.GetParsedData
   nameWithType: DynamicElement.GetParsedData
+- uid: RueI.Elements.DynamicElement.Options
+  name: Options
+  href: api/RueI.Elements.DynamicElement.html#RueI_Elements_DynamicElement_Options
+  commentId: P:RueI.Elements.DynamicElement.Options
+  fullName: RueI.Elements.DynamicElement.Options
+  nameWithType: DynamicElement.Options
+- uid: RueI.Elements.DynamicElement.Options*
+  name: Options
+  href: api/RueI.Elements.DynamicElement.html#RueI_Elements_DynamicElement_Options_
+  commentId: Overload:RueI.Elements.DynamicElement.Options
+  isSpec: "True"
+  fullName: RueI.Elements.DynamicElement.Options
+  nameWithType: DynamicElement.Options
 - uid: RueI.Elements.Element
   name: Element
   href: api/RueI.Elements.Element.html
@@ -1436,12 +1565,12 @@ references:
   isSpec: "True"
   fullName: RueI.Elements.Element.Enabled
   nameWithType: Element.Enabled
-- uid: RueI.Elements.Element.GetParsedData
-  name: GetParsedData()
-  href: api/RueI.Elements.Element.html#RueI_Elements_Element_GetParsedData
-  commentId: M:RueI.Elements.Element.GetParsedData
-  fullName: RueI.Elements.Element.GetParsedData()
-  nameWithType: Element.GetParsedData()
+- uid: RueI.Elements.Element.GetParsedData(RueI.Displays.DisplayCore)
+  name: GetParsedData(DisplayCore)
+  href: api/RueI.Elements.Element.html#RueI_Elements_Element_GetParsedData_RueI_Displays_DisplayCore_
+  commentId: M:RueI.Elements.Element.GetParsedData(RueI.Displays.DisplayCore)
+  fullName: RueI.Elements.Element.GetParsedData(RueI.Displays.DisplayCore)
+  nameWithType: Element.GetParsedData(DisplayCore)
 - uid: RueI.Elements.Element.GetParsedData*
   name: GetParsedData
   href: api/RueI.Elements.Element.html#RueI_Elements_Element_GetParsedData_
@@ -1543,6 +1672,44 @@ references:
   commentId: F:RueI.Elements.Enums.ElementOptions.Vanilla
   fullName: RueI.Elements.Enums.ElementOptions.Vanilla
   nameWithType: ElementOptions.Vanilla
+- uid: RueI.Elements.FixedElement
+  name: FixedElement
+  href: api/RueI.Elements.FixedElement.html
+  commentId: T:RueI.Elements.FixedElement
+  fullName: RueI.Elements.FixedElement
+  nameWithType: FixedElement
+- uid: RueI.Elements.FixedElement.#ctor(System.Single,System.String,RueI.Elements.Enums.ElementOptions,RueI.Parsing.Parser)
+  name: FixedElement(float, string, ElementOptions, Parser?)
+  href: api/RueI.Elements.FixedElement.html#RueI_Elements_FixedElement__ctor_System_Single_System_String_RueI_Elements_Enums_ElementOptions_RueI_Parsing_Parser_
+  commentId: M:RueI.Elements.FixedElement.#ctor(System.Single,System.String,RueI.Elements.Enums.ElementOptions,RueI.Parsing.Parser)
+  name.vb: New(Single, String, ElementOptions, Parser)
+  fullName: RueI.Elements.FixedElement.FixedElement(float, string, RueI.Elements.Enums.ElementOptions, RueI.Parsing.Parser?)
+  fullName.vb: RueI.Elements.FixedElement.New(Single, String, RueI.Elements.Enums.ElementOptions, RueI.Parsing.Parser)
+  nameWithType: FixedElement.FixedElement(float, string, ElementOptions, Parser?)
+  nameWithType.vb: FixedElement.New(Single, String, ElementOptions, Parser)
+- uid: RueI.Elements.FixedElement.#ctor*
+  name: FixedElement
+  href: api/RueI.Elements.FixedElement.html#RueI_Elements_FixedElement__ctor_
+  commentId: Overload:RueI.Elements.FixedElement.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: RueI.Elements.FixedElement.FixedElement
+  fullName.vb: RueI.Elements.FixedElement.New
+  nameWithType: FixedElement.FixedElement
+  nameWithType.vb: FixedElement.New
+- uid: RueI.Elements.FixedElement.GetParsedData(RueI.Displays.DisplayCore)
+  name: GetParsedData(DisplayCore)
+  href: api/RueI.Elements.FixedElement.html#RueI_Elements_FixedElement_GetParsedData_RueI_Displays_DisplayCore_
+  commentId: M:RueI.Elements.FixedElement.GetParsedData(RueI.Displays.DisplayCore)
+  fullName: RueI.Elements.FixedElement.GetParsedData(RueI.Displays.DisplayCore)
+  nameWithType: FixedElement.GetParsedData(DisplayCore)
+- uid: RueI.Elements.FixedElement.GetParsedData*
+  name: GetParsedData
+  href: api/RueI.Elements.FixedElement.html#RueI_Elements_FixedElement_GetParsedData_
+  commentId: Overload:RueI.Elements.FixedElement.GetParsedData
+  isSpec: "True"
+  fullName: RueI.Elements.FixedElement.GetParsedData
+  nameWithType: FixedElement.GetParsedData
 - uid: RueI.Elements.Interfaces
   name: RueI.Elements.Interfaces
   href: api/RueI.Elements.Interfaces.html
@@ -1568,6 +1735,25 @@ references:
   isSpec: "True"
   fullName: RueI.Elements.Interfaces.ISettable.Content
   nameWithType: ISettable.Content
+- uid: RueI.Elements.Interfaces.ISettableOptions
+  name: ISettableOptions
+  href: api/RueI.Elements.Interfaces.ISettableOptions.html
+  commentId: T:RueI.Elements.Interfaces.ISettableOptions
+  fullName: RueI.Elements.Interfaces.ISettableOptions
+  nameWithType: ISettableOptions
+- uid: RueI.Elements.Interfaces.ISettableOptions.Options
+  name: Options
+  href: api/RueI.Elements.Interfaces.ISettableOptions.html#RueI_Elements_Interfaces_ISettableOptions_Options
+  commentId: P:RueI.Elements.Interfaces.ISettableOptions.Options
+  fullName: RueI.Elements.Interfaces.ISettableOptions.Options
+  nameWithType: ISettableOptions.Options
+- uid: RueI.Elements.Interfaces.ISettableOptions.Options*
+  name: Options
+  href: api/RueI.Elements.Interfaces.ISettableOptions.html#RueI_Elements_Interfaces_ISettableOptions_Options_
+  commentId: Overload:RueI.Elements.Interfaces.ISettableOptions.Options
+  isSpec: "True"
+  fullName: RueI.Elements.Interfaces.ISettableOptions.Options
+  nameWithType: ISettableOptions.Options
 - uid: RueI.Elements.SetElement
   name: SetElement
   href: api/RueI.Elements.SetElement.html
@@ -1606,12 +1792,12 @@ references:
   isSpec: "True"
   fullName: RueI.Elements.SetElement.Content
   nameWithType: SetElement.Content
-- uid: RueI.Elements.SetElement.GetParsedData
-  name: GetParsedData()
-  href: api/RueI.Elements.SetElement.html#RueI_Elements_SetElement_GetParsedData
-  commentId: M:RueI.Elements.SetElement.GetParsedData
-  fullName: RueI.Elements.SetElement.GetParsedData()
-  nameWithType: SetElement.GetParsedData()
+- uid: RueI.Elements.SetElement.GetParsedData(RueI.Displays.DisplayCore)
+  name: GetParsedData(DisplayCore)
+  href: api/RueI.Elements.SetElement.html#RueI_Elements_SetElement_GetParsedData_RueI_Displays_DisplayCore_
+  commentId: M:RueI.Elements.SetElement.GetParsedData(RueI.Displays.DisplayCore)
+  fullName: RueI.Elements.SetElement.GetParsedData(RueI.Displays.DisplayCore)
+  nameWithType: SetElement.GetParsedData(DisplayCore)
 - uid: RueI.Elements.SetElement.GetParsedData*
   name: GetParsedData
   href: api/RueI.Elements.SetElement.html#RueI_Elements_SetElement_GetParsedData_
@@ -1619,6 +1805,19 @@ references:
   isSpec: "True"
   fullName: RueI.Elements.SetElement.GetParsedData
   nameWithType: SetElement.GetParsedData
+- uid: RueI.Elements.SetElement.Options
+  name: Options
+  href: api/RueI.Elements.SetElement.html#RueI_Elements_SetElement_Options
+  commentId: P:RueI.Elements.SetElement.Options
+  fullName: RueI.Elements.SetElement.Options
+  nameWithType: SetElement.Options
+- uid: RueI.Elements.SetElement.Options*
+  name: Options
+  href: api/RueI.Elements.SetElement.html#RueI_Elements_SetElement_Options_
+  commentId: Overload:RueI.Elements.SetElement.Options
+  isSpec: "True"
+  fullName: RueI.Elements.SetElement.Options
+  nameWithType: SetElement.Options
 - uid: RueI.Events
   name: RueI.Events
   href: api/RueI.Events.html
@@ -2702,15 +2901,15 @@ references:
   commentId: T:RueI.NonUnityProvider
   fullName: RueI.NonUnityProvider
   nameWithType: NonUnityProvider
-- uid: RueI.NonUnityProvider.Log(System.String)
-  name: Log(string)
-  href: api/RueI.NonUnityProvider.html#RueI_NonUnityProvider_Log_System_String_
-  commentId: M:RueI.NonUnityProvider.Log(System.String)
-  name.vb: Log(String)
-  fullName: RueI.NonUnityProvider.Log(string)
-  fullName.vb: RueI.NonUnityProvider.Log(String)
-  nameWithType: NonUnityProvider.Log(string)
-  nameWithType.vb: NonUnityProvider.Log(String)
+- uid: RueI.NonUnityProvider.Log(System.String,System.ConsoleColor)
+  name: Log(string, ConsoleColor)
+  href: api/RueI.NonUnityProvider.html#RueI_NonUnityProvider_Log_System_String_System_ConsoleColor_
+  commentId: M:RueI.NonUnityProvider.Log(System.String,System.ConsoleColor)
+  name.vb: Log(String, ConsoleColor)
+  fullName: RueI.NonUnityProvider.Log(string, System.ConsoleColor)
+  fullName.vb: RueI.NonUnityProvider.Log(String, System.ConsoleColor)
+  nameWithType: NonUnityProvider.Log(string, ConsoleColor)
+  nameWithType.vb: NonUnityProvider.Log(String, ConsoleColor)
 - uid: RueI.NonUnityProvider.Log*
   name: Log
   href: api/RueI.NonUnityProvider.html#RueI_NonUnityProvider_Log_
@@ -4109,19 +4308,32 @@ references:
   commentId: T:RueI.Parsing.Tags.ConcreteTags.CloseAlphaTag
   fullName: RueI.Parsing.Tags.ConcreteTags.CloseAlphaTag
   nameWithType: CloseAlphaTag
-- uid: RueI.Parsing.Tags.ConcreteTags.CloseAlphaTag.Name
-  name: Name
-  href: api/RueI.Parsing.Tags.ConcreteTags.CloseAlphaTag.html#RueI_Parsing_Tags_ConcreteTags_CloseAlphaTag_Name
-  commentId: P:RueI.Parsing.Tags.ConcreteTags.CloseAlphaTag.Name
-  fullName: RueI.Parsing.Tags.ConcreteTags.CloseAlphaTag.Name
-  nameWithType: CloseAlphaTag.Name
-- uid: RueI.Parsing.Tags.ConcreteTags.CloseAlphaTag.Name*
-  name: Name
-  href: api/RueI.Parsing.Tags.ConcreteTags.CloseAlphaTag.html#RueI_Parsing_Tags_ConcreteTags_CloseAlphaTag_Name_
-  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.CloseAlphaTag.Name
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseAlphaTag.HandleTag(RueI.Parsing.ParserContext)
+  name: HandleTag(ParserContext)
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseAlphaTag.html#RueI_Parsing_Tags_ConcreteTags_CloseAlphaTag_HandleTag_RueI_Parsing_ParserContext_
+  commentId: M:RueI.Parsing.Tags.ConcreteTags.CloseAlphaTag.HandleTag(RueI.Parsing.ParserContext)
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseAlphaTag.HandleTag(RueI.Parsing.ParserContext)
+  nameWithType: CloseAlphaTag.HandleTag(ParserContext)
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseAlphaTag.HandleTag*
+  name: HandleTag
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseAlphaTag.html#RueI_Parsing_Tags_ConcreteTags_CloseAlphaTag_HandleTag_
+  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.CloseAlphaTag.HandleTag
   isSpec: "True"
-  fullName: RueI.Parsing.Tags.ConcreteTags.CloseAlphaTag.Name
-  nameWithType: CloseAlphaTag.Name
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseAlphaTag.HandleTag
+  nameWithType: CloseAlphaTag.HandleTag
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseAlphaTag.Names
+  name: Names
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseAlphaTag.html#RueI_Parsing_Tags_ConcreteTags_CloseAlphaTag_Names
+  commentId: P:RueI.Parsing.Tags.ConcreteTags.CloseAlphaTag.Names
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseAlphaTag.Names
+  nameWithType: CloseAlphaTag.Names
+- uid: RueI.Parsing.Tags.ConcreteTags.CloseAlphaTag.Names*
+  name: Names
+  href: api/RueI.Parsing.Tags.ConcreteTags.CloseAlphaTag.html#RueI_Parsing_Tags_ConcreteTags_CloseAlphaTag_Names_
+  commentId: Overload:RueI.Parsing.Tags.ConcreteTags.CloseAlphaTag.Names
+  isSpec: "True"
+  fullName: RueI.Parsing.Tags.ConcreteTags.CloseAlphaTag.Names
+  nameWithType: CloseAlphaTag.Names
 - uid: RueI.Parsing.Tags.ConcreteTags.CloseBoldTag
   name: CloseBoldTag
   href: api/RueI.Parsing.Tags.ConcreteTags.CloseBoldTag.html
@@ -6010,15 +6222,15 @@ references:
   isSpec: "True"
   fullName: RueI.UnityAlternative.IAsyncOperation.IsRunning
   nameWithType: UnityAlternative.IAsyncOperation.IsRunning
-- uid: RueI.UnityAlternative.Log(System.String)
-  name: Log(string)
-  href: api/RueI.UnityAlternative.html#RueI_UnityAlternative_Log_System_String_
-  commentId: M:RueI.UnityAlternative.Log(System.String)
-  name.vb: Log(String)
-  fullName: RueI.UnityAlternative.Log(string)
-  fullName.vb: RueI.UnityAlternative.Log(String)
-  nameWithType: UnityAlternative.Log(string)
-  nameWithType.vb: UnityAlternative.Log(String)
+- uid: RueI.UnityAlternative.Log(System.String,System.ConsoleColor)
+  name: Log(string, ConsoleColor)
+  href: api/RueI.UnityAlternative.html#RueI_UnityAlternative_Log_System_String_System_ConsoleColor_
+  commentId: M:RueI.UnityAlternative.Log(System.String,System.ConsoleColor)
+  name.vb: Log(String, ConsoleColor)
+  fullName: RueI.UnityAlternative.Log(string, System.ConsoleColor)
+  fullName.vb: RueI.UnityAlternative.Log(String, System.ConsoleColor)
+  nameWithType: UnityAlternative.Log(string, ConsoleColor)
+  nameWithType.vb: UnityAlternative.Log(String, ConsoleColor)
 - uid: RueI.UnityAlternative.Log*
   name: Log
   href: api/RueI.UnityAlternative.html#RueI_UnityAlternative_Log_
@@ -6103,15 +6315,15 @@ references:
   commentId: T:RueI.UnityProvider
   fullName: RueI.UnityProvider
   nameWithType: UnityProvider
-- uid: RueI.UnityProvider.Log(System.String)
-  name: Log(string)
-  href: api/RueI.UnityProvider.html#RueI_UnityProvider_Log_System_String_
-  commentId: M:RueI.UnityProvider.Log(System.String)
-  name.vb: Log(String)
-  fullName: RueI.UnityProvider.Log(string)
-  fullName.vb: RueI.UnityProvider.Log(String)
-  nameWithType: UnityProvider.Log(string)
-  nameWithType.vb: UnityProvider.Log(String)
+- uid: RueI.UnityProvider.Log(System.String,System.ConsoleColor)
+  name: Log(string, ConsoleColor)
+  href: api/RueI.UnityProvider.html#RueI_UnityProvider_Log_System_String_System_ConsoleColor_
+  commentId: M:RueI.UnityProvider.Log(System.String,System.ConsoleColor)
+  name.vb: Log(String, ConsoleColor)
+  fullName: RueI.UnityProvider.Log(string, System.ConsoleColor)
+  fullName.vb: RueI.UnityProvider.Log(String, System.ConsoleColor)
+  nameWithType: UnityProvider.Log(string, ConsoleColor)
+  nameWithType.vb: UnityProvider.Log(String, ConsoleColor)
 - uid: RueI.UnityProvider.Log*
   name: Log
   href: api/RueI.UnityProvider.html#RueI_UnityProvider_Log_
@@ -6241,503 +6453,3 @@ references:
   isSpec: "True"
   fullName: RueI.UnityProvider.PerformAsync
   nameWithType: UnityProvider.PerformAsync
-- uid: eMEC
-  name: eMEC
-  href: api/eMEC.html
-  commentId: N:eMEC
-  fullName: eMEC
-  nameWithType: eMEC
-- uid: eMEC.Cooldown
-  name: Cooldown
-  href: api/eMEC.Cooldown.html
-  commentId: T:eMEC.Cooldown
-  fullName: eMEC.Cooldown
-  nameWithType: Cooldown
-- uid: eMEC.Cooldown.Active
-  name: Active
-  href: api/eMEC.Cooldown.html#eMEC_Cooldown_Active
-  commentId: P:eMEC.Cooldown.Active
-  fullName: eMEC.Cooldown.Active
-  nameWithType: Cooldown.Active
-- uid: eMEC.Cooldown.Active*
-  name: Active
-  href: api/eMEC.Cooldown.html#eMEC_Cooldown_Active_
-  commentId: Overload:eMEC.Cooldown.Active
-  isSpec: "True"
-  fullName: eMEC.Cooldown.Active
-  nameWithType: Cooldown.Active
-- uid: eMEC.Cooldown.Length
-  name: Length
-  href: api/eMEC.Cooldown.html#eMEC_Cooldown_Length
-  commentId: P:eMEC.Cooldown.Length
-  fullName: eMEC.Cooldown.Length
-  nameWithType: Cooldown.Length
-- uid: eMEC.Cooldown.Length*
-  name: Length
-  href: api/eMEC.Cooldown.html#eMEC_Cooldown_Length_
-  commentId: Overload:eMEC.Cooldown.Length
-  isSpec: "True"
-  fullName: eMEC.Cooldown.Length
-  nameWithType: Cooldown.Length
-- uid: eMEC.Cooldown.Pause
-  name: Pause()
-  href: api/eMEC.Cooldown.html#eMEC_Cooldown_Pause
-  commentId: M:eMEC.Cooldown.Pause
-  fullName: eMEC.Cooldown.Pause()
-  nameWithType: Cooldown.Pause()
-- uid: eMEC.Cooldown.Pause*
-  name: Pause
-  href: api/eMEC.Cooldown.html#eMEC_Cooldown_Pause_
-  commentId: Overload:eMEC.Cooldown.Pause
-  isSpec: "True"
-  fullName: eMEC.Cooldown.Pause
-  nameWithType: Cooldown.Pause
-- uid: eMEC.Cooldown.Resume
-  name: Resume()
-  href: api/eMEC.Cooldown.html#eMEC_Cooldown_Resume
-  commentId: M:eMEC.Cooldown.Resume
-  fullName: eMEC.Cooldown.Resume()
-  nameWithType: Cooldown.Resume()
-- uid: eMEC.Cooldown.Resume*
-  name: Resume
-  href: api/eMEC.Cooldown.html#eMEC_Cooldown_Resume_
-  commentId: Overload:eMEC.Cooldown.Resume
-  isSpec: "True"
-  fullName: eMEC.Cooldown.Resume
-  nameWithType: Cooldown.Resume
-- uid: eMEC.Cooldown.Start(System.Single)
-  name: Start(float)
-  href: api/eMEC.Cooldown.html#eMEC_Cooldown_Start_System_Single_
-  commentId: M:eMEC.Cooldown.Start(System.Single)
-  name.vb: Start(Single)
-  fullName: eMEC.Cooldown.Start(float)
-  fullName.vb: eMEC.Cooldown.Start(Single)
-  nameWithType: Cooldown.Start(float)
-  nameWithType.vb: Cooldown.Start(Single)
-- uid: eMEC.Cooldown.Start(System.TimeSpan)
-  name: Start(TimeSpan)
-  href: api/eMEC.Cooldown.html#eMEC_Cooldown_Start_System_TimeSpan_
-  commentId: M:eMEC.Cooldown.Start(System.TimeSpan)
-  fullName: eMEC.Cooldown.Start(System.TimeSpan)
-  nameWithType: Cooldown.Start(TimeSpan)
-- uid: eMEC.Cooldown.Start*
-  name: Start
-  href: api/eMEC.Cooldown.html#eMEC_Cooldown_Start_
-  commentId: Overload:eMEC.Cooldown.Start
-  isSpec: "True"
-  fullName: eMEC.Cooldown.Start
-  nameWithType: Cooldown.Start
-- uid: eMEC.Cooldown.TimeLeft
-  name: TimeLeft
-  href: api/eMEC.Cooldown.html#eMEC_Cooldown_TimeLeft
-  commentId: P:eMEC.Cooldown.TimeLeft
-  fullName: eMEC.Cooldown.TimeLeft
-  nameWithType: Cooldown.TimeLeft
-- uid: eMEC.Cooldown.TimeLeft*
-  name: TimeLeft
-  href: api/eMEC.Cooldown.html#eMEC_Cooldown_TimeLeft_
-  commentId: Overload:eMEC.Cooldown.TimeLeft
-  isSpec: "True"
-  fullName: eMEC.Cooldown.TimeLeft
-  nameWithType: Cooldown.TimeLeft
-- uid: eMEC.ITaskable
-  name: ITaskable
-  href: api/eMEC.ITaskable.html
-  commentId: T:eMEC.ITaskable
-  fullName: eMEC.ITaskable
-  nameWithType: ITaskable
-- uid: eMEC.ITaskable.CleanUp
-  name: CleanUp()
-  href: api/eMEC.ITaskable.html#eMEC_ITaskable_CleanUp
-  commentId: M:eMEC.ITaskable.CleanUp
-  fullName: eMEC.ITaskable.CleanUp()
-  nameWithType: ITaskable.CleanUp()
-- uid: eMEC.ITaskable.CleanUp*
-  name: CleanUp
-  href: api/eMEC.ITaskable.html#eMEC_ITaskable_CleanUp_
-  commentId: Overload:eMEC.ITaskable.CleanUp
-  isSpec: "True"
-  fullName: eMEC.ITaskable.CleanUp
-  nameWithType: ITaskable.CleanUp
-- uid: eMEC.ITaskable.DescendOrPerform(System.Action{eMEC.TaskBase})
-  name: DescendOrPerform(Action<TaskBase>)
-  href: api/eMEC.ITaskable.html#eMEC_ITaskable_DescendOrPerform_System_Action_eMEC_TaskBase__
-  commentId: M:eMEC.ITaskable.DescendOrPerform(System.Action{eMEC.TaskBase})
-  name.vb: DescendOrPerform(Action(Of TaskBase))
-  fullName: eMEC.ITaskable.DescendOrPerform(System.Action<eMEC.TaskBase>)
-  fullName.vb: eMEC.ITaskable.DescendOrPerform(System.Action(Of eMEC.TaskBase))
-  nameWithType: ITaskable.DescendOrPerform(Action<TaskBase>)
-  nameWithType.vb: ITaskable.DescendOrPerform(Action(Of TaskBase))
-- uid: eMEC.ITaskable.DescendOrPerform*
-  name: DescendOrPerform
-  href: api/eMEC.ITaskable.html#eMEC_ITaskable_DescendOrPerform_
-  commentId: Overload:eMEC.ITaskable.DescendOrPerform
-  isSpec: "True"
-  fullName: eMEC.ITaskable.DescendOrPerform
-  nameWithType: ITaskable.DescendOrPerform
-- uid: eMEC.TaskBase
-  name: TaskBase
-  href: api/eMEC.TaskBase.html
-  commentId: T:eMEC.TaskBase
-  fullName: eMEC.TaskBase
-  nameWithType: TaskBase
-- uid: eMEC.TaskBase.#ctor
-  name: TaskBase()
-  href: api/eMEC.TaskBase.html#eMEC_TaskBase__ctor
-  commentId: M:eMEC.TaskBase.#ctor
-  name.vb: New()
-  fullName: eMEC.TaskBase.TaskBase()
-  fullName.vb: eMEC.TaskBase.New()
-  nameWithType: TaskBase.TaskBase()
-  nameWithType.vb: TaskBase.New()
-- uid: eMEC.TaskBase.#ctor(eMEC.TaskPool)
-  name: TaskBase(TaskPool)
-  href: api/eMEC.TaskBase.html#eMEC_TaskBase__ctor_eMEC_TaskPool_
-  commentId: M:eMEC.TaskBase.#ctor(eMEC.TaskPool)
-  name.vb: New(TaskPool)
-  fullName: eMEC.TaskBase.TaskBase(eMEC.TaskPool)
-  fullName.vb: eMEC.TaskBase.New(eMEC.TaskPool)
-  nameWithType: TaskBase.TaskBase(TaskPool)
-  nameWithType.vb: TaskBase.New(TaskPool)
-- uid: eMEC.TaskBase.#ctor*
-  name: TaskBase
-  href: api/eMEC.TaskBase.html#eMEC_TaskBase__ctor_
-  commentId: Overload:eMEC.TaskBase.#ctor
-  isSpec: "True"
-  name.vb: New
-  fullName: eMEC.TaskBase.TaskBase
-  fullName.vb: eMEC.TaskBase.New
-  nameWithType: TaskBase.TaskBase
-  nameWithType.vb: TaskBase.New
-- uid: eMEC.TaskBase.CleanUp
-  name: CleanUp()
-  href: api/eMEC.TaskBase.html#eMEC_TaskBase_CleanUp
-  commentId: M:eMEC.TaskBase.CleanUp
-  fullName: eMEC.TaskBase.CleanUp()
-  nameWithType: TaskBase.CleanUp()
-- uid: eMEC.TaskBase.CleanUp*
-  name: CleanUp
-  href: api/eMEC.TaskBase.html#eMEC_TaskBase_CleanUp_
-  commentId: Overload:eMEC.TaskBase.CleanUp
-  isSpec: "True"
-  fullName: eMEC.TaskBase.CleanUp
-  nameWithType: TaskBase.CleanUp
-- uid: eMEC.TaskBase.DescendOrPerform(System.Action{eMEC.TaskBase})
-  name: DescendOrPerform(Action<TaskBase>)
-  href: api/eMEC.TaskBase.html#eMEC_TaskBase_DescendOrPerform_System_Action_eMEC_TaskBase__
-  commentId: M:eMEC.TaskBase.DescendOrPerform(System.Action{eMEC.TaskBase})
-  name.vb: DescendOrPerform(Action(Of TaskBase))
-  fullName: eMEC.TaskBase.DescendOrPerform(System.Action<eMEC.TaskBase>)
-  fullName.vb: eMEC.TaskBase.DescendOrPerform(System.Action(Of eMEC.TaskBase))
-  nameWithType: TaskBase.DescendOrPerform(Action<TaskBase>)
-  nameWithType.vb: TaskBase.DescendOrPerform(Action(Of TaskBase))
-- uid: eMEC.TaskBase.DescendOrPerform*
-  name: DescendOrPerform
-  href: api/eMEC.TaskBase.html#eMEC_TaskBase_DescendOrPerform_
-  commentId: Overload:eMEC.TaskBase.DescendOrPerform
-  isSpec: "True"
-  fullName: eMEC.TaskBase.DescendOrPerform
-  nameWithType: TaskBase.DescendOrPerform
-- uid: eMEC.TaskBase.End
-  name: End()
-  href: api/eMEC.TaskBase.html#eMEC_TaskBase_End
-  commentId: M:eMEC.TaskBase.End
-  fullName: eMEC.TaskBase.End()
-  nameWithType: TaskBase.End()
-- uid: eMEC.TaskBase.End*
-  name: End
-  href: api/eMEC.TaskBase.html#eMEC_TaskBase_End_
-  commentId: Overload:eMEC.TaskBase.End
-  isSpec: "True"
-  fullName: eMEC.TaskBase.End
-  nameWithType: TaskBase.End
-- uid: eMEC.TaskBase.Finalize
-  name: ~TaskBase()
-  href: api/eMEC.TaskBase.html#eMEC_TaskBase_Finalize
-  commentId: M:eMEC.TaskBase.Finalize
-  name.vb: ''
-  fullName: eMEC.TaskBase.~TaskBase()
-  fullName.vb: ''
-  nameWithType: TaskBase.~TaskBase()
-  nameWithType.vb: ''
-- uid: eMEC.TaskBase.Finalize*
-  name: ~TaskBase
-  href: api/eMEC.TaskBase.html#eMEC_TaskBase_Finalize_
-  commentId: Overload:eMEC.TaskBase.Finalize
-  isSpec: "True"
-  fullName: eMEC.TaskBase.~TaskBase
-  nameWithType: TaskBase.~TaskBase
-- uid: eMEC.TaskBase.IsRunning
-  name: IsRunning
-  href: api/eMEC.TaskBase.html#eMEC_TaskBase_IsRunning
-  commentId: P:eMEC.TaskBase.IsRunning
-  fullName: eMEC.TaskBase.IsRunning
-  nameWithType: TaskBase.IsRunning
-- uid: eMEC.TaskBase.IsRunning*
-  name: IsRunning
-  href: api/eMEC.TaskBase.html#eMEC_TaskBase_IsRunning_
-  commentId: Overload:eMEC.TaskBase.IsRunning
-  isSpec: "True"
-  fullName: eMEC.TaskBase.IsRunning
-  nameWithType: TaskBase.IsRunning
-- uid: eMEC.TaskBase.Operation
-  name: Operation
-  href: api/eMEC.TaskBase.html#eMEC_TaskBase_Operation
-  commentId: P:eMEC.TaskBase.Operation
-  fullName: eMEC.TaskBase.Operation
-  nameWithType: TaskBase.Operation
-- uid: eMEC.TaskBase.Operation*
-  name: Operation
-  href: api/eMEC.TaskBase.html#eMEC_TaskBase_Operation_
-  commentId: Overload:eMEC.TaskBase.Operation
-  isSpec: "True"
-  fullName: eMEC.TaskBase.Operation
-  nameWithType: TaskBase.Operation
-- uid: eMEC.TaskBase.ResetState
-  name: ResetState()
-  href: api/eMEC.TaskBase.html#eMEC_TaskBase_ResetState
-  commentId: M:eMEC.TaskBase.ResetState
-  fullName: eMEC.TaskBase.ResetState()
-  nameWithType: TaskBase.ResetState()
-- uid: eMEC.TaskBase.ResetState*
-  name: ResetState
-  href: api/eMEC.TaskBase.html#eMEC_TaskBase_ResetState_
-  commentId: Overload:eMEC.TaskBase.ResetState
-  isSpec: "True"
-  fullName: eMEC.TaskBase.ResetState
-  nameWithType: TaskBase.ResetState
-- uid: eMEC.TaskPool
-  name: TaskPool
-  href: api/eMEC.TaskPool.html
-  commentId: T:eMEC.TaskPool
-  fullName: eMEC.TaskPool
-  nameWithType: TaskPool
-- uid: eMEC.TaskPool.CleanUp
-  name: CleanUp()
-  href: api/eMEC.TaskPool.html#eMEC_TaskPool_CleanUp
-  commentId: M:eMEC.TaskPool.CleanUp
-  fullName: eMEC.TaskPool.CleanUp()
-  nameWithType: TaskPool.CleanUp()
-- uid: eMEC.TaskPool.CleanUp*
-  name: CleanUp
-  href: api/eMEC.TaskPool.html#eMEC_TaskPool_CleanUp_
-  commentId: Overload:eMEC.TaskPool.CleanUp
-  isSpec: "True"
-  fullName: eMEC.TaskPool.CleanUp
-  nameWithType: TaskPool.CleanUp
-- uid: eMEC.TaskPool.DescendOrPerform(System.Action{eMEC.TaskBase})
-  name: DescendOrPerform(Action<TaskBase>)
-  href: api/eMEC.TaskPool.html#eMEC_TaskPool_DescendOrPerform_System_Action_eMEC_TaskBase__
-  commentId: M:eMEC.TaskPool.DescendOrPerform(System.Action{eMEC.TaskBase})
-  name.vb: DescendOrPerform(Action(Of TaskBase))
-  fullName: eMEC.TaskPool.DescendOrPerform(System.Action<eMEC.TaskBase>)
-  fullName.vb: eMEC.TaskPool.DescendOrPerform(System.Action(Of eMEC.TaskBase))
-  nameWithType: TaskPool.DescendOrPerform(Action<TaskBase>)
-  nameWithType.vb: TaskPool.DescendOrPerform(Action(Of TaskBase))
-- uid: eMEC.TaskPool.DescendOrPerform*
-  name: DescendOrPerform
-  href: api/eMEC.TaskPool.html#eMEC_TaskPool_DescendOrPerform_
-  commentId: Overload:eMEC.TaskPool.DescendOrPerform
-  isSpec: "True"
-  fullName: eMEC.TaskPool.DescendOrPerform
-  nameWithType: TaskPool.DescendOrPerform
-- uid: eMEC.TaskPool.Finalize
-  name: ~TaskPool()
-  href: api/eMEC.TaskPool.html#eMEC_TaskPool_Finalize
-  commentId: M:eMEC.TaskPool.Finalize
-  name.vb: ''
-  fullName: eMEC.TaskPool.~TaskPool()
-  fullName.vb: ''
-  nameWithType: TaskPool.~TaskPool()
-  nameWithType.vb: ''
-- uid: eMEC.TaskPool.Finalize*
-  name: ~TaskPool
-  href: api/eMEC.TaskPool.html#eMEC_TaskPool_Finalize_
-  commentId: Overload:eMEC.TaskPool.Finalize
-  isSpec: "True"
-  fullName: eMEC.TaskPool.~TaskPool
-  nameWithType: TaskPool.~TaskPool
-- uid: eMEC.UpdateTask
-  name: UpdateTask
-  href: api/eMEC.UpdateTask.html
-  commentId: T:eMEC.UpdateTask
-  fullName: eMEC.UpdateTask
-  nameWithType: UpdateTask
-- uid: eMEC.UpdateTask.Action
-  name: Action
-  href: api/eMEC.UpdateTask.html#eMEC_UpdateTask_Action
-  commentId: P:eMEC.UpdateTask.Action
-  fullName: eMEC.UpdateTask.Action
-  nameWithType: UpdateTask.Action
-- uid: eMEC.UpdateTask.Action*
-  name: Action
-  href: api/eMEC.UpdateTask.html#eMEC_UpdateTask_Action_
-  commentId: Overload:eMEC.UpdateTask.Action
-  isSpec: "True"
-  fullName: eMEC.UpdateTask.Action
-  nameWithType: UpdateTask.Action
-- uid: eMEC.UpdateTask.AddLength(System.TimeSpan)
-  name: AddLength(TimeSpan)
-  href: api/eMEC.UpdateTask.html#eMEC_UpdateTask_AddLength_System_TimeSpan_
-  commentId: M:eMEC.UpdateTask.AddLength(System.TimeSpan)
-  fullName: eMEC.UpdateTask.AddLength(System.TimeSpan)
-  nameWithType: UpdateTask.AddLength(TimeSpan)
-- uid: eMEC.UpdateTask.AddLength*
-  name: AddLength
-  href: api/eMEC.UpdateTask.html#eMEC_UpdateTask_AddLength_
-  commentId: Overload:eMEC.UpdateTask.AddLength
-  isSpec: "True"
-  fullName: eMEC.UpdateTask.AddLength
-  nameWithType: UpdateTask.AddLength
-- uid: eMEC.UpdateTask.ChangeLength(System.TimeSpan)
-  name: ChangeLength(TimeSpan)
-  href: api/eMEC.UpdateTask.html#eMEC_UpdateTask_ChangeLength_System_TimeSpan_
-  commentId: M:eMEC.UpdateTask.ChangeLength(System.TimeSpan)
-  fullName: eMEC.UpdateTask.ChangeLength(System.TimeSpan)
-  nameWithType: UpdateTask.ChangeLength(TimeSpan)
-- uid: eMEC.UpdateTask.ChangeLength*
-  name: ChangeLength
-  href: api/eMEC.UpdateTask.html#eMEC_UpdateTask_ChangeLength_
-  commentId: Overload:eMEC.UpdateTask.ChangeLength
-  isSpec: "True"
-  fullName: eMEC.UpdateTask.ChangeLength
-  nameWithType: UpdateTask.ChangeLength
-- uid: eMEC.UpdateTask.ElapsedTime
-  name: ElapsedTime
-  href: api/eMEC.UpdateTask.html#eMEC_UpdateTask_ElapsedTime
-  commentId: P:eMEC.UpdateTask.ElapsedTime
-  fullName: eMEC.UpdateTask.ElapsedTime
-  nameWithType: UpdateTask.ElapsedTime
-- uid: eMEC.UpdateTask.ElapsedTime*
-  name: ElapsedTime
-  href: api/eMEC.UpdateTask.html#eMEC_UpdateTask_ElapsedTime_
-  commentId: Overload:eMEC.UpdateTask.ElapsedTime
-  isSpec: "True"
-  fullName: eMEC.UpdateTask.ElapsedTime
-  nameWithType: UpdateTask.ElapsedTime
-- uid: eMEC.UpdateTask.FinishesAt
-  name: FinishesAt
-  href: api/eMEC.UpdateTask.html#eMEC_UpdateTask_FinishesAt
-  commentId: P:eMEC.UpdateTask.FinishesAt
-  fullName: eMEC.UpdateTask.FinishesAt
-  nameWithType: UpdateTask.FinishesAt
-- uid: eMEC.UpdateTask.FinishesAt*
-  name: FinishesAt
-  href: api/eMEC.UpdateTask.html#eMEC_UpdateTask_FinishesAt_
-  commentId: Overload:eMEC.UpdateTask.FinishesAt
-  isSpec: "True"
-  fullName: eMEC.UpdateTask.FinishesAt
-  nameWithType: UpdateTask.FinishesAt
-- uid: eMEC.UpdateTask.IsRunning
-  name: IsRunning
-  href: api/eMEC.UpdateTask.html#eMEC_UpdateTask_IsRunning
-  commentId: P:eMEC.UpdateTask.IsRunning
-  fullName: eMEC.UpdateTask.IsRunning
-  nameWithType: UpdateTask.IsRunning
-- uid: eMEC.UpdateTask.IsRunning*
-  name: IsRunning
-  href: api/eMEC.UpdateTask.html#eMEC_UpdateTask_IsRunning_
-  commentId: Overload:eMEC.UpdateTask.IsRunning
-  isSpec: "True"
-  fullName: eMEC.UpdateTask.IsRunning
-  nameWithType: UpdateTask.IsRunning
-- uid: eMEC.UpdateTask.Length
-  name: Length
-  href: api/eMEC.UpdateTask.html#eMEC_UpdateTask_Length
-  commentId: P:eMEC.UpdateTask.Length
-  fullName: eMEC.UpdateTask.Length
-  nameWithType: UpdateTask.Length
-- uid: eMEC.UpdateTask.Length*
-  name: Length
-  href: api/eMEC.UpdateTask.html#eMEC_UpdateTask_Length_
-  commentId: Overload:eMEC.UpdateTask.Length
-  isSpec: "True"
-  fullName: eMEC.UpdateTask.Length
-  nameWithType: UpdateTask.Length
-- uid: eMEC.UpdateTask.Pause
-  name: Pause()
-  href: api/eMEC.UpdateTask.html#eMEC_UpdateTask_Pause
-  commentId: M:eMEC.UpdateTask.Pause
-  fullName: eMEC.UpdateTask.Pause()
-  nameWithType: UpdateTask.Pause()
-- uid: eMEC.UpdateTask.Pause*
-  name: Pause
-  href: api/eMEC.UpdateTask.html#eMEC_UpdateTask_Pause_
-  commentId: Overload:eMEC.UpdateTask.Pause
-  isSpec: "True"
-  fullName: eMEC.UpdateTask.Pause
-  nameWithType: UpdateTask.Pause
-- uid: eMEC.UpdateTask.ResetState
-  name: ResetState()
-  href: api/eMEC.UpdateTask.html#eMEC_UpdateTask_ResetState
-  commentId: M:eMEC.UpdateTask.ResetState
-  fullName: eMEC.UpdateTask.ResetState()
-  nameWithType: UpdateTask.ResetState()
-- uid: eMEC.UpdateTask.ResetState*
-  name: ResetState
-  href: api/eMEC.UpdateTask.html#eMEC_UpdateTask_ResetState_
-  commentId: Overload:eMEC.UpdateTask.ResetState
-  isSpec: "True"
-  fullName: eMEC.UpdateTask.ResetState
-  nameWithType: UpdateTask.ResetState
-- uid: eMEC.UpdateTask.Resume
-  name: Resume()
-  href: api/eMEC.UpdateTask.html#eMEC_UpdateTask_Resume
-  commentId: M:eMEC.UpdateTask.Resume
-  fullName: eMEC.UpdateTask.Resume()
-  nameWithType: UpdateTask.Resume()
-- uid: eMEC.UpdateTask.Resume*
-  name: Resume
-  href: api/eMEC.UpdateTask.html#eMEC_UpdateTask_Resume_
-  commentId: Overload:eMEC.UpdateTask.Resume
-  isSpec: "True"
-  fullName: eMEC.UpdateTask.Resume
-  nameWithType: UpdateTask.Resume
-- uid: eMEC.UpdateTask.Start(System.Single,System.Action)
-  name: Start(float, Action)
-  href: api/eMEC.UpdateTask.html#eMEC_UpdateTask_Start_System_Single_System_Action_
-  commentId: M:eMEC.UpdateTask.Start(System.Single,System.Action)
-  name.vb: Start(Single, Action)
-  fullName: eMEC.UpdateTask.Start(float, System.Action)
-  fullName.vb: eMEC.UpdateTask.Start(Single, System.Action)
-  nameWithType: UpdateTask.Start(float, Action)
-  nameWithType.vb: UpdateTask.Start(Single, Action)
-- uid: eMEC.UpdateTask.Start(System.TimeSpan,System.Action)
-  name: Start(TimeSpan, Action)
-  href: api/eMEC.UpdateTask.html#eMEC_UpdateTask_Start_System_TimeSpan_System_Action_
-  commentId: M:eMEC.UpdateTask.Start(System.TimeSpan,System.Action)
-  fullName: eMEC.UpdateTask.Start(System.TimeSpan, System.Action)
-  nameWithType: UpdateTask.Start(TimeSpan, Action)
-- uid: eMEC.UpdateTask.Start*
-  name: Start
-  href: api/eMEC.UpdateTask.html#eMEC_UpdateTask_Start_
-  commentId: Overload:eMEC.UpdateTask.Start
-  isSpec: "True"
-  fullName: eMEC.UpdateTask.Start
-  nameWithType: UpdateTask.Start
-- uid: eMEC.UpdateTask.SubtractLength(System.TimeSpan)
-  name: SubtractLength(TimeSpan)
-  href: api/eMEC.UpdateTask.html#eMEC_UpdateTask_SubtractLength_System_TimeSpan_
-  commentId: M:eMEC.UpdateTask.SubtractLength(System.TimeSpan)
-  fullName: eMEC.UpdateTask.SubtractLength(System.TimeSpan)
-  nameWithType: UpdateTask.SubtractLength(TimeSpan)
-- uid: eMEC.UpdateTask.SubtractLength*
-  name: SubtractLength
-  href: api/eMEC.UpdateTask.html#eMEC_UpdateTask_SubtractLength_
-  commentId: Overload:eMEC.UpdateTask.SubtractLength
-  isSpec: "True"
-  fullName: eMEC.UpdateTask.SubtractLength
-  nameWithType: UpdateTask.SubtractLength
-- uid: eMEC.UpdateTask.TimeLeft
-  name: TimeLeft
-  href: api/eMEC.UpdateTask.html#eMEC_UpdateTask_TimeLeft
-  commentId: P:eMEC.UpdateTask.TimeLeft
-  fullName: eMEC.UpdateTask.TimeLeft
-  nameWithType: UpdateTask.TimeLeft
-- uid: eMEC.UpdateTask.TimeLeft*
-  name: TimeLeft
-  href: api/eMEC.UpdateTask.html#eMEC_UpdateTask_TimeLeft_
-  commentId: Overload:eMEC.UpdateTask.TimeLeft
-  isSpec: "True"
-  fullName: eMEC.UpdateTask.TimeLeft
-  nameWithType: UpdateTask.TimeLeft

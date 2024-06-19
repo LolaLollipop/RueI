@@ -2,12 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Namespace RueI
- | RueI </title>
+      <title>Namespace RueI | RueI </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Namespace RueI
- | RueI ">
+      <meta name="title" content="Namespace RueI | RueI ">
       
+      <meta name="description" content="The RueI namespace contains classes shared across all of RueI. Generally, you shouldn&#39;t need to use the classes and interfaces within this namespace. The exception is the RueIMain class that contains the EnsureInit() method, which should be called by any plugin using RueI upon being loaded.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -30,15 +29,15 @@
       <meta name="loc:changeTheme" content="Change theme">
       <meta name="loc:copy" content="Copy">
       <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-
-  <script type="module" src="./../public/docfx.min.js"></script>
-
-  <script>
-    const theme = localStorage.getItem('theme') || 'auto'
-    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-  </script>
-
 
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
     <header class="bg-body border-bottom">
@@ -87,8 +86,7 @@
 
         <article data-uid="RueI">
 
-  <h1 id="RueI" data-uid="RueI" class="text-break">Namespace RueI
-</h1>
+  <h1 id="RueI" data-uid="RueI" class="text-break">Namespace RueI</h1>
   <div class="markdown level0 summary">
 <p>The <a href="./RueI.html">RueI</a> namespace contains classes shared across all of RueI. Generally, you shouldn't need to use the classes and interfaces within this namespace. The exception is the <a href="./RueI.RueIMain.html">RueIMain</a> class that contains the <a href="./RueI.RueIMain.html?q=Ensure#RueI_RueIMain_EnsureInit">EnsureInit()</a> method, which should be called by any plugin using RueI upon being loaded.</p>
 </div>
@@ -135,7 +133,7 @@ Classes
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="RueI.UnityProvider.MECAsyncOperation.html">UnityProvider.MECAsyncOperation</a></dt>
-      <dd><p>Represents an async operation using a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a>.</p>
+      <dd><p>Represents an async operation using a CoroutineHandle.</p>
 </dd>
     </dl>
     <h3 id="interfaces">

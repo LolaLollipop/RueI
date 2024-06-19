@@ -2,11 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Namespace RueI.Elements.Interfaces
- | RueI </title>
+      <title>Namespace RueI.Elements.Interfaces | RueI </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Namespace RueI.Elements.Interfaces
- | RueI ">
+      <meta name="title" content="Namespace RueI.Elements.Interfaces | RueI ">
+      
       
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
@@ -30,15 +29,15 @@
       <meta name="loc:changeTheme" content="Change theme">
       <meta name="loc:copy" content="Copy">
       <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-
-  <script type="module" src="./../public/docfx.min.js"></script>
-
-  <script>
-    const theme = localStorage.getItem('theme') || 'auto'
-    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-  </script>
-
 
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
     <header class="bg-body border-bottom">
@@ -87,8 +86,7 @@
 
         <article data-uid="RueI.Elements.Interfaces">
 
-  <h1 id="RueI_Elements_Interfaces" data-uid="RueI.Elements.Interfaces" class="text-break">Namespace RueI.Elements.Interfaces
-</h1>
+  <h1 id="RueI_Elements_Interfaces" data-uid="RueI.Elements.Interfaces" class="text-break">Namespace RueI.Elements.Interfaces</h1>
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="markdown level0 remarks"></div>
@@ -99,6 +97,11 @@ Interfaces
     <dl class="jumplist">
       <dt><a class="xref" href="RueI.Elements.Interfaces.ISettable.html">ISettable</a></dt>
       <dd><p>Defines an <a class="xref" href="RueI.Elements.Element.html">Element</a> that can be set.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="RueI.Elements.Interfaces.ISettableOptions.html">ISettableOptions</a></dt>
+      <dd><p>Defines an <a class="xref" href="RueI.Elements.Element.html">Element</a> with options that can be set.</p>
 </dd>
     </dl>
 

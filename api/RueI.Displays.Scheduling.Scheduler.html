@@ -2,12 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class Scheduler
- | RueI </title>
+      <title>Class Scheduler | RueI </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class Scheduler
- | RueI ">
+      <meta name="title" content="Class Scheduler | RueI ">
       
+      <meta name="description" content="Provides a means of doing batch operations.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -30,15 +29,15 @@
       <meta name="loc:changeTheme" content="Change theme">
       <meta name="loc:copy" content="Copy">
       <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-
-  <script type="module" src="./../public/docfx.min.js"></script>
-
-  <script>
-    const theme = localStorage.getItem('theme') || 'auto'
-    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-  </script>
-
 
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
     <header class="bg-body border-bottom">
@@ -90,8 +89,7 @@
 
 
   <h1 id="RueI_Displays_Scheduling_Scheduler" data-uid="RueI.Displays.Scheduling.Scheduler" class="text-break">
-    Class Scheduler
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/Scheduling/Scheduler.cs/#L16"><i class="bi bi-code-slash"></i></a>
+Class Scheduler  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/Scheduling/Scheduler.cs/#L15"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -120,7 +118,7 @@
 
 
 
-  <dl class="typelist derived">
+  <dl class="typelist inheritedMembers">
     <dt>Inherited Members</dt>
     <dd>
     <div>
@@ -163,7 +161,7 @@ More detailed information is available at <a href="https://ruemena.github.io/Rue
 
   <h3 id="RueI_Displays_Scheduling_Scheduler_CalculateWeighted_System_Collections_Generic_IEnumerable_RueI_Displays_Scheduling_ScheduledJob__" data-uid="RueI.Displays.Scheduling.Scheduler.CalculateWeighted(System.Collections.Generic.IEnumerable{RueI.Displays.Scheduling.ScheduledJob})">
   CalculateWeighted(IEnumerable&lt;ScheduledJob&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/Scheduling/Scheduler.cs/#L54"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/Scheduling/Scheduler.cs/#L53"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Calculates the weighted time for a list of jobs to be performed.</p>
@@ -202,7 +200,7 @@ More detailed information is available at <a href="https://ruemena.github.io/Rue
 
   <h3 id="RueI_Displays_Scheduling_Scheduler_KillJob_RueI_Displays_Scheduling_JobToken_" data-uid="RueI.Displays.Scheduling.Scheduler.KillJob(RueI.Displays.Scheduling.JobToken)">
   KillJob(JobToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/Scheduling/Scheduler.cs/#L165"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/Scheduling/Scheduler.cs/#L182"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Attempts to kill the <a class="xref" href="RueI.Displays.Scheduling.ScheduledJob.html">ScheduledJob</a> with the <a class="xref" href="RueI.Displays.Scheduling.JobToken.html">JobToken</a>.</p>
@@ -231,11 +229,53 @@ More detailed information is available at <a href="https://ruemena.github.io/Rue
 
 
 
+  <a id="RueI_Displays_Scheduling_Scheduler_ReplaceJob_" data-uid="RueI.Displays.Scheduling.Scheduler.ReplaceJob*"></a>
+
+  <h3 id="RueI_Displays_Scheduling_Scheduler_ReplaceJob_System_TimeSpan_System_Action_RueI_Displays_Scheduling_JobToken_System_Int32_" data-uid="RueI.Displays.Scheduling.Scheduler.ReplaceJob(System.TimeSpan,System.Action,RueI.Displays.Scheduling.JobToken,System.Int32)">
+  ReplaceJob(TimeSpan, Action, JobToken, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/Scheduling/Scheduler.cs/#L167"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Replaces the <a class="xref" href="RueI.Displays.Scheduling.ScheduledJob.html">ScheduledJob</a> with the <a class="xref" href="RueI.Displays.Scheduling.JobToken.html">JobToken</a> with a new job.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ReplaceJob(TimeSpan time, Action action, JobToken token, int priority = 1)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timespan">TimeSpan</a></dt>
+    <dd><p>How long into the future to run the action at.</p>
+</dd>
+    <dt><code>action</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action">Action</a></dt>
+    <dd><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action">Action</a> to run.</p>
+</dd>
+    <dt><code>token</code> <a class="xref" href="RueI.Displays.Scheduling.JobToken.html">JobToken</a></dt>
+    <dd><p>An optional token to assign to the <a class="xref" href="RueI.Displays.Scheduling.ScheduledJob.html">ScheduledJob</a>.</p>
+</dd>
+    <dt><code>priority</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The priority of the job.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="RueI_Displays_Scheduling_Scheduler_Schedule_" data-uid="RueI.Displays.Scheduling.Scheduler.Schedule*"></a>
 
   <h3 id="RueI_Displays_Scheduling_Scheduler_Schedule_RueI_Displays_Scheduling_ScheduledJob_" data-uid="RueI.Displays.Scheduling.Scheduler.Schedule(RueI.Displays.Scheduling.ScheduledJob)">
   Schedule(ScheduledJob)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/Scheduling/Scheduler.cs/#L77"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/Scheduling/Scheduler.cs/#L76"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Schedules a <a class="xref" href="RueI.Displays.Scheduling.ScheduledJob.html">ScheduledJob</a>.</p>
@@ -268,7 +308,7 @@ More detailed information is available at <a href="https://ruemena.github.io/Rue
 
   <h3 id="RueI_Displays_Scheduling_Scheduler_Schedule_RueI_Displays_Scheduling_ScheduledJob_RueI_Displays_Scheduling_ScheduledJob___" data-uid="RueI.Displays.Scheduling.Scheduler.Schedule(RueI.Displays.Scheduling.ScheduledJob,RueI.Displays.Scheduling.ScheduledJob[])">
   Schedule(ScheduledJob, params ScheduledJob[])
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/Scheduling/Scheduler.cs/#L109"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/Scheduling/Scheduler.cs/#L108"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Schedules multiple <a class="xref" href="RueI.Displays.Scheduling.ScheduledJob.html">ScheduledJob</a> operations.</p>
@@ -308,7 +348,7 @@ times since it only recalculates the batches once.</p>
 
   <h3 id="RueI_Displays_Scheduling_Scheduler_Schedule_System_Collections_Generic_IEnumerable_RueI_Displays_Scheduling_ScheduledJob__" data-uid="RueI.Displays.Scheduling.Scheduler.Schedule(System.Collections.Generic.IEnumerable{RueI.Displays.Scheduling.ScheduledJob})">
   Schedule(IEnumerable&lt;ScheduledJob&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/Scheduling/Scheduler.cs/#L91"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/Scheduling/Scheduler.cs/#L90"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Schedules multiple <a class="xref" href="RueI.Displays.Scheduling.ScheduledJob.html">ScheduledJob</a> operations.</p>
@@ -345,7 +385,7 @@ times since it only recalculates the batches once.</p>
 
   <h3 id="RueI_Displays_Scheduling_Scheduler_Schedule_System_TimeSpan_System_Action_RueI_Displays_Scheduling_JobToken_" data-uid="RueI.Displays.Scheduling.Scheduler.Schedule(System.TimeSpan,System.Action,RueI.Displays.Scheduling.JobToken)">
   Schedule(TimeSpan, Action, JobToken?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/Scheduling/Scheduler.cs/#L156"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/Scheduling/Scheduler.cs/#L155"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Schedules a <a class="xref" href="RueI.Displays.Scheduling.ScheduledJob.html">ScheduledJob</a> with a priority of 1.</p>
@@ -384,7 +424,7 @@ times since it only recalculates the batches once.</p>
 
   <h3 id="RueI_Displays_Scheduling_Scheduler_Schedule_System_TimeSpan_System_Action_System_Int32_RueI_Displays_Scheduling_JobToken_" data-uid="RueI.Displays.Scheduling.Scheduler.Schedule(System.TimeSpan,System.Action,System.Int32,RueI.Displays.Scheduling.JobToken)">
   Schedule(TimeSpan, Action, int, JobToken?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/Scheduling/Scheduler.cs/#L145"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/Scheduling/Scheduler.cs/#L144"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Schedules a new <a class="xref" href="RueI.Displays.Scheduling.ScheduledJob.html">ScheduledJob</a>.</p>
@@ -426,7 +466,7 @@ times since it only recalculates the batches once.</p>
 
   <h3 id="RueI_Displays_Scheduling_Scheduler_ScheduleUpdate_System_TimeSpan_System_Int32_" data-uid="RueI.Displays.Scheduling.Scheduler.ScheduleUpdate(System.TimeSpan,System.Int32)">
   ScheduleUpdate(TimeSpan, int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/Scheduling/Scheduler.cs/#L121"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/Scheduling/Scheduler.cs/#L120"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Schedules an uncancellable update <a class="xref" href="RueI.Displays.Scheduling.ScheduledJob.html">ScheduledJob</a>.</p>
@@ -462,7 +502,7 @@ times since it only recalculates the batches once.</p>
 
   <h3 id="RueI_Displays_Scheduling_Scheduler_ScheduleUpdateToken_System_TimeSpan_System_Int32_RueI_Displays_Scheduling_JobToken_" data-uid="RueI.Displays.Scheduling.Scheduler.ScheduleUpdateToken(System.TimeSpan,System.Int32,RueI.Displays.Scheduling.JobToken)">
   ScheduleUpdateToken(TimeSpan, int, JobToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/Scheduling/Scheduler.cs/#L133"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/Scheduling/Scheduler.cs/#L132"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Schedules an update <a class="xref" href="RueI.Displays.Scheduling.ScheduledJob.html">ScheduledJob</a> with the <a class="xref" href="RueI.Displays.Scheduling.JobToken.html">JobToken</a>.</p>
@@ -501,7 +541,7 @@ times since it only recalculates the batches once.</p>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/Scheduling/Scheduler.cs/#L16" class="edit-link">Edit this page</a>
+          <a href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/Scheduling/Scheduler.cs/#L15" class="edit-link">Edit this page</a>
         </div>
 
 

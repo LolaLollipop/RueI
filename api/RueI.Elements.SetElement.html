@@ -2,12 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class SetElement
- | RueI </title>
+      <title>Class SetElement | RueI </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class SetElement
- | RueI ">
+      <meta name="title" content="Class SetElement | RueI ">
       
+      <meta name="description" content="Represents a simple cached element with settable content.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -30,15 +29,15 @@
       <meta name="loc:changeTheme" content="Change theme">
       <meta name="loc:copy" content="Copy">
       <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-
-  <script type="module" src="./../public/docfx.min.js"></script>
-
-  <script>
-    const theme = localStorage.getItem('theme') || 'auto'
-    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-  </script>
-
 
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
     <header class="bg-body border-bottom">
@@ -90,8 +89,7 @@
 
 
   <h1 id="RueI_Elements_SetElement" data-uid="RueI.Elements.SetElement" class="text-break">
-    Class SetElement
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements/SetElement.cs/#L11"><i class="bi bi-code-slash"></i></a>
+Class SetElement  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements/SetElement.cs/#L12"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -127,7 +125,7 @@
   </dl>
 
 
-  <dl class="typelist derived">
+  <dl class="typelist inheritedMembers">
     <dt>Inherited Members</dt>
     <dd>
     <div>
@@ -141,9 +139,6 @@
     </div>
     <div>
       <a class="xref" href="RueI.Elements.Element.html#RueI_Elements_Element_Parser">Element.Parser</a>
-    </div>
-    <div>
-      <a class="xref" href="RueI.Elements.Element.html#RueI_Elements_Element_Options">Element.Options</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
@@ -188,7 +183,7 @@
 
   <h3 id="RueI_Elements_SetElement__ctor_System_Single_System_String_" data-uid="RueI.Elements.SetElement.#ctor(System.Single,System.String)">
   SetElement(float, string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements/SetElement.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements/SetElement.cs/#L22"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="RueI.Elements.SetElement.html">SetElement</a> class.</p>
@@ -228,7 +223,7 @@
 
   <h3 id="RueI_Elements_SetElement_Content" data-uid="RueI.Elements.SetElement.Content">
   Content
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements/SetElement.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements/SetElement.cs/#L33"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets or sets the content of this element.</p>
@@ -256,15 +251,47 @@
 
 
 
+  <a id="RueI_Elements_SetElement_Options_" data-uid="RueI.Elements.SetElement.Options*"></a>
+
+  <h3 id="RueI_Elements_SetElement_Options" data-uid="RueI.Elements.SetElement.Options">
+  Options
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements/SetElement.cs/#L47"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the options for this element.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ElementOptions Options { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="RueI.Elements.Enums.ElementOptions.html">ElementOptions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <h2 class="section" id="methods">Methods
 </h2>
 
 
   <a id="RueI_Elements_SetElement_GetParsedData_" data-uid="RueI.Elements.SetElement.GetParsedData*"></a>
 
-  <h3 id="RueI_Elements_SetElement_GetParsedData" data-uid="RueI.Elements.SetElement.GetParsedData">
-  GetParsedData()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements/SetElement.cs/#L31"><i class="bi bi-code-slash"></i></a>
+  <h3 id="RueI_Elements_SetElement_GetParsedData_RueI_Displays_DisplayCore_" data-uid="RueI.Elements.SetElement.GetParsedData(RueI.Displays.DisplayCore)">
+  GetParsedData(DisplayCore)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements/SetElement.cs/#L59"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the data used for parsing.</p>
@@ -272,9 +299,14 @@
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override ParsedData GetParsedData()</code></pre>
+    <pre><code class="lang-csharp hljs">protected override ParsedData GetParsedData(DisplayCore _)</code></pre>
   </div>
 
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>_</code> <a class="xref" href="RueI.Displays.DisplayCore.html">DisplayCore</a></dt>
+    <dd></dd>
+  </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
@@ -289,7 +321,7 @@
 
 
 
-  <h4 class="section" id="RueI_Elements_SetElement_GetParsedData_remarks">Remarks</h4>
+  <h4 class="section" id="RueI_Elements_SetElement_GetParsedData_RueI_Displays_DisplayCore__remarks">Remarks</h4>
   <div class="markdown level1 remarks"><p>This contains information used to ensure that multiple elements can be displayed at once. To obtain this, you must use <a class="xref" href="RueI.Parsing.Parser.html#RueI_Parsing_Parser_Parse_System_String_RueI_Elements_Enums_ElementOptions_">Parse(string, ElementOptions)</a>.</p>
 </div>
 
@@ -300,7 +332,7 @@
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements/SetElement.cs/#L11" class="edit-link">Edit this page</a>
+          <a href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements/SetElement.cs/#L12" class="edit-link">Edit this page</a>
         </div>
 
 

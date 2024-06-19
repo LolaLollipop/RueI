@@ -132,6 +132,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Displays.Scheduling.Cooldown.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Displays.Scheduling.Cooldown.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/RueI.Displays.Scheduling.JobToken.yml",
       "output": {
         ".html": {
@@ -282,10 +292,30 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Elements.FixedElement.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Elements.FixedElement.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/RueI.Elements.Interfaces.ISettable.yml",
       "output": {
         ".html": {
           "relative_path": "api/RueI.Elements.Interfaces.ISettable.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RueI.Elements.Interfaces.ISettableOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RueI.Elements.Interfaces.ISettableOptions.html"
         }
       },
       "version": ""
@@ -1346,66 +1376,6 @@
       "output": {
         ".html": {
           "relative_path": "api/RueI.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/eMEC.Cooldown.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/eMEC.Cooldown.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/eMEC.ITaskable.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/eMEC.ITaskable.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/eMEC.TaskBase.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/eMEC.TaskBase.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/eMEC.TaskPool.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/eMEC.TaskPool.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/eMEC.UpdateTask.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/eMEC.UpdateTask.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/eMEC.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/eMEC.html"
         }
       },
       "version": ""

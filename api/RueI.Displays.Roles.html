@@ -2,12 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Enum Roles
- | RueI </title>
+      <title>Enum Roles | RueI </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Enum Roles
- | RueI ">
+      <meta name="title" content="Enum Roles | RueI ">
       
+      <meta name="description" content="Provides a means for describing multiple RoleTypeIds.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -30,15 +29,15 @@
       <meta name="loc:changeTheme" content="Change theme">
       <meta name="loc:copy" content="Copy">
       <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-
-  <script type="module" src="./../public/docfx.min.js"></script>
-
-  <script>
-    const theme = localStorage.getItem('theme') || 'auto'
-    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-  </script>
-
 
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
     <header class="bg-body border-bottom">
@@ -91,8 +90,7 @@
 
 
   <h1 id="RueI_Displays_Roles" data-uid="RueI.Displays.Roles" class="text-break">
-    Enum Roles
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/AutoElements/Roles.cs/#L13"><i class="bi bi-code-slash"></i></a>
+Enum Roles  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Displays/AutoElements/Roles.cs/#L13"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -130,8 +128,11 @@ public enum Roles</code></pre>
   <h2 id="fields">Fields
 </h2>
   <dl class="parameters">
-    <dt id="RueI_Displays_Roles_AlphaFlamingo"><code>AlphaFlamingo</code></dt>
-    <dd><p>Gets the Alpha Flamingo role id.</p>
+    <dt id="RueI_Displays_Roles_Alive"><code>Alive</code></dt>
+    <dd><p>Gets all of the role ids for roles considered to be alive.</p>
+</dd>
+    <dt id="RueI_Displays_Roles_All"><code>All</code></dt>
+    <dd><p>Gets all role ids.</p>
 </dd>
     <dt id="RueI_Displays_Roles_ChaosConscript"><code>ChaosConscript</code></dt>
     <dd><p>Gets the Chaos Conscript role id.</p>
@@ -157,17 +158,14 @@ public enum Roles</code></pre>
     <dt id="RueI_Displays_Roles_CustomRole"><code>CustomRole</code></dt>
     <dd><p>Gets the custom role id.</p>
 </dd>
+    <dt id="RueI_Displays_Roles_Dead"><code>Dead</code></dt>
+    <dd><p>Gets all of the role ids for roles considered to be dead.</p>
+</dd>
     <dt id="RueI_Displays_Roles_FacilityGuard"><code>FacilityGuard</code></dt>
     <dd><p>Gets the Facility Guard role id.</p>
 </dd>
     <dt id="RueI_Displays_Roles_Filmmaker"><code>Filmmaker</code></dt>
     <dd><p>Gets the Filmmaker role id.</p>
-</dd>
-    <dt id="RueI_Displays_Roles_Flamingo"><code>Flamingo</code></dt>
-    <dd><p>Gets the Flamingo role id.</p>
-</dd>
-    <dt id="RueI_Displays_Roles_FlamingoSide"><code>FlamingoSide</code></dt>
-    <dd><p>Gets all of the flamingo role ids.</p>
 </dd>
     <dt id="RueI_Displays_Roles_HumanRoles"><code>HumanRoles</code></dt>
     <dd><p>Gets all of the human role ids.</p>
@@ -221,19 +219,16 @@ public enum Roles</code></pre>
     <dd><p>Gets the SCP-939 role id.</p>
 </dd>
     <dt id="RueI_Displays_Roles_Scps"><code>Scps</code></dt>
-    <dd><p>Gets all of the SCP role ids, including SCP-049-2 and Zombie Flamingos.</p>
+    <dd><p>Gets all of the SCP role ids, including SCP-049-2.</p>
 </dd>
     <dt id="RueI_Displays_Roles_ScpsNo0492"><code>ScpsNo0492</code></dt>
-    <dd><p>Gets all of the SCP role ids, excluding SCP-049-2 and Zombie Flamingos.</p>
+    <dd><p>Gets all of the SCP role ids, excluding SCP-049-2.</p>
 </dd>
     <dt id="RueI_Displays_Roles_Spectator"><code>Spectator</code></dt>
     <dd><p>Gets the Specatator role id.</p>
 </dd>
     <dt id="RueI_Displays_Roles_Tutorial"><code>Tutorial</code></dt>
     <dd><p>Gets the Tutorial role id.</p>
-</dd>
-    <dt id="RueI_Displays_Roles_ZombieFlamingo"><code>ZombieFlamingo</code></dt>
-    <dd><p>Gets the Zombie Flamingo role id.</p>
 </dd>
   </dl>
 

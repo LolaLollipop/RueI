@@ -2,12 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class Element
- | RueI </title>
+      <title>Class Element | RueI </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class Element
- | RueI ">
+      <meta name="title" content="Class Element | RueI ">
       
+      <meta name="description" content="Represents the base class for all elements, which are individual &#39;hints&#39; present within an arbitrary number of s.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -30,15 +29,15 @@
       <meta name="loc:changeTheme" content="Change theme">
       <meta name="loc:copy" content="Copy">
       <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-
-  <script type="module" src="./../public/docfx.min.js"></script>
-
-  <script>
-    const theme = localStorage.getItem('theme') || 'auto'
-    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-  </script>
-
 
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
     <header class="bg-body border-bottom">
@@ -90,8 +89,7 @@
 
 
   <h1 id="RueI_Elements_Element" data-uid="RueI.Elements.Element" class="text-break">
-    Class Element
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements/Element.cs/#L14"><i class="bi bi-code-slash"></i></a>
+Class Element  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements/Element.cs/#L15"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -123,11 +121,12 @@
     <dt>Derived</dt>
     <dd>
       <div><a class="xref" href="RueI.Elements.DynamicElement.html">DynamicElement</a></div>
+      <div><a class="xref" href="RueI.Elements.FixedElement.html">FixedElement</a></div>
       <div><a class="xref" href="RueI.Elements.SetElement.html">SetElement</a></div>
     </dd>
   </dl>
 
-  <dl class="typelist derived">
+  <dl class="typelist inheritedMembers">
     <dt>Inherited Members</dt>
     <dd>
     <div>
@@ -177,7 +176,7 @@ acts like an individual Hints.Hint, and cannot influence other <a class="xref" h
 
   <h3 id="RueI_Elements_Element__ctor_System_Single_" data-uid="RueI.Elements.Element.#ctor(System.Single)">
   Element(float)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements/Element.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements/Element.cs/#L21"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="RueI.Elements.Element.html">Element</a> class.</p>
@@ -214,7 +213,7 @@ acts like an individual Hints.Hint, and cannot influence other <a class="xref" h
 
   <h3 id="RueI_Elements_Element_Enabled" data-uid="RueI.Elements.Element.Enabled">
   Enabled
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements/Element.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements/Element.cs/#L29"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets or sets a value indicating whether or not this element is enabled and will show.</p>
@@ -246,7 +245,7 @@ acts like an individual Hints.Hint, and cannot influence other <a class="xref" h
 
   <h3 id="RueI_Elements_Element_Options" data-uid="RueI.Elements.Element.Options">
   Options
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements/Element.cs/#L51"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements/Element.cs/#L52"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets or sets the options for this element.</p>
@@ -254,7 +253,7 @@ acts like an individual Hints.Hint, and cannot influence other <a class="xref" h
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual ElementOptions Options { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual ElementOptions Options { get; protected set; }</code></pre>
   </div>
 
 
@@ -278,7 +277,7 @@ acts like an individual Hints.Hint, and cannot influence other <a class="xref" h
 
   <h3 id="RueI_Elements_Element_Parser" data-uid="RueI.Elements.Element.Parser">
   Parser
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements/Element.cs/#L46"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements/Element.cs/#L47"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets or sets the <a class="xref" href="RueI.Elements.Element.html#RueI_Elements_Element_Parser">Parser</a> currently in use by this <a class="xref" href="RueI.Elements.Element.html">Element</a>.</p>
@@ -313,7 +312,7 @@ acts like an individual Hints.Hint, and cannot influence other <a class="xref" h
 
   <h3 id="RueI_Elements_Element_Position" data-uid="RueI.Elements.Element.Position">
   Position
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements/Element.cs/#L33"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements/Element.cs/#L34"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets or sets the position of the element on a scale from 0-1000, where 0 represents the bottom of the screen and 1000 represents the top.</p>
@@ -345,7 +344,7 @@ acts like an individual Hints.Hint, and cannot influence other <a class="xref" h
 
   <h3 id="RueI_Elements_Element_ZIndex" data-uid="RueI.Elements.Element.ZIndex">
   ZIndex
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements/Element.cs/#L38"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements/Element.cs/#L39"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets or sets the priority of the hint (determining if it shows above another hint).</p>
@@ -379,9 +378,9 @@ acts like an individual Hints.Hint, and cannot influence other <a class="xref" h
 
   <a id="RueI_Elements_Element_GetParsedData_" data-uid="RueI.Elements.Element.GetParsedData*"></a>
 
-  <h3 id="RueI_Elements_Element_GetParsedData" data-uid="RueI.Elements.Element.GetParsedData">
-  GetParsedData()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements/Element.cs/#L60"><i class="bi bi-code-slash"></i></a>
+  <h3 id="RueI_Elements_Element_GetParsedData_RueI_Displays_DisplayCore_" data-uid="RueI.Elements.Element.GetParsedData(RueI.Displays.DisplayCore)">
+  GetParsedData(DisplayCore)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements/Element.cs/#L62"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the data used for parsing.</p>
@@ -389,9 +388,15 @@ acts like an individual Hints.Hint, and cannot influence other <a class="xref" h
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected abstract ParsedData GetParsedData()</code></pre>
+    <pre><code class="lang-csharp hljs">protected abstract ParsedData GetParsedData(DisplayCore core)</code></pre>
   </div>
 
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>core</code> <a class="xref" href="RueI.Displays.DisplayCore.html">DisplayCore</a></dt>
+    <dd><p>The <a class="xref" href="RueI.Displays.DisplayCore.html">DisplayCore</a> of the player.</p>
+</dd>
+  </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
@@ -406,7 +411,7 @@ acts like an individual Hints.Hint, and cannot influence other <a class="xref" h
 
 
 
-  <h4 class="section" id="RueI_Elements_Element_GetParsedData_remarks">Remarks</h4>
+  <h4 class="section" id="RueI_Elements_Element_GetParsedData_RueI_Displays_DisplayCore__remarks">Remarks</h4>
   <div class="markdown level1 remarks"><p>This contains information used to ensure that multiple elements can be displayed at once. To obtain this, you must use <a class="xref" href="RueI.Parsing.Parser.html#RueI_Parsing_Parser_Parse_System_String_RueI_Elements_Enums_ElementOptions_">Parse(string, ElementOptions)</a>.</p>
 </div>
 
@@ -417,7 +422,7 @@ acts like an individual Hints.Hint, and cannot influence other <a class="xref" h
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements/Element.cs/#L14" class="edit-link">Edit this page</a>
+          <a href="https://github.com/Ruemena/RueI/blob/master/RueI/RueI/Elements/Element.cs/#L15" class="edit-link">Edit this page</a>
         </div>
 
 
