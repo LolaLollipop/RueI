@@ -1,7 +1,5 @@
 ﻿namespace RueI;
 
-using System.Runtime.CompilerServices;
-
 /*********\
 *  /\_/\  *
 * ( o.o ) *
@@ -30,8 +28,24 @@ public static class RueIMain
 
     private static bool isInit = false;
 
+    private static bool isPatchesRegistered = false;
+
     static RueIMain()
     {
+        EnsureInit();
+    }
+
+    /// <summary>
+    /// Ensures that RueI is properly initialized.
+    /// </summary>
+    /// <param name="registerPatches">Register harmony patches or not.</param>
+    public static void EnsureInit(bool registerPatches = true)
+    {
+        if (isInit)
+        {
+            return;
+        }
+
         isInit = true;
 
         if (!StartupArgs.Args.Contains("-noRMsg", StringComparison.OrdinalIgnoreCase)) // TODO: make this work
@@ -39,20 +53,14 @@ public static class RueIMain
             Provider.Log($"[Info] [RueI] Thank you for using RueI! Running v{Version.ToString(3)}");
         }
 
-        HarmonyLib.Harmony harmony = new(HARMONYID);
-        Provider.PatchAll(harmony);
+        if (registerPatches && !isPatchesRegistered)
+        {
+            isPatchesRegistered = true;
+
+            HarmonyLib.Harmony harmony = new(HARMONYID);
+            Provider.PatchAll(harmony);
+        }
 
         _ = Parsing.CharacterLengths.Lengths.Count; // force static initializer
-    }
-
-    /// <summary>
-    /// Ensures that RueI is properly initialized.
-    /// </summary>
-    public static void EnsureInit()
-    {
-        if (!isInit)
-        {
-            RuntimeHelpers.RunClassConstructor(typeof(RueIMain).TypeHandle);
-        }
     }
 }
