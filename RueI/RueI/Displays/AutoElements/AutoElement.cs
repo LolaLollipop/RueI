@@ -102,6 +102,17 @@ public class AutoElement
     }
 
     /// <summary>
+    /// Enables this <see cref="AutoElement"/>.
+    /// </summary>
+    public virtual void Enable()
+    {
+        if (!AutoElements.Contains(this))
+        {
+            AutoElements.Add(this);
+        }
+    }
+
+    /// <summary>
     /// Gives this <see cref="AutoElement"/> to a <see cref="DisplayCore"/>.
     /// </summary>
     /// <param name="core">The <see cref="DisplayCore"/> to give to.</param>
